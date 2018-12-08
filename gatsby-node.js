@@ -1,7 +1,46 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const _ = require('lodash')
+const Promise = require('bluebird')
+const path = require('path')
+const slash = require('slash')
+const postTemplate = path.resolve('./src/templates/Post/index.js')
 
-// You can delete this file if you're not using it
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  return new Promise((resolve, reject) => {
+    const query = graphql(`
+      {
+        allWordpressPost {
+          edges {
+            node {
+              id
+              slug
+              status
+              template
+              format
+            }
+          }
+        }
+      }
+    `)
+
+    query.then(result => {
+      if (result.errors) {
+        console.error(result.errors)
+        reject(result.errors)
+      }
+
+      result.data.allWordpressPost.edges.forEach(edge => {
+        createPage({
+          path: edge.node.slug,
+          component: slash(postTemplate),
+          context: {
+            id: edge.node.id,
+          },
+        })
+      })
+
+      resolve()
+    })
+  })
+}
