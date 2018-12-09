@@ -1,0 +1,28 @@
+.post_meta {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  padding-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.post_meta__avatar {
+  img {
+    border-radius: 50%;
+    max-width: 4rem;
+    margin-right: 2rem;
+  }
+}
+
+.post_meta__tag {
+  &:not(:last-child)::after {
+    content: ", ";
+  }
+
+  a {
+    color: #000;
+    font-size: .8rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
