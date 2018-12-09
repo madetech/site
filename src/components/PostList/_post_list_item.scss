@@ -1,0 +1,31 @@
+.post_list_item {
+  color: #444;
+  padding-bottom: 2rem;
+
+  h2 {
+    font-family: 'neuzeit-s-book';
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 0 0 .5rem 0;
+  }
+
+  a {
+    color: #222;
+  }
+}
+
+.post_list_item__avatar {
+  img {
+    border-radius: 50%;
+    max-width: 4rem;
+    margin-right: 2rem;
+  }
+}
+
+.post_list_item__meta  {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  padding-bottom: 3rem;
+  text-transform: uppercase;
+}

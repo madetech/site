@@ -1,5 +1,5 @@
 import React from 'react'
-import '@madetech/frontend/dist/css/madetech-frontend.css'
+import '../../all.scss'
 import Meta from '../Meta'
 import { Header, TopBar } from '@madetech/frontend'
 

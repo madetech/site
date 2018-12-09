@@ -1,0 +1,47 @@
+.post {
+  color: #444;
+
+  h1, h2, h3, h4 {
+    font-family: 'neuzeit-s-book';
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  h1 {
+    color: #000;
+    padding: 3rem 0 1.5rem 0;
+  }
+
+  h2, h3, h4 {
+    color: #222;
+    padding: 1rem 0 .5rem 0;
+  }
+}
+
+.post__avatar {
+  img {
+    border-radius: 50%;
+    max-width: 4rem;
+    margin-right: 2rem;
+  }
+}
+
+.post__meta {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  padding-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.post__tag {
+  &:not(:last-child)::after {
+    content: ", ";
+  }
+
+  a {
+    font-size: .8rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

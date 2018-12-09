@@ -11,9 +11,22 @@ export default function PostTemplate ({ data }) {
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 offset-md-2' style={{ fontSize: '1.3rem' }}>
-            <h1 className='py-5 text-center' dangerouslySetInnerHTML={{ __html: post.title }} />
-            <p className='text-center'>{post.author.name} – {post.date} – {categoryNames}</p>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <article className='post'>
+              <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+
+              <div className='post__meta'>
+                <span className='post__avatar'>
+                  <img src={post.author.avatar_urls.wordpress_96} />
+                </span>
+
+                <span className='post__meta_text'>
+                  By {post.author.name}<br />
+                  {post.date} – {categoryNames}
+                </span>
+              </div>
+
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </article>
           </div>
         </div>
       </div>
@@ -29,6 +42,9 @@ export const pageQuery = graphql`
       slug
       date(formatString: "Do MMMM YYYY")
       author {
+        avatar_urls {
+          wordpress_96
+        }
         name
       }
       categories {
