@@ -3,11 +3,12 @@ const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
 const postTemplate = path.resolve('./src/templates/Post/index.js')
+const categoryPageTemplate = path.resolve('./src/templates/CategoryPage/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  return new Promise((resolve, reject) => {
+  const createPostPages = new Promise((resolve, reject) => {
     const query = graphql(`
       {
         allWordpressPost {
@@ -43,4 +44,45 @@ exports.createPages = ({ graphql, actions }) => {
       resolve()
     })
   })
+
+  const createCategoryPages = new Promise((resolve, reject) => {
+    const query = graphql(`
+      {
+        allWordpressCategory {
+          edges {
+            node {
+              id
+              description
+              name
+              slug
+            }
+          }
+        }
+      }
+    `)
+
+    query.then(result => {
+      if (result.errors) {
+        console.error(result.errors)
+        reject(result.errors)
+      }
+
+      result.data.allWordpressCategory.edges.forEach(edge => {
+        createPage({
+          path: `t/${edge.node.slug}`,
+          component: slash(categoryPageTemplate),
+          context: {
+            id: edge.node.id,
+          },
+        })
+      })
+
+      resolve()
+    })
+  })
+
+  return Promise.all(
+    createPostPages,
+    createCategoryPages
+  )
 }

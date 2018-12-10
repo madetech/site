@@ -38,6 +38,7 @@ export const pageQuery = graphql`
           }
           categories {
             name
+            slug
           }
         }
       }
