@@ -12,7 +12,11 @@ export default function Index ({ data }) {
         <div className='container'>
           <div className='row'>
             <div className='col-md-8 offset-md-2'>
-              <PostList posts={posts} />
+              <PostList
+                title='Made Tech Blog'
+                description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
+                posts={posts}
+                />
             </div>
           </div>
         </div>
