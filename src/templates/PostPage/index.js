@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
+import { Hiring } from '../../components/Marketing'
 
 export default function PostPageTemplate ({ data }) {
   return (
@@ -10,6 +11,8 @@ export default function PostPageTemplate ({ data }) {
         <div className='row'>
           <div className='col-md-8 offset-md-2' style={{ fontSize: '1.3rem' }}>
             <Post post={data.wordpressPost} />
+            
+            <Hiring />
           </div>
         </div>
       </div>

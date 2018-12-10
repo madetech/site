@@ -1,0 +1,11 @@
+.hiring {
+  a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: #439a63;
+    }
+  }
+}
