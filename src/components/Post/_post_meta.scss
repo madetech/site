@@ -24,5 +24,9 @@
     font-size: .8rem;
     font-weight: bold;
     text-decoration: underline;
+
+    &:hover, &:focus {
+      color: #439a63;
+    }
   }
 }

@@ -16,7 +16,9 @@
     color: #222;
     padding: 1rem 0 .5rem 0;
   }
+}
 
+.post__body {
   blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
@@ -38,5 +40,15 @@
   img {
     height: auto !important;
     max-width: 100% !important;
+  }
+
+  a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: #439a63;
+    }
   }
 }

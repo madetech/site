@@ -8,7 +8,7 @@ export default function Post ({ post }) {
 
       <PostMeta post={post} />
 
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   )
 }
