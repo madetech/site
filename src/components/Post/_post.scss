@@ -16,4 +16,27 @@
     color: #222;
     padding: 1rem 0 .5rem 0;
   }
+
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 2.5rem 0px 0px 2.5rem;
+    padding: .5rem 1.5rem;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+
+    &:before {
+      color: #ccc;
+      content: open-quote;
+      font-family: Helvetica;
+      font-size: 7em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+  }
+
+  img {
+    height: auto !important;
+    max-width: 100% !important;
+  }
 }
