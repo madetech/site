@@ -16,9 +16,6 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               id
               slug
-              status
-              template
-              format
             }
           }
         }
@@ -52,8 +49,6 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               id
-              description
-              name
               slug
             }
           }
