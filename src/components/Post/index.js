@@ -1,4 +1,5 @@
 import React from 'react'
+import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
 
 export default function Post ({ post }) {
@@ -9,6 +10,8 @@ export default function Post ({ post }) {
       <PostMeta post={post} />
 
       <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
+
+      <PostAboutAuthor author={post.author} />
     </article>
   )
 }

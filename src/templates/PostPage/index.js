@@ -28,6 +28,7 @@ export const pageQuery = graphql`
         avatar_urls {
           wordpress_96
         }
+        description
         name
       }
       categories {

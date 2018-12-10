@@ -1,0 +1,19 @@
+.post_about_author {
+  background: #f9f9f9;
+  border-radius: 1rem;
+  margin: 2rem -2rem;
+  padding: 2rem;
+}
+
+.post_about_author__avatar {
+  margin-left: 2rem;
+
+  img {
+    border-radius: 50%;
+    max-width: 6rem;
+  }
+}
+
+.post_about_author__description {
+  margin-top: 1rem;
+}
