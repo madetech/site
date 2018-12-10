@@ -2,7 +2,7 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
-const postTemplate = path.resolve('./src/templates/Post/index.js')
+const postTemplate = path.resolve('./src/templates/PostPage/index.js')
 const categoryPageTemplate = path.resolve('./src/templates/CategoryPage/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
