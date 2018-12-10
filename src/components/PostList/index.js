@@ -8,7 +8,7 @@ export default function PostList ({ posts }) {
         <h1>Made Tech Blog</h1>
 
         <p className='post_list__intro'>
-          A treatise on modern software delivery by the engineers in the trenches.
+          Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.
         </p>
       </div>
 
