@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import PostList from '../components/PostList'
+import Layout from '../../components/Layout'
+import PostList from '../../components/PostList'
 
 export default function Index ({ data }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
@@ -26,8 +26,12 @@ export default function Index ({ data }) {
 }
 
 export const pageQuery = graphql`
-  query {
-    allWordpressPost(sort: { fields: [date], order: DESC }) {
+  query($limit: Int!, $skip: Int!) {
+    allWordpressPost(
+      sort: { fields: [date], order: DESC },
+      limit: $limit,
+      skip: $skip
+    ) {
       edges {
         node {
           title

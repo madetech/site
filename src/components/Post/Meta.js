@@ -4,7 +4,7 @@ function PostMetaTags ({ tags }) {
   return tags.map((tag, i) => {
     return (
       <span className='post_meta__tag'>
-        <a href={`/t/${tag.slug}`} key={i}>{tag.name}</a>
+        <a href={`/blog/t/${tag.slug}`} key={i}>{tag.name}</a>
       </span>
     )
   })

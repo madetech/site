@@ -2,7 +2,8 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
-const postTemplate = path.resolve('./src/templates/PostPage/index.js')
+const postListPageTemplate = path.resolve('./src/templates/PostListPage/index.js')
+const postPageTemplate = path.resolve('./src/templates/PostPage/index.js')
 const categoryPageTemplate = path.resolve('./src/templates/CategoryPage/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
@@ -28,10 +29,25 @@ exports.createPages = ({ graphql, actions }) => {
         reject(result.errors)
       }
 
-      result.data.allWordpressPost.edges.forEach(edge => {
+      const postEdges = result.data.allWordpressPost.edges
+      const postsPerPage = 10
+      const totalPages = Math.ceil(postEdges.length / postsPerPage)
+
+      Array.from({ length: totalPages }).forEach((_, i) => {
         createPage({
-          path: edge.node.slug,
-          component: slash(postTemplate),
+          path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+          component: postListPageTemplate,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+          },
+        })
+      })
+
+      postEdges.forEach(edge => {
+        createPage({
+          path: `/blog/${edge.node.slug}`,
+          component: slash(postPageTemplate),
           context: {
             id: edge.node.id,
           },
@@ -62,13 +78,21 @@ exports.createPages = ({ graphql, actions }) => {
         reject(result.errors)
       }
 
-      result.data.allWordpressCategory.edges.forEach(edge => {
-        createPage({
-          path: `t/${edge.node.slug}`,
-          component: slash(categoryPageTemplate),
-          context: {
-            id: edge.node.id,
-          },
+      const categoryEdges = result.data.allWordpressCategory.edges
+      const postPerPage = 10
+      const totalPages = Math.ceil(categoryEdges.length / postPerPage)
+
+      Array.from({ length: totalPages }).forEach((_, i) => {
+        categoryEdges.forEach(edge => {
+          createPage({
+            path: i == 0 ? `blog/t/${edge.node.slug}` : `blog/t/${edge.node.slug}/${i + 1}`,
+            component: slash(categoryPageTemplate),
+            context: {
+              id: edge.node.id,
+              limit: postPerPage,
+              skip: i * postPerPage
+            },
+          })
         })
       })
 

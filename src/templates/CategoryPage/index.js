@@ -25,14 +25,18 @@ export default function PostPageTemplate ({ data }) {
 }
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query($id: String!, $limit: Int!, $skip: Int!) {
     wordpressCategory(id: { eq: $id }) {
       description
       name
       slug
     }
 
-  	allWordpressPost(filter: { categories: { elemMatch: { id: { eq: $id } } } }) {
+  	allWordpressPost(
+      filter: { categories: { elemMatch: { id: { eq: $id } } } },
+      limit: $limit,
+      skip: $skip
+    ) {
       edges {
         node {
           title
