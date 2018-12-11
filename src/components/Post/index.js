@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
 import initGists from './initGists'
@@ -12,7 +13,14 @@ export default class Post extends React.Component {
     const post = this.props.post
 
     return (
-      <article className='post'>
+      <article className='post' itemScope itemType='http://schema.org/BlogPosting'>
+        <Helmet>
+          <script src='/prism.js'></script>
+        </Helmet>
+
+        <meta itemProp='datePublished' content='{{ post.date }}' />
+        <meta itemProp='headline' content='{{post.title}}' />
+
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
 
         <PostMeta post={post} />
