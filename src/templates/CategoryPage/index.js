@@ -2,8 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
+import Pagination from '../../components/Pagination'
 
-export default function PostPageTemplate ({ data }) {
+export default function PostPageTemplate ({ data, pageContext }) {
   const category = data.wordpressCategory
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
@@ -11,11 +12,17 @@ export default function PostPageTemplate ({ data }) {
     <Layout>
       <div className='container'>
         <div className='row'>
-          <div className='col-md-8 offset-md-2' style={{ fontSize: '1.3rem' }}>
+          <div className='col-lg-8 offset-lg-2' style={{ fontSize: '1.3rem' }}>
             <PostList
               title={category.name}
               description={category.description}
               posts={posts}
+              />
+
+            <Pagination
+              currentPage={pageContext.page}
+              hrefPrefix={`/blog/t/${category.slug}`}
+              totalPages={pageContext.totalPages}
               />
           </div>
         </div>

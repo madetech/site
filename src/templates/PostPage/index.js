@@ -11,7 +11,7 @@ export default function PostPageTemplate ({ data }) {
         <div className='row'>
           <div className='col-md-8 offset-md-2' style={{ fontSize: '1.3rem' }}>
             <Post post={data.wordpressPost} />
-            
+
             <Hiring />
           </div>
         </div>

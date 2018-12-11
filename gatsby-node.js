@@ -83,29 +83,57 @@ exports.createPages = ({ graphql, actions }) => {
       }
 
       const categoryEdges = result.data.allWordpressCategory.edges
-      const postPerPage = 10
-      const totalPages = Math.ceil(categoryEdges.length / postPerPage)
 
-      Array.from({ length: totalPages }).forEach((_, i) => {
-        categoryEdges.forEach(edge => {
-          createPage({
-            path: i == 0 ? `blog/t/${edge.node.slug}` : `blog/t/${edge.node.slug}/${i + 1}`,
-            component: slash(categoryPageTemplate),
-            context: {
-              id: edge.node.id,
-              limit: postPerPage,
-              skip: i * postPerPage
-            },
+      Promise.map(categoryEdges, edge => {
+        const query = graphql(`
+          {
+            allWordpressPost(
+              filter: { categories: { elemMatch: { id: { eq: "${edge.node.id}" } } } }
+            ) {
+              edges {
+                node {
+                  id
+                  slug
+                }
+              }
+            }
+          }
+        `)
+
+        return query.then(result => {
+          if (result.errors) {
+            console.error(result.errors)
+            reject(result.errors)
+          }
+
+          if (!result.data.allWordpressPost) return
+
+          const postEdges = result.data.allWordpressPost.edges
+          const postsPerPage = 10
+          const totalPages = Math.ceil(postEdges.length / postsPerPage)
+
+          Array.from({ length: totalPages }).forEach((_, i) => {
+            const page = i + 1
+
+            createPage({
+              path: i == 0 ? `blog/t/${edge.node.slug}` : `blog/t/${edge.node.slug}/${page}`,
+              component: slash(categoryPageTemplate),
+              context: {
+                id: edge.node.id,
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                page,
+                totalPages
+              },
+            })
           })
         })
-      })
-
-      resolve()
+      }).then(() => resolve())
     })
   })
 
-  return Promise.all(
+  return Promise.all([
     createPostPages,
     createCategoryPages
-  )
+  ])
 }
