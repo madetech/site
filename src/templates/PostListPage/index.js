@@ -12,7 +12,7 @@ export default function Index ({ data, pageContext }) {
       <div className='post_list'>
         <div className='container'>
           <div className='row'>
-            <div className='col-md-8 offset-md-2'>
+            <div className='col-lg-8 offset-lg-2'>
               <PostList
                 title='Made Tech Blog'
                 description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
