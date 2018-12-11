@@ -1,19 +1,28 @@
 import React from 'react'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
+import initGists from './initGists'
 
-export default function Post ({ post }) {
-  return (
-    <article className='post'>
-      <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+export default class Post extends React.Component {
+  componentDidMount () {
+    initGists()
+  }
 
-      <PostMeta post={post} />
+  render () {
+    const post = this.props.post
 
-      <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
+    return (
+      <article className='post'>
+        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
 
-      <PostAboutAuthor author={post.author} />
-    </article>
-  )
+        <PostMeta post={post} />
+
+        <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
+
+        <PostAboutAuthor author={post.author} />
+      </article>
+    )
+  }
 }
 
 export { PostMeta }
