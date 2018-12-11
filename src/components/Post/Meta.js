@@ -14,7 +14,7 @@ export default function PostMeta ({ post }) {
   return (
     <div className='post_meta'>
       <span className='post_meta__avatar'>
-        <img src={post.author.avatar_urls.wordpress_96} />
+        <img src={post.author.avatar_urls.wordpress_96} alt='avatar' />
       </span>
 
       <span className='post_meta__text'>
