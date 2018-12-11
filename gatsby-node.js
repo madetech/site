@@ -34,12 +34,16 @@ exports.createPages = ({ graphql, actions }) => {
       const totalPages = Math.ceil(postEdges.length / postsPerPage)
 
       Array.from({ length: totalPages }).forEach((_, i) => {
+        const page = i + 1
+
         createPage({
-          path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+          path: i === 0 ? `/blog` : `/blog/${page}`,
           component: postListPageTemplate,
           context: {
             limit: postsPerPage,
             skip: i * postsPerPage,
+            page,
+            totalPages
           },
         })
       })

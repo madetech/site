@@ -2,8 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
+import Pagination from '../../components/Pagination'
 
-export default function Index ({ data }) {
+export default function Index ({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
   return (
@@ -16,6 +17,12 @@ export default function Index ({ data }) {
                 title='Made Tech Blog'
                 description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
                 posts={posts}
+                />
+
+              <Pagination
+                currentPage={pageContext.page}
+                hrefPrefix='/blog'
+                totalPages={pageContext.totalPages}
                 />
             </div>
           </div>
