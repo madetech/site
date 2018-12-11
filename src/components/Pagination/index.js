@@ -7,10 +7,8 @@ function buildHref(hrefPrefix, page) {
 }
 
 function PreviousPage ({ currentPage, hrefPrefix }) {
-  if (currentPage <= 1) return null
-
   return (
-    <Reactstrap.PaginationItem>
+    <Reactstrap.PaginationItem disabled={currentPage <= 1}>
       <Reactstrap.PaginationLink previous href={buildHref(hrefPrefix, currentPage - 1)}>
         « Prev
       </Reactstrap.PaginationLink>
@@ -19,10 +17,8 @@ function PreviousPage ({ currentPage, hrefPrefix }) {
 }
 
 function NextPage ({ currentPage, hrefPrefix, totalPages }) {
-  if (currentPage >= totalPages) return null
-
   return (
-    <Reactstrap.PaginationItem>
+    <Reactstrap.PaginationItem disabled={currentPage >= totalPages}>
       <Reactstrap.PaginationLink next href={buildHref(hrefPrefix, currentPage + 1)}>
         Next »
       </Reactstrap.PaginationLink>
@@ -36,7 +32,7 @@ function PageNumbers ({ currentPage, hrefPrefix, totalPages }) {
   switch (currentPage) {
     case 1:
     case 2:
-      pages = [1, 2, 3, 4, 5]
+      pages = [1, 2, 3, 4, 5].slice(0, totalPages)
       break;
     case totalPages:
       pages = [currentPage - 4, currentPage -3, currentPage -2, currentPage - 1, currentPage]
@@ -48,7 +44,7 @@ function PageNumbers ({ currentPage, hrefPrefix, totalPages }) {
       pages = [currentPage -2, currentPage - 1, currentPage, currentPage + 1, currentPage + 2]
   }
 
-  return pages.map((page) => {
+  return pages.filter(page => page > 0 && page <= totalPages).map((page) => {
     return (
       <Reactstrap.PaginationItem active={currentPage === page}>
         <Reactstrap.PaginationLink href={buildHref(hrefPrefix, page)}>
@@ -61,7 +57,7 @@ function PageNumbers ({ currentPage, hrefPrefix, totalPages }) {
 
 export default function Pagination ({ currentPage, hrefPrefix, totalPages }) {
   return (
-    <Reactstrap.Pagination size='lg'>
+    <Reactstrap.Pagination size='md' listClassName='justify-content-center'>
       <PreviousPage currentPage={currentPage} hrefPrefix={hrefPrefix} />
       <PageNumbers currentPage={currentPage} hrefPrefix={hrefPrefix} totalPages={totalPages} />
       <NextPage currentPage={currentPage} hrefPrefix={hrefPrefix} totalPages={totalPages} />
