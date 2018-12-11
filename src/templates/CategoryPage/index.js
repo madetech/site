@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
-import Pagination from '../../components/Pagination'
+import { Pagination } from '@madetech/frontend'
 
 export default function PostPageTemplate ({ data, pageContext }) {
   const category = data.wordpressCategory
