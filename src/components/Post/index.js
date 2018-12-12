@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
+import PostTags from './Tags'
 import initGists from './initGists'
 
 export default class Post extends React.Component {
@@ -33,4 +34,4 @@ export default class Post extends React.Component {
   }
 }
 
-export { PostMeta }
+export { PostMeta, PostTags }

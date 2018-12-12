@@ -1,7 +1,18 @@
 import React from 'react'
 import PostListItem from './Item'
+import { PostTags } from '../Post'
 
-export default function PostList ({ title, description, posts }) {
+function PostListTopics ({ topics }) {
+  if (!topics) return null
+
+  return (
+    <div className='post_list__topics'>
+      <strong>Topics:</strong> <PostTags tags={topics} />
+    </div>
+  )
+}
+
+export default function PostList ({ title, description, posts, topics }) {
   return (
     <div className='post_list'>
       <div className='post_list__brand'>
@@ -10,6 +21,8 @@ export default function PostList ({ title, description, posts }) {
         <p className='post_list__intro'>
           {description}
         </p>
+
+        <PostListTopics topics={topics} />
       </div>
 
       {posts.map(post => <PostListItem post={post} />)}

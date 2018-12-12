@@ -8,6 +8,8 @@
     font-size: .8rem;
     font-weight: bold;
     text-decoration: underline;
+    text-transform: uppercase;
+    white-space: nowrap;
 
     &:hover, &:focus {
       color: #439a63;

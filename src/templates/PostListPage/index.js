@@ -4,6 +4,18 @@ import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
 
+const highlightedTopics = [
+  { name: 'Agile Transformation', slug: 'agile-transformation' },
+  { name: 'Continuous Delivery', slug: 'continuous-delivery' },
+  { name: 'Cloud Automation', slug: 'cloud-automation' },
+  { name: 'DevOps', slug: 'devops' },
+  { name: 'Docker', slug: 'docker' },
+  { name: 'Extreme Programming', slug: 'extreme-programming-xp' },
+  { name: 'Upskilling & Training', slug: 'upskilling-and-training' },
+  { name: 'Press Releases', slug: 'press-releases' },
+  { name: 'Software Architecture', slug: 'software-architecture' },
+]
+
 export default function Index ({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
@@ -17,6 +29,7 @@ export default function Index ({ data, pageContext }) {
                 title='Made Tech Blog'
                 description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
                 posts={posts}
+                topics={highlightedTopics}
                 />
 
               <Pagination
