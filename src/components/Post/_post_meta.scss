@@ -13,20 +13,3 @@
     margin-right: 2rem;
   }
 }
-
-.post_meta__tag {
-  &:not(:last-child)::after {
-    content: ", ";
-  }
-
-  a {
-    color: #000;
-    font-size: .8rem;
-    font-weight: bold;
-    text-decoration: underline;
-
-    &:hover, &:focus {
-      color: #439a63;
-    }
-  }
-}

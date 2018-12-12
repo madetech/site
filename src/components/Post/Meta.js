@@ -1,14 +1,5 @@
 import React from 'react'
-
-function PostMetaTags ({ tags }) {
-  return tags.map((tag, i) => {
-    return (
-      <span className='post_meta__tag'>
-        <a href={`/blog/t/${tag.slug}`} key={i}>{tag.name}</a>
-      </span>
-    )
-  })
-}
+import PostTags from './Tags'
 
 export default function PostMeta ({ post }) {
   return (
@@ -19,7 +10,7 @@ export default function PostMeta ({ post }) {
 
       <span className='post_meta__text'>
         By {post.author.name}<br />
-        {post.date} – <PostMetaTags tags={post.categories} />
+        {post.date} – <PostTags tags={post.categories} />
       </span>
     </div>
   )
