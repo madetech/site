@@ -1,12 +1,13 @@
 import React from 'react'
 import '../../all.scss'
 import Meta from '../Meta'
-import { Header, TopBar } from '@madetech/frontend'
+import { Footer, Header, TopBar } from '@madetech/frontend'
 
 export default function Layout ({ data, children }) {
   return (
     <div>
       <Meta />
+
       <TopBar
         links={[
           <a href='/blog'>Blog</a>,
@@ -14,6 +15,7 @@ export default function Layout ({ data, children }) {
           <a href='/careers'>Careers</a>
         ]}
         />
+
       <Header
         logoHref='/'
         navLinks={[
@@ -36,7 +38,12 @@ export default function Layout ({ data, children }) {
           </a>
         ]}
         />
+
       {children}
+
+      <div className='mt-5'>
+        <Footer />
+      </div>
     </div>
   )
 }
