@@ -25,7 +25,7 @@ export default function PostList ({ title, description, posts, topics }) {
         <PostListTopics topics={topics} />
       </div>
 
-      {posts.map(post => <PostListItem post={post} />)}
+      {posts.map((post, i) => <PostListItem key={i} post={post} />)}
     </div>
   )
 }
