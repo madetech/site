@@ -34,8 +34,7 @@ export default class Post extends React.Component {
         <Hiring />
 
         {/* ConvertFlow Area */}
-        <div class='cf-1407-area-4492'></div>
-
+        <div className='cf-1407-area-4492'></div>
 
         {/* Disqus Comments */}
         <Disqus.DiscussionEmbed shortname={disqusShortname} config={{}} />
