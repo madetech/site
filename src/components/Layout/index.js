@@ -17,7 +17,7 @@ export default function Layout ({ data, children }) {
         />
 
       <Header
-        logoHref='/'
+        logoHref='/blog/'
         navLinks={[
           <a href='https://www.madetech.com/agile-transformation' className='nav-link'>
             Agile Team Transformation
