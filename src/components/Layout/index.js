@@ -32,9 +32,7 @@ export default function Layout ({ data, children }) {
           </a>,
 
           <a href='https://www.madetech.com/devops' className='nav-link'>
-            DevOps &amp;
-            <br className='d-none d-lg-block' />
-            Live Services
+            DevOps &amp; <br className='d-none d-lg-block' />Live Services
           </a>
         ]}
         />
