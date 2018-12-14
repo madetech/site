@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Disqus from 'disqus-react'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
 import PostTags from './Tags'
@@ -12,6 +13,7 @@ export default class Post extends React.Component {
 
   render () {
     const post = this.props.post
+    const disqusShortname = 'madetech'
 
     return (
       <article className='post' itemScope itemType='http://schema.org/BlogPosting'>
@@ -29,6 +31,9 @@ export default class Post extends React.Component {
         <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
 
         <PostAboutAuthor author={post.author} />
+        {/* Disqus Comments */}
+        <Disqus.DiscussionEmbed shortname={disqusShortname} config={{}} />
+
       </article>
     )
   }
