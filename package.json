@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@madetech/frontend": "^3.4.0",
+    "@madetech/frontend": "^3.4.1",
     "disqus-react": "^1.0.5",
     "dotenv": "^6.1.0",
     "gatsby": "^2.0.53",
