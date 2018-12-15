@@ -10,14 +10,14 @@ export default function Layout ({ data, children }) {
 
       <TopBar
         links={[
-          <a href='/blog'>Blog</a>,
-          <a href='/learn'>Learn</a>,
-          <a href='/careers'>Careers</a>
+          <a href='https://blog.madetech.com'>Blog</a>,
+          <a href='https://www.madetech.com/learn'>Learn</a>,
+          <a href='https://www.madetech.com/careers'>Careers</a>
         ]}
         />
 
       <Header
-        logoHref='/blog/'
+        logoHref='/'
         navLinks={[
           <a href='https://www.madetech.com/agile-transformation' className='nav-link'>
             Agile Team Transformation
