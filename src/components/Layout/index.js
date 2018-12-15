@@ -10,6 +10,7 @@ export default function Layout ({ data, children }) {
 
       <TopBar
         links={[
+          <a href='https://www.madetech.com'>Who are Made Tech?</a>,
           <a href='https://blog.madetech.com'>Blog</a>,
           <a href='https://learn.madetech.com'>Learn</a>,
           <a href='https://www.madetech.com/careers'>Careers</a>
