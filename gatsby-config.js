@@ -31,7 +31,14 @@ module.exports = {
           wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
           wpcom_user: process.env.WORDPRESS_USERNAME,
           wpcom_pass: process.env.WORDPRESS_PASSWORD
-        }
+        },
+        includedRoutes: [
+          "**/posts",
+          "**/categories",
+          "**/taxonomies",
+          "**/tags",
+          "**/users"
+        ],
       },
     },
   ],
