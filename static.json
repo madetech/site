@@ -5,5 +5,6 @@
       "Cache-Control": "public, max-age=0, must-revalidate"
     }
   },
-  "https_only": true
+  "https_only": true,
+  "clean_urls": true
 }
