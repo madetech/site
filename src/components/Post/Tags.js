@@ -3,7 +3,7 @@ import React from 'react'
 function PostTag ({ name, slug }) {
   return (
     <span className='post_tags__tag'>
-      <a href={`/t/${slug}`}>{name}</a>
+      <a href={`/blog/t/${slug}`}>{name}</a>
     </span>
   )
 }

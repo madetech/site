@@ -21,7 +21,7 @@ export default function PostPageTemplate ({ data, pageContext }) {
 
             <Pagination
               currentPage={pageContext.page}
-              hrefPrefix={`/t/${category.slug}`}
+              hrefPrefix={`/blog/t/${category.slug}`}
               totalPages={pageContext.totalPages}
               />
           </div>

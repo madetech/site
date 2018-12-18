@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
         const page = i + 1
 
         createPage({
-          path: i === 0 ? `/` : `/${page}`,
+          path: i === 0 ? `/blog` : `/blog/${page}`,
           component: postListPageTemplate,
           context: {
             limit: postsPerPage,
@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       postEdges.forEach(edge => {
         createPage({
-          path: `/${edge.node.slug}`,
+          path: `/blog/${edge.node.slug}`,
           component: slash(postPageTemplate),
           context: {
             id: edge.node.id,
@@ -116,7 +116,7 @@ exports.createPages = ({ graphql, actions }) => {
             const page = i + 1
 
             createPage({
-              path: i == 0 ? `/t/${edge.node.slug}` : `/t/${edge.node.slug}/${page}`,
+              path: i == 0 ? `/blog/t/${edge.node.slug}` : `/blog/t/${edge.node.slug}/${page}`,
               component: slash(categoryPageTemplate),
               context: {
                 id: edge.node.id,
@@ -136,4 +136,12 @@ exports.createPages = ({ graphql, actions }) => {
     createPostPages,
     createCategoryPages
   ])
+}
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    output: {
+      publicPath: '/blog'
+    }
+  })
 }

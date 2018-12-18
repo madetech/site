@@ -34,7 +34,7 @@ export default function Index ({ data, pageContext }) {
 
               <Pagination
                 currentPage={pageContext.page}
-                hrefPrefix='/'
+                hrefPrefix='/blog'
                 totalPages={pageContext.totalPages}
                 />
             </div>

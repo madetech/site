@@ -15,7 +15,7 @@ export default function Layout ({ data, children }) {
         <a href='https://www.madetech.com/careers'>Careers</a>
       </TopBar>
 
-      <Header logoHref='/'>
+      <Header logoHref='/blog'>
         <a href='https://www.madetech.com/agile-transformation' className='nav-link'>
           Agile Team Transformation
         </a>
