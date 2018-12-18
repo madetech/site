@@ -1,11 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { withPrefix } from 'gatsby'
 
 export default function Scripts () {
   return (
     <Helmet>
       {/* Syntax Highlighting */}
-      <script src='/prism.js'></script>
+      <script src={withPrefix('/prism.js')}></script>
 
       {/* HubSpot */}
       <script id='hs-script-loader' async defer src='//js.hs-scripts.com/554916.js'></script>

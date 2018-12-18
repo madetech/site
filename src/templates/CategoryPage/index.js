@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, withPrefix } from 'gatsby'
 import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
@@ -21,7 +21,7 @@ export default function PostPageTemplate ({ data, pageContext }) {
 
             <Pagination
               currentPage={pageContext.page}
-              hrefPrefix={`/blog/t/${category.slug}`}
+              hrefPrefix={withPrefix(`/t/${category.slug}`)}
               totalPages={pageContext.totalPages}
               />
           </div>

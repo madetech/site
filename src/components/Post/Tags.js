@@ -1,9 +1,10 @@
 import React from 'react'
+import { withPrefix } from 'gatsby'
 
 function PostTag ({ name, slug }) {
   return (
     <span className='post_tags__tag'>
-      <a href={`/blog/t/${slug}`}>{name}</a>
+      <a href={withPrefix(`/t/${slug}`)}>{name}</a>
     </span>
   )
 }

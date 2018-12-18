@@ -1,4 +1,5 @@
 import React from 'react'
+import { withPrefix } from 'gatsby'
 import '../../all.scss'
 import Meta from '../Meta'
 import { Footer, Header, TopBar } from '@madetech/frontend'
@@ -10,12 +11,12 @@ export default function Layout ({ data, children }) {
 
       <TopBar>
         <a href='https://www.madetech.com'>Who are Made Tech?</a>
-        <a href='https://blog.madetech.com'>Blog</a>
+        <a href={withPrefix('/')}>Blog</a>
         <a href='https://learn.madetech.com'>Learn</a>
         <a href='https://www.madetech.com/careers'>Careers</a>
       </TopBar>
 
-      <Header logoHref='/blog'>
+      <Header logoHref={withPrefix('/')}>
         <a href='https://www.madetech.com/agile-transformation' className='nav-link'>
           Agile Team Transformation
         </a>
