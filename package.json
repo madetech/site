@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "@madetech/blog",
+  "description": "Made Tech Blog built with Gatsby and WordPress.com",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Made Tech <hello@madetech.com>",
   "dependencies": {
     "@madetech/frontend": "^4.0.3",
     "disqus-react": "^1.0.5",
@@ -22,10 +22,7 @@
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "gatsby build --prefix-paths && mv public blog && mkdir public && mv blog public",
     "dev": "gatsby develop",
@@ -36,9 +33,5 @@
   },
   "devDependencies": {
     "prettier": "^1.15.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   }
 }
