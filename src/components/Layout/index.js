@@ -30,7 +30,7 @@ export default function Layout ({ data, children }) {
         </a>
 
         <a href='/devops' className='nav-link'>
-          DevOps &amp; <br className='d-none d-lg-block' />Live Services
+          DevOps&nbsp;&amp;&nbsp;<br />Live&nbsp;Services
         </a>
       </Header>
 
