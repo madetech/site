@@ -20,7 +20,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
     {
-      resolve: 'gatsby-source-wordpress',
+      resolve: '@madetech/gatsby-source-wordpress',
       options: {
         baseUrl: process.env.WORDPRESS_BASE_URL,
         protocol: 'https',
