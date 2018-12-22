@@ -6,7 +6,7 @@
     font-family: 'neuzeit-s-book';
     font-weight: bold;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       font-size: 3.5rem;
     }
   }
@@ -16,7 +16,7 @@
   color: #999;
   font-size: 1.6rem;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: 2rem;
   }
 }
