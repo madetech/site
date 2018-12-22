@@ -1,15 +1,22 @@
 .post_list__brand {
-  padding: 3rem 0;
-  
+  padding: 1rem 0 3rem 0;
+
   h1 {
     color: #000;
     font-family: 'neuzeit-s-book';
-    font-size: 3.5rem;
     font-weight: bold;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3.5rem;
+    }
   }
 }
 
 .post_list__intro {
   color: #999;
-  font-size: 2rem;
+  font-size: 1.6rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2rem;
+  }
 }
