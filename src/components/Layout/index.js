@@ -16,7 +16,7 @@ export default function Layout ({ data, children }) {
         <a href='/careers'>Careers</a>
       </TopBar>
 
-      <Header logoHref='/'>
+      <Header constrainLinkWidth logoHref='/'>
         <a href='/agile-transformation' className='nav-link'>
           Agile Team Transformation
         </a>
