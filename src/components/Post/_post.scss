@@ -1,58 +1,8 @@
-.post {
-  color: #444;
-  font-size: 1.3rem;
-
-  h1, h2, h3, h4 {
-    font-family: 'neuzeit-s-book';
-    font-weight: bold;
-    line-height: 1.5;
-  }
-
-  h1 {
-    color: #000;
-    padding: 3rem 0 1.5rem 0;
-  }
-
-  h2, h3, h4 {
-    color: #222;
-    padding: 1rem 0 .5rem 0;
-  }
-}
-
 .post__body {
-  blockquote {
-    background: #f9f9f9;
-    border-left: 10px solid #ccc;
-    margin: 2.5rem 0px 0px 2.5rem;
-    padding: .5rem 1.5rem;
-    quotes: "\201C" "\201D" "\2018" "\2019";
-
-    &:before {
-      color: #ccc;
-      content: open-quote;
-      font-family: Helvetica;
-      font-size: 7em;
-      line-height: 0.1em;
-      margin-right: 0.25em;
-      vertical-align: -0.4em;
-    }
-  }
-
   img {
     height: auto !important;
     max-width: 100% !important;
   }
-
-  a {
-    color: #000;
-    font-weight: bold;
-    text-decoration: underline;
-
-    &:hover, &:focus {
-      color: #439a63;
-    }
-  }
-
 
   code[class*="language-"],
   pre[class*="language-"] {
@@ -74,7 +24,6 @@
   	-moz-hyphens: none;
   	-ms-hyphens: none;
   	hyphens: none;
-
   }
 
   pre[class*="language-"] {

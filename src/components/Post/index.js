@@ -1,5 +1,6 @@
 import React from 'react'
 import Disqus from 'disqus-react'
+import { Prose } from '@madetech/frontend'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
 import PostScripts from './Scripts'
@@ -20,26 +21,28 @@ export default class Post extends React.Component {
 
     return (
       <article className='post' itemScope itemType='http://schema.org/BlogPosting'>
-        <meta itemProp='datePublished' content='{{ post.date }}' />
-        <meta itemProp='headline' content='{{post.title}}' />
+        <Prose>
+          <meta itemProp='datePublished' content='{{ post.date }}' />
+          <meta itemProp='headline' content='{{post.title}}' />
 
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
 
-        <PostMeta post={post}  />
+          <PostMeta post={post}  />
 
-        <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
 
-        <PostAboutAuthor author={post.author} />
+          <PostAboutAuthor author={post.author} />
 
-        <Hiring />
+          <Hiring />
 
-        {/* ConvertFlow Area */}
-        <div className='cf-1407-area-4492'></div>
+          {/* ConvertFlow Area */}
+          <div className='cf-1407-area-4492'></div>
 
-        {/* Disqus Comments */}
-        <Disqus.DiscussionEmbed shortname={disqusShortname} config={{}} />
+          {/* Disqus Comments */}
+          <Disqus.DiscussionEmbed shortname={disqusShortname} config={{}} />
 
-        <PostScripts />
+          <PostScripts />
+        </Prose>
       </article>
     )
   }
