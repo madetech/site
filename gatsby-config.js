@@ -1,6 +1,12 @@
 require('dotenv').config()
 
 module.exports = {
+  siteMetadata: {
+    title: 'Made Tech Blog',
+    description: 'Read about the latest trends and techniques being used to deliver modern web applications. Featuring articles from the team at Made Tech and guest posts by selected industry experts.',
+    siteUrl: 'https://www.madetech.com/blog',
+    keywords: 'Made, Blog, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
+  },
   pathPrefix: '/blog',
   plugins: [
     'gatsby-plugin-react-helmet',

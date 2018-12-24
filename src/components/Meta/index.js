@@ -1,23 +1,44 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
-export default function Meta () {
+function MetaHelmet ({ title, description, keywords, siteUrl }) {
   return (
     <Helmet>
       <html lang='en' />
-      <title>Made Tech Blog</title>
-      <meta name='description' content='Read about the latest trends and techniques being used to deliver modern web applications. Featuring articles from the team at Made Tech and guest posts by selected industry experts.' />
-      <meta name='keywords' content='Made, Blog, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails' />
-      <meta property='og:url' content='https://www.madetech.com/blog' />
-      <meta property='og:title' content='Made Tech Blog' />
-      <meta property='og:description' content='Read about the latest trends and techniques being used to deliver modern web applications. Featuring articles from the team at Made Tech and guest posts by selected industry experts.' />
+      <title>{title}</title>
+      <meta name='description' content={description} />
+      <meta name='keywords' content={keywords} />
+      <meta property='og:url' content={siteUrl} />
+      <meta property='og:title' content={title} />
+      <meta property='og:description' content={description} />
 
       <link
-        href='http://www.madetech.com/feed'
+        href={`${siteUrl}/rss.xml`}
         rel='alternate'
-        type='application/atom+xml'
-        title='Latest blog posts from Made Tech'
+        type='application/rss+xml'
+        title={`${title} – ${description}`}
         />
     </Helmet>
+  )
+}
+
+export default function Meta () {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+              description
+              keywords
+              siteUrl
+            }
+          }
+        }
+      `}
+      render={data => <MetaHelmet {...data.site.siteMetadata} />}
+      />
   )
 }
