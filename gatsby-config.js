@@ -45,5 +45,66 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allWordpressPost } }) => {
+              return allWordpressPost.edges.map(({ node }) => {
+                return {
+                  title: node.title,
+                  description: node.excerpt,
+                  author: node.author.name,
+                  categories: node.categories.map(({ name }) => name),
+                  date: node.date,
+                  url: `${site.siteMetadata.siteUrl}/${node.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/${node.slug}`,
+                  custom_elements: [{ "content:encoded": node.content }],
+                }
+              })
+            },
+            query: `
+              {
+                allWordpressPost(
+                  sort: { fields: [date], order: DESC },
+                  limit: 10
+                ) {
+                  edges {
+                    node {
+                      title
+                      excerpt
+                      content
+                      slug
+                      date
+                      author {
+                        name
+                      }
+                      categories {
+                        name
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml'
+          },
+        ],
+      },
+    },
   ],
 }
