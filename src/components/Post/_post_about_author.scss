@@ -1,8 +1,12 @@
 .post_about_author {
   background: #f9f9f9;
   border-radius: 1rem;
-  margin: 2rem -2rem;
+  margin: 2rem 0;
   padding: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin: 2rem -2rem;
+  }
 }
 
 .post_about_author__avatar {
