@@ -5,7 +5,7 @@ import Post from '../../components/Post'
 
 export default function PostPageTemplate ({ data }) {
   return (
-    <Layout>
+    <Layout titlePrefix={data.wordpressPost.title}>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 offset-lg-2'>

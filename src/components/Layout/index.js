@@ -4,10 +4,10 @@ import '../../all.scss'
 import Meta from '../Meta'
 import { Footer, Header, TopBar } from '@madetech/frontend'
 
-export default function Layout ({ data, children }) {
+export default function Layout ({ children, data, titlePrefix }) {
   return (
     <div>
-      <Meta />
+      <Meta titlePrefix={titlePrefix} />
 
       <TopBar>
         <a href='/'>Who are Made Tech?</a>

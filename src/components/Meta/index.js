@@ -23,7 +23,16 @@ function MetaHelmet ({ title, description, keywords, siteUrl }) {
   )
 }
 
-export default function Meta () {
+export default function Meta ({ titlePrefix }) {
+  const renderMetaHelmet = data => {
+    const metadata = { ...data.site.siteMetadata }
+    if (titlePrefix) metadata.title = `${titlePrefix} – ${metadata.title}`
+
+    return (
+      <MetaHelmet {...metadata} />
+    )
+  }
+
   return (
     <StaticQuery
       query={graphql`
@@ -38,7 +47,7 @@ export default function Meta () {
           }
         }
       `}
-      render={data => <MetaHelmet {...data.site.siteMetadata} />}
+      render={renderMetaHelmet}
       />
   )
 }

@@ -9,7 +9,7 @@ export default function PostPageTemplate ({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
   return (
-    <Layout>
+    <Layout titlePrefix={category.name}>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 offset-lg-2' style={{ fontSize: '1.3rem' }}>
