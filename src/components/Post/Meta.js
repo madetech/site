@@ -10,7 +10,11 @@ export default function PostMeta ({ post }) {
 
       <span className='post_meta__text'>
         By {post.author.name}<br />
-        {post.date} – <PostTags tags={post.categories} />
+        {post.date}
+        <span className='d-none d-md-inline'> – </span>
+        <span className='d-block d-md-inline'>
+          <PostTags tags={post.categories} />
+        </span>
       </span>
     </div>
   )
