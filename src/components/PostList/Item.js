@@ -9,9 +9,9 @@ export default function PostListItem ({ post }) {
         <a href={withPrefix(`/${post.slug}`)} dangerouslySetInnerHTML={{ __html: post.title }} />
       </h2>
 
-      <div className='lead' dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-
       <PostMeta post={post} />
+
+      <div className='lead' dangerouslySetInnerHTML={{ __html: post.excerpt }} />
     </div>
   )
 }
