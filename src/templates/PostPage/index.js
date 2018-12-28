@@ -1,15 +1,27 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, withPrefix } from 'gatsby'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
 
 export default function PostPageTemplate ({ data }) {
+  const { title } = data.wordpressPost
+  const post = {
+    ...data.wordpressPost,
+    title: (
+      <>
+        <small><a href={withPrefix('/')}>Made Tech Blog</a></small><br />
+        <span dangerouslySetInnerHTML={{ __html: title }} />
+      </>
+    )
+  }
+
+
   return (
-    <Layout titlePrefix={data.wordpressPost.title}>
+    <Layout titlePrefix={title}>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 offset-lg-2'>
-            <Post post={data.wordpressPost} />
+            <Post post={post} />
           </div>
         </div>
       </div>

@@ -14,7 +14,12 @@ export default function PostPageTemplate ({ data, pageContext }) {
         <div className='row'>
           <div className='col-lg-8 offset-lg-2' style={{ fontSize: '1.3rem' }}>
             <PostList
-              title={category.name}
+              title={
+                <>
+                  <small><a href={withPrefix('/')}>Made Tech Blog</a></small><br />
+                  {category.name}
+                </>
+              }
               description={category.description}
               posts={posts}
               />
