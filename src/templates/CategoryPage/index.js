@@ -16,7 +16,7 @@ export default function PostPageTemplate ({ data, pageContext }) {
             <PostList
               title={
                 <>
-                  <small><a href={withPrefix('/')}>Made Tech Blog</a></small><br />
+                  <small><a href={withPrefix('')}>Made Tech Blog</a></small><br />
                   {category.name}
                 </>
               }

@@ -9,7 +9,7 @@ export default function PostPageTemplate ({ data }) {
     ...data.wordpressPost,
     title: (
       <>
-        <small><a href={withPrefix('/')}>Made Tech Blog</a></small><br />
+        <small><a href={withPrefix('')}>Made Tech Blog</a></small><br />
         <span dangerouslySetInnerHTML={{ __html: title }} />
       </>
     )

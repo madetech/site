@@ -11,7 +11,7 @@ export default function Layout ({ children, data, titlePrefix }) {
 
       <TopBar>
         <a href='/'>Who are Made Tech?</a>
-        <a href={withPrefix('/')}>Blog</a>
+        <a href={withPrefix('')}>Blog</a>
         <a href='https://learn.madetech.com'>Learn</a>
         <a href='/careers'>Careers</a>
       </TopBar>
