@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, withPrefix } from 'gatsby'
+import { graphql } from 'gatsby'
+import withPrefix from '../../helpers/withPrefix'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
 
@@ -14,7 +15,6 @@ export default function PostPageTemplate ({ data }) {
       </>
     )
   }
-
 
   return (
     <Layout titlePrefix={title}>

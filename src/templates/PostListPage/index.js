@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, withPrefix } from 'gatsby'
+import { graphql } from 'gatsby'
+import withPrefix from '../../helpers/withPrefix'
 import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
