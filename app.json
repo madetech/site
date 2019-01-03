@@ -4,7 +4,7 @@
       "url": "heroku/nodejs"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-static"
+      "url": "https://github.com/lukemorton/heroku-buildpack-static#serve-directories-without-trailing-slashes"
     }
   ]
 }

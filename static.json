@@ -5,6 +5,6 @@
       "Cache-Control": "public, max-age=0, must-revalidate"
     }
   },
-  "clean_urls": true,
+  "remove_trailing_slashes_from_directories": true,
   "https_only": true
 }
