@@ -1,5 +1,5 @@
 import React from 'react'
-import { withPrefix } from 'gatsby'
+import withPrefix from '../../helpers/withPrefix'
 import '../../all.scss'
 import Meta from '../Meta'
 import { Footer, Header, TopBar } from '@madetech/frontend'
