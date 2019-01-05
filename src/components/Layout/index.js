@@ -10,13 +10,13 @@ export default function Layout ({ children, data, titlePrefix }) {
       <Meta titlePrefix={titlePrefix} />
 
       <TopBar>
-        <a href='/'>Who are Made Tech?</a>
-        <a href={withPrefix('')}>Blog</a>
         <a href='https://learn.madetech.com'>Learn</a>
+        <a href={withPrefix('')}>Blog</a>
         <a href='/careers'>Careers</a>
+        <a href='/careers'>Contact</a>
       </TopBar>
 
-      <Header constrainLinkWidth logoHref='/'>
+      <Header constrainLinkWidth logoHref='/' scrollable>
         <a href='/agile-transformation' className='nav-link'>
           Agile Team Transformation
         </a>
@@ -30,7 +30,11 @@ export default function Layout ({ children, data, titlePrefix }) {
         </a>
 
         <a href='/devops' className='nav-link'>
-          DevOps&nbsp;&amp;&nbsp;<br />Live&nbsp;Services
+          DevOps
+        </a>
+
+        <a href='/live-services' className='nav-link'>
+          Reliability Engineering
         </a>
       </Header>
 
