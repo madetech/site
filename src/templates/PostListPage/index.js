@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import withPrefix from '../../helpers/withPrefix'
 import Layout from '../../components/Layout'
-import PostList from '../../components/PostList'
+import PostList, { PostListIntro } from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
 
 const highlightedTopics = [
@@ -23,15 +23,16 @@ export default function Index ({ data, pageContext }) {
   return (
     <Layout>
       <div className='post_list'>
+        <PostListIntro
+          title='Made Tech Blog'
+          description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
+          topics={highlightedTopics}
+          />
+
         <div className='container'>
           <div className='row'>
             <div className='col-lg-8 offset-lg-2'>
-              <PostList
-                title='Made Tech Blog'
-                description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
-                posts={posts}
-                topics={highlightedTopics}
-                />
+              <PostList posts={posts} />
 
               <Pagination
                 currentPage={pageContext.page}
