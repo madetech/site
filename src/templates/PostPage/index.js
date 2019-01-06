@@ -1,23 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import withPrefix from '../../helpers/withPrefix'
+import Jumbotron from '../../components/Jumbotron'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
 
 export default function PostPageTemplate ({ data }) {
-  const { title } = data.wordpressPost
-  const post = {
-    ...data.wordpressPost,
-    title: (
-      <>
-        <small><a href={withPrefix('')}>Made Tech Blog</a></small><br />
-        <span dangerouslySetInnerHTML={{ __html: title }} />
-      </>
-    )
-  }
+  const post = data.wordpressPost
 
   return (
-    <Layout titlePrefix={title}>
+    <Layout titlePrefix={post.title}>
+      <Jumbotron extraClassName='mb-5 py-3'>
+        <small><a href={withPrefix('')}>Made Tech Blog</a></small>
+      </Jumbotron>
+
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 offset-lg-2'>
