@@ -14,22 +14,18 @@ function PostListTopics ({ topics }) {
 
 export default function PostListIntro ({ title, description, topics }) {
   return (
-    <Jumbotron>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-lg-8 offset-lg-2'>
-            <div className='post_list_intro'>
-              <h1>{title}</h1>
+    <div className='post_list_intro'>
+      <Jumbotron>
+        <div className='post_list_intro__inner'>
+          <h1>{title}</h1>
 
-              <p className='post_list_intro__description'>
-                {description}
-              </p>
+          <p className='post_list_intro__description'>
+            {description}
+          </p>
 
-              <PostListTopics topics={topics} />
-            </div>
-          </div>
+          <PostListTopics topics={topics} />
         </div>
-      </div>
-    </Jumbotron>
+      </Jumbotron>
+    </div>
   )
 }
