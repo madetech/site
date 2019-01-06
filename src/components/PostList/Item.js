@@ -1,5 +1,6 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
+import { Prose } from '@madetech/frontend'
 import { PostMeta } from '../Post'
 
 export default function PostListItem ({ post }) {
@@ -9,9 +10,11 @@ export default function PostListItem ({ post }) {
         <a href={withPrefix(`/${post.slug}`)} dangerouslySetInnerHTML={{ __html: post.title }} />
       </h2>
 
-      <PostMeta post={post} />
+      <Prose>
+        <PostMeta post={post} />
 
-      <div className='lead' dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+        <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+      </Prose>
     </div>
   )
 }
