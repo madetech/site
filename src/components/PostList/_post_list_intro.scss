@@ -6,27 +6,21 @@
     color: white;
   }
 
-  small a {
-    color: #999;
-    font-family: $font-family-sans-serif;
-    font-size: $h2-font-size;
-    font-weight: bold;
-
-    &:hover,
-    &:focus {
-      color: $mt-green;
-      text-decoration: underline;
-    }
-  }
-
   a {
     color: #fff;
+    text-decoration: underline;
 
     &:hover,
     &:focus {
       color: #fff;
       text-decoration: none;
     }
+  }
+
+  small a {
+    font-family: $font-family-sans-serif;
+    font-size: $h2-font-size;
+    font-weight: bold;
   }
 
   @include media-breakpoint-up(md) {

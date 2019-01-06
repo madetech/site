@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import withPrefix from '../../helpers/withPrefix'
 import Layout from '../../components/Layout'
-import PostList from '../../components/PostList'
+import PostList, { PostListIntro } from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
 
 export default function PostPageTemplate ({ data, pageContext }) {
@@ -11,19 +11,20 @@ export default function PostPageTemplate ({ data, pageContext }) {
 
   return (
     <Layout titlePrefix={category.name}>
+      <PostListIntro
+        title={
+          <>
+            <small><a href={withPrefix('')}>Made Tech Blog</a></small><br />
+            {category.name}
+          </>
+        }
+        description={category.description}
+        />
+
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 offset-lg-2'>
-            <PostList
-              title={
-                <>
-                  <small><a href={withPrefix('')}>Made Tech Blog</a></small><br />
-                  {category.name}
-                </>
-              }
-              description={category.description}
-              posts={posts}
-              />
+            <PostList posts={posts} />
 
             <Pagination
               currentPage={pageContext.page}
