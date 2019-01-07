@@ -11,7 +11,13 @@ export default function PostPageTemplate ({ data }) {
   return (
     <Layout titlePrefix={post.title}>
       <Jumbotron extraClassName='mb-5 py-3'>
-        <small><a href={withPrefix('')}>Made Tech Blog</a></small>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-8 offset-lg-2'>
+              <small><a href={withPrefix('')}>Made Tech Blog</a></small>
+            </div>
+          </div>
+        </div>
       </Jumbotron>
 
       <div className='container'>

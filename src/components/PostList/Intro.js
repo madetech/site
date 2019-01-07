@@ -16,16 +16,22 @@ export default function PostListIntro ({ parent, title, description, topics }) {
   return (
     <div className='post_list_intro'>
       <Jumbotron>
-        <div className='post_list_intro__inner'>
-          {parent}
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-8 offset-lg-2'>
+              <div className='post_list_intro__inner'>
+                {parent}
 
-          <h1>{title}</h1>
+                <h1>{title}</h1>
 
-          <p className='post_list_intro__description'>
-            {description}
-          </p>
+                <p className='post_list_intro__description'>
+                  {description}
+                </p>
 
-          <PostListTopics topics={topics} />
+                <PostListTopics topics={topics} />
+              </div>
+            </div>
+          </div>
         </div>
       </Jumbotron>
     </div>

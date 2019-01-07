@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Made Tech <hello@madetech.com>",
   "dependencies": {
-    "@madetech/frontend": "^4.10.1",
+    "@madetech/frontend": "^4.11.0",
     "@madetech/gatsby-source-wordpress": "0.0.2",
     "disqus-react": "^1.0.5",
     "dotenv": "^6.1.0",
