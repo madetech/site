@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import withPrefix from '../../helpers/withPrefix'
-import Jumbotron from '../../components/Jumbotron'
+import { Jumbotron } from '@madetech/frontend'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
 

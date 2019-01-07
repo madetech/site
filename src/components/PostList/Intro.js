@@ -1,5 +1,5 @@
 import React from 'react'
-import Jumbotron from '../Jumbotron'
+import { Jumbotron } from '@madetech/frontend'
 import { PostTags } from '../Post'
 
 function PostListTopics ({ topics }) {
