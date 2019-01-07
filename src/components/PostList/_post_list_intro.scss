@@ -1,5 +1,9 @@
 .post_list_intro {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 3rem;
+  }
 }
 
 .post_list_intro__inner {
