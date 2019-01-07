@@ -9,9 +9,13 @@ function PostTag ({ name, slug }) {
   )
 }
 
-export default function PostTags ({ tags }) {
+export default function PostTags ({ extraClassName, tags }) {
+  let className = 'post_tags'
+
+  if (extraClassName) className += ` ${extraClassName}`
+
   return (
-    <span className='post_tags'>
+    <span className={className}>
       {tags.map((tag, i) => <PostTag key={i} name={tag.name} slug={tag.slug} />)}
     </span>
   )

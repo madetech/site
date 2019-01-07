@@ -1,8 +1,4 @@
-.post_tags__tag {
-  &:not(:last-child)::after {
-    content: ", ";
-  }
-
+.post_tags {
   a {
     font-size: .8rem;
     font-weight: bold;
@@ -14,4 +10,17 @@
       color: #439a63;
     }
   }
+
+  &.light a {
+    color: #fff;
+
+    &:hover, &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.post_tags__tag:not(:last-child)::after {
+  content: ", ";
 }

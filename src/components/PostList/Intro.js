@@ -7,7 +7,7 @@ function PostListTopics ({ topics }) {
 
   return (
     <div className='post_list__topics'>
-      <strong>Topics:</strong> <PostTags tags={topics} />
+      <strong>Topics:</strong> <PostTags extraClassName='light' tags={topics} />
     </div>
   )
 }
