@@ -13,7 +13,7 @@ export default function Layout ({ children, data, titlePrefix }) {
         <a href='https://learn.madetech.com'>Learn</a>
         <a href={withPrefix('')}>Blog</a>
         <a href='/careers'>Careers</a>
-        <a href='/careers'>Contact</a>
+        <a href='/contact'>Contact</a>
       </TopBar>
 
       <Header constrainLinkWidth logoHref='/' scrollable>
@@ -33,7 +33,7 @@ export default function Layout ({ children, data, titlePrefix }) {
           DevOps
         </a>
 
-        <a href='/live-services' className='nav-link'>
+        <a href='/support-and-maintainance' className='nav-link'>
           Reliability Engineering
         </a>
       </Header>
