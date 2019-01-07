@@ -12,11 +12,13 @@ function PostListTopics ({ topics }) {
   )
 }
 
-export default function PostListIntro ({ title, description, topics }) {
+export default function PostListIntro ({ parent, title, description, topics }) {
   return (
     <div className='post_list_intro'>
       <Jumbotron>
         <div className='post_list_intro__inner'>
+          {parent}
+
           <h1>{title}</h1>
 
           <p className='post_list_intro__description'>

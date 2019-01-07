@@ -12,12 +12,8 @@ export default function PostPageTemplate ({ data, pageContext }) {
   return (
     <Layout titlePrefix={category.name}>
       <PostListIntro
-        title={
-          <>
-            <small><a href={withPrefix('')}>Made Tech Blog</a></small><br />
-            {category.name}
-          </>
-        }
+        parent={<small><a href={withPrefix('')}>Made Tech Blog</a></small>}
+        title={category.name}
         description={category.description}
         />
 
