@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "author": "Made Tech <hello@madetech.com>",
   "dependencies": {
-    "@madetech/frontend": "^4.11.3",
+    "@contentful/gatsby-transformer-contentful-richtext": "^12.1.2",
+    "@madetech/frontend": "^4.12.1",
     "@madetech/gatsby-source-wordpress": "0.0.2",
     "disqus-react": "^1.0.5",
     "dotenv": "^6.1.0",
@@ -16,6 +17,7 @@
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "^2.0.12",
+    "gatsby-source-contentful": "^2.0.22",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
     "node-sass": "^4.10.0",

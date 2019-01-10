@@ -3,6 +3,10 @@
 
   @include media-breakpoint-up(md) {
     margin-bottom: 3rem;
+
+    h1 {
+      font-size: 3.5rem;
+    }
   }
 }
 
@@ -11,5 +15,10 @@
 }
 
 .post_list_intro__description {
+  font-size: 1.6rem;
   margin-top: -1rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.8rem;
+  }
 }
