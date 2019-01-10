@@ -2,12 +2,49 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
+const contentfulPageTemplate = path.resolve('./src/templates/ContentfulPage/index.js')
 const postListPageTemplate = path.resolve('./src/templates/PostListPage/index.js')
 const postPageTemplate = path.resolve('./src/templates/PostPage/index.js')
 const categoryPageTemplate = path.resolve('./src/templates/CategoryPage/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+
+  const createContentfulPages = new Promise((resolve, reject) => {
+    const query = graphql(`
+      {
+        allContentfulPage {
+          edges {
+            node {
+              id
+              slug
+            }
+          }
+        }
+      }
+    `)
+
+    query.then(result => {
+      if (result.errors) {
+        console.error(result.errors)
+        reject(result.errors)
+      }
+
+      const postEdges = result.data.allContentfulPage.edges
+
+      postEdges.forEach(edge => {
+        createPage({
+          path: `/pages/${edge.node.slug}`,
+          component: slash(contentfulPageTemplate),
+          context: {
+            id: edge.node.id,
+          },
+        })
+      })
+
+      resolve()
+    })
+  })
 
   const createPostPages = new Promise((resolve, reject) => {
     const query = graphql(`
@@ -133,6 +170,7 @@ exports.createPages = ({ graphql, actions }) => {
   })
 
   return Promise.all([
+    createContentfulPages,
     createPostPages,
     createCategoryPages
   ])
