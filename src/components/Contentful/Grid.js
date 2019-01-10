@@ -16,8 +16,34 @@ export default function Grid ({ content, style }) {
           </div>
         </div>
       )
-      default:
-        return null
+    case 'ContentfulCard':
+      const cardHtml = content.childContentfulCardBodyRichTextNode.childContentfulRichText.html
+
+      return (
+        <div className={`col-lg-${content.columnWidth} offset-lg-${content.columnOffset} px-4`} key={i}>
+          <div className='contentful-card'>
+            <a href={content.link} className='card'>
+              <div className='card-body'>
+                <div className='d-flex justify-content-between align-items-center'>
+                  <div style={{ width: '35%' }}>
+                    <img
+                      alt={content.image.title}
+                      className='mw-100'
+                      src={content.image.fixed.src}
+                      />
+                  </div>
+
+                  <div style={{ width: '60%' }}>
+                    <div dangerouslySetInnerHTML={{ __html: cardHtml }} />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      )
+    default:
+      return null
     }
   })
 

@@ -20,19 +20,39 @@ export const pageQuery = graphql`
       title
       content {
       	__typename
-        ...jumbotron
         ...inlineImages
+        ...jumbotron
         ...prose
         ... on ContentfulGrid {
           name
           style
           content {
             __typename
+            ...card
             ...prose
           }
         }
       }
     }
+  }
+  fragment card on ContentfulCard {
+    name
+    columnWidth
+    columnOffset
+    childContentfulCardBodyRichTextNode {
+      childContentfulRichText {
+        html
+      }
+    }
+    image {
+      fixed(width: 800, height: 650) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
+    link
   }
   fragment inlineImages on ContentfulInlineImages {
     name

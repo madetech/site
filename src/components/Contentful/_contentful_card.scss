@@ -1,0 +1,18 @@
+.contentful-card {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  a.card {
+    color: black;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      border-color: #000;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
