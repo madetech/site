@@ -1,0 +1,10 @@
+.contentful-jumbotron {
+  .jumbotron p:last-child a {
+    @extend .btn;
+    @extend .btn-success;
+    @extend .btn-lg;
+    background: #00ce5f;
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
