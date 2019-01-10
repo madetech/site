@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function InlineImages ({ caption, images }) {
+export default function ContentfulInlineImages ({ caption, images }) {
   const imageComponents = images.map((image, i) => {
     return (
       <img
@@ -14,7 +14,7 @@ export default function InlineImages ({ caption, images }) {
   })
 
   return (
-    <div className='container my-5 text-center' key={i}>
+    <div className='container my-5 text-center'>
       <div className='row'>
         <div className='col-lg-10 offset-lg-1'>
           <p className='lead text-muted'>{content.caption}</p>
