@@ -7,7 +7,7 @@ export default function ContentfulJumbotron ({ backgroundUrl, columnWidth, colum
       <Jumbotron backgroundUrl={backgroundUrl}>
         <div className='container'>
           <div className='row'>
-            <div className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4 py-5`}>
+            <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
               <div className='lead' dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>
