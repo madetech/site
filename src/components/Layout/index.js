@@ -40,9 +40,7 @@ export default function Layout ({ children, data, titlePrefix }) {
 
       {children}
 
-      <div className='mt-5'>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }
