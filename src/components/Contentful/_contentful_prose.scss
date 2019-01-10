@@ -1,0 +1,19 @@
+.contentful-prose {
+  padding: map-get($spacers, 5) 0;
+
+  .prose p:last-child a {
+    @extend .btn;
+    @extend .btn-outline-success;
+    color: $mt-green;
+    font-weight: normal;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+
+  .contentful-grid & {
+    padding: 0;
+  }
+}

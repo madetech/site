@@ -1,0 +1,9 @@
+.contentful-grid {
+  margin-top: map-get($spacers, 5);
+}
+
+.contentful-grid.shaded {
+  padding: map-get($spacers, 5) 0;
+  background-color: #fcfcfc;
+  border-top: 1px solid #e0e0e0;
+}

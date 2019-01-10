@@ -9,9 +9,11 @@ export default function Grid ({ content, style }) {
 
       return (
         <div className={`col-lg-${content.columnWidth} offset-lg-${content.columnOffset} px-4`} key={i}>
-          <Prose key={i}>
-            <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
-          </Prose>
+          <div className='contentful-prose'>
+            <Prose key={i}>
+              <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
+            </Prose>
+          </div>
         </div>
       )
       default:
@@ -19,8 +21,11 @@ export default function Grid ({ content, style }) {
     }
   })
 
+  let className = 'contentful-grid'
+  if (style) className += ` ${style}`
+
   return (
-    <div className={`mt-5 ${style || ''}`}>
+    <div className={className}>
       <div className='container'>
         <div className='row'>
           {contentComponents}

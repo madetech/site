@@ -3,7 +3,7 @@ import { Prose } from '@madetech/frontend'
 
 export default function ContentfulProse ({ columnWidth, columnOffset, html }) {
   return (
-    <div className='py-5'>
+    <div className='contentful-prose'>
       <Prose>
         <div className='container'>
           <div className='row'>

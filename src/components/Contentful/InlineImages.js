@@ -17,7 +17,7 @@ export default function ContentfulInlineImages ({ caption, images }) {
     <div className='container my-5 text-center'>
       <div className='row'>
         <div className='col-lg-10 offset-lg-1'>
-          <p className='lead text-muted'>{content.caption}</p>
+          <p className='lead text-muted'>{caption}</p>
 
           <div className='d-lg-flex justify-content-between'>
             {imageComponents}
