@@ -4,14 +4,13 @@ import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
 import Prose from './Prose'
 
-function renderContent (content, i) {
+function renderContent (content) {
   switch (content.__typename) {
   case 'ContentfulInlineImages':
     return (
       <InlineImages
         caption={content.caption}
         images={content.images}
-        key={i}
         />
     )
   case 'ContentfulJumbotron':
@@ -20,7 +19,6 @@ function renderContent (content, i) {
         backgroundUrl={content.background && content.background.fixed.src}
         columnWidth={content.columnWidth}
         columnOffset={content.columnOffset}
-        key={i}
         html={content.childContentfulJumbotronBodyRichTextNode.childContentfulRichText.html}
         />
     )
@@ -29,14 +27,12 @@ function renderContent (content, i) {
       <Prose
         columnWidth={content.columnWidth}
         columnOffset={content.columnOffset}
-        key={i}
         html={content.childContentfulProseBodyRichTextNode.childContentfulRichText.html}
         />
     )
   case 'ContentfulGrid':
     return (
       <Grid
-         key={i}
          content={content.content}
          style={content.style}
          />
@@ -47,5 +43,17 @@ function renderContent (content, i) {
 }
 
 export default function Contentful ({ content }) {
-  return content.map(renderContent)
+  return (
+    <>
+      {content.map((content, i) => {
+        const id = content.name.toLowerCase().replace(/\s/g, '').replace('>', '-')
+
+        return (
+          <div id={id} key={i}>
+            {renderContent(content)}
+          </div>
+        )
+      })}
+    </>
+  )
 }

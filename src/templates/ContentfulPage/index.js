@@ -24,6 +24,7 @@ export const pageQuery = graphql`
         ...inlineImages
         ...prose
         ... on ContentfulGrid {
+          name
           style
           content {
             __typename
@@ -34,6 +35,7 @@ export const pageQuery = graphql`
     }
   }
   fragment inlineImages on ContentfulInlineImages {
+    name
     caption
     images {
       fixed(width: 400) {
@@ -45,6 +47,7 @@ export const pageQuery = graphql`
     }
   }
   fragment jumbotron on ContentfulJumbotron {
+    name
     childContentfulJumbotronBodyRichTextNode {
       childContentfulRichText {
         html
@@ -62,6 +65,7 @@ export const pageQuery = graphql`
     }
   }
   fragment prose on ContentfulProse {
+    name
     columnWidth
     columnOffset
     childContentfulProseBodyRichTextNode {
