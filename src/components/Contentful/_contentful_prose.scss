@@ -1,6 +1,17 @@
 .contentful-prose {
   margin: map-get($spacers, 5) 0;
 
+  img {
+    margin-bottom: map-get($spacers, 4);
+    width: 100%;
+  }
+
+  img.avatar {
+    border-radius: 50%;
+    max-width: 8rem;
+    width: auto;
+  }
+
   .prose {
     h1, h2, h3, h4, h5, h6 {
       &:first-child {

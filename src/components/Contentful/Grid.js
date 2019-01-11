@@ -10,10 +10,23 @@ export default function Grid ({ alignItems, content, id, style }) {
       let className = 'contentful-prose'
       if (content.textAlign) className += ` text-${content.textAlign}`
 
+      let imageComponent
+      if (content.image) {
+        let imageClassName = content.imageStyle || ''
+
+        imageComponent = (
+          <img
+            alt={content.image.title}
+            className={imageClassName}
+            src={content.image.fixed.src}
+            />
+        )
+      }
+
       return (
         <div className={`col-lg-${content.columnWidth} offset-lg-${content.columnOffset} px-4 my-3`} key={i}>
           <div className={className}>
-            {content.image && <img alt={content.image.title} className='w-100 mb-4' src={content.image.fixed.src} />}
+            {imageComponent}
 
             <Prose key={i}>
               <div dangerouslySetInnerHTML={{ __html: proseHtml }} />

@@ -106,6 +106,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    imageStyle
     textAlign
   }
 `
