@@ -12,7 +12,7 @@
   }
 
   &.with-background {
-    text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.6);
+    text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
 
     .jumbotron p:last-child a {
       @extend .btn-success;
