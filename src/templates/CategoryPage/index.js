@@ -12,7 +12,7 @@ export default function PostPageTemplate ({ data, pageContext }) {
   return (
     <Layout titlePrefix={category.name}>
       <PostListIntro
-        parent={<small><a href={withPrefix('')}>Made Tech Blog</a></small>}
+        parent={<small><a href={withPrefix('/blog')}>Made Tech Blog</a></small>}
         title={category.name}
         description={category.description}
         />
@@ -24,7 +24,7 @@ export default function PostPageTemplate ({ data, pageContext }) {
 
             <Pagination
               currentPage={pageContext.page}
-              hrefPrefix={withPrefix(`/t/${category.slug}`)}
+              hrefPrefix={withPrefix(`/blog/t/${category.slug}`)}
               totalPages={pageContext.totalPages}
               />
           </div>

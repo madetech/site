@@ -7,7 +7,7 @@ export default function PostListItem ({ post }) {
   return (
     <div className='post_list_item'>
       <h2>
-        <a href={withPrefix(`/${post.slug}`)} dangerouslySetInnerHTML={{ __html: post.title }} />
+        <a href={withPrefix(`/blog/${post.slug}`)} dangerouslySetInnerHTML={{ __html: post.title }} />
       </h2>
 
       <Prose>

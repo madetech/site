@@ -4,7 +4,7 @@ import { withPrefix } from 'gatsby'
 function PostTag ({ name, slug }) {
   return (
     <span className='post_tags__tag'>
-      <a href={withPrefix(`/t/${slug}`)}>{name}</a>
+      <a href={withPrefix(`/blog/t/${slug}`)}>{name}</a>
     </span>
   )
 }

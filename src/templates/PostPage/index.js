@@ -14,7 +14,7 @@ export default function PostPageTemplate ({ data }) {
         <div className='container'>
           <div className='row'>
             <div className='col-lg-8 offset-lg-2'>
-              <small><a href={withPrefix('')}>Made Tech Blog</a></small>
+              <small><a href={withPrefix('/blog')}>Made Tech Blog</a></small>
             </div>
           </div>
         </div>

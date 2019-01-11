@@ -7,7 +7,6 @@ module.exports = {
     siteUrl: 'https://www.madetech.com/blog',
     keywords: 'Made, Blog, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
   },
-  pathPrefix: '/blog',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
