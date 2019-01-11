@@ -1,10 +1,23 @@
 .contentful-jumbotron {
-  .jumbotron p:last-child a {
-    @extend .btn;
-    @extend .btn-success;
-    @extend .btn-lg;
-    background: #00ce5f;
-    font-weight: normal;
-    text-decoration: none;
+  .jumbotron p:last-child {
+    margin: 0;
+
+    a {
+      @extend .btn;
+      @extend .btn-lg;
+      @extend .btn-outline-light;
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+
+  &.with-background {
+    text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.6);
+
+    .jumbotron p:last-child a {
+      @extend .btn-success;
+      background: #00ce5f;
+      text-shadow: none;
+    }
   }
 }

@@ -1,9 +1,14 @@
 import React from 'react'
 import { Jumbotron } from '@madetech/frontend'
 
-export default function ContentfulJumbotron ({ backgroundUrl, columnWidth, columnOffset, html }) {
+export default function ContentfulJumbotron ({ backgroundUrl, columnWidth, columnOffset, html, id, textAlign }) {
+  let className = 'contentful-jumbotron'
+
+  if (backgroundUrl) className += ` with-background`
+  if (textAlign) className += ` text-${textAlign}`
+
   return (
-    <div className='contentful-jumbotron'>
+    <div className={className} id={id}>
       <Jumbotron backgroundUrl={backgroundUrl}>
         <div className='container'>
           <div className='row'>

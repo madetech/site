@@ -25,6 +25,7 @@ export const pageQuery = graphql`
         ...prose
         ... on ContentfulGrid {
           name
+          alignItems
           style
           content {
             __typename
@@ -57,6 +58,9 @@ export const pageQuery = graphql`
   fragment inlineImages on ContentfulInlineImages {
     name
     caption
+    columnWidth
+    columnOffset
+    constrainImageHeight
     images {
       fixed(width: 400) {
         height
@@ -83,6 +87,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    textAlign
   }
   fragment prose on ContentfulProse {
     name
@@ -93,5 +98,14 @@ export const pageQuery = graphql`
         html
       }
     }
+    image {
+      fixed(width: 1000) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
+    textAlign
   }
 `

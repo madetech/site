@@ -1,25 +1,30 @@
 import React from 'react'
 
-export default function ContentfulInlineImages ({ caption, images }) {
+export default function ContentfulInlineImages ({ caption, columnWidth, columnOffset, constrainImageHeight, id, images }) {
   const imageComponents = images.map((image, i) => {
     return (
-      <img
-        alt={image.title}
-        className='mx-3 my-3'
-        height='40'
-        key={i}
-        src={image.fixed.src}
-        />
+      <div className='mx-1 mx-md-3' key={i}>
+        <img
+          alt={image.title}
+          className='mw-100'
+          style={{ maxHeight: constrainImageHeight }}
+          src={image.fixed.src}
+          />
+      </div>
     )
   })
 
-  return (
-    <div className='container my-5 text-center'>
-      <div className='row'>
-        <div className='col-lg-10 offset-lg-1'>
-          <p className='lead text-muted'>{caption}</p>
+  let captionComponent
 
-          <div className='d-lg-flex justify-content-between'>
+  if (caption) captionComponent = <p className='lead text-muted'>{caption}</p>
+
+  return (
+    <div className='container my-5 text-center' id={id}>
+      <div className='row'>
+        <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
+          {captionComponent}
+
+          <div className='d-flex justify-content-between'>
             {imageComponents}
           </div>
         </div>

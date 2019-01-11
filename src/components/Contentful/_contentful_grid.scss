@@ -6,4 +6,16 @@
   padding: map-get($spacers, 5) 0;
   background-color: #fcfcfc;
   border-top: 1px solid #e0e0e0;
+
+  & + .contentful-grid {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 0;
+    padding-top: map-get($spacers, 5);
+  }
+
+  & + .contentful-grid.shaded {
+    border-top: 0;
+    margin-top: map-get($spacers, 5) * -1;
+    padding-top: 0;
+  }
 }
