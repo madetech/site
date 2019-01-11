@@ -27,7 +27,7 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "build": "gatsby build --prefix-paths && mv public blog && mkdir public && mv blog public && mv public/blog/robots.txt public/blog/favicon.ico public",
+    "build": "gatsby build --prefix-paths && mv public blog && mkdir public && mv blog/playground public && mv blog public && mv public/blog/robots.txt public/blog/favicon.ico public",
     "dev": "gatsby develop",
     "start": "gatsby serve --port ${PORT}",
     "format": "prettier --write \"src/**/*.js\"",
