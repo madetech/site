@@ -1,1 +1,1 @@
-web: bin/boot
+web: bin/build-then-boot
