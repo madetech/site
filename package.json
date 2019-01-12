@@ -27,12 +27,11 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "release": "gatsby build",
+    "build": "gatsby build",
     "dev": "gatsby develop",
     "start": "gatsby serve --port ${PORT}",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "prettier": "^1.15.2"

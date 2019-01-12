@@ -1,2 +1,1 @@
-release: npm run release
-web: bin/boot
+web: npm run build && bin/boot
