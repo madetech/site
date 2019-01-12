@@ -27,7 +27,7 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "build": "gatsby build",
+    "release": "gatsby build",
     "dev": "gatsby develop",
     "start": "gatsby serve --port ${PORT}",
     "format": "prettier --write \"src/**/*.js\"",
