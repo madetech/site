@@ -1,1 +1,1 @@
-web: npm run build && bin/boot
+web: bin/boot
