@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$PREVIEW" == "true" ]]; then
+  npm run dev -- --port ${PORT}
+elif [[ -n "$string" ]]; then
+  bin/boot
+fi
