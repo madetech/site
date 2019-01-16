@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ "$PREVIEW" == "true" ]]; then
+  echo "Booting using npm run dev..."
+  npm run dev -- --port ${PORT}
+else
+  echo "Booting using bin/boot..."
+  bin/boot
+fi
