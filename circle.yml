@@ -15,6 +15,9 @@ jobs:
       - run:
           name: Build
           command: npm run build
+      - run:
+          name: Install Heroku CLI
+          command: sudo npm install -g heroku && heroku plugins:install heroku-builds
       - save_cache:
           key: gatsby-cache
           paths:
