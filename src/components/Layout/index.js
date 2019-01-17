@@ -1,13 +1,15 @@
 import React from 'react'
 import withPrefix from '../../helpers/withPrefix'
 import '../../all.scss'
-import Meta from '../Meta'
+import Meta from './Meta'
+import Scripts from './Scripts'
 import { Footer, Header, TopBar } from '@madetech/frontend'
 
 export default function Layout ({ children, data, description, titlePrefix }) {
   return (
     <div>
       <Meta description={description} titlePrefix={titlePrefix} />
+      <Scripts />
 
       <TopBar>
         <a href='https://learn.madetech.com'>Learn</a>
