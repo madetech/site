@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: gatsby-cache
+          key: permanent-cache
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -19,10 +19,11 @@ jobs:
           name: Install Heroku CLI
           command: sudo npm install -g heroku && heroku plugins:install heroku-builds
       - save_cache:
-          key: gatsby-cache
+          key: permanent-cache
           paths:
             - ./.cache
             - ./public
+            - /usr/local/lib/node_modules
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
