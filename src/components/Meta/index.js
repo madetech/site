@@ -23,9 +23,10 @@ function MetaHelmet ({ title, description, keywords, siteUrl }) {
   )
 }
 
-export default function Meta ({ titlePrefix }) {
+export default function Meta ({ description, titlePrefix }) {
   const renderMetaHelmet = data => {
     const metadata = { ...data.site.siteMetadata }
+    if (description) metadata.description = description
     if (titlePrefix) metadata.title = `${titlePrefix} – ${metadata.title}`
 
     return (

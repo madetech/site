@@ -21,7 +21,10 @@ export default function Index ({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
   return (
-    <Layout>
+    <Layout
+      description='Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations.'
+      titlePrefix='Blog'
+      >
       <div className='post_list'>
         <PostListIntro
           title='Made Tech Blog'

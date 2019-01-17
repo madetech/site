@@ -9,7 +9,7 @@ export default function PostPageTemplate ({ data }) {
   const post = data.wordpressPost
 
   return (
-    <Layout titlePrefix={post.title}>
+    <Layout description={post.excerpt} titlePrefix={post.title}>
       <Jumbotron extraClassName='mb-5 py-3'>
         <div className='container'>
           <div className='row'>
@@ -36,6 +36,7 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      excerpt
       slug
       date(formatString: "Do MMMM YYYY")
       author {

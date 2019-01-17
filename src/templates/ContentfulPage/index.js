@@ -7,7 +7,7 @@ export default function ContentfulPageTemplate ({ data }) {
   const page = data.contentfulPage
 
   return (
-    <Layout titlePrefix={page.title}>
+    <Layout description={page.description} titlePrefix={page.title}>
       <Contentful content={page.content} />
     </Layout>
   )
@@ -18,6 +18,7 @@ export const pageQuery = graphql`
     contentfulPage(id: { eq: $id }) {
       id
       title
+      description
       content {
       	__typename
         ...inlineImages
