@@ -33,8 +33,8 @@ jobs:
           from: public
           to: 's3://$AWS_BUCKET'
           arguments: |
-            --acl public-read
-          overwrite: true
+            --acl public-read \
+            --delete
 workflows:
   version: 2
   build_and_deploy:
