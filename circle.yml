@@ -15,9 +15,13 @@ jobs:
       - run:
           name: Build
           command: npm run build
-      - aws-cli/install
-      - aws-cli/configure
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+  deploy:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - aws-cli/install
+      - aws-cli/configure
