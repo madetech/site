@@ -27,7 +27,9 @@ jobs:
     docker:
       - image: circleci/python:2.7
     steps:
-      - aws-3/sync:
+      - attach_workspace:
+          at: .
+      - aws-s3/sync:
           from: public
           to: 's3://$AWS_BUCKET'
           arguments: |
