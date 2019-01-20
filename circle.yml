@@ -175,6 +175,6 @@ workflows:
             branches:
               only:
                 - production
-      - deploy_production:
+      - deploy_preview:
           requires:
           - build_preview
