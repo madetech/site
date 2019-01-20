@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@0.1.8
 jobs:
-  build:
+  build_published:
     docker:
       - image: circleci/node:latest
     steps:
@@ -96,7 +96,7 @@ workflows:
   version: 2
   master_pipeline:
     jobs:
-      - build:
+      - build_published:
           filters:
             branches:
               only:
@@ -113,7 +113,7 @@ workflows:
             - hold
   production:
     jobs:
-      - build:
+      - build_published:
           filters:
             branches:
               only:
