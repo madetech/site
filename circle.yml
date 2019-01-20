@@ -41,7 +41,7 @@ jobs:
             --include "*.js" \
             --include "*.css"
       - aws-s3/sync:
-          from: public/**/*.html
+          from: public/
           to: 's3://$AWS_BUCKET_STAGING'
           arguments: |
             --acl public-read \
