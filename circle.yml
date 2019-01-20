@@ -128,7 +128,7 @@ workflows:
                 - master
       - deploy_staging:
           requires:
-            - build
+            - build_published
       - hold:
           type: approval
           requires:
@@ -138,11 +138,6 @@ workflows:
             - hold
   production:
     jobs:
-      - build_preview:
-          filters:
-            branches:
-              only:
-                - production
       - build_published:
           filters:
             branches:
@@ -150,4 +145,9 @@ workflows:
                 - production
       - deploy_production:
           requires:
-          - build
+          - build_published
+      - build_preview:
+          filters:
+            branches:
+              only:
+                - production
