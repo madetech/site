@@ -30,19 +30,25 @@ jobs:
       - attach_workspace:
           at: .
       - aws-s3/sync:
-          from: public/{**/*.js,**/*.css,static/}
+          from: public/
           to: 's3://$AWS_BUCKET_STAGING'
           arguments: |
             --acl public-read \
             --cache-control public,max-age=31536000,immutable \
-            --delete
+            --delete \
+            --exclude "*" \
+            --include "static/*" \
+            --include "*.js" \
+            --include "*.css"
       - aws-s3/sync:
           from: public/**/*.html
           to: 's3://$AWS_BUCKET_PRODUCTION'
           arguments: |
             --acl public-read \
             --cache-control public,max-age=0,must-revalidate \
-            --delete
+            --delete \
+            --exclude "*" \
+            --include "*.html"
             --acl public-read \
             --delete
 workflows:
