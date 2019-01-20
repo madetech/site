@@ -24,6 +24,31 @@ jobs:
           paths:
             - .git
             - public
+  build_preview:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM Dependencies
+          command: if ! test -d node_modules; then npm install; fi
+      - run:
+          name: Build Static Site
+          command: npm run build
+          environment:
+            CONTENTFUL_HOST: preview.contentful.com
+            CONTENTFUL_ACCESS_TOKEN: $CONTENTFUL_PREVIEW_ACCESS_TOKEN
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .git
+            - public
   deploy_staging:
     docker:
       - image: circleci/python:2.7
@@ -113,6 +138,11 @@ workflows:
             - hold
   production:
     jobs:
+      - build_preview:
+          filters:
+            branches:
+              only:
+                - production
       - build_published:
           filters:
             branches:
