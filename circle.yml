@@ -42,7 +42,7 @@ jobs:
             --include "*.css"
       - aws-s3/sync:
           from: public/**/*.html
-          to: 's3://$AWS_BUCKET_PRODUCTION'
+          to: 's3://$AWS_BUCKET_STAGING'
           arguments: |
             --acl public-read \
             --cache-control public,max-age=0,must-revalidate \
