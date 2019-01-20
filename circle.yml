@@ -10,10 +10,10 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Install node modules
+          name: Install NPM Dependencies
           command: if ! test -d node_modules; then npm install; fi
       - run:
-          name: Build
+          name: Build Static Site
           command: npm run build
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
