@@ -23,7 +23,7 @@ jobs:
           root: .
           paths:
             - public
-  deploy:
+  deploy_staging:
     docker:
       - image: circleci/python:2.7
     steps:
@@ -31,7 +31,7 @@ jobs:
           at: .
       - aws-s3/sync:
           from: public
-          to: 's3://$AWS_BUCKET'
+          to: 's3://$AWS_BUCKET_STAGING'
           arguments: |
             --acl public-read \
             --delete
