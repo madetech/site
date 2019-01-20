@@ -34,7 +34,7 @@ jobs:
       - deploy:
           name: Deploy JS, CSS and Assets to S3
           command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_STAGING --acl public-read \
+            aws s3 sync public/ s3://$AWS_BUCKET_STAGING \
             --cache-control public,max-age=31536000,immutable \
             --delete \
             --exclude "*" \
@@ -44,7 +44,7 @@ jobs:
       - deploy:
           name: Deploy HTML to S3
           command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_STAGING --acl public-read \
+            aws s3 sync public/ s3://$AWS_BUCKET_STAGING \
             --cache-control public,max-age=0,must-revalidate \
             --delete \
             --exclude "*" \
