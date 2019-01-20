@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  aws-s3: circleci/aws-s3@1.0.3
+  aws-cli: circleci/aws-cli@0.1.8
 jobs:
   build:
     docker:
@@ -29,28 +29,26 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - aws-s3/sync:
-          from: public/
-          to: 's3://$AWS_BUCKET_STAGING'
-          arguments: |
-            --acl public-read \
+      - aws-cli/install
+      - aws-cli/configure
+      - deploy:
+          name: Deploy JS, CSS and Assets to S3
+          command: |
+            aws s3 sync public/ s3://$AWS_BUCKET_STAGING --acl public-read \
             --cache-control public,max-age=31536000,immutable \
             --delete \
             --exclude "*" \
             --include "static/*" \
             --include "*.js" \
             --include "*.css"
-      - aws-s3/sync:
-          from: public/
-          to: 's3://$AWS_BUCKET_STAGING'
-          arguments: |
-            --acl public-read \
+      - deploy:
+          name: Deploy HTML to S3
+          command: |
+            aws s3 sync public/ s3://$AWS_BUCKET_STAGING --acl public-read \
             --cache-control public,max-age=0,must-revalidate \
             --delete \
             --exclude "*" \
             --include "*.html"
-            --acl public-read \
-            --delete
 workflows:
   version: 2
   build_and_deploy:
