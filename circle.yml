@@ -51,6 +51,34 @@ jobs:
             --delete \
             --exclude "*" \
             --include "*.html"
+  deploy_production:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - attach_workspace:
+          at: .
+      - aws-cli/install
+      - aws-cli/configure
+      - deploy:
+          name: Deploy JS, CSS and Assets to S3
+          command: |
+            aws s3 sync public/ s3://$AWS_BUCKET_PRODUCTION \
+            --acl public-read \
+            --cache-control public,max-age=31536000,immutable \
+            --delete \
+            --exclude "*" \
+            --include "static/*" \
+            --include "*.js" \
+            --include "*.css"
+      - deploy:
+          name: Deploy HTML to S3
+          command: |
+            aws s3 sync public/ s3://$AWS_BUCKET_PRODUCTION \
+            --acl public-read \
+            --cache-control public,max-age=0,must-revalidate \
+            --delete \
+            --exclude "*" \
+            --include "*.html"
 workflows:
   version: 2
   build_and_deploy:
@@ -59,3 +87,10 @@ workflows:
       - deploy_staging:
           requires:
             - build
+      - hold:
+          type: approval
+          requires:
+            - deploy_staging
+      - deploy_production:
+          requires:
+            - hold
