@@ -82,7 +82,7 @@ jobs:
             --include "*.html"
       - run:
           name: Push latest commit to production branch
-          command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git production
+          command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git HEAD:production
 workflows:
   version: 2
   build_and_deploy:
