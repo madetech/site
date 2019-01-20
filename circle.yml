@@ -76,7 +76,7 @@ jobs:
             --delete \
             --exclude "*" \
             --include "*.html"
-  push_production:
+  push_production_and_preview:
     docker:
       - image: circleci/python:2.7
     steps:
@@ -84,7 +84,7 @@ jobs:
           at: .
       - run:
           name: Push latest commit to production branch
-          command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git HEAD:production
+          command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git HEAD:production HEAD:preview
   deploy_production:
     docker:
       - image: circleci/python:2.7
@@ -143,7 +143,7 @@ jobs:
             --include "*.html"
 workflows:
   version: 2
-  master_pipeline:
+  master:
     jobs:
       - build_published:
           filters:
@@ -157,7 +157,7 @@ workflows:
           type: approval
           requires:
             - deploy_staging
-      - push_production:
+      - push_production_and_preview:
           requires:
             - hold
   production:
@@ -170,11 +170,13 @@ workflows:
       - deploy_production:
           requires:
           - build_published
+  preview:
+    jobs:
       - build_preview:
           filters:
             branches:
               only:
-                - production
+                - preview
       - deploy_preview:
           requires:
           - build_preview
