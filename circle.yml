@@ -155,6 +155,7 @@ workflows:
           requires:
             - build_published
       - slack/approval-notification:
+          message: https://staging.madetech.com is ready for review. Use workflow to deploy to production.
           requires:
             - deploy_staging
       - hold:
