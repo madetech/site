@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@0.1.8
+  slack: circleci/slack@1.0.0
 jobs:
   build_published:
     docker:
@@ -153,6 +154,9 @@ workflows:
       - deploy_staging:
           requires:
             - build_published
+      - slack/approval-notification:
+          requires:
+            - deploy_staging
       - hold:
           type: approval
           requires:
