@@ -114,6 +114,9 @@ jobs:
             --delete \
             --exclude "*" \
             --include "*.html"
+      - slack/notify:
+          color: '#439a63'
+          message: https://www.madetech.com has just been deployed.
   deploy_preview:
     docker:
       - image: circleci/python:2.7
