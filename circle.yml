@@ -49,7 +49,7 @@ jobs:
           paths:
             - .git
             - public
-  build_and_deploy_to_heroku:
+  build_and_deploy_staging:
     docker:
       - image: circleci/node:latest
     steps:
@@ -169,14 +169,11 @@ workflows:
   version: 2
   master:
     jobs:
-      - build_published:
+      - build_and_deploy_staging:
           filters:
             branches:
               only:
                 - master
-      - deploy_staging:
-          requires:
-            - build_published
       - slack/approval-notification:
           message: https://staging.madetech.com is ready for review. Use workflow to deploy to production.
           requires:
@@ -208,10 +205,3 @@ workflows:
       - deploy_preview:
           requires:
           - build_preview
-  build_and_deploy_to_heroku:
-    jobs:
-      - build_and_deploy_to_heroku:
-          filters:
-            branches:
-              only:
-                - build-and-deploy-to-heroku
