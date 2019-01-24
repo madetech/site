@@ -69,6 +69,11 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .git
+            - public
   deploy_staging:
     docker:
       - image: circleci/python:2.7
