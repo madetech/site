@@ -49,6 +49,26 @@ jobs:
           paths:
             - .git
             - public
+  build_and_deploy_staging:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM Dependencies
+          command: if ! test -d node_modules; then npm install; fi
+      - run:
+          name: Build Static Site
+          command: npm run build
+      - run:
+          name: Deploy Static Site to Staging
+          command: HEROKU_APP_NAME=$HEROKU_APP_NAME_STAGING npm run deploy
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
   deploy_staging:
     docker:
       - image: circleci/python:2.7
@@ -149,14 +169,11 @@ workflows:
   version: 2
   master:
     jobs:
-      - build_published:
+      - build_and_deploy_staging:
           filters:
             branches:
               only:
                 - master
-      - deploy_staging:
-          requires:
-            - build_published
       - slack/approval-notification:
           message: https://staging.madetech.com is ready for review. Use workflow to deploy to production.
           requires:

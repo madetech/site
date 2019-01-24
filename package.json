@@ -28,6 +28,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "gatsby build",
+    "deploy": "node bin/deploy.js",
     "dev": "gatsby develop",
     "start": "gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
