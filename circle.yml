@@ -174,12 +174,12 @@ workflows:
             branches:
               only:
                 - master
-      - slack/approval-notification:
-          message: https://staging.madetech.com is ready for review. Use workflow to deploy to production.
-          requires:
-            - build_and_deploy_staging
       - hold:
           type: approval
+          requires:
+            - build_and_deploy_staging
+      - slack/approval-notification:
+          message: https://staging.madetech.com is ready for review. Use workflow to deploy to production.
           requires:
             - build_and_deploy_staging
       - push_production_and_preview:
