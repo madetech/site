@@ -3,52 +3,6 @@ orbs:
   aws-cli: circleci/aws-cli@0.1.8
   slack: circleci/slack@1.0.0
 jobs:
-  build_published:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install NPM Dependencies
-          command: if ! test -d node_modules; then npm install; fi
-      - run:
-          name: Build Static Site
-          command: npm run build
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .git
-            - public
-  build_preview:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install NPM Dependencies
-          command: if ! test -d node_modules; then npm install; fi
-      - run:
-          name: Build Static Site
-          command: CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_PREVIEW_ACCESS_TOKEN npm run build
-          environment:
-            CONTENTFUL_HOST: preview.contentful.com
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .git
-            - public
   build_and_deploy_staging:
     docker:
       - image: circleci/node:latest
@@ -69,39 +23,53 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+  build_and_deploy_production:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM Dependencies
+          command: if ! test -d node_modules; then npm install; fi
+      - run:
+          name: Build Static Site
+          command: npm run build
+      - run:
+          name: Deploy Static Site to Production
+          command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PRODUCTION npm run deploy
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+  build_and_deploy_preview:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM Dependencies
+          command: if ! test -d node_modules; then npm install; fi
+      - run:
+          name: Build Static Site
+          command: CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_PREVIEW_ACCESS_TOKEN npm run build
+          environment:
+            CONTENTFUL_HOST: preview.contentful.com
+      - run:
+          name: Deploy Static Site to Preview
+          command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PREVIEW npm run deploy
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
       - persist_to_workspace:
           root: .
           paths:
             - .git
             - public
-  deploy_staging:
-    docker:
-      - image: circleci/python:2.7
-    steps:
-      - attach_workspace:
-          at: .
-      - aws-cli/install
-      - aws-cli/configure
-      - deploy:
-          name: Deploy JS, CSS and Assets to S3
-          command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_STAGING \
-            --acl public-read \
-            --cache-control public,max-age=31536000,immutable \
-            --delete \
-            --exclude "*" \
-            --include "static/*" \
-            --include "*.js" \
-            --include "*.css"
-      - deploy:
-          name: Deploy HTML to S3
-          command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_STAGING \
-            --acl public-read \
-            --cache-control public,max-age=0,must-revalidate \
-            --delete \
-            --exclude "*" \
-            --include "*.html"
   push_production_and_preview:
     docker:
       - image: circleci/python:2.7
@@ -111,65 +79,6 @@ jobs:
       - run:
           name: Push latest commit to production branch
           command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git HEAD:production HEAD:preview
-  deploy_production:
-    docker:
-      - image: circleci/python:2.7
-    steps:
-      - attach_workspace:
-          at: .
-      - aws-cli/install
-      - aws-cli/configure
-      - deploy:
-          name: Deploy JS, CSS and Assets to S3
-          command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_PRODUCTION \
-            --acl public-read \
-            --cache-control public,max-age=31536000,immutable \
-            --delete \
-            --exclude "*" \
-            --include "static/*" \
-            --include "*.js" \
-            --include "*.css"
-      - deploy:
-          name: Deploy HTML to S3
-          command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_PRODUCTION \
-            --acl public-read \
-            --cache-control public,max-age=0,must-revalidate \
-            --delete \
-            --exclude "*" \
-            --include "*.html"
-      - slack/notify:
-          color: '#439a63'
-          message: https://www.madetech.com has just been deployed.
-  deploy_preview:
-    docker:
-      - image: circleci/python:2.7
-    steps:
-      - attach_workspace:
-          at: .
-      - aws-cli/install
-      - aws-cli/configure
-      - deploy:
-          name: Deploy JS, CSS and Assets to S3
-          command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_PREVIEW \
-            --acl public-read \
-            --cache-control public,max-age=31536000,immutable \
-            --delete \
-            --exclude "*" \
-            --include "static/*" \
-            --include "*.js" \
-            --include "*.css"
-      - deploy:
-          name: Deploy HTML to S3
-          command: |
-            aws s3 sync public/ s3://$AWS_BUCKET_PREVIEW \
-            --acl public-read \
-            --cache-control public,max-age=0,must-revalidate \
-            --delete \
-            --exclude "*" \
-            --include "*.html"
 workflows:
   version: 2
   master:
@@ -192,21 +101,15 @@ workflows:
             - hold
   production:
     jobs:
-      - build_published:
+      - build_and_deploy_production:
           filters:
             branches:
               only:
                 - production
-      - deploy_production:
-          requires:
-          - build_published
   preview:
     jobs:
-      - build_preview:
+      - build_and_deploy_preview:
           filters:
             branches:
               only:
                 - preview
-      - deploy_preview:
-          requires:
-          - build_preview
