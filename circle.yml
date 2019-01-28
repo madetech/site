@@ -48,9 +48,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - slack/notify:
-          color: '#439a63'
-          message: https://www.madetech.com has just been deployed.
   build_and_deploy_preview:
     docker:
       - image: circleci/node:latest
