@@ -58,6 +58,16 @@ function renderContent (content, i) {
   }
 }
 
+function withErrorHandling (renderContent) {
+  return function (content, i) {
+    try {
+      return renderContent(content, i)
+    } catch (e) {
+      return <div>Render Content Error</div>
+    }
+  }
+}
+
 export default function Contentful ({ content }) {
-  return content.map(renderContent)
+  return content.map(withErrorHandling(renderContent))
 }
