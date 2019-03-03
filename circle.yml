@@ -19,6 +19,8 @@ jobs:
       - run:
           name: Deploy Static Site to Staging
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_STAGING npm run deploy
+      - slack/status:
+          fail_only: 'true'
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -44,6 +46,8 @@ jobs:
       - run:
           name: Deploy Static Site to Production
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PRODUCTION npm run deploy
+      - slack/status:
+          fail_only: 'true'
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -66,6 +70,8 @@ jobs:
       - run:
           name: Deploy Static Site to Preview
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PREVIEW npm run deploy
+      - slack/status:
+          fail_only: 'true'
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
