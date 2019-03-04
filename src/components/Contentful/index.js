@@ -1,4 +1,5 @@
 import React from 'react'
+import ConvertFlowArea from './ConvertFlowArea'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
@@ -42,6 +43,14 @@ function renderContent (content, i) {
         key={i}
         textAlign={content.textAlign}
         />
+    )
+  case 'ContentfulConvertFlowArea':
+    return (
+      <ConvertFlowArea
+         convertFlowDivClass={content.convertFlowDivClass}
+         id={id}
+         key={i}
+         />
     )
   case 'ContentfulGrid':
     return (
