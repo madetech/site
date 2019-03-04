@@ -63,6 +63,7 @@ function withErrorHandling (renderContent) {
     try {
       return renderContent(content, i)
     } catch (e) {
+      console.error(e)
       return <div>Render Content Error</div>
     }
   }
