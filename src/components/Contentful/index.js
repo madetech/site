@@ -54,7 +54,7 @@ function renderContent (content, i) {
          />
     )
   default:
-    return null
+    return <div>Unknown Content Type: {content.__typename}</div>
   }
 }
 
