@@ -5,10 +5,10 @@ import Meta from './Meta'
 import Scripts from './Scripts'
 import { Footer, Header, TopBar } from '@madetech/frontend'
 
-export default function Layout ({ children, data, description, titlePrefix }) {
+export default function Layout ({ children, data, description, titlePrefix, url }) {
   return (
     <div>
-      <Meta description={description} titlePrefix={titlePrefix} />
+      <Meta description={description} titlePrefix={titlePrefix} url={url} />
       <Scripts />
 
       <TopBar>

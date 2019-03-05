@@ -2,14 +2,14 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-function MetaHelmet ({ title, description, keywords, siteUrl }) {
+function MetaHelmet ({ title, description, keywords, url, siteUrl }) {
   return (
     <Helmet>
       <html lang='en' />
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content={keywords} />
-      <meta property='og:url' content={siteUrl} />
+      {url && <meta property='og:url' content={url} />}
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
 
@@ -23,11 +23,12 @@ function MetaHelmet ({ title, description, keywords, siteUrl }) {
   )
 }
 
-export default function Meta ({ description, titlePrefix }) {
+export default function Meta ({ description, titlePrefix, url }) {
   const renderMetaHelmet = data => {
     const metadata = { ...data.site.siteMetadata }
     if (description) metadata.description = description
     if (titlePrefix) metadata.title = `${titlePrefix} – ${metadata.title}`
+    if (url) metadata.url = url
 
     return (
       <MetaHelmet {...metadata} />

@@ -9,7 +9,11 @@ export default function PostPageTemplate ({ data }) {
   const post = data.wordpressPost
 
   return (
-    <Layout description={post.excerpt} titlePrefix={post.title}>
+    <Layout
+      description={post.excerpt}
+      titlePrefix={post.title}
+      url={withPrefix(`/blog/${post.slug}`)}
+      >
       <Jumbotron extraClassName='mb-5 py-3'>
         <div className='container'>
           <div className='row'>
