@@ -1,74 +1,92 @@
 import React from 'react'
 import ConvertFlowArea from './ConvertFlowArea'
+import HubSpotForm from './HubSpotForm'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
 import Prose from './Prose'
 
-function renderContent (content, i) {
-  const id = content.name.toLowerCase().replace(/\s/g, '').replace('>', '-')
+function renderContent(content, i) {
+  const id = content.name
+    .toLowerCase()
+    .replace(/\s/g, '')
+    .replace('>', '-')
 
   switch (content.__typename) {
-  case 'ContentfulInlineImages':
-    return (
-      <InlineImages
-        caption={content.caption}
-        columnWidth={content.columnWidth}
-        columnOffset={content.columnOffset}
-        constrainImageHeight={content.constrainImageHeight}
-        id={id}
-        key={i}
-        images={content.images}
+    case 'ContentfulInlineImages':
+      return (
+        <InlineImages
+          caption={content.caption}
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+          constrainImageHeight={content.constrainImageHeight}
+          id={id}
+          key={i}
+          images={content.images}
         />
-    )
-  case 'ContentfulJumbotron':
-    return (
-      <Jumbotron
-        backgroundUrl={content.background && content.background.fixed.src}
-        columnWidth={content.columnWidth}
-        columnOffset={content.columnOffset}
-        html={content.childContentfulJumbotronBodyRichTextNode.childContentfulRichText.html}
-        id={id}
-        key={i}
-        textAlign={content.textAlign}
+      )
+    case 'ContentfulJumbotron':
+      return (
+        <Jumbotron
+          backgroundUrl={content.background && content.background.fixed.src}
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+          html={
+            content.childContentfulJumbotronBodyRichTextNode
+              .childContentfulRichText.html
+          }
+          id={id}
+          key={i}
+          textAlign={content.textAlign}
         />
-    )
-  case 'ContentfulProse':
-    return (
-      <Prose
-        columnWidth={content.columnWidth}
-        columnOffset={content.columnOffset}
-        html={content.childContentfulProseBodyRichTextNode.childContentfulRichText.html}
-        id={id}
-        key={i}
-        textAlign={content.textAlign}
+      )
+    case 'ContentfulProse':
+      return (
+        <Prose
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+          html={
+            content.childContentfulProseBodyRichTextNode.childContentfulRichText
+              .html
+          }
+          id={id}
+          key={i}
+          textAlign={content.textAlign}
         />
-    )
-  case 'ContentfulConvertFlowArea':
-    return (
-      <ConvertFlowArea
-         convertFlowDivClass={content.convertFlowDivClass}
-         id={id}
-         key={i}
-         />
-    )
-  case 'ContentfulGrid':
-    return (
-      <Grid
-         alignItems={content.alignItems}
-         content={content.content}
-         id={id}
-         key={i}
-         style={content.style}
-         />
-    )
-  default:
-    return <div>Unknown Content Type: {content.__typename}</div>
+      )
+    case 'ContentfulConvertFlowArea':
+      return (
+        <ConvertFlowArea
+           convertFlowDivClass={content.convertFlowDivClass}
+           id={id}
+           key={i}
+           />
+      )
+    case 'ContentfulHubSpotForm':
+      return (
+        <HubSpotForm
+          formId={content.formId}
+          id={id}
+          key={i}
+          />
+      )
+    case 'ContentfulGrid':
+      return (
+        <Grid
+          alignItems={content.alignItems}
+          content={content.content}
+          id={id}
+          key={i}
+          style={content.style}
+        />
+      )
+    default:
+      return <div>Unknown Content Type: {content.__typename}</div>
   }
 }
 
-function withErrorHandling (renderContent) {
-  return function (content, i) {
+function withErrorHandling(renderContent) {
+  return function(content, i) {
     try {
       return renderContent(content, i)
     } catch (e) {
@@ -78,6 +96,6 @@ function withErrorHandling (renderContent) {
   }
 }
 
-export default function Contentful ({ content }) {
+export default function Contentful({ content }) {
   return content.map(withErrorHandling(renderContent))
 }
