@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import Contentful from '../../components/Contentful'
 
-export default function ContentfulPageTemplate ({ data }) {
+export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
 
   return (
@@ -20,13 +20,17 @@ export const pageQuery = graphql`
       title
       description
       content {
-      	__typename
+        __typename
         ...inlineImages
         ...jumbotron
         ...prose
         ... on ContentfulConvertFlowArea {
           name
           convertFlowDivClass
+        }
+        ... on ContentfulHubSpotForm {
+          name
+          formId
         }
         ... on ContentfulGrid {
           name

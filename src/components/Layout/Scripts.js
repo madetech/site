@@ -1,14 +1,24 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-export default function Scripts () {
+export default function Scripts() {
   return (
     <Helmet>
       {/* HubSpot */}
-      <script id='hs-script-loader' async defer src='//js.hs-scripts.com/554916.js'></script>
+      <script
+        id="hs-script-loader"
+        async
+        defer
+        src="//js.hs-scripts.com/554916.js"
+      />
+      <script
+        charset="utf-8"
+        type="text/javascript"
+        src="//js.hsforms.net/forms/v2.js"
+      />
 
       {/* ConvertFlow */}
-      <script async src='//assets.convertflow.com/scripts/1407.js'></script>
+      <script async src="//assets.convertflow.com/scripts/1407.js" />
 
       {/* Google Analytics */}
       <script>{`
