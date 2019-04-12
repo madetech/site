@@ -24,10 +24,6 @@ export const pageQuery = graphql`
         ...inlineImages
         ...jumbotron
         ...prose
-        ... on ContentfulConvertFlowArea {
-          name
-          convertFlowDivClass
-        }
         ... on ContentfulHubSpotForm {
           name
           formId
