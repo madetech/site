@@ -1,5 +1,4 @@
 import React from 'react'
-import ConvertFlowArea from './ConvertFlowArea'
 import HubSpotForm from './HubSpotForm'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
@@ -54,22 +53,8 @@ function renderContent(content, i) {
           textAlign={content.textAlign}
         />
       )
-    case 'ContentfulConvertFlowArea':
-      return (
-        <ConvertFlowArea
-           convertFlowDivClass={content.convertFlowDivClass}
-           id={id}
-           key={i}
-           />
-      )
     case 'ContentfulHubSpotForm':
-      return (
-        <HubSpotForm
-          formId={content.formId}
-          id={id}
-          key={i}
-          />
-      )
+      return <HubSpotForm formId={content.formId} id={id} key={i} />
     case 'ContentfulGrid':
       return (
         <Grid
