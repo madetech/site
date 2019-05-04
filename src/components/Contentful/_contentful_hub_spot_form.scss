@@ -3,3 +3,26 @@
   padding: 1.5rem;
   max-width: 40rem;
 }
+
+.contentful-hub-spot-form {
+  .hs-form-field {
+    @extend .form-group;
+
+    input {
+      @extend .form-control;
+    }
+  }
+
+  .hs-submit {
+    @extend .form-group;
+
+    input {
+      @extend .btn;
+      @extend .btn-success;
+    }
+  }
+
+  .hs-richtext {
+    @extend .prose;
+  }
+}
