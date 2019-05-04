@@ -8,8 +8,7 @@ import Prose from './Prose'
 function renderContent(content, i) {
   const id = content.name
     .toLowerCase()
-    .replace(/\s/g, '')
-    .replace('>', '-')
+    .replace(/[^a-z]+/g, '-')
 
   switch (content.__typename) {
     case 'ContentfulInlineImages':
