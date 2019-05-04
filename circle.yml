@@ -5,7 +5,7 @@ orbs:
 jobs:
   build_and_deploy_staging:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:11
     steps:
       - checkout
       - restore_cache:
@@ -32,7 +32,7 @@ jobs:
             - public
   build_and_deploy_production:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:11
     steps:
       - checkout
       - restore_cache:
@@ -54,7 +54,7 @@ jobs:
             - ./node_modules
   build_and_deploy_preview:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:11
     steps:
       - checkout
       - restore_cache:
