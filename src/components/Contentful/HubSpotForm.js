@@ -7,12 +7,17 @@ export default class ContentfulHubSpotForm extends React.Component {
 
   embedForm () {
     if (window.hbspt) {
-      window.hbspt.forms.create({
-        target: `#${this.props.id}`,
+      try {
+        window.hbspt.forms.create({
+          target: `#${this.props.id}`,
 
-        portalId: "554916",
-        formId: this.props.formId
-      })
+          portalId: "554916",
+          formId: this.props.formId
+        })
+      } catch (e) {
+        console.error('failed to load hubspot form')
+        console.error(e)
+      }
     } else {
       console.debug('waiting for hubspot...')
       setTimeout(this.embedForm.bind(this), 13)
