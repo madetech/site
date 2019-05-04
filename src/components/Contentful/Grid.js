@@ -74,7 +74,11 @@ export default function Grid ({ alignItems, content, id, style }) {
         </div>
       )
     default:
-      return null
+      return (
+        <div className={`col-lg-${content.columnWidth} offset-lg-${content.columnOffset} px-4`} key={i}>
+          <div>Unknown Content Type for Grid: {content.__typename}</div>
+        </div>
+      )
     }
   })
 
