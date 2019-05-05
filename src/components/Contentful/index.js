@@ -1,4 +1,5 @@
 import React from 'react'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import HubSpotForm from './HubSpotForm'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
@@ -29,10 +30,7 @@ function renderContent(content, i) {
           backgroundUrl={content.background && content.background.fixed.src}
           columnWidth={content.columnWidth}
           columnOffset={content.columnOffset}
-          html={
-            content.childContentfulJumbotronBodyRichTextNode
-              .childContentfulRichText.html
-          }
+          html={documentToHtmlString(content.body.json)}
           id={id}
           key={i}
           textAlign={content.textAlign}
@@ -43,10 +41,7 @@ function renderContent(content, i) {
         <Prose
           columnWidth={content.columnWidth}
           columnOffset={content.columnOffset}
-          html={
-            content.childContentfulProseBodyRichTextNode.childContentfulRichText
-              .html
-          }
+          html={documentToHtmlString(content.body.json)}
           id={id}
           key={i}
           textAlign={content.textAlign}

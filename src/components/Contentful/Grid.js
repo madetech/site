@@ -1,11 +1,12 @@
 import React from 'react'
 import { Prose } from '@madetech/frontend'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
 export default function Grid ({ alignItems, content, id, style }) {
   const contentComponents = content.map((content, i) => {
     switch (content.__typename) {
     case 'ContentfulProse':
-      let proseHtml = content.childContentfulProseBodyRichTextNode && content.childContentfulProseBodyRichTextNode.childContentfulRichText.html
+      const proseHtml = content.body && documentToHtmlString(content.body.json)
 
       let className = 'contentful-prose'
       if (content.textAlign) className += ` text-${content.textAlign}`
@@ -35,7 +36,7 @@ export default function Grid ({ alignItems, content, id, style }) {
         </div>
       )
     case 'ContentfulCard':
-      const cardHtml = content.childContentfulCardBodyRichTextNode.childContentfulRichText.html
+      const cardHtml = content.body && documentToHtmlString(content.body.json)
       let cardContentComponent
 
       if (content.image) {

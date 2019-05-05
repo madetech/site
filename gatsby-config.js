@@ -21,7 +21,6 @@ module.exports = {
         display: 'minimal-ui',
       },
     },
-    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: 'gatsby-source-contentful',
       options: {

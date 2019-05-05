@@ -43,13 +43,11 @@ export const pageQuery = graphql`
   }
   fragment card on ContentfulCard {
     name
+    body {
+      json
+    }
     columnWidth
     columnOffset
-    childContentfulCardBodyRichTextNode {
-      childContentfulRichText {
-        html
-      }
-    }
     image {
       fixed(width: 800, height: 650) {
         height
@@ -77,13 +75,6 @@ export const pageQuery = graphql`
   }
   fragment jumbotron on ContentfulJumbotron {
     name
-    childContentfulJumbotronBodyRichTextNode {
-      childContentfulRichText {
-        html
-      }
-    }
-    columnWidth
-    columnOffset
     background {
       fixed(width: 1600) {
         height
@@ -92,17 +83,20 @@ export const pageQuery = graphql`
         width
       }
     }
+    body {
+      json
+    }
+    columnWidth
+    columnOffset
     textAlign
   }
   fragment prose on ContentfulProse {
     name
+    body {
+      json
+    }
     columnWidth
     columnOffset
-    childContentfulProseBodyRichTextNode {
-      childContentfulRichText {
-        html
-      }
-    }
     image {
       fixed(width: 1000) {
         height
