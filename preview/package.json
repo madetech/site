@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "deploy": "npm run gatsby && node ../bin/deploy-preview.js"
+    "deploy": "npm run gatsby && node bin/deploy-preview.js"
   },
   "author": "Made Tech <hello@madetech.com>",
   "license": "UNLICENSED",
@@ -26,5 +26,8 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "request": "^2.88.0"
   }
 }
