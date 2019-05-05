@@ -1,5 +1,4 @@
 import React from 'react'
-import withPrefix from '../../helpers/withPrefix'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
@@ -13,7 +12,7 @@ export default function Layout ({ children, data, description, titlePrefix, url 
 
       <TopBar>
         <a href='https://learn.madetech.com'>Learn</a>
-        <a href={withPrefix('/blog')}>Blog</a>
+        <a href='/blog'>Blog</a>
         <a href='/careers'>Careers</a>
         <a href='/contact'>Contact</a>
       </TopBar>

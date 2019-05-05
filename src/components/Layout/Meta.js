@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
 function MetaHelmet ({ title, description, keywords, url, siteUrl }) {
   return (
@@ -24,32 +23,18 @@ function MetaHelmet ({ title, description, keywords, url, siteUrl }) {
 }
 
 export default function Meta ({ description, titlePrefix, url }) {
-  const renderMetaHelmet = data => {
-    const metadata = { ...data.site.siteMetadata }
-    if (description) metadata.description = description
-    if (titlePrefix) metadata.title = `${titlePrefix} – ${metadata.title}`
-    if (url) metadata.url = url
-
-    return (
-      <MetaHelmet {...metadata} />
-    )
+  const metadata = {
+    title: 'Made Tech',
+    description: 'We build software delivery capabilities, deliver digital & technology, and run live services for ambitious organisations.',
+    siteUrl: 'https://www.madetech.com',
+    keywords: 'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
   }
 
+  if (description) metadata.description = description
+  if (titlePrefix) metadata.title = `${titlePrefix} – ${metadata.title}`
+  if (url) metadata.url = url
+
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              description
-              keywords
-              siteUrl
-            }
-          }
-        }
-      `}
-      render={renderMetaHelmet}
-      />
+    <MetaHelmet {...metadata} />
   )
 }
