@@ -15,9 +15,7 @@ jobs:
           command: if ! test -d node_modules; then npm install; fi
       - run:
           name: Build Static Site
-          command: CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_PREVIEW_ACCESS_TOKEN npm run build
-          environment:
-            CONTENTFUL_HOST: preview.contentful.com
+          command: npm run build
       - run:
           name: Deploy Static Site to Staging
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_STAGING npm run deploy
