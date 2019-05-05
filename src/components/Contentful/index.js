@@ -1,6 +1,5 @@
 import React from 'react'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import HubSpotForm from './HubSpotForm'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
@@ -46,8 +45,6 @@ function renderContent(content, i) {
           textAlign={content.textAlign}
         />
       )
-    case 'ContentfulHubSpotForm':
-      return <HubSpotForm formId={content.formId} id={id} key={i} />
     case 'ContentfulGrid':
       return (
         <Grid
