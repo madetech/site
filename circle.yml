@@ -55,25 +55,21 @@ jobs:
   build_and_deploy_preview:
     docker:
       - image: circleci/node:11
+    working_directory: 'preview'
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-preview-{{ checksum "package.json" }}
       - run:
           name: Install NPM Dependencies
           command: if ! test -d node_modules; then npm install; fi
       - run:
-          name: Build Static Site
-          command: CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_PREVIEW_ACCESS_TOKEN npm run build
-          environment:
-            CONTENTFUL_HOST: preview.contentful.com
-      - run:
-          name: Deploy Static Site to Preview
+          name: Deploy Preview
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PREVIEW npm run deploy
       - slack/status:
           fail_only: 'true'
       - save_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-preview-{{ checksum "package.json" }}
           paths:
             - ./node_modules
   push_production_and_preview:

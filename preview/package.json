@@ -6,7 +6,8 @@
     "gatsby": "rm -rf gatsby && cp -r ../src gatsby",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT",
+    "deploy": "npm run gatsby && node ../bin/deploy-preview.js"
   },
   "author": "Made Tech <hello@madetech.com>",
   "license": "UNLICENSED",
