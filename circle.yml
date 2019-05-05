@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-staging-{{ checksum "package.json" }}
       - run:
           name: Install NPM Dependencies
           command: if ! test -d node_modules; then npm install; fi
@@ -22,7 +22,7 @@ jobs:
       - slack/status:
           fail_only: 'true'
       - save_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-staging-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - persist_to_workspace:
@@ -36,7 +36,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-production-{{ checksum "package.json" }}
       - run:
           name: Install NPM Dependencies
           command: if ! test -d node_modules; then npm install; fi
@@ -49,7 +49,7 @@ jobs:
       - slack/status:
           fail_only: 'true'
       - save_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-production-{{ checksum "package.json" }}
           paths:
             - ./node_modules
   build_and_deploy_preview:
@@ -86,7 +86,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-smoke-{{ checksum "package.json" }}
       - run:
           name: Install NPM Dependencies
           command: if ! test -d node_modules; then npm install; fi
@@ -96,7 +96,7 @@ jobs:
       - slack/status:
           fail_only: 'true'
       - save_cache:
-          key: dependency-cache-v2-{{ checksum "package.json" }}
+          key: dependency-cache-smoke-{{ checksum "package.json" }}
           paths:
             - ./node_modules
 workflows:
