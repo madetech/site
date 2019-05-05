@@ -5,9 +5,10 @@ import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
 import Prose from './Prose'
+import toHtmlId from '../../helpers/toHtmlId'
 
 function renderContent(content, i) {
-  const id = content.name.toLowerCase().replace(/[^a-z]+/g, '-')
+  const id = toHtmlId(content.name)
 
   switch (content.__typename) {
     case 'ContentfulInlineImages':
