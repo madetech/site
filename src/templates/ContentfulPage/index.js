@@ -21,13 +21,10 @@ export const pageQuery = graphql`
       description
       content {
         __typename
+        ...hubSpotForm
         ...inlineImages
         ...jumbotron
         ...prose
-        ... on ContentfulHubSpotForm {
-          name
-          formId
-        }
         ... on ContentfulGrid {
           name
           alignItems
@@ -35,6 +32,7 @@ export const pageQuery = graphql`
           content {
             __typename
             ...card
+            ...hubSpotForm
             ...prose
           }
         }
@@ -57,6 +55,12 @@ export const pageQuery = graphql`
       }
     }
     link
+  }
+  fragment hubSpotForm on ContentfulHubSpotForm {
+    name
+    columnWidth
+    columnOffset
+    formId
   }
   fragment inlineImages on ContentfulInlineImages {
     name

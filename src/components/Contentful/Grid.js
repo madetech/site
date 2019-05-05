@@ -1,6 +1,8 @@
 import React from 'react'
 import { Prose } from '@madetech/frontend'
+import HubSpotForm from './HubSpotForm'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import toHtmlId from '../../helpers/toHtmlId'
 
 export default function Grid({ alignItems, content, id, style }) {
   const contentComponents = content.map((content, i) => {
@@ -83,6 +85,17 @@ export default function Grid({ alignItems, content, id, style }) {
                 </div>
               </a>
             </div>
+          </div>
+        )
+      case 'ContentfulHubSpotForm':
+        return (
+          <div
+            className={`col-lg-${content.columnWidth} offset-lg-${
+              content.columnOffset
+            } px-4 my-3`}
+            key={i}
+          >
+            <HubSpotForm formId={content.formId} id={toHtmlId(content.name)} />
           </div>
         )
       default:
