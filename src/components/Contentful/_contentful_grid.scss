@@ -1,5 +1,5 @@
 .contentful-grid {
-  margin-top: map-get($spacers, 5);
+  margin: map-get($spacers, 5) 0;
 }
 
 .contentful-grid.shaded {
@@ -18,4 +18,8 @@
     margin-top: map-get($spacers, 5) * -1;
     padding-top: 0;
   }
+}
+
+.contentful-grid + .contentful-jumbotron {
+  margin-top: map-get($spacers, 5) * -1;
 }

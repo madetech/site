@@ -1,4 +1,8 @@
 .contentful-jumbotron {
+  .jumbotron .lead > :first-child {
+    margin-top: 0;
+  }
+
   .jumbotron p:last-child {
     margin: 0;
 
