@@ -80,6 +80,25 @@ jobs:
       - run:
           name: Push latest commit to production branch
           command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git HEAD:production HEAD:preview
+  smoke:
+    docker:
+      - image: cypress/base:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-v2-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM Dependencies
+          command: if ! test -d node_modules; then npm install; fi
+      - run:
+          name: Run smoke tests
+          command: npm run smoke
+      - slack/status:
+          fail_only: 'true'
+      - save_cache:
+          key: dependency-cache-v2-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
 workflows:
   version: 2
   master:
@@ -97,9 +116,9 @@ workflows:
           message: https://staging.madetech.com is ready for review. Use workflow to deploy to production.
           requires:
             - build_and_deploy_staging
-      - push_production_and_preview:
-          requires:
-            - hold
+  smoke:
+    jobs:
+      - smoke
   production:
     jobs:
       - build_and_deploy_production:
