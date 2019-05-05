@@ -21,7 +21,6 @@ export const pageQuery = graphql`
       description
       content {
         __typename
-        ...hubSpotForm
         ...inlineImages
         ...jumbotron
         ...prose
