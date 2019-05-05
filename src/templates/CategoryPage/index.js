@@ -5,28 +5,32 @@ import Layout from '../../components/Layout'
 import PostList, { PostListIntro } from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
 
-export default function PostPageTemplate ({ data, pageContext }) {
+export default function PostPageTemplate({ data, pageContext }) {
   const category = data.wordpressCategory
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
   return (
     <Layout description={category.description} titlePrefix={category.name}>
       <PostListIntro
-        parent={<small><a href={withPrefix('/blog')}>Made Tech Blog</a></small>}
+        parent={
+          <small>
+            <a href={withPrefix('/blog')}>Made Tech Blog</a>
+          </small>
+        }
         title={category.name}
         description={category.description}
-        />
+      />
 
-      <div className='container'>
-        <div className='row'>
-          <div className='col-lg-8 offset-lg-2'>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 offset-lg-2">
             <PostList posts={posts} />
 
             <Pagination
               currentPage={pageContext.page}
               hrefPrefix={withPrefix(`/blog/t/${category.slug}`)}
               totalPages={pageContext.totalPages}
-              />
+            />
           </div>
         </div>
       </div>
@@ -42,9 +46,9 @@ export const pageQuery = graphql`
       slug
     }
 
-  	allWordpressPost(
-      filter: { categories: { elemMatch: { id: { eq: $id } } } },
-      limit: $limit,
+    allWordpressPost(
+      filter: { categories: { elemMatch: { id: { eq: $id } } } }
+      limit: $limit
       skip: $skip
     ) {
       edges {
@@ -65,6 +69,6 @@ export const pageQuery = graphql`
           }
         }
       }
-  	}
+    }
   }
 `

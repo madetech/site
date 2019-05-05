@@ -7,9 +7,7 @@ import Jumbotron from './Jumbotron'
 import Prose from './Prose'
 
 function renderContent(content, i) {
-  const id = content.name
-    .toLowerCase()
-    .replace(/[^a-z]+/g, '-')
+  const id = content.name.toLowerCase().replace(/[^a-z]+/g, '-')
 
   switch (content.__typename) {
     case 'ContentfulInlineImages':

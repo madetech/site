@@ -1,18 +1,18 @@
 import React from 'react'
 
 export default class ContentfulHubSpotForm extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.embedForm()
   }
 
-  embedForm () {
+  embedForm() {
     if (window.hbspt) {
       try {
         window.hbspt.forms.create({
           target: `#${this.props.id}`,
 
-          portalId: "554916",
-          formId: this.props.formId
+          portalId: '554916',
+          formId: this.props.formId,
         })
       } catch (e) {
         console.error('failed to load hubspot form')
@@ -24,9 +24,7 @@ export default class ContentfulHubSpotForm extends React.Component {
     }
   }
 
-  render () {
-    return (
-      <div className={'contentful-hub-spot-form'} id={this.props.id} />
-    )
+  render() {
+    return <div className={'contentful-hub-spot-form'} id={this.props.id} />
   }
 }

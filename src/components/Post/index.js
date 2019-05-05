@@ -10,35 +10,40 @@ import initGists from './initGists'
 import trackTags from './trackTags'
 
 export default class Post extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     initGists()
     trackTags(this.props.post.categories, this.props.post.tags)
   }
 
-  render () {
+  render() {
     const post = this.props.post
     const disqusShortname = 'madetech'
 
     return (
-      <article className='post' itemScope itemType='http://schema.org/BlogPosting'>
+      <article
+        className="post"
+        itemScope
+        itemType="http://schema.org/BlogPosting"
+      >
         <Prose>
-          <meta itemProp='datePublished' content='{{ post.date }}' />
-          <meta itemProp='headline' content='{{post.title}}' />
+          <meta itemProp="datePublished" content="{{ post.date }}" />
+          <meta itemProp="headline" content="{{post.title}}" />
 
-          <h1 className='post__title'>
-            {post.title}
-          </h1>
+          <h1 className="post__title">{post.title}</h1>
 
-          <PostMeta post={post}  />
+          <PostMeta post={post} />
 
-          <div className='post__body' dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div
+            className="post__body"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
 
           <PostAboutAuthor author={post.author} />
 
           <Hiring />
 
           {/* ConvertFlow Area */}
-          <div className='cf-1407-area-4492'></div>
+          <div className="cf-1407-area-4492" />
 
           {/* Disqus Comments */}
           <Disqus.DiscussionEmbed shortname={disqusShortname} config={{}} />
