@@ -13,10 +13,6 @@ export default function Preview ({ page }) {
 
 Preview.getInitialProps = async function ({ query }) {
   return {
-    page: {
-      title: 'Example',
-      description: 'Example description',
-      content: []
-    }
+    page: await fetchEntry(query.id)
   }
 }

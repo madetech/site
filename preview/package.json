@@ -11,8 +11,10 @@
   "author": "Made Tech <hello@madetech.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.1.0",
     "@madetech/frontend": "^4.14.0",
     "@zeit/next-sass": "^1.0.1",
+    "contentful": "^7.5.1",
     "dotenv": "^6.1.0",
     "next": "^8.1.0",
     "next-compose-plugins": "^2.2.0",
