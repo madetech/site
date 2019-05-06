@@ -117,13 +117,6 @@ workflows:
           requires:
             - build_and_deploy_staging
   smoke:
-    triggers:
-      - schedule:
-          cron: '0 * * * *'
-          filters:
-            branches:
-              only:
-                - master
     jobs:
       - smoke
   production:
