@@ -79,7 +79,7 @@ jobs:
           at: .
       - run:
           name: Push latest commit to production branch
-          command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/made-blog.git HEAD:production HEAD:preview
+          command: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/madetech/site.git HEAD:production HEAD:preview
 workflows:
   version: 2
   master:

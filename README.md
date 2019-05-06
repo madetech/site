@@ -37,7 +37,7 @@ This short guide will help you get started with setting this project up on your 
 Use git to clone down this repository and then install the projects dependencies with NPM:
 
 ```
-git clone https://github.com/madetech/made-blog
+git clone https://github.com/madetech/site
 cd made-blog
 npm install
 ```
