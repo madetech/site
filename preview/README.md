@@ -20,6 +20,12 @@ npm install
 
 ### Starting the development server
 
+Copy over Gatsby components into the preview application:
+
+```
+npm run gatsby
+```
+
 Boot up the Next.js development server:
 
 ```
