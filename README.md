@@ -71,6 +71,18 @@ CONTENTFUL_HOST
 CONTENTFUL_ACCESS_TOKEN
 ```
 
+For CircleCI building and deployment, the following additional environment variables are also required:
+
+```
+CONTENTFUL_PREVIEW_ACCESS_TOKEN
+GITHUB_PERSONAL_TOKEN
+HEROKU_APP_NAME_PREVIEW
+HEROKU_APP_NAME_PRODUCTION
+HEROKU_APP_NAME_STAGING
+HEROKU_TOKEN
+SLACK_WEBHOOK
+```
+
 In your development environment you can create a file called `.env` that contains the necessary variables and values.
 
 In the CI environment these variables have been setup manually so that the build process has access to them.
