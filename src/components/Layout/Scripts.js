@@ -17,9 +17,6 @@ export default function Scripts() {
         src="//js.hsforms.net/forms/v2.js"
       />
 
-      {/* ConvertFlow */}
-      <script async src="//assets.convertflow.com/scripts/1407.js" />
-
       {/* Google Analytics */}
       <script>{`
         var _gaq = _gaq || [];
