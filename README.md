@@ -58,7 +58,7 @@ You can now edit the templates and components in [`src/`](src/) and see your cha
 
 ## Environment Variables
 
-The following environment variables must be present when developing and building this application.
+The following environment variables must be present when developing:
 
 ```
 WORDPRESS_BASE_URL
@@ -74,6 +74,14 @@ CONTENTFUL_ACCESS_TOKEN
 For CircleCI building and deployment, the following additional environment variables are also required:
 
 ```
+WORDPRESS_BASE_URL
+WORDPRESS_CLIENT_SECRET
+WORDPRESS_CLIENT_ID
+WORDPRESS_USERNAME
+WORDPRESS_PASSWORD
+CONTENTFUL_SPACE_ID
+CONTENTFUL_HOST
+CONTENTFUL_ACCESS_TOKEN
 CONTENTFUL_PREVIEW_ACCESS_TOKEN
 GITHUB_PERSONAL_TOKEN
 HEROKU_APP_NAME_PREVIEW
@@ -81,6 +89,21 @@ HEROKU_APP_NAME_PRODUCTION
 HEROKU_APP_NAME_STAGING
 HEROKU_TOKEN
 SLACK_WEBHOOK
+```
+
+For Heroku:
+
+```
+MADETECH_BLOG_HOST
+MADETECH_HOST
+```
+
+For Heroku Preview:
+
+```
+CONTENTFUL_SPACE_ID
+CONTENTFUL_HOST
+CONTENTFUL_ACCESS_TOKEN
 ```
 
 In your development environment you can create a file called `.env` that contains the necessary variables and values.
