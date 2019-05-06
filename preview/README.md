@@ -32,6 +32,6 @@ Boot up the Next.js development server:
 npm run dev
 ```
 
-You can now go to https://localhost:3000/preview?id=1K8trnjPmwK2MOUMcsC8mI. You should see the Next.js application previewing the Careers page of www.madetech.com.
+You can now go to http://localhost:3000/preview?id=1K8trnjPmwK2MOUMcsC8mI. You should see the Next.js application previewing the Careers page of www.madetech.com.
 
 Happy developing!

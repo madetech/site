@@ -52,7 +52,7 @@ Boot up the Gatsby.js development server:
 npm run dev
 ```
 
-You can now go to https://localhost:8000. You should see the Gatsby.js application.
+You can now go to http://localhost:8000. You should see the Gatsby.js application.
 
 You can now edit the templates and components in [`src/`](src/) and see your changes update live in the browser.
 
