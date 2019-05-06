@@ -2,6 +2,8 @@
   "name": "@madetech/blog-preview",
   "version": "0.1.0",
   "description": "A preview application for Contentful",
+  "author": "Made Tech <hello@madetech.com>",
+  "license": "UNLICENSED",
   "scripts": {
     "gatsby": "rm -rf gatsby && cp -r ../src gatsby",
     "dev": "next",
@@ -9,8 +11,6 @@
     "start": "next start -p $PORT",
     "deploy": "npm run gatsby && node bin/deploy-preview.js"
   },
-  "author": "Made Tech <hello@madetech.com>",
-  "license": "UNLICENSED",
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@madetech/frontend": "^4.14.0",

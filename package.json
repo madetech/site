@@ -3,6 +3,15 @@
   "description": "Made Tech Blog built with Gatsby and WordPress.com",
   "version": "1.0.0",
   "author": "Made Tech <hello@madetech.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "node bin/deploy.js",
+    "dev": "gatsby develop",
+    "start": "gatsby serve",
+    "format": "prettier --write \"src/**/*.js\"",
+    "smoke": "cypress run"
+  },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@madetech/frontend": "^4.14.0",
@@ -19,15 +28,6 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"
-  },
-  "license": "UNLICENSED",
-  "scripts": {
-    "build": "gatsby build",
-    "deploy": "node bin/deploy.js",
-    "dev": "gatsby develop",
-    "start": "gatsby serve",
-    "format": "prettier --write \"src/**/*.js\"",
-    "smoke": "cypress run"
   },
   "devDependencies": {
     "cypress": "^3.2.0",
