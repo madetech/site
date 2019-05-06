@@ -2,6 +2,28 @@
 
 Welcome! This repository is responsible for powering www.madetech.com. We use a combination of Gatsby.js for building a static site from WordPress and Contentful content.
 
+<details>
+  <summary>Table of Contents</summary>
+
+  - [Overview](#overview)
+  - [Getting Started](#getting-started)
+  - [Environment Variables](#environment-variables)
+  - [Preview Application](#preview-application)
+  - [Get Help from Maintainers](#maintainers)
+  - [License](#license)
+</details>
+
+## Overview
+
+By combining the static site builder Gatsby.js with WordPress and Contentful we have created a platform to enable non-technical users to be able to change the contents of www.madetech.com.
+
+There are four main technical concepts to understand how www.madetech.com works:
+
+- Gatsby.js site
+- [Preview application](#preview-application)
+- CircleCI pipeline
+- Heroku deployments
+
 There is a presentation that provides a [technical overview](https://docs.google.com/presentation/d/1gvLGlfNV3dPTr7EXeXm_Jy1wPhTjLAQfMFGNR2qtSnM/edit#slide=id.g59303a9326_0_296) of the Made Tech Site content pipeline, architecture and deployment process.
 
 ## Getting Started
@@ -52,6 +74,10 @@ CONTENTFUL_ACCESS_TOKEN
 In your development environment you can create a file called `.env` that contains the necessary variables and values.
 
 In the CI environment these variables have been setup manually so that the build process has access to them.
+
+## Preview Application
+
+In order to provide live previews of content from Contentful there is a Next.js application within [`preview/`](preview/). This application reuses components from the Gatsby.js application to create a full mock up of a page in order for it to be previewed.
 
 ## Maintainers
 
