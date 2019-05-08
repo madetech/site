@@ -1,5 +1,5 @@
 import React from 'react'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import documentToHtmlString from '../../helpers/documentToHtmlString'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'

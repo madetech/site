@@ -1,7 +1,7 @@
 import React from 'react'
 import { Prose } from '@madetech/frontend'
 import HubSpotForm from './HubSpotForm'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 
 export default function Grid({ alignItems, content, id, style }) {
