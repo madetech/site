@@ -9,8 +9,7 @@ const appFiles = [
   'pages',
   'next.config.js',
   'package.json',
-  'package-lock.json',
-  'server.js'
+  'package-lock.json'
 ]
 
 function herokuRequest(path, body) {

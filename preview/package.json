@@ -6,9 +6,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "gatsby": "rm -rf gatsby && cp -r ../src gatsby",
-    "dev": "nodemon server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "node server.js",
+    "start": "next start -p $PORT",
     "deploy": "npm run gatsby && node bin/deploy-preview.js"
   },
   "dependencies": {
@@ -17,7 +17,6 @@
     "@zeit/next-sass": "^1.0.1",
     "contentful": "^7.5.1",
     "dotenv": "^6.1.0",
-    "express": "^4.16.4",
     "next": "^8.1.0",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^0.17.0",
@@ -26,11 +25,9 @@
     "node-sass": "^4.12.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0",
-    "reload": "^3.0.1"
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0",
     "request": "^2.88.0",
     "tar": "^4.4.8"
   }

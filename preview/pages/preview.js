@@ -7,7 +7,6 @@ export default function Preview ({ page }) {
   return (
     <Layout description={page.description} titlePrefix={page.title}>
       <Contentful content={page.content} />
-      <script src="/reload/reload.js"></script>
     </Layout>
   )
 }
