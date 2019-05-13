@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Prose } from '@madetech/frontend'
 import HubSpotForm from './HubSpotForm'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
@@ -131,4 +132,8 @@ export default function Grid({ alignItems, content, id, style }) {
       </div>
     </div>
   )
+}
+
+Grid.propTypes = {
+  content: PropTypes.array.isRequired
 }
