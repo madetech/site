@@ -5,6 +5,12 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 
 export default function Grid({ alignItems, content, id, style }) {
+  if (content.length === 0) {
+    return (
+      <div>No Content Error</div>
+    )
+  }
+
   const contentComponents = content.map((content, i) => {
     switch (content.__typename) {
       case 'ContentfulProse':
