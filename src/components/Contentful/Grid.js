@@ -20,10 +20,18 @@ function GridContainer({ alignItems, children, id, style }) {
   )
 }
 
+function GridCol({ children, columnWidth, columnOffset }) {
+  const className = `col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`
+
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  )
+}
+
 function GridProse({
   body,
-  columnWidth,
-  columnOffset,
   image,
   imageStyle,
   textAlign,
@@ -43,21 +51,17 @@ function GridProse({
   }
 
   return (
-    <div
-      className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`}
-    >
-      <div className={className}>
-        {imageComponent}
+    <div className={className}>
+      {imageComponent}
 
-        <Prose>
-          <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
-        </Prose>
-      </div>
+      <Prose>
+        <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
+      </Prose>
     </div>
   )
 }
 
-function GridCard({ body, columnWidth, columnOffset, image, link }) {
+function GridCard({ body, image, link }) {
   const cardHtml = documentToHtmlString(body && body.json)
   let cardContentComponent
 
@@ -84,37 +88,27 @@ function GridCard({ body, columnWidth, columnOffset, image, link }) {
   }
 
   return (
-    <div
-      className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4`}
-    >
-      <div className="contentful-card">
-        <a href={link} className="card">
-          <div className="card-body">
-            <div className="d-flex justify-content-between align-items-center">
-              {cardContentComponent}
-            </div>
+    <div className="contentful-card">
+      <a href={link} className="card">
+        <div className="card-body">
+          <div className="d-flex justify-content-between align-items-center">
+            {cardContentComponent}
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
   )
 }
 
-function GridHubSpotForm({ columnWidth, columnOffset, formId, id }) {
+function GridHubSpotForm({ formId, id }) {
   return (
-    <div
-      className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`}
-    >
-      <HubSpotForm formId={formId} id={id} />
-    </div>
+    <HubSpotForm formId={formId} id={id} />
   )
 }
 
-function GridUnknownComponentError({ __typename, columnWidth, columnOffset }) {
+function GridUnknownComponentError({ __typename }) {
   return (
-    <div className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4`}>
-      <div>Unknown Content Type for Grid: {__typename}</div>
-    </div>
+    <div>Unknown Content Type for Grid: {__typename}</div>
   )
 }
 
@@ -124,8 +118,6 @@ function GridComponentRenderer(content) {
       return (
         <GridProse
           body={content.body}
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
           image={content.image}
           imageStyle={content.imageStyle}
           textAlign={content.textAlign}
@@ -135,8 +127,6 @@ function GridComponentRenderer(content) {
       return (
         <GridCard
           body={content.body}
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
           image={content.image}
           link={content.link}
         />
@@ -144,8 +134,6 @@ function GridComponentRenderer(content) {
     case 'ContentfulHubSpotForm':
       return (
         <GridHubSpotForm
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
           formId={content.formId}
           id={toHtmlId(content.name)}
         />
@@ -154,8 +142,6 @@ function GridComponentRenderer(content) {
       return (
         <GridUnknownComponentError
           __typename={content.__typename}
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
         />
       )
   }
@@ -166,13 +152,17 @@ function GridComponentArrayRenderer({ alignItems, content, id, style }) {
     throw new Error('No grid content provided')
   }
 
-  const contentComponents = content.map((content, i) => (
-    <GridComponentRenderer key={i} {...content} />
-  ))
-
   return (
     <GridContainer alignItems={alignItems} id={id} style={style}>
-      {contentComponents}
+      {content.map((content, i) => (
+        <GridCol
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+          key={i}
+        >
+          <GridComponentRenderer key={i} {...content} />
+        </GridCol>
+      ))}
     </GridContainer>
   )
 }
