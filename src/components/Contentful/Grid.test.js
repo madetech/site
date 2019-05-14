@@ -7,7 +7,7 @@ import cardContent from '../../../test/fixtures/contentful/card'
 describe('Grid', () => {
   describe('when content provided', () => {
     it('renders successfully', () => {
-      const grid = mount(<Grid content={[proseContent()]} />)
+      const grid = mount(<Grid content={[proseContent(), cardContent()]} />)
       expect(grid).toIncludeText('Check out our book')
     })
   })

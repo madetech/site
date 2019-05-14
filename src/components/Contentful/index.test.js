@@ -7,7 +7,7 @@ import proseContent from '../../../test/fixtures/contentful/prose'
 describe('Contentful', () => {
   describe('when content provided', () => {
     it('renders successfully with simple content', () => {
-      const contentful = mount(<Contentful content={[jumbotronContent()]} />)
+      const contentful = mount(<Contentful content={[jumbotronContent(), proseContent()]} />)
       expect(contentful).toIncludeText('Agile Planning - Best Practice Guide')
     })
   })
