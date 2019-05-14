@@ -39,5 +39,21 @@ describe('Contentful', () => {
       expect(console.error).toHaveBeenCalled()
       expect(contentful).toIncludeText('Render Content Error')
     })
+
+    it('displays Render Content Error if __typename is missing', () => {
+      console.error = jest.fn()
+
+      const invalidJumbotronContent = { ...jumbotronContent(), __typename: null }
+      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
+
+      expect(console.error).toHaveBeenCalled()
+      expect(contentful).toIncludeText('Render Content Error')
+    })
+
+    it('displays Render Content Error if __typename is unrecognised', () => {
+      const invalidJumbotronContent = { ...jumbotronContent(), __typename: 'ContentfulUnknown' }
+      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
+      expect(contentful).toIncludeText('Unknown Content Type: ContentfulUnknown')
+    })
   })
 })
