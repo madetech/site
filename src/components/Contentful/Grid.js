@@ -7,8 +7,7 @@ import toHtmlId from '../../helpers/toHtmlId'
 function GridComponentRenderer(content) {
   switch (content.__typename) {
     case 'ContentfulProse':
-      const proseHtml =
-        content.body && documentToHtmlString(content.body.json)
+      const proseHtml = documentToHtmlString(content.body && content.body.json)
 
       let className = 'contentful-prose'
       if (content.textAlign) className += ` text-${content.textAlign}`
@@ -42,7 +41,7 @@ function GridComponentRenderer(content) {
         </div>
       )
     case 'ContentfulCard':
-      const cardHtml = content.body && documentToHtmlString(content.body.json)
+      const cardHtml = documentToHtmlString(content.body && content.body.json)
       let cardContentComponent
 
       if (content.image) {

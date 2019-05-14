@@ -30,7 +30,7 @@ function ComponentRenderer(content) {
           backgroundUrl={content.background && content.background.fixed.src}
           columnWidth={content.columnWidth}
           columnOffset={content.columnOffset}
-          html={documentToHtmlString(content.body.json)}
+          html={documentToHtmlString(content.body && content.body.json)}
           id={id}
           textAlign={content.textAlign}
         />
@@ -40,7 +40,7 @@ function ComponentRenderer(content) {
         <Prose
           columnWidth={content.columnWidth}
           columnOffset={content.columnOffset}
-          html={documentToHtmlString(content.body.json)}
+          html={documentToHtmlString(content.body && content.body.json)}
           id={id}
           textAlign={content.textAlign}
         />
