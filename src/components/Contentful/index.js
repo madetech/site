@@ -6,7 +6,10 @@ import Jumbotron from './Jumbotron'
 import Prose from './Prose'
 import toHtmlId from '../../helpers/toHtmlId'
 
-function renderContent(content, i) {
+function ComponentRenderer(content) {
+  if (!content.name) throw new Error('No component name provided')
+  if (!content.__typename) throw new Error('No component __typename provided')
+
   const id = toHtmlId(content.name)
 
   switch (content.__typename) {
@@ -18,7 +21,6 @@ function renderContent(content, i) {
           columnOffset={content.columnOffset}
           constrainImageHeight={content.constrainImageHeight}
           id={id}
-          key={i}
           images={content.images}
         />
       )
@@ -30,7 +32,6 @@ function renderContent(content, i) {
           columnOffset={content.columnOffset}
           html={documentToHtmlString(content.body.json)}
           id={id}
-          key={i}
           textAlign={content.textAlign}
         />
       )
@@ -41,7 +42,6 @@ function renderContent(content, i) {
           columnOffset={content.columnOffset}
           html={documentToHtmlString(content.body.json)}
           id={id}
-          key={i}
           textAlign={content.textAlign}
         />
       )
@@ -51,7 +51,6 @@ function renderContent(content, i) {
           alignItems={content.alignItems}
           content={content.content}
           id={id}
-          key={i}
           style={content.style}
         />
       )
@@ -60,17 +59,34 @@ function renderContent(content, i) {
   }
 }
 
-function withErrorHandling(renderContent) {
-  return function(content, i) {
-    try {
-      return renderContent(content, i)
-    } catch (e) {
-      console.error(e)
-      return <div>Render Content Error</div>
-    }
+function ComponentArrayRenderer({ content }) {
+  if (!content || content.length === 0) {
+    throw new Error('No content provided')
   }
+
+  return content.map((content, i) => <ComponentRenderer key={i} {...content} />)
 }
 
-export default function Contentful({ content }) {
-  return content.map(withErrorHandling(renderContent))
+export default class Contentful extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasRenderContentError: false }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasRenderContentError: true }
+  }
+
+  componentDidCatch (error, info) {
+    console.error(error)
+  }
+
+  render () {
+    if (this.state.hasRenderContentError) {
+      return <div>Render Content Error</div>
+    }
+
+    const { content } = this.props
+    return <ComponentArrayRenderer content={content} />
+  }
 }
