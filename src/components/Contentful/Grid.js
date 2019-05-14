@@ -31,13 +31,11 @@ function GridCol({ children, columnWidth, columnOffset }) {
 }
 
 function GridProse({
-  body,
   image,
   imageStyle,
+  html,
   textAlign,
 }) {
-  const proseHtml = documentToHtmlString(body && body.json)
-
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
 
@@ -55,14 +53,13 @@ function GridProse({
       {imageComponent}
 
       <Prose>
-        <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </Prose>
     </div>
   )
 }
 
-function GridCard({ body, image, link }) {
-  const cardHtml = documentToHtmlString(body && body.json)
+function GridCard({ image, html, link }) {
   let cardContentComponent
 
   if (image) {
@@ -77,13 +74,13 @@ function GridCard({ body, image, link }) {
         </div>
 
         <div style={{ width: '60%' }}>
-          <div dangerouslySetInnerHTML={{ __html: cardHtml }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </>
     )
   } else {
     cardContentComponent = (
-      <div dangerouslySetInnerHTML={{ __html: cardHtml }} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     )
   }
 
@@ -117,17 +114,17 @@ function GridComponentRenderer(content) {
     case 'ContentfulProse':
       return (
         <GridProse
-          body={content.body}
           image={content.image}
           imageStyle={content.imageStyle}
+          html={documentToHtmlString(content.body && content.body.json)}
           textAlign={content.textAlign}
         />
       )
     case 'ContentfulCard':
       return (
         <GridCard
-          body={content.body}
           image={content.image}
+          html={documentToHtmlString(content.body && content.body.json)}
           link={content.link}
         />
       )
