@@ -86,7 +86,6 @@ export default class Contentful extends React.Component {
       return <div>Render Content Error</div>
     }
 
-    const { content } = this.props
-    return <ComponentArrayRenderer content={content} />
+    return <ComponentArrayRenderer {...this.props} />
   }
 }
