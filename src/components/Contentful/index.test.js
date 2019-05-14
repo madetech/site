@@ -7,7 +7,9 @@ import proseContent from '../../../test/fixtures/contentful/prose'
 describe('Contentful', () => {
   describe('when content provided', () => {
     it('renders successfully with simple content', () => {
-      const contentful = mount(<Contentful content={[jumbotronContent(), proseContent()]} />)
+      const contentful = mount(
+        <Contentful content={[jumbotronContent(), proseContent()]} />
+      )
       expect(contentful).toIncludeText('Agile Planning - Best Practice Guide')
     })
   })
@@ -35,7 +37,9 @@ describe('Contentful', () => {
       console.error = jest.fn()
 
       const invalidJumbotronContent = { ...jumbotronContent(), name: null }
-      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
+      const contentful = mount(
+        <Contentful content={[invalidJumbotronContent]} />
+      )
 
       expect(console.error).toHaveBeenCalled()
       expect(contentful).toIncludeText('Render Content Error')
@@ -44,28 +48,47 @@ describe('Contentful', () => {
     it('displays Render Content Error if __typename is missing', () => {
       console.error = jest.fn()
 
-      const invalidJumbotronContent = { ...jumbotronContent(), __typename: null }
-      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
+      const invalidJumbotronContent = {
+        ...jumbotronContent(),
+        __typename: null,
+      }
+      const contentful = mount(
+        <Contentful content={[invalidJumbotronContent]} />
+      )
 
       expect(console.error).toHaveBeenCalled()
       expect(contentful).toIncludeText('Render Content Error')
     })
 
     it('displays Render Content Error if __typename is unrecognised', () => {
-      const invalidJumbotronContent = { ...jumbotronContent(), __typename: 'ContentfulUnknown' }
-      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
-      expect(contentful).toIncludeText('Unknown Content Type: ContentfulUnknown')
+      const invalidJumbotronContent = {
+        ...jumbotronContent(),
+        __typename: 'ContentfulUnknown',
+      }
+      const contentful = mount(
+        <Contentful content={[invalidJumbotronContent]} />
+      )
+      expect(contentful).toIncludeText(
+        'Unknown Content Type: ContentfulUnknown'
+      )
     })
 
     it('displays nothing if body of Jumbotron is empty', () => {
       const invalidJumbotronContent = { ...jumbotronContent(), body: null }
-      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
+      const contentful = mount(
+        <Contentful content={[invalidJumbotronContent]} />
+      )
       expect(contentful).not.toIncludeText('Render Content Error')
     })
 
     it('displays nothing if background of Jumbotron is empty', () => {
-      const invalidJumbotronContent = { ...jumbotronContent(), background: null }
-      const contentful = mount(<Contentful content={[invalidJumbotronContent]} />)
+      const invalidJumbotronContent = {
+        ...jumbotronContent(),
+        background: null,
+      }
+      const contentful = mount(
+        <Contentful content={[invalidJumbotronContent]} />
+      )
       expect(contentful).not.toIncludeText('Render Content Error')
     })
 

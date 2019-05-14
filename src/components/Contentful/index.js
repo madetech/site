@@ -77,11 +77,11 @@ export default class Contentful extends React.Component {
     return { hasRenderContentError: true }
   }
 
-  componentDidCatch (error, info) {
+  componentDidCatch(error, info) {
     console.error(error)
   }
 
-  render () {
+  render() {
     if (this.state.hasRenderContentError) {
       return <div>Render Content Error</div>
     }

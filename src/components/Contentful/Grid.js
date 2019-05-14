@@ -111,7 +111,9 @@ function GridComponentArrayRenderer({ alignItems, content, id, style }) {
     throw new Error('No grid content provided')
   }
 
-  const contentComponents = content.map((content, i) => <GridComponentRenderer key={i} {...content} />)
+  const contentComponents = content.map((content, i) => (
+    <GridComponentRenderer key={i} {...content} />
+  ))
 
   let className = 'contentful-grid'
   if (style) className += ` ${style}`
@@ -138,11 +140,11 @@ export default class Grid extends React.Component {
     return { hasRenderContentError: true }
   }
 
-  componentDidCatch (error, info) {
+  componentDidCatch(error, info) {
     console.error(error)
   }
 
-  render () {
+  render() {
     if (this.state.hasRenderContentError) {
       return <div>Grid Render Content Error</div>
     }
