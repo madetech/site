@@ -10,7 +10,6 @@ export default class ContentfulHubSpotForm extends React.Component {
       try {
         window.hbspt.forms.create({
           target: `#${this.props.id}`,
-
           portalId: '554916',
           formId: this.props.formId,
         })
@@ -25,6 +24,6 @@ export default class ContentfulHubSpotForm extends React.Component {
   }
 
   render() {
-    return <div className={'contentful-hub-spot-form'} id={this.props.id} />
+    return <div className='contentful-hub-spot-form' id={this.props.id} />
   }
 }

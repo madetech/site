@@ -1,15 +1,19 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Grid from './Grid'
-import proseContent from '../../../test/fixtures/contentful/prose'
 import cardContent from '../../../test/fixtures/contentful/card'
+import hubSpotFormContent from '../../../test/fixtures/contentful/hubSpotForm'
+import proseContent from '../../../test/fixtures/contentful/prose'
 
 describe('Grid', () => {
   describe('when content provided', () => {
     it('renders successfully', () => {
-      const grid = mount(<Grid content={[proseContent(), cardContent()]} />)
-      expect(grid).toIncludeText('Check out our book')
+      console.debug = jest.fn()
+      
+      const grid = mount(<Grid content={[cardContent(), hubSpotFormContent(), proseContent()]} />)
       expect(grid).toIncludeText('Check out our card')
+      expect(grid.find('#insights-grid-sign-up-to-newsletter')).toExist()
+      expect(grid).toIncludeText('Check out our prose')
     })
   })
 

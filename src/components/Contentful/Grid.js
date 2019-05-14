@@ -100,6 +100,16 @@ function GridCard({ body, columnWidth, columnOffset, image, link }) {
   )
 }
 
+function GridHubSpotForm({ columnWidth, columnOffset, formId, id }) {
+  return (
+    <div
+      className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`}
+    >
+      <HubSpotForm formId={formId} id={id} />
+    </div>
+  )
+}
+
 function GridComponentRenderer(content) {
   switch (content.__typename) {
     case 'ContentfulProse':
@@ -125,13 +135,12 @@ function GridComponentRenderer(content) {
       )
     case 'ContentfulHubSpotForm':
       return (
-        <div
-          className={`col-lg-${content.columnWidth} offset-lg-${
-            content.columnOffset
-          } px-4 my-3`}
-        >
-          <HubSpotForm formId={content.formId} id={toHtmlId(content.name)} />
-        </div>
+        <GridHubSpotForm
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+          formId={content.formId}
+          id={toHtmlId(content.name)}
+        />
       )
     default:
       return (
