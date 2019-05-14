@@ -4,41 +4,71 @@ import HubSpotForm from './HubSpotForm'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 
+function GridContainer({ alignItems, children, id, style }) {
+  let className = 'contentful-grid'
+  if (style) className += ` ${style}`
+
+  let rowClassName = 'row'
+  if (alignItems) rowClassName += ` align-items-${alignItems}`
+
+  return (
+    <div className={className} id={id}>
+      <div className="container">
+        <div className={rowClassName}>{children}</div>
+      </div>
+    </div>
+  )
+}
+
+function GridProse({
+  body,
+  columnWidth,
+  columnOffset,
+  image,
+  imageStyle,
+  textAlign,
+}) {
+  const proseHtml = documentToHtmlString(body && body.json)
+
+  let className = 'contentful-prose'
+  if (textAlign) className += ` text-${textAlign}`
+
+  let imageComponent
+  if (image) {
+    let imageClassName = imageStyle || ''
+
+    imageComponent = (
+      <img alt={image.title} className={imageClassName} src={image.fixed.src} />
+    )
+  }
+
+  return (
+    <div
+      className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`}
+    >
+      <div className={className}>
+        {imageComponent}
+
+        <Prose>
+          <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
+        </Prose>
+      </div>
+    </div>
+  )
+}
+
 function GridComponentRenderer(content) {
   switch (content.__typename) {
     case 'ContentfulProse':
-      const proseHtml = documentToHtmlString(content.body && content.body.json)
-
-      let className = 'contentful-prose'
-      if (content.textAlign) className += ` text-${content.textAlign}`
-
-      let imageComponent
-      if (content.image) {
-        let imageClassName = content.imageStyle || ''
-
-        imageComponent = (
-          <img
-            alt={content.image.title}
-            className={imageClassName}
-            src={content.image.fixed.src}
-          />
-        )
-      }
-
       return (
-        <div
-          className={`col-lg-${content.columnWidth} offset-lg-${
-            content.columnOffset
-          } px-4 my-3`}
-        >
-          <div className={className}>
-            {imageComponent}
-
-            <Prose>
-              <div dangerouslySetInnerHTML={{ __html: proseHtml }} />
-            </Prose>
-          </div>
-        </div>
+        <GridProse
+          body={content.body}
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+          image={content.image}
+          imageStyle={content.imageStyle}
+          textAlign={content.textAlign}
+        />
       )
     case 'ContentfulCard':
       const cardHtml = documentToHtmlString(content.body && content.body.json)
@@ -115,18 +145,10 @@ function GridComponentArrayRenderer({ alignItems, content, id, style }) {
     <GridComponentRenderer key={i} {...content} />
   ))
 
-  let className = 'contentful-grid'
-  if (style) className += ` ${style}`
-
-  let rowClassName = 'row'
-  if (alignItems) rowClassName += ` align-items-${alignItems}`
-
   return (
-    <div className={className} id={id}>
-      <div className="container">
-        <div className={rowClassName}>{contentComponents}</div>
-      </div>
-    </div>
+    <GridContainer alignItems={alignItems} id={id} style={style}>
+      {contentComponents}
+    </GridContainer>
   )
 }
 
