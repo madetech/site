@@ -23,19 +23,10 @@ function GridContainer({ alignItems, children, id, style }) {
 function GridCol({ children, columnWidth, columnOffset }) {
   const className = `col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`
 
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  )
+  return <div className={className}>{children}</div>
 }
 
-function GridProse({
-  image,
-  imageStyle,
-  html,
-  textAlign,
-}) {
+function GridProse({ image, imageStyle, html, textAlign }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
 
@@ -66,11 +57,7 @@ function GridCard({ image, html, link }) {
     cardContentComponent = (
       <>
         <div style={{ width: '35%' }}>
-          <img
-            alt={image.title}
-            className="mw-100"
-            src={image.fixed.src}
-          />
+          <img alt={image.title} className="mw-100" src={image.fixed.src} />
         </div>
 
         <div style={{ width: '60%' }}>
@@ -79,9 +66,7 @@ function GridCard({ image, html, link }) {
       </>
     )
   } else {
-    cardContentComponent = (
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    )
+    cardContentComponent = <div dangerouslySetInnerHTML={{ __html: html }} />
   }
 
   return (
@@ -98,15 +83,11 @@ function GridCard({ image, html, link }) {
 }
 
 function GridHubSpotForm({ formId, id }) {
-  return (
-    <HubSpotForm formId={formId} id={id} />
-  )
+  return <HubSpotForm formId={formId} id={id} />
 }
 
 function GridUnknownComponentError({ __typename }) {
-  return (
-    <div>Unknown Content Type for Grid: {__typename}</div>
-  )
+  return <div>Unknown Content Type for Grid: {__typename}</div>
 }
 
 function GridComponentRenderer(content) {
@@ -130,17 +111,10 @@ function GridComponentRenderer(content) {
       )
     case 'ContentfulHubSpotForm':
       return (
-        <GridHubSpotForm
-          formId={content.formId}
-          id={toHtmlId(content.name)}
-        />
+        <GridHubSpotForm formId={content.formId} id={toHtmlId(content.name)} />
       )
     default:
-      return (
-        <GridUnknownComponentError
-          __typename={content.__typename}
-        />
-      )
+      return <GridUnknownComponentError __typename={content.__typename} />
   }
 }
 

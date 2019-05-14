@@ -9,8 +9,10 @@ describe('Grid', () => {
   describe('when content provided', () => {
     it('renders successfully', () => {
       console.debug = jest.fn()
-      
-      const grid = mount(<Grid content={[cardContent(), hubSpotFormContent(), proseContent()]} />)
+
+      const grid = mount(
+        <Grid content={[cardContent(), hubSpotFormContent(), proseContent()]} />
+      )
       expect(grid).toIncludeText('Check out our card')
       expect(grid.find('#insights-grid-sign-up-to-newsletter')).toExist()
       expect(grid).toIncludeText('Check out our prose')
@@ -53,9 +55,7 @@ describe('Grid', () => {
         ...cardContent(),
         __typename: 'ContentfulUnknown',
       }
-      const grid = mount(
-        <Grid content={[invalidJumbotronContent]} />
-      )
+      const grid = mount(<Grid content={[invalidJumbotronContent]} />)
       expect(grid).toIncludeText(
         'Unknown Content Type for Grid: ContentfulUnknown'
       )

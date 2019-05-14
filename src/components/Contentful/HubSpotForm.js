@@ -24,6 +24,6 @@ export default class ContentfulHubSpotForm extends React.Component {
   }
 
   render() {
-    return <div className='contentful-hub-spot-form' id={this.props.id} />
+    return <div className="contentful-hub-spot-form" id={this.props.id} />
   }
 }
