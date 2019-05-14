@@ -10,7 +10,7 @@ export default function () {
            [ { nodeType: 'heading-1',
                content:
                 [ { nodeType: 'text',
-                    value: 'Check out our book',
+                    value: 'Check out our card',
                     marks: [],
                     data: {} } ],
                data: {} }, ], }, },

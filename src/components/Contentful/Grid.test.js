@@ -9,6 +9,7 @@ describe('Grid', () => {
     it('renders successfully', () => {
       const grid = mount(<Grid content={[proseContent(), cardContent()]} />)
       expect(grid).toIncludeText('Check out our book')
+      expect(grid).toIncludeText('Check out our card')
     })
   })
 
