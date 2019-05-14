@@ -47,5 +47,18 @@ describe('Grid', () => {
       const grid = mount(<Grid content={[invalidCardContent]} />)
       expect(grid).not.toIncludeText('Grid Render Content Error')
     })
+
+    it('displays Render Content Error if __typename is unrecognised', () => {
+      const invalidJumbotronContent = {
+        ...cardContent(),
+        __typename: 'ContentfulUnknown',
+      }
+      const grid = mount(
+        <Grid content={[invalidJumbotronContent]} />
+      )
+      expect(grid).toIncludeText(
+        'Unknown Content Type for Grid: ContentfulUnknown'
+      )
+    })
   })
 })

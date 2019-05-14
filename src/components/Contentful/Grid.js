@@ -110,6 +110,14 @@ function GridHubSpotForm({ columnWidth, columnOffset, formId, id }) {
   )
 }
 
+function GridUnknownComponentError({ __typename, columnWidth, columnOffset }) {
+  return (
+    <div className={`col-lg-${columnWidth} offset-lg-${columnOffset} px-4`}>
+      <div>Unknown Content Type for Grid: {__typename}</div>
+    </div>
+  )
+}
+
 function GridComponentRenderer(content) {
   switch (content.__typename) {
     case 'ContentfulProse':
@@ -144,13 +152,11 @@ function GridComponentRenderer(content) {
       )
     default:
       return (
-        <div
-          className={`col-lg-${content.columnWidth} offset-lg-${
-            content.columnOffset
-          } px-4`}
-        >
-          <div>Unknown Content Type for Grid: {content.__typename}</div>
-        </div>
+        <GridUnknownComponentError
+          __typename={content.__typename}
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
+        />
       )
   }
 }
