@@ -17,6 +17,7 @@ describe('Smoke test for Contentful pages', function() {
 
         expect(response.statusCode).toEqual(200)
         expect(response.body).not.toMatch('Render Content Error')
+        expect(response.body).not.toMatch('Unknown Content Type')
       })
     )
   })
