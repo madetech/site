@@ -15,6 +15,7 @@ module.exports = {
     "<rootDir>/cypress/",
     "<rootDir>/node_modules/",
     "<rootDir>/preview/",
+    "<rootDir>/test/smoke/",
     "<rootDir>/test/setup.js",
     "<rootDir>/test/support/",
   ],
