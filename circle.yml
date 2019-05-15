@@ -15,7 +15,7 @@ jobs:
           command: if ! test -d node_modules; then npm install; fi
       - run:
           name: Build Static Site
-          command: npm run build
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} npm run build
       - run:
           name: Deploy Static Site to Staging
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_STAGING npm run deploy
@@ -42,7 +42,7 @@ jobs:
           command: if ! test -d node_modules; then npm install; fi
       - run:
           name: Build Static Site
-          command: npm run build
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} npm run build
       - run:
           name: Deploy Static Site to Production
           command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PRODUCTION npm run deploy
