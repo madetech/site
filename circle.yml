@@ -115,10 +115,13 @@ jobs:
           command: if ! test -d node_modules; then npm install; fi
       - run:
           name: Build Static Site
-          command: BUILD_ID=${CIRCLE_BUILD_NUM} npm run build
+          command: npm run build
       - run:
           name: Deploy Static Site to Production
-          command: HEROKU_APP_NAME=$HEROKU_APP_NAME_PRODUCTION npm run deploy
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} HEROKU_APP_NAME=${HEROKU_APP_NAME_PRODUCTION} npm run deploy
+      - run:
+          name: Run Production Smoke Tests
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} SMOKE_URL=${SITE_PRODUCTION_URL} npm run smoke:build
       - slack/status:
           fail_only: 'true'
       - save_cache:
