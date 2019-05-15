@@ -11,7 +11,7 @@ describe('Smoke test for Contentful pages', function() {
     return Promise.all(
       slugs.map(async slug => {
         const response = await request({
-          uri: `${process.env.TEST_URL}/${slug}`,
+          uri: `${process.env.SMOKE_URL}/${slug}`,
           resolveWithFullResponse: true,
         })
 

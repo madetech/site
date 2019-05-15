@@ -9,8 +9,9 @@
     "deploy": "touch public/${BUILD_ID}.html && node bin/deploy.js",
     "dev": "gatsby develop",
     "format": "prettier --write \"{src,test}/**/*.js\"",
-    "smoke": "cypress run",
     "start": "gatsby serve",
+    "smoke:local": "wait-on http://localhost:9000/blog && SMOKE_ONLY=yes SMOKE_URL=http://localhost:9000 npm test",
+    "smoke:build": "wait-on ${SMOKE_URL}/${BUILD_ID}.html && SMOKE_ONLY=yes npm test",
     "test": "jest"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "prettier": "^1.15.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "tar": "^4.4.8"
+    "tar": "^4.4.8",
+    "wait-on": "^3.2.0"
   }
 }
