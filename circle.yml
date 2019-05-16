@@ -188,7 +188,7 @@ workflows:
           requires:
             - build_and_deploy_staging
       - slack/approval-notification:
-          message: ${STAGING_URL} is ready for review. Use workflow to deploy to production.
+          message: ${SITE_STAGING_URL} is ready for review. Use workflow to deploy to production.
           requires:
             - build_and_deploy_staging
       - push_production_and_preview:
