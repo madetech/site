@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@0.1.8
-  slack: circleci/slack@1.0.0
+  slack: circleci/slack@2.5.0
 jobs:
   build:
     docker:
