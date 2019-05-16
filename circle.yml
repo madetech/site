@@ -24,6 +24,8 @@ jobs:
       - slack/status:
           failure_message: ':red_circle: Failed to build ${CIRCLE_BRANCH}'
           fail_only: 'true'
+          include_job_number_field: false
+          include_project_field: false
       - save_cache:
           key: dependency-cache-build-{{ checksum "package.json" }}
           paths:
@@ -61,6 +63,8 @@ jobs:
       - slack/status:
           failure_message: ':red_circle: Failed to build and deploy ${SITE_STAGING_URL}'
           fail_only: 'true'
+          include_job_number_field: false
+          include_project_field: false
       - save_cache:
           key: dependency-cache-staging-{{ checksum "package.json" }}
           paths:
@@ -92,6 +96,8 @@ jobs:
       - slack/status:
           success_message: ':tada: ${SITE_PRODUCTION_URL} has just been deployed.'
           failure_message: ':red_circle: Failed to build and deploy ${SITE_PRODUCTION_URL}'
+          include_job_number_field: false
+          include_project_field: false
       - save_cache:
           key: dependency-cache-production-{{ checksum "package.json" }}
           paths:
