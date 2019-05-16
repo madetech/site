@@ -22,6 +22,7 @@ jobs:
           name: Run Local Smoke Tests
           command: npm start & npm run smoke:local
       - slack/status:
+          failure_message: ':red_circle: Failed to build ${CIRCLE_BRANCH}'
           fail_only: 'true'
       - save_cache:
           key: dependency-cache-build-{{ checksum "package.json" }}
