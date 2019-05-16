@@ -122,7 +122,8 @@ jobs:
           name: Run Production Smoke Tests
           command: BUILD_ID=${CIRCLE_BUILD_NUM} SMOKE_URL=${SITE_PRODUCTION_URL} npm run smoke:build
       - slack/status:
-          success_message: :tada: ${SITE_PRODUCTION_URL} has just been deployed.
+          success_message: ':tada: ${SITE_PRODUCTION_URL} has just been deployed.'
+          failure_message: ':red_circle: Failed to build and deploy ${SITE_PRODUCTION_URL}'
       - save_cache:
           key: dependency-cache-production-{{ checksum "package.json" }}
           paths:
