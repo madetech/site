@@ -44,11 +44,20 @@ jobs:
           name: Install NPM Dependencies
           command: if ! test -d node_modules; then npm install; fi
       - run:
+          name: Run Test Suite
+          command: npm test
+      - run:
           name: Build Static Site
-          command: BUILD_ID=${CIRCLE_BUILD_NUM} npm run build
+          command: npm run build
+      - run:
+          name: Run Local Smoke Tests
+          command: npm start & npm run smoke:local
       - run:
           name: Deploy Static Site to Staging
-          command: HEROKU_APP_NAME=$HEROKU_APP_NAME_STAGING npm run deploy
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} HEROKU_APP_NAME=${HEROKU_APP_NAME_STAGING} npm run deploy
+      - run:
+          name: Run Staging Smoke Tests
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} SMOKE_URL=${SITE_STAGING_URL} npm run smoke:build
       - slack/status:
           fail_only: 'true'
       - save_cache:

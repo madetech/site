@@ -6,12 +6,12 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "touch public/${BUILD_ID}.html && node bin/deploy.js",
+    "deploy": "touch public/x-made-release-${BUILD_ID}.html && node bin/deploy.js",
     "dev": "gatsby develop",
     "format": "prettier --write \"{src,test}/**/*.js\"",
     "start": "gatsby serve",
     "smoke:local": "wait-on http://localhost:9000/blog && SMOKE_ONLY=yes SMOKE_URL=http://localhost:9000 npm test",
-    "smoke:build": "wait-on ${SMOKE_URL}/${BUILD_ID}.html && SMOKE_ONLY=yes npm test",
+    "smoke:build": "wait-on ${SMOKE_URL}/x-made-release-${BUILD_ID}.html && SMOKE_ONLY=yes npm test",
     "test": "jest"
   },
   "dependencies": {
