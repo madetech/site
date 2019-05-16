@@ -69,6 +69,40 @@ jobs:
           paths:
             - .git
             - public
+  test_build_and_deploy_staging:
+    docker:
+      - image: circleci/node:11
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-staging-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM Dependencies
+          command: if ! test -d node_modules; then npm install; fi
+      - run:
+          name: Run Test Suite
+          command: npm test
+      - run:
+          name: Run Local Smoke Tests
+          command: npm start & npm run smoke:local
+      - run:
+          name: Build Static Site
+          command: npm run build
+      - run:
+          name: Deploy Static Site to Staging
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} HEROKU_APP_NAME=${HEROKU_APP_NAME_STAGING} npm run deploy
+      - run:
+          name: Run Staging Smoke Tests
+          command: BUILD_ID=${CIRCLE_BUILD_NUM} SMOKE_URL=${SITE_STAGING_URL} npm run smoke:build
+      - save_cache:
+          key: dependency-cache-staging-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .git
+            - public
   build_and_deploy_production:
     docker:
       - image: circleci/node:11
@@ -124,6 +158,15 @@ workflows:
   build:
     jobs:
       - build:
+          filters:
+            branches:
+              ignore:
+                - master
+                - production
+                - preview
+  test_smoke:
+    jobs:
+      - test_build_and_deploy_staging:
           filters:
             branches:
               ignore:
