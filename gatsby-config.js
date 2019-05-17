@@ -30,7 +30,7 @@ module.exports = {
       },
     },
     {
-      resolve: '@madetech/gatsby-source-wordpress',
+      resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: process.env.WORDPRESS_BASE_URL,
         protocol: 'https',
