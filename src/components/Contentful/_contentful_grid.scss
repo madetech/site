@@ -2,10 +2,9 @@
   margin: map-get($spacers, 5) 0;
 }
 
-.contentful-grid.shaded {
+.contentful-grid.shaded,
+.contentful-grid.yellow {
   padding: map-get($spacers, 5) 0;
-  background-color: #fcfcfc;
-  border-top: 1px solid #e0e0e0;
 
   & + .contentful-grid {
     border-top: 1px solid #f0f0f0;
@@ -18,6 +17,30 @@
     margin-top: map-get($spacers, 5) * -1;
     padding-top: 0;
   }
+}
+
+.contentful-grid.yellow {
+  background-color: #fecc2b;
+
+  .prose {
+    color: #000;
+
+    p:last-child a {
+      @extend .btn-outline-dark;
+      border-color: black;
+      color: black;
+      text-shadow: none;
+
+      &:focus, &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
+.contentful-grid.shaded {
+  background-color: #fcfcfc;
+  border-top: 1px solid #e0e0e0;
 }
 
 .contentful-grid + .contentful-jumbotron {
