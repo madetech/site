@@ -2,7 +2,8 @@ import React from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
-import { Footer, Header, TopBar } from '@madetech/frontend'
+import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
+
 
 export default function Layout({
   children,
@@ -46,6 +47,8 @@ export default function Layout({
       </Header>
 
       {children}
+
+      <SiteMap />
 
       <Footer />
     </div>
