@@ -1,9 +1,17 @@
-.post_meta {
+.post_meta,
+.post_meta--smaller {
   align-items: center;
   display: flex;
-  font-size: 1rem;
   margin: 1.5rem 0;
   text-transform: uppercase;
+}
+
+.post_meta {
+  font-size: .8rem;
+}
+
+.post_meta--smaller {
+  font-size: .7rem;
 }
 
 .post_meta__avatar {
@@ -11,5 +19,11 @@
     border-radius: 50%;
     max-width: 5rem;
     margin-right: 2rem;
+  }
+
+  .post_meta--smaller & {
+    img {
+      max-width: 3.5rem;
+    }
   }
 }

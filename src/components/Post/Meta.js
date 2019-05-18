@@ -1,20 +1,20 @@
 import React from 'react'
 import PostTags from './Tags'
 
-export default function PostMeta({ post }) {
+export default function PostMeta({ post, smaller }) {
+  const className = smaller ? 'post_meta--smaller' : 'post_meta'
+
   return (
-    <div className="post_meta">
+    <div className={className}>
       <span className="post_meta__avatar">
         <img src={post.author.avatar_urls.wordpress_96} alt="avatar" />
       </span>
 
       <span className="post_meta__text">
-        By {post.author.name}
+        By {post.author.name} on {post.date}
         <br />
-        {post.date}
-        <span className="d-none d-md-inline"> – </span>
         <span className="d-block d-md-inline">
-          <PostTags tags={post.categories} />
+          <PostTags tags={post.categories} smaller={smaller} />
         </span>
       </span>
     </div>

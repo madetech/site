@@ -4,13 +4,9 @@
   margin-bottom: 2rem;
   padding-bottom: 1rem;
 
-  @include media-breakpoint-up(md) {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-  }
-
   h2 {
     font-family: 'neuzeit-s-book';
+    font-size: 1.8rem;
     font-weight: bold;
     line-height: 1.5;
   }
@@ -21,14 +17,6 @@
     &:hover, &:focus {
       color: $mt-green;
     }
-  }
-}
-
-.post_list_item__avatar {
-  img {
-    border-radius: 50%;
-    max-width: 4rem;
-    margin-right: 2rem;
   }
 }
 
