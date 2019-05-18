@@ -25,24 +25,22 @@ export default function Index({ data, pageContext }) {
       description="Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations."
       titlePrefix="Blog"
     >
-      <div className="post_list">
-        <PostListIntro
-          title="Made Tech Blog"
-          description="Writings on building software delivery capabilities and delivering digital & technology outcomes for ambitious organisations."
-          topics={highlightedTopics}
-        />
+      <PostListIntro
+        title="Made Tech Blog"
+        description="Writings on building software delivery capabilities and delivering digital & technology outcomes for ambitious organisations."
+        topics={highlightedTopics}
+      />
 
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 offset-lg-2">
-              <PostList posts={posts} />
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 offset-lg-2">
+            <PostList posts={posts} />
 
-              <Pagination
-                currentPage={pageContext.page}
-                hrefPrefix={withPrefix('/blog')}
-                totalPages={pageContext.totalPages}
-              />
-            </div>
+            <Pagination
+              currentPage={pageContext.page}
+              hrefPrefix={withPrefix('/blog')}
+              totalPages={pageContext.totalPages}
+            />
           </div>
         </div>
       </div>
