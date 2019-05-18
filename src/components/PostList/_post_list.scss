@@ -1,3 +1,5 @@
 .post_list {
-  margin-top: -2rem;
+  @include media-breakpoint-up(md) {
+    margin-top: -2rem;
+  }
 }
