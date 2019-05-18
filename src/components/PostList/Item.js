@@ -14,7 +14,7 @@ export default function PostListItem({ post }) {
       </h2>
 
       <Prose>
-        <PostMeta post={post} />
+        <PostMeta post={post} smaller />
 
         <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
       </Prose>

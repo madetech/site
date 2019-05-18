@@ -9,9 +9,10 @@ function PostTag({ name, slug }) {
   )
 }
 
-export default function PostTags({ extraClassName, tags }) {
+export default function PostTags({ extraClassName, tags, smaller }) {
   let className = 'post_tags'
 
+  if (smaller) className += '--smaller'
   if (extraClassName) className += ` ${extraClassName}`
 
   return (

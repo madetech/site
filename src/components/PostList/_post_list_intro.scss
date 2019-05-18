@@ -11,6 +11,6 @@
 }
 
 .post_list_intro__description {
-  font-size: 1.6rem;
+  @extend .lead;
   margin-top: -1rem;
 }
