@@ -28,7 +28,7 @@ export default function Index({ data, pageContext }) {
       <div className="post_list">
         <PostListIntro
           title="Made Tech Blog"
-          description="Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations."
+          description="Writings on building software delivery capabilities and delivering digital & technology outcomes for ambitious organisations."
           topics={highlightedTopics}
         />
 
