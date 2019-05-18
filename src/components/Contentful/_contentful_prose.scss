@@ -2,7 +2,7 @@
   margin: map-get($spacers, 5) 0;
 
   img {
-    width: 100%;
+    max-height: 16rem;
   }
 
   img.avatar {
@@ -33,5 +33,12 @@
 
   .contentful-grid & {
     margin: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    img {
+      max-height: none;
+      width: 100%;
+    }
   }
 }
