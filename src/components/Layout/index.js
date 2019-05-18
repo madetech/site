@@ -25,15 +25,15 @@ export default function Layout({
 
       <Header constrainLinkWidth logoHref="/" scrollable>
         <a href="/agile-transformation" className="nav-link">
-          Agile Team Transformation
+          Agile Team<br />Transformation
         </a>
 
         <a href="/software-development" className="nav-link">
-          Software Development
+          Software<br />Development
         </a>
 
         <a href="/continuous-delivery" className="nav-link">
-          Continuous Delivery
+          Continuous<br />Delivery
         </a>
 
         <a href="/devops" className="nav-link">
@@ -41,7 +41,7 @@ export default function Layout({
         </a>
 
         <a href="/support-and-maintainance" className="nav-link">
-          Reliability Engineering
+          Reliability<br />Engineering
         </a>
       </Header>
 
