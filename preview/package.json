@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^13.1.0",
-    "@madetech/frontend": "^4.14.0",
+    "@madetech/frontend": "^5.2.0",
     "@zeit/next-sass": "^1.0.1",
     "contentful": "^7.5.1",
     "dotenv": "^6.1.0",
