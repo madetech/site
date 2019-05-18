@@ -61,12 +61,19 @@
   margin-top: map-get($spacers, 3) * -1;
 }
 
+.contentful-grid.yellow,
+.contentful-grid.blue,
+.contentful-grid.shaded,
 .contentful-jumbotron {
   & + .contentful-grid.yellow,
   & + .contentful-grid.blue,
   & + .contentful-grid.shaded {
-    margin-top: 0;
+    margin-top: map-get($spacers, 3) * -1;
   }
+}
+
+.header + .contentful-grid {
+  margin-top: 0;
 }
 
 .contentful-grid + .site_map {
