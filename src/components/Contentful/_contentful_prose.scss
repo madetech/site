@@ -18,6 +18,10 @@
       }
     }
 
+    p:last-child {
+      margin-bottom: 0;
+    }
+
     :not(li) > p:last-child a {
       @extend .btn;
       @extend .btn-outline-success;
