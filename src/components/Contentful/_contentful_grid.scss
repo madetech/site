@@ -3,19 +3,25 @@
 }
 
 .contentful-grid.shaded,
-.contentful-grid.yellow {
+.contentful-grid.yellow,
+.contentful-grid.blue {
   padding: map-get($spacers, 5) 0;
+}
 
-  & + .contentful-grid {
-    border-top: 1px solid #f0f0f0;
-    margin-top: 0;
-    padding-top: map-get($spacers, 5);
+.contentful-grid.blue {
+  background-color: #385fb3;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
   }
 
-  & + .contentful-grid.shaded {
-    border-top: 0;
-    margin-top: map-get($spacers, 5) * -1;
-    padding-top: 0;
+  .prose {
+    color: #fff;
+
+    p:last-child a {
+      @extend .btn-outline-light;
+      text-shadow: none;
+    }
   }
 }
 
@@ -41,8 +47,24 @@
 .contentful-grid.shaded {
   background-color: #fcfcfc;
   border-top: 1px solid #e0e0e0;
+
+  & + .contentful-grid {
+    border-top: 1px solid #f0f0f0;
+  }
+
+  & + .contentful-grid.shaded {
+    border-top: 0;
+  }
 }
 
 .contentful-grid + .contentful-jumbotron {
+  margin-top: map-get($spacers, 5) * -1;
+}
+
+.contentful-jumbotron + .contentful-grid {
+  margin-top: 0;
+}
+
+.contentful-grid + .site_map {
   margin-top: map-get($spacers, 5) * -1;
 }
