@@ -33,6 +33,7 @@ function ComponentRenderer(content) {
           html={documentToHtmlString(content.body && content.body.json)}
           id={id}
           textAlign={content.textAlign}
+          textColor={content.textColor}
         />
       )
     case 'ContentfulProse':

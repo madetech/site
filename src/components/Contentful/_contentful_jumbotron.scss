@@ -1,27 +1,59 @@
 .contentful-jumbotron {
-  .jumbotron .lead > :first-child {
-    margin-top: 0;
+  .jumbotron {
+    h1, h2, h3, h4, h5, h6 {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    h1 + p {
+      @extend .lead;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+
+      a {
+        @extend .btn;
+        @extend .btn-outline-light;
+        font-weight: normal;
+        text-decoration: none;
+      }
+    }
+
+    h1 + p + p:last-child {
+      a {
+        @extend .btn-lg;
+      }
+    }
   }
 
   .jumbotron p:last-child {
     margin: 0;
-
-    a {
-      @extend .btn;
-      @extend .btn-lg;
-      @extend .btn-outline-light;
-      font-weight: normal;
-      text-decoration: none;
-    }
   }
 
-  &.with-background {
+  &.with-background:not(.with-black-text) {
     text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  &.with-black-text {
+    .jumbotron {
+      color: black;
+
+      h1, h2, h3, h4 {
+        color: black;
+      }
+    }
 
     .jumbotron p:last-child a {
-      @extend .btn-success;
-      background: #00ce5f;
+      @extend .btn-outline-dark;
+      border-color: black;
+      color: black;
       text-shadow: none;
+
+      &:focus, &:hover {
+        background-color: black;
+      }
     }
   }
 }

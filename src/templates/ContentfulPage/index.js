@@ -92,6 +92,7 @@ export const pageQuery = graphql`
     columnWidth
     columnOffset
     textAlign
+    textColor
   }
   fragment prose on ContentfulProse {
     name

@@ -8,10 +8,12 @@ export default function ContentfulJumbotron({
   html,
   id,
   textAlign,
+  textColor,
 }) {
   let className = 'contentful-jumbotron'
 
   if (backgroundUrl) className += ` with-background`
+  if (textColor === 'black') className += ` with-black-text`
   if (textAlign) className += ` text-${textAlign}`
 
   return (
@@ -20,10 +22,7 @@ export default function ContentfulJumbotron({
         <div className="container">
           <div className="row">
             <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
-              <div
-                className="lead"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+              <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>
         </div>
