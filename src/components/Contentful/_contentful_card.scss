@@ -1,6 +1,12 @@
 .contentful-card {
   font-size: .9rem;
   margin-bottom: 1rem;
+  
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 
   a.card {
     color: black;
