@@ -10,6 +10,12 @@
       @extend .lead;
     }
 
+    h1 + p + p:last-child {
+      a {
+        @extend .btn-lg;
+      }
+    }
+
     p:last-child {
       margin-bottom: 0;
 
@@ -18,12 +24,6 @@
         @extend .btn-outline-light;
         font-weight: normal;
         text-decoration: none;
-      }
-    }
-
-    h1 + p + p:last-child {
-      a {
-        @extend .btn-lg;
       }
     }
   }
