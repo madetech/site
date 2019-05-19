@@ -14,13 +14,13 @@ export default function PostPageTemplate({ data }) {
       titlePrefix={post.title}
       url={withPrefix(`/blog/${post.slug}`)}
     >
-      <Jumbotron extraClassName="mb-5 py-3">
+      <Jumbotron extraClassName="mb-3 py-3">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 offset-lg-2">
-              <small>
+              <strong>
                 <a href={withPrefix('/blog')}>Made Tech Blog</a>
-              </small>
+              </strong>
             </div>
           </div>
         </div>
