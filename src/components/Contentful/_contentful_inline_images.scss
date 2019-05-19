@@ -1,4 +1,11 @@
 .inline-images {
-  margin: 2rem;
+  margin: 2rem 0;
   text-align: center;
+}
+
+
+@include media-breakpoint-up(md) {
+  .inline-images__caption {
+    font-size: 1.2rem;
+  }
 }

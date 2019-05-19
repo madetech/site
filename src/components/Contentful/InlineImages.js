@@ -23,7 +23,7 @@ export default function ContentfulInlineImages({
 
   let captionComponent
 
-  if (caption) captionComponent = <p className="lead text-muted">{caption}</p>
+  if (caption) captionComponent = <p className="inline-images__caption">{caption}</p>
 
   return (
     <div className="inline-images" id={id}>
