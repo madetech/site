@@ -17,7 +17,8 @@ export default class ContentfulHubSpotForm extends React.Component {
   }
 
   handleClick() {
-    this.cookies.set('hideCookieConsent', true)
+    const oneYearFromNow = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+    this.cookies.set('hideCookieConsent', true, { expires: oneYearFromNow, path: '/' })
     this.setState({ hideCookieConsent: true })
   }
 
