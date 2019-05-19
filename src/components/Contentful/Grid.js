@@ -39,13 +39,20 @@ function GridProse({ image, imageStyle, html, textAlign }) {
     )
   }
 
+  let proseComponent
+  if (html) {
+    proseComponent = (
+      <Prose>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Prose>
+    )
+  }
+
   return (
     <div className={className}>
       {imageComponent}
 
-      <Prose>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </Prose>
+      {proseComponent}
     </div>
   )
 }

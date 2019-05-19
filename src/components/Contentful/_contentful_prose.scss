@@ -35,6 +35,10 @@
     }
   }
 
+  img + .prose {
+    margin-top: 1rem;
+  }
+
   .contentful-grid & {
     margin: 0;
   }
