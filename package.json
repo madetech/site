@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^13.1.0",
-    "@madetech/frontend": "^5.3.1",
+    "@madetech/frontend": "^5.4.0",
     "disqus-react": "^1.0.5",
     "dotenv": "^6.1.0",
     "gatsby": "^2.5.3",
