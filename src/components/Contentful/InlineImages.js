@@ -26,13 +26,15 @@ export default function ContentfulInlineImages({
   if (caption) captionComponent = <p className="lead text-muted">{caption}</p>
 
   return (
-    <div className="container my-5 text-center" id={id}>
-      <div className="row">
-        <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
-          {captionComponent}
+    <div className="inline-images" id={id}>
+      <div className="container">
+        <div className="row">
+          <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
+            {captionComponent}
 
-          <div className="d-flex justify-content-between">
-            {imageComponents}
+            <div className="d-flex justify-content-between">
+              {imageComponents}
+            </div>
           </div>
         </div>
       </div>
