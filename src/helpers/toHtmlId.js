@@ -3,11 +3,11 @@ function replaceNoAlphaWithHypens(str) {
 }
 
 function removeHyphensFromStartOfString(str) {
-  return str.replace(/^\-/, '')
+  return str.replace(/^-/, '')
 }
 
 function removeHyphensFromEndOfString(str) {
-  return str.replace(/\-$/, '')
+  return str.replace(/-$/, '')
 }
 
 export default function toHtmlId(str) {
