@@ -48,20 +48,6 @@
   background-color: #fcfcfc;
   border-top: 1px solid #e0e0e0;
   margin-bottom: 0;
-
-  & + .contentful-grid {
-    border-top: 1px solid #f0f0f0;
-    margin-top: 0;
-    padding-top: map-get($spacers, 3);
-  }
-
-  & + .contentful-grid.shaded {
-    border-top: 0;
-  }
-}
-
-.contentful-grid + .contentful-jumbotron {
-  margin-top: map-get($spacers, 3) * -1;
 }
 
 .contentful-grid.yellow,
@@ -73,12 +59,21 @@
   & + .contentful-grid.shaded {
     margin-top: map-get($spacers, 3) * -1;
   }
+
+  & + .contentful-grid.shaded {
+    border-top: 0;
+  }
 }
 
 .header + .contentful-grid {
   margin-top: 0;
 }
 
-.contentful-grid + .site_map {
-  margin-top: map-get($spacers, 3) * -1;
+.contentful-grid.shaded + .contentful-grid:not(.shaded):not(.yellow):not(.blue) {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0;
+}
+
+.contentful-grid.shaded + .contentful-grid {
+  padding-top: map-get($spacers, 3);
 }
