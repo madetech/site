@@ -1,24 +1,6 @@
 .contentful-jumbotron {
   .jumbotron {
-    h1, h2, h3, h4, h5, h6 {
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    h1 + p {
-      font-size: 1.25rem;
-    }
-
-    h1 + p + p:last-child {
-      a {
-        @extend .btn-lg;
-      }
-    }
-
     p:last-child {
-      margin-bottom: 0;
-
       a {
         @extend .btn;
         @extend .btn-outline-light;
@@ -26,10 +8,6 @@
         text-decoration: none;
       }
     }
-  }
-
-  .jumbotron p:last-child {
-    margin: 0;
   }
 
   &.with-background:not(.with-black-text) {
@@ -54,12 +32,6 @@
       &:focus, &:hover {
         background-color: black;
       }
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    h1 {
-      font-size: 2rem;
     }
   }
 }
