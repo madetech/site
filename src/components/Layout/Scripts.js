@@ -7,14 +7,16 @@ export default function Scripts() {
       {/* HubSpot */}
       <script
         id="hs-script-loader"
+        src="//js.hs-scripts.com/554916.js"
         async
         defer
-        src="//js.hs-scripts.com/554916.js"
       />
       <script
         charset="utf-8"
         type="text/javascript"
         src="//js.hsforms.net/forms/v2.js"
+        async
+        defer
       />
 
       {/* Google Analytics */}
