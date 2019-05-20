@@ -52,16 +52,6 @@ export default function Scripts() {
         '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-P9JLJK');
       `}</script>
-
-      {/* Perfect Audience */}
-      <script>{`
-        (function() {
-          window._pa = window._pa || {};
-          var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
-          pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/598a288f47e87a786d000041.js";
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
-        })();
-      `}</script>
     </Helmet>
   )
 }
