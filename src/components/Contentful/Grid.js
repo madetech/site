@@ -21,7 +21,7 @@ function GridContainer({ alignItems, children, id, style }) {
 }
 
 function GridCol({ children, columnWidth, columnOffset }) {
-  const className = `col-lg-${columnWidth} offset-lg-${columnOffset} px-4 my-3`
+  const className = `col-lg-${columnWidth} offset-lg-${columnOffset} my-3`
 
   return <div className={className}>{children}</div>
 }
