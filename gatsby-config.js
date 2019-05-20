@@ -13,11 +13,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '.',
+        name: 'Made Tech',
+        short_name: 'Made Tech',
+        start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#000000',
+        icon: './node_modules/@madetech/marketing-assets/logos/made-tech-logo-colour.png',
+        theme_color: '#252525',
         display: 'minimal-ui',
       },
     },
