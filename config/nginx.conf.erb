@@ -21,6 +21,9 @@ http {
   error_log stderr error;
 
   include mime.types;
+  types {
+    application/json json;
+  }
   default_type application/octet-stream;
   sendfile on;
 
