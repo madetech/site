@@ -116,9 +116,6 @@ jobs:
           name: Copy Gatsby Files into Preview
           command: cd preview && yarn gatsby
       - run:
-          name: Test Preview
-          command: cd preview && yarn test
-      - run:
           name: Deploy Preview
           command: cd preview && HEROKU_APP_NAME=${HEROKU_APP_NAME_PREVIEW} yarn deploy
       - slack/status:
