@@ -113,8 +113,14 @@ jobs:
           name: Install NPM Dependencies
           command: if ! test -d preview/node_modules; then cd preview && npm install; fi
       - run:
+          name: Copy Gatsby Files into Preview
+          command: cd preview && yarn gatsby
+      - run:
+          name: Test Preview
+          command: cd preview && yarn test
+      - run:
           name: Deploy Preview
-          command: cd preview && HEROKU_APP_NAME=${HEROKU_APP_NAME_PREVIEW} npm run deploy
+          command: cd preview && HEROKU_APP_NAME=${HEROKU_APP_NAME_PREVIEW} yarn deploy
       - slack/status:
           fail_only: 'true'
       - save_cache:

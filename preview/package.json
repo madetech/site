@@ -1,0 +1,45 @@
+{
+  "name": "@madetech/blog-preview",
+  "description": "A preview application for Contentful",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.1.0",
+    "@madetech/frontend": "^5.8.0",
+    "contentful": "^7.5.1",
+    "dotenv": "^6.1.0",
+    "node-sass": "^4.12.0",
+    "query-string": "^6.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-scripts": "3.0.1",
+    "universal-cookie": "^4.0.0"
+  },
+  "devDependencies": {
+    "request": "^2.88.0",
+    "tar": "^4.4.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "gatsby": "rm -rf gatsby && cp -r ../src src/gatsby && cp ../static/favicon.ico public/favicon.ico",
+    "deploy": "node bin/deploy-preview.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
