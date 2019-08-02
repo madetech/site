@@ -10,7 +10,7 @@ export default function CareerPageTemplate({ data }) {
   return (
     <Layout description={page.description} titlePrefix={page.title}>
       <Contentful content={page.content} />
-      <JobBoard />
+      <JobBoard className={"container"}/>
     </Layout>
   )
 }
