@@ -12,7 +12,7 @@ describe('Contentful Slug Validation Rules', () => {
     '/bob-cool/bbb-': false,
     'bob': false,
     'bob-cool': false,
-    'bob-cool/': false
+    'bob-cool/': false,
   }
 
   Object.entries(validationExpectations).forEach(([slug, valid]) => {

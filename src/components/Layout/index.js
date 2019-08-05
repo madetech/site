@@ -5,7 +5,6 @@ import Meta from './Meta'
 import Scripts from './Scripts'
 import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
 
-
 export default function Layout({
   children,
   data,
