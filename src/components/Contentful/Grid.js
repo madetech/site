@@ -137,8 +137,8 @@ function GridComponentArrayRenderer({ alignItems, content, id, style }) {
     <GridContainer alignItems={alignItems} id={id} style={style}>
       {content.map((content, i) => (
         <GridCol
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
+          columnWidth={content.columnWidth || 12}
+          columnOffset={content.columnOffset || 0}
           key={i}
         >
           <GridComponentRenderer key={i} {...content} />
