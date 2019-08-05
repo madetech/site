@@ -3,7 +3,6 @@ const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
 const contentfulPageTemplate = path.resolve('./src/templates/ContentfulPage/index.js')
-const careerPageTemplate = path.resolve('./src/templates/CareerPage/index.js')
 const postListPageTemplate = path.resolve('./src/templates/PostListPage/index.js')
 const postPageTemplate = path.resolve('./src/templates/PostPage/index.js')
 const categoryPageTemplate = path.resolve('./src/templates/CategoryPage/index.js')
@@ -34,17 +33,9 @@ exports.createPages = ({ graphql, actions }) => {
       const postEdges = result.data.allContentfulPage.edges
 
       postEdges.forEach(edge => {
-        var component;
-        if(edge.node.slug.includes("careers")){
-          component = slash(careerPageTemplate);
-        }
-        else {
-          component = slash(contentfulPageTemplate);
-        }
-
         createPage({
           path: edge.node.slug.slice(0, 1) === '/' ? edge.node.slug : `/${edge.node.slug}`,
-          component: component,
+          component: slash(contentfulPageTemplate),
           context: {
             id: edge.node.id,
           },
