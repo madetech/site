@@ -33,6 +33,7 @@ export const pageQuery = graphql`
             ...card
             ...hubSpotForm
             ...prose
+            ...jobsBoard
           }
         }
       }
