@@ -22,6 +22,9 @@ function GridContainer({ alignItems, children, id, style }) {
 }
 
 function GridCol({ children, columnWidth, columnOffset }) {
+  columnWidth = columnWidth || 12
+  columnOffset = columnOffset || 0
+
   const className = `col-lg-${columnWidth} offset-lg-${columnOffset} my-2`
 
   return <div className={className}>{children}</div>
@@ -137,8 +140,8 @@ function GridComponentArrayRenderer({ alignItems, content, id, style }) {
     <GridContainer alignItems={alignItems} id={id} style={style}>
       {content.map((content, i) => (
         <GridCol
-          columnWidth={content.columnWidth || 12}
-          columnOffset={content.columnOffset || 0}
+          columnWidth={content.columnWidth}
+          columnOffset={content.columnOffset}
           key={i}
         >
           <GridComponentRenderer key={i} {...content} />
