@@ -6,7 +6,7 @@ export default class ContentfulHubSpotForm extends React.Component {
     super(props)
     this.cookies = new Cookies()
     this.state = {
-      hideCookieConsent: true
+      hideCookieConsent: true,
     }
   }
 
@@ -31,7 +31,7 @@ export default class ContentfulHubSpotForm extends React.Component {
           <div className='my-2'>We use cookies on this website to ensure you get the best experience.</div>
 
           <button
-            className='btn btn-outline-light'
+            className="btn btn-outline-light"
             onClick={this.handleClick.bind(this)}
           >
             Okay, got it!

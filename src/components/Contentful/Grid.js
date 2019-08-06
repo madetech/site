@@ -3,6 +3,7 @@ import { Prose } from '@madetech/frontend'
 import HubSpotForm from './HubSpotForm'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
+import JobsBoard from '../JobsBoard'
 
 function GridContainer({ alignItems, children, id, style }) {
   let className = 'contentful-grid'
@@ -21,6 +22,9 @@ function GridContainer({ alignItems, children, id, style }) {
 }
 
 function GridCol({ children, columnWidth, columnOffset }) {
+  columnWidth = columnWidth || 12
+  columnOffset = columnOffset || 0
+
   const className = `col-lg-${columnWidth} offset-lg-${columnOffset} my-2`
 
   return <div className={className}>{children}</div>
@@ -120,6 +124,8 @@ function GridComponentRenderer(content) {
       return (
         <GridHubSpotForm formId={content.formId} id={toHtmlId(content.name)} />
       )
+    case 'ContentfulJobsBoard':
+      return <JobsBoard />
     default:
       return <GridUnknownComponentError __typename={content.__typename} />
   }
