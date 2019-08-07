@@ -20,6 +20,20 @@
     max-width: 100% !important;
   }
 
+  blockquote {
+    margin-bottom: 1.5rem;
+
+    cite {
+      display: block;
+      font-style: normal;
+      text-align: right;
+    }
+  }
+
+  blockquote:not(.is-style-large) {
+    font-size: 1rem;
+  }
+
   code[class*="language-"],
   pre[class*="language-"] {
   	color: #ccc;
