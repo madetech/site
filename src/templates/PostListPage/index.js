@@ -6,15 +6,15 @@ import PostList, { PostListIntro } from '../../components/PostList'
 import { Pagination } from '@madetech/frontend'
 
 const highlightedTopics = [
+  { name: 'Academy', slug: 'academy' },
   { name: 'Agile Transformation', slug: 'agile-transformation' },
   { name: 'Continuous Delivery', slug: 'continuous-delivery' },
-  { name: 'Cloud Automation', slug: 'cloud-automation' },
   { name: 'DevOps', slug: 'devops' },
-  { name: 'Docker', slug: 'docker' },
-  { name: 'Extreme Programming', slug: 'extreme-programming-xp' },
-  { name: 'Upskilling & Training', slug: 'upskilling-and-training' },
+  { name: 'Diversity and Inclusion', slug: 'diversity-and-inclusion' },
+  { name: 'Employers as Educators', slug: 'employers-as-educators' },
+  { name: 'Extreme Programming', slug: 'extreme-programming' },
   { name: 'Press Releases', slug: 'press-releases' },
-  { name: 'Software Architecture', slug: 'software-architecture' },
+  { name: 'User-Centred Technology', slug: 'user-centred-technology' },
 ]
 
 export default function Index({ data, pageContext }) {
