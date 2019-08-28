@@ -52,8 +52,8 @@ function ComponentRenderer(content) {
           alignItems={content.alignItems}
           content={content.content}
           id={id}
-          style={content.style}
           layout={content.layout}
+          style={content.style}
         />
       )
     default:

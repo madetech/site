@@ -5,7 +5,7 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
 
-function GridContainer({ alignItems, children, id, style, layout }) {
+function GridContainer({ alignItems, children, id, layout, style }) {
   let className = 'contentful-grid'
   if (style) className += ` ${style}`
 
@@ -13,7 +13,7 @@ function GridContainer({ alignItems, children, id, style, layout }) {
   if (alignItems) rowClassName += ` align-items-${alignItems}`
 
   let containerClassName = 'container'
-  if(layout && layout === 'fluid') containerClassName += '-fluid'
+  if(layout === 'fluid') containerClassName += '-fluid'
 
   return (
     <div className={className} id={id}>
@@ -134,13 +134,13 @@ function GridComponentRenderer(content) {
   }
 }
 
-function GridComponentArrayRenderer({ alignItems, content, id, style, layout }) {
+function GridComponentArrayRenderer({ alignItems, content, id, layout, style }) {
   if (!content || content.length === 0) {
     throw new Error('No grid content provided')
   }
 
   return (
-    <GridContainer alignItems={alignItems} id={id} style={style} layout={layout}>
+    <GridContainer alignItems={alignItems} id={id} layout={layout} style={style}>
       {content.map((content, i) => (
         <GridCol
           columnWidth={content.columnWidth}

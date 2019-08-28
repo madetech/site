@@ -25,10 +25,10 @@ export const pageQuery = graphql`
         ...jumbotron
         ...prose
         ... on ContentfulGrid {
-          name
           alignItems
-          style
           layout
+          name
+          style
           content {
             __typename
             ...card
