@@ -52,6 +52,7 @@ function ComponentRenderer(content) {
           alignItems={content.alignItems}
           content={content.content}
           id={id}
+          layout={content.layout}
           style={content.style}
         />
       )

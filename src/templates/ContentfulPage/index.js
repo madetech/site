@@ -25,8 +25,9 @@ export const pageQuery = graphql`
         ...jumbotron
         ...prose
         ... on ContentfulGrid {
-          name
           alignItems
+          layout
+          name
           style
           content {
             __typename
