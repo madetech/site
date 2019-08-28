@@ -28,6 +28,7 @@ export const pageQuery = graphql`
           name
           alignItems
           style
+          layout
           content {
             __typename
             ...card

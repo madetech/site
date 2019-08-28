@@ -53,6 +53,7 @@ function ComponentRenderer(content) {
           content={content.content}
           id={id}
           style={content.style}
+          layout={content.layout}
         />
       )
     default:
