@@ -7,7 +7,7 @@ export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
 
   return (
-    <Layout description={page.description} titlePrefix={page.title}>
+    <Layout description={page.description} featureFlags={page.featureFlags} titlePrefix={page.title}>
       <Contentful content={page.content} />
     </Layout>
   )
@@ -16,9 +16,10 @@ export default function ContentfulPageTemplate({ data }) {
 export const pageQuery = graphql`
   query($id: String!) {
     contentfulPage(id: { eq: $id }) {
+      description
+      featureFlags
       id
       title
-      description
       content {
         __typename
         ...hero
