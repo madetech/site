@@ -69,3 +69,6 @@ yarn-error.log
 .yarn-integrity
 
 *.mp4
+
+# vscode config
+.vscode/
