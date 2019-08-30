@@ -9,9 +9,13 @@ export default function Layout({
   children,
   data,
   description,
+  featureFlags,
   titlePrefix,
   url,
 }) {
+
+  let featureFlagsClassName = featureFlags === 'new-design' ? 'new-design' : ''
+
   return (
     <div>
       <Meta description={description} titlePrefix={titlePrefix} url={url} />
@@ -46,7 +50,9 @@ export default function Layout({
         </a>
       </Header>
 
-      {children}
+      <div className={featureFlagsClassName}>
+        {children}
+      </div>
 
       <SiteMap />
 
