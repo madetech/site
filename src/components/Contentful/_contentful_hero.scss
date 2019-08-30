@@ -1,0 +1,41 @@
+.contentful-hero {
+  .jumbotron {
+    p:last-child {
+      a {
+        @extend .btn;
+        @extend .btn-outline-light;
+        font-weight: normal;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.with-background:not(.with-black-text) {
+    text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  &.with-black-text {
+    .jumbotron {
+      color: black;
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: black;
+      }
+    }
+
+    .jumbotron p:last-child a {
+      @extend .btn-outline-dark;
+      border-color: black;
+      color: black;
+      text-shadow: none;
+
+      &:focus,
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}

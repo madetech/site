@@ -3,6 +3,7 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
+import Hero from './Hero'
 import Prose from './Prose'
 import toHtmlId from '../../helpers/toHtmlId'
 
@@ -36,6 +37,8 @@ function ComponentRenderer(content) {
           textColor={content.textColor}
         />
       )
+    case 'ContentfulHero':
+      return <Hero name={content.name} id={id} />
     case 'ContentfulProse':
       return (
         <Prose

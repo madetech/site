@@ -21,6 +21,7 @@ export const pageQuery = graphql`
       description
       content {
         __typename
+        ...hero
         ...inlineImages
         ...jumbotron
         ...prose
@@ -94,6 +95,9 @@ export const pageQuery = graphql`
     columnOffset
     textAlign
     textColor
+  }
+  fragment hero on ContentfulHero {
+    name
   }
   fragment prose on ContentfulProse {
     name
