@@ -98,6 +98,16 @@ export const pageQuery = graphql`
   }
   fragment hero on ContentfulHero {
     name
+    pageTitle
+    sectionName
+    image {
+      fixed(width: 1000) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
   }
   fragment prose on ContentfulProse {
     name

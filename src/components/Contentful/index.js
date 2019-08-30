@@ -38,7 +38,14 @@ function ComponentRenderer(content) {
         />
       )
     case 'ContentfulHero':
-      return <Hero name={content.name} id={id} />
+      return (
+        <Hero
+          pageTitle={content.pageTitle}
+          sectionName={content.sectionName}
+          id={id}
+          image={content.image}
+        />
+      )
     case 'ContentfulProse':
       return (
         <Prose
