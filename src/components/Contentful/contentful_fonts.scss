@@ -1,0 +1,138 @@
+.new-design {
+  $mt-green-dark: #31aa33;
+  $mt-green: #40c842;
+  $black: #333;
+  $dark-grey: #595959;
+  $mid-grey: #999;
+  $white-two: #f1f1f1;
+  $white: #fff;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+  }
+
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  color: $dark-grey;
+
+  // desktop
+  @media (min-width: 721px) {  
+    // hero
+    h1 {
+      color: $mt-green;
+      font-size: 4.21rem;
+      line-height: 1.26;
+      letter-spacing: -0.05rem;
+    }
+
+    // section header
+    h2 {
+      color: black;
+      font-size: 2.63rem;
+      line-height: 1.2;
+    }
+
+    // section sub-header
+    h3 {
+      font-size: 1.9rem;
+      line-height: 1.39;
+    }
+
+    // intro text
+    h4 {
+      font-size: 1.37rem;
+      line-height: 1.54;
+    }
+
+    .medium {
+      font-size: 1.26rem;
+      line-height: 1.67;
+    }
+
+    .small {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+  }
+
+  // tablet
+  @media (min-width: 321px) and (max-width: 720px) {  
+    // hero
+    h1 {
+      color: $mt-green;
+      font-size: 3.42rem;
+      line-height: 1.23;
+      letter-spacing: -0.04rem;
+    }
+
+    // section header
+    h2 {
+      color: black;
+      font-size: 2.1rem;
+      line-height: 1.25;
+    }
+
+    // section sub-header
+    h3 {
+      font-size: 1.9rem;
+      line-height: 1.39;
+    }
+
+    // intro text
+    h4 {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .medium {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    
+    .small {
+      font-size: 0.95rem;
+      line-height: 1.39;
+    }
+  }
+
+  // mobile
+
+  @media (max-width: 320px) {
+    // hero
+    h1 {
+      color: $mt-green;
+      font-size: 2.63rem;
+      line-height: 1.2;
+      letter-spacing: -0.03rem;
+    }
+
+    // section header
+    h2 {
+      color: black;
+      font-size: 1.58rem;
+      line-height: 1.33;
+    }
+
+    // section sub-header
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.33;
+    }
+
+    // intro text
+    h4 {
+      font-size: 0.95rem;
+      line-height: 1.39;
+    }
+
+    .medium {
+      font-size: 0.95rem;
+      line-height: 1.66;
+    }
+
+    .small {
+      font-size: 0.84rem;
+      line-height: 1.57;
+    }
+  }
+}
