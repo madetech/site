@@ -1,12 +1,42 @@
 .contentful-hero {
+  @media (min-width: $min-width-tablet) and (max-width: $max-width-tablet) {
+    .contentful-hero__services-image {
+      img {
+        width: 350px;
+      }
+    }
+  }
+
+  @media (max-width: $max-width-mobile) {
+    .contentful-hero__services-image {
+      display: none;
+    }
+  }
+
+  .container {
+    position: relative;
+    min-height: 600px;
+    max-width: 1180px;
+  }
+
   .contentful-hero__section-name {
-    margin: 0 0 45px 0;
+    margin: 0 0 20px 0;
+    font-weight: 800;
   }
   .contentful-hero__page-title {
-    margin-top: -50px;
+    width: 5px;
+    overflow: visible;
   }
 
   .contentful-hero__breadcrumb {
     color: gray;
+    margin-bottom: 60px;
+  }
+
+  .contentful-hero__services-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
   }
 }

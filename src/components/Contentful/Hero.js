@@ -12,27 +12,25 @@ export default function ContentfulHero({
   let pageBreadcrumbComponent
 
   {
-    if (sectionName)
+    if (pageBreadcrumb)
       pageBreadcrumbComponent = (
-        <p className="contentful-hero__breadcrumb">{pageBreadcrumb}</p>
+        <div className="contentful-hero__breadcrumb">{pageBreadcrumb}</div>
       )
   }
 
   {
-    if (pageBreadcrumb)
+    if (sectionName)
       sectionNameComponent = (
-        <p className="contentful-hero__section-name">{sectionName}</p>
+        <div className="contentful-hero__section-name">{sectionName}</div>
       )
   }
 
   {
     if (image)
       imageComponent = (
-        <img
-          className="contentful-hero__services-image"
-          alt={image.title}
-          src={image.fixed.src}
-        />
+        <div className="contentful-hero__services-image">
+          <img alt={image.title} src={image.fixed.src} />
+        </div>
       )
   }
 
@@ -40,12 +38,12 @@ export default function ContentfulHero({
     <div className="contentful-hero" id={id}>
       <div className="container">
         <div className="row">
-          <div className="col-5">
-            <p> {pageBreadcrumbComponent}</p>
-            <div>{sectionNameComponent}</div>
+          <div>
+            {pageBreadcrumbComponent}
+            {sectionNameComponent}
             <h1 className="contentful-hero__page-title">{pageTitle}</h1>
           </div>
-          <div className="col-7">{imageComponent}</div>
+          {imageComponent}
         </div>
       </div>
     </div>
