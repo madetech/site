@@ -21,7 +21,7 @@ export default function ContentfulHero({
   {
     if (sectionName)
       sectionNameComponent = (
-        <div className="contentful-hero__section-name">{sectionName}</div>
+        <div className="contentful-hero__section-type">{sectionName}</div>
       )
   }
 

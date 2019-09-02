@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:500,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
 
+* {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  color: $dark-grey;
+}
+
 h1,
 h2,
 h3,
@@ -8,129 +13,120 @@ h4,
 h5,
 h6 {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-weight: $extra-bold;
 }
 
-* {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  color: $dark-grey;
-}
+// hero
+h1 {
+  color: $mt-green;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 
-// desktop
-@media (min-width: $min-width-desktop) {
-  // hero
-  h1 {
-    color: $mt-green;
+  @include desktop {
     font-size: 4.21rem;
     line-height: 1.26;
     letter-spacing: -0.05rem;
   }
 
-  // section header
-  h2 {
-    color: black;
-    font-size: 2.63rem;
-    line-height: 1.2;
-  }
-
-  // section sub-header
-  h3 {
-    font-size: 1.9rem;
-    line-height: 1.39;
-  }
-
-  // intro text
-  h4 {
-    font-size: 1.37rem;
-    line-height: 1.54;
-  }
-
-  .medium {
-    font-size: 1.26rem;
-    line-height: 1.67;
-  }
-
-  .small {
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-}
-
-// tablet
-@media (min-width: $min-width-tablet) and (max-width: $max-width-tablet) {
-  // hero
-  h1 {
-    color: $mt-green;
+  @include tablet {
     font-size: 3.42rem;
     line-height: 1.23;
     letter-spacing: -0.04rem;
   }
 
-  // section header
-  h2 {
-    color: black;
+  @include mobile {
+    font-size: 2.63rem;
+    line-height: 1.2;
+    letter-spacing: -0.03rem;
+  }
+}
+
+// section header
+h2 {
+  color: $black;
+
+  @include desktop {
+    font-size: 2.63rem;
+    line-height: 1.2;
+  }
+
+  @include tablet {
     font-size: 2.1rem;
     line-height: 1.25;
   }
 
-  // section sub-header
-  h3 {
+  @include mobile {
+    font-size: 1.58rem;
+    line-height: 1.33;
+  }
+}
+
+// section sub-header
+h3 {
+  @include desktop {
     font-size: 1.9rem;
     line-height: 1.39;
   }
 
-  // intro text
-  h4 {
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 1.33;
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+    line-height: 1.33;
+  }
+}
+
+// intro text
+h4 {
+  @include desktop {
+    font-size: 1.37rem;
+    line-height: 1.54;
+  }
+
+  @include tablet {
     font-size: 1.05rem;
     line-height: 1.5;
   }
 
-  .medium {
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-
-  .small {
+  @include mobile {
     font-size: 0.95rem;
     line-height: 1.39;
   }
 }
 
-// mobile
-@media (max-width: $max-width-mobile) {
-  // hero
-  h1 {
-    color: $mt-green;
-    font-size: 2.63rem;
-    line-height: 1.2;
-    letter-spacing: -0.03rem;
+.medium {
+  @include desktop {
+    font-size: 1.26rem;
+    line-height: 1.67;
   }
 
-  // section header
-  h2 {
-    color: black;
-    font-size: 1.58rem;
-    line-height: 1.33;
+  @include tablet {
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
 
-  // section sub-header
-  h3 {
-    font-size: 1.5rem;
-    line-height: 1.33;
+  @include mobile {
+    font-size: 0.95rem;
+    line-height: 1.66;
+  }
+}
+
+.small {
+  @include desktop {
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
 
-  // intro text
-  h4 {
+  @include tablet {
     font-size: 0.95rem;
     line-height: 1.39;
   }
 
-  .medium {
-    font-size: 0.95rem;
-    line-height: 1.66;
-  }
-
-  .small {
+  @include mobile {
     font-size: 0.84rem;
     line-height: 1.57;
   }

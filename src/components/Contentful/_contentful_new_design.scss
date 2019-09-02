@@ -2,4 +2,19 @@
   @import 'components/Contentful/contentful_settings';
   @import 'components/Contentful/contentful_fonts';
   @import 'components/Contentful/contentful_hero';
+
+  // these max-widths need work
+  .container {
+    @include desktop {
+      max-width: 1000px;
+    }
+
+    @include tablet {
+      max-width: 600px;
+    }
+
+    @include mobile {
+      max-width: 300px;
+    }
+  }
 }
