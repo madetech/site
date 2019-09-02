@@ -13,7 +13,6 @@ export default function Layout({
   titlePrefix,
   url,
 }) {
-
   let featureFlagsClassName = featureFlags === 'new-design' ? 'new-design' : ''
 
   return (
