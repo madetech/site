@@ -98,6 +98,7 @@ export const pageQuery = graphql`
   }
   fragment hero on ContentfulHero {
     name
+    pageBreadcrumb
     pageTitle
     sectionName
     image {

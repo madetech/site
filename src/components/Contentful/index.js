@@ -40,10 +40,11 @@ function ComponentRenderer(content) {
     case 'ContentfulHero':
       return (
         <Hero
-          pageTitle={content.pageTitle}
-          sectionName={content.sectionName}
           id={id}
           image={content.image}
+          pageBreadcrumb={content.pageBreadcrumb}
+          pageTitle={content.pageTitle}
+          sectionName={content.sectionName}
         />
       )
     case 'ContentfulProse':
