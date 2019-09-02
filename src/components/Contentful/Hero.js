@@ -9,7 +9,7 @@ export default function ContentfulHero({ pageTitle, sectionName, id, image }) {
 
   if (image)
     imageComponent = (
-      <img className="servies-image" alt={image.title} src={image.fixed.src} />
+      <img className="services-image" alt={image.title} src={image.fixed.src} />
     )
 
   return (
