@@ -55,13 +55,24 @@ function GridProse({ image, imageStyle, html, textAlign }) {
     )
   }
 
-  return (
-    <div className={className}>
-      {imageComponent}
+  let gridProseComponent
+  if(imageStyle === 'after') {
+    gridProseComponent = (
+      <div className={className}>
+        {proseComponent}
+        {imageComponent}
+      </div>
+    )
+  } else {
+    gridProseComponent = (
+      <div className={className}>
+        {imageComponent}
+        {proseComponent}
+      </div>
+    )
+  }
 
-      {proseComponent}
-    </div>
-  )
+  return gridProseComponent
 }
 
 function GridCard({ image, html, link }) {
