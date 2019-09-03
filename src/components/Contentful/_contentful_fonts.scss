@@ -1,26 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:500,700,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
-
-* {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  color: $dark-grey;
-
-  @include desktop {
-    font-size: 1.26rem;
-    line-height: 1.67;
-  }
-
-  @include tablet {
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-
-  @include mobile {
-    font-size: 0.95rem;
-    line-height: 1.66;
-  }
-}
-
 h1,
 h2,
 h3,
