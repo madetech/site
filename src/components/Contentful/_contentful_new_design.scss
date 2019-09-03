@@ -3,6 +3,13 @@
   @import 'components/Contentful/contentful_fonts';
   @import 'components/Contentful/contentful_hero';
 
+  .contentful-grid {
+    &.shaded {
+      background-color: $white-two;
+      border: 0;
+    }
+  }
+
   // these max-widths need work
   .container {
     @include desktop {
