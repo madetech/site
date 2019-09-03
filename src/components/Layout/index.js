@@ -15,6 +15,23 @@ export default function Layout({
 }) {
   let featureFlagsClassName = featureFlags === 'new-design' ? 'new-design' : ''
 
+  let pageContentComponent
+  if (featureFlags === 'new-design') {
+    pageContentComponent = (
+      <div className="new-design">
+        <div className="new-design__inner">
+          {children}
+        </div>
+      </div>
+    )
+  } else {
+    pageContentComponent = (
+      <div>
+        {children}
+      </div>
+    )
+  }
+
   return (
     <div>
       <Meta description={description} titlePrefix={titlePrefix} url={url} />
@@ -49,9 +66,7 @@ export default function Layout({
         </a>
       </Header>
 
-      <div className={featureFlagsClassName}>
-        {children}
-      </div>
+      {pageContentComponent}
 
       <SiteMap />
 
