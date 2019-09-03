@@ -9,56 +9,63 @@
 
   .container {
     position: relative;
-    min-height: 600px;
-  }
-
-  .contentful-hero__breadcrumb {
-    color: $mid-grey;
-    font-weight: $bold;
-    font-size: 0.63rem;
-
-    @include desktop {
-      margin-bottom: 65px;
-    }
+    min-height: 500px;
 
     @include tablet {
-      margin-bottom: 45px;
+      min-height: 200px;
     }
 
     @include mobile {
-      margin-bottom: 35px;
+      min-height: 100px;
+    }
+  }
+}
+
+.contentful-hero__breadcrumb {
+  color: $mid-grey;
+  font-weight: $bold;
+  font-size: 0.63rem;
+  @include desktop {
+    margin-bottom: 65px;
+  }
+
+  @include tablet {
+    margin-bottom: 45px;
+  }
+
+  @include mobile {
+    margin-bottom: 35px;
+  }
+}
+
+.contentful-hero__section-type {
+  font-weight: $extra-bold;
+  font-size: 0.63rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.contentful-hero__page-title {
+  // force page-title to be one word per line
+  width: 5px;
+  overflow: visible;
+}
+
+.contentful-hero__services-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  @include tablet {
+    img {
+      width: 400px;
     }
   }
 
-  .contentful-hero__section-type {
-    font-weight: $extra-bold;
-    font-size: 0.63rem;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-  }
-
-  .contentful-hero__page-title {
-    // force page-title to be one word per line
-    width: 5px;
-    overflow: visible;
-  }
-
-  .contentful-hero__services-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-
-    @include tablet {
-      img {
-        width: 400px;
-      }
-    }
-
-    @include mobile {
-      img {
-        display: none;
-      }
+  @include mobile {
+    img {
+      display: none;
     }
   }
 }
