@@ -9,7 +9,7 @@
 
   .container {
     position: relative;
-    min-height: 500px;
+    min-height: 480px;
 
     @include tablet {
       min-height: 200px;
@@ -53,19 +53,13 @@
 
 .contentful-hero__services-image {
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
   z-index: -1;
-
-  @include tablet {
-    img {
-      width: 400px;
-    }
-  }
+  width: 80%;
 
   @include mobile {
-    img {
-      display: none;
-    }
+    display: none;
   }
 }
