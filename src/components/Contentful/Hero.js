@@ -32,7 +32,7 @@ export default function ContentfulHero({
   {
     if (image)
       imageComponent = (
-        <div>
+        <div className="col-1">
           <div className="contentful-hero__services-image">
             <img alt={image.title} src={image.fixed.src} />
           </div>
