@@ -9,19 +9,4 @@
       border: 0;
     }
   }
-
-  // these max-widths need work
-  .container {
-    @include desktop {
-      max-width: 1000px;
-    }
-
-    @include tablet {
-      max-width: 600px;
-    }
-
-    @include mobile {
-      max-width: 300px;
-    }
-  }
 }
