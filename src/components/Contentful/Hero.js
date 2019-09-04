@@ -45,7 +45,7 @@ export default function ContentfulHero({
         <div className="row">
           <div className="col-12">
             {sectionNameComponent}
-            <h1 className="contentful-hero__page-title" dangerouslySetInnerHTML={{__html: threeSpaceToLineBreak(pageTitle)}} />
+            <h1 className="contentful-hero__page-title">{threeSpaceToLineBreak(pageTitle)}</h1>
           </div>
           {imageComponent}
         </div> 

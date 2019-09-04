@@ -1,3 +1,6 @@
+import React from 'react'
+const reactStringReplace = require('react-string-replace')
+
 export default function threeSpaceToLineBreak(str) {
-  return str.replace(/ {3}/, '<br />')
+  return reactStringReplace(str, '   ', () => (<br />));
 }
