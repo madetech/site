@@ -90,6 +90,29 @@ h4 {
   }
 }
 
+// pull-quote
+blockquote {
+  font-weight: $medium;
+  line-height: 1.5;
+  color: $mt-green;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+
+  @include desktop {
+    font-size: 1.37rem;
+    letter-spacing: -0.03rem;
+  }
+
+  @include tablet {
+    font-size: 1.01rem;
+    letter-spacing: -0.03rem;
+  }
+
+  @include mobile {
+    font-size: 1.01rem;
+    letter-spacing: -0.03rem;
+  }
+}
+
 .small {
   @include desktop {
     font-size: 1.05rem;

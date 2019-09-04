@@ -11,7 +11,12 @@
 .contentful-grid.blue {
   background-color: #385fb3;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #fff;
   }
 
@@ -37,7 +42,8 @@
       color: black;
       text-shadow: none;
 
-      &:focus, &:hover {
+      &:focus,
+      &:hover {
         background-color: black;
       }
     }
@@ -69,7 +75,8 @@
   margin-top: 0;
 }
 
-.contentful-grid.shaded + .contentful-grid:not(.shaded):not(.yellow):not(.blue) {
+.contentful-grid.shaded
+  + .contentful-grid:not(.shaded):not(.yellow):not(.blue) {
   border-top: 1px solid #f0f0f0;
   margin-top: 0;
 }
