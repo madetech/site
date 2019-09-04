@@ -13,8 +13,6 @@ export default function Layout({
   titlePrefix,
   url,
 }) {
-  let featureFlagsClassName = featureFlags === 'new-design' ? 'new-design' : ''
-
   let pageContentComponent
   if (featureFlags === 'new-design') {
     pageContentComponent = (
