@@ -9,16 +9,12 @@ export default function ContentfulHero({
   sectionName,
 }) {
   let sectionNameComponent
-  let imageComponent
   let pageBreadcrumbComponent
+  let backgroundImage
 
   if (pageBreadcrumb) {
     pageBreadcrumbComponent = (
-      <div className="row">
-        <div className="col-12">
-          <div className="contentful-hero__breadcrumb">{pageBreadcrumb}</div>
-        </div>
-      </div>
+      <div className="contentful-hero__breadcrumb">{pageBreadcrumb}</div>
     )
   }
 
@@ -29,25 +25,18 @@ export default function ContentfulHero({
   }
 
   if (image) {
-    imageComponent = (
-      <div className="position-relative">
-        <div className="contentful-hero__services-image">
-          <img alt={image.title} src={image.fixed.src} />
-        </div>
-      </div>
-    )
+    backgroundImage = `url(${image.fixed.src})`
   }
 
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        {pageBreadcrumbComponent}
-        <div className="row">
-          <div className="col-12">
+        <div className="row" style={{backgroundImage: backgroundImage }}>
+          <div class="col-lg-12">
+            {pageBreadcrumbComponent}
             {sectionNameComponent}
             <h1 className="contentful-hero__page-title">{threeSpaceToLineBreak(pageTitle)}</h1>
           </div>
-          {imageComponent}
         </div> 
       </div>
     </div>
