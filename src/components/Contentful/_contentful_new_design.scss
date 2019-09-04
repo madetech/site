@@ -5,7 +5,7 @@
   @import 'components/Contentful/contentful_fonts';
   @import 'components/Contentful/contentful_hero';
 
-  //====== DEFAULT PAGE TEXT-STYLES ======//
+  /** DEFAULT PAGE TEXT-STYLES */
 
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   color: $dark-grey;
@@ -25,22 +25,37 @@
     line-height: 1.66;
   }
 
-  //====== ======//
+  /***/
 
   .contentful-grid {
     margin: 0;
-    padding: 15px 0;
+    border: 0;
+    padding: $grid-padding;
+
+    &.shaded,&.yellow,&.blue {
+      padding: $grid-padding;
+
+      + .contentful-grid {
+        padding: $grid-padding;
+      }
+    }
 
     &.shaded {
       background-color: $white-two;
-      border: 0;
     }
 
     &.green-gradient {
       background-image: linear-gradient(285deg, $mt-green-gradient-dark, $mt-green);
+      padding: 38px 0;
+
+      h3 {
+        color: $white;
+        font-weight: $extra-bold;
+      }
 
       .prose {
         color: $white;
+        font-weight: $medium;
       }
     }
   }

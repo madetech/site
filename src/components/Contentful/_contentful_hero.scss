@@ -46,9 +46,7 @@
 }
 
 .contentful-hero__page-title {
-  // force page-title to be one word per line
-  width: 5px;
-  overflow: visible;
+  word-wrap: break-word;
 }
 
 .contentful-hero__services-image {
@@ -57,7 +55,6 @@
   transform: translateY(-50%);
   right: 0;
   z-index: -1;
-  width: 80%;
 
   @include mobile {
     display: none;

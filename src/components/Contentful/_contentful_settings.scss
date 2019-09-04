@@ -11,6 +11,10 @@ $white: #fff;
 // font-weights
 $extra-bold: 800;
 $bold: 600;
+$medium: 500;
+
+// paddings
+$grid-padding: 65px 0;
 
 // device mixins
 @mixin mobile {
