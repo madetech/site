@@ -32,6 +32,10 @@
     border: 0;
     padding: $grid-padding;
 
+    @include mobile {
+      padding: $mobile-grid-padding;
+    }
+
     &.shaded,
     &.yellow,
     &.blue {
@@ -39,6 +43,10 @@
 
       + .contentful-grid {
         padding: $grid-padding;
+
+        @include mobile {
+          padding: $mobile-grid-padding;
+        }
       }
     }
 
@@ -46,7 +54,7 @@
       background-color: $white-two;
 
       @include mobile {
-        padding: 50px 0;
+        padding: $mobile-grid-padding;
       }
     }
 
@@ -59,7 +67,7 @@
       padding: 100px 0;
 
       @include mobile {
-        padding: 50px 0;
+        padding: $mobile-grid-padding;
       }
 
       h3 {
