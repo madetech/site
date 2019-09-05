@@ -4,6 +4,7 @@
   @import 'components/Contentful/contentful_settings';
   @import 'components/Contentful/contentful_fonts';
   @import 'components/Contentful/contentful_hero';
+  @import 'components/Contentful/contentful_floating_prose_container';
 
   /** DEFAULT PAGE TEXT-STYLES */
 
@@ -65,7 +66,7 @@
         $mt-green-gradient-dark,
         $mt-green
       );
-      padding: 100px 0;
+      padding: 30px 0;
 
       @include mobile {
         padding: $mobile-grid-padding;
@@ -81,6 +82,7 @@
         font-weight: $medium;
       }
     }
+
     &.pull-quote {
       .prose {
         color: $black;

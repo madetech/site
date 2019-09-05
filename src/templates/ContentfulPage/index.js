@@ -26,6 +26,7 @@ export const pageQuery = graphql`
         ...inlineImages
         ...jumbotron
         ...prose
+        ...floatingProseContainer
         ... on ContentfulGrid {
           alignItems
           layout
@@ -128,5 +129,16 @@ export const pageQuery = graphql`
     }
     imageStyle
     textAlign
+  }
+  fragment floatingProseContainer on ContentfulFloatingProseContainer {
+    name
+    colourOfElementAbove
+    colourOfElementBelow
+    gridWidth
+    style
+    content {
+      __typename
+      ...prose
+    }
   }
 `
