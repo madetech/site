@@ -32,6 +32,10 @@
     border: 0;
     padding: $grid-padding;
 
+    @include mobile {
+      padding: $mobile-grid-padding;
+    }
+
     &.shaded,
     &.yellow,
     &.blue {
@@ -39,11 +43,19 @@
 
       + .contentful-grid {
         padding: $grid-padding;
+
+        @include mobile {
+          padding: $mobile-grid-padding;
+        }
       }
     }
 
     &.shaded {
       background-color: $white-two;
+
+      @include mobile {
+        padding: $mobile-grid-padding;
+      }
     }
 
     &.green-gradient {
@@ -52,7 +64,11 @@
         $mt-green-gradient-dark,
         $mt-green
       );
-      padding: 38px 0;
+      padding: 100px 0;
+
+      @include mobile {
+        padding: $mobile-grid-padding;
+      }
 
       h3 {
         color: $white;
