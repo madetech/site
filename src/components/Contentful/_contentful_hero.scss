@@ -23,8 +23,9 @@
   .row {
     background-position: 102% 100%; 
     background-repeat: no-repeat;
+    background-size: contain;
 
-    @media (max-width: 1000px) {
+   @include mobile {
       background-image: none !important;
     }
   }
