@@ -21,11 +21,11 @@
   }
 
   .row {
-    background-position: 102% 100%; 
+    background-position: 102% 100%;
     background-repeat: no-repeat;
     background-size: contain;
 
-   @include mobile {
+    @include mobile {
       background-image: none !important;
     }
   }
@@ -34,7 +34,7 @@
 .contentful-hero__breadcrumb {
   color: $mid-grey;
   font-weight: $bold;
-  font-size: 0.63rem;
+  font-size: $px12;
   @include desktop {
     margin-bottom: 65px;
   }
@@ -50,7 +50,7 @@
 
 .contentful-hero__section-type {
   font-weight: $extra-bold;
-  font-size: 0.63rem;
+  font-size: $px12;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 }

@@ -11,17 +11,17 @@
   color: $dark-grey;
 
   @include desktop {
-    font-size: 1.26rem;
+    font-size: $px24;
     line-height: 1.67;
   }
 
   @include tablet {
-    font-size: 1.05rem;
+    font-size: $px20;
     line-height: 1.5;
   }
 
   @include mobile {
-    font-size: 0.95rem;
+    font-size: $px18;
     line-height: 1.66;
   }
 
@@ -40,6 +40,7 @@
     &.yellow,
     &.blue {
       padding: $grid-padding;
+      border: 0;
 
       + .contentful-grid {
         padding: $grid-padding;
@@ -86,17 +87,17 @@
         font-weight: $bold;
 
         @include desktop {
-          font-size: 0.74rem;
+          font-size: $px14;
           line-height: 1.05;
         }
 
         @include tablet {
-          font-size: 0.63rem;
+          font-size: $px12;
           line-height: 1.25;
         }
 
         @include mobile {
-          font-size: 0.63rem;
+          font-size: $px12;
           line-height: 1.25;
         }
 
