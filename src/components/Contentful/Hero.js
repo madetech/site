@@ -31,13 +31,15 @@ export default function ContentfulHero({
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row" style={{backgroundImage: backgroundImage }}>
+        <div className="row" style={{ backgroundImage: backgroundImage }}>
           <div className="col-lg-12">
             {pageBreadcrumbComponent}
             {sectionNameComponent}
-            <h1 className="contentful-hero__page-title">{threeSpaceToLineBreak(pageTitle)}</h1>
+            <h1 className="contentful-hero__page-title">
+              {threeSpaceToLineBreak(pageTitle)}
+            </h1>
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   )

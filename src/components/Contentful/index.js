@@ -65,6 +65,7 @@ function ComponentRenderer(content) {
           id={id}
           layout={content.layout}
           style={content.style}
+          backgroundImage={content.backgroundImage}
         />
       )
     default:
