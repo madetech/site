@@ -22,7 +22,7 @@
     "gatsby": "^2.15.9",
     "gatsby-plugin-feed": "^2.3.11",
     "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-offline": "^2.1.1",
+    "gatsby-plugin-offline": "^3.0.3",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-source-contentful": "^2.0.59",
