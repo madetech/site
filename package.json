@@ -36,8 +36,8 @@
     "universal-cookie": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.1.11",
     "enzyme": "^3.9.0",
