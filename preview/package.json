@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "request": "^2.88.0",
-    "tar": "^4.4.8"
+    "tar": "4.4.10"
   },
   "scripts": {
     "start": "react-scripts start",
