@@ -7,7 +7,7 @@
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@madetech/frontend": "^5.8.0",
     "contentful": "^7.5.1",
-    "dotenv": "^6.1.0",
+    "dotenv": "8.1.0",
     "node-sass": "^4.12.0",
     "query-string": "^6.5.0",
     "react": "16.9.0",
