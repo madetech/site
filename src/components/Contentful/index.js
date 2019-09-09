@@ -5,7 +5,7 @@ import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
 import Hero from './Hero'
 import Prose from './Prose'
-import FloatingProseContainer from './FloatingProseContainer'
+import Highlight from './Highlight'
 import toHtmlId from '../../helpers/toHtmlId'
 
 function ComponentRenderer(content) {
@@ -68,15 +68,16 @@ function ComponentRenderer(content) {
           style={content.style}
         />
       )
-    case 'ContentfulFloatingProseContainer':
+    case 'ContentfulHighlight':
       return (
-        <FloatingProseContainer
+        <Highlight
           id={id}
           colourOfElementAbove={content.colourOfElementAbove}
           colourOfElementBelow={content.colourOfElementBelow}
-          content={content.content}
           gridWidth={content.gridWidth}
+          html={documentToHtmlString(content.body && content.body.json)}
           style={content.style}
+          textAlign={content.textAlign}
         />
       )
     default:

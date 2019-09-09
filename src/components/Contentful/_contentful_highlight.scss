@@ -1,33 +1,27 @@
-.contentful-floating-prose-container {
+.contentful-highlight {
   position: relative;
 
   &.green-gradient {
-    .contentful-floating-prose-container__bg-left {
+    .contentful-highlight__bg-left {
       background-color: $mt-green;
     }
 
-    .contentful-floating-prose-container__content {
-      padding: 30px 0;
+    .contentful-highlight__content {
+      padding: 30px 15px;
       background-image: linear-gradient(
         275deg,
         $mt-green-gradient-dark 10%,
         $mt-green 80%
       );
 
-      h3 {
+      h4 {
         color: $white;
-        font-weight: $extra-bold;
-      }
-
-      .prose {
-        padding: 3rem 2rem 3rem 0;
-        color: $white;
-        font-weight: $medium;
+        margin: 1rem 0;
       }
     }
   }
 
-  .contentful-floating-prose-container__bg-left {
+  .contentful-highlight__bg-left {
     position: absolute;
     z-index: -1;
     height: 100%;
@@ -36,7 +30,7 @@
     display: inline-block;
   }
 
-  .contentful-floating-prose-container__bg-right {
+  .contentful-highlight__bg-right {
     position: absolute;
     z-index: -1;
     margin: 0;
@@ -44,8 +38,8 @@
     right: 0;
     height: 100%;
 
-    .contentful-floating-prose-container__bg-right__top,
-    .contentful-floating-prose-container__bg-right__bottom {
+    .contentful-highlight__bg-right__top,
+    .contentful-highlight__bg-right__bottom {
       width: 100%;
       height: 50%;
 

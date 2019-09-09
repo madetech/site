@@ -7,7 +7,11 @@ export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
 
   return (
-    <Layout description={page.description} featureFlags={page.featureFlags} titlePrefix={page.title}>
+    <Layout
+      description={page.description}
+      featureFlags={page.featureFlags}
+      titlePrefix={page.title}
+    >
       <Contentful content={page.content} />
     </Layout>
   )
@@ -23,10 +27,10 @@ export const pageQuery = graphql`
       content {
         __typename
         ...hero
+        ...highlight
         ...inlineImages
         ...jumbotron
         ...prose
-        ...floatingProseContainer
         ... on ContentfulGrid {
           alignItems
           layout
@@ -130,15 +134,15 @@ export const pageQuery = graphql`
     imageStyle
     textAlign
   }
-  fragment floatingProseContainer on ContentfulFloatingProseContainer {
-    name
+  fragment highlight on ContentfulHighlight {
+    body {
+      json
+    }
     colourOfElementAbove
     colourOfElementBelow
     gridWidth
+    name
     style
-    content {
-      __typename
-      ...prose
-    }
+    textAlign
   }
 `

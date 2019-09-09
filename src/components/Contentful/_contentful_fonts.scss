@@ -1,11 +1,15 @@
 h1,
 h2,
-h3,
+h3 {
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: $extra-bold;
+}
+
 h4,
 h5,
 h6 {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  font-weight: $extra-bold;
+  font-weight: $medium;
 }
 
 // hero
