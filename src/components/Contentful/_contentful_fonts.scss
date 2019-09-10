@@ -57,6 +57,9 @@ h2 {
 // section sub-header
 h3 {
   word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 
   @include desktop {
     font-size: $px36;
