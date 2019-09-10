@@ -30,9 +30,11 @@ $extra-bold: 800;
 $bold: 600;
 $medium: 500;
 
-// paddings
-$grid-padding: 100px 0;
-$mobile-grid-padding: 50px 0;
+// margins and paddings
+$desktop-spacing: 90px;
+$mobile-spacing: 50px;
+$grid-padding: $desktop-spacing 0;
+$mobile-grid-padding: $mobile-spacing 0;
 
 //mixins
 @mixin mobile {
@@ -41,7 +43,7 @@ $mobile-grid-padding: 50px 0;
   }
 }
 @mixin tablet {
-  @include media-breakpoint-down(md) {
+  @media only screen and (max-width: 991px) and (min-width: 577px) {
     @content;
   }
 }

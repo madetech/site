@@ -17,7 +17,7 @@ export default function ContentfulHighlight({
     ''}`
   const bgBottomClassName = `contentful-highlight__bg-right__bottom ${colourOfElementBelow ||
     ''}`
-  let contentClassName = `col-lg-${theGridWidth} offset-lg-1 contentful-highlight__content pr-4`
+  let contentClassName = `col-${theGridWidth} offset-lg-1 contentful-highlight__content`
   if (textAlign) contentClassName += ` text-${textAlign}`
 
   return (

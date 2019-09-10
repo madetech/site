@@ -28,21 +28,49 @@
 
   /***/
 
+  // bootstrap overrides for mid-sized grids
+
+  @mixin overrideCol($size) {
+    .col-lg-#{$size} {
+      @include tablet {
+        @include make-col($size);
+      }
+    }
+  }
+
+  @mixin overrideOffset($size) {
+    .offset-lg-#{$size} {
+      @include tablet {
+        @include make-col-offset($size);
+      }
+    }
+  }
+
+  @include overrideCol(3);
+  @include overrideCol(4);
+  @include overrideCol(5);
+  @include overrideCol(6);
+  @include overrideCol(7);
+  @include overrideCol(8);
+
+  @include overrideOffset(1);
+  @include overrideOffset(2);
+  @include overrideOffset(3);
+  @include overrideOffset(4);
+
   .contentful-grid {
     margin: 0;
-    border: 0;
-    padding: $grid-padding;
+    border: 0 !important;
+    padding: $grid-padding !important;
 
     @include mobile {
-      padding: $mobile-grid-padding;
+      padding: $mobile-grid-padding !important;
     }
 
     &.shaded,
     &.yellow,
-    &.blue {
-      padding: $grid-padding;
-      border: 0;
-
+    &.blue,
+    &.green-gradient {
       + .contentful-grid {
         padding: $grid-padding;
 
@@ -54,23 +82,15 @@
 
     &.shaded {
       background-color: $white-two;
-
-      @include mobile {
-        padding: $mobile-grid-padding;
-      }
     }
 
+    // this needs to be removed
     &.green-gradient {
       background-image: linear-gradient(
         285deg,
         $mt-green-gradient-dark,
         $mt-green
       );
-      padding: 30px 0;
-
-      @include mobile {
-        padding: $mobile-grid-padding;
-      }
 
       h3 {
         color: $white;
@@ -84,6 +104,16 @@
     }
 
     &.pull-quote {
+      &.contentful-grid {
+        padding: 0 !important;
+      }
+
+      .contentful-prose {
+        img {
+          max-height: 100%;
+        }
+      }
+
       .prose {
         color: $black;
         font-weight: $bold;
@@ -104,7 +134,18 @@
         }
 
         blockquote {
-          margin: 0 0 10px 0;
+          @include desktop {
+            margin: $desktop-spacing 0 10px 0;
+          }
+
+          @include tablet {
+            margin: 0 0 10px 0;
+          }
+
+          @include mobile {
+            margin: 25px 0 10px 0;
+            max-width: 80%;
+          }
 
           &::before {
             display: none;
@@ -113,15 +154,24 @@
           p {
             font-style: normal;
           }
+
+          + p {
+            margin: 0;
+          }
         }
       }
 
       img {
-        @include mobile {
-          margin-bottom: 45px;
-        }
         border-left: 10px solid $mt-green;
         margin-left: -10px;
+      }
+
+      + .contentful-highlight {
+        margin-top: $desktop-spacing;
+
+        @include mobile {
+          margin-top: $mobile-spacing;
+        }
       }
     }
   }

@@ -1,23 +1,14 @@
 .contentful-hero {
+  @include desktop {
+    margin-bottom: $desktop-spacing;
+  }
+
   @include tablet {
-    margin-bottom: 45px;
+    margin-bottom: $desktop-spacing;
   }
 
   @include mobile {
-    margin-bottom: 35px;
-  }
-
-  .container {
-    position: relative;
-    min-height: 480px;
-
-    @include tablet {
-      min-height: 200px;
-    }
-
-    @include mobile {
-      min-height: 100px;
-    }
+    margin-bottom: $mobile-spacing;
   }
 
   .row {
@@ -57,4 +48,5 @@
 
 .contentful-hero__page-title {
   word-wrap: break-word;
+  margin: 0;
 }

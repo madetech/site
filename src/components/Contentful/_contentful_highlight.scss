@@ -1,4 +1,7 @@
 .contentful-highlight {
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  color: $white;
+  font-weight: $medium;
   position: relative;
 
   &.green-gradient {
@@ -14,9 +17,26 @@
         $mt-green 80%
       );
 
-      h4 {
-        color: $white;
+      p {
         margin: 1rem 0;
+
+        @include desktop {
+          padding-right: 20%;
+          font-size: $px26;
+          line-height: 1.54;
+        }
+
+        @include tablet {
+          padding-right: 15%;
+          font-size: $px20;
+          line-height: 1.5;
+        }
+
+        @include mobile {
+          padding-right: 10%;
+          font-size: $px18;
+          line-height: 1.39;
+        }
       }
     }
   }
