@@ -135,13 +135,13 @@ export const pageQuery = graphql`
     textAlign
   }
   fragment highlight on ContentfulHighlight {
+    name
     body {
       json
     }
     colourOfElementAbove
     colourOfElementBelow
     gridWidth
-    name
     style
     textAlign
   }
