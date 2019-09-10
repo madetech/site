@@ -29,7 +29,6 @@
   /***/
 
   // bootstrap overrides for mid-sized grids
-
   @mixin overrideCol($size) {
     .col-lg-#{$size} {
       @include tablet {
@@ -57,11 +56,17 @@
   @include overrideOffset(2);
   @include overrideOffset(3);
   @include overrideOffset(4);
+  @include overrideOffset(5);
+  @include overrideOffset(6);
+  @include overrideOffset(7);
+  @include overrideOffset(8);
 
   .contentful-grid {
     margin: 0;
     border: 0 !important;
     padding: $grid-padding !important;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 
     @include mobile {
       padding: $mobile-grid-padding !important;

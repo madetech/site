@@ -33,8 +33,17 @@ export const pageQuery = graphql`
         ...prose
         ... on ContentfulGrid {
           alignItems
+          backgroundImage {
+            fixed(width: 1200) {
+              height
+              src
+              srcSet
+              width
+            }
+          }
           layout
           name
+          pixelHeight
           style
           content {
             __typename
@@ -132,6 +141,7 @@ export const pageQuery = graphql`
       }
     }
     imageStyle
+    style
     textAlign
   }
   fragment highlight on ContentfulHighlight {

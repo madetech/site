@@ -62,9 +62,11 @@ function ComponentRenderer(content) {
       return (
         <Grid
           alignItems={content.alignItems}
+          backgroundImage={content.backgroundImage}
           content={content.content}
           id={id}
           layout={content.layout}
+          pixelHeight={content.pixelHeight}
           style={content.style}
         />
       )
