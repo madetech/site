@@ -5,7 +5,15 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
 
-function GridContainer({ alignItems, children, id, layout, style }) {
+function GridContainer({
+  alignItems,
+  backgroundImage,
+  children,
+  id,
+  layout,
+  pixelHeight,
+  style,
+}) {
   let className = 'contentful-grid'
   if (style) className += ` ${style}`
 
@@ -13,10 +21,24 @@ function GridContainer({ alignItems, children, id, layout, style }) {
   if (alignItems) rowClassName += ` align-items-${alignItems}`
 
   let containerClassName = 'container'
-  if(layout === 'fluid') containerClassName += '-fluid'
+  if (layout === 'fluid') containerClassName += '-fluid'
+
+  let backgroundImageItem
+  if (backgroundImage) {
+    backgroundImageItem = `url(${backgroundImage.fixed.src})`
+  }
+
+  let height
+  if (pixelHeight) {
+    height = `${pixelHeight}px`
+  }
 
   return (
-    <div className={className} id={id}>
+    <div
+      className={className}
+      id={id}
+      style={{ backgroundImage: backgroundImageItem, height: height }}
+    >
       <div className={containerClassName}>
         <div className={rowClassName}>{children}</div>
       </div>
@@ -33,9 +55,10 @@ function GridCol({ children, columnWidth, columnOffset }) {
   return <div className={className}>{children}</div>
 }
 
-function GridProse({ image, imageStyle, html, textAlign }) {
+function GridProse({ image, imageStyle, html, style, textAlign }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
+  if (style) className += ` ${style}`
 
   let imageComponent
   if (image) {
@@ -56,7 +79,7 @@ function GridProse({ image, imageStyle, html, textAlign }) {
   }
 
   let gridProseComponent
-  if(imageStyle === 'after') {
+  if (imageStyle === 'after') {
     gridProseComponent = (
       <div className={className}>
         {proseComponent}
@@ -123,6 +146,7 @@ function GridComponentRenderer(content) {
           image={content.image}
           imageStyle={content.imageStyle}
           html={documentToHtmlString(content.body && content.body.json)}
+          style={content.style}
           textAlign={content.textAlign}
         />
       )
@@ -145,13 +169,28 @@ function GridComponentRenderer(content) {
   }
 }
 
-function GridComponentArrayRenderer({ alignItems, content, id, layout, style }) {
+function GridComponentArrayRenderer({
+  alignItems,
+  backgroundImage,
+  content,
+  id,
+  layout,
+  pixelHeight,
+  style,
+}) {
   if (!content || content.length === 0) {
     throw new Error('No grid content provided')
   }
 
   return (
-    <GridContainer alignItems={alignItems} id={id} layout={layout} style={style}>
+    <GridContainer
+      alignItems={alignItems}
+      backgroundImage={backgroundImage}
+      id={id}
+      layout={layout}
+      pixelHeight={pixelHeight}
+      style={style}
+    >
       {content.map((content, i) => (
         <GridCol
           columnWidth={content.columnWidth}
