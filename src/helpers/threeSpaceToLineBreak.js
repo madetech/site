@@ -1,11 +1,11 @@
 import React from 'react'
 const reactStringReplace = require('react-string-replace')
 
-export default function threeSpaceToLineBreak(str) {
-  return reactStringReplace(str, '   ', (match, i) => <br key={i} />)
-}
+export default function threeSpaceToLineBreak(str, isInnerHtml = false) {
+  if (isInnerHtml) {
+    return reactStringReplace(str, '   ', (match, i) => <br key={i} />)
+  }
 
-export function threeSpaceToLineBreakHtmlFriendly(str) {
   const regEx = new RegExp('   ', 'g')
-  return str.replace(regEx, '<br />')
+  return str.replace(regEx, '<br/>')
 }
