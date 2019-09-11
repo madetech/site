@@ -4,7 +4,7 @@ import HubSpotForm from './HubSpotForm'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
-import threeSpaceToLineBreakHtml from '../../helpers/threeSpaceToLineBreak'
+import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 
 function GridContainer({
   alignItems,
