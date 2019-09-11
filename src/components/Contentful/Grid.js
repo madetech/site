@@ -4,7 +4,7 @@ import HubSpotForm from './HubSpotForm'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
-import { threeSpaceToLineBreakHtmlFriendly } from '../../helpers/threeSpaceToLineBreak'
+import threeSpaceToLineBreakHtml from '../../helpers/threeSpaceToLineBreak'
 
 function GridContainer({
   alignItems,
@@ -57,7 +57,7 @@ function GridProse({ image, imageStyle, html, style, textAlign }) {
       <img alt={image.title} className={imageClassName} src={image.fixed.src} />
     )
   }
-  var parsedHtml = threeSpaceToLineBreakHtmlFriendly(html)
+  var parsedHtml = threeSpaceToLineBreak(html, true)
 
   let proseComponent
   if (html) {
