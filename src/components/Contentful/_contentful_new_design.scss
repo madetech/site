@@ -46,6 +46,7 @@
     }
   }
 
+  @include overrideCol(2);
   @include overrideCol(3);
   @include overrideCol(4);
   @include overrideCol(5);
@@ -175,6 +176,30 @@
 
         @include mobile {
           margin-top: $mobile-spacing;
+        }
+      }
+    }
+  }
+
+  .contentful-prose {
+    b {
+      font-weight: $extra-bold;
+      color: $black;
+    }
+
+    u {
+      text-decoration: none;
+      box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
+    }
+
+    .prose {
+      color: $dark-grey;
+    }
+
+    &:not(.small) {
+      .prose {
+        h3 {
+          margin-bottom: 100px;
         }
       }
     }
