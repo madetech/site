@@ -7,15 +7,17 @@ import JobsBoard from '../JobsBoard'
 
 function GridContainer({
   alignItems,
-  backgroundImage,
   children,
+  customClasses,
   id,
   layout,
-  pixelHeight,
   style,
 }) {
   let className = 'contentful-grid'
   if (style) className += ` ${style}`
+  if (customClasses) {
+    customClasses.forEach(c => (className += ` ${c}`))
+  }
 
   let rowClassName = 'row'
   if (alignItems) rowClassName += ` align-items-${alignItems}`
@@ -23,22 +25,8 @@ function GridContainer({
   let containerClassName = 'container'
   if (layout === 'fluid') containerClassName += '-fluid'
 
-  let backgroundImageItem
-  if (backgroundImage) {
-    backgroundImageItem = `url(${backgroundImage.fixed.src})`
-  }
-
-  let height
-  if (pixelHeight) {
-    height = `${pixelHeight}px`
-  }
-
   return (
-    <div
-      className={className}
-      id={id}
-      style={{ backgroundImage: backgroundImageItem, height: height }}
-    >
+    <div className={className} id={id}>
       <div className={containerClassName}>
         <div className={rowClassName}>{children}</div>
       </div>
@@ -171,11 +159,10 @@ function GridComponentRenderer(content) {
 
 function GridComponentArrayRenderer({
   alignItems,
-  backgroundImage,
+  customClasses,
   content,
   id,
   layout,
-  pixelHeight,
   style,
 }) {
   if (!content || content.length === 0) {
@@ -185,10 +172,9 @@ function GridComponentArrayRenderer({
   return (
     <GridContainer
       alignItems={alignItems}
-      backgroundImage={backgroundImage}
+      customClasses={customClasses}
       id={id}
       layout={layout}
-      pixelHeight={pixelHeight}
       style={style}
     >
       {content.map((content, i) => (
