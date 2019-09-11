@@ -5,6 +5,7 @@
   @import 'components/Contentful/contentful_fonts';
   @import 'components/Contentful/contentful_hero';
   @import 'components/Contentful/contentful_highlight';
+  @import 'components/Contentful/custom_styles';
 
   /** DEFAULT PAGE TEXT-STYLES */
 
@@ -65,8 +66,6 @@
     margin: 0;
     border: 0 !important;
     padding: $grid-padding !important;
-    background-repeat: no-repeat;
-    background-position: center bottom;
 
     @include mobile {
       padding: $mobile-grid-padding !important;

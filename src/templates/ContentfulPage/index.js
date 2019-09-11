@@ -33,17 +33,9 @@ export const pageQuery = graphql`
         ...prose
         ... on ContentfulGrid {
           alignItems
-          backgroundImage {
-            fixed(width: 1200) {
-              height
-              src
-              srcSet
-              width
-            }
-          }
+          customClasses
           layout
           name
-          pixelHeight
           style
           content {
             __typename

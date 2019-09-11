@@ -1,0 +1,94 @@
+@mixin bg-image {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.services__legacy__section_0 {
+  @include bg-image;
+
+  @include desktop {
+    background-image: url('/img/services/legacy/timeline_1.png');
+    height: 140px;
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
+
+.services__legacy__section_1 {
+  @include bg-image;
+
+  @include desktop {
+    background-image: url('/img/services/legacy/timeline_2.png');
+    height: 560px;
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
+
+.services__legacy__section_2 {
+  @include bg-image;
+
+  @include desktop {
+    background-image: url('/img/services/legacy/timeline_3.png');
+    height: 560px;
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
+
+.services__legacy__section_3 {
+  @include bg-image;
+
+  @include desktop {
+    background-image: url('/img/services/legacy/timeline_4.png');
+    height: 560px;
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
+
+.services__legacy__section_4 {
+  @include bg-image;
+
+  @include desktop {
+    background-image: url('/img/services/legacy/timeline_5.png');
+    height: 560px;
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
+
+.services__legacy__section_5 {
+  @include bg-image;
+
+  @include desktop {
+    background-image: url('/img/services/legacy/timeline_6.png');
+    height: 560px;
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+}
