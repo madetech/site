@@ -44,17 +44,62 @@ $sm: 540px;
 
 //mixins
 @mixin mobile {
-  @include media-breakpoint-down(sm) {
+  @media (max-width: 576px) and (min-width: 0px) {
     @content;
   }
 }
 @mixin tablet {
-  @media only screen and (max-width: 991px) and (min-width: 577px) {
+  @media (max-width: 991px) and (min-width: 577px) {
     @content;
   }
 }
+
+@mixin sm-tablet {
+  @media (max-width: 767px) and (min-width: 577px) {
+    @content;
+  }
+}
+
+@mixin lg-tablet {
+  @media (max-width: 991px) and (min-width: 768px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @include media-breakpoint-up(lg) {
     @content;
+  }
+}
+
+@mixin sm-desktop {
+  @media (max-width: 1199px) and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin lg-desktop {
+  @include media-breakpoint-up(xl) {
+    @content;
+  }
+}
+
+// bootstrap overrides for mid-sized grids
+@mixin overrideCol($size, $increase: 0) {
+  .col-lg-#{$size} {
+    @include make-col($size + $increase);
+  }
+}
+
+@mixin overrideOffset($size, $increase: 0) {
+  .offset-lg-#{$size} {
+    @include make-col-offset($size + $increase);
+  }
+}
+
+@include tablet {
+  @for $i from 1 through 12 {
+    @include overrideCol($i);
+    @include overrideOffset($i);
   }
 }
