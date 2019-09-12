@@ -29,40 +29,6 @@
 
   /***/
 
-  // bootstrap overrides for mid-sized grids
-  @mixin overrideCol($size) {
-    .col-lg-#{$size} {
-      @include tablet {
-        @include make-col($size);
-      }
-    }
-  }
-
-  @mixin overrideOffset($size) {
-    .offset-lg-#{$size} {
-      @include tablet {
-        @include make-col-offset($size);
-      }
-    }
-  }
-
-  @include overrideCol(2);
-  @include overrideCol(3);
-  @include overrideCol(4);
-  @include overrideCol(5);
-  @include overrideCol(6);
-  @include overrideCol(7);
-  @include overrideCol(8);
-
-  @include overrideOffset(1);
-  @include overrideOffset(2);
-  @include overrideOffset(3);
-  @include overrideOffset(4);
-  @include overrideOffset(5);
-  @include overrideOffset(6);
-  @include overrideOffset(7);
-  @include overrideOffset(8);
-
   .contentful-grid {
     margin: 0;
     border: 0 !important;
