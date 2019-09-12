@@ -1,94 +1,101 @@
-@mixin bg-image {
+$svc-img-path: '/img/services';
+
+@mixin bg-img($basepath, $size, $name) {
   background-repeat: no-repeat;
   background-position: center bottom;
+  background-image: url('#{$basepath}/#{$size}/#{$name}_#{$size}.png');
+}
+
+@mixin bg-imgs($basepath, $name) {
+  @include mobile {
+    @include bg-img($basepath, 540, $name);
+  }
+  @include tablet {
+    @include bg-img($basepath, 720, $name);
+  }
+  @include sm-desktop {
+    @include bg-img($basepath, 960, $name);
+  }
+  @include lg-desktop {
+    @include bg-img($basepath, 1140, $name);
+  }
 }
 
 .services__legacy__section_0 {
-  @include bg-image;
+  padding: 0 !important;
+  @include bg-imgs('#{$svc-img-path}/legacy', 'services_legacy_timeline_1');
 
-  @include desktop {
-    background-image: url('/img/services/legacy/timeline_1.png');
+  @include mobile {
+    height: 80px;
+  }
+  @include tablet {
     height: 140px;
   }
-
-  @include tablet {
+  @include sm-desktop {
+    height: 130px;
   }
-
-  @include mobile {
-  }
-}
-
-.services__legacy__section_1 {
-  @include bg-image;
-
-  @include desktop {
-    background-image: url('/img/services/legacy/timeline_2.png');
-    height: 560px;
-  }
-
-  @include tablet {
-  }
-
-  @include mobile {
+  @include lg-desktop {
+    height: 90px;
   }
 }
 
-.services__legacy__section_2 {
-  @include bg-image;
+@for $i from 1 through 5 {
+  .services__legacy__section_#{$i} {
+    @include bg-imgs(
+      '#{$svc-img-path}/legacy',
+      'services_legacy_timeline_#{$i+1}'
+    );
 
-  @include desktop {
-    background-image: url('/img/services/legacy/timeline_3.png');
-    height: 560px;
-  }
+    @if $i == 5 {
+      background-position: center top !important;
+    }
 
-  @include tablet {
-  }
+    @include mobile {
+      @include make-col(4, 6);
+      @include make-col-offset(1, 6);
+      @if $i == 5 {
+        min-height: 670px;
+      } @else {
+        height: 670px;
+      }
+    }
 
-  @include mobile {
-  }
-}
+    @include sm-tablet {
+      @include overrideCol(4, 1);
+      @include overrideOffset(7, -1);
+      @if $i == 5 {
+        min-height: 510px;
+      } @else {
+        height: 510px;
+      }
+    }
 
-.services__legacy__section_3 {
-  @include bg-image;
+    @include lg-tablet {
+      @include overrideCol(4, 2);
+      @include overrideOffset(7, -1);
+      @if $i == 5 {
+        min-height: 510px;
+      } @else {
+        height: 510px;
+      }
+    }
 
-  @include desktop {
-    background-image: url('/img/services/legacy/timeline_4.png');
-    height: 560px;
-  }
+    @include sm-desktop {
+      @include overrideCol(4, 1);
+      @include overrideOffset(7, -1);
+      @if $i == 5 {
+        min-height: 530px;
+      } @else {
+        height: 530px;
+      }
+    }
 
-  @include tablet {
-  }
-
-  @include mobile {
-  }
-}
-
-.services__legacy__section_4 {
-  @include bg-image;
-
-  @include desktop {
-    background-image: url('/img/services/legacy/timeline_5.png');
-    height: 560px;
-  }
-
-  @include tablet {
-  }
-
-  @include mobile {
-  }
-}
-
-.services__legacy__section_5 {
-  @include bg-image;
-
-  @include desktop {
-    background-image: url('/img/services/legacy/timeline_6.png');
-    height: 560px;
-  }
-
-  @include tablet {
-  }
-
-  @include mobile {
+    @include lg-desktop {
+      @if $i == 5 {
+        min-height: 610px;
+      } @else {
+        height: 610px;
+      }
+    }
   }
 }
