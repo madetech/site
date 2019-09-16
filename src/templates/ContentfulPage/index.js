@@ -147,5 +147,13 @@ export const pageQuery = graphql`
     gridWidth
     style
     textAlign
+    authorAvatar {
+      fixed(width: 54, height: 54) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
   }
 `

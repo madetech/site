@@ -8,6 +8,7 @@ export default function ContentfulHighlight({
   style,
   textAlign,
   author,
+  authorAvatar,
 }) {
   const theGridWidth = gridWidth || 12
   const leftBackgroundWidth = ((gridWidth / 12) * 100) / 2
@@ -22,9 +23,10 @@ export default function ContentfulHighlight({
   if (textAlign) contentClassName += ` text-${textAlign}`
 
   let authorSection
-  if (author) {
+  if (author && authorAvatar) {
     authorSection = (
       <div className="contentful-highlight__author">
+        <img src={authorAvatar.fixed.src}></img>
         <span>{author}</span>
       </div>
     )

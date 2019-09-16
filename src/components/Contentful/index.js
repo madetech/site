@@ -80,6 +80,7 @@ function ComponentRenderer(content) {
           style={content.style}
           textAlign={content.textAlign}
           author={content.author}
+          authorAvatar={content.authorAvatar}
         />
       )
     default:
