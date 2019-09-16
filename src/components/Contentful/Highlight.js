@@ -7,6 +7,7 @@ export default function ContentfulHighlight({
   html,
   style,
   textAlign,
+  author,
 }) {
   const theGridWidth = gridWidth || 12
   const leftBackgroundWidth = ((gridWidth / 12) * 100) / 2
@@ -19,6 +20,15 @@ export default function ContentfulHighlight({
     ''}`
   let contentClassName = `col-${theGridWidth} offset-lg-1 contentful-highlight__content`
   if (textAlign) contentClassName += ` text-${textAlign}`
+
+  let authorSection
+  if (author) {
+    authorSection = (
+      <div className="contentful-highlight__author">
+        <span>{author}</span>
+      </div>
+    )
+  }
 
   return (
     <div className={containerClassName}>
@@ -37,6 +47,7 @@ export default function ContentfulHighlight({
         <div className="row">
           <div className={contentClassName}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
+            {authorSection}
           </div>
         </div>
       </div>

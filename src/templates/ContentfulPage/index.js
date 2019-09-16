@@ -141,6 +141,7 @@ export const pageQuery = graphql`
     body {
       json
     }
+    author
     colourOfElementAbove
     colourOfElementBelow
     gridWidth

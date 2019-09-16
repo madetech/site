@@ -79,6 +79,7 @@ function ComponentRenderer(content) {
           html={documentToHtmlString(content.body && content.body.json)}
           style={content.style}
           textAlign={content.textAlign}
+          author={content.author}
         />
       )
     default:
