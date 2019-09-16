@@ -148,7 +148,7 @@ export const pageQuery = graphql`
     style
     textAlign
     authorAvatar {
-      fixed(width: 54, height: 54) {
+      fixed(width: 128, height: 128) {
         height
         src
         srcSet
