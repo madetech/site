@@ -23,11 +23,11 @@ export default function ContentfulHighlight({
   if (textAlign) contentClassName += ` text-${textAlign}`
 
   let authorSection
-  if (author && authorAvatar) {
+  if (author || authorAvatar) {
     authorSection = (
       <div className="contentful-highlight__author">
-        <img src={authorAvatar.fixed.src}></img>
-        <span>{author}</span>
+        {authorAvatar && <img src={authorAvatar.fixed.src}></img>}
+        {author && <span>{author}</span>}
       </div>
     )
   }
