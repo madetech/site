@@ -119,10 +119,10 @@ $svc-img-path: '/img/services';
 }
 
 @for $i from 1 through 3 {
-  .services__technology__section_#{$i} {
+  .services__capability__section_#{$i} {
     @include bg-imgs(
-      '#{$svc-img-path}/technology',
-      'services_technology_timeline_#{$i+1}'
+      '#{$svc-img-path}/capability',
+      'services_capability_timeline_#{$i+1}'
     );
 
     @if $i == 3 {
