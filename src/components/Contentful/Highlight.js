@@ -1,14 +1,14 @@
 import React from 'react'
 
 export default function ContentfulHighlight({
+  author,
+  authorAvatar,
   colourOfElementAbove,
   colourOfElementBelow,
   gridWidth,
   html,
   style,
   textAlign,
-  author,
-  authorAvatar,
 }) {
   const theGridWidth = gridWidth || 12
   const leftBackgroundWidth = ((gridWidth / 12) * 100) / 2

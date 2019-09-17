@@ -75,13 +75,8 @@
 
   .contentful-highlight__author {
     span {
-        height: 45px;
-        font-size: 14px;
+        font-size: $px14;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.43;
-        letter-spacing: normal;
         color: $black;
     }
 
