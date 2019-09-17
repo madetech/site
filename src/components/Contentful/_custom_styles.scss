@@ -100,9 +100,9 @@ $svc-img-path: '/img/services';
   }
 }
 
-.services__technology__section_0 {
+.services__capability__section_0 {
   padding: 0 !important;
-  @include bg-imgs('#{$svc-img-path}/technology', 'services_technology_timeline_1');
+  @include bg-imgs('#{$svc-img-path}/capability', 'services_capability_timeline_1');
 
   @include mobile {
     height: 80px;
