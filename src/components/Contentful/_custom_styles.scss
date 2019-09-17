@@ -99,3 +99,82 @@ $svc-img-path: '/img/services';
     }
   }
 }
+
+.services__technology__section_0 {
+  padding: 0 !important;
+  @include bg-imgs('#{$svc-img-path}/technology', 'services_technology_timeline_1');
+
+  @include mobile {
+    height: 80px;
+  }
+  @include tablet {
+    height: 140px;
+  }
+  @include sm-desktop {
+    height: 130px;
+  }
+  @include lg-desktop {
+    height: 90px;
+  }
+}
+
+@for $i from 1 through 3 {
+  .services__technology__section_#{$i} {
+    @include bg-imgs(
+      '#{$svc-img-path}/technology',
+      'services_technology_timeline_#{$i+1}'
+    );
+
+    @if $i == 3 {
+      background-position: center top !important;
+    }
+
+    @include mobile {
+      @include make-col(4, 6);
+      @include make-col-offset(1, 6);
+      @if $i == 5 {
+        min-height: 670px;
+      } @else {
+        height: 670px;
+      }
+    }
+
+    @include sm-tablet {
+      @include overrideCol(4, 1);
+      @include overrideOffset(7, -1);
+      @if $i == 5 {
+        min-height: 510px;
+      } @else {
+        height: 510px;
+      }
+    }
+
+    @include lg-tablet {
+      @include overrideCol(4, 2);
+      @include overrideOffset(7, -1);
+      @if $i == 5 {
+        min-height: 510px;
+      } @else {
+        height: 510px;
+      }
+    }
+
+    @include sm-desktop {
+      @include overrideCol(4, 1);
+      @include overrideOffset(7, -1);
+      @if $i == 5 {
+        min-height: 530px;
+      } @else {
+        height: 530px;
+      }
+    }
+
+    @include lg-desktop {
+      @if $i == 5 {
+        min-height: 610px;
+      } @else {
+        height: 610px;
+      }
+    }
+  }
+}
