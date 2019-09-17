@@ -141,10 +141,19 @@ export const pageQuery = graphql`
     body {
       json
     }
+    author
     colourOfElementAbove
     colourOfElementBelow
     gridWidth
     style
     textAlign
+    authorAvatar {
+      fixed(width: 128, height: 128) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
   }
 `

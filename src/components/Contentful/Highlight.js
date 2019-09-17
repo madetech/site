@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function ContentfulHighlight({
+  author,
+  authorAvatar,
   colourOfElementAbove,
   colourOfElementBelow,
   gridWidth,
@@ -20,6 +22,16 @@ export default function ContentfulHighlight({
   let contentClassName = `col-${theGridWidth} offset-lg-1 contentful-highlight__content`
   if (textAlign) contentClassName += ` text-${textAlign}`
 
+  let authorSection
+  if (author || authorAvatar) {
+    authorSection = (
+      <div className="contentful-highlight__author">
+        {authorAvatar && <img src={authorAvatar.fixed.src}></img>}
+        {author && <span>{author}</span>}
+      </div>
+    )
+  }
+
   return (
     <div className={containerClassName}>
       <div
@@ -37,6 +49,7 @@ export default function ContentfulHighlight({
         <div className="row">
           <div className={contentClassName}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
+            {authorSection}
           </div>
         </div>
       </div>

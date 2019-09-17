@@ -72,6 +72,8 @@ function ComponentRenderer(content) {
     case 'ContentfulHighlight':
       return (
         <Highlight
+          author={content.author}
+          authorAvatar={content.authorAvatar}
           id={id}
           colourOfElementAbove={content.colourOfElementAbove}
           colourOfElementBelow={content.colourOfElementBelow}

@@ -72,4 +72,19 @@
       }
     }
   }
+
+  .contentful-highlight__author {
+    span {
+        font-size: $px14;
+        font-weight: bold;
+        color: $black;
+    }
+
+    img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
 }
