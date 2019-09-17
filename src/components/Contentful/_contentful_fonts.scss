@@ -56,24 +56,23 @@ h2 {
 
 // section sub-header
 h3 {
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-
   @include desktop {
     font-size: $px36;
     line-height: 1.39;
   }
 
   @include tablet {
-    font-size: $px30;
+    font-size: $px26;
     line-height: 1.33;
   }
 
   @include mobile {
     font-size: $px30;
     line-height: 1.33;
+
+    br {
+      display: none;
+    }
   }
 }
 
