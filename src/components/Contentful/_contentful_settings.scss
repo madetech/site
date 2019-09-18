@@ -83,23 +83,3 @@ $sm: 540px;
     @content;
   }
 }
-
-// bootstrap overrides for mid-sized grids
-@mixin overrideCol($size, $increase: 0) {
-  .col-lg-#{$size} {
-    @include make-col($size + $increase);
-  }
-}
-
-@mixin overrideOffset($size, $increase: 0) {
-  .offset-lg-#{$size} {
-    @include make-col-offset($size + $increase);
-  }
-}
-
-@include tablet {
-  @for $i from 1 through 12 {
-    @include overrideCol($i);
-    @include overrideOffset($i);
-  }
-}
