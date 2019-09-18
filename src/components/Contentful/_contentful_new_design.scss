@@ -5,7 +5,6 @@
   @import 'components/Contentful/contentful_fonts';
   @import 'components/Contentful/contentful_hero';
   @import 'components/Contentful/contentful_highlight';
-  @import 'components/Contentful/custom_styles';
 
   /** DEFAULT PAGE TEXT-STYLES */
 
@@ -240,4 +239,6 @@
       }
     }
   }
+
+  @import 'components/Contentful/custom_styles';
 }
