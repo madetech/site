@@ -51,7 +51,7 @@ function ComponentRenderer(content) {
     case 'ContentfulProse':
       return (
         <Prose
-          columnWidth={content.columnWidth}
+          customClasses={content.customClasses}
           extraLargeColumnWidth={content.extraLargeColumnWidth}
           extraLargeColumnOffset={content.extraLargeColumnOffset}
           extraSmallColumnWidth={content.extraSmallColumnWidth}

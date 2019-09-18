@@ -124,6 +124,7 @@ export const pageQuery = graphql`
     }
     columnWidth
     columnOffset
+    customClasses
     extraLargeColumnWidth
     extraLargeColumnOffset
     extraSmallColumnWidth

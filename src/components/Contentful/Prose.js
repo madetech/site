@@ -2,7 +2,7 @@ import React from 'react'
 import { Prose } from '@madetech/frontend'
 
 export default function ContentfulProse({
-  columnWidth,
+  customClasses,
   extraLargeColumnWidth,
   extraLargeColumnOffset,
   extraSmallColumnWidth,
@@ -19,6 +19,9 @@ export default function ContentfulProse({
 }) {
   let proseClassName = 'contentful-prose'
   if (textAlign) proseClassName += ` text-${textAlign}`
+  if (customClasses) {
+    customClasses.forEach(c => (proseClassName += ` ${c}`))
+  }
 
   let colClasses = 'px4'
 
