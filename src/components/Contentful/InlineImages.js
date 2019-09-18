@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function ContentfulInlineImages({
   caption,
-  columnWidth,
-  columnOffset,
   constrainImageHeight,
   id,
   images,
+  largeColumnWidth,
+  largeColumnOffset,
 }) {
   const imageComponents = images.map((image, i) => {
     return (
@@ -23,13 +23,16 @@ export default function ContentfulInlineImages({
 
   let captionComponent
 
-  if (caption) captionComponent = <p className="inline-images__caption">{caption}</p>
+  if (caption)
+    captionComponent = <p className="inline-images__caption">{caption}</p>
 
   return (
     <div className="inline-images" id={id}>
       <div className="container">
         <div className="row">
-          <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
+          <div
+            className={`col-lg-${largeColumnWidth} offset-lg-${largeColumnOffset}`}
+          >
             {captionComponent}
 
             <div className="d-flex justify-content-between">
