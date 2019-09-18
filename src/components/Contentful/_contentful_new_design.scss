@@ -91,7 +91,6 @@
       background-color: $white-two;
     }
 
-    // this needs to be removed
     &.green-gradient {
       background-image: linear-gradient(
         285deg,
@@ -108,6 +107,14 @@
       h3 {
         color: $white;
         font-weight: $extra-bold;
+
+        @include tablet {
+          padding-bottom: 50px;
+        }
+
+        @include mobile {
+          padding-bottom: 0px;
+        }
       }
 
       .prose {
@@ -147,16 +154,14 @@
         }
 
         blockquote {
-          @include desktop {
-            margin: $desktop-spacing 0 10px 0;
-          }
+          margin: 0 0 10px 0;
 
           @include tablet {
-            margin: 0 0 10px 0;
+            margin-top: 25px;
           }
 
           @include mobile {
-            margin: 25px 0 10px 0;
+            margin-top: 25px;
             max-width: 80%;
           }
 
@@ -207,7 +212,17 @@
     &:not(.small) {
       .prose {
         h2 {
-          margin-bottom: 91px;
+          @include desktop {
+            margin-bottom: 100px;
+          }
+
+          @include tablet {
+            margin-bottom: 75px;
+          }
+
+          @include mobile {
+            margin-bottom: 25px;
+          }
         }
         h3 {
           @include desktop {
@@ -215,7 +230,7 @@
           }
 
           @include tablet {
-            margin-bottom: 100px;
+            margin-bottom: 25px;
           }
 
           @include mobile {

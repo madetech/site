@@ -19,15 +19,25 @@ export default function ContentfulHighlight({
     ''}`
   const bgBottomClassName = `contentful-highlight__bg-right__bottom ${colourOfElementBelow ||
     ''}`
-  let contentClassName = `col-${theGridWidth} offset-lg-1 contentful-highlight__content`
+
+  let contentClassName = `col-lg-${theGridWidth} offset-lg-1 
+  col-md-${theGridWidth} offset-md-1 
+  col-sm-${theGridWidth} offset-sm-1 
+  col-${theGridWidth} offset-1 
+  contentful-highlight__content`
+
   if (textAlign) contentClassName += ` text-${textAlign}`
 
   let authorSection
   if (author || authorAvatar) {
     authorSection = (
       <div className="contentful-highlight__author">
-        {authorAvatar && <img src={authorAvatar.fixed.src}></img>}
-        {author && <span>{author}</span>}
+        {authorAvatar && (
+          <div className="avatar">
+            <img src={authorAvatar.fixed.src} alt=""></img>
+          </div>
+        )}
+        {author && <div className="author">{author}</div>}
       </div>
     )
   }

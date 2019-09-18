@@ -64,6 +64,10 @@ h3 {
   @include tablet {
     font-size: $px26;
     line-height: 1.33;
+
+    br {
+      display: none;
+    }
   }
 
   @include mobile {
