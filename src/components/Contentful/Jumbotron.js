@@ -3,8 +3,8 @@ import { Jumbotron } from '@madetech/frontend'
 
 export default function ContentfulJumbotron({
   backgroundUrl,
-  columnWidth,
-  columnOffset,
+  largeColumnWidth,
+  largeColumnOffset,
   html,
   id,
   textAlign,
@@ -21,7 +21,9 @@ export default function ContentfulJumbotron({
       <Jumbotron backgroundUrl={backgroundUrl}>
         <div className="container">
           <div className="row">
-            <div className={`col-lg-${columnWidth} offset-lg-${columnOffset}`}>
+            <div
+              className={`col-lg-${largeColumnWidth} offset-lg-${largeColumnOffset}`}
+            >
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>
