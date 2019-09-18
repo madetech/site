@@ -10,6 +10,6 @@ export default function threeSpaceToLineBreak(str, returnAsString = false) {
     ))
   }
 
-  const regEx = new RegExp('   ', 'g')
+  const regEx = new RegExp(/ {3}/, 'g')
   return str.replace(regEx, '<br/> ')
 }
