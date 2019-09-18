@@ -93,10 +93,20 @@ function GridCol({
   return <div className={colClasses}>{children}</div>
 }
 
-function GridProse({ image, imageStyle, html, style, textAlign }) {
+function GridProse({
+  customClasses,
+  image,
+  imageStyle,
+  html,
+  style,
+  textAlign,
+}) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
   if (style) className += ` ${style}`
+  if (customClasses) {
+    customClasses.forEach(c => (className += ` ${c}`))
+  }
 
   let imageComponent
   if (image) {
@@ -182,6 +192,7 @@ function GridComponentRenderer(content) {
     case 'ContentfulProse':
       return (
         <GridProse
+          customClasses={content.customClasses}
           image={content.image}
           imageStyle={content.imageStyle}
           html={documentToHtmlString(content.body && content.body.json)}

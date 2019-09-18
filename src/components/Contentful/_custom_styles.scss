@@ -51,8 +51,10 @@ $svc-img-path: '/img/services';
     }
 
     @include mobile {
-      @include make-col(4, 6);
-      @include make-col-offset(1, 6);
+      &.contentful-grid {
+        padding-top: 280px !important;
+      }
+
       @if $i == 5 {
         min-height: 670px;
       } @else {
@@ -165,5 +167,21 @@ $svc-img-path: '/img/services';
         height: 610px;
       }
     }
+  }
+}
+
+.services__trusted_supplier__desktop {
+  @include mobile {
+    display: none;
+  }
+}
+
+.services__trusted_supplier__mobile {
+  @include desktop {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
   }
 }
