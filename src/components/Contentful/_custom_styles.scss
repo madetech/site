@@ -61,8 +61,6 @@ $svc-img-path: '/img/services';
     }
 
     @include sm-tablet {
-      @include overrideCol(4, 1);
-      @include overrideOffset(7, -1);
       @if $i == 5 {
         min-height: 510px;
       } @else {
@@ -71,8 +69,6 @@ $svc-img-path: '/img/services';
     }
 
     @include lg-tablet {
-      @include overrideCol(4, 2);
-      @include overrideOffset(7, -1);
       @if $i == 5 {
         min-height: 510px;
       } @else {
@@ -81,8 +77,6 @@ $svc-img-path: '/img/services';
     }
 
     @include sm-desktop {
-      @include overrideCol(4, 1);
-      @include overrideOffset(7, -1);
       @if $i == 5 {
         min-height: 530px;
       } @else {
@@ -102,7 +96,10 @@ $svc-img-path: '/img/services';
 
 .services__capability__section_0 {
   padding: 0 !important;
-  @include bg-imgs('#{$svc-img-path}/capability', 'services_capability_timeline_1');
+  @include bg-imgs(
+    '#{$svc-img-path}/capability',
+    'services_capability_timeline_1'
+  );
 
   @include mobile {
     height: 80px;
@@ -130,8 +127,6 @@ $svc-img-path: '/img/services';
     }
 
     @include mobile {
-      @include make-col(4, 6);
-      @include make-col-offset(1, 6);
       @if $i == 5 {
         min-height: 670px;
       } @else {
@@ -140,8 +135,6 @@ $svc-img-path: '/img/services';
     }
 
     @include sm-tablet {
-      @include overrideCol(4, 1);
-      @include overrideOffset(7, -1);
       @if $i == 5 {
         min-height: 510px;
       } @else {
@@ -150,8 +143,6 @@ $svc-img-path: '/img/services';
     }
 
     @include lg-tablet {
-      @include overrideCol(4, 2);
-      @include overrideOffset(7, -1);
       @if $i == 5 {
         min-height: 510px;
       } @else {
@@ -160,8 +151,6 @@ $svc-img-path: '/img/services';
     }
 
     @include sm-desktop {
-      @include overrideCol(4, 1);
-      @include overrideOffset(7, -1);
       @if $i == 5 {
         min-height: 530px;
       } @else {
