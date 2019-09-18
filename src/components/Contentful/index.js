@@ -19,8 +19,8 @@ function ComponentRenderer(content) {
       return (
         <InlineImages
           caption={content.caption}
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
+          largeColumnWidth={content.columnWidth}
+          largeColumnOffset={content.columnOffset}
           constrainImageHeight={content.constrainImageHeight}
           id={id}
           images={content.images}
@@ -30,8 +30,8 @@ function ComponentRenderer(content) {
       return (
         <Jumbotron
           backgroundUrl={content.background && content.background.fixed.src}
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
+          largeColumnWidth={content.columnWidth}
+          largeColumnOffset={content.columnOffset}
           html={documentToHtmlString(content.body && content.body.json)}
           id={id}
           textAlign={content.textAlign}
@@ -52,9 +52,18 @@ function ComponentRenderer(content) {
       return (
         <Prose
           columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
+          extraLargeColumnWidth={content.extraLargeColumnWidth}
+          extraLargeColumnOffset={content.extraLargeColumnOffset}
+          extraSmallColumnWidth={content.extraSmallColumnWidth}
+          extraSmallColumnOffset={content.extraSmallColumnOffset}
           html={documentToHtmlString(content.body && content.body.json)}
           id={id}
+          largeColumnWidth={content.columnWidth}
+          largeColumnOffset={content.columnOffset}
+          mediumColumnWidth={content.mediumColumnWidth}
+          mediumColumnOffset={content.mediumColumnOffset}
+          smallColumnWidth={content.smallColumnWidth}
+          smallColumnOffset={content.smallColumnOffset}
           textAlign={content.textAlign}
         />
       )

@@ -124,6 +124,10 @@ export const pageQuery = graphql`
     }
     columnWidth
     columnOffset
+    extraLargeColumnWidth
+    extraLargeColumnOffset
+    extraSmallColumnWidth
+    extraSmallColumnOffset
     image {
       fixed(width: 1000) {
         height
@@ -133,6 +137,10 @@ export const pageQuery = graphql`
       }
     }
     imageStyle
+    mediumColumnWidth
+    mediumColumnOffset
+    smallColumnWidth
+    smallColumnOffset
     style
     textAlign
   }

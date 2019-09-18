@@ -35,13 +35,62 @@ function GridContainer({
   )
 }
 
-function GridCol({ children, columnWidth, columnOffset }) {
-  columnWidth = columnWidth || 12
-  columnOffset = columnOffset || 0
+function GridCol({
+  children,
+  extraLargeColumnWidth,
+  extraLargeColumnOffset,
+  largeColumnWidth,
+  largeColumnOffset,
+  mediumColumnWidth,
+  mediumColumnOffset,
+  smallColumnWidth,
+  smallColumnOffset,
+  extraSmallColumnWidth,
+  extraSmallColumnOffset,
+}) {
+  let colClasses = 'my-2'
 
-  const className = `col-lg-${columnWidth} offset-lg-${columnOffset} my-2`
+  if (extraLargeColumnWidth !== null) {
+    colClasses += ` col-xl-${extraLargeColumnWidth}`
+  }
 
-  return <div className={className}>{children}</div>
+  if (extraLargeColumnOffset !== null) {
+    colClasses += ` offset-xl-${extraLargeColumnOffset}`
+  }
+
+  if (largeColumnWidth !== null) {
+    colClasses += ` col-lg-${largeColumnWidth}`
+  }
+
+  if (largeColumnOffset !== null) {
+    colClasses += ` offset-lg-${largeColumnOffset}`
+  }
+
+  if (mediumColumnWidth !== null) {
+    colClasses += ` col-md-${mediumColumnWidth}`
+  }
+
+  if (mediumColumnOffset !== null) {
+    colClasses += ` offset-md-${mediumColumnOffset}`
+  }
+
+  if (smallColumnWidth !== null) {
+    colClasses += ` col-sm-${smallColumnWidth}`
+  }
+
+  if (smallColumnOffset !== null) {
+    colClasses += ` offset-sm-${smallColumnOffset}`
+  }
+
+  if (extraSmallColumnWidth !== null) {
+    colClasses += ` col-${extraSmallColumnWidth}`
+  }
+
+  if (extraSmallColumnOffset !== null) {
+    colClasses += ` offset-${extraSmallColumnOffset}`
+  }
+
+  return <div className={colClasses}>{children}</div>
 }
 
 function GridProse({ image, imageStyle, html, style, textAlign }) {
@@ -181,8 +230,16 @@ function GridComponentArrayRenderer({
     >
       {content.map((content, i) => (
         <GridCol
-          columnWidth={content.columnWidth}
-          columnOffset={content.columnOffset}
+          extraLargeColumnWidth={content.extraLargeColumnWidth}
+          extraLargeColumnOffset={content.extraLargeColumnOffset}
+          extraSmallColumnWidth={content.extraSmallColumnWidth}
+          extraSmallColumnOffset={content.extraSmallColumnOffset}
+          largeColumnWidth={content.columnWidth}
+          largeColumnOffset={content.columnOffset}
+          mediumColumnWidth={content.mediumColumnWidth}
+          mediumColumnOffset={content.mediumColumnOffset}
+          smallColumnWidth={content.smallColumnWidth}
+          smallColumnOffset={content.smallColumnOffset}
           key={i}
         >
           <GridComponentRenderer key={i} {...content} />
