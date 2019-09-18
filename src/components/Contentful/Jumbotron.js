@@ -3,10 +3,10 @@ import { Jumbotron } from '@madetech/frontend'
 
 export default function ContentfulJumbotron({
   backgroundUrl,
-  largeColumnWidth,
-  largeColumnOffset,
   html,
   id,
+  largeColumnWidth,
+  largeColumnOffset,
   textAlign,
   textColor,
 }) {
