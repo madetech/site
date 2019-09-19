@@ -1,5 +1,6 @@
 import React from 'react'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
+import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
 export default function ContentfulHero({
   id,
@@ -28,16 +29,19 @@ export default function ContentfulHero({
     backgroundImage = `url(${image.fixed.src})`
   }
 
+  let parsedTitle = threeSpaceToLineBreak(pageTitle)
+  parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
+
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row" style={{backgroundImage: backgroundImage }}>
+        <div className="row" style={{ backgroundImage: backgroundImage }}>
           <div className="col-lg-12">
             {pageBreadcrumbComponent}
             {sectionNameComponent}
-            <h1 className="contentful-hero__page-title">{threeSpaceToLineBreak(pageTitle)}</h1>
+            <h1 className="contentful-hero__page-title">{parsedTitle}</h1>
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   )

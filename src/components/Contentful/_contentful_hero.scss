@@ -27,15 +27,18 @@
   font-weight: $bold;
   font-size: $px12;
   @include desktop {
-    margin-bottom: 65px;
+    margin-top: 10px;
+    margin-bottom: 55px;
   }
 
   @include tablet {
-    margin-bottom: 45px;
+    margin-top: 10px;
+    margin-bottom: 35px;
   }
 
   @include mobile {
-    margin-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 }
 
@@ -47,6 +50,5 @@
 }
 
 .contentful-hero__page-title {
-  word-wrap: break-word;
   margin: 0;
 }

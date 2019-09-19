@@ -24,18 +24,19 @@ $svc-img-path: '/img/services';
 &.services__legacy {
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: contain;
 
   @include desktop {
-    background-image: url('#{$svc-img-path}/legacy/header-photo-desktop.png');
+    background-image: url('#{$svc-img-path}/legacy/header-photo-desktop.jpg');
+    background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/legacy/header-photo-tablet.png');
+    background-image: url('#{$svc-img-path}/legacy/header-photo-tablet.jpg');
+    background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/legacy/header-photo-mobile.png');
+    background-image: url('#{$svc-img-path}/legacy/header-photo-tablet.jpg');
   }
 }
 
@@ -192,6 +193,10 @@ $svc-img-path: '/img/services';
 }
 
 .services__trusted_supplier__desktop {
+  @include tablet {
+    display: none;
+  }
+
   @include mobile {
     display: none;
   }
@@ -201,12 +206,14 @@ $svc-img-path: '/img/services';
   @include desktop {
     display: none;
   }
-
-  @include tablet {
-    display: none;
-  }
 }
 
 .services__data__process {
   padding: 0 !important;
+}
+
+.services__right_experience {
+  img {
+    width: 75%;
+  }
 }
