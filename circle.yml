@@ -49,9 +49,6 @@ jobs:
           name: Run Test Suite
           command: npm test
       - run:
-          name: Clean Static Site
-          command: npm run clean
-      - run:
           name: Build Static Site
           command: npm run build
       - run:
