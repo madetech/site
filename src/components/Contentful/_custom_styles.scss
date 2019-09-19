@@ -275,11 +275,11 @@ $svc-img-path: '/img/services';
   
   h4:before {
     /* first li's line */
-    top: 11px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+    top: 21px; /* moves the line down so that it disappears under the bullet. Adjust manually */
   }
 
   p:before {
-    top: 16px;
+    top: 26px;
   }
 
   h4:last-of-type:before {
