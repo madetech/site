@@ -240,6 +240,42 @@
     }
   }
 
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/ 
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+    padding-bottom: $px20;
+  }
+
+  ul li:before {
+    /* bullets */
+    width: 8px;
+    height: 8px;
+    background: $mt-green;
+    border-radius: 50%;
+    content: " ";
+    position: absolute;
+
+    @include desktop {
+      left: -22px;
+      top: 17px;
+    }
+
+    @include tablet {
+      left: -20px;
+      top: 11px;
+    }
+
+    @include mobile {
+      left: -20px;
+      top: 11px;
+    }
+  }
+
   ul.test li {
     position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
     /* use padding-bottom instead of margin-bottom.*/ 
