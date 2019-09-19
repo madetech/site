@@ -5,6 +5,7 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
+import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
 function GridContainer({
   alignItems,
@@ -116,7 +117,9 @@ function GridProse({
       <img alt={image.title} className={imageClassName} src={image.fixed.src} />
     )
   }
-  var parsedHtml = threeSpaceToLineBreak(html, true)
+
+  let parsedHtml = threeSpaceToLineBreak(html, true)
+  parsedHtml = threeHyphenToSoftHyphen(parsedHtml, true)
 
   let proseComponent
   if (html) {
