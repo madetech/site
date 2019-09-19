@@ -7,27 +7,19 @@ import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
 
 export default function Layout({
   children,
+  customClasses,
   data,
   description,
   featureFlags,
   titlePrefix,
   url,
 }) {
-  let pageContentComponent
+  let pageContentClass = ''
   if (featureFlags === 'new-design') {
-    pageContentComponent = (
-      <div className="new-design">
-        <div className="new-design__inner">
-          {children}
-        </div>
-      </div>
-    )
-  } else {
-    pageContentComponent = (
-      <div>
-        {children}
-      </div>
-    )
+    pageContentClass += 'new-design'
+  }
+  if (customClasses) {
+    customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
 
   return (
@@ -44,15 +36,21 @@ export default function Layout({
 
       <Header constrainLinkWidth logoHref="/" scrollable>
         <a href="/agile-transformation" className="nav-link">
-          Agile Team<br />Transformation
+          Agile Team
+          <br />
+          Transformation
         </a>
 
         <a href="/software-development" className="nav-link">
-          Software<br />Development
+          Software
+          <br />
+          Development
         </a>
 
         <a href="/continuous-delivery" className="nav-link">
-          Continuous<br />Delivery
+          Continuous
+          <br />
+          Delivery
         </a>
 
         <a href="/devops" className="nav-link">
@@ -60,11 +58,13 @@ export default function Layout({
         </a>
 
         <a href="/support-and-maintainance" className="nav-link">
-          Reliability<br />Engineering
+          Reliability
+          <br />
+          Engineering
         </a>
       </Header>
 
-      {pageContentComponent}
+      <div className={pageContentClass}>{children}</div>
 
       <SiteMap />
 

@@ -8,6 +8,7 @@ export default function ContentfulPageTemplate({ data }) {
 
   return (
     <Layout
+      customClasses={page.customClasses}
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
@@ -20,6 +21,7 @@ export default function ContentfulPageTemplate({ data }) {
 export const pageQuery = graphql`
   query($id: String!) {
     contentfulPage(id: { eq: $id }) {
+      customClasses
       description
       featureFlags
       id
