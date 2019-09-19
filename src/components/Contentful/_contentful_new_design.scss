@@ -240,48 +240,48 @@
     }
   }
 
-ul.test li {
-  position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
-  /* use padding-bottom instead of margin-bottom.*/ 
-  margin-bottom: 0; /* This overrides previously specified margin-bottom */
-  padding-bottom: 2.5em;
-}
+  ul.test li {
+    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/ 
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+    padding-bottom: $px20;
+  }
 
-ul.test li:after {
-  /* bullets */
-  width: 21px;
-  height: 21px;
-  background: $mt-green;
-  border-radius: 50%;
-  content: " ";
-  position: absolute;
-  left: -30px; /*adjust manually*/
-  top: 9px;
-}
+  ul.test li:after {
+    /* bullets */
+    width: 21px;
+    height: 21px;
+    background: $mt-green;
+    border-radius: 50%;
+    content: " ";
+    position: absolute;
+    left: -30px; /*adjust manually*/
+    top: 9px;
+  }
 
-ul.test li:before {
-    /* lines */
-  content:"";
-  position: absolute;
-  left: -20px; /* adjust manually */
-  height: 100%;
-  width: 1px;
+  ul.test li:before {
+      /* lines */
+    content:"";
+    position: absolute;
+    left: -20px; /* adjust manually */
+    height: 100%;
+    width: 1px;
 
-  background-image: linear-gradient(to right, #a8a8a8 50%, transparent 50%), linear-gradient(to right, #a8a8a8 50%, transparent 50%), linear-gradient(to bottom, #a8a8a8 50%, transparent 50%), linear-gradient(to bottom, #a8a8a8 50%, transparent 50%);
-  background-position: left top, left bottom, left top, right top;
-  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-  background-size: 0px 0px, 0px 0px, 0px 0px, 1px 10px;
-}
+    background-image: linear-gradient(to right, #a8a8a8 50%, transparent 50%), linear-gradient(to right, #a8a8a8 50%, transparent 50%), linear-gradient(to bottom, #a8a8a8 50%, transparent 50%), linear-gradient(to bottom, #a8a8a8 50%, transparent 50%);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 0px 0px, 0px 0px, 0px 0px, 1px 10px;
+  }
 
-ul.test li:before {
-   /* first li's line */
-   top: 21px; /* moves the line down so that it disappears under the bullet. Adjust manually */
-}
+  ul.test li:before {
+    /* first li's line */
+    top: 21px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+  }
 
-ul.test li:last-child:before {
-    /* last li's line */
-   height: 0px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
-}
+  ul.test li:last-child:before {
+      /* last li's line */
+    height: 0px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+  }
 
   @import 'components/Contentful/custom_styles';
 }
