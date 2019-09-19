@@ -20,7 +20,12 @@ export default function App() {
   }, [])
 
   return (
-    <Layout description={page.description} featureFlags={page.featureFlags} titlePrefix={page.title}>
+    <Layout
+      customClasses={page.customClasses}
+      description={page.description}
+      featureFlags={page.featureFlags}
+      titlePrefix={page.title}
+    >
       {page.content ? <Contentful content={page.content} /> : <Loading />}
 
       <PreviewBanner />
