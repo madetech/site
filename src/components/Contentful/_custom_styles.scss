@@ -1,4 +1,4 @@
-$svc-img-path: '/img/services';
+$svc-img-path: './assets/images/services';
 
 @mixin bg-img($basepath, $size, $name) {
   background-repeat: no-repeat;
