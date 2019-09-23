@@ -2,10 +2,16 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
-const contentfulPageTemplate = path.resolve('./src/templates/ContentfulPage/index.js')
-const postListPageTemplate = path.resolve('./src/templates/PostListPage/index.js')
+const contentfulPageTemplate = path.resolve(
+  './src/templates/ContentfulPage/index.js'
+)
+const postListPageTemplate = path.resolve(
+  './src/templates/PostListPage/index.js'
+)
 const postPageTemplate = path.resolve('./src/templates/PostPage/index.js')
-const categoryPageTemplate = path.resolve('./src/templates/CategoryPage/index.js')
+const categoryPageTemplate = path.resolve(
+  './src/templates/CategoryPage/index.js'
+)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -34,7 +40,10 @@ exports.createPages = ({ graphql, actions }) => {
 
       postEdges.forEach(edge => {
         createPage({
-          path: edge.node.slug.slice(0, 1) === '/' ? edge.node.slug : `/${edge.node.slug}`,
+          path:
+            edge.node.slug.slice(0, 1) === '/'
+              ? edge.node.slug
+              : `/${edge.node.slug}`,
           component: slash(contentfulPageTemplate),
           context: {
             id: edge.node.id,
@@ -80,7 +89,7 @@ exports.createPages = ({ graphql, actions }) => {
             limit: postsPerPage,
             skip: i * postsPerPage,
             page,
-            totalPages
+            totalPages,
           },
         })
       })
@@ -153,14 +162,17 @@ exports.createPages = ({ graphql, actions }) => {
             const page = i + 1
 
             createPage({
-              path: i == 0 ? `/blog/t/${edge.node.slug}` : `/blog/t/${edge.node.slug}/${page}`,
+              path:
+                i == 0
+                  ? `/blog/t/${edge.node.slug}`
+                  : `/blog/t/${edge.node.slug}/${page}`,
               component: slash(categoryPageTemplate),
               context: {
                 id: edge.node.id,
                 limit: postsPerPage,
                 skip: i * postsPerPage,
                 page,
-                totalPages
+                totalPages,
               },
             })
           })
@@ -172,6 +184,12 @@ exports.createPages = ({ graphql, actions }) => {
   return Promise.all([
     createContentfulPages,
     createPostPages,
-    createCategoryPages
+    createCategoryPages,
   ])
+}
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    devtool: 'eval-source-map',
+  })
 }
