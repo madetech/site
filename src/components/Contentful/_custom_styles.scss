@@ -223,6 +223,12 @@ $svc-img-path: './assets/images/services';
     width: 260px;
     float: left;
 
+    + h4 {
+      + p {
+        min-height: 200px;
+      }
+    }
+
     @include lg-desktop {
       margin-left: -370px;
     }
@@ -251,7 +257,6 @@ $svc-img-path: './assets/images/services';
         }
 
         + p {
-          min-height: 200px;
           padding-bottom: 45px;
 
           &:before {
