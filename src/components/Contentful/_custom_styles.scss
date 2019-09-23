@@ -219,6 +219,49 @@ $svc-img-path: './assets/images/services';
 }
 
 .bulleted_headers {
+  img {
+    width: 260px;
+    float: left;
+
+    @include lg-desktop {
+      margin-left: -370px;
+    }
+
+    @include sm-desktop {
+      margin-left: -345px;
+    }
+
+    @include tablet {
+      margin-left: -310px;
+    }
+
+    @include mobile {
+      max-width: none;
+      margin-left: -30px;
+      margin-right: 220px;
+      margin-bottom: 20px;
+
+      + h4 {
+        &:before {
+          top: 220px;
+        }
+
+        &:after {
+          top: 205px;
+        }
+
+        + p {
+          min-height: 200px;
+          padding-bottom: 45px;
+
+          &:before {
+            top: 220px;
+          }
+        }
+      }
+    }
+  }
+
   h3,
   h4 {
     position: relative;
@@ -233,6 +276,14 @@ $svc-img-path: './assets/images/services';
     margin: 0;
     padding-bottom: 36px;
     font-size: $px20;
+
+    @include tablet {
+      font-size: $px18;
+    }
+
+    @include mobile {
+      font-size: $px16;
+    }
   }
 
   h3:after,
@@ -257,7 +308,7 @@ $svc-img-path: './assets/images/services';
 
     @include mobile {
       top: 2px;
-      left: -30px; /*adjust manually*/
+      left: -40px; /*adjust manually*/
     }
   }
 
@@ -272,7 +323,7 @@ $svc-img-path: './assets/images/services';
     width: 2px;
 
     @include mobile {
-      left: -20px; /*adjust manually*/
+      left: -30px; /*adjust manually*/
     }
 
     background-image: linear-gradient(to right, #a8a8a8 50%, transparent 50%),
