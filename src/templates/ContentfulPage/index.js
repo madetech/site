@@ -115,14 +115,6 @@ export const pageQuery = graphql`
     }
     pageTitle
     sectionName
-    image {
-      fixed(width: 1000) {
-        height
-        src
-        srcSet
-        width
-      }
-    }
   }
   fragment prose on ContentfulProse {
     name
