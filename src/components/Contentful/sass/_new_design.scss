@@ -1,0 +1,10 @@
+.new-design {
+  @import './abstracts/mixins';
+  @import './abstracts/variables';
+  @import './base/typography';
+  @import './components/contentful_hero';
+  @import './components/contentful_highlight';
+  @import './components/new_design_overrides';
+  @import './sections/shared';
+  @import './sections/our_services';
+}

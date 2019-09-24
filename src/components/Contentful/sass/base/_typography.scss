@@ -1,10 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:500,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
+
+$montserrat: 'Montserrat', Helvetica, Arial, sans-serif;
+$poppins: 'Poppins', Helvetica, Arial, sans-serif;
+
+div,
+span,
+p {
+  font-family: $montserrat;
+  color: $dark-grey;
+
+  @include desktop {
+    font-size: $px24;
+    line-height: 1.67;
+  }
+
+  @include tablet {
+    font-size: $px20;
+    line-height: 1.5;
+  }
+
+  @include mobile {
+    font-size: $px18;
+    line-height: 1.66;
+  }
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: $poppins;
   font-weight: $extra-bold;
   -webkit-hyphens: manual;
   -ms-hyphens: manual;
@@ -104,7 +132,7 @@ blockquote {
   font-weight: $medium;
   line-height: 1.5;
   color: $mt-green;
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: $poppins;
 
   @include desktop {
     font-size: $px26;
