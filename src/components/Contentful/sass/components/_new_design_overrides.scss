@@ -78,8 +78,8 @@ ul li:before {
 
 .contentful-grid {
   margin: 0;
-  border: 0;
-  padding: $grid-padding;
+  border: 0 !important;
+  padding: $grid-padding !important;
 
   @include mobile {
     padding: $mobile-grid-padding !important;
