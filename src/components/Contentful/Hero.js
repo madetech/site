@@ -13,10 +13,8 @@ export default function ContentfulHero({
   let pageBreadcrumbComponent
   let backgroundImage
 
-  if (pageBreadcrumb) {
-    pageBreadcrumbComponent = (
-      <div className="contentful-hero__breadcrumb">{pageBreadcrumb}</div>
-    )
+  if (pageBreadcrumb && pageBreadcrumb.links) {
+    pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
 
   if (sectionName) {
@@ -43,6 +41,25 @@ export default function ContentfulHero({
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+function renderBreadcrumb(links) {
+  const finalLink = links.length - 1
+
+  return (
+    <div className="contentful-hero__breadcrumb">
+      {links.map((link, index) => {
+        return (
+          <>
+            <a href={link.url} key={index}>
+              {link.title}
+            </a>
+            {index < finalLink && <> / </>}
+          </>
+        )
+      })}
     </div>
   )
 }
