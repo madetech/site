@@ -53,7 +53,7 @@ function renderBreadcrumb(links) {
       {links.map((link, index) => {
         return (
           <>
-            <a href={link.url} key={index}>
+            <a href={link.url} key={link.url}>
               {link.title}
             </a>
             {index < finalLink && <> / </>}
