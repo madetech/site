@@ -13,7 +13,10 @@
 }
 
 .contentful-hero__breadcrumb {
-  color: $mid-grey;
+  a {
+    color: $light-grey;
+  }
+  color: $light-grey;
   font-weight: $bold;
   font-size: $px12;
 

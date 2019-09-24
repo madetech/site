@@ -43,7 +43,7 @@ function ComponentRenderer(content) {
         <Hero
           id={id}
           image={content.image}
-          pageBreadcrumb={content.pageBreadcrumb}
+          pageBreadcrumb={content.pageBreadcrumb2}
           pageTitle={content.pageTitle}
           sectionName={content.sectionName}
         />
