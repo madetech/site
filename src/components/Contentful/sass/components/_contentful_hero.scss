@@ -10,34 +10,25 @@
   @include mobile {
     margin-bottom: $mobile-spacing;
   }
-
-  .row {
-    background-position: 102% 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    @include mobile {
-      background-image: none !important;
-    }
-  }
 }
 
 .contentful-hero__breadcrumb {
   color: $mid-grey;
   font-weight: $bold;
   font-size: $px12;
+
   @include desktop {
-    margin-top: 10px;
-    margin-bottom: 55px;
+    margin-top: 35px;
+    margin-bottom: 45px;
   }
 
   @include tablet {
-    margin-top: 10px;
+    margin-top: 25px;
     margin-bottom: 35px;
   }
 
   @include mobile {
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 25px;
   }
 }

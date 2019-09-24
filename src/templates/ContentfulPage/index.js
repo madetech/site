@@ -110,14 +110,6 @@ export const pageQuery = graphql`
     pageBreadcrumb
     pageTitle
     sectionName
-    image {
-      fixed(width: 1000) {
-        height
-        src
-        srcSet
-        width
-      }
-    }
   }
   fragment prose on ContentfulProse {
     name
