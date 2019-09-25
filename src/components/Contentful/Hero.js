@@ -50,7 +50,7 @@ function renderBreadcrumb(links) {
             <a href={link.url} key={link.url}>
               {link.title}
             </a>
-            {index < finalLink && <> / </>}
+            {index < finalLink && ' / '}
           </>
         )
       })}
