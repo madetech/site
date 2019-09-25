@@ -176,22 +176,21 @@
 
   h3:before,
   h4:before {
-    /* first li's line */
-    top: 21px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+    top: 12px; /* Tweak this to adjust the vertical positioning of the dashed lines */
   }
 
   p:before {
-    top: 26px;
+    top: 17px; /* Tweak this to adjust the vertical positioning of the dashed lines */
   }
 
   h3:last-of-type:before,
   h4:last-of-type:before {
     /* last li's line */
-    height: 0px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+    height: 0px;
   }
 
   p:last-of-type:before {
     /* last li's line */
-    height: 0px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+    height: 0px;
   }
 }
