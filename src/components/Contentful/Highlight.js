@@ -5,13 +5,38 @@ export default function ContentfulHighlight({
   authorAvatar,
   colourOfElementAbove,
   colourOfElementBelow,
-  gridWidth,
+  extraLargeColumnWidth,
+  extraSmallColumnWidth,
   html,
+  largeColumnWidth,
+  mediumColumnWidth,
+  smallColumnWidth,
   style,
   textAlign,
 }) {
-  const theGridWidth = gridWidth || 12
-  const leftBackgroundWidth = ((gridWidth / 12) * 100) / 2
+  let colClasses = ''
+
+  if (extraLargeColumnWidth !== null) {
+    colClasses += ` col-xl-${extraLargeColumnWidth}`
+  }
+
+  if (largeColumnWidth !== null) {
+    colClasses += ` col-lg-${largeColumnWidth}`
+  }
+
+  if (mediumColumnWidth !== null) {
+    colClasses += ` col-md-${mediumColumnWidth}`
+  }
+
+  if (smallColumnWidth !== null) {
+    colClasses += ` col-sm-${smallColumnWidth}`
+  }
+
+  if (extraSmallColumnWidth !== null) {
+    colClasses += ` col-${extraSmallColumnWidth}`
+  }
+
+  const leftBackgroundWidth = 60
   const rightBackgroundWidth = 100 - leftBackgroundWidth
 
   const containerClassName = `contentful-highlight ${style || ''}`
@@ -20,11 +45,7 @@ export default function ContentfulHighlight({
   const bgBottomClassName = `contentful-highlight__bg-right__bottom ${colourOfElementBelow ||
     ''}`
 
-  let contentClassName = `col-lg-${theGridWidth} offset-lg-1 
-  col-md-${theGridWidth} offset-md-1 
-  col-sm-${theGridWidth} offset-sm-1 
-  col-${theGridWidth} offset-1 
-  contentful-highlight__content`
+  let contentClassName = `${colClasses} offset-xl-1 offset-lg-1 offset-md-1 offset-sm-1 offset-1 contentful-highlight__content`
 
   if (textAlign) contentClassName += ` text-${textAlign}`
 
