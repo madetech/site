@@ -100,6 +100,30 @@ $svc-img-path: 'assets/images/services';
   }
 }
 
+&.services__capability {
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  @include lg-desktop {
+    background-image: url('#{$svc-img-path}/capability/1140/header-photo-1140.jpg');
+    background-size: contain;
+  }
+
+  @include sm-desktop {
+    background-image: url('#{$svc-img-path}/capability/960/header-photo-960.jpg');
+    background-size: contain;
+  }
+
+  @include tablet {
+    background-image: url('#{$svc-img-path}/capability/720/header-photo-720.jpg');
+    background-size: contain;
+  }
+
+  @include mobile {
+    background-image: url('#{$svc-img-path}/capability/540/header-photo-540.jpg');
+  }
+}
+
 .services__capability__section_0 {
   padding: 0 !important;
   @include bg-imgs(
