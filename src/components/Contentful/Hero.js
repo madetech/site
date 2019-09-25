@@ -4,14 +4,12 @@ import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
 export default function ContentfulHero({
   id,
-  image,
   pageBreadcrumb,
   pageTitle,
   sectionName,
 }) {
   let sectionNameComponent
   let pageBreadcrumbComponent
-  let backgroundImage
 
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
@@ -23,18 +21,14 @@ export default function ContentfulHero({
     )
   }
 
-  if (image) {
-    backgroundImage = `url(${image.fixed.src})`
-  }
-
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row" style={{ backgroundImage: backgroundImage }}>
-          <div className="col-lg-12">
+        <div className="row">
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             {pageBreadcrumbComponent}
             {sectionNameComponent}
             <h1 className="contentful-hero__page-title">{parsedTitle}</h1>
