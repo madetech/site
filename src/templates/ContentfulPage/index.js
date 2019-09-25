@@ -107,7 +107,7 @@ export const pageQuery = graphql`
   }
   fragment hero on ContentfulHero {
     name
-    pageBreadcrumb2 {
+    pageBreadcrumb {
       links {
         title
         url
