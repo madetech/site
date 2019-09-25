@@ -24,9 +24,10 @@
     width: 260px;
     float: left;
 
-    + h4 {
+    + h3,
+    h4 {
       + p:not(:last-child) {
-        min-height: 200px;
+        min-height: 250px;
       }
     }
 
@@ -44,11 +45,12 @@
 
     @include mobile {
       max-width: none;
-      margin-left: -30px;
+      margin-left: -20px;
       margin-right: 220px;
       margin-bottom: 20px;
 
-      + h4 {
+      + h3,
+      h4 {
         &:before {
           top: 220px;
         }
@@ -103,12 +105,43 @@
     position: absolute;
 
     @include desktop {
-      top: 9px;
       left: -45px; /*adjust manually*/
     }
 
     @include tablet {
-      top: 4px;
+      left: -45px; /*adjust manually*/
+    }
+
+    @include mobile {
+      left: -40px; /*adjust manually*/
+    }
+  }
+
+  h3:after {
+    @include desktop {
+      top: 15px;
+      left: -45px; /*adjust manually*/
+    }
+
+    @include tablet {
+      top: 10px;
+      left: -45px; /*adjust manually*/
+    }
+
+    @include mobile {
+      top: 10px;
+      left: -40px; /*adjust manually*/
+    }
+  }
+
+  h4:after {
+    @include desktop {
+      top: 7px;
+      left: -45px; /*adjust manually*/
+    }
+
+    @include tablet {
+      top: 7px;
       left: -45px; /*adjust manually*/
     }
 

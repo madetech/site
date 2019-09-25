@@ -85,11 +85,11 @@ ul li:before {
     padding: $mobile-grid-padding !important;
   }
 
-  &.shaded,
-  &.yellow,
+  &.black,
   &.blue,
+  &.shaded,
   &.white,
-  &.black {
+  &.yellow {
     + .contentful-grid {
       padding: $grid-padding;
 
@@ -99,14 +99,6 @@ ul li:before {
     }
   }
 
-  &.white {
-    background-color: $white;
-  }
-
-  &.shaded {
-    background-color: $white-two;
-  }
-
   &.black {
     background-color: $black;
 
@@ -114,6 +106,10 @@ ul li:before {
     a {
       color: $white;
       font-size: $px20;
+    }
+
+    a {
+      font-weight: $extra-bold;
     }
 
     h3,
@@ -152,6 +148,18 @@ ul li:before {
       color: $white;
       font-weight: $medium;
     }
+  }
+
+  &.shaded {
+    background-color: $white-two;
+
+    p {
+      color: $black;
+    }
+  }
+
+  &.white {
+    background-color: $white;
   }
 
   &.pull-quote {
@@ -263,10 +271,6 @@ ul li:before {
 
         @include tablet {
           margin-bottom: 25px;
-        }
-
-        @include mobile {
-          margin-bottom: 10px;
         }
       }
     }
