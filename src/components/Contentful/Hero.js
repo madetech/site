@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
@@ -46,12 +46,10 @@ function renderBreadcrumb(links) {
     <div className="contentful-hero__breadcrumb">
       {links.map((link, index) => {
         return (
-          <>
-            <a href={link.url} key={link.url}>
-              {link.title}
-            </a>
+          <Fragment key={index}>
+            <a href={link.url}>{link.title}</a>
             {index < finalLink && ' / '}
-          </>
+          </Fragment>
         )
       })}
     </div>
