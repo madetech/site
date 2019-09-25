@@ -86,8 +86,12 @@ function ComponentRenderer(content) {
           id={id}
           colourOfElementAbove={content.colourOfElementAbove}
           colourOfElementBelow={content.colourOfElementBelow}
-          gridWidth={content.gridWidth}
+          extraLargeColumnWidth={content.extraLargeColumnWidth}
+          extraSmallColumnWidth={content.extraSmallColumnWidth}
           html={documentToHtmlString(content.body && content.body.json)}
+          largeColumnWidth={content.largeColumnWidth}
+          mediumColumnWidth={content.mediumColumnWidth}
+          smallColumnWidth={content.smallColumnWidth}
           style={content.style}
           textAlign={content.textAlign}
         />
