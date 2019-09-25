@@ -14,9 +14,9 @@
 
 .contentful-hero__breadcrumb {
   a {
-    color: $light-grey;
+    color: $white;
   }
-  color: $light-grey;
+  color: $white;
   font-weight: $bold;
   font-size: $px12;
 
@@ -37,6 +37,7 @@
 }
 
 .contentful-hero__section-type {
+  color: $white;
   font-weight: $bold;
   font-size: $px12;
   letter-spacing: 0.05rem;
