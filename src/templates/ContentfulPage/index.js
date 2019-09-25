@@ -152,7 +152,11 @@ export const pageQuery = graphql`
     author
     colourOfElementAbove
     colourOfElementBelow
-    gridWidth
+    extraLargeColumnWidth
+    extraSmallColumnWidth
+    largeColumnWidth
+    mediumColumnWidth
+    smallColumnWidth
     textAlign
     authorAvatar {
       fixed(width: 128, height: 128) {
