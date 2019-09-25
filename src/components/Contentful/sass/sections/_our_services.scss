@@ -239,3 +239,51 @@ $svc-img-path: 'assets/images/services';
   padding: 15px 0 1px 25px;
   border-left: 4px solid $dark-grey;
 }
+
+&.services__digital {
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  @include lg-desktop {
+    background-image: url('#{$svc-img-path}/digital/1140/header-photo-1140.jpg');
+    background-size: contain;
+  }
+
+  @include sm-desktop {
+    background-image: url('#{$svc-img-path}/digital/960/header-photo-960.jpg');
+    background-size: contain;
+  }
+
+  @include tablet {
+    background-image: url('#{$svc-img-path}/digital/720/header-photo-720.jpg');
+    background-size: contain;
+  }
+
+  @include mobile {
+    background-image: url('#{$svc-img-path}/digital/540/header-photo-540.jpg');
+  }
+}
+
+&.services__data {
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  @include lg-desktop {
+    background-image: url('#{$svc-img-path}/data/1140/header-photo-1140.jpg');
+    background-size: contain;
+  }
+
+  @include sm-desktop {
+    background-image: url('#{$svc-img-path}/data/960/header-photo-960.jpg');
+    background-size: contain;
+  }
+
+  @include tablet {
+    background-image: url('#{$svc-img-path}/data/720/header-photo-720.jpg');
+    background-size: contain;
+  }
+
+  @include mobile {
+    background-image: url('#{$svc-img-path}/data/540/header-photo-540.jpg');
+  }
+}
