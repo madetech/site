@@ -100,7 +100,7 @@ ul li:before {
   }
 
   &.white {
-    background-color: white;
+    background-color: $white;
   }
 
   &.shaded {
@@ -109,6 +109,17 @@ ul li:before {
 
   &.black {
     background-color: $black;
+
+    p,
+    a {
+      color: $white;
+      font-size: $px20;
+    }
+
+    h3,
+    h4 {
+      color: $mt-green;
+    }
   }
 
   &.green-gradient {
@@ -118,7 +129,7 @@ ul li:before {
       $mt-green
     );
 
-    padding: 180px 0 !important;
+    padding: 150px 0 !important;
 
     @include mobile {
       padding: $mobile-grid-padding !important;
@@ -129,11 +140,11 @@ ul li:before {
       font-weight: $extra-bold;
 
       @include tablet {
-        padding-bottom: 50px;
+        padding-bottom: 25px;
       }
 
       @include mobile {
-        padding-bottom: 0px;
+        padding-bottom: 0;
       }
     }
 

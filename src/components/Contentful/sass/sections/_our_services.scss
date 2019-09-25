@@ -5,18 +5,23 @@ $svc-img-path: 'assets/images/services';
   background-repeat: no-repeat;
   background-position: center top;
 
-  @include desktop {
-    background-image: url('#{$svc-img-path}/legacy/header-photo-desktop.jpg');
+  @include lg-desktop {
+    background-image: url('#{$svc-img-path}/legacy/1140/header-photo-1140.jpg');
+    background-size: contain;
+  }
+
+  @include sm-desktop {
+    background-image: url('#{$svc-img-path}/legacy/960/header-photo-960.jpg');
     background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/legacy/header-photo-tablet.jpg');
+    background-image: url('#{$svc-img-path}/legacy/720/header-photo-720.jpg');
     background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/legacy/header-photo-tablet.jpg');
+    background-image: url('#{$svc-img-path}/legacy/540/header-photo-540.jpg');
   }
 }
 
@@ -196,4 +201,17 @@ $svc-img-path: 'assets/images/services';
   img {
     width: 75%;
   }
+}
+
+.services__our_digital_1 {
+  padding-bottom: 0 !important;
+}
+
+.services__our_digital_2 {
+  padding-top: 0 !important;
+}
+
+.services__our_digital__text {
+  padding: 15px 0 1px 25px;
+  border-left: 4px solid $dark-grey;
 }
