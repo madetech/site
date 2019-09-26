@@ -1,4 +1,16 @@
-header > div:not(.new-design) {
+// need to disable these link-buttons for new site
+header + div:not(.new-design) {
+  .contentful-grid.yellow {
+    .contentful-prose {
+      .prose {
+        :not(li) > p:last-child a {
+          color: #343a40 !important;
+          border-color: #343a40 !important;
+        }
+      }
+    }
+  }
+
   .contentful-prose {
     .prose {
       :not(li) > p:last-child a {
@@ -18,6 +30,18 @@ header > div:not(.new-design) {
 }
 
 .contentful-prose {
+  .prose-image {
+    > div {
+      display: none;
+    }
+
+    img {
+      width: initial !important;
+      height: initial !important;
+      position: initial !important;
+    }
+  }
+
   margin: map-get($spacers, 5) 0;
 
   img {
