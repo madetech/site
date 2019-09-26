@@ -5,47 +5,46 @@ $svc-img-path: 'assets/images/services';
   background-position: center top;
 
   @include lg-desktop {
-    background-image: url('#{$svc-img-path}/overview/1140/header-photo-1140.jpg');
+    background-image: url('#{$svc-img-path}/overview/1140/header-photo-services-1140.jpg');
     background-size: contain;
   }
 
   @include sm-desktop {
-    background-image: url('#{$svc-img-path}/overview/960/header-photo-960.jpg');
+    background-image: url('#{$svc-img-path}/overview/960/header-photo-services-960.jpg');
     background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/overview/720/header-photo-720.jpg');
+    background-image: url('#{$svc-img-path}/overview/720/header-photo-services-720.jpg');
     background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/overview/540/header-photo-540.jpg');
+    background-image: url('#{$svc-img-path}/overview/540/header-photo-services-540.jpg');
   }
 }
 
-// header images
 &.services__legacy {
   background-repeat: no-repeat;
   background-position: center top;
 
   @include lg-desktop {
-    background-image: url('#{$svc-img-path}/legacy/1140/header-photo-1140.jpg');
+    background-image: url('#{$svc-img-path}/legacy/1140/header-photo-legacy-1140.jpg');
     background-size: contain;
   }
 
   @include sm-desktop {
-    background-image: url('#{$svc-img-path}/legacy/960/header-photo-960.jpg');
+    background-image: url('#{$svc-img-path}/legacy/960/header-photo-legacy-960.jpg');
     background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/legacy/720/header-photo-720.jpg');
+    background-image: url('#{$svc-img-path}/legacy/720/header-photo-legacy-720.jpg');
     background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/legacy/540/header-photo-540.jpg');
+    background-image: url('#{$svc-img-path}/legacy/540/header-photo-legacy-540.jpg');
   }
 }
 
@@ -129,22 +128,22 @@ $svc-img-path: 'assets/images/services';
   background-position: center top;
 
   @include lg-desktop {
-    background-image: url('#{$svc-img-path}/capability/1140/header-photo-1140.jpg');
+    background-image: url('#{$svc-img-path}/capability/1140/header-photo-capability-1140.jpg');
     background-size: contain;
   }
 
   @include sm-desktop {
-    background-image: url('#{$svc-img-path}/capability/960/header-photo-960.jpg');
+    background-image: url('#{$svc-img-path}/capability/960/header-photo-capability-960.jpg');
     background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/capability/720/header-photo-720.jpg');
+    background-image: url('#{$svc-img-path}/capability/720/header-photo-capability-720.jpg');
     background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/capability/540/header-photo-540.jpg');
+    background-image: url('#{$svc-img-path}/capability/540/header-photo-capability-540.jpg');
   }
 }
 
@@ -269,22 +268,22 @@ $svc-img-path: 'assets/images/services';
   background-position: center top;
 
   @include lg-desktop {
-    background-image: url('#{$svc-img-path}/digital/1140/header-photo-1140.jpg');
+    background-image: url('#{$svc-img-path}/digital/1140/header-photo-digital-1140.jpg');
     background-size: contain;
   }
 
   @include sm-desktop {
-    background-image: url('#{$svc-img-path}/digital/960/header-photo-960.jpg');
+    background-image: url('#{$svc-img-path}/digital/960/header-photo-digital-960.jpg');
     background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/digital/720/header-photo-720.jpg');
+    background-image: url('#{$svc-img-path}/digital/720/header-photo-digital-720.jpg');
     background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/digital/540/header-photo-540.jpg');
+    background-image: url('#{$svc-img-path}/digital/540/header-photo-digital-540.jpg');
   }
 }
 
@@ -293,21 +292,21 @@ $svc-img-path: 'assets/images/services';
   background-position: center top;
 
   @include lg-desktop {
-    background-image: url('#{$svc-img-path}/data/1140/header-photo-1140.jpg');
+    background-image: url('#{$svc-img-path}/data/1140/header-photo-data-1140.jpg');
     background-size: contain;
   }
 
   @include sm-desktop {
-    background-image: url('#{$svc-img-path}/data/960/header-photo-960.jpg');
+    background-image: url('#{$svc-img-path}/data/960/header-photo-data-960.jpg');
     background-size: contain;
   }
 
   @include tablet {
-    background-image: url('#{$svc-img-path}/data/720/header-photo-720.jpg');
+    background-image: url('#{$svc-img-path}/data/720/header-photo-data-720.jpg');
     background-size: contain;
   }
 
   @include mobile {
-    background-image: url('#{$svc-img-path}/data/540/header-photo-540.jpg');
+    background-image: url('#{$svc-img-path}/data/540/header-photo-data-540.jpg');
   }
 }
