@@ -3,11 +3,15 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: 'Made Tech',
-    description: 'We build software delivery capabilities, deliver digital & technology, and run live services for ambitious organisations.',
+    description:
+      'We build software delivery capabilities, deliver digital & technology, and run live services for ambitious organisations.',
     siteUrl: 'https://www.madetech.com',
-    keywords: 'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
+    keywords:
+      'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
   },
   plugins: [
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
@@ -17,7 +21,8 @@ module.exports = {
         short_name: 'Made Tech',
         start_url: '/',
         background_color: '#ffffff',
-        icon: './node_modules/@madetech/marketing-assets/logos/made-tech-logo-colour.png',
+        icon:
+          './node_modules/@madetech/marketing-assets/logos/made-tech-logo-colour.png',
         theme_color: '#252525',
         display: 'minimal-ui',
       },
@@ -43,14 +48,14 @@ module.exports = {
           wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
           wpcom_app_clientId: process.env.WORDPRESS_CLIENT_ID,
           wpcom_user: process.env.WORDPRESS_USERNAME,
-          wpcom_pass: process.env.WORDPRESS_PASSWORD
+          wpcom_pass: process.env.WORDPRESS_PASSWORD,
         },
         includedRoutes: [
-          "**/posts",
-          "**/categories",
-          "**/taxonomies",
-          "**/tags",
-          "**/users"
+          '**/posts',
+          '**/categories',
+          '**/taxonomies',
+          '**/tags',
+          '**/users',
         ],
       },
     },
@@ -81,7 +86,7 @@ module.exports = {
                   date: node.date,
                   url: `${site.siteMetadata.siteUrl}/${node.slug}`,
                   guid: `${site.siteMetadata.siteUrl}/${node.slug}`,
-                  custom_elements: [{ "content:encoded": node.content }],
+                  custom_elements: [{ 'content:encoded': node.content }],
                 }
               })
             },
@@ -110,7 +115,7 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml'
+            output: '/rss.xml',
           },
         ],
       },
