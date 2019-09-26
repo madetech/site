@@ -1,5 +1,29 @@
 $svc-img-path: 'assets/images/services';
 
+&.services__overview {
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  @include lg-desktop {
+    background-image: url('#{$svc-img-path}/overview/1140/header-photo-1140.jpg');
+    background-size: contain;
+  }
+
+  @include sm-desktop {
+    background-image: url('#{$svc-img-path}/overview/960/header-photo-960.jpg');
+    background-size: contain;
+  }
+
+  @include tablet {
+    background-image: url('#{$svc-img-path}/overview/720/header-photo-720.jpg');
+    background-size: contain;
+  }
+
+  @include mobile {
+    background-image: url('#{$svc-img-path}/overview/540/header-photo-540.jpg');
+  }
+}
+
 // header images
 &.services__legacy {
   background-repeat: no-repeat;
