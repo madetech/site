@@ -111,17 +111,10 @@ function GridProse({
   }
 
   let imageComponent
+  let imageClassName = `prose-image ${imageStyle}`
   if (image) {
-    let imageClassName = imageStyle || ''
-
     imageComponent = (
-      <Img
-        fluid={image.fluid}
-        alt={image.title}
-        className={imageClassName}
-        style={{ overflow: 'visible' }}
-        loading={'eager'}
-      />
+      <Img fluid={image.fluid} alt={image.title} className={imageClassName} />
     )
   }
 

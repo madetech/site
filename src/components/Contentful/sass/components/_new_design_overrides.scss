@@ -234,6 +234,18 @@ ul li:before {
 }
 
 .contentful-prose {
+  .prose-image {
+    > div {
+      display: none;
+    }
+
+    img {
+      width: initial !important;
+      height: initial !important;
+      position: initial !important;
+    }
+  }
+
   b {
     font-weight: $extra-bold;
     color: $black;

@@ -131,7 +131,7 @@ export const pageQuery = graphql`
     image {
       title
       fluid(maxWidth: 1600, quality: 100) {
-        ...GatsbyContentfulFluid
+        ...GatsbyContentfulFluid_withWebp_noBase64
       }
     }
     imageStyle
