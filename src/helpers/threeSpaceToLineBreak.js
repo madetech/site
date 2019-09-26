@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 const reactStringReplace = require('react-string-replace')
 
 export default function threeSpaceToLineBreak(str, returnAsString = false) {
   if (!returnAsString) {
+    let replacements = 0
     return reactStringReplace(str, '   ', (match, i) => (
-      <span key={i}>
-        <br key={i} />{' '}
-      </span>
+      <Fragment key={`${match} ${replacements++}`}>
+        <br />{' '}
+      </Fragment>
     ))
   }
 
