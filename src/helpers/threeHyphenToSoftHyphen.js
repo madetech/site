@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 const reactStringReplace = require('react-string-replace')
 
 export default function threeHyphenToSoftHyphen(str, returnAsString = false) {
   if (!returnAsString) {
     let replacements = 0
     return reactStringReplace(str, '---', match => (
-      <span key={`${match} ${replacements++}`}>&shy;</span>
+      <Fragment key={`${match} ${replacements++}`}>&shy;</Fragment>
     ))
   }
 
