@@ -3,8 +3,9 @@ const reactStringReplace = require('react-string-replace')
 
 export default function threeHyphenToSoftHyphen(str, returnAsString = false) {
   if (!returnAsString) {
-    return reactStringReplace(str, '---', (match, i) => (
-      <span key={i}>&shy;</span>
+    let replacements = 0
+    return reactStringReplace(str, '---', match => (
+      <span key={`${match} ${replacements++}`}>&shy;</span>
     ))
   }
 
