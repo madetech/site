@@ -129,11 +129,9 @@ export const pageQuery = graphql`
     extraSmallColumnWidth
     extraSmallColumnOffset
     image {
-      fixed(width: 1000) {
-        height
-        src
-        srcSet
-        width
+      title
+      fluid(maxWidth: 1600, quality: 100) {
+        ...GatsbyContentfulFluid
       }
     }
     imageStyle

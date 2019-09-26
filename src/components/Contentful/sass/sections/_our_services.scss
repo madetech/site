@@ -223,7 +223,8 @@ $svc-img-path: 'assets/images/services';
 
 .services__right_experience {
   img {
-    width: 75%;
+    width: 75% !important;
+    height: 75% !important;
   }
 }
 
