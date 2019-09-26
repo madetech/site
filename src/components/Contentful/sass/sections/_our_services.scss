@@ -222,9 +222,8 @@ $svc-img-path: 'assets/images/services';
 }
 
 .services__right_experience {
-  img {
+  .prose-image {
     width: 75% !important;
-    height: 75% !important;
   }
 }
 
