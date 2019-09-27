@@ -113,8 +113,13 @@ function GridProse({
   if (image) {
     let imageClassName = imageStyle || ''
 
+    // gatsbys fixed image width is giving us image quality problems.
+    // removing the specified width sorts this out
+    // need to investigate further...
+    let imageSrc = image.fixed.src.split('?')[0]
+
     imageComponent = (
-      <img alt={image.title} className={imageClassName} src={image.fixed.src} />
+      <img alt={image.title} className={imageClassName} src={imageSrc} />
     )
   }
 
