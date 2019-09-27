@@ -174,13 +174,16 @@
     background-size: 0px 0px, 0px 0px, 0px 0px, 2px 20px;
   }
 
-  h3:before,
+  h3:before {
+    top: 18px;
+  }
+
   h4:before {
-    top: 12px; /* Tweak this to adjust the vertical positioning of the dashed lines */
+    top: 10px; /* Tweak this to adjust the vertical positioning of the dashed lines */
   }
 
   p:before {
-    top: 17px; /* Tweak this to adjust the vertical positioning of the dashed lines */
+    top: 15px; /* Tweak this to adjust the vertical positioning of the dashed lines */
   }
 
   h3:last-of-type:before,
