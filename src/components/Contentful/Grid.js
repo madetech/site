@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { Prose } from '@madetech/frontend'
 import HubSpotForm from './HubSpotForm'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
@@ -111,10 +110,11 @@ function GridProse({
   }
 
   let imageComponent
-  let imageClassName = `prose-image ${imageStyle}`
   if (image) {
+    let imageClassName = imageStyle || ''
+
     imageComponent = (
-      <Img fluid={image.fluid} alt={image.title} className={imageClassName} />
+      <img alt={image.title} className={imageClassName} src={image.fixed.src} />
     )
   }
 
