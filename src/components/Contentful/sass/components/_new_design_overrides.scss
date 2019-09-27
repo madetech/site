@@ -247,6 +247,10 @@ ul li:before {
 
   .prose {
     color: $dark-grey;
+
+    + img.after {
+      margin-top: 25px;
+    }
   }
 
   &:not(.small) {
