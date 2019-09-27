@@ -110,8 +110,9 @@ function GridProse({
   }
 
   let imageComponent
-  let imageClassName = `prose-image ${imageStyle}`
   if (image) {
+    let imageClassName = imageStyle || ''
+
     imageComponent = (
       <img alt={image.title} className={imageClassName} src={image.fixed.src} />
     )

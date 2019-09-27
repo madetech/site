@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "deploy": "touch public/x-made-release-${BUILD_ID}.html && node bin/deploy.js",
-    "dev": "gatsby clean && gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"{src,test}/**/*.js\"",
     "start": "gatsby serve",
     "smoke:local": "wait-on http://localhost:9000/blog && SMOKE_ONLY=yes SMOKE_URL=http://localhost:9000 npm test",
