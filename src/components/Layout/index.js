@@ -29,39 +29,16 @@ export default function Layout({
 
       <TopBar>
         <a href="https://learn.madetech.com">Learn</a>
-        <a href="/blog">Blog</a>
+        {/* <a href="/blog">Blog</a>
         <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a>
+        <a href="/contact">Contact</a> */}
       </TopBar>
 
       <Header constrainLinkWidth logoHref="/" scrollable>
-        <a href="/agile-transformation" className="nav-link">
-          Agile Team
-          <br />
-          Transformation
-        </a>
-
-        <a href="/software-development" className="nav-link">
-          Software
-          <br />
-          Development
-        </a>
-
-        <a href="/continuous-delivery" className="nav-link">
-          Continuous
-          <br />
-          Delivery
-        </a>
-
-        <a href="/devops" className="nav-link">
-          DevOps
-        </a>
-
-        <a href="/support-and-maintainance" className="nav-link">
-          Reliability
-          <br />
-          Engineering
-        </a>
+        <a href="/our-services">Our Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/careers">Careers</a>
+        <a href="/contact">Contact</a>
       </Header>
 
       <div className={pageContentClass}>{children}</div>
