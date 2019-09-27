@@ -4,8 +4,8 @@ header + div:not(.new-design) {
     .contentful-prose {
       .prose {
         :not(li) > p:last-child a {
-          color: #343a40 !important;
-          border-color: #343a40 !important;
+          color: black !important;
+          border-color: black !important;
         }
       }
     }
