@@ -21,8 +21,7 @@ module.exports = {
         short_name: 'Made Tech',
         start_url: '/',
         background_color: '#ffffff',
-        icon:
-          './node_modules/@madetech/marketing-assets/logos/made-tech-logo-colour.png',
+        icon: './src/assets/images/favicon_logo.png',
         theme_color: '#252525',
         display: 'minimal-ui',
       },
