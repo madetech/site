@@ -25,20 +25,18 @@ $svc-img-path: 'assets/images/services';
 &.services__legacy {
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: contain;
 
   @include lg-desktop {
     background-image: url('#{$svc-img-path}/legacy/1140/header-photo-legacy-1140.jpg');
-    background-size: contain;
   }
 
   @include sm-desktop {
     background-image: url('#{$svc-img-path}/legacy/960/header-photo-legacy-960.jpg');
-    background-size: contain;
   }
 
   @include tablet {
     background-image: url('#{$svc-img-path}/legacy/720/header-photo-legacy-720.jpg');
-    background-size: contain;
   }
 
   @include mobile {
@@ -124,20 +122,18 @@ $svc-img-path: 'assets/images/services';
 &.services__capability {
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: contain;
 
   @include lg-desktop {
     background-image: url('#{$svc-img-path}/capability/1140/header-photo-capability-1140.jpg');
-    background-size: contain;
   }
 
   @include sm-desktop {
     background-image: url('#{$svc-img-path}/capability/960/header-photo-capability-960.jpg');
-    background-size: contain;
   }
 
   @include tablet {
     background-image: url('#{$svc-img-path}/capability/720/header-photo-capability-720.jpg');
-    background-size: contain;
   }
 
   @include mobile {
@@ -264,20 +260,18 @@ $svc-img-path: 'assets/images/services';
 &.services__digital {
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: contain;
 
   @include lg-desktop {
     background-image: url('#{$svc-img-path}/digital/1140/header-photo-digital-1140.jpg');
-    background-size: contain;
   }
 
   @include sm-desktop {
     background-image: url('#{$svc-img-path}/digital/960/header-photo-digital-960.jpg');
-    background-size: contain;
   }
 
   @include tablet {
     background-image: url('#{$svc-img-path}/digital/720/header-photo-digital-720.jpg');
-    background-size: contain;
   }
 
   @include mobile {
@@ -288,20 +282,18 @@ $svc-img-path: 'assets/images/services';
 &.services__data {
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: contain;
 
   @include lg-desktop {
     background-image: url('#{$svc-img-path}/data/1140/header-photo-data-1140.jpg');
-    background-size: contain;
   }
 
   @include sm-desktop {
     background-image: url('#{$svc-img-path}/data/960/header-photo-data-960.jpg');
-    background-size: contain;
   }
 
   @include tablet {
     background-image: url('#{$svc-img-path}/data/720/header-photo-data-720.jpg');
-    background-size: contain;
   }
 
   @include mobile {
