@@ -21,6 +21,7 @@ h6 {
 // hero
 h1 {
   color: $mt-green;
+  text-shadow: -1px 1px 4px $black;
 
   @include desktop {
     font-size: $px80;
