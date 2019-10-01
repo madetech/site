@@ -29,9 +29,6 @@ export default function Layout({
 
       <TopBar>
         <a href="https://learn.madetech.com">Learn</a>
-        {/* <a href="/blog">Blog</a>
-        <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a> */}
       </TopBar>
 
       <Header constrainLinkWidth logoHref="/" scrollable>
