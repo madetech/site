@@ -300,3 +300,35 @@ $svc-img-path: 'assets/images/services';
     background-image: url('#{$svc-img-path}/data/540/header-photo-data-540.jpg');
   }
 }
+
+.services__book {
+  h2 {
+    margin-bottom: 40px !important;
+  }
+
+  p {
+    margin-bottom: 60px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+
+    a {
+      @extend .btn;
+      @extend .btn-dark;
+
+      background-color: black !important;
+      border-color: black !important;
+      box-shadow: none !important;
+      font-weight: normal !important;
+      color: white !important;
+    }
+  }
+
+  .contentful-prose {
+    img {
+      max-height: none;
+      margin-top: 30px;
+    }
+  }
+}
