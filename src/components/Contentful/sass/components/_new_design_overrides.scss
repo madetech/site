@@ -131,8 +131,15 @@ ul li:before {
       padding: $mobile-grid-padding !important;
     }
 
+    p,
+    b,
+    h1,
+    h2,
     h3 {
       color: $white;
+    }
+
+    h3 {
       font-weight: $extra-bold;
 
       @include tablet {
@@ -145,7 +152,6 @@ ul li:before {
     }
 
     .prose {
-      color: $white;
       font-weight: $medium;
     }
   }
@@ -155,6 +161,10 @@ ul li:before {
 
     p {
       color: $black;
+    }
+
+    + .contentful-grid.yellow {
+      margin: initial;
     }
   }
 
@@ -239,12 +249,6 @@ ul li:before {
     color: $black;
   }
 
-  u,
-  a {
-    text-decoration: none;
-    box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
-  }
-
   .prose {
     color: $dark-grey;
 
@@ -278,5 +282,12 @@ ul li:before {
         }
       }
     }
+  }
+}
+
+.contentful-hero {
+  h1 {
+    color: $mt-green;
+    text-shadow: -1px 1px 4px $black;
   }
 }

@@ -196,4 +196,8 @@
     /* last li's line */
     height: 0px;
   }
+
+  p:last-of-type:empty {
+    display: none;
+  }
 }

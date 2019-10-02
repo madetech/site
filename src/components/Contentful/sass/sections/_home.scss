@@ -1,0 +1,30 @@
+.home__services {
+  p {
+    a {
+      @extend .btn;
+      @extend .btn-dark;
+
+      text-decoration: none;
+    }
+  }
+}
+
+.home__supporting_local_govt {
+  min-height: 0;
+
+  &.desktop {
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    @include desktop {
+      display: none;
+    }
+  }
+}

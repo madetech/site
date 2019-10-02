@@ -319,9 +319,9 @@ $svc-img-path: 'assets/images/services';
 
       background-color: black !important;
       border-color: black !important;
-      box-shadow: none !important;
       font-weight: normal !important;
       color: white !important;
+      text-decoration: none;
     }
   }
 
@@ -330,5 +330,13 @@ $svc-img-path: 'assets/images/services';
       max-height: none;
       margin-top: 30px;
     }
+  }
+}
+
+.services__where_we_help {
+  u,
+  a {
+    text-decoration: none;
+    box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
   }
 }
