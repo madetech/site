@@ -29,9 +29,9 @@ http {
 
   map $uri $expires {
       default off;
-      ~\.(html|webmanifest)$ -1;
+      ~\.(html|webmanifest|json)$ -1;
       ~sw.js$ -1;
-      ~\.(css|js|json|jpg|jpeg|png|gif|svg|ico|woff|eot|ttf)$ max;
+      ~\.(css|js|jpg|jpeg|png|gif|svg|ico|woff|eot|ttf)$ max;
   }
   expires $expires;
 
