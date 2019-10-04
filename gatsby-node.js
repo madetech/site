@@ -191,5 +191,8 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     devtool: 'eval-source-map',
+    resolve: {
+      alias: { 'react-dom': '@hot-loader/react-dom'  }
+    }
   })
 }
