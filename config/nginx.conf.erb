@@ -27,22 +27,6 @@ http {
   default_type application/octet-stream;
   sendfile on;
 
-  location = /static {
-    add_header  Cache-Control "public, max-age=31536000, immutable";
-  }
-
-  location = /sw.js {
-    add_header  Cache-Control "public, max-age=0, must-revalidate";
-  }
-
-  location ~* .(css|js|jpg|jpeg|png|gif|svg|ico|woff|eot|ttf) {
-    add_header  Cache-Control "public, max-age=31536000, immutable";
-  }
-
-  location / {
-    add_header  Cache-Control "public, max-age=0, must-revalidate";
-  }
-
   # Must read the body in 5 seconds.
   client_body_timeout 5;
 
@@ -55,8 +39,25 @@ http {
 
     resolver 172.16.0.23 8.8.8.8;
 
+    location = /static {
+      expires 1y;
+      add_header Cache-Control "public, immutable";
+    }
+
+    location = /sw.js {
+      expires 0;
+      add_header Cache-Control "public, must-revalidate";
+    }
+
+    location ~* \.(css|js|jpg|jpeg|png|gif|svg|ico|woff|eot|ttf)$ {
+      expires 1y;
+      add_header Cache-Control "public, immutable";
+    }
+
     location / {
       try_files $uri $uri/index.html @madetech;
+      expires 0;
+      add_header Cache-Control "public, must-revalidate";
     }
 
     location @madetech {
