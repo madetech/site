@@ -200,13 +200,15 @@ exports.onPostBuild = async () => {
   for (let file of htmlAndJSFiles) {
     const stats = await util.promisify(fs.stat)(file)
     if (!stats.isFile()) {
-      console.log(`Apparently ${file} is not a file!`)
       continue
     }
 
     console.log(`Adding version to page-data.json in ${file}..`)
-    var content = await util.promisify(fs.readFile)(file, 'utf8')
-    var result = content.replace(/page-data.json/g, `page-data.json?v=${hash}`)
+    let content = await util.promisify(fs.readFile)(file, 'utf8')
+    const result = content.replace(
+      /page-data.json/g,
+      `page-data.json?v=${hash}`
+    )
     await util.promisify(fs.writeFile)(file, result, 'utf8')
   }
 }
