@@ -1,4 +1,8 @@
 const _ = require('lodash')
+const glob = require('glob')
+const fs = require('fs')
+const util = require('util')
+const md5 = require('md5')
 const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
@@ -186,6 +190,25 @@ exports.createPages = ({ graphql, actions }) => {
     createPostPages,
     createCategoryPages,
   ])
+}
+
+exports.onPostBuild = async () => {
+  const publicPath = path.join(__dirname, 'public')
+  const hash = md5(`${new Date().getTime()}`)
+
+  const htmlAndJSFiles = glob.sync(`${publicPath}/**/*.{html,js}`)
+  for (let file of htmlAndJSFiles) {
+    const stats = await util.promisify(fs.stat)(file)
+    if (!stats.isFile()) {
+      console.log(`Apparently ${file} is not a file!`)
+      continue
+    }
+
+    console.log(`Adding version to page-data.json in ${file}..`)
+    var content = await util.promisify(fs.readFile)(file, 'utf8')
+    var result = content.replace(/page-data.json/g, `page-data.json?v=${hash}`)
+    await util.promisify(fs.writeFile)(file, result, 'utf8')
+  }
 }
 
 exports.onCreateWebpackConfig = ({ actions }) => {
