@@ -10,6 +10,7 @@ module.exports = {
       'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
   },
   plugins: [
+    'gatsby-plugin-polyfill-io',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
