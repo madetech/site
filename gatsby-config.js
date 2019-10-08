@@ -24,7 +24,7 @@ module.exports = {
         display: 'minimal-ui',
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-source-contentful',
       options: {
