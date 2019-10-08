@@ -6,6 +6,7 @@ import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
+import Tweet from './Tweet'
 
 function GridContainer({
   alignItems,
@@ -191,6 +192,10 @@ function GridHubSpotForm({ formId, id }) {
   return <HubSpotForm formId={formId} id={id} />
 }
 
+function GridTweet({ tweetId }) {
+  return <Tweet tweetId={tweetId}></Tweet>
+}
+
 function GridUnknownComponentError({ __typename }) {
   return <div>Unknown Content Type for Grid: {__typename}</div>
 }
@@ -222,6 +227,8 @@ function GridComponentRenderer(content) {
       )
     case 'ContentfulJobsBoard':
       return <JobsBoard />
+    case 'ContentfulTweet':
+      return <GridTweet tweetId={content.tweetId} />
     default:
       return <GridUnknownComponentError __typename={content.__typename} />
   }
