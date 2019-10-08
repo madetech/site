@@ -44,6 +44,7 @@ export const pageQuery = graphql`
             ...card
             ...hubSpotForm
             ...prose
+            ...tweet
           }
         }
       }
@@ -166,5 +167,19 @@ export const pageQuery = graphql`
         width
       }
     }
+  }
+  fragment tweet on ContentfulTweet {
+    name
+    columnWidth
+    columnOffset
+    extraLargeColumnWidth
+    extraLargeColumnOffset
+    extraSmallColumnWidth
+    extraSmallColumnOffset
+    mediumColumnWidth
+    mediumColumnOffset
+    smallColumnWidth
+    smallColumnOffset
+    tweetId
   }
 `
