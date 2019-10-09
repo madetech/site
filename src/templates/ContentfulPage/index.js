@@ -29,6 +29,7 @@ export const pageQuery = graphql`
       content {
         __typename
         ...hero
+        ...headerImages
         ...highlight
         ...inlineImages
         ...jumbotron
@@ -181,5 +182,28 @@ export const pageQuery = graphql`
     smallColumnWidth
     smallColumnOffset
     tweetId
+  }
+  fragment headerImages on ContentfulHeaderImages {
+    name
+    extraLarge {
+      fixed(width: 2280) {
+        src
+      }
+    }
+    large {
+      fixed(width: 1920) {
+        src
+      }
+    }
+    medium {
+      fixed(width: 1440) {
+        src
+      }
+    }
+    small {
+      fixed(width: 1080) {
+        src
+      }
+    }
   }
 `
