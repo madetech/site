@@ -201,3 +201,51 @@
     display: none;
   }
 }
+
+.trusted_supplier__desktop {
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.trusted_supplier__mobile {
+  @include desktop {
+    display: none;
+  }
+}
+
+.book {
+  h2 {
+    margin-bottom: 40px !important;
+  }
+
+  p {
+    margin-bottom: 60px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+
+    a {
+      @extend .btn;
+      @extend .btn-dark;
+
+      background-color: black !important;
+      border-color: black !important;
+      font-weight: normal !important;
+      color: white !important;
+      text-decoration: none;
+    }
+  }
+
+  .contentful-prose {
+    img {
+      max-height: none;
+      margin-top: 30px;
+    }
+  }
+}
