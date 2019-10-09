@@ -1,0 +1,47 @@
+&.sectors {
+  .contentful-hero {
+    h1 {
+      color: $white;
+    }
+  }
+
+  .sectors__overview__grid1 {
+    p {
+      font-family: $poppins;
+      font-weight: $medium;
+
+      @include desktop {
+        font-size: $px26;
+        line-height: 1.54;
+      }
+
+      @include tablet {
+        font-size: $px20;
+        line-height: 1.5;
+      }
+
+      @include mobile {
+        font-size: $px18;
+        line-height: 1.39;
+      }
+    }
+
+    p:last-child {
+      @include desktop {
+        margin-bottom: 60px;
+      }
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+
+    img {
+      border-left: 6px solid $mt-green;
+    }
+  }
+}
