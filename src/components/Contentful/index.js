@@ -1,12 +1,13 @@
 import React from 'react'
-import documentToHtmlString from '../../helpers/documentToHtmlString'
 import Grid from './Grid'
 import InlineImages from './InlineImages'
 import Jumbotron from './Jumbotron'
 import Hero from './Hero'
 import Prose from './Prose'
 import Highlight from './Highlight'
+import HeaderImages from './HeaderImages'
 import toHtmlId from '../../helpers/toHtmlId'
+import documentToHtmlString from '../../helpers/documentToHtmlString'
 
 function ComponentRenderer(content) {
   if (!content.name) throw new Error('No component name provided')
@@ -94,6 +95,16 @@ function ComponentRenderer(content) {
           smallColumnWidth={content.smallColumnWidth}
           style={content.style}
           textAlign={content.textAlign}
+        />
+      )
+    case 'ContentfulHeaderImages':
+      return (
+        <HeaderImages
+          id={id}
+          extraLarge={content.extraLarge}
+          large={content.large}
+          medium={content.medium}
+          small={content.small}
         />
       )
     default:
