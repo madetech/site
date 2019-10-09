@@ -1,342 +1,185 @@
-$svc-img-path: 'assets/images/services';
+&.services {
+  $svc-img-path: 'assets/images/services';
 
-&.services__overview {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-
-  @include lg-desktop {
-    background-image: url('#{$svc-img-path}/overview/1140/header-photo-services-1140.jpg');
-  }
-
-  @include sm-desktop {
-    background-image: url('#{$svc-img-path}/overview/960/header-photo-services-960.jpg');
-  }
-
-  @include tablet {
-    background-image: url('#{$svc-img-path}/overview/720/header-photo-services-720.jpg');
-  }
-
-  @include mobile {
-    background-image: url('#{$svc-img-path}/overview/540/header-photo-services-540.jpg');
-  }
-}
-
-&.services__legacy {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-
-  @include lg-desktop {
-    background-image: url('#{$svc-img-path}/legacy/1140/header-photo-legacy-1140.jpg');
-  }
-
-  @include sm-desktop {
-    background-image: url('#{$svc-img-path}/legacy/960/header-photo-legacy-960.jpg');
-  }
-
-  @include tablet {
-    background-image: url('#{$svc-img-path}/legacy/720/header-photo-legacy-720.jpg');
-  }
-
-  @include mobile {
-    background-image: url('#{$svc-img-path}/legacy/540/header-photo-legacy-540.jpg');
-  }
-}
-
-.services__legacy__section_0 {
-  padding: 0 !important;
-  @include bg-imgs('#{$svc-img-path}/legacy', 'services_legacy_timeline_1');
-
-  @include mobile {
-    height: 80px;
-  }
-  @include tablet {
-    height: 140px;
-  }
-  @include sm-desktop {
-    height: 130px;
-  }
-  @include lg-desktop {
-    height: 90px;
-  }
-}
-
-@for $i from 1 through 5 {
-  .services__legacy__section_#{$i} {
-    @include bg-imgs(
-      '#{$svc-img-path}/legacy',
-      'services_legacy_timeline_#{$i+1}'
-    );
-
-    @if $i == 5 {
-      background-position: center top !important;
+  .contentful-hero {
+    h1 {
+      color: $mt-green;
+      text-shadow: -1px 1px 4px $black;
     }
+  }
+
+  .services__legacy__section_0 {
+    padding: 0 !important;
+    @include bg-imgs('#{$svc-img-path}/legacy', 'services_legacy_timeline_1');
 
     @include mobile {
-      &.contentful-grid {
-        padding-top: 280px !important;
-      }
-
-      @if $i == 5 {
-        min-height: 670px;
-      } @else {
-        height: 670px;
-      }
+      height: 80px;
     }
-
-    @include sm-tablet {
-      @if $i == 5 {
-        min-height: 510px;
-      } @else {
-        height: 510px;
-      }
+    @include tablet {
+      height: 140px;
     }
-
-    @include lg-tablet {
-      @if $i == 5 {
-        min-height: 510px;
-      } @else {
-        height: 510px;
-      }
-    }
-
     @include sm-desktop {
-      @if $i == 5 {
-        min-height: 530px;
-      } @else {
-        height: 530px;
-      }
+      height: 130px;
     }
-
     @include lg-desktop {
+      height: 90px;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    .services__legacy__section_#{$i} {
+      @include bg-imgs(
+        '#{$svc-img-path}/legacy',
+        'services_legacy_timeline_#{$i+1}'
+      );
+
       @if $i == 5 {
-        min-height: 610px;
-      } @else {
-        height: 610px;
+        background-position: center top !important;
+      }
+
+      @include mobile {
+        &.contentful-grid {
+          padding-top: 280px !important;
+        }
+
+        @if $i == 5 {
+          min-height: 670px;
+        } @else {
+          height: 670px;
+        }
+      }
+
+      @include sm-tablet {
+        @if $i == 5 {
+          min-height: 510px;
+        } @else {
+          height: 510px;
+        }
+      }
+
+      @include lg-tablet {
+        @if $i == 5 {
+          min-height: 510px;
+        } @else {
+          height: 510px;
+        }
+      }
+
+      @include sm-desktop {
+        @if $i == 5 {
+          min-height: 530px;
+        } @else {
+          height: 530px;
+        }
+      }
+
+      @include lg-desktop {
+        @if $i == 5 {
+          min-height: 610px;
+        } @else {
+          height: 610px;
+        }
       }
     }
   }
-}
 
-&.services__capability {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-
-  @include lg-desktop {
-    background-image: url('#{$svc-img-path}/capability/1140/header-photo-capability-1140.jpg');
-  }
-
-  @include sm-desktop {
-    background-image: url('#{$svc-img-path}/capability/960/header-photo-capability-960.jpg');
-  }
-
-  @include tablet {
-    background-image: url('#{$svc-img-path}/capability/720/header-photo-capability-720.jpg');
-  }
-
-  @include mobile {
-    background-image: url('#{$svc-img-path}/capability/540/header-photo-capability-540.jpg');
-  }
-}
-
-.services__capability__section_0 {
-  padding: 0 !important;
-  @include bg-imgs(
-    '#{$svc-img-path}/capability',
-    'services_capability_timeline_1'
-  );
-
-  @include mobile {
-    height: 80px;
-  }
-  @include tablet {
-    height: 140px;
-  }
-  @include sm-desktop {
-    height: 130px;
-  }
-  @include lg-desktop {
-    height: 90px;
-  }
-}
-
-@for $i from 1 through 3 {
-  .services__capability__section_#{$i} {
+  .services__capability__section_0 {
+    padding: 0 !important;
     @include bg-imgs(
       '#{$svc-img-path}/capability',
-      'services_capability_timeline_#{$i+1}'
+      'services_capability_timeline_1'
     );
 
-    @if $i == 3 {
-      background-position: center top !important;
-    }
-
     @include mobile {
-      &.contentful-grid {
-        padding-top: 280px !important;
-      }
-      @if $i == 3 {
-        min-height: 670px;
-      } @else {
-        height: 670px;
-      }
+      height: 80px;
     }
-
-    @include sm-tablet {
-      @if $i == 3 {
-        min-height: 510px;
-      } @else {
-        height: 510px;
-      }
+    @include tablet {
+      height: 140px;
     }
-
-    @include lg-tablet {
-      @if $i == 3 {
-        min-height: 510px;
-      } @else {
-        height: 510px;
-      }
-    }
-
     @include sm-desktop {
-      @if $i == 3 {
-        min-height: 530px;
-      } @else {
-        height: 530px;
-      }
+      height: 130px;
     }
-
     @include lg-desktop {
+      height: 90px;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    .services__capability__section_#{$i} {
+      @include bg-imgs(
+        '#{$svc-img-path}/capability',
+        'services_capability_timeline_#{$i+1}'
+      );
+
       @if $i == 3 {
-        min-height: 610px;
-      } @else {
-        height: 610px;
+        background-position: center top !important;
+      }
+
+      @include mobile {
+        &.contentful-grid {
+          padding-top: 280px !important;
+        }
+        @if $i == 3 {
+          min-height: 670px;
+        } @else {
+          height: 670px;
+        }
+      }
+
+      @include sm-tablet {
+        @if $i == 3 {
+          min-height: 510px;
+        } @else {
+          height: 510px;
+        }
+      }
+
+      @include lg-tablet {
+        @if $i == 3 {
+          min-height: 510px;
+        } @else {
+          height: 510px;
+        }
+      }
+
+      @include sm-desktop {
+        @if $i == 3 {
+          min-height: 530px;
+        } @else {
+          height: 530px;
+        }
+      }
+
+      @include lg-desktop {
+        @if $i == 3 {
+          min-height: 610px;
+        } @else {
+          height: 610px;
+        }
       }
     }
   }
-}
 
-.services__trusted_supplier__desktop {
-  @include tablet {
-    display: none;
+  .services__data__process {
+    padding: 0 !important;
   }
 
-  @include mobile {
-    display: none;
-  }
-}
-
-.services__trusted_supplier__mobile {
-  @include desktop {
-    display: none;
-  }
-}
-
-.services__data__process {
-  padding: 0 !important;
-}
-
-.services__right_experience {
-  img {
-    width: 75%;
-  }
-}
-
-.services__our_digital_1 {
-  padding-bottom: 0 !important;
-}
-
-.services__our_digital_2 {
-  padding-top: 0 !important;
-}
-
-.services__our_digital__text {
-  padding: 9px 0 13px 25px;
-  border-left: 4px solid $dark-grey;
-}
-
-&.services__digital {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-
-  @include lg-desktop {
-    background-image: url('#{$svc-img-path}/digital/1140/header-photo-digital-1140.jpg');
-  }
-
-  @include sm-desktop {
-    background-image: url('#{$svc-img-path}/digital/960/header-photo-digital-960.jpg');
-  }
-
-  @include tablet {
-    background-image: url('#{$svc-img-path}/digital/720/header-photo-digital-720.jpg');
-  }
-
-  @include mobile {
-    background-image: url('#{$svc-img-path}/digital/540/header-photo-digital-540.jpg');
-  }
-}
-
-&.services__data {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-
-  @include lg-desktop {
-    background-image: url('#{$svc-img-path}/data/1140/header-photo-data-1140.jpg');
-  }
-
-  @include sm-desktop {
-    background-image: url('#{$svc-img-path}/data/960/header-photo-data-960.jpg');
-  }
-
-  @include tablet {
-    background-image: url('#{$svc-img-path}/data/720/header-photo-data-720.jpg');
-  }
-
-  @include mobile {
-    background-image: url('#{$svc-img-path}/data/540/header-photo-data-540.jpg');
-  }
-}
-
-.services__book {
-  h2 {
-    margin-bottom: 40px !important;
-  }
-
-  p {
-    margin-bottom: 60px;
-
-    @include mobile {
-      margin-bottom: 40px;
-    }
-
-    a {
-      @extend .btn;
-      @extend .btn-dark;
-
-      background-color: black !important;
-      border-color: black !important;
-      font-weight: normal !important;
-      color: white !important;
-      text-decoration: none;
-    }
-  }
-
-  .contentful-prose {
+  .services__right_experience {
     img {
-      max-height: none;
-      margin-top: 30px;
+      width: 75%;
     }
   }
-}
 
-.services__where_we_help {
-  u,
-  a {
-    text-decoration: none;
-    box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
+  .services__our_digital_1 {
+    padding-bottom: 0 !important;
+  }
+
+  .services__our_digital_2 {
+    padding-top: 0 !important;
+  }
+
+  .services__our_digital__text {
+    padding: 9px 0 13px 25px;
+    border-left: 4px solid $dark-grey;
   }
 }
