@@ -315,27 +315,59 @@ $svc-img-path: 'assets/images/services';
   p {
     margin-bottom: 60px;
 
-    @include mobile {
-      margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 49px;
     }
 
     a {
       @extend .btn;
       @extend .btn-dark;
 
-      background-color: black !important;
       border-color: black !important;
       font-weight: normal !important;
       color: white !important;
       text-decoration: none;
+
+      @include lg-desktop {
+        width: 380px !important;
+      }
+
+      @include sm-desktop {
+        width: 380px !important;
+      }
+
+      @include tablet {
+        width: 300px !important;
+      }
+      
+      @include mobile {
+        width: 300px !important;
+      }
     }
   }
 
   .contentful-prose {
     img {
-      width: 475px;
-      max-height: none;
       margin-top: -60px;
+
+      @include lg-desktop {
+        max-width: 475px !important;
+        max-height: 671px !important;
+      }
+
+      @include sm-desktop {
+        max-width: 475px !important;
+        max-height: 671px !important;
+      }
+    
+      @include tablet {
+        max-width: 412px !important;
+        max-height: 633px !important;
+        width: 150%;
+      }
+    
+      @include mobile {
+      }
     }
   }
 }

@@ -11,6 +11,7 @@
 
   font-family: $montserrat;
   color: $dark-grey;
+  overflow-x: hidden;
 
   @include desktop {
     font-size: $px24;
