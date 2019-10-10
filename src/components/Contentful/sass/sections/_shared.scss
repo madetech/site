@@ -218,34 +218,97 @@
   }
 }
 
-.book {
+.book__showcase {
+  margin-top: solid 50px !important;
+  padding-top: 0 !important;
+  padding-bottom: 30px !important;
+
   h2 {
+    margin-top: 87px !important;
     margin-bottom: 40px !important;
+    font-size: 36px;
+    @include mobile {
+      margin-top: 30px !important;
+      margin-bottom: 25px !important;
+      font-size: 30px;
+    }
   }
 
   p {
     margin-bottom: 60px;
 
+    @include tablet {
+      margin-bottom: 49px;
+    }
+
     @include mobile {
-      margin-bottom: 40px;
+      margin-bottom: 18px;
+      font-size: 16px;
     }
 
     a {
       @extend .btn;
       @extend .btn-dark;
 
-      background-color: black !important;
+      font-family: 'poppins';
       border-color: black !important;
       font-weight: normal !important;
       color: white !important;
       text-decoration: none;
+
+      @include lg-desktop {
+        width: 380px !important;
+      }
+
+      @include sm-desktop {
+        width: 380px !important;
+      }
+
+      @include tablet {
+        width: 300px !important;
+      }
+
+      @include mobile {
+        width: 100% !important;
+      }
     }
   }
 
   .contentful-prose {
-    img {
-      max-height: none;
-      margin-top: 30px;
+    img.before {
+      display: none;
+
+      @include mobile {
+        max-width: 138px;
+        max-height: 212px;
+        display: block;
+        position: absolute;
+        left: 70%;
+        top: -45px;
+      }
+    }
+
+    img:not(.before) {
+      margin-top: -60px;
+
+      @include lg-desktop {
+        max-width: 475px !important;
+        max-height: 671px !important;
+      }
+
+      @include sm-desktop {
+        max-width: 475px !important;
+        max-height: 671px !important;
+      }
+
+      @include tablet {
+        max-width: 412px !important;
+        max-height: 633px !important;
+      }
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 }
