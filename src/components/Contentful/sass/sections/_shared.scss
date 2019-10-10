@@ -227,7 +227,6 @@
     margin-top: 87px !important;
     margin-bottom: 40px !important;
     font-size: 36px;
-
     @include mobile {
       margin-top: 30px !important;
       margin-bottom: 25px !important;
@@ -251,7 +250,7 @@
       @extend .btn;
       @extend .btn-dark;
 
-      font-family: "poppins";
+      font-family: 'poppins';
       border-color: black !important;
       font-weight: normal !important;
       color: white !important;
