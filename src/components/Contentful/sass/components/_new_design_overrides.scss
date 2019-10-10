@@ -86,6 +86,15 @@ ul li:before {
   }
 
   &.black,
+  &.shaded {
+    u,
+    a {
+      text-decoration: none;
+      box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
+    }
+  }
+
+  &.black,
   &.blue,
   &.shaded,
   &.white,
@@ -282,12 +291,5 @@ ul li:before {
         }
       }
     }
-  }
-}
-
-.contentful-hero {
-  h1 {
-    color: $mt-green;
-    text-shadow: -1px 1px 4px $black;
   }
 }

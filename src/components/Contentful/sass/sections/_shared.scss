@@ -202,6 +202,22 @@
   }
 }
 
+.trusted_supplier__desktop {
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.trusted_supplier__mobile {
+  @include desktop {
+    display: none;
+  }
+}
+
 .book__showcase {
   margin-top: solid 50px !important;
   padding-top: 0 !important;
