@@ -10,14 +10,22 @@ export default function ContentfulHeaderImages({
 
   return (
     <div className={className}>
-      <img
-        className={`${className}__extraLarge`}
-        src={extraLarge.fixed.src}
-        alt=""
-      />
-      <img className={`${className}__large`} src={large.fixed.src} alt="" />
-      <img className={`${className}__medium`} src={medium.fixed.src} alt="" />
-      <img className={`${className}__small`} src={small.fixed.src} alt="" />
+      {extraLarge.fixed && (
+        <img
+          className={`${className}__extraLarge`}
+          src={extraLarge.fixed.src}
+          alt=""
+        />
+      )}
+      {large.fixed && (
+        <img className={`${className}__large`} src={large.fixed.src} alt="" />
+      )}
+      {medium.fixed && (
+        <img className={`${className}__medium`} src={medium.fixed.src} alt="" />
+      )}
+      {small.fixed && (
+        <img className={`${className}__small`} src={small.fixed.src} alt="" />
+      )}
     </div>
   )
 }
