@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@contentful/rich-text-html-renderer": "13.4.0",
-    "@madetech/frontend": "^5.8.0",
+    "@madetech/frontend": "^5.9.3",
     "contentful": "^7.5.1",
     "disqus-react": "1.0.6",
     "dotenv": "8.1.0",
@@ -15,6 +15,8 @@
     "react-dom": "16.9.0",
     "react-helmet": "5.2.1",
     "react-scripts": "3.0.1",
+    "react-string-replace": "^0.4.4",
+    "react-twitter-embed": "^2.0.8",
     "universal-cookie": "4.0.2"
   },
   "devDependencies": {
