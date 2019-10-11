@@ -111,7 +111,7 @@ function GridProse({
   }
 
   let imageComponent
-  if (image) {
+  if (image && image.fixed) {
     let imageClassName = imageStyle || ''
 
     // gatsbys fixed image width is giving us image quality problems.
@@ -159,7 +159,7 @@ function GridProse({
 function GridCard({ image, html, link }) {
   let cardContentComponent
 
-  if (image) {
+  if (image && image.fixed) {
     cardContentComponent = (
       <>
         <div style={{ width: '35%' }}>

@@ -53,7 +53,7 @@ export default function ContentfulHighlight({
   if (author || authorAvatar) {
     authorSection = (
       <div className="contentful-highlight__author">
-        {authorAvatar && (
+        {authorAvatar.fixed && (
           <div className="avatar">
             <img src={authorAvatar.fixed.src} alt=""></img>
           </div>
