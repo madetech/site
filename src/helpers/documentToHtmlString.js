@@ -12,14 +12,16 @@ export default function documentToHtmlString(doc) {
       [BLOCKS.EMBEDDED_ASSET]: node => {
         if (node.data.target.fields) {
           const { title, description, file } = node.data.target.fields
-          const mimeType = file[LOCALE].contentType
+          const mimeType = file.contentType || file[LOCALE].contentType
           const mimeGroup = mimeType.split('/')[0]
 
           switch (mimeGroup) {
             case 'image':
-              return `<img title="${title ? title[LOCALE] : null}" alt="${
-                description ? description[LOCALE] : null
-              }" src="${file[LOCALE].url}" />`
+              return `<img title="${
+                title ? title || title[LOCALE] : null
+              }" alt="${
+                description ? description || description[LOCALE] : null
+              }" src="${file.url || file[LOCALE].url}" />`
             default:
               return `<span style={{ backgroundColor: 'red', color: 'white' }}>${mimeType} embedded asset</span>`
           }
