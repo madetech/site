@@ -1,8 +1,28 @@
 .contentful-highlight {
   position: relative;
 
-  .contentful-highlight__bg-left {
-    background-color: $mt-green;
+  &.green-gradient {
+    .contentful-highlight__bg-left {
+      background-color: $mt-green;
+    }
+
+    .contentful-highlight__content {
+      background-image: linear-gradient(
+        275deg,
+        $mt-green-gradient-dark 10%,
+        $mt-green 80%
+      );
+    }
+  }
+
+  &.black {
+    .contentful-highlight__bg-left {
+      background-color: $black;
+    }
+
+    .contentful-highlight__content {
+      background-color: $black;
+    }
   }
 
   .contentful-highlight__bg-right {
@@ -29,11 +49,6 @@
 
   .contentful-highlight__content {
     padding: 40px 20px 40px 0;
-    background-image: linear-gradient(
-      275deg,
-      $mt-green-gradient-dark 10%,
-      $mt-green 80%
-    );
 
     p {
       font-family: $poppins;

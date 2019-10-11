@@ -159,6 +159,7 @@ export const pageQuery = graphql`
     largeColumnWidth
     mediumColumnWidth
     smallColumnWidth
+    style
     textAlign
     authorAvatar {
       fixed(width: 128, height: 128) {
