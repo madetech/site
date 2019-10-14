@@ -4,7 +4,7 @@ const reactStringReplace = require('react-string-replace')
 export default function threeSpaceToLineBreak(str, returnAsString = false) {
   if (!returnAsString) {
     let replacements = 0
-    return reactStringReplace(str, '   ', (match, i) => (
+    return reactStringReplace(str, '   ', match => (
       <Fragment key={`${match} ${replacements++}`}>
         <br />{' '}
       </Fragment>
