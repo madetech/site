@@ -205,6 +205,7 @@ function GridComponentRenderer(content) {
     case 'ContentfulProse':
       return (
         <GridProse
+          columnGroup={content.columnGroup}
           customClasses={content.customClasses}
           image={content.image}
           imageStyle={content.imageStyle}
@@ -245,7 +246,17 @@ function GridComponentArrayRenderer({
   if (!content || content.length === 0) {
     throw new Error('No grid content provided')
   }
-
+  const groupedContent = content.reduce((grouped, c, i) => {
+    let key = `columnGroup-${i}`
+    if (c.columnGroup) {
+      key = c.columnGroup
+    }
+    if (!grouped[key]) {
+      grouped[key] = []
+    }
+    grouped[key].push(c)
+    return grouped
+  }, {})
   return (
     <GridContainer
       alignItems={alignItems}
@@ -254,23 +265,27 @@ function GridComponentArrayRenderer({
       layout={layout}
       style={style}
     >
-      {content.map((content, i) => (
-        <GridCol
-          extraLargeColumnWidth={content.extraLargeColumnWidth}
-          extraLargeColumnOffset={content.extraLargeColumnOffset}
-          extraSmallColumnWidth={content.extraSmallColumnWidth}
-          extraSmallColumnOffset={content.extraSmallColumnOffset}
-          largeColumnWidth={content.columnWidth}
-          largeColumnOffset={content.columnOffset}
-          mediumColumnWidth={content.mediumColumnWidth}
-          mediumColumnOffset={content.mediumColumnOffset}
-          smallColumnWidth={content.smallColumnWidth}
-          smallColumnOffset={content.smallColumnOffset}
-          key={i}
-        >
-          <GridComponentRenderer key={i} {...content} />
-        </GridCol>
-      ))}
+      {Object.values(groupedContent).map((contentArr, i) => {
+        return (
+          <GridCol
+            extraLargeColumnWidth={contentArr[0].extraLargeColumnWidth}
+            extraLargeColumnOffset={contentArr[0].extraLargeColumnOffset}
+            extraSmallColumnWidth={contentArr[0].extraSmallColumnWidth}
+            extraSmallColumnOffset={contentArr[0].extraSmallColumnOffset}
+            largeColumnWidth={contentArr[0].columnWidth}
+            largeColumnOffset={contentArr[0].columnOffset}
+            mediumColumnWidth={contentArr[0].mediumColumnWidth}
+            mediumColumnOffset={contentArr[0].mediumColumnOffset}
+            smallColumnWidth={contentArr[0].smallColumnWidth}
+            smallColumnOffset={contentArr[0].smallColumnOffset}
+            key={i}
+          >
+            {contentArr.map((content, indexKey) => (
+              <GridComponentRenderer key={indexKey} {...content} />
+            ))}
+          </GridCol>
+        )
+      })}
     </GridContainer>
   )
 }
