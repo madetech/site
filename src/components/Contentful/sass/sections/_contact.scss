@@ -8,27 +8,57 @@
         p {
             font-family: 'poppins';
             font-size: $px36;
-            line-height: $px50;
+            line-height: 50px;
+            margin-bottom: 91px;
         }
     }
 
     .contact__card {
-        display: flex;
-        align-items: center;
-        margin-bottom: 50px;
+        p {
+            margin-bottom: 14px;
+        }
 
         img {
             max-width: 180px;
             max-height: 121px;
         }
+    }
+
+    .contact__address {
+        p {
+            margin-bottom: 0;
+            > b {
+                margin-bottom: 4px;
+            }
+        }
+
+        img {
+            max-width: 180px;
+            max-height: 160px;
+            border-left: 4px solid;
+            border-image:
+                linear-gradient(to bottom, #1b6a1c, $mt-green) 1 100%;
+        }
+    }
+
+    .contact__address,
+    .contact__card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
 
         .prose {
             margin-top: 0;
             display: inline-grid;
             margin-left: 20px;
+            line-height: 1.5;
 
-            p {
-                margin-bottom: 14px;
+            b {
+                font-size: $px24;
+            }
+
+            a {
+                font-family: 'poppins';
             }
         }
     }
