@@ -11,4 +11,25 @@
             line-height: $px50;
         }
     }
+
+    .contact__card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+
+        img {
+            max-width: 180px;
+            max-height: 121px;
+        }
+
+        .prose {
+            margin-top: 0;
+            display: inline-grid;
+            margin-left: 20px;
+
+            p {
+                margin-bottom: 14px;
+            }
+        }
+    }
 }
