@@ -47,9 +47,12 @@
         align-items: center;
         margin-bottom: 50px;
 
+        @include mobile {
+            display: block;
+        }
+
         .prose {
             margin-top: 0;
-            display: inline-grid;
             margin-left: 20px;
             line-height: 1.5;
 
