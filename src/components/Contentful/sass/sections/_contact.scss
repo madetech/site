@@ -10,12 +10,16 @@
             font-size: $px36;
             line-height: 50px;
             margin-bottom: 91px;
+
+            @include mobile {
+                margin-bottom: 45px;
+            }
         }
     }
 
     .contact__card {
         p {
-            margin-bottom: 14px;
+            margin-bottom: 7px;
         }
 
         img {
@@ -46,12 +50,18 @@
 
         @include mobile {
             display: block;
+            margin-bottom: 40px;
         }
 
         .prose {
             margin-top: 0;
             margin-left: 20px;
             line-height: 1.5;
+
+            @include mobile {
+                margin-left: 0;
+                margin-top: 10px;
+            }
 
             b {
                 font-size: $px24;
