@@ -211,6 +211,8 @@ export const pageQuery = graphql`
   }
   fragment jobsBoard on ContentfulJobsBoard {
     title
+    columnWidth
+    columnOffset
     extraLargeColumnWidth
     extraLargeColumnOffset
     extraSmallColumnWidth
