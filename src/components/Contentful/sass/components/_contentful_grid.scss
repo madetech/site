@@ -84,12 +84,3 @@
 .contentful-grid.shaded + .contentful-grid {
   padding-top: map-get($spacers, 3);
 }
-
-.contentful-grid.black {
-  background-color: #333333;
-  margin-bottom: 0;
-
-  .prose {
-    color: #ffffff;
-  }
-}
