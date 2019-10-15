@@ -1,4 +1,10 @@
-.contact {
+&.contact__page {
+    h1 {
+        color: white;
+    }
+}
+
+.contact__grid {
     b {
         font-family: $poppins;
         color: $mt-green;
