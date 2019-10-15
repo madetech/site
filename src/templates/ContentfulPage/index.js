@@ -123,6 +123,7 @@ export const pageQuery = graphql`
     body {
       json
     }
+    columnGroup
     columnWidth
     columnOffset
     customClasses
