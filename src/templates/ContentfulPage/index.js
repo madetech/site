@@ -46,6 +46,7 @@ export const pageQuery = graphql`
             ...hubSpotForm
             ...prose
             ...tweet
+            ...jobsBoard
           }
         }
       }
@@ -207,5 +208,16 @@ export const pageQuery = graphql`
         src
       }
     }
+  }
+  fragment jobsBoard on ContentfulJobsBoard {
+    title
+    extraLargeColumnWidth
+    extraLargeColumnOffset
+    extraSmallColumnWidth
+    extraSmallColumnOffset
+    mediumColumnWidth
+    mediumColumnOffset
+    smallColumnWidth
+    smallColumnOffset
   }
 `
