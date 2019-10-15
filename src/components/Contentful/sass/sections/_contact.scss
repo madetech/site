@@ -2,6 +2,12 @@
     h1 {
         color: white;
     }
+
+    .small {
+        font-size: $px12;
+        font-weight: bold;
+        margin-bottom: 17px;
+    }
 }
 
 .contact__grid {
@@ -77,5 +83,15 @@
                 font-family: $poppins;
             }
         }
+    }
+}
+
+.contact__careers {
+    h3 {
+        margin-bottom: 38px !important;
+    }
+
+    p {
+        margin-bottom: 18px;
     }
 }
