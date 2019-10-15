@@ -1,12 +1,12 @@
 .contact {
     b {
-        font-family: 'poppins';
+        font-family: $poppins;
         color: $mt-green;
     }
 
     .contact__blurb {
         p {
-            font-family: 'poppins';
+            font-family: $poppins;
             font-size: $px36;
             line-height: 50px;
             margin-bottom: 91px;
@@ -68,7 +68,7 @@
             }
 
             a {
-                font-family: 'poppins';
+                font-family: $poppins;
             }
         }
     }
