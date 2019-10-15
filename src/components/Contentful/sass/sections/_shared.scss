@@ -312,3 +312,9 @@
     }
   }
 }
+
+.tighter {
+  + .tighter {
+    padding-top: 0 !important;
+  }
+}
