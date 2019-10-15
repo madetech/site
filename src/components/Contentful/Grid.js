@@ -265,22 +265,22 @@ function GridComponentArrayRenderer({
       layout={layout}
       style={style}
     >
-      {Object.values(groupedContent).map((contentArr, i) => {
+      {Object.values(groupedContent).map((group, i) => {
         return (
           <GridCol
-            extraLargeColumnWidth={contentArr[0].extraLargeColumnWidth}
-            extraLargeColumnOffset={contentArr[0].extraLargeColumnOffset}
-            extraSmallColumnWidth={contentArr[0].extraSmallColumnWidth}
-            extraSmallColumnOffset={contentArr[0].extraSmallColumnOffset}
-            largeColumnWidth={contentArr[0].columnWidth}
-            largeColumnOffset={contentArr[0].columnOffset}
-            mediumColumnWidth={contentArr[0].mediumColumnWidth}
-            mediumColumnOffset={contentArr[0].mediumColumnOffset}
-            smallColumnWidth={contentArr[0].smallColumnWidth}
-            smallColumnOffset={contentArr[0].smallColumnOffset}
+            extraLargeColumnWidth={group[0].extraLargeColumnWidth}
+            extraLargeColumnOffset={group[0].extraLargeColumnOffset}
+            extraSmallColumnWidth={group[0].extraSmallColumnWidth}
+            extraSmallColumnOffset={group[0].extraSmallColumnOffset}
+            largeColumnWidth={group[0].columnWidth}
+            largeColumnOffset={group[0].columnOffset}
+            mediumColumnWidth={group[0].mediumColumnWidth}
+            mediumColumnOffset={group[0].mediumColumnOffset}
+            smallColumnWidth={group[0].smallColumnWidth}
+            smallColumnOffset={group[0].smallColumnOffset}
             key={i}
           >
-            {contentArr.map((content, indexKey) => (
+            {group.map((content, indexKey) => (
               <GridComponentRenderer key={indexKey} {...content} />
             ))}
           </GridCol>
