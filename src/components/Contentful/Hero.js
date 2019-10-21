@@ -7,10 +7,13 @@ export default function ContentfulHero({
   pageBreadcrumb,
   pageTitle,
   sectionName,
+  textColour,
+  textSize,
 }) {
   let sectionNameComponent
   let pageBreadcrumbComponent
-
+  let textColourStyle
+  let textSizeStyle
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
@@ -20,6 +23,9 @@ export default function ContentfulHero({
       <div className="contentful-hero__section-type">{sectionName}</div>
     )
   }
+
+  textColourStyle = textColour || ''
+  textSizeStyle = textSize || ''
 
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
@@ -31,7 +37,11 @@ export default function ContentfulHero({
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             {pageBreadcrumbComponent}
             {sectionNameComponent}
-            <h1 className="contentful-hero__page-title">{parsedTitle}</h1>
+            <h1
+              className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
+            >
+              {parsedTitle}
+            </h1>
           </div>
         </div>
       </div>

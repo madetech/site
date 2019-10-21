@@ -10,6 +10,19 @@
   @include mobile {
     margin-bottom: $mobile-spacing;
   }
+  
+  h1.green {
+    color: $mt-green;
+    text-shadow: -1px 1px 4px $black;
+  }
+
+  h1.white {
+    color: $white;
+  }
+
+  h1.black {
+    color: $black;
+  }
 }
 
 .contentful-hero__breadcrumb {

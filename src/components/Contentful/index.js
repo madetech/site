@@ -47,6 +47,8 @@ function ComponentRenderer(content) {
           pageBreadcrumb={content.pageBreadcrumb}
           pageTitle={content.pageTitle}
           sectionName={content.sectionName}
+          textColour={content.textColour}
+          textSize={content.textSize}
         />
       )
     case 'ContentfulProse':

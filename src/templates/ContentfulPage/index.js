@@ -118,6 +118,8 @@ export const pageQuery = graphql`
     }
     pageTitle
     sectionName
+    textColour
+    textSize
   }
   fragment prose on ContentfulProse {
     name

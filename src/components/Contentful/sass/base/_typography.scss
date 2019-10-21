@@ -39,6 +39,24 @@ h1 {
   }
 }
 
+//hero
+h1.small {
+  @include desktop {
+    font-size: $px60;
+    line-height: 1;
+  }
+
+  @include tablet {
+    font-size: $px48;
+    line-height: 0.97;
+  }
+
+  @include mobile {
+    font-size: $px32;
+    line-height: 0.94;
+  }
+}
+
 // section header
 h2 {
   color: $black;

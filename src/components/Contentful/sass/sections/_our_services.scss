@@ -1,13 +1,6 @@
 &.services {
   $svc-img-path: 'assets/images/services';
 
-  .contentful-hero {
-    h1 {
-      color: $mt-green;
-      text-shadow: -1px 1px 4px $black;
-    }
-  }
-
   .services__legacy__section_0 {
     padding: 0 !important;
     @include bg-imgs('#{$svc-img-path}/legacy', 'services_legacy_timeline_1');
