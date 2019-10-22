@@ -34,9 +34,7 @@ export default function PostPageTemplate({ data }) {
           </div>
         </div>
       </div>
-      <div class="new-design">
-        <BookPreview />
-      </div>
+      <BookPreview />
     </Layout>
   )
 }
