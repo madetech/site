@@ -4,6 +4,7 @@ import withPrefix from '../../helpers/withPrefix'
 import { Jumbotron } from '@madetech/frontend'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
+import BookPreview from '../../components/BookPreview'
 
 export default function PostPageTemplate({ data }) {
   const post = data.wordpressPost
@@ -32,6 +33,9 @@ export default function PostPageTemplate({ data }) {
             <Post post={post} />
           </div>
         </div>
+      </div>
+      <div class="new-design">
+        <BookPreview />
       </div>
     </Layout>
   )
