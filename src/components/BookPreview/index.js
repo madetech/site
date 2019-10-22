@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Grid from '../Contentful/Grid'
 
 export default function BookPreview() {
