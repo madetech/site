@@ -2,6 +2,8 @@ import React from 'react'
 import Grid from '../Contentful/Grid'
 
 export default function BookPreview() {
+  let styles = { paddingTop: 50 }
+
   let props = {
     alignItems: 'start',
     content: [
@@ -138,7 +140,7 @@ export default function BookPreview() {
   }
 
   return (
-    <div>
+    <div class="new-design" style={styles}>
       <Grid {...props} />
     </div>
   )
