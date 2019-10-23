@@ -1,8 +1,28 @@
 div &.partner__detail {
-    .contentful-prose {
-        .prose {
-            h3 {
-                margin-bottom: 0;
+    ul {
+        li:before {
+            left: -40px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .aws_certified {
+        .contentful-prose {
+            .prose {
+                h3 {
+                    margin-bottom: 0;
+                }
+    
+                b {
+                    color: #ff9900;
+                }
+            }
+        }
+
+        ul {
+            li:before {
+                background: $black;
             }
         }
     }
