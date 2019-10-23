@@ -51,17 +51,14 @@
   }
 }
 
-.contentful-grid.book-blue {
+.new-design .contentful-grid.book-blue {
   background-color: #6fa9ea;
 
   .prose {
     color: #000;
 
     p:last-child a {
-      @extend .btn-outline-dark;
-      border-color: black;
-      color: black;
-      text-shadow: none;
+      @extend .btn-dark;
 
       &:focus,
       &:hover {
