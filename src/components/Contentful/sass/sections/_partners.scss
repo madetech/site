@@ -26,4 +26,35 @@ div &.partner__detail {
             }
         }
     }
+
+    .expertise {
+        img {
+            display: inline;
+            max-width: 60px;
+            max-height: 60px;
+        }
+
+        .contentful-prose {
+            &.inline-prose {
+                display: inline;
+                margin-left: 37px;
+            }
+
+            div {
+                display: inline;
+            }
+
+            p {
+                display: inline;
+            }
+        }
+
+        ul {
+            margin-bottom: 0;
+
+            li {
+                padding-bottom: 0;
+            }
+        }
+    }
 }
