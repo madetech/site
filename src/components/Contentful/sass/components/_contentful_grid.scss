@@ -4,6 +4,7 @@
 
 .contentful-grid.shaded,
 .contentful-grid.yellow,
+.contentful-grid.book-blue,
 .contentful-grid.blue {
   padding: map-get($spacers, 3) 0;
 }
@@ -50,6 +51,23 @@
   }
 }
 
+.new-design .contentful-grid.book-blue {
+  background-color: #6fa9ea;
+
+  .prose {
+    color: #000;
+
+    p:last-child a {
+      @extend .btn-dark;
+
+      &:focus,
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
 .contentful-grid.shaded {
   background-color: #fcfcfc;
   border-top: 1px solid #e0e0e0;
@@ -57,10 +75,12 @@
 }
 
 .contentful-grid.yellow,
+.contentful-grid.book-blue,
 .contentful-grid.blue,
 .contentful-grid.shaded,
 .contentful-jumbotron {
   & + .contentful-grid.yellow,
+  & + .contentful-grid.book-blue,
   & + .contentful-grid.blue,
   & + .contentful-grid.shaded {
     margin-top: map-get($spacers, 3) * -1;
@@ -76,7 +96,7 @@
 }
 
 .contentful-grid.shaded
-  + .contentful-grid:not(.shaded):not(.yellow):not(.blue) {
+  + .contentful-grid:not(.shaded):not(.yellow):not(.blue):not(.book-blue) {
   border-top: 1px solid #f0f0f0;
   margin-top: 0;
 }
