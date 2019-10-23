@@ -100,6 +100,7 @@ function GridProse({
   image,
   imageStyle,
   html,
+  screenReaderText,
   style,
   textAlign,
 }) {
@@ -108,6 +109,10 @@ function GridProse({
   if (style) className += ` ${style}`
   if (customClasses) {
     customClasses.forEach(c => (className += ` ${c}`))
+  }
+
+  if (screenReaderText) {
+    className += ' screen-reader'
   }
 
   let imageComponent
@@ -210,6 +215,7 @@ function GridComponentRenderer(content) {
           image={content.image}
           imageStyle={content.imageStyle}
           html={documentToHtmlString(content.body && content.body.json)}
+          screenReaderText={content.screenReaderText}
           style={content.style}
           textAlign={content.textAlign}
         />

@@ -13,6 +13,7 @@ export default function ContentfulProse({
   largeColumnOffset,
   mediumColumnWidth,
   mediumColumnOffset,
+  screenReaderText,
   smallColumnWidth,
   smallColumnOffset,
   textAlign,
@@ -21,6 +22,10 @@ export default function ContentfulProse({
   if (textAlign) proseClassName += ` text-${textAlign}`
   if (customClasses) {
     customClasses.forEach(c => (proseClassName += ` ${c}`))
+  }
+
+  if (screenReaderText) {
+    proseClassName += ' screen-reader'
   }
 
   let colClasses = 'px4'

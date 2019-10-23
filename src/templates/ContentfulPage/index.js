@@ -145,6 +145,7 @@ export const pageQuery = graphql`
     imageStyle
     mediumColumnWidth
     mediumColumnOffset
+    screenReaderText
     smallColumnWidth
     smallColumnOffset
     style

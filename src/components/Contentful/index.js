@@ -65,6 +65,7 @@ function ComponentRenderer(content) {
           largeColumnOffset={content.columnOffset}
           mediumColumnWidth={content.mediumColumnWidth}
           mediumColumnOffset={content.mediumColumnOffset}
+          screenReaderText={content.screenReaderText}
           smallColumnWidth={content.smallColumnWidth}
           smallColumnOffset={content.smallColumnOffset}
           textAlign={content.textAlign}
