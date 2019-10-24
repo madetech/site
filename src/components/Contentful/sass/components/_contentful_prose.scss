@@ -30,6 +30,13 @@ header + div:not(.new-design) {
 }
 
 .contentful-prose {
+  &.screen-reader .prose {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+  }
+
   .prose-image {
     > div {
       display: none;
