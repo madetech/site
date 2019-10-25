@@ -1,5 +1,4 @@
 import React from 'react'
-import Disqus from 'disqus-react'
 import { Prose } from '@madetech/frontend'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
@@ -17,7 +16,6 @@ export default class Post extends React.Component {
 
   render() {
     const post = this.props.post
-    const disqusShortname = 'madetech'
 
     return (
       <article
@@ -44,9 +42,6 @@ export default class Post extends React.Component {
 
           {/* ConvertFlow Area */}
           <div className="cf-1407-area-4492" />
-
-          {/* Disqus Comments */}
-          <Disqus.DiscussionEmbed shortname={disqusShortname} config={{}} />
 
           <PostScripts />
         </Prose>
