@@ -7,7 +7,6 @@
     "@contentful/rich-text-html-renderer": "13.4.0",
     "@madetech/frontend": "^5.9.3",
     "contentful": "^7.5.1",
-    "disqus-react": "1.0.6",
     "dotenv": "8.1.0",
     "node-sass": "^4.12.0",
     "query-string": "6.8.3",
