@@ -142,6 +142,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    imageUrl
     imageStyle
     mediumColumnWidth
     mediumColumnOffset

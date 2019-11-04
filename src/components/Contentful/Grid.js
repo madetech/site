@@ -98,6 +98,7 @@ function GridCol({
 function GridProse({
   customClasses,
   image,
+  imageUrl,
   imageStyle,
   html,
   screenReaderText,
@@ -126,6 +127,14 @@ function GridProse({
 
     imageComponent = (
       <img alt={image.title} className={imageClassName} src={imageSrc} />
+    )
+  }
+
+  if (imageUrl) {
+    imageComponent = (
+      <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+        {imageComponent}
+      </a>
     )
   }
 
@@ -213,6 +222,7 @@ function GridComponentRenderer(content) {
           columnGroup={content.columnGroup}
           customClasses={content.customClasses}
           image={content.image}
+          imageUrl={content.imageUrl}
           imageStyle={content.imageStyle}
           html={documentToHtmlString(content.body && content.body.json)}
           screenReaderText={content.screenReaderText}
