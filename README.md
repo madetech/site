@@ -38,7 +38,7 @@ Use git to clone down this repository and then install the projects dependencies
 
 ```
 git clone https://github.com/madetech/site
-cd made-blog
+cd site
 npm install
 ```
 
