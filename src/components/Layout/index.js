@@ -44,8 +44,6 @@ export default function Layout({
       <SiteMap />
 
       <Footer />
-
-      <CookieConsent />
     </div>
   )
 }
