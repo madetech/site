@@ -28,11 +28,7 @@ export default function ContentfulHero({
 
   if (headerImage) {
     headerImageComponent = (
-      <img
-        className="contentful-hero__header-image"
-        src={headerImage.fixed.src}
-        alt=""
-      />
+      <img src={headerImage.fixed.src} alt={headerImage.title} />
     )
   }
 
@@ -46,7 +42,7 @@ export default function ContentfulHero({
     <div className="contentful-hero" id={id}>
       <div className="container">
         <div className="row">
-          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             {pageBreadcrumbComponent}
             <h1
               className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
@@ -54,6 +50,8 @@ export default function ContentfulHero({
               {parsedTitle}
             </h1>
             {headerTextComponent}
+          </div>
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             {headerImageComponent}
           </div>
         </div>

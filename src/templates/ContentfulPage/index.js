@@ -118,6 +118,14 @@ export const pageQuery = graphql`
     }
     pageTitle
     headerText
+    headerImage {
+      fixed(width: 400) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
     textColour
     textSize
   }
