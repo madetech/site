@@ -7,6 +7,7 @@ export default function ContentfulHero({
   pageBreadcrumb,
   pageTitle,
   headerText,
+  headerImage,
   textColour,
   textSize,
 }) {
@@ -14,13 +15,24 @@ export default function ContentfulHero({
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
+  let headerImageComponent
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
 
   if (headerText) {
     headerTextComponent = (
-      <div className="contentful-hero__section-type">{headerText}</div>
+      <div className="contentful-hero__header-text">{headerText}</div>
+    )
+  }
+
+  if (headerImage) {
+    headerImageComponent = (
+      <img
+        className="contentful-hero__header-image"
+        src={headerImage.fixed.src}
+        alt=""
+      />
     )
   }
 
@@ -42,6 +54,7 @@ export default function ContentfulHero({
               {parsedTitle}
             </h1>
             {headerTextComponent}
+            {headerImageComponent}
           </div>
         </div>
       </div>
