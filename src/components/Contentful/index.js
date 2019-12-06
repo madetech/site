@@ -46,6 +46,7 @@ function ComponentRenderer(content) {
           image={content.image}
           pageBreadcrumb={content.pageBreadcrumb}
           pageTitle={content.pageTitle}
+          headerText={content.headerText}
           textColour={content.textColour}
           textSize={content.textSize}
         />
