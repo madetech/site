@@ -117,7 +117,7 @@ export const pageQuery = graphql`
       }
     }
     pageTitle
-    sectionName
+    headerText
     textColour
     textSize
   }
