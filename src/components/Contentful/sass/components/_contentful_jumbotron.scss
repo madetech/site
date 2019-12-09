@@ -35,23 +35,3 @@
     }
   }
 }
-
-.overlay {
-  img {
-  box-shadow: 20px 20px $mt-green;
-  }
-  position: relative;
-  top: 0px;
-  left: 0;
-  height: 100%;
-  z-index: 10;
-  align-content: right;
-  text-align: right;
-}
-
-.hero-row {
-  margin-bottom: -60px;
-  
-    margin-left: 0;
-    margin-right: 0;
-}

@@ -16,9 +16,15 @@
     margin-bottom: $mobile-spacing;
   }
   
+  h1 {
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
+
   h1.green {
     color: $mt-green;
-    text-shadow: -1px 1px 4px $black;
+    
+  
   }
 
   h1.white {
@@ -32,15 +38,15 @@
 
 .contentful-hero__breadcrumb {
   a {
-    color: $white;
+    color: $mid-grey;
   }
-  color: $white;
+  color: $mid-grey;
   font-weight: $bold;
   font-size: $px12;
 
   @include desktop {
     margin-top: 35px;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
   }
 
   @include tablet {
@@ -64,6 +70,33 @@
 
 .contentful-hero__page-title {
   margin: 0;
+}
+
+
+.headerRight {
+  img {
+  box-shadow: 20px 20px $mt-green;
+  }
+  position: relative;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+  align-content: right;
+  text-align: right;
+}
+
+.headerRow {
+  margin-bottom: -150px;
+
+}
+
+.contentful-hero__header-text {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Poppins;
+  line-height: 1.46;
+  padding-bottom: 100px;
 }
 
 
