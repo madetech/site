@@ -41,7 +41,7 @@ export default function ContentfulHero({
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row">
+        <div className="hero-row">
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             {pageBreadcrumbComponent}
             <h1
@@ -51,9 +51,7 @@ export default function ContentfulHero({
             </h1>
             {headerTextComponent}
           </div>
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-            {headerImageComponent}
-          </div>
+          <div className="overlay">{headerImageComponent}</div>
         </div>
       </div>
     </div>
