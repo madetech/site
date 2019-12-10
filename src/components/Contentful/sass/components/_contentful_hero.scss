@@ -88,15 +88,20 @@
 
 .headerRow {
   margin-bottom: -150px;
-
 }
+.headerLeft{
+  @include mobile {
+    padding-bottom: 100px;
+  }
+  padding-bottom: 50px;
+}
+
 
 .contentful-hero__header-text {
   font-size: 24px;
   font-weight: 500;
   font-family: Poppins;
   line-height: 1.46;
-  padding-bottom: 100px;
 }
 
 
