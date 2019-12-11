@@ -7,6 +7,7 @@ import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 import Tweet from './Tweet'
+import Hero from './Hero'
 
 function GridContainer({
   alignItems,
@@ -210,6 +211,10 @@ function GridTweet({ tweetId }) {
   return <Tweet tweetId={tweetId}></Tweet>
 }
 
+function GridHero({ heroId }) {
+  return <Hero id={heroId}></Hero>
+}
+
 function GridUnknownComponentError({ __typename }) {
   return <div>Unknown Content Type for Grid: {__typename}</div>
 }
@@ -246,6 +251,8 @@ function GridComponentRenderer(content) {
       return <JobsBoard />
     case 'ContentfulTweet':
       return <GridTweet tweetId={content.tweetId} />
+    case 'ContentfulHero':
+      return <GridHero heroId={content.heroId} />
     default:
       return <GridUnknownComponentError __typename={content.__typename} />
   }
