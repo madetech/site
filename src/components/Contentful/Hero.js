@@ -26,12 +26,6 @@ export default function ContentfulHero({
     )
   }
 
-  if (headerImage) {
-    headerImageComponent = (
-      <img src={headerImage.fixed.src} alt={headerImage.title} />
-    )
-  }
-
   textColourStyle = textColour || ''
   textSizeStyle = textSize || ''
 
@@ -51,9 +45,10 @@ export default function ContentfulHero({
             </h1>
             {headerTextComponent}
           </div>
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-none d-lg-block headerRight">
-            {headerImageComponent}
-          </div>
+          <div
+            className="col-xl-6 col-lg-6 d-none d-md-block headerRight"
+            style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
+          ></div>
         </div>
       </div>
     </div>

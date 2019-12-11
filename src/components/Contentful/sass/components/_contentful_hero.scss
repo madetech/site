@@ -74,15 +74,12 @@
 
 
 .headerRight {
-  img {
   box-shadow: 20px 20px $mt-green;
-    //width: 540px;
-    width: 100%;
-    height: 100%;
-  }
   position: relative;
   z-index: 10;
   align-content: center;
+  background: no-repeat;
+  background-size: cover;
 }
 
 .headerRow {
@@ -91,9 +88,9 @@
 
 .headerLeft{
   @include mobile {
-    padding-bottom: 100px;
+    padding-bottom: 125px;
   }
-  padding-bottom: $desktop-spacing;
+  padding-bottom: 125px;
 }
 
 
