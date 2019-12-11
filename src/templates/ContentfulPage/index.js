@@ -119,7 +119,7 @@ export const pageQuery = graphql`
     pageTitle
     headerText
     headerImage {
-      fixed(width: 540) {
+      fixed(width: 600) {
         height
         src
         srcSet
