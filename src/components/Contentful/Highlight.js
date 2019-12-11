@@ -63,27 +63,5 @@ export default function ContentfulHighlight({
     )
   }
 
-  return (
-    <div className={containerClassName}>
-      <div
-        className="contentful-highlight__bg-left"
-        style={{ width: `${leftBackgroundWidth}%` }}
-      />
-      <div
-        className="contentful-highlight__bg-right"
-        style={{ width: `${rightBackgroundWidth}%` }}
-      >
-        <div className={bgTopClassName} />
-        <div className={bgBottomClassName} />
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className={contentClassName}>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-            {authorSection}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  return <div className={containerClassName}></div>
 }
