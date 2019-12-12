@@ -1,6 +1,3 @@
-@import '../abstracts/mixins';
-@import '../abstracts/variables';
-@import '../base/typography';
 .contentful-hero {
   @include desktop {
     margin-bottom: $desktop-spacing;

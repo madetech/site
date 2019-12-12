@@ -26,13 +26,6 @@ export default function ContentfulHero({
     )
   }
 
-  headerImageComponent = (
-    <div
-      className="col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image"
-      style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
-    ></div>
-  )
-
   textColourStyle = textColour || ''
   textSizeStyle = textSize || ''
 
@@ -42,17 +35,23 @@ export default function ContentfulHero({
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row contentful-hero__row">
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contentful-hero__text-box">
-            {pageBreadcrumbComponent}
-            <h1
-              className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
-            >
-              {parsedTitle}
-            </h1>
-            {headerTextComponent}
+        <div className="contentful-hero__row">
+          <div className="row">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+              <div className="contentful-hero__text-box">
+                {pageBreadcrumbComponent}
+                <h1
+                  className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
+                >
+                  {parsedTitle}
+                </h1>
+              </div>
+            </div>
+            <div
+              className="col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image"
+              style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
+            ></div>
           </div>
-          {headerImageComponent}
         </div>
       </div>
     </div>
