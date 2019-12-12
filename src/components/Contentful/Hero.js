@@ -49,7 +49,7 @@ export default function ContentfulHero({
               </div>
             </div>
             <div
-              className="col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image"
+              className={`col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
               style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
             ></div>
           </div>
