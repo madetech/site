@@ -45,6 +45,7 @@ export default function ContentfulHero({
                 >
                   {parsedTitle}
                 </h1>
+                {headerTextComponent}
               </div>
             </div>
             <div
