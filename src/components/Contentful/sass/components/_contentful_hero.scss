@@ -26,6 +26,16 @@
   h1.black {
     color: $black;
   }
+
+  div.hero_green {
+    box-shadow: 20px 20px $mt-green;}
+  
+  div.hero_white {
+    box-shadow: 20px 20px $white;}
+  
+  div.hero_black {
+    box-shadow: 20px 20px $black;
+  } 
 }
 
 .contentful-hero__breadcrumb {
@@ -65,7 +75,6 @@
 }
 
 .contentful-hero__image {
-  box-shadow: 20px 20px $mt-green;
   position: relative;
   z-index: 10;
   align-content: center;
@@ -87,3 +96,4 @@
   font-family: Poppins;
   line-height: 1.46;
 }
+
