@@ -117,7 +117,15 @@ export const pageQuery = graphql`
       }
     }
     pageTitle
-    sectionName
+    headerText
+    headerImage {
+      fixed(width: 1780) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
     textColour
     textSize
   }

@@ -6,21 +6,23 @@ export default function ContentfulHero({
   id,
   pageBreadcrumb,
   pageTitle,
-  sectionName,
+  headerText,
+  headerImage,
   textColour,
   textSize,
 }) {
-  let sectionNameComponent
   let pageBreadcrumbComponent
   let textColourStyle
   let textSizeStyle
+  let headerTextComponent
+  let headerImageComponent
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
 
-  if (sectionName) {
-    sectionNameComponent = (
-      <div className="contentful-hero__section-type">{sectionName}</div>
+  if (headerText) {
+    headerTextComponent = (
+      <div className="contentful-hero__text">{headerText}</div>
     )
   }
 
@@ -33,15 +35,22 @@ export default function ContentfulHero({
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row">
-          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            {pageBreadcrumbComponent}
-            {sectionNameComponent}
-            <h1
-              className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
-            >
-              {parsedTitle}
-            </h1>
+        <div className="contentful-hero__row">
+          <div className="row">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+              <div className="contentful-hero__text-box">
+                {pageBreadcrumbComponent}
+                <h1
+                  className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
+                >
+                  {parsedTitle}
+                </h1>
+              </div>
+            </div>
+            <div
+              className="col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image"
+              style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
+            ></div>
           </div>
         </div>
       </div>
