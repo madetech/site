@@ -1,9 +1,7 @@
 @import '../abstracts/mixins';
 @import '../abstracts/variables';
 @import '../base/typography';
-
 .contentful-hero {
-
   @include desktop {
     margin-bottom: $desktop-spacing;
   }
@@ -20,11 +18,8 @@
     font-size: 50px;
     margin-bottom: 25px;
   }
-
   h1.green {
     color: $mt-green;
-    
-  
   }
 
   h1.white {
@@ -72,7 +67,6 @@
   margin: 0;
 }
 
-
 .headerRight {
   box-shadow: 20px 20px $mt-green;
   position: relative;
@@ -87,12 +81,8 @@
 }
 
 .headerLeft{
-  @include mobile {
-    padding-bottom: 125px;
-  }
   padding-bottom: 125px;
 }
-
 
 .contentful-hero__header-text {
   font-size: 24px;
@@ -100,6 +90,3 @@
   font-family: Poppins;
   line-height: 1.46;
 }
-
-
-
