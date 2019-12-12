@@ -64,7 +64,7 @@
   margin: 0;
 }
 
-.headerRight {
+.contentful-hero__image {
   box-shadow: 20px 20px $mt-green;
   position: relative;
   z-index: 10;
@@ -73,15 +73,15 @@
   background-size: cover;
 }
 
-.headerRow {
+.contentful-hero__row {
   margin-bottom: -150px;
 }
 
-.headerLeft{
+.contentful-hero__text-box{
   padding-bottom: 125px;
 }
 
-.contentful-hero__header-text {
+.contentful-hero__text {
   font-size: 24px;
   font-weight: 500;
   font-family: Poppins;

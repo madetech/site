@@ -22,13 +22,13 @@ export default function ContentfulHero({
 
   if (headerText) {
     headerTextComponent = (
-      <div className="contentful-hero__header-text">{headerText}</div>
+      <div className="contentful-hero__text">{headerText}</div>
     )
   }
 
   headerImageComponent = (
     <div
-      className="col-xl-6 col-lg-6 d-none d-md-block headerRight"
+      className="col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image"
       style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
     ></div>
   )
@@ -42,8 +42,8 @@ export default function ContentfulHero({
   return (
     <div className="contentful-hero" id={id}>
       <div className="container">
-        <div className="row headerRow">
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 headerLeft">
+        <div className="row contentful-hero__row">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 contentful-hero__text-box">
             {pageBreadcrumbComponent}
             <h1
               className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
