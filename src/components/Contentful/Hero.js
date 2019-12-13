@@ -16,6 +16,10 @@ export default function ContentfulHero({
   let textSizeStyle
   let headerTextComponent
   let headerImageComponent
+
+  textColourStyle = textColour || ''
+  textSizeStyle = textSize || ''
+
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
@@ -26,8 +30,14 @@ export default function ContentfulHero({
     )
   }
 
-  textColourStyle = textColour || ''
-  textSizeStyle = textSize || ''
+  if (headerImage) {
+    headerImageComponent = (
+      <div
+        className={`col-xl-6 col-lg-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
+        style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
+      ></div>
+    )
+  }
 
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
@@ -52,6 +62,7 @@ export default function ContentfulHero({
               className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
               style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
             ></div>
+            {headerImageComponent}
           </div>
         </div>
       </div>
