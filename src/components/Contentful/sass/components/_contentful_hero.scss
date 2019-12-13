@@ -1,4 +1,10 @@
-.contentful-hero {
+  .grey{
+    background:  linear-gradient(to left,  $light-grey) no-repeat;
+    background-size: calc(100% - 1000px) calc(100% - 0px);
+    background-position: left;
+  }
+  
+  .contentful-hero {
   @include desktop {
     margin-bottom: $desktop-spacing;
   }

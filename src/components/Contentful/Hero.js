@@ -10,12 +10,14 @@ export default function ContentfulHero({
   headerImage,
   textColour,
   textSize,
+  backgroundColour,
 }) {
   let pageBreadcrumbComponent
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
-  let headerImageComponent
+  let backgroundColourStyle
+
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
@@ -28,12 +30,13 @@ export default function ContentfulHero({
 
   textColourStyle = textColour || ''
   textSizeStyle = textSize || ''
+  backgroundColourStyle = backgroundColour || ''
 
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
   return (
-    <div className="contentful-hero" id={id}>
+    <div className={`contentful-hero ${backgroundColourStyle}`} id={id}>
       <div className="container">
         <div className="contentful-hero__row">
           <div className="row">
