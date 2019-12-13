@@ -60,7 +60,14 @@ export default function ContentfulHero({
             </div>
             <div
               className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
-              style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
+              style={{
+                backgroundImage:
+                  'url(' +
+                  headerImage.fixed.src +
+                  '), url(' +
+                  headerImage.resize.src +
+                  ')',
+              }}
             ></div>
             {headerImageComponent}
           </div>
