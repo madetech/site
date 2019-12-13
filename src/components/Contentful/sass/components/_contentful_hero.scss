@@ -12,7 +12,35 @@
   }
   
   h1 {
-    font-size: 70px;
+    @include desktop{
+      line-height: $px80;
+      font-size: $px70;
+    }
+
+    @include sm-desktop{ 
+      line-height: $px70;
+      font-size: $px60;
+      letter-spacing: -0.81px;
+    }
+
+    @include tablet { 
+      line-height: $px50;
+      font-size: $px48;
+      letter-spacing: -0.81px;
+    }
+
+    @include sm-tablet { 
+      line-height: $px50;
+      font-size: $px45;
+      letter-spacing: -0.81px;
+    }
+
+    @include mobile {
+      line-height: $px50;
+      font-size: $px45;
+      letter-spacing: -0.56px;
+    }
+    
     margin-bottom: 25px;
   }
   h1.green {
@@ -91,6 +119,33 @@
 }
 
 .contentful-hero__text {
+
+  @include desktop{
+    font-size: $px24;
+  }
+
+
+  @include sm-desktop{ 
+    font-size: $px22;
+    letter-spacing: -0.81px;
+  }
+
+  @include tablet { 
+   
+    font-size: $px20;
+    letter-spacing: -0.81px;
+  }
+
+  @include sm-tablet { 
+    font-size: $px18;
+    letter-spacing: -0.81px;
+  }
+
+  @include mobile {
+    font-size: $px18;
+    letter-spacing: -0.56px;
+  }
+  
   font-size: 24px;
   font-weight: 500;
   font-family: Poppins;
