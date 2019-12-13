@@ -47,7 +47,7 @@ export default function ContentfulHero({
       <div className="container">
         <div className="contentful-hero__row">
           <div className="row">
-            <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
               <div className="contentful-hero__text-box">
                 {pageBreadcrumbComponent}
                 <h1
@@ -58,6 +58,10 @@ export default function ContentfulHero({
                 {headerTextComponent}
               </div>
             </div>
+            <div
+              className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
+              style={{ backgroundImage: 'url(' + headerImage.fixed.src + ')' }}
+            ></div>
             {headerImageComponent}
           </div>
         </div>
