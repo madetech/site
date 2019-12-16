@@ -62,12 +62,14 @@
       line-height: $px50;
       font-size: $px45;
       letter-spacing: -0.81px;
+      text-align: center;
     }
 
     @include mobile {
       line-height: $px50;
       font-size: $px45;
       letter-spacing: -0.56px;
+      text-align: center;
     }
     
     margin-bottom: 25px;
@@ -140,13 +142,19 @@
 }
 
 .contentful-hero__header-links {
-  background-color: black;
+  color: $mt-green;
+  font-weight: bold;
+  line-height: 30px;
+  background: rgba(0,0,0,0.5);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 60%;
-  opacity: 0.5;
+}
+
+ul.contentful-hero__header-links__ul {
+  list-style-type: none;
 }
 
 .contentful-hero__row {

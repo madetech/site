@@ -18,6 +18,7 @@ export default function ContentfulHero({
   let textSizeStyle
   let headerTextComponent
   let headerLinksComponent
+  let links
 
   let backgroundColourStyle
 
@@ -30,6 +31,24 @@ export default function ContentfulHero({
       <div className="contentful-hero__text">{headerText}</div>
     )
   }
+
+  if (headerLinks) {
+    links = (
+      <div className="contentful-hero__header-links">
+        <ul className="contentful-hero__header-links__ul">
+          <li id={headerLinks[0].id}>
+            {' '}
+            <a href={`#${headerLinks[0].id}`}>{headerLinks[0].name}</a>{' '}
+          </li>
+          <li id={headerLinks[1].id}>
+            {' '}
+            <a href={`#${headerLinks[1].id}`}>{headerLinks[1].name}</a>{' '}
+          </li>
+        </ul>
+      </div>
+    )
+  }
+
   if (headerLinks) {
     headerLinksComponent = (
       <div className="contentful-hero__header-links">{headerLinks[0].name}</div>
@@ -70,7 +89,7 @@ export default function ContentfulHero({
                   ')',
               }}
             >
-              {headerLinksComponent}
+              {links}
             </div>
           </div>
         </div>
