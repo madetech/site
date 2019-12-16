@@ -125,6 +125,9 @@ export const pageQuery = graphql`
         srcSet
         width
       }
+      resize(width: 600) {
+        src
+      }
     }
     textColour
     textSize
