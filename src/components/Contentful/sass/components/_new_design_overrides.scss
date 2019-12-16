@@ -17,6 +17,7 @@ ul li:before {
   border-radius: 50%;
   content: ' ';
   position: absolute;
+  
 
   @include desktop {
     left: -22px;

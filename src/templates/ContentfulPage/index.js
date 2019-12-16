@@ -146,6 +146,10 @@ export const pageQuery = graphql`
     textColour
     textSize
     backgroundColour
+    headerLinks {
+      name
+      id
+    }
   }
   fragment prose on ContentfulProse {
     name

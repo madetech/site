@@ -26,7 +26,7 @@
       background-size: calc(100%) calc(100%);
     }
   }
-
+  
   .contentful-hero {
   @include desktop {
     margin-bottom: $desktop-spacing;
@@ -62,12 +62,14 @@
       line-height: $px50;
       font-size: $px45;
       letter-spacing: -0.81px;
+      text-align: center;
     }
 
     @include mobile {
       line-height: $px50;
       font-size: $px45;
       letter-spacing: -0.56px;
+      text-align: center;
     }
     
     margin-bottom: 25px;
@@ -129,11 +131,6 @@
 
 .contentful-hero__page-title {
   margin: 0;
-
-  @include sm-tablet{
-    text-align: center;
-  }
-
 }
 
 .contentful-hero__image {
@@ -145,6 +142,25 @@
   background-position: bottom;
 }
 
+.contentful-hero__header-links {
+  color: $mt-green;
+  font-weight: bold;
+  line-height: 30px;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  padding-top: 50px;;
+}
+
+ul.contentful-hero__header-links__ul {
+  list-style-type: none;
+}
+.contentful-hero__links__a {
+  color: $mt-green;
+}
 .contentful-hero__row {
   margin-bottom: -150px;
 }
@@ -155,9 +171,9 @@
 
 .contentful-hero__text {
 
+  padding-right: 50px;
   @include desktop{
     font-size: $px24;
-    padding-right: 50px;
   }
 
 
