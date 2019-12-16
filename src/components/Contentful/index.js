@@ -52,6 +52,7 @@ function ComponentRenderer(content) {
           textColour={content.textColour}
           textSize={content.textSize}
           backgroundColour={content.backgroundColour}
+          headerLinks={content.headerLinks}
         />
       )
     case 'ContentfulProse':

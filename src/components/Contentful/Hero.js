@@ -11,11 +11,14 @@ export default function ContentfulHero({
   textColour,
   textSize,
   backgroundColour,
+  headerLinks,
 }) {
   let pageBreadcrumbComponent
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
+  let headerLinksComponent
+  let links
 
   let backgroundColourStyle
 
@@ -26,6 +29,32 @@ export default function ContentfulHero({
   if (headerText) {
     headerTextComponent = (
       <div className="contentful-hero__text">{headerText}</div>
+    )
+  }
+
+  if (headerLinks) {
+    links = list()
+  }
+
+  function list() {
+    return (
+      <div className="contentful-hero__header-links">
+        <ul className="contentful-hero__header-links__ul">
+          {headerLinks.map((link, index) => (
+            <li id={link.id}>
+              <a className="contentful-hero__links__a" href={`#${link.id}`}>
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+
+  if (headerLinks) {
+    headerLinksComponent = (
+      <div className="contentful-hero__header-links">{headerLinks[0].name}</div>
     )
   }
 
@@ -62,7 +91,9 @@ export default function ContentfulHero({
                   headerImage.resize.src +
                   ')',
               }}
-            ></div>
+            >
+              {links}
+            </div>
           </div>
         </div>
       </div>
