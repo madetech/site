@@ -1,4 +1,33 @@
-.contentful-hero {
+  .grey{
+    background:  linear-gradient(to left,  $light-grey) no-repeat;
+    background-position: left;
+
+    @include lg-desktop {
+      background-size: calc(60%) calc(100%);
+    }
+
+    @include desktop {
+      background-size: calc(60%) calc(100%);
+    }
+  
+    @include sm-desktop{ 
+      background-size: calc(60%) calc(100%);
+    }
+
+    @include tablet {
+      background-size: calc(60%) calc(100%);
+    }
+
+    @include sm-tablet {
+      background-size: calc(100%) calc(100%);
+    }
+
+    @include mobile {
+      background-size: calc(100%) calc(100%);
+    }
+  }
+  
+  .contentful-hero {
   @include desktop {
     margin-bottom: $desktop-spacing;
   }
