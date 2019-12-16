@@ -33,17 +33,18 @@ export default function ContentfulHero({
   }
 
   if (headerLinks) {
-    links = (
+    links = list()
+  }
+
+  function list() {
+    return (
       <div className="contentful-hero__header-links">
         <ul className="contentful-hero__header-links__ul">
-          <li id={headerLinks[0].id}>
-            {' '}
-            <a href={`#${headerLinks[0].id}`}>{headerLinks[0].name}</a>{' '}
-          </li>
-          <li id={headerLinks[1].id}>
-            {' '}
-            <a href={`#${headerLinks[1].id}`}>{headerLinks[1].name}</a>{' '}
-          </li>
+          {headerLinks.map((link, index) => (
+            <li id={link.id}>
+              <a href={`#${link.id}`}>{link.name}</a>
+            </li>
+          ))}
         </ul>
       </div>
     )
