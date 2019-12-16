@@ -47,6 +47,7 @@ export const pageQuery = graphql`
             ...prose
             ...tweet
             ...jobsBoard
+            ...imagelink
           }
         }
       }
@@ -83,6 +84,19 @@ export const pageQuery = graphql`
     constrainImageHeight
     images {
       fixed(width: 400) {
+        height
+        src
+        srcSet
+        width
+      }
+    }
+  }
+  fragment imagelink on ContentfulImageLink {
+    textLink {
+      json
+    }
+    image {
+      fixed(width: 600) {
         height
         src
         srcSet

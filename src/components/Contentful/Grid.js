@@ -1,6 +1,7 @@
 import React from 'react'
 import { Prose } from '@madetech/frontend'
 import HubSpotForm from './HubSpotForm'
+import ImageLink from './ImageLink'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
 import JobsBoard from '../JobsBoard'
@@ -214,6 +215,42 @@ function GridUnknownComponentError({ __typename }) {
   return <div>Unknown Content Type for Grid: {__typename}</div>
 }
 
+function GridImageLink({ html, image }) {
+  return <ImageLink html={html} image={image} />
+
+  // let imageComponent
+  // if (image && image.fixed) {
+  //
+  //   // gatsbys fixed image width is giving us image quality problems.
+  //   // removing the specified width sorts this out
+  //   // need to investigate further...
+  //   let imageSrc = image.fixed.src.split('?')[0]
+  //
+  //   imageComponent = (
+  //       <img alt={image.title} src={imageSrc} />
+  //   )
+  // }
+  //
+  // let parsedHtml = threeSpaceToLineBreak(html, true)
+  // parsedHtml = threeHyphenToSoftHyphen(parsedHtml, true)
+  //
+  // let linkComponent
+  //
+  // linkComponent = (
+  //       <div dangerouslySetInnerHTML={{ __html: parsedHtml }} />
+  // )
+  //
+  //
+  // let gridImageLinkComponent
+  // gridImageLinkComponent = (
+  //     <div>
+  //       {imageComponent}
+  //       {linkComponent}
+  //     </div>
+  // )
+  // return gridImageLinkComponent
+}
+
 function GridComponentRenderer(content) {
   switch (content.__typename) {
     case 'ContentfulProse':
@@ -246,6 +283,8 @@ function GridComponentRenderer(content) {
       return <JobsBoard />
     case 'ContentfulTweet':
       return <GridTweet tweetId={content.tweetId} />
+    case 'ContentfulImageLink':
+      return <GridImageLink html={content.textLink} image={content.image} />
     default:
       return <GridUnknownComponentError __typename={content.__typename} />
   }
