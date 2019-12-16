@@ -42,7 +42,9 @@ export default function ContentfulHero({
         <ul className="contentful-hero__header-links__ul">
           {headerLinks.map((link, index) => (
             <li id={link.id}>
-              <a href={`#${link.id}`}>{link.name}</a>
+              <a className="contentful-hero__links__a" href={`#${link.id}`}>
+                {link.name}
+              </a>
             </li>
           ))}
         </ul>

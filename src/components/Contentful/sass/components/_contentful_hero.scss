@@ -152,12 +152,15 @@
   left: 0;
   width: 100%;
   height: 60%;
+  padding-top: 50px;;
 }
 
 ul.contentful-hero__header-links__ul {
   list-style-type: none;
 }
-
+.contentful-hero__links__a {
+  color: $mt-green;
+}
 .contentful-hero__row {
   margin-bottom: -150px;
 }
