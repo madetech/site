@@ -284,7 +284,12 @@ function GridComponentRenderer(content) {
     case 'ContentfulTweet':
       return <GridTweet tweetId={content.tweetId} />
     case 'ContentfulImageLink':
-      return <GridImageLink html={content.textLink} image={content.image} />
+      return (
+        <GridImageLink
+          html={documentToHtmlString(content.body && content.body.json)}
+          image={content.image}
+        />
+      )
     default:
       return <GridUnknownComponentError __typename={content.__typename} />
   }
