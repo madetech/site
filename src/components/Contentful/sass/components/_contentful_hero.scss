@@ -167,19 +167,20 @@ ul.contentful-hero__header-links__ul {
 
 .contentful-hero__text {
 
+  padding-right: 50px;
   @include desktop{
     font-size: $px24;
   }
 
 
   @include sm-desktop{ 
-    font-size: $px22;
+    font-size: $px20;
     letter-spacing: -0.81px;
   }
 
   @include tablet { 
    
-    font-size: $px20;
+    font-size: $px18;
     letter-spacing: -0.81px;
   }
 
