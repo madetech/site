@@ -1,9 +1,3 @@
-  .grey{
-    background:  linear-gradient(to left,  $light-grey) no-repeat;
-    background-size: calc(100% - 1000px) calc(100% - 0px);
-    background-position: left;
-  }
-  
   .contentful-hero {
   @include desktop {
     margin-bottom: $desktop-spacing;
@@ -106,6 +100,11 @@
 
 .contentful-hero__page-title {
   margin: 0;
+
+  @include sm-tablet{
+    text-align: center;
+  }
+
 }
 
 .contentful-hero__image {
@@ -128,17 +127,18 @@
 
   @include desktop{
     font-size: $px24;
+    padding-right: 50px;
   }
 
 
   @include sm-desktop{ 
-    font-size: $px22;
+    font-size: $px20;
     letter-spacing: -0.81px;
   }
 
   @include tablet { 
    
-    font-size: $px20;
+    font-size: $px18;
     letter-spacing: -0.81px;
   }
 
