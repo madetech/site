@@ -18,7 +18,7 @@ export default function ContentfulHero({
   let headerTextComponent
 
   let backgroundColourStyle
-  
+
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
@@ -63,7 +63,6 @@ export default function ContentfulHero({
                   ')',
               }}
             ></div>
-            {headerImageComponent}
           </div>
         </div>
       </div>
