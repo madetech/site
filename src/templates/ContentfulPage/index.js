@@ -131,7 +131,6 @@ export const pageQuery = graphql`
     }
     textColour
     textSize
-    backgroundColour
   }
   fragment prose on ContentfulProse {
     name
