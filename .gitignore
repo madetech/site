@@ -72,3 +72,6 @@ yarn-error.log
 
 # vscode config
 .vscode/
+
+# idea
+/.idea

@@ -6,6 +6,7 @@ import Hero from './Hero'
 import Prose from './Prose'
 import Highlight from './Highlight'
 import HeaderImages from './HeaderImages'
+import ImageLink from './ImageLink'
 import toHtmlId from '../../helpers/toHtmlId'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 
@@ -83,6 +84,14 @@ function ComponentRenderer(content) {
           id={id}
           layout={content.layout}
           style={content.style}
+        />
+      )
+    case 'ContentfulImageLink':
+      return (
+        <ImageLink
+          html={documentToHtmlString(content.textlink && content.textlink.json)}
+          id={id}
+          image={content.image}
         />
       )
     case 'ContentfulHighlight':
