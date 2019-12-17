@@ -36,6 +36,7 @@ function ComponentRenderer(content) {
           largeColumnOffset={content.columnOffset}
           html={documentToHtmlString(content.body && content.body.json)}
           id={id}
+          real_id={content.id}
           textAlign={content.textAlign}
           textColor={content.textColor}
         />
@@ -101,7 +102,7 @@ function ComponentRenderer(content) {
         <Highlight
           author={content.author}
           authorAvatar={content.authorAvatar}
-          id={id}
+          id={content.id}
           colourOfElementAbove={content.colourOfElementAbove}
           colourOfElementBelow={content.colourOfElementBelow}
           extraLargeColumnWidth={content.extraLargeColumnWidth}

@@ -93,7 +93,7 @@ export const pageQuery = graphql`
     }
   }
   fragment imagelink on ContentfulImageLink {
-    body {
+    textLink {
       json
     }
     image {
@@ -104,18 +104,9 @@ export const pageQuery = graphql`
         width
       }
     }
-    extraLargeColumnWidth
-    extraLargeColumnOffset
-    largeColumnWidth
-    largeColumnOffset
-    mediumColumnWidth
-    mediumColumnOffset
-    smallColumnWidth
-    smallColumnOffset
-    extraSmallColumnWidth
-    extraSmallColumnOffset
   }
   fragment jumbotron on ContentfulJumbotron {
+    id
     name
     background {
       fixed(width: 1600) {
@@ -158,10 +149,21 @@ export const pageQuery = graphql`
     textSize
     backgroundColour
     headerLinks {
-      name
-      id
+      ... on ContentfulGrid {
+        id
+        name
+      }
+      ... on ContentfulJumbotron {
+        id
+        name
+      }
+      ... on ContentfulHighlight {
+        id
+        name
+      }
     }
   }
+
   fragment prose on ContentfulProse {
     name
     body {
@@ -194,6 +196,7 @@ export const pageQuery = graphql`
     textAlign
   }
   fragment highlight on ContentfulHighlight {
+    id
     name
     body {
       json

@@ -156,10 +156,10 @@
    
 }
 
-ul.contentful-hero__header-links__ul {
-  list-style-type: none;
-  color:pink;
+ul.contentful-hero__header-links__ul li:before {
+  content: none;
 }
+
 .contentful-hero__links__a {
   color: $mt-green;
 }
