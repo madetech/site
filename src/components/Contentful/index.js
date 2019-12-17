@@ -82,6 +82,8 @@ function ComponentRenderer(content) {
           content={content.content}
           customClasses={content.customClasses}
           id={id}
+          real_id={content.id}
+          name={content.name}
           layout={content.layout}
           style={content.style}
         />

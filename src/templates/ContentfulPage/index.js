@@ -39,6 +39,7 @@ export const pageQuery = graphql`
           customClasses
           layout
           name
+          id
           style
           content {
             __typename
