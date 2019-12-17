@@ -32,31 +32,31 @@ export default function ContentfulHero({
     )
   }
 
-  if (headerLinks) {
-    links = list()
-  }
+  // if (headerLinks) {
+  //   links = list()
+  // }
+  //
+  // function list() {
+  //   return (
+  //     <div className="contentful-hero__header-links">
+  //       <ul className="contentful-hero__header-links__ul">
+  //         {headerLinks.map((link, index) => (
+  //           <li id={link.id}>
+  //             <a className="contentful-hero__links__a" href={`#${link.id}`}>
+  //               {link.name}
+  //             </a>
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   )
+  // }
 
-  function list() {
-    return (
-      <div className="contentful-hero__header-links">
-        <ul className="contentful-hero__header-links__ul">
-          {headerLinks.map((link, index) => (
-            <li id={link.id}>
-              <a className="contentful-hero__links__a" href={`#${link.id}`}>
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
-  if (headerLinks) {
-    headerLinksComponent = (
-      <div className="contentful-hero__header-links">{headerLinks[0].name}</div>
-    )
-  }
+  // if (headerLinks) {
+  //   headerLinksComponent = (
+  //     <div className="contentful-hero__header-links">{headerLinks[0].name}</div>
+  //   )
+  // }
 
   textColourStyle = textColour || ''
   textSizeStyle = textSize || ''
@@ -92,7 +92,7 @@ export default function ContentfulHero({
                   ')',
               }}
             >
-              {links}
+              {/*{links}*/}
             </div>
           </div>
         </div>
