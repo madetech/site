@@ -7,7 +7,7 @@ export default function ContentfulHighlight({
   colourOfElementBelow,
   extraLargeColumnWidth,
   extraSmallColumnWidth,
-  id,
+  entry_id,
   html,
   largeColumnWidth,
   mediumColumnWidth,
@@ -66,7 +66,7 @@ export default function ContentfulHighlight({
 
   return (
     <div className={containerClassName}>
-      <a id={id}></a>
+      <a id={entry_id}></a>
       <div
         className="contentful-highlight__bg-left"
         style={{ width: `${leftBackgroundWidth}%` }}

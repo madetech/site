@@ -102,7 +102,7 @@ function ComponentRenderer(content) {
         <Highlight
           author={content.author}
           authorAvatar={content.authorAvatar}
-          id={content.id}
+          entry_id={content.id}
           colourOfElementAbove={content.colourOfElementAbove}
           colourOfElementBelow={content.colourOfElementBelow}
           extraLargeColumnWidth={content.extraLargeColumnWidth}
