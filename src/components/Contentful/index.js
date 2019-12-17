@@ -82,9 +82,7 @@ function ComponentRenderer(content) {
           content={content.content}
           customClasses={content.customClasses}
           id={id}
-          name={content.name}
           layout={content.layout}
-          backgroundColour={content.backgroundColour}
           style={content.style}
         />
       )

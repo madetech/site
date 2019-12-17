@@ -14,7 +14,6 @@ function GridContainer({
   children,
   customClasses,
   id,
-  name,
   layout,
   style,
 }) {
