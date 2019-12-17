@@ -5,7 +5,7 @@ export default function ContentfulJumbotron({
   backgroundUrl,
   html,
   id,
-  real_id,
+  entry_id,
   largeColumnWidth,
   largeColumnOffset,
   textAlign,
@@ -21,7 +21,7 @@ export default function ContentfulJumbotron({
     <div className={className} id={id}>
       <Jumbotron backgroundUrl={backgroundUrl}>
         <div className="container">
-          <a id={real_id}></a>
+          <a id={entry_id}></a>
           <div className="row">
             <div
               className={`col-lg-${largeColumnWidth} offset-lg-${largeColumnOffset}`}
