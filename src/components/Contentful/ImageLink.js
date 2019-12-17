@@ -64,7 +64,7 @@ export default function ContentfulImageLink({
   )
 
   return (
-    <div className="imageLink" id={id}>
+    <div className="contentful-imagelink name" id={id}>
       <div className="container">
         <div className="row">
           <div className={colClasses}>
