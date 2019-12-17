@@ -104,6 +104,16 @@ export const pageQuery = graphql`
         width
       }
     }
+    extraLargeColumnWidth
+    extraLargeColumnOffset
+    largeColumnWidth
+    largeColumnOffset
+    mediumColumnWidth
+    mediumColumnOffset
+    smallColumnWidth
+    smallColumnOffset
+    extraSmallColumnWidth
+    extraSmallColumnOffset
   }
   fragment jumbotron on ContentfulJumbotron {
     name
