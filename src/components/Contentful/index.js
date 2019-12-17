@@ -91,7 +91,7 @@ function ComponentRenderer(content) {
     case 'ContentfulImageLink':
       return (
         <ImageLink
-          html={documentToHtmlString(content.textlink && content.textlink.json)}
+          html={documentToHtmlString(content.body && content.body.json)}
           id={id}
           image={content.image}
         />

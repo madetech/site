@@ -93,7 +93,7 @@ export const pageQuery = graphql`
     }
   }
   fragment imagelink on ContentfulImageLink {
-    textLink {
+    body {
       json
     }
     image {

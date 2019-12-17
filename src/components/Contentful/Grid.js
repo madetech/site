@@ -219,38 +219,6 @@ function GridUnknownComponentError({ __typename }) {
 
 function GridImageLink({ html, image }) {
   return <ImageLink html={html} image={image} />
-
-  // let imageComponent
-  // if (image && image.fixed) {
-  //
-  //   // gatsbys fixed image width is giving us image quality problems.
-  //   // removing the specified width sorts this out
-  //   // need to investigate further...
-  //   let imageSrc = image.fixed.src.split('?')[0]
-  //
-  //   imageComponent = (
-  //       <img alt={image.title} src={imageSrc} />
-  //   )
-  // }
-  //
-  // let parsedHtml = threeSpaceToLineBreak(html, true)
-  // parsedHtml = threeHyphenToSoftHyphen(parsedHtml, true)
-  //
-  // let linkComponent
-  //
-  // linkComponent = (
-  //       <div dangerouslySetInnerHTML={{ __html: parsedHtml }} />
-  // )
-  //
-  //
-  // let gridImageLinkComponent
-  // gridImageLinkComponent = (
-  //     <div>
-  //       {imageComponent}
-  //       {linkComponent}
-  //     </div>
-  // )
-  // return gridImageLinkComponent
 }
 
 function GridComponentRenderer(content) {
@@ -286,7 +254,12 @@ function GridComponentRenderer(content) {
     case 'ContentfulTweet':
       return <GridTweet tweetId={content.tweetId} />
     case 'ContentfulImageLink':
-      return <GridImageLink html={content.textLink} image={content.image} />
+      return (
+        <GridImageLink
+          html={documentToHtmlString(content.body && content.body.json)}
+          image={content.image}
+        />
+      )
     default:
       return <GridUnknownComponentError __typename={content.__typename} />
   }
