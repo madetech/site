@@ -62,14 +62,12 @@
       line-height: $px50;
       font-size: $px45;
       letter-spacing: -0.81px;
-      text-align: center;
     }
 
     @include mobile {
       line-height: $px50;
       font-size: $px45;
       letter-spacing: -0.56px;
-      text-align: center;
     }
     
     margin-bottom: 25px;
@@ -172,6 +170,7 @@ ul.contentful-hero__header-links__ul li:before {
 }
 
 .contentful-hero__text {
+  color: #333;
 
   padding-right: 50px;
   @include desktop{
