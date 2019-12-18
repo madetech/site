@@ -156,6 +156,20 @@ export const pageQuery = graphql`
     textColour
     textSize
     backgroundColour
+    headerLinks {
+      ... on ContentfulGrid {
+        id
+        name
+      }
+      ... on ContentfulJumbotron {
+        id
+        name
+      }
+      ... on ContentfulHighlight {
+        id
+        name
+      }
+    }
   }
   fragment prose on ContentfulProse {
     name
