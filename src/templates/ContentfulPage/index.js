@@ -39,6 +39,7 @@ export const pageQuery = graphql`
           customClasses
           layout
           name
+          id
           style
           content {
             __typename
@@ -115,6 +116,7 @@ export const pageQuery = graphql`
     extraSmallColumnOffset
   }
   fragment jumbotron on ContentfulJumbotron {
+    id
     name
     background {
       fixed(width: 1600) {
@@ -171,6 +173,7 @@ export const pageQuery = graphql`
       }
     }
   }
+
   fragment prose on ContentfulProse {
     name
     body {
@@ -203,6 +206,7 @@ export const pageQuery = graphql`
     textAlign
   }
   fragment highlight on ContentfulHighlight {
+    id
     name
     body {
       json

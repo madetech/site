@@ -36,6 +36,7 @@ function ComponentRenderer(content) {
           largeColumnOffset={content.columnOffset}
           html={documentToHtmlString(content.body && content.body.json)}
           id={id}
+          entry_id={content.id}
           textAlign={content.textAlign}
           textColor={content.textColor}
         />
@@ -82,6 +83,8 @@ function ComponentRenderer(content) {
           content={content.content}
           customClasses={content.customClasses}
           id={id}
+          entry_id={content.id}
+          name={content.name}
           layout={content.layout}
           style={content.style}
         />
@@ -99,7 +102,7 @@ function ComponentRenderer(content) {
         <Highlight
           author={content.author}
           authorAvatar={content.authorAvatar}
-          id={id}
+          entry_id={content.id}
           colourOfElementAbove={content.colourOfElementAbove}
           colourOfElementBelow={content.colourOfElementBelow}
           extraLargeColumnWidth={content.extraLargeColumnWidth}

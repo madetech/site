@@ -14,6 +14,7 @@ function GridContainer({
   children,
   customClasses,
   id,
+  entry_id,
   layout,
   style,
 }) {
@@ -31,6 +32,7 @@ function GridContainer({
 
   return (
     <div className={className} id={id}>
+      <a id={entry_id}></a>
       <div className={containerClassName}>
         <div className={rowClassName}>{children}</div>
       </div>
@@ -268,6 +270,8 @@ function GridComponentArrayRenderer({
   customClasses,
   content,
   id,
+  entry_id,
+  name,
   layout,
   style,
 }) {
@@ -290,6 +294,8 @@ function GridComponentArrayRenderer({
       alignItems={alignItems}
       customClasses={customClasses}
       id={id}
+      entry_id={entry_id}
+      name={name}
       layout={layout}
       style={style}
     >
