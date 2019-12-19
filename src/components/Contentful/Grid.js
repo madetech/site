@@ -218,7 +218,11 @@ function GridUnknownComponentError({ __typename }) {
 }
 
 function GridImageLink({ html, image }) {
-  return <ImageLink html={html} image={image} />
+  return (
+    <div className="d-flex justify-content-center">
+      <ImageLink html={html} image={image} />
+    </div>
+  )
 }
 
 function GridComponentRenderer(content) {
