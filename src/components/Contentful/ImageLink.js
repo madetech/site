@@ -1,9 +1,12 @@
 import React from 'react'
+import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
+import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
 export default function ContentfulImageLink({
-  html,
   id,
+  url,
   image,
+  linkText,
   extraLargeColumnWidth,
   extraLargeColumnOffset,
   largeColumnWidth,
@@ -61,12 +64,18 @@ export default function ContentfulImageLink({
     <img alt={image.title} className="mw-100" src={image.fixed.src} />
   )
 
+  let text = threeSpaceToLineBreak(linkText)
+  text = threeHyphenToSoftHyphen(text)
+
   return (
     <div className="contentful-imagelink" id={id}>
       <div className="container">
         <div className={colClasses}>
-          {imageComponent}
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <a href={`${url}`}>
+            {imageComponent}
+            <br />
+            {text}
+          </a>
         </div>
       </div>
     </div>
