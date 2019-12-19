@@ -40,27 +40,23 @@ export default function ContentfulHero({
     headerLinks.forEach(link => {
       if (link.slug) {
         link.reference = 'https://www.madetech.com' + link.slug
-        link.display_name = link.name + ' →'
       } else {
         link.reference = '#' + link.id
-        link.display_name = '#' + link.name
       }
     })
     return (
-      <div className="contentful-hero__header-links">
-        <ul className="contentful-hero__header-links__ul">
-          <p className="contentful-hero__header-links__title">
-            Jump straight to:
-          </p>
-          {headerLinks.map((link, index) => (
-            <li key={index} list-style="none">
-              <a className="contentful-hero__links__a" href={link.reference}>
-                {link.display_name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="contentful-hero__header-links__ul">
+        <p className="contentful-hero__header-links__title">
+          Jump straight to:
+        </p>
+        {headerLinks.map((link, index) => (
+          <li key={index} list-style="none">
+            <a className="contentful-hero__links__a" href={link.reference}>
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     )
   }
 
@@ -91,6 +87,9 @@ export default function ContentfulHero({
                   {parsedTitle}
                 </h1>
                 {headerTextComponent}
+                <div className="contentful-hero__image-links-mobile d-md-none d-lg-none ">
+                  {links}
+                </div>
               </div>
             </div>
             <div
@@ -104,7 +103,7 @@ export default function ContentfulHero({
                   ')',
               }}
             >
-              {links}
+              <div className="contentful-hero__header-links">{links}</div>
             </div>
           </div>
         </div>

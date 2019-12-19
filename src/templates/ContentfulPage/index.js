@@ -91,6 +91,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    overlay
   }
   fragment imagelink on ContentfulImageLink {
     url

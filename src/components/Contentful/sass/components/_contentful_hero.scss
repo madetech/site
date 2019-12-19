@@ -148,15 +148,25 @@
 .contentful-hero__header-links {
   color: $mt-green;
   font-weight: bold;
-  line-height: 30px;
+  line-height: 20px;
   background: rgba(0,0,0,0.7);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60%;
   padding-top: 20px;
   overflow: scroll;
+}
+
+.contentful-hero__links-mobile{
+  color: $mt-green;
+  position: absolute;
+  left: 0px;
+  font-weight: bold;
+  line-height: 20px;
+  display: hidden;
+  padding-top: 50px;
+  background:  rgba(0,0,0,0.0);
 }
 
 ul.contentful-hero__header-links__ul li:before {
