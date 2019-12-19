@@ -140,11 +140,7 @@
   background-size: cover;
   background-position: bottom;
 }
-.contentful-hero__header-links__title {
-  color: white;
-  font-weight: 40;
-  margin-bottom: 12px;
-}
+
 .contentful-hero__header-links {
   color: $mt-green;
   font-weight: bold;
@@ -166,17 +162,32 @@
   line-height: 20px;
   display: hidden;
   padding-top: 50px;
-  background:  rgba(0,0,0,0.0);
 }
 
-ul.contentful-hero__header-links__ul li:before {
-  content: none;
+.contentful-hero__header-links__container{
+  position: absolute;
+  bottom: 0px;
+}
+
+.contentful-hero__header-links__title {
+  color: white;
+  font-weight: 40;
+  margin-bottom: 12px;
+  padding-left: 40px;
 }
 
 .contentful-hero__links__a {
+  padding-left: 40px;
   margin-top: -70px;
+  line-height: 40px;
   color: $mt-green;
   text-decoration: underline;
+  position:absolute;
+  bottom: 0px;
+
+  @include tablet { 
+    font-size: $px18;
+  }
 }
 
 .contentful-hero__row {
@@ -184,6 +195,7 @@ ul.contentful-hero__header-links__ul li:before {
 }
 
 .contentful-hero__text-box{
+
   padding-bottom: 125px;
 }
 
