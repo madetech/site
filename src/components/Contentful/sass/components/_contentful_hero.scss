@@ -165,8 +165,7 @@
 }
 
 .contentful-hero__header-links__container{
-  position: absolute;
-  bottom: 0px;
+  padding-bottom: 20px;
 }
 
 .contentful-hero__header-links__title {
@@ -182,8 +181,7 @@
   line-height: 40px;
   color: $mt-green;
   text-decoration: underline;
-  position:absolute;
-  bottom: 0px;
+  
 
   @include tablet { 
     font-size: $px18;
