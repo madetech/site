@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.overlay {
+  margin-top: -70px;
+  margin-left: -70px;
+}
 
 @include media-breakpoint-up(md) {
   .inline-images__caption {

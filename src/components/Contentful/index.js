@@ -26,6 +26,7 @@ function ComponentRenderer(content) {
           constrainImageHeight={content.constrainImageHeight}
           id={id}
           images={content.images}
+          overlay={content.overlay}
         />
       )
     case 'ContentfulJumbotron':
@@ -92,9 +93,10 @@ function ComponentRenderer(content) {
     case 'ContentfulImageLink':
       return (
         <ImageLink
-          html={documentToHtmlString(content.body && content.body.json)}
           id={id}
+          url={content.url}
           image={content.image}
+          linkText={content.linkText}
         />
       )
     case 'ContentfulHighlight':
