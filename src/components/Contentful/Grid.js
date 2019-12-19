@@ -217,10 +217,10 @@ function GridUnknownComponentError({ __typename }) {
   return <div>Unknown Content Type for Grid: {__typename}</div>
 }
 
-function GridImageLink({ html, image }) {
+function GridImageLink({ url, image, linkText }) {
   return (
     <div className="d-flex justify-content-center">
-      <ImageLink html={html} image={image} />
+      <ImageLink url={url} image={image} linkText={linkText} />
     </div>
   )
 }
@@ -260,8 +260,9 @@ function GridComponentRenderer(content) {
     case 'ContentfulImageLink':
       return (
         <GridImageLink
-          html={documentToHtmlString(content.body && content.body.json)}
+          url={content.url}
           image={content.image}
+          linkText={content.linkText}
         />
       )
     default:
