@@ -92,9 +92,10 @@ function ComponentRenderer(content) {
     case 'ContentfulImageLink':
       return (
         <ImageLink
-          html={documentToHtmlString(content.body && content.body.json)}
           id={id}
+          url={content.url}
           image={content.image}
+          linkText={content.linkText}
         />
       )
     case 'ContentfulHighlight':

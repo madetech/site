@@ -93,9 +93,7 @@ export const pageQuery = graphql`
     }
   }
   fragment imagelink on ContentfulImageLink {
-    body {
-      json
-    }
+    url
     image {
       fixed(width: 600) {
         height
@@ -104,6 +102,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    linkText
     extraLargeColumnWidth
     extraLargeColumnOffset
     largeColumnWidth
