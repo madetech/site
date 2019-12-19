@@ -165,20 +165,20 @@
 }
 
 .contentful-hero__header-links__container{
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  line-height: 50px;
+  padding-left: 45px;
 }
 
 .contentful-hero__header-links__title {
   color: white;
   font-weight: 40;
-  margin-bottom: 12px;
-  padding-left: 40px;
+  margin-bottom: 0px;
 }
 
 .contentful-hero__links__a {
-  padding-left: 40px;
   margin-top: -70px;
-  line-height: 40px;
   color: $mt-green;
   text-decoration: underline;
   
