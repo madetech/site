@@ -52,7 +52,7 @@ export default function ContentfulHero({
         </p>
         {headerLinks.map((link, index) => (
           <a className="contentful-hero__links__a" href={link.reference}>
-            {link.name} <br></br>
+            {link.linkTitle} <br></br>
           </a>
         ))}
       </div>
