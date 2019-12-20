@@ -162,6 +162,7 @@ export const pageQuery = graphql`
       ... on ContentfulGrid {
         id
         name
+        linkTitle
       }
       ... on ContentfulJumbotron {
         id

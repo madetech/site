@@ -45,18 +45,17 @@ export default function ContentfulHero({
       }
     })
     return (
-      <ul className="contentful-hero__header-links__ul">
-        <p className="contentful-hero__header-links__title">
+      <div className="contentful-hero__header-links">
+        <p className="contentful-hero__header-links__title ">
+          {' '}
           Jump straight to:
         </p>
         {headerLinks.map((link, index) => (
-          <li key={index} list-style="none">
-            <a className="contentful-hero__links__a" href={link.reference}>
-              {link.name}
-            </a>
-          </li>
+          <a className="contentful-hero__links__a" href={link.reference}>
+            {link.linkTitle} <br></br>
+          </a>
         ))}
-      </ul>
+      </div>
     )
   }
 
@@ -87,9 +86,6 @@ export default function ContentfulHero({
                   {parsedTitle}
                 </h1>
                 {headerTextComponent}
-                <div className="contentful-hero__image-links-mobile d-md-none d-lg-none ">
-                  {links}
-                </div>
               </div>
             </div>
             <div
@@ -103,7 +99,7 @@ export default function ContentfulHero({
                   ')',
               }}
             >
-              <div className="contentful-hero__header-links">{links}</div>
+              {links}
             </div>
           </div>
         </div>
