@@ -75,7 +75,7 @@ export default function ContentfulProse({
       <Prose>
         <div className="container">
           <div className="row">
-            <div className={colClasses}>
+            <div className={`${colClasses}`}>
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>
