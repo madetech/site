@@ -29,6 +29,7 @@ export const pageQuery = graphql`
       content {
         __typename
         ...hero
+        ...carousel
         ...headerImages
         ...highlight
         ...inlineImages
@@ -285,5 +286,8 @@ export const pageQuery = graphql`
     mediumColumnOffset
     smallColumnWidth
     smallColumnOffset
+  }
+  fragment carousel on ContentfulCarousel {
+    name
   }
 `
