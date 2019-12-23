@@ -91,6 +91,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    overlay
   }
   fragment imagelink on ContentfulImageLink {
     url
@@ -161,6 +162,7 @@ export const pageQuery = graphql`
       ... on ContentfulGrid {
         id
         name
+        linkTitle
       }
       ... on ContentfulJumbotron {
         id

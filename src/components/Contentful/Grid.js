@@ -17,6 +17,7 @@ function GridContainer({
   entry_id,
   layout,
   style,
+  linkTitle,
 }) {
   let className = 'contentful-grid'
   if (style) className += ` ${style}`
@@ -31,7 +32,7 @@ function GridContainer({
   if (layout === 'fluid') containerClassName += '-fluid'
 
   return (
-    <div className={className} id={id}>
+    <div className={className} id={id} linkTitle={linkTitle}>
       <a id={entry_id}></a>
       <div className={containerClassName}>
         <div className={rowClassName}>{children}</div>
@@ -279,6 +280,7 @@ function GridComponentArrayRenderer({
   name,
   layout,
   style,
+  linkTitle,
 }) {
   if (!content || content.length === 0) {
     throw new Error('No grid content provided')
@@ -303,6 +305,7 @@ function GridComponentArrayRenderer({
       name={name}
       layout={layout}
       style={style}
+      linkTitle={linkTitle}
     >
       {Object.values(groupedContent).map((group, i) => {
         return (
