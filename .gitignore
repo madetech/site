@@ -75,3 +75,6 @@ yarn-error.log
 
 # idea
 /.idea
+
+# prview
+preview/.env

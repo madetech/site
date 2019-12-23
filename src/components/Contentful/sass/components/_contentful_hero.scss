@@ -150,8 +150,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 25px;
-  padding-left: 45px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+
 }
 
 .contentful-hero__links-mobile{
@@ -165,22 +166,24 @@
 }
 
 .contentful-hero__header-links__title {
+  font-size: $px20;
   line-height: 50px;
   color: white;
   font-weight: 40;
   margin-bottom: 0px;
+  padding-top: 25px;
 }
 
 .contentful-hero__links__a {
+  font-family: Poppins;
   font-weight: $extra-bold;
-  margin-top: -70px;
   color: $mt-green;
   text-decoration: underline;
   font-size: $px22;
 
   @include desktop { 
-    font-size: $px18;
-    line-height: 40px;
+    font-size: $px24;
+    line-height: 50px;
   }
 
 
