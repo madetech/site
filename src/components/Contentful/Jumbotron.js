@@ -21,7 +21,9 @@ export default function ContentfulJumbotron({
     <div className={className} id={id}>
       <Jumbotron backgroundUrl={backgroundUrl}>
         <div className="container">
-          <a id={entry_id}></a>
+          <a id={entry_id} href={`#${entry_id}`}>
+            {' '}
+          </a>
           <div className="row">
             <div
               className={`col-lg-${largeColumnWidth} offset-lg-${largeColumnOffset}`}
