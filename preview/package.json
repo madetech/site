@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "gatsby": "rm -rf gatsby && cp -r ../src src/gatsby && cp ../static/favicon.ico public/favicon.ico",
+    "gatsby": "rm -rf src/gatsby && cp -r ../src src/gatsby && cp ../static/favicon.ico public/favicon.ico",
     "deploy": "node bin/deploy-preview.js"
   },
   "eslintConfig": {
