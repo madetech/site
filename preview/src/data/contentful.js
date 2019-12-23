@@ -13,6 +13,9 @@ function capitalizeFirstLetter(string) {
 }
 
 function typename(entry) {
+  if (entry.sys.contentType.sys.id === 'imagelink') {
+    return 'ContentfulImageLink'
+  }
   return `Contentful${capitalizeFirstLetter(entry.sys.contentType.sys.id)}`
 }
 
