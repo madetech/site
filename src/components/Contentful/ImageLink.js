@@ -69,14 +69,12 @@ export default function ContentfulImageLink({
 
   return (
     <div className="contentful-imagelink" id={id}>
-      <div className="container">
-        <div className={colClasses}>
-          <a href={`${url}`}>
-            {imageComponent}
-            <br />
-            {text}
-          </a>
-        </div>
+      <div className={colClasses}>
+        <a href={`${url}`}>
+          {imageComponent}
+          <br />
+          {text}
+        </a>
       </div>
     </div>
   )
