@@ -59,6 +59,17 @@ function transformEntry(entry) {
     })
   }
 
+  if (fields.headerImage) {
+    fields.headerImage = {
+      fixed: {
+        src: fields.headerImage.fields.file.url,
+      },
+      resize: {
+        src: fields.headerImage.fields.file.url,
+      },
+    }
+  }
+
   if (fields.authorAvatar) {
     fields.authorAvatar = {
       fixed: {
