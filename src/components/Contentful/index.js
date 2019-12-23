@@ -7,6 +7,7 @@ import Prose from './Prose'
 import Highlight from './Highlight'
 import HeaderImages from './HeaderImages'
 import ImageLink from './ImageLink'
+import Carousel from './Carousel'
 import toHtmlId from '../../helpers/toHtmlId'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 
@@ -127,6 +128,8 @@ function ComponentRenderer(content) {
           small={content.small}
         />
       )
+    case 'ContentfulCarousel':
+      return <Carousel name={content.name} />
     default:
       return <div>Unknown Content Type: {content.__typename}</div>
   }

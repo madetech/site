@@ -17,7 +17,6 @@ export default function ContentfulHero({
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
-  let headerLinksComponent
   let links
 
   let backgroundColourStyle
@@ -38,6 +37,7 @@ export default function ContentfulHero({
 
   function list() {
     headerLinks.forEach(link => {
+      link.reference = '#'
       if (link.slug) {
         link.reference = 'https://www.madetech.com' + link.slug
       } else {
@@ -56,12 +56,6 @@ export default function ContentfulHero({
           </a>
         ))}
       </div>
-    )
-  }
-
-  if (headerLinks) {
-    headerLinksComponent = (
-      <div className="contentful-hero__header-links">{headerLinks[0].name}</div>
     )
   }
 

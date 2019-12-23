@@ -23,17 +23,12 @@ export default function ContentfulInlineImages({
   })
 
   let captionComponent
-  let overlayClassName
-
-  if (overlay == 'yes') {
-    overlayClassName = 'overlay'
-  }
 
   if (caption)
     captionComponent = <p className="inline-images__caption">{caption}</p>
 
   return (
-    <div className={`inline-images ${overlayClassName}`} id={id}>
+    <div className={`inline-images ${overlay}`} id={id}>
       <div className="container">
         <div className="row">
           <div

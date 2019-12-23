@@ -66,7 +66,9 @@ export default function ContentfulHighlight({
 
   return (
     <div className={containerClassName}>
-      <a id={entry_id}></a>
+      <a id={entry_id} href={`#${entry_id}`}>
+        {' '}
+      </a>
       <div
         className="contentful-highlight__bg-left"
         style={{ width: `${leftBackgroundWidth}%` }}
