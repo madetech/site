@@ -70,6 +70,14 @@ function transformEntry(entry) {
     }
   }
 
+  if (fields.headerLinks) {
+    var extractedHeaderLinks = []
+    fields.headerLinks.forEach(function(headerLink) {
+      extractedHeaderLinks.push(headerLink.fields)
+    })
+    fields.headerLinks = extractedHeaderLinks
+  }
+
   if (fields.authorAvatar) {
     fields.authorAvatar = {
       fixed: {
