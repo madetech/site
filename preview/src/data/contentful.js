@@ -13,6 +13,9 @@ function capitalizeFirstLetter(string) {
 }
 
 function typename(entry) {
+  if (entry.sys.contentType.sys.id === 'imagelink') {
+    return 'ContentfulImageLink'
+  }
   return `Contentful${capitalizeFirstLetter(entry.sys.contentType.sys.id)}`
 }
 
@@ -57,6 +60,17 @@ function transformEntry(entry) {
         },
       }
     })
+  }
+
+  if (fields.headerImage) {
+    fields.headerImage = {
+      fixed: {
+        src: fields.headerImage.fields.file.url,
+      },
+      resize: {
+        src: fields.headerImage.fields.file.url,
+      },
+    }
   }
 
   if (fields.authorAvatar) {
