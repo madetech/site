@@ -13,9 +13,6 @@ function capitalizeFirstLetter(string) {
 }
 
 function typename(entry) {
-  if (entry.sys.contentType.sys.id === 'imagelink') {
-    return 'ContentfulImageLink'
-  }
   return `Contentful${capitalizeFirstLetter(entry.sys.contentType.sys.id)}`
 }
 
@@ -23,6 +20,7 @@ function transformEntry(entry) {
   const fields = {
     __typename: typename(entry),
     __updatedAt: entry.sys.updatedAt,
+    id: entry.sys.id,
     ...entry.fields,
   }
 
@@ -71,6 +69,15 @@ function transformEntry(entry) {
         src: fields.headerImage.fields.file.url,
       },
     }
+  }
+
+  if (fields.headerLinks) {
+    var extractedHeaderLinks = []
+    fields.headerLinks.forEach(function(headerLink) {
+      headerLink.fields.id = headerLink.sys.id
+      extractedHeaderLinks.push(headerLink.fields)
+    })
+    fields.headerLinks = extractedHeaderLinks
   }
 
   if (fields.authorAvatar) {

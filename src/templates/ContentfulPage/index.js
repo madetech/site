@@ -49,7 +49,7 @@ export const pageQuery = graphql`
             ...prose
             ...tweet
             ...jobsBoard
-            ...imagelink
+            ...imageLink
           }
         }
       }
@@ -94,7 +94,7 @@ export const pageQuery = graphql`
     }
     overlay
   }
-  fragment imagelink on ContentfulImageLink {
+  fragment imageLink on ContentfulImageLink {
     url
     image {
       fixed(width: 600) {
