@@ -20,6 +20,7 @@ function transformEntry(entry) {
   const fields = {
     __typename: typename(entry),
     __updatedAt: entry.sys.updatedAt,
+    id: entry.sys.id,
     ...entry.fields,
   }
 
