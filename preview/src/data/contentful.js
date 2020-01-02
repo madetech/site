@@ -74,6 +74,7 @@ function transformEntry(entry) {
   if (fields.headerLinks) {
     var extractedHeaderLinks = []
     fields.headerLinks.forEach(function(headerLink) {
+      headerLink.fields.id = headerLink.sys.id
       extractedHeaderLinks.push(headerLink.fields)
     })
     fields.headerLinks = extractedHeaderLinks
