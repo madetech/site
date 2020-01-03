@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../all.scss'
-import CookieConsent from './CookieConsent'
 import Meta from './Meta'
 import Scripts from './Scripts'
 import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
