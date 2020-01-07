@@ -152,7 +152,7 @@ export const pageQuery = graphql`
         srcSet
         width
       }
-      resize(width: 600) {
+      resize(width: 300) {
         src
       }
     }
