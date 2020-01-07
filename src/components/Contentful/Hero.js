@@ -68,8 +68,8 @@ export default function ContentfulHero({
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
   return (
-    <div className={`${backgroundColourStyle}`} id={id}>
-      <Hero>
+    <div className={`contentful-hero ${backgroundColourStyle}`} id={id}>
+      <Hero backgroundColour={backgroundColourStyle}>
         <div className="container">
           <div className="contentful-hero__row">
             <div className="row">
