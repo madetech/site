@@ -19,7 +19,6 @@ export default function ContentfulHero({
   let textSizeStyle
   let headerTextComponent
   let links
-
   let backgroundColourStyle
 
   if (pageBreadcrumb && pageBreadcrumb.links) {
