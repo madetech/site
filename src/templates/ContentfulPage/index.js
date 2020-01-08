@@ -152,7 +152,7 @@ export const pageQuery = graphql`
         srcSet
         width
       }
-      resize(width: 600) {
+      resize(width: 300) {
         src
       }
     }
@@ -160,23 +160,25 @@ export const pageQuery = graphql`
     textSize
     backgroundColour
     headerLinks {
-      ... on ContentfulGrid {
-        id
-        name
-        linkTitle
-      }
-      ... on ContentfulJumbotron {
-        id
-        name
-      }
-      ... on ContentfulHighlight {
-        id
-        name
-      }
-      ... on ContentfulPage {
-        id
-        name
-        slug
+      ... on Node {
+        ... on ContentfulGrid {
+          id
+          name
+          linkTitle
+        }
+        ... on ContentfulJumbotron {
+          id
+          name
+        }
+        ... on ContentfulHighlight {
+          id
+          name
+        }
+        ... on ContentfulPage {
+          id
+          name
+          slug
+        }
       }
     }
   }
