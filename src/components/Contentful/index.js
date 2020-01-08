@@ -27,6 +27,7 @@ function ComponentRenderer(content) {
           constrainImageHeight={content.constrainImageHeight}
           id={id}
           images={content.images}
+          overlay={content.overlay}
         />
       )
     case 'ContentfulJumbotron':
