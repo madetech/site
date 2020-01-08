@@ -69,7 +69,6 @@ export default function ContentfulHero({
 
   return (
     <div className={`contentful-hero ${backgroundColourStyle}`} id={id}>
-      <Hero backgroundColour={backgroundColourStyle}></Hero>
       <div className="container">
         <div className="contentful-hero__row">
           <div className="row">
