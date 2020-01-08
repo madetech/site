@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
+import { Hero } from '@madetech/frontend'
 
 export default function ContentfulHero({
   id,
