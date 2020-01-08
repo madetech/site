@@ -1,7 +1,4 @@
 .grey{
-  background:  linear-gradient(to left,  $light-grey) no-repeat;
-  background-position: left;
-
   @include lg-desktop {
     background-size: calc(60%) calc(100%);
   }
@@ -69,41 +66,10 @@
       font-size: $px45;
       letter-spacing: -0.56px;
     }
-    
-    margin-bottom: 25px;
   }
-  
-  h1.green {
-    color: $mt-green;
-  }
-
-  h1.white {
-    color: $white;
-  }
-
-  h1.black {
-    color: $black;
-  }
-
-  div.hero_green {
-    box-shadow: 20px 20px $mt-green;}
-  
-  div.hero_white {
-    box-shadow: 20px 20px $white;}
-  
-  div.hero_black {
-    box-shadow: 20px 20px $black;
-  } 
 }
 
 .contentful-hero__breadcrumb {
-  a {
-    color: $mid-grey;
-  }
-  color: $mid-grey;
-  font-weight: bold;
-  font-size: $px12;
-
   @include desktop {
     margin-top: 35px;
     margin-bottom: 25px;
@@ -120,80 +86,16 @@
   }
 }
 
-.contentful-hero__section-type {
-  color: $white;
-  font-weight: $bold;
-  font-size: $px12;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-}
-
-.contentful-hero__page-title {
-  margin: 0;
-}
-
-.contentful-hero__image {
-  position: relative;
-  z-index: 10;
-  align-content: center;
-  background: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-}
-
-.contentful-hero__header-links {
-  color: $mt-green;
-  font-weight: bold;
-  line-height: 20px;
-  background: rgba(0,0,0,0.7);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding-left: 40px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-}
-
-.contentful-hero__links-mobile{
-  color: $mt-green;
-  position: absolute;
-  left: 0px;
-  font-weight: bold;
-  line-height: 20px;
-  display: hidden;
-  padding-top: 50px;
-}
-
-.contentful-hero__header-links__title {
-  font-size: $px20;
-  line-height: 50px;
-  color: white;
-  font-weight: 40;
-  margin-bottom: 0px;
-  padding-top: 25px;
-}
-
 .contentful-hero__links__a {
-  font-family: Poppins;
-  font-weight: $extra-bold;
-  color: $mt-green;
-  text-decoration: underline;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-
   @include desktop { 
     font-size: $px22;
     line-height: 50px;
   }
 
-
   @include sm-desktop { 
     font-size: $px18;
     line-height: 40px;
   }
-
 
   @include tablet { 
     font-size: $px12;
@@ -201,19 +103,7 @@
   }
 }
 
-.contentful-hero__row {
-  margin-bottom: -150px;
-}
-
-.contentful-hero__text-box{
-
-  padding-bottom: 125px;
-}
-
 .contentful-hero__text {
-  color: #333;
-
-  padding-right: 50px;
   @include desktop{
     font-size: $px24;
   }
@@ -239,10 +129,6 @@
     font-size: $px18;
     letter-spacing: -0.56px;
   }
-  
-  font-size: 24px;
-  font-weight: 500;
-  font-family: Poppins;
-  line-height: 1.46;
+
 }
 
