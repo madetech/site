@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 import { FakeThing } from '@madetech/frontend'
-import { Hero } from '@madetech/frontend'
+//import { Hero } from '@madetech/frontend'
 
 export default function ContentfulHero({
   id,
@@ -70,7 +70,6 @@ export default function ContentfulHero({
 
   return (
     <div className={`contentful-hero ${backgroundColourStyle}`} id={id}>
-      <Hero> </Hero>
       <div className="container">
         <div className="contentful-hero__row">
           <div className="row">
