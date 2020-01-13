@@ -318,3 +318,38 @@
     padding-top: 0 !important;
   }
 }
+
+.contentful-grid {
+  &.green-gradient {
+    &.talk__to__us {
+      padding: 79px 0 91px 0 !important;
+
+      h3 {
+        margin: 0;
+      }
+
+      .contentful-prose {
+        &.talk__to__us__image {
+          div {
+            background-color: $white;
+          }
+        }
+
+        &.talk__to__us__button {
+          p {
+            background-color: $white;
+            padding: 16px 0 16px 0;
+            border-radius: 6px;        
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+            a {
+              color: $mt-green-dark;
+              text-decoration: none;
+              font-weight: $medium;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    
