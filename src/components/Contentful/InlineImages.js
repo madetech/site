@@ -36,9 +36,7 @@ export default function ContentfulInlineImages({
           >
             {captionComponent}
 
-            <div className="d-flex justify-content-between">
-              {imageComponents}
-            </div>
+            <div className="d-flex">{imageComponents}</div>
           </div>
         </div>
       </div>
