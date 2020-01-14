@@ -87,7 +87,9 @@ ul li:before {
   }
 
   &.black,
-  &.shaded {
+  &.shaded,
+  &.normal,
+  &.white {
     u,
     a {
       text-decoration: none;
