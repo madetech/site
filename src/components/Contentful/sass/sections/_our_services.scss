@@ -214,7 +214,6 @@
     padding:3%;
     background-color: $mt-green;
   } 
-
   
   .avatar {
     
@@ -265,12 +264,11 @@
 
   .services-overview-bulletpoints {
     ul li:before {
-      //background: $white;
       padding-left: -20px;
     }
     height: 300px;
     border-left-style: solid;
-    border-left-width: $px4;
+    border-left-width: $px04;
     padding-left: 25px;
   }
 
@@ -281,5 +279,4 @@
     border-left-width: $px4;
     border-left-color: $mt-green;
   }
-
 }
