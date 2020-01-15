@@ -179,6 +179,11 @@
 
 .overview {
 
+  p {
+    font-size: $px20;
+  }
+
+
   .contentful-prose {
     &:not(.small) {
       .prose {
@@ -202,12 +207,15 @@
   h2 {
     color: $mt-green;
   } 
-  a{
+
+  a {
     color: $white;
     border:none;
     padding:3%;
     background-color: $mt-green;
   } 
+
+  
   .avatar {
     
     padding-bottom: $px24;
@@ -216,7 +224,6 @@
     .prose {
       margin-bottom: 20px;
       display: inline-block;
-   
       }
     
    
@@ -258,15 +265,20 @@
 
   .services-overview-bulletpoints {
     ul li:before {
-      background: $white;
+      //background: $white;
+      padding-left: -20px;
     }
+    height: 300px;
     border-left-style: solid;
+    border-left-width: $px4;
     padding-left: 25px;
   }
 
   .overview-text {
+    height: 300px;
     padding-left: 25px;
     border-left-style: solid;
+    border-left-width: $px4;
     border-left-color: $mt-green;
   }
 
