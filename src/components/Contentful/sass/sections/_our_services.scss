@@ -178,10 +178,36 @@
 }
 
 .overview {
-  h4{
-    font-size: $px24;
+
+  .contentful-prose {
+    &:not(.small) {
+      .prose {
+        h2 {
+          @include desktop {
+            margin-bottom: 15px;
+          }
+
+          @include tablet {
+            margin-bottom: 10px;
+          }
+  
+          @include mobile {
+            margin-bottom: 5px;
+          }
+        }  
+      }
+    }
   }
 
+  h2 {
+    color: $mt-green;
+  } 
+  a{
+    color: $white;
+    border:none;
+    padding:3%;
+    background-color: $mt-green;
+  } 
   .avatar {
     
     padding-bottom: $px24;
@@ -190,14 +216,16 @@
     .prose {
       margin-bottom: 20px;
       display: inline-block;
-    }
+   
+      }
+    
    
     p {
+        font-family: poppins;
         font-size: $px24;
-        font-weight: $medium;;
+        font-weight: $medium;
         line-height: 1.43;
-        margin-bottom: 0px;
-        margin-top: 20px;
+        margin-top: 5px;
 
         @include tablet {
             font-size: $px12;
@@ -229,6 +257,10 @@
 }
 
   .overview-bulletpoints {
+    ul li:before {
+      background: $white;
+    }
+    
     padding-left: 25px;
     border-left-style: solid;
     border-left-color: $white;
