@@ -194,10 +194,10 @@
    
     p {
         font-size: $px24;
-        font-weight: $medium;;
+        font-weight: $medium;
         line-height: 1.43;
         margin-bottom: 0px;
-        margin-top: 20px;
+        margin-top: 5px;
 
         @include tablet {
             font-size: $px12;
