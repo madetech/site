@@ -1,3 +1,4 @@
+@import 'src/components/Contentful/sass/abstracts/_mixins.scss';
 .inline-images {
   margin: 2rem 0;
   text-align: center;
@@ -6,6 +7,11 @@
 .overlay {
   margin-top: -70px;
   margin-left: -70px;
+
+  @include mobile {
+    margin-top: -50px;
+    margin-left: -70px;
+  }
 }
 
 @include media-breakpoint-up(md) {
