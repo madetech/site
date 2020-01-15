@@ -176,3 +176,68 @@
     border-left: 4px solid $dark-grey;
   }
 }
+
+.overview {
+  h4{
+    font-size: $px24;
+  }
+
+  .avatar {
+    
+    padding-bottom: $px24;
+    margin-top: 0;
+
+    .prose {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+   
+    p {
+        font-size: $px24;
+        font-weight: $medium;;
+        line-height: 1.43;
+        margin-bottom: 0px;
+        margin-top: 20px;
+
+        @include tablet {
+            font-size: $px12;
+        }
+
+        @include mobile {
+            font-size: $px12;
+        }
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+        margin-right: 32px;
+        vertical-align: top;
+
+        @include tablet {
+            height: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        @include mobile {
+            height: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+    }
+}
+
+  .overview-bulletpoints {
+    padding-left: 25px;
+    border-left-style: solid;
+    border-left-color: $white;
+  }
+
+  .overview-text {
+    padding-left: 25px;
+    border-left-style: solid;
+    border-left-color: $mt-green;
+  }
+
+}
