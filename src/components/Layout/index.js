@@ -28,14 +28,19 @@ export default function Layout({
 
       <TopBar>
         <a href="https://learn.madetech.com">Learn</a>
-        <a href="/resources/books">Books</a>
+        <a href="/blog">Blog</a>
+        <a href="/partners">Partners</a>
+        <a href="/frameworks">Frameworks</a>
+        <a href="/careers">Careers</a>
       </TopBar>
 
       <Header constrainLinkWidth logoHref="/" scrollable>
+        <a href="/">Why Made Tech</a>
         <a href="/our-services">Our Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a>
+        <a href="/sectors">Sectors</a>
+        <a href="/">Case studies</a>
+        <a href="/">About Us</a>
+        <a href="/contact">Get in touch</a>
       </Header>
 
       <div className={pageContentClass}>{children}</div>
