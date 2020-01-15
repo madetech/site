@@ -256,14 +256,12 @@
     }
 }
 
-  .overview-bulletpoints {
+  .services-overview-bulletpoints {
     ul li:before {
       background: $white;
     }
-    
-    padding-left: 25px;
     border-left-style: solid;
-    border-left-color: $white;
+    padding-left: 25px;
   }
 
   .overview-text {

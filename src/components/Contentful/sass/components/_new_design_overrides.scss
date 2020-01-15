@@ -114,7 +114,7 @@ ul li:before {
 
   &.black {
     background-color: $black;
-
+    
     p,
     a {
       color: $white;
@@ -128,6 +128,10 @@ ul li:before {
     h3,
     h4 {
       color: $mt-green;
+    }
+
+    .services-overview-bulletpoints {
+      border-left-color: $white;
     }
   }
 
@@ -263,6 +267,7 @@ ul li:before {
     font-weight: $extra-bold;
     color: $black;
   }
+
 
   .prose {
     color: $dark-grey;
