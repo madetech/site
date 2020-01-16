@@ -42,18 +42,27 @@ h1 {
 //hero
 h1.small {
   @include desktop {
-    font-size: $px60;
-    line-height: 1;
+    font-size: $px50;
+    line-height: 60px;
+    letter-spacing: -0.62px;
+  }
+
+  @include sm-desktop {
+    font-size: $px42;
+    line-height: 50px;
+    letter-spacing: -0.52px;
   }
 
   @include tablet {
-    font-size: $px48;
-    line-height: 0.97;
+    font-size: $px32;
+    line-height: 40px;
+    letter-spacing: -0.46px;
   }
 
   @include mobile {
     font-size: $px32;
-    line-height: 0.94;
+    line-height: 40px;
+    letter-spacing: -0.46px;
   }
 }
 
