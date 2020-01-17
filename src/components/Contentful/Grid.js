@@ -33,7 +33,7 @@ function GridContainer({
 
   return (
     <div className={className} id={id} linkTitle={linkTitle}>
-      <a id={entry_id} href={`#${entry_id}`} className="d-none">
+      <a id={entry_id} href={`#${entry_id}`} style={{ opacity: 0 }}>
         {' '}
       </a>
       <div className={containerClassName}>
