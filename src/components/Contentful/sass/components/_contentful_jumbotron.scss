@@ -16,17 +16,17 @@
 
   &.with-black-text {
     .jumbotron {
-      color: black;
+      color: $black;
 
       h1, h2, h3, h4 {
-        color: black;
+        color: $black;
       }
     }
 
     .jumbotron p:last-child a {
       @extend .btn-outline-dark;
       border-color: black;
-      color: black;
+      color: $black;
       text-shadow: none;
 
       &:focus, &:hover {

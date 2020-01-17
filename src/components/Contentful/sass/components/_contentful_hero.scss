@@ -80,23 +80,18 @@
 
   @include sm-desktop{ 
     font-size: $px20;
-    letter-spacing: -0.81px;
   }
 
-  @include tablet { 
-   
+  @include tablet {  
     font-size: $px18;
-    letter-spacing: -0.81px;
   }
 
   @include sm-tablet { 
     font-size: $px18;
-    letter-spacing: -0.81px;
   }
 
   @include mobile {
     font-size: $px18;
-    letter-spacing: -0.56px;
   }
 
 }
