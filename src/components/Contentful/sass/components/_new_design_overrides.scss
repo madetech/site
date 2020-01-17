@@ -280,7 +280,10 @@ ul li:before {
 
 
   .prose {
-    color: $dark-grey;
+    color: $black;
+    h1, h2, h3, h4, h5, h6, a {
+      color: $black;
+    }
 
     + img.after {
       margin-top: 25px;
