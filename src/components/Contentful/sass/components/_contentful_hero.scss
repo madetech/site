@@ -35,38 +35,7 @@
 
   @include mobile {
     margin-bottom: $mobile-spacing;
-  }
-  
-  h1 {
-    @include desktop{
-      line-height: $px80;
-      font-size: $px70;
-    }
-
-    @include sm-desktop{ 
-      line-height: $px70;
-      font-size: $px60;
-      letter-spacing: -0.81px;
-    }
-
-    @include tablet { 
-      line-height: $px50;
-      font-size: $px48;
-      letter-spacing: -0.81px;
-    }
-
-    @include sm-tablet { 
-      line-height: $px50;
-      font-size: $px45;
-      letter-spacing: -0.81px;
-    }
-
-    @include mobile {
-      line-height: $px50;
-      font-size: $px45;
-      letter-spacing: -0.56px;
-    }
-  }
+  }  
 }
 
 .contentful-hero__breadcrumb {
