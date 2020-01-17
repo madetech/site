@@ -93,6 +93,7 @@ ul li:before {
   &.white {
     u,
     a {
+      padding-bottom: 4px;
       text-decoration: none;
       box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
     }
@@ -117,7 +118,7 @@ ul li:before {
     
     p,
     a {
-      color: $white;
+      color: $white !important;
       font-size: $px20;
     }
 
@@ -279,7 +280,10 @@ ul li:before {
 
 
   .prose {
-    color: $dark-grey;
+    color: $black;
+    h1, h2, h3, h4, h5, h6, a {
+      color: $black;
+    }
 
     + img.after {
       margin-top: 25px;
