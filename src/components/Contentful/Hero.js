@@ -21,7 +21,6 @@ export default function ContentfulHero({
   let textSizeStyle
   let headerTextComponent
   let headerImageShadowColourStyle
-  let headerImageLayoutStyle
   let links
   let backgroundColourStyle
 
@@ -42,19 +41,23 @@ export default function ContentfulHero({
     )
   }
 
-  let heroTextComponent = (
-    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-      <div className="contentful-hero__text-box">
-        {pageBreadcrumbComponent}
-        <h1
-          className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
-        >
-          {parsedTitle}
-        </h1>
-        {headerTextComponent}
+  let heroTextComponent
+
+  function heroTextComponentMaker(offset) {
+    return (
+      <div className={`${offset}`}>
+        <div className="contentful-hero__text-box">
+          {pageBreadcrumbComponent}
+          <h1
+            className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
+          >
+            {parsedTitle}
+          </h1>
+          {headerTextComponent}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 
   if (headerImageShadowColour) {
     headerImageShadowColourStyle = headerImageShadowColour
@@ -107,7 +110,10 @@ export default function ContentfulHero({
   }
 
   let heroComponent
+  let offset
   if (headerImageLayout === 'before') {
+    offset = 'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
+    heroTextComponent = heroTextComponentMaker(offset)
     heroComponent = (
       <div className="row before">
         {heroImageComponent}
@@ -115,6 +121,8 @@ export default function ContentfulHero({
       </div>
     )
   } else {
+    offset = 'col-xl-6 col-lg-6 col-md-6'
+    heroTextComponent = heroTextComponentMaker(offset)
     heroComponent = (
       <div className="row">
         {heroTextComponent}
