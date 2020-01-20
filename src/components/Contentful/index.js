@@ -52,6 +52,8 @@ function ComponentRenderer(content) {
           pageTitle={content.pageTitle}
           headerText={content.headerText}
           headerImage={content.headerImage}
+          headerImageLayout={content.headerImageLayout}
+          headerImageShadowColour={content.headerImageShadowColour}
           textColour={content.textColour}
           textSize={content.textSize}
           backgroundColour={content.backgroundColour}

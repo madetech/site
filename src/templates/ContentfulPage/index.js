@@ -156,6 +156,8 @@ export const pageQuery = graphql`
         src
       }
     }
+    headerImageLayout
+    headerImageShadowColour
     textColour
     textSize
     backgroundColour

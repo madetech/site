@@ -9,6 +9,8 @@ export default function ContentfulHero({
   pageTitle,
   headerText,
   headerImage,
+  headerImageLayout,
+  headerImageShadowColour,
   textColour,
   textSize,
   backgroundColour,
@@ -18,6 +20,8 @@ export default function ContentfulHero({
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
+  let headerImageShadowColourStyle
+  let headerImageLayoutStyle
   let links
 
   let backgroundColourStyle
@@ -64,6 +68,12 @@ export default function ContentfulHero({
   textSizeStyle = textSize || ''
   backgroundColourStyle = backgroundColour || ''
 
+  if (headerImageShadowColour) {
+    headerImageShadowColourStyle = headerImageShadowColour
+  } else {
+    headerImageShadowColourStyle = textColourStyle
+  }
+
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
@@ -85,7 +95,7 @@ export default function ContentfulHero({
                 </div>
               </div>
               <div
-                className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
+                className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
                 style={{
                   backgroundImage:
                     'url(' +
