@@ -9,6 +9,8 @@ export default function ContentfulHero({
   pageTitle,
   headerText,
   headerImage,
+  headerImageLayout,
+  headerImageShadowColour,
   textColour,
   textSize,
   backgroundColour,
@@ -18,19 +20,66 @@ export default function ContentfulHero({
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
+  let headerImageShadowColourStyle
   let links
-
   let backgroundColourStyle
+
+  textColourStyle = textColour || ''
+  textSizeStyle = textSize || ''
+  backgroundColourStyle = backgroundColour || ''
 
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
   }
+
+  let parsedTitle = threeSpaceToLineBreak(pageTitle)
+  parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
   if (headerText) {
     headerTextComponent = (
       <div className="contentful-hero__text">{headerText}</div>
     )
   }
+
+  let heroTextComponent
+
+  function heroTextComponentMaker(offset) {
+    return (
+      <div className={`${offset}`}>
+        <div className="contentful-hero__text-box">
+          {pageBreadcrumbComponent}
+          <h1
+            className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
+          >
+            {parsedTitle}
+          </h1>
+          {headerTextComponent}
+        </div>
+      </div>
+    )
+  }
+
+  if (headerImageShadowColour) {
+    headerImageShadowColourStyle = headerImageShadowColour
+  } else {
+    headerImageShadowColourStyle = textColourStyle
+  }
+
+  let heroImageComponent = (
+    <div
+      className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
+      style={{
+        backgroundImage:
+          'url(' +
+          headerImage.fixed.src +
+          '), url(' +
+          headerImage.resize.src +
+          ')',
+      }}
+    >
+      {links}
+    </div>
+  )
 
   if (headerLinks) {
     links = list()
@@ -60,45 +109,33 @@ export default function ContentfulHero({
     )
   }
 
-  textColourStyle = textColour || ''
-  textSizeStyle = textSize || ''
-  backgroundColourStyle = backgroundColour || ''
-
-  let parsedTitle = threeSpaceToLineBreak(pageTitle)
-  parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
+  let heroComponent
+  let offset
+  if (headerImageLayout === 'before') {
+    offset = 'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
+    heroTextComponent = heroTextComponentMaker(offset)
+    heroComponent = (
+      <div className="row before">
+        {heroImageComponent}
+        {heroTextComponent}
+      </div>
+    )
+  } else {
+    offset = 'col-xl-6 col-lg-6 col-md-6'
+    heroTextComponent = heroTextComponentMaker(offset)
+    heroComponent = (
+      <div className="row">
+        {heroTextComponent}
+        {heroImageComponent}
+      </div>
+    )
+  }
 
   return (
     <div className={`contentful-hero ${backgroundColourStyle}`} id={id}>
       <Hero backgroundColour={backgroundColourStyle}>
         <div className="container">
-          <div className="contentful-hero__row">
-            <div className="row">
-              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                <div className="contentful-hero__text-box">
-                  {pageBreadcrumbComponent}
-                  <h1
-                    className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
-                  >
-                    {parsedTitle}
-                  </h1>
-                  {headerTextComponent}
-                </div>
-              </div>
-              <div
-                className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${textColourStyle}`}
-                style={{
-                  backgroundImage:
-                    'url(' +
-                    headerImage.fixed.src +
-                    '), url(' +
-                    headerImage.resize.src +
-                    ')',
-                }}
-              >
-                {links}
-              </div>
-            </div>
-          </div>
+          <div className="contentful-hero__row">{heroComponent}</div>
         </div>
       </Hero>
     </div>

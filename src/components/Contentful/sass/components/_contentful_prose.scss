@@ -93,4 +93,8 @@ header + div:not(.new-design) {
       width: 100%;
     }
   }
+
+  &.overlay {
+    margin-top: -50px;
+  }
 }
