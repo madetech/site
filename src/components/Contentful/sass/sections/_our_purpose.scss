@@ -13,5 +13,44 @@
         padding-bottom: 15%;
       }
     }
+
+    .row {
+      &.before {
+        .contentful-hero__page-title {
+          line-height: 0.86;
+        }
+
+        @include lg-desktop {
+          margin-top: -133px;
+          padding-bottom: 200px;
+        }
+
+        @include sm-desktop {
+          margin-top: -113px;
+          padding-bottom: 200px;
+        }
+
+        @include lg-tablet {
+          margin-top: -90px;
+          padding-bottom: 200px;
+        }
+      }
+    }
+  }
+
+  .contentful-prose {
+    &.text-left {
+      @include lg-desktop {
+        margin-bottom: 75px;
+      }
+
+      @include sm-desktop {
+        margin-bottom: 65px;
+      }
+
+      @include lg-tablet {
+        margin-bottom: 40px;
+      }
+    }
   }
 }
