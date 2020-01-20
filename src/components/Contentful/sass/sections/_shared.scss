@@ -395,14 +395,16 @@
     }
   }
 }
+
 .overlay-title {
-  h2{
+  h1,
+  h2 {
     @include mobile {
       margin-top: -80px !important;
     }
     @include tablet{
       margin-top: -130px !important;
     }
-    margin-top: -140px !important;
+    margin-top: -155px !important;
   }
 }
