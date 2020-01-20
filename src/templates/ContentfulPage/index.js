@@ -161,6 +161,7 @@ export const pageQuery = graphql`
     textColour
     textSize
     backgroundColour
+    customClasses
     headerLinks {
       ... on Node {
         ... on ContentfulGrid {

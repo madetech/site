@@ -15,6 +15,7 @@ export default function ContentfulHero({
   textSize,
   backgroundColour,
   headerLinks,
+  customClasses,
 }) {
   let pageBreadcrumbComponent
   let textColourStyle
@@ -23,6 +24,11 @@ export default function ContentfulHero({
   let headerImageShadowColourStyle
   let links
   let backgroundColourStyle
+  let heroClassNames = ''
+
+  if (customClasses) {
+    customClasses.forEach(c => (heroClassNames += ` ${c}`))
+  }
 
   textColourStyle = textColour || ''
   textSizeStyle = textSize || ''
@@ -132,7 +138,10 @@ export default function ContentfulHero({
   }
 
   return (
-    <div className={`contentful-hero ${backgroundColourStyle}`} id={id}>
+    <div
+      className={`contentful-hero ${backgroundColourStyle} ${heroClassNames}`}
+      id={id}
+    >
       <Hero backgroundColour={backgroundColourStyle}>
         <div className="container">
           <div className="contentful-hero__row">{heroComponent}</div>

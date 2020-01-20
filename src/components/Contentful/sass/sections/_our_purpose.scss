@@ -78,13 +78,13 @@
     }
   }
 
-  #our-purpose-our-vision {
+  .our__purpose__our__vision__hero {
     &.contentful-hero {
       margin-top: -50px;
     }
 
-    &.contentful-grid {
-      margin-top: 200px;
-    }
+    // &.contentful-grid {
+    //   margin-top: 200px;
+    // }
   }
 }
