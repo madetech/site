@@ -78,6 +78,7 @@ function ComponentRenderer(content) {
           smallColumnWidth={content.smallColumnWidth}
           smallColumnOffset={content.smallColumnOffset}
           textAlign={content.textAlign}
+          overlay={content.overlay}
         />
       )
     case 'ContentfulGrid':

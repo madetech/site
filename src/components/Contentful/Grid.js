@@ -110,10 +110,12 @@ function GridProse({
   screenReaderText,
   style,
   textAlign,
+  overlay,
 }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
   if (style) className += ` ${style}`
+  if (overlay) className += ` ${overlay}`
   if (customClasses) {
     customClasses.forEach(c => (className += ` ${c}`))
   }
@@ -238,6 +240,7 @@ function GridComponentRenderer(content) {
           screenReaderText={content.screenReaderText}
           style={content.style}
           textAlign={content.textAlign}
+          overlay={content.overlay}
         />
       )
     case 'ContentfulCard':
