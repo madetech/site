@@ -52,6 +52,8 @@ function ComponentRenderer(content) {
           pageTitle={content.pageTitle}
           headerText={content.headerText}
           headerImage={content.headerImage}
+          headerImageLayout={content.headerImageLayout}
+          headerImageShadowColour={content.headerImageShadowColour}
           textColour={content.textColour}
           textSize={content.textSize}
           backgroundColour={content.backgroundColour}
@@ -76,6 +78,7 @@ function ComponentRenderer(content) {
           smallColumnWidth={content.smallColumnWidth}
           smallColumnOffset={content.smallColumnOffset}
           textAlign={content.textAlign}
+          overlay={content.overlay}
         />
       )
     case 'ContentfulGrid':

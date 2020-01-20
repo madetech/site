@@ -17,9 +17,11 @@ export default function ContentfulProse({
   smallColumnWidth,
   smallColumnOffset,
   textAlign,
+  overlay,
 }) {
   let proseClassName = 'contentful-prose'
   if (textAlign) proseClassName += ` text-${textAlign}`
+  if (overlay) proseClassName += ` ${overlay}`
   if (customClasses) {
     customClasses.forEach(c => (proseClassName += ` ${c}`))
   }

@@ -35,12 +35,12 @@
   background-color: #fecc2b;
 
   .prose {
-    color: #000;
+    color: $black;
 
     p:last-child a {
       @extend .btn-outline-dark;
       border-color: black;
-      color: black;
+      color: $black;
       text-shadow: none;
 
       &:focus,
@@ -55,7 +55,7 @@
   background-color: #6fa9ea;
 
   .prose {
-    color: #000;
+    color: $black;
 
     p:last-child a {
       @extend .btn-dark;
