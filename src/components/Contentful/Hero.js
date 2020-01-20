@@ -49,9 +49,9 @@ export default function ContentfulHero({
 
   let heroTextComponent
 
-  function heroTextComponentMaker(offset) {
+  function heroTextComponentMaker(bootstrapSizes) {
     return (
-      <div className={`${offset}`}>
+      <div className={`${bootstrapSizes}`}>
         <div className="contentful-hero__text-box">
           {pageBreadcrumbComponent}
           <h1
@@ -116,10 +116,11 @@ export default function ContentfulHero({
   }
 
   let heroComponent
-  let offset
+  let bootstrapSizes
   if (headerImageLayout === 'before') {
-    offset = 'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
-    heroTextComponent = heroTextComponentMaker(offset)
+    bootstrapSizes =
+      'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
+    heroTextComponent = heroTextComponentMaker(bootstrapSizes)
     heroComponent = (
       <div className="row before">
         {heroImageComponent}
@@ -127,8 +128,8 @@ export default function ContentfulHero({
       </div>
     )
   } else {
-    offset = 'col-xl-6 col-lg-6 col-md-6'
-    heroTextComponent = heroTextComponentMaker(offset)
+    bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
+    heroTextComponent = heroTextComponentMaker(bootstrapSizes)
     heroComponent = (
       <div className="row">
         {heroTextComponent}
