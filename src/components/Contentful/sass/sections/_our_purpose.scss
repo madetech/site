@@ -53,4 +53,13 @@
       }
     }
   }
+
+  .our__purpose__sectors__grid {
+    &.contentful-grid {
+      padding-top: 30px !important;
+      .overlay {
+        margin-top: -75px;
+      }
+    }
+  }
 }
