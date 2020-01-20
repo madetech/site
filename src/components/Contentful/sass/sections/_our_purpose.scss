@@ -59,7 +59,16 @@
       padding-top: 30px !important;
       .overlay {
         margin-top: -75px;
+
+        @include sm-tablet {
+          margin-top: auto;
+        }
+
+        @include mobile {
+          margin-top: auto;
+        }
       }
+
     }
   }
 }
