@@ -1,16 +1,16 @@
-.our__purpose {
-  .our__purpose__our__missions {
-    .container {
-      .row {
-        .col-xl-12 {
-          .contentful-prose {
-            .prose {
-              h1 {
-                border: red solid !important;
-              }
-            }
-          }
-        }
+&.our__purpose {
+  .contentful-hero__row {
+    .contentful-hero__text-box {
+      @include desktop {
+        padding: 15% 0 10% 0;
+      }   
+
+      @include lg-tablet {
+        padding: 15% 0 15% 0;
+      } 
+
+      @include sm-tablet {
+        padding-bottom: 15%;
       }
     }
   }
