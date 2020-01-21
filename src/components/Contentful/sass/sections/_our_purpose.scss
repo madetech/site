@@ -38,22 +38,24 @@
     }
   }
 
-  .contentful-prose {
-    &.text-left {
-      @include lg-desktop {
-        margin-bottom: 100px;
-      }
-
-      @include sm-desktop {
-        margin-bottom: 65px;
-      }
-
-      @include lg-tablet {
-        margin-bottom: 40px;
+  .our__purpose__section_1 {
+    .contentful-prose {
+      &.text-left {
+        @include lg-desktop {
+          margin-bottom: 100px;
+        }
+  
+        @include sm-desktop {
+          margin-bottom: 65px;
+        }
+  
+        @include lg-tablet {
+          margin-bottom: 40px;
+        }
       }
     }
   }
-
+  
   .our__purpose__sectors__grid {
     &.contentful-grid {
       padding: 30px 0 30px 0 !important;
@@ -68,7 +70,6 @@
           margin-top: auto;
         }
       }
-
     }
   }
 
