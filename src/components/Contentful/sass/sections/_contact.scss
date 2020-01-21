@@ -26,6 +26,10 @@
     }
 
     .contact__card {
+        a {
+            padding-bottom: 0;
+        }
+
         p {
             margin-bottom: 7px;
         }
