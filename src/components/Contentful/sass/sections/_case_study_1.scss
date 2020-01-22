@@ -25,27 +25,26 @@
           display: flex;
           flex-direction: column-reverse;
           img {
-            margin-top: -25% !important;
-            margin-left: -20%;
-            margin-right: -295px !important;
-            padding-bottom: 50px;
+            margin-top: -20% !important;
+            margin-left: -10%;
             max-height: fit-content !important;
             max-width: fit-content !important;
-            height: 500px !important;
+            height: 400px !important;
             width: auto !important;
           }
         }
 
         .contentful-prose {
           &.text-center {
-            height: 324px;
+            height: 500px;
             @include tablet {
               img {
                 margin-top: -18%;
                 max-height: fit-content !important;
                 max-width: fit-content !important;
-                height: 500px;
+                height: 100%;
                 width: auto;
+                float: none !important;
               }
             }
 
@@ -54,8 +53,9 @@
                 margin-top: -18%;
                 max-height: fit-content !important;
                 max-width: fit-content !important;
-                height: 425px;
+                float: none !important;
                 width: auto;
+                height: 100%;
               }
             }
 
@@ -66,13 +66,15 @@
         }
 
         img {
-          height: auto;
+          max-height: fit-content !important;
+          max-width: fit-content !important;
           width: auto;
-          margin-top: -25%;
+          height: 100%;
+          margin-top: -21%;
           margin-right: -50px;
           float: right !important;
           @include mobile {
-            float: unset !important;
+            float: none !important;
           }
         }
 
