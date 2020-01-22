@@ -6,15 +6,19 @@
   .contentful-hero__row {
     .contentful-hero__text-box {
       @include desktop {
-        padding: 15% 0 10% 0;
+        padding: 80px 0 65px 0;
       }   
 
       @include lg-tablet {
-        padding: 15% 0 15% 0;
+        padding: 50px 0 75px 0;
       } 
 
       @include sm-tablet {
-        padding-bottom: 15%;
+        padding: 40px 0 70px 0;
+      }
+
+      @include mobile {
+        padding: 25px 0 110px 0;
       }
     }
 
@@ -38,11 +42,22 @@
           margin-top: -90px;
           padding-bottom: 200px;
         }
+
+        @include sm-tablet {
+          padding-bottom: 20px;
+        }
+
+        @include mobile {
+          padding-bottom: 30px;
+        }
       }
     }
   }
 
   .our__purpose__section_1 {
+    @include sm-tablet {
+      padding: 50px 0 50px 0 !important;
+    }
     .contentful-prose {
       &.text-left {
         @include lg-desktop {
@@ -80,18 +95,54 @@
   .our__purpose__better__public__services__grid {
     &.contentful-grid {
       padding: 56px 0 200px 0 !important;
+
+      @include sm-desktop {
+        padding-bottom: 170px !important;
+      }
+
+      @include lg-tablet {
+        padding-bottom: 140px !important;
+      }
+
+      @include sm-tablet {
+        padding-bottom: 70px !important;
+      }
+
+      @include mobile {
+        padding-bottom: 50px !important;
+      }
     }
   }
 
   .our__purpose__our__vision__hero {
     &.contentful-hero {
       margin-top: -50px;
+
+      @include lg-tablet {
+        margin-top: -30px;
+      }
+
+      @include sm-tablet {
+        margin-top: 0px;
+      }
+
+      @include mobile {
+        margin-top: 0px;
+      }
     }
   }
 
   .our__purpose__our__vision__grid {
     &.contentful-grid {
-      padding-top: 160px !important;
+      padding: 50px 0 !important;
+
+      @include desktop {
+        padding: 150px 0 !important;
+      }
+
+      @include lg-tablet {
+        padding-top: 100px !important;
+      }
     }
     
     .contentful-prose {
@@ -101,6 +152,14 @@
 
       p {
         padding-top: 110px;
+
+        @include sm-tablet {
+          padding-top: 70px;
+        }
+
+        @include mobile {
+          padding-top: 50px;
+        }
       }
     }
   }
