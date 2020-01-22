@@ -1,38 +1,74 @@
 .case_study_2 {
   padding-bottom: 0px !important;
   padding-top: 0px !important;
-    .row {
-      font-size: 20px !important;
-      margin: -10px 5% 0px -5%;
-      h3 {
-        margin-top: 0px;
-        margin-bottom: 18px !important;
-      }
+  .row {
+    font-size: 20px !important;
+    margin: -10px 5% 0px -5%;
+    h3 {
+      margin-top: 0px;
+      margin-bottom: 18px !important;
+    }
 
-      p:nth-last-of-type(2) {
-        margin-bottom: 10px;
-      }
+    p:nth-last-of-type(2) {
+      margin-bottom: 10px;
+    }
 
-      p, p:last-of-type {
-        line-height: 1.5;
-        margin-bottom: 20px;
-      }
+    p, p:last-of-type {
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
 
-      div:first-of-type {
-        margin-top: 0px !important;
-        margin-bottom: 0px !important;
-      }
+    div:first-of-type {
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+    }
 
-      .contentful-prose{
-        &.text-center {
-          overflow: auto;
+    .col-xl-5 {
+      &.offset-xl-1 {
+        padding-left: 25px;
+      }
+    }
+
+    .contentful-prose{
+      &.text-center {
+        overflow: hidden;
+        margin-left: -60px;
+        img {
+          float: left !important;
+          max-height: fit-content !important;
+          max-width: fit-content !important;
+          width: auto;
+          height: 600px;
+        }
+
+        @include tablet {
+          margin-left: -100px;
           img {
-            float: left !important;
-            @include mobile {
-              display: none;
-            }
+            height: 500px;
+            width: auto;
+          }
+        }
+
+        @include sm-tablet {
+          margin-left: -180px;
+          img {
+            height: 601px;
+            width: auto;
+          }
+        }
+
+        @include mobile {
+          height: 250px;
+          overflow: hidden;
+          margin-left: -20px;
+          margin-right: -100px;
+          img {
+            height: auto;
+            width: 600px;
+            margin-left: -50px;
           }
         }
       }
     }
+  }
 }
