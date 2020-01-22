@@ -51,6 +51,11 @@
         img {
             max-width: 180px;
             max-height: 160px;
+            border-left: 4px solid $mt-green;
+        }
+
+        a {
+            box-shadow: none;
         }
     }
 
