@@ -22,10 +22,16 @@
         margin-top: 0px !important;
         margin-bottom: 0px !important;
       }
-      img {
-        float: left !important;
-        @include mobile {
-          display: none;
+
+      .contentful-prose{
+        &.text-center {
+          overflow: auto;
+          img {
+            float: left !important;
+            @include mobile {
+              display: none;
+            }
+          }
         }
       }
     }
