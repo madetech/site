@@ -404,14 +404,28 @@
     }
   }
 }
+
 .overlay-title {
-  h2{
+  h1,
+  h2 {
+    @include lg-desktop {
+      margin-top: -154px !important;
+    }
+
+    @include sm-desktop {
+      margin-top: -149px !important;
+    }
+
+    @include lg-tablet{
+      margin-top: -141px !important;
+    }
+
+    @include sm-tablet{
+      margin-top: 20px !important;
+    }
+
     @include mobile {
-      margin-top: -80px !important;
+      margin-top: 20px !important;
     }
-    @include tablet{
-      margin-top: -130px !important;
-    }
-    margin-top: -140px !important;
   }
 }
