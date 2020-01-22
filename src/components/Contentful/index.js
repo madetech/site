@@ -58,6 +58,7 @@ function ComponentRenderer(content) {
           textSize={content.textSize}
           backgroundColour={content.backgroundColour}
           headerLinks={content.headerLinks}
+          customClasses={content.customClasses}
         />
       )
     case 'ContentfulProse':
