@@ -1,5 +1,30 @@
 &.case__study__moj {
     .case__study__moj__problem__grid {
-        padding-bottom: 250px !important;
+        padding: 50px 0 100px 0 !important;
+        
+        @include desktop {
+            padding: 70px 0 200px 0 !important;
+        }
+
+        @include lg-tablet {
+            padding: 70px 0 150px 0 !important;
+        }
+
+        
+    }
+
+    .inline-images {
+        &.overlay {
+            margin-top: -50px;
+
+            @include desktop {
+                margin-top: -80px;
+            }
+
+            @include lg-tablet {
+                margin-top: -60px;
+            }
+
+        }
     }
 }
