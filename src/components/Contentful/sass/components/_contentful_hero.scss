@@ -35,7 +35,16 @@
 
   @include mobile {
     margin-bottom: $mobile-spacing;
-  }  
+  }
+
+  .hero_none {
+    height: 479px;
+
+    img {
+      height: 100%;
+      width: auto;
+      }
+  } 
 }
 
 .contentful-hero__breadcrumb {
