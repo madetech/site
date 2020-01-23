@@ -78,7 +78,13 @@ export default function ContentfulHero({
       <div
         className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
       >
-        <img alt={headerImage.title} src={headerImage.fixed.src} />
+        <img
+          style={{
+            backgroundImage: 'url(' + headerImage.resize.src + ')',
+          }}
+          alt={headerImage.title}
+          src={headerImage.fixed.src}
+        />
         {links}
       </div>
     )
