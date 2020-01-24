@@ -429,3 +429,23 @@
     }
   }
 }
+
+.cut_off_image__right {
+  height: 700px !important;
+  margin: -100px -50px 0 0 !important;
+  img {
+    height: 100% !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+.cut_off_image__left {
+  height: 700px !important;
+  margin: -100px 0 0 -500px !important;
+  img {
+    height: 100% !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
