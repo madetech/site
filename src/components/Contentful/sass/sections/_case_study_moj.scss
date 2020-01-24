@@ -1,16 +1,23 @@
 &.case__study__moj {
+    .contentful-prose:not(.pull-quote) {
+        b {
+            color: $mt-green;
+        }
+    }
+    .contentful-grid {
+        padding: 50px 0 !important;
+    }
+
     .case__study__moj__problem__grid {
         padding: 50px 0 100px 0 !important;
         
         @include desktop {
-            padding: 70px 0 200px 0 !important;
+            padding: 80px 0 200px 0 !important;
         }
 
         @include lg-tablet {
             padding: 70px 0 150px 0 !important;
         }
-
-        
     }
 
     .inline-images {
@@ -26,5 +33,13 @@
             }
 
         }
+    }
+
+    .case__study__moj__carousel__grid {
+        padding: 0 !important;
+    }
+
+    .case__study__moj__results_2__grid {
+        padding-top: 0px !important;
     }
 }
