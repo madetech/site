@@ -31,14 +31,14 @@
 
     .contentful-prose{
       &.text-center {
+        height: 600px;
         overflow: hidden;
         margin-left: -60px;
         img {
-          float: left !important;
           max-height: fit-content !important;
           max-width: fit-content !important;
           width: auto;
-          height: 600px;
+          height: 100%;
         }
 
         @include tablet {

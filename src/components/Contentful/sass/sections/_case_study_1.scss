@@ -24,22 +24,30 @@
         @include mobile {
           display: flex;
           flex-direction: column-reverse;
-          img {
-            margin-top: -20% !important;
-            margin-left: -10%;
-            max-height: fit-content !important;
-            max-width: fit-content !important;
-            height: 400px !important;
-            width: auto !important;
-          }
+          margin-top: 3%;
         }
 
         .contentful-prose {
           &.text-center {
-            height: 500px;
-            @include tablet {
+            margin-top: -40%;
+            height: 700px;
+
+            @include sm-desktop {
+              margin-left: -10%;
+              margin-bottom: 10%;
               img {
-                margin-top: -18%;
+                max-height: fit-content !important;
+                max-width: fit-content !important;
+                height: 100%;
+                width: auto;
+                float: none !important;
+              }
+            }
+
+            @include tablet {
+              height: 600px;
+              margin-left: -10%;
+              img {
                 max-height: fit-content !important;
                 max-width: fit-content !important;
                 height: 100%;
@@ -49,8 +57,9 @@
             }
 
             @include sm-tablet {
+              height: 550px;
+              margin-left: -10%;
               img {
-                margin-top: -18%;
                 max-height: fit-content !important;
                 max-width: fit-content !important;
                 float: none !important;
@@ -60,22 +69,27 @@
             }
 
             @include mobile {
-              height: 265px;
+              margin-bottom: 30px;
+              margin-left: -35px;
+              height: 350px;
+              img {
+                max-height: fit-content !important;
+                max-width: fit-content !important;
+                float: none !important;
+                width: auto;
+                height: 100%;
+              }
             }
           }
         }
 
+        overflow: visible;
         img {
           max-height: fit-content !important;
           max-width: fit-content !important;
           width: auto;
           height: 100%;
-          margin-top: -21%;
-          margin-right: -50px;
-          float: right !important;
-          @include mobile {
-            float: none !important;
-          }
+          margin-top: 16%;
         }
 
         .col-xl-6 {
