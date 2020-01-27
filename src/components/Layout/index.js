@@ -29,11 +29,10 @@ export default function Layout({
       <TopBar />
 
       <Header constrainLinkWidth logoHref="/" scrollable>
-        <a href="/">Why Made Tech</a>
         <a href="/our-services">Our Services</a>
         <a href="/sectors">Sectors</a>
-        <a href="/">Case studies</a>
-        <a href="/">About Us</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
         <a href="/contact">Get in touch</a>
       </Header>
 
