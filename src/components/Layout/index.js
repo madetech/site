@@ -26,13 +26,7 @@ export default function Layout({
       <Meta description={description} titlePrefix={titlePrefix} url={url} />
       <Scripts />
 
-      <TopBar>
-        <a href="https://learn.madetech.com">Learn</a>
-        <a href="/blog">Blog</a>
-        <a href="/partners">Partners</a>
-        <a href="/frameworks">Frameworks</a>
-        <a href="/careers">Careers</a>
-      </TopBar>
+      <TopBar />
 
       <Header constrainLinkWidth logoHref="/" scrollable>
         <a href="/">Why Made Tech</a>
