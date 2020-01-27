@@ -33,7 +33,7 @@ function GridContainer({
 
   return (
     <div className={className} id={id} linkTitle={linkTitle}>
-      <a id={entry_id} href={`#${entry_id}`}>
+      <a id={entry_id} href={`#${entry_id}`} style={{ opacity: 0 }}>
         {' '}
       </a>
       <div className={containerClassName}>
@@ -110,10 +110,12 @@ function GridProse({
   screenReaderText,
   style,
   textAlign,
+  overlay,
 }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
   if (style) className += ` ${style}`
+  if (overlay) className += ` ${overlay}`
   if (customClasses) {
     customClasses.forEach(c => (className += ` ${c}`))
   }
@@ -238,6 +240,7 @@ function GridComponentRenderer(content) {
           screenReaderText={content.screenReaderText}
           style={content.style}
           textAlign={content.textAlign}
+          overlay={content.overlay}
         />
       )
     case 'ContentfulCard':

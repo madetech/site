@@ -318,3 +318,114 @@
     padding-top: 0 !important;
   }
 }
+
+.contentful-grid {
+  &.white {
+    &.talk__to__us {
+      padding: 0 !important;
+      height: 270px;
+      .container {
+        height: 100%;
+        width: 100%;
+        @include mobile {
+          background-image: linear-gradient(
+                          285deg,
+                          $mt-green-gradient-dark,
+                          $mt-green
+          );
+          h3 {
+            margin: 0;
+            color: $white;
+            font-size: $px22;
+          }
+        }
+        .row {
+          height: 100%;
+          width: 100%;
+          margin-left: 50px;
+          background-image: linear-gradient(
+                          285deg,
+                          $mt-green-gradient-dark,
+                          $mt-green
+          );
+          .col-xl-2 {
+            height: 100%;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            margin: 0 0 0 0 !important;
+            padding: 0 0 0 0;
+            @include mobile {
+              display: none;
+            }
+          }
+          @include mobile {
+            margin-left: 0;
+          }
+        }
+      }
+
+      h3 {
+        margin: 0;
+        color: $white;
+      }
+
+      .contentful-prose {
+        &.talk__to__us__image {
+          background-color: $white;
+          @include mobile {
+            display: none;
+          }
+          img {
+            margin-right: 50px;
+            margin-left: -50px;
+          }
+        }
+
+        &.talk__to__us__button {
+          padding-right: 50px;
+          display: block;
+          p {
+            background-color: $white;
+            padding: 16px 0 16px 0;
+            border-radius: 6px;
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+            a {
+              color: $mt-green-dark;
+              text-decoration: none;
+              font-weight: $medium;
+            }
+          }
+          @include mobile {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay-title {
+  h1,
+  h2 {
+    @include lg-desktop {
+      margin-top: -154px !important;
+    }
+
+    @include sm-desktop {
+      margin-top: -149px !important;
+    }
+
+    @include lg-tablet{
+      margin-top: -141px !important;
+    }
+
+    @include sm-tablet{
+      margin-top: 20px !important;
+    }
+
+    @include mobile {
+      margin-top: 20px !important;
+    }
+  }
+}

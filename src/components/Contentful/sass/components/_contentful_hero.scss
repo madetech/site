@@ -36,37 +36,17 @@
   @include mobile {
     margin-bottom: $mobile-spacing;
   }
-  
-  h1 {
-    @include desktop{
-      line-height: $px80;
-      font-size: $px70;
-    }
 
-    @include sm-desktop{ 
-      line-height: $px70;
-      font-size: $px60;
-      letter-spacing: -0.81px;
-    }
-
-    @include tablet { 
-      line-height: $px50;
-      font-size: $px48;
-      letter-spacing: -0.81px;
-    }
-
-    @include sm-tablet { 
-      line-height: $px50;
-      font-size: $px45;
-      letter-spacing: -0.81px;
-    }
-
-    @include mobile {
-      line-height: $px50;
-      font-size: $px45;
-      letter-spacing: -0.56px;
-    }
-  }
+  .hero_none {
+    padding: 0;
+    height: 479px;
+    img {
+      height: 100%;
+      width: auto;
+      background: no-repeat;
+      background-size: contain;
+      }
+  } 
 }
 
 .contentful-hero__breadcrumb {
@@ -111,23 +91,18 @@
 
   @include sm-desktop{ 
     font-size: $px20;
-    letter-spacing: -0.81px;
   }
 
-  @include tablet { 
-   
+  @include tablet {  
     font-size: $px18;
-    letter-spacing: -0.81px;
   }
 
   @include sm-tablet { 
     font-size: $px18;
-    letter-spacing: -0.81px;
   }
 
   @include mobile {
     font-size: $px18;
-    letter-spacing: -0.56px;
   }
 
 }

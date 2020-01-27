@@ -156,9 +156,12 @@ export const pageQuery = graphql`
         src
       }
     }
+    headerImageLayout
+    headerImageShadowColour
     textColour
     textSize
     backgroundColour
+    customClasses
     headerLinks {
       ... on Node {
         ... on ContentfulGrid {
@@ -213,6 +216,7 @@ export const pageQuery = graphql`
     smallColumnOffset
     style
     textAlign
+    overlay
   }
   fragment highlight on ContentfulHighlight {
     id

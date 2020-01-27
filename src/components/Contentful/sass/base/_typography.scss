@@ -18,42 +18,62 @@ h6 {
   word-break: break-word;
 }
 
-// hero
+//hero
 h1 {
-  @include desktop {
-    font-size: $px80;
-    line-height: 1.26;
-    letter-spacing: -$px1;
+  @include desktop{
+    font-size: $px70;
+    line-height: 1.14;
+    letter-spacing: -$px01;
   }
 
-  @include tablet {
-    font-size: $px65;
-    line-height: 1.23;
-    letter-spacing: -$px08;
+  @include sm-desktop{ 
+    font-size: $px60;
+    line-height: $px70;
+    letter-spacing: -0.81px;
+  }
+
+  @include tablet { 
+    line-height: $px56;
+    font-size: $px48;
+    letter-spacing: -0.81px;
+  }
+
+  @include sm-tablet { 
+    line-height: $px54;
+    font-size: $px45;
+    letter-spacing: -0.81px;
   }
 
   @include mobile {
-    font-size: $px42;
-    line-height: 1.2;
-    letter-spacing: -$px06;
+    line-height: $px54;
+    font-size: $px45;
+    letter-spacing: -0.56px;
   }
 }
 
-//hero
 h1.small {
   @include desktop {
-    font-size: $px60;
-    line-height: 1;
+    font-size: $px50;
+    line-height: $px60;
+    letter-spacing: -0.63px;
+  }
+
+  @include sm-desktop {
+    font-size: $px42;
+    line-height: $px50;
+    letter-spacing: -0.52px;
   }
 
   @include tablet {
-    font-size: $px48;
-    line-height: 0.97;
+    font-size: $px32;
+    line-height: $px40;
+    letter-spacing: -0.46px;
   }
 
   @include mobile {
     font-size: $px32;
-    line-height: 0.94;
+    line-height: 40px;
+    letter-spacing: -0.46px;
   }
 }
 

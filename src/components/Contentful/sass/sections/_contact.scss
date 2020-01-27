@@ -26,6 +26,10 @@
     }
 
     .contact__card {
+        a {
+            padding-bottom: 0;
+        }
+
         p {
             margin-bottom: 7px;
         }
@@ -47,6 +51,11 @@
         img {
             max-width: 180px;
             max-height: 160px;
+            border-left: 4px solid $mt-green;
+        }
+
+        a {
+            box-shadow: none;
         }
     }
 
@@ -89,5 +98,9 @@
 
     p {
         margin-bottom: 18px;
+    }
+
+    a {
+        padding-bottom: 2px !important;
     }
 }

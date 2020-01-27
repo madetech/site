@@ -4,7 +4,7 @@ header + div:not(.new-design) {
     .contentful-prose {
       .prose {
         :not(li) > p:last-child a {
-          color: black !important;
+          color: $black !important;
           border-color: black !important;
         }
       }
@@ -92,5 +92,9 @@ header + div:not(.new-design) {
       max-height: none;
       width: 100%;
     }
+  }
+
+  &.overlay {
+    margin-top: -50px;
   }
 }

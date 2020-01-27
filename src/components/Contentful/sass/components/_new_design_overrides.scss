@@ -86,12 +86,14 @@ ul li:before {
     padding: $mobile-grid-padding !important;
   }
 
+  
   &.black,
   &.shaded,
   &.normal,
   &.white {
     u,
     a {
+      padding-bottom: 4px;
       text-decoration: none;
       box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
     }
@@ -113,10 +115,10 @@ ul li:before {
 
   &.black {
     background-color: $black;
-
+    
     p,
     a {
-      color: $white;
+      color: $white !important;
       font-size: $px20;
     }
 
@@ -127,6 +129,14 @@ ul li:before {
     h3,
     h4 {
       color: $mt-green;
+    }
+
+    ul li:before {
+      background: $white;
+    }
+
+    .services-overview-bulletpoints {
+      border-left-color: $white;
     }
   }
 
@@ -148,7 +158,7 @@ ul li:before {
     h1,
     h2,
     h3 {
-      color: $white;
+      color: $white !important;
     }
 
     h3 {
@@ -182,6 +192,11 @@ ul li:before {
 
   &.white {
     background-color: $white;
+
+    ul li:before {
+      background: $black;
+    }
+    
   }
 
   &.pull-quote {
@@ -263,8 +278,12 @@ ul li:before {
     color: $black;
   }
 
+
   .prose {
-    color: $dark-grey;
+    color: $black;
+    h1, h2, h3  {
+      color: $black;
+    }
 
     + img.after {
       margin-top: 25px;

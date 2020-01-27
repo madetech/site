@@ -11,8 +11,9 @@
 
 .get-in-touch__component {
     .illustration {
-        @include tablet {
-            display: none;
+        margin-top: 5%;
+        @include sm-tablet {
+            display: flex;
         }
 
         @include mobile {
@@ -88,20 +89,21 @@
         img {
             height: 40px;
             width: 60px;
-            margin-right: 32px;
+            margin-left: -5px;
+            margin-right: 37px;
             vertical-align: top;
             margin-bottom: 20px;
 
             @include tablet {
                 height: 34px;
                 width: 50px;
-                margin-right: 10px;
+                margin-right: 15px;
             }
 
             @include mobile {
                 height: 34px;
                 width: 50px;
-                margin-right: 10px;
+                margin-right: 15px;
             }
         }
 
@@ -126,20 +128,20 @@
         img {
             height: 48px;
             width: 43px;
-            margin-left: 17px;
-            margin-right: 32px;
+            margin-left: 12px;
+            margin-right: 37px;
             vertical-align: top;
 
             @include tablet {
                 height: 40px;
                 width: 36px;
-                margin-right: 10px;
+                margin-right: 13px;
             }
 
             @include mobile {
                 height: 40px;
                 width: 36px;
-                margin-right: 10px;
+                margin-right: 15px;
             }
         }
 
