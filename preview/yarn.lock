@@ -1184,19 +1184,19 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@madetech/frontend@^5.10.2":
-  version "5.10.2"
-  resolved "https://registry.yarnpkg.com/@madetech/frontend/-/frontend-5.10.2.tgz#9c106895ad5125caf4c22def41d110590fc2f570"
-  integrity sha512-ynhDJKzB5fqifgJOQO1tx0ypwuv7aSTuhpTgybt+8lpUPdgaxk5glIXw0e2VbZk/5CvRNWv7iB8qTYNiiAXKDw==
+"@madetech/frontend@^5.10.6":
+  version "5.10.6"
+  resolved "https://registry.yarnpkg.com/@madetech/frontend/-/frontend-5.10.6.tgz#de5773180d6d5e3eaf548642e7ed2540fe9eeabb"
+  integrity sha512-7+yFoRyfEhO0eHrIFBRs/HnB0cleLkHT/s+182nJmUiNFGsbaPJfS5X8gFiC/UquPup1seZajzd5ILz7JJ9flg==
   dependencies:
-    "@madetech/marketing-assets" "^1.5.0"
+    "@madetech/marketing-assets" "^1.6.0"
     bootstrap "^4.4.1"
     reactstrap "^6.5.0"
 
-"@madetech/marketing-assets@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@madetech/marketing-assets/-/marketing-assets-1.5.0.tgz#1f80b9cb5cb3ce9a0d0eb0e67d753e967a514890"
-  integrity sha512-ssixjGcxXy8GY3PLKruGDbgjqgTlq84eOAWoh7wRsGM7dJOsoRJmAjYMvTlh7TXLzsPZ4XerT/QL4+FGKtFMog==
+"@madetech/marketing-assets@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@madetech/marketing-assets/-/marketing-assets-1.6.0.tgz#c0fb87581e4625dbb06059ea23480da0a127967d"
+  integrity sha512-A/iveBBO7uWbaOMyGmwrTI2q1hkv+g3pN0Vrh7QwjIfVAQd7rL/oU8bpHc5aeipstaGYecui4Q0xYXA8n//Nvw==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

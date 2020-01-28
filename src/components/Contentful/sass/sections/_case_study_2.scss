@@ -33,35 +33,40 @@
       &.text-center {
         height: 600px;
         overflow: hidden;
-        margin-left: -60px;
+        margin-left: -148px;
         img {
           max-height: fit-content !important;
           max-width: fit-content !important;
           width: auto;
           height: 100%;
+          margin-left: -100px;
         }
 
         @include tablet {
-          margin-left: -100px;
+          height: 550px;
+          margin-left: -150px;
           img {
-            height: 500px;
+            height: 100%;
             width: auto;
+            margin-left: -100px;
           }
         }
 
         @include sm-tablet {
-          margin-left: -180px;
+          height: 601px;
+          margin-left: -150px;
           img {
-            height: 601px;
+            height: 100%;
             width: auto;
+            margin-left: -200px;
           }
         }
 
         @include mobile {
           height: 250px;
           overflow: hidden;
-          margin-left: -20px;
-          margin-right: -100px;
+          margin-left: -60px;
+          margin-right: -87px;
           img {
             height: auto;
             width: 600px;
