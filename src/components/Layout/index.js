@@ -2,7 +2,7 @@ import React from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
-import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
+import { Footer, Header, SiteMap } from '@madetech/frontend'
 
 export default function Layout({
   children,
@@ -25,8 +25,6 @@ export default function Layout({
     <div>
       <Meta description={description} titlePrefix={titlePrefix} url={url} />
       <Scripts />
-
-      <TopBar />
 
       <Header constrainLinkWidth logoHref="/" scrollable>
         <a href="/our-services">Our Services</a>
