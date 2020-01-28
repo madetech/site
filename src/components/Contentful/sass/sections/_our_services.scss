@@ -216,53 +216,57 @@
   } 
   
   .avatar {
-    
+    display: flex;
     padding-bottom: $px24;
     margin-top: 0;
 
     .prose {
       margin-bottom: 20px;
-      display: inline-block;
-      }
-    
-   
+    }
+
     p {
-        font-family: poppins;
-        font-size: $px24;
-        font-weight: $medium;
-        line-height: 1.43;
-        margin-top: 5px;
+      font-family: $poppins;
+      font-size: $px24;
+      font-weight: $medium;
+      line-height: 1.43;
 
-        @include tablet {
-            font-size: $px12;
-        }
+      @include tablet {
+        font-size: $px12;
+      }
 
-        @include mobile {
-            font-size: $px12;
-        }
+      @include mobile {
+        font-size: $px12;
+      }
     }
 
     img {
-        height: 80px;
-        width: 80px;
-        margin-right: 32px;
-        vertical-align: top;
+      height: 80px;
+      width: 80px;
+      margin-right: 20px;
 
-        @include tablet {
-            height: 50px;
-            width: 50px;
-            margin-right: 10px;
-        }
+      @include tablet {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+      }
 
-        @include mobile {
-            height: 50px;
-            width: 50px;
-            margin-right: 10px;
-        }
+      @include mobile {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+      }
     }
 }
 
   .services-overview-bulletpoints {
+    h4 {
+      margin-left: 15px;
+      font-size: $px24;
+      font-family: $poppins;
+      line-height: $px30;
+      letter-spacing: 0;
+      color: white;
+    }
     ul li:before {
       padding-left: -20px;
     }
