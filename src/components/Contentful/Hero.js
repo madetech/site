@@ -111,21 +111,21 @@ export default function ContentfulHero({
   }
 
   function list() {
+    let linksHeader = 'Jump straight to:'
+
     headerLinks.forEach(link => {
       link.reference = '#'
       if (link.slug) {
         link.reference = 'https://www.madetech.com' + link.slug
         link.linkTitle = link.name
+        linksHeader = 'Go to:'
       } else {
         link.reference = '#' + link.id
       }
     })
     return (
       <div className="contentful-hero__header-links">
-        <p className="contentful-hero__header-links__title ">
-          {' '}
-          Jump straight to:
-        </p>
+        <p className="contentful-hero__header-links__title "> {linksHeader}</p>
         {headerLinks.map((link, index) => (
           <a className="contentful-hero__links__a" href={link.reference}>
             {link.linkTitle} <br></br>
