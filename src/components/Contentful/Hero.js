@@ -25,7 +25,7 @@ export default function ContentfulHero({
   let links
   let backgroundColourStyle
   let heroClassNames = ''
-
+  let noPageBreadcrumb = ''
   if (customClasses) {
     customClasses.forEach(c => (heroClassNames += ` ${c}`))
   }
@@ -36,6 +36,8 @@ export default function ContentfulHero({
 
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
+  } else {
+    noPageBreadcrumb = 'no_breadcrumb'
   }
 
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
@@ -52,7 +54,7 @@ export default function ContentfulHero({
   function heroTextComponentMaker(bootstrapSizes) {
     return (
       <div className={`${bootstrapSizes}`}>
-        <div className="contentful-hero__text-box">
+        <div className={`contentful-hero__text-box ${noPageBreadcrumb}`}>
           {pageBreadcrumbComponent}
           <h1
             className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
