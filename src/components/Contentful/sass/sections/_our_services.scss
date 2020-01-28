@@ -206,7 +206,7 @@
 
   h2 {
     color: $mt-green;
-  } 
+  }
 
   a {
     color: $white;
@@ -278,5 +278,16 @@
     border-left-style: solid;
     border-left-width: $px04;
     border-left-color: $mt-green;
+  }
+
+  .overview-title {
+    h2 {
+      color: $mt-green !important;
+      font-family: $poppins;
+      font-weight: bold;
+      font-size: $px50;
+      line-height: $px60;
+      letter-spacing: 0;
+    }
   }
 }
