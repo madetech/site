@@ -73,6 +73,10 @@ export default function ContentfulHero({
 
   let heroImageComponent
 
+  if (headerLinks) {
+    links = list()
+  }
+
   if (headerImageShadowColourStyle === 'none') {
     heroImageComponent = (
       <div
@@ -104,10 +108,6 @@ export default function ContentfulHero({
         {links}
       </div>
     )
-  }
-
-  if (headerLinks) {
-    links = list()
   }
 
   function list() {
