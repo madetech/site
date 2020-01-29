@@ -1,3 +1,13 @@
+.contentful-grid {
+  &.black {
+    &.overview {
+      @include mobile {
+        padding-top: 0 !important;
+      }
+    }
+  }
+}
+
 &.services {
   $svc-img-path: 'assets/images/services';
 
@@ -206,66 +216,85 @@
 
   h2 {
     color: $mt-green;
-  } 
+  }
 
   a {
     color: $white;
     border:none;
     padding:3%;
-    background-color: $mt-green;
-  } 
+  }
   
   .avatar {
-    
+    display: flex;
     padding-bottom: $px24;
     margin-top: 0;
 
     .prose {
-      margin-bottom: 20px;
-      display: inline-block;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      p:nth-of-type(1) {
+        margin-bottom: 0;
       }
-    
-   
+    }
+
     p {
-        font-family: poppins;
-        font-size: $px24;
-        font-weight: $medium;
-        line-height: 1.43;
-        margin-top: 5px;
+      font-family: $poppins;
+      font-size: $px24;
+      font-weight: $medium;
+      line-height: 1.43;
 
-        @include tablet {
-            font-size: $px12;
-        }
+      @include tablet {
+        font-size: $px12;
+      }
 
-        @include mobile {
-            font-size: $px12;
-        }
+      @include mobile {
+        font-size: $px14;
+      }
     }
 
     img {
-        height: 80px;
-        width: 80px;
-        margin-right: 32px;
-        vertical-align: top;
+      height: 80px;
+      width: 80px;
+      margin-right: 20px;
 
-        @include tablet {
-            height: 50px;
-            width: 50px;
-            margin-right: 10px;
-        }
+      @include tablet {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+      }
 
-        @include mobile {
-            height: 50px;
-            width: 50px;
-            margin-right: 10px;
-        }
+      @include mobile {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+      }
     }
 }
 
   .services-overview-bulletpoints {
-    ul li:before {
-      padding-left: -20px;
+    &.h4__white {
+      h4 {
+        margin-left: 15px;
+        font-size: $px24;
+        font-family: $poppins;
+        line-height: $px30;
+        letter-spacing: 0;
+        color: white;
+      }
     }
+    &.h4__black {
+      h4 {
+        margin-left: 15px;
+        font-size: $px24;
+        font-family: $poppins;
+        line-height: $px30;
+        letter-spacing: 0;
+        color: black;
+      }
+    }
+
     height: 300px;
     border-left-style: solid;
     border-left-width: $px04;
@@ -278,5 +307,51 @@
     border-left-style: solid;
     border-left-width: $px04;
     border-left-color: $mt-green;
+    h4 {
+      color: $mt-green;
+    }
+    p:nth-of-type(1) {
+      font-family: $montserrat;
+      font-size: $px20;
+      line-height: $px30;
+      letter-spacing: 0;
+    }
+
+    p:nth-of-type(2) {
+      display: inline-flex;
+      box-shadow: 3px 3px 0 0;
+      background-color: $mt-green;
+      a {
+        padding-top: 13px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        height: 58px;
+        display: inline-table;
+      }
+    }
+  }
+
+  .overview-title {
+    h2 {
+      color: $mt-green !important;
+      font-family: $poppins;
+      font-size: $px50;
+      line-height: $px60;
+      letter-spacing: 0;
+      margin-bottom: 57px !important;
+
+      @include mobile {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+.col-xl-12 {
+  .prose {
+    h2 {
+      margin-bottom: 0 !important;
+    }
   }
 }
