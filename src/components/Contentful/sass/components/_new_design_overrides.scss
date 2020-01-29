@@ -255,6 +255,12 @@ ul li:before {
           margin: 0;
         }
       }
+
+      p {
+        b {
+          color: $black;
+        }
+      }
     }
 
     img {
