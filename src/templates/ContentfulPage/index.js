@@ -85,11 +85,14 @@ export const pageQuery = graphql`
     columnOffset
     constrainImageHeight
     images {
-      fixed(height: 430) {
+      fixed(height: 1000) {
         height
         src
         srcSet
         width
+      }
+      resize(height: 400) {
+        src
       }
     }
     overlay
