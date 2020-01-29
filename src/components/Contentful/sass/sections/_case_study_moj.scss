@@ -4,8 +4,10 @@
             color: $mt-green;
         }
     }
-    .contentful-grid:not(.case__study__moj__problem__grid):not(.case_study_1):not(.case_study_2) {
-        padding: 50px 0 !important;
+    .contentful-grid  {
+        &.white:not(.case_study_2):not(.case__study__moj__carousel__grid):not(.case__study__moj__results_2__grid) {
+            padding: 50px 0 !important;
+        }
     }
 
     .case__study__moj__problem__grid {
@@ -40,6 +42,7 @@
     }
 
     .case__study__moj__results_2__grid {
-        padding-top: 0px !important;
+        padding: 0 !important;
+        margin-bottom: 130px;
     }
 }
