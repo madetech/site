@@ -1,9 +1,36 @@
 &.case__study__moj {
+    .contentful-hero__text-box {
+        @include sm-desktop {
+            padding-bottom: 80px;
+        }
+
+        @include lg-tablet {
+            padding-bottom: 50px;
+        }
+
+        @include sm-tablet {
+            padding-bottom: 75px;
+        }
+    }
+
     .contentful-prose:not(.pull-quote) {
         b {
             color: $mt-green;
         }
     }
+
+    .pull-quote {
+        .contentful-prose {
+            @include lg-desktop {
+                margin-top: 50px;
+            }
+
+            @include lg-tablet {
+                margin-top: -80px;
+            }
+        }
+    }
+
     .contentful-grid  {
         &.white:not(.case_study_2):not(.case__study__moj__carousel__grid):not(.case__study__moj__results_2__grid) {
             padding: 50px 0 !important;
