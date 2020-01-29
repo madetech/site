@@ -40,6 +40,15 @@
   .hero_none {
     padding: 0;
     height: 479px;
+
+    @include sm-desktop {
+      height: 430px;
+    }
+
+    @include lg-tablet {
+      height: 400px;
+    }
+
     img {
       height: 100%;
       width: auto;

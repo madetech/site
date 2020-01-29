@@ -1,5 +1,75 @@
 &.case__study__moj {
+    .contentful-hero__text-box {
+        @include sm-desktop {
+            padding-bottom: 80px;
+        }
+
+        @include lg-tablet {
+            padding-bottom: 50px;
+        }
+
+        @include sm-tablet {
+            padding-bottom: 75px;
+        }
+    }
+
+    .contentful-prose:not(.pull-quote) {
+        b {
+            color: $mt-green;
+        }
+    }
+
+    .pull-quote {
+        .contentful-prose {
+            @include lg-desktop {
+                margin-top: 50px;
+            }
+
+            @include lg-tablet {
+                margin-top: -80px;
+            }
+        }
+    }
+
+    .contentful-grid  {
+        &.white:not(.case_study_2):not(.case__study__moj__carousel__grid):not(.case__study__moj__results_2__grid) {
+            padding: 50px 0 !important;
+        }
+    }
+
     .case__study__moj__problem__grid {
-        padding-bottom: 250px !important;
+        padding: 50px 0 100px 0 !important;
+        
+        @include desktop {
+            padding: 80px 0 200px 0 !important;
+        }
+
+        @include lg-tablet {
+            padding: 70px 0 150px 0 !important;
+        }
+    }
+
+    .inline-images {
+        &.overlay {
+            margin-top: -50px;
+
+            @include desktop {
+                margin-top: -80px;
+            }
+
+            @include lg-tablet {
+                margin-top: -60px;
+            }
+
+        }
+    }
+
+    .case__study__moj__carousel__grid {
+        padding: 0 !important;
+    }
+
+    .case__study__moj__results_2__grid {
+        padding: 0 !important;
+        margin-bottom: 130px;
     }
 }
