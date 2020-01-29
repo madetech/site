@@ -85,7 +85,7 @@ export const pageQuery = graphql`
     columnOffset
     constrainImageHeight
     images {
-      fixed(width: 400) {
+      fixed(height: 430) {
         height
         src
         srcSet

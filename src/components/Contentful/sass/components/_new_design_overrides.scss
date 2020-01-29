@@ -7,6 +7,7 @@ ul li {
   /* use padding-bottom instead of margin-bottom.*/
   margin-bottom: 0; /* This overrides previously specified margin-bottom */
   padding-bottom: $px20;
+  padding-left: 20px;
 }
 
 ul li:before {
@@ -195,6 +196,8 @@ ul li:before {
 
     ul li:before {
       background: $black;
+      width: 20px;
+      height: 20px;
     }
     
   }
@@ -253,6 +256,12 @@ ul li:before {
 
         + p {
           margin: 0;
+        }
+      }
+
+      p {
+        b {
+          color: $black;
         }
       }
     }
