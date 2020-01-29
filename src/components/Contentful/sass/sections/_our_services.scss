@@ -1,3 +1,13 @@
+.contentful-grid {
+  &.black {
+    &.overview {
+      @include mobile {
+        padding-top: 0 !important;
+      }
+    }
+  }
+}
+
 &.services {
   $svc-img-path: 'assets/images/services';
 
@@ -212,7 +222,7 @@
     color: $white;
     border:none;
     padding:3%;
-  } 
+  }
   
   .avatar {
     display: flex;
@@ -220,7 +230,13 @@
     margin-top: 0;
 
     .prose {
-      margin-bottom: 20px;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      p:nth-of-type(1) {
+        margin-bottom: 0;
+      }
     }
 
     p {
@@ -234,7 +250,7 @@
       }
 
       @include mobile {
-        font-size: $px12;
+        font-size: $px14;
       }
     }
 
@@ -258,13 +274,25 @@
 }
 
   .services-overview-bulletpoints {
-    h4 {
-      margin-left: 15px;
-      font-size: $px24;
-      font-family: $poppins;
-      line-height: $px30;
-      letter-spacing: 0;
-      color: white;
+    &.h4__white {
+      h4 {
+        margin-left: 15px;
+        font-size: $px24;
+        font-family: $poppins;
+        line-height: $px30;
+        letter-spacing: 0;
+        color: white;
+      }
+    }
+    &.h4__black {
+      h4 {
+        margin-left: 15px;
+        font-size: $px24;
+        font-family: $poppins;
+        line-height: $px30;
+        letter-spacing: 0;
+        color: black;
+      }
     }
 
     height: 300px;
@@ -279,32 +307,51 @@
     border-left-style: solid;
     border-left-width: $px04;
     border-left-color: $mt-green;
-    &.button__with__shadow {
-      p:nth-of-type(2) {
-        display: inline-flex;
-        box-shadow: 3px 3px 0 0;
-        background-color: $mt-green;
-        a {
-          padding-top: 13px;
-          padding-left: 20px;
-          padding-right: 20px;
-          text-align: center;
-          height: 58px;
-          display: inline-table;
-        }
-      }
+    h4 {
+      color: $mt-green;
+    }
+    p:nth-of-type(1) {
+      font-family: $montserrat;
+      font-size: $px20;
+      line-height: $px30;
+      letter-spacing: 0;
     }
 
+    p:nth-of-type(2) {
+      display: inline-flex;
+      box-shadow: 3px 3px 0 0;
+      background-color: $mt-green;
+      a {
+        padding-top: 13px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        height: 58px;
+        display: inline-table;
+      }
+    }
   }
 
   .overview-title {
     h2 {
       color: $mt-green !important;
       font-family: $poppins;
-      font-weight: bold;
       font-size: $px50;
       line-height: $px60;
       letter-spacing: 0;
+      margin-bottom: 57px !important;
+
+      @include mobile {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+.col-xl-12 {
+  .prose {
+    h2 {
+      margin-bottom: 0 !important;
     }
   }
 }
