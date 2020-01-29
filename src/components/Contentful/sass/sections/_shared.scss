@@ -431,11 +431,23 @@
 }
 
 .cut_off_image__right {
-  height: 700px !important;
-  margin: -100px -50px 0 0 !important;
+  height: 400px !important;
+  margin: -100px 0 -50px -50px !important;
+
+  @include desktop {
+    height: 700px !important;
+    margin: -100px -50px 0 0 !important;
+  }
+
+  @include lg-tablet {
+    height: 500px !important;
+    margin: -100px -50px 0 0 !important;
+  }
+
   img {
     height: 100% !important;
     width: auto !important;
+    max-height: none !important;
     max-width: none !important;
   }
 }
