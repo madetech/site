@@ -7,17 +7,16 @@
     }
     
     .slick-slide img {
-    margin: auto;
-    }
-
-    .slick-next {
-        right: 0;
+        margin: auto;
+        max-width: 90%;
+        max-height: 90%;
     }
 
     .slick-next {
         right: 0;
         &:before {
             color: #40c842;
+            font-size: 60px;
         }
     }
 
@@ -25,6 +24,7 @@
         left: 0;
         &:before {
             color: #40c842;
+            font-size: 60px;
         }
     }
 
