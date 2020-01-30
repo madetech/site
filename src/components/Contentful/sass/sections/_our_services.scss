@@ -363,21 +363,6 @@
     }
   }
 }
-.contentful-grid {
-  &.white {
-    ul li:before {
-      background: $black !important;
-      width: 8px;
-      height: 8px;
-    }
-
-    .contentful-prose {
-      &.overview-text {
-
-      }
-    }
-  }
-}
 
 .col-xl-12 {
   .prose {
