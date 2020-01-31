@@ -236,6 +236,14 @@
       flex-direction: column;
       p:nth-of-type(1) {
         margin-bottom: 0;
+        @include tablet {
+          margin-right: -25px;
+          font-family: $poppins;
+          font-size: $px18;
+          font-weight: 500;
+          letter-spacing: 0;
+          line-height: $px30;
+        }
       }
     }
 
@@ -260,9 +268,11 @@
       margin-right: 20px;
 
       @include tablet {
-        height: 50px;
-        width: 50px;
-        margin-right: 10px;
+        img {
+          height: 80px;
+          width: 80px;
+          margin-right: 10px;
+        }
       }
 
       @include mobile {
@@ -296,6 +306,7 @@
         color: black;
       }
     }
+
     font-family: $montserrat;
     font-size: $px20;
     font-weight: normal;
@@ -304,6 +315,18 @@
     border-left-style: solid;
     border-left-width: $px04;
     padding-left: 25px;
+
+    ul {
+      li {
+        p {
+          @include tablet {
+            font-size: $px16;
+            line-height: $px30;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
   }
 
   .overview-text {
@@ -331,6 +354,12 @@
       font-size: $px20;
       line-height: $px30;
       letter-spacing: normal;
+      @include tablet {
+        font-weight: normal;
+        font-size: $px16;
+        line-height: $px26;
+        letter-spacing: 0;
+      }
     }
 
     p:nth-of-type(2) {
@@ -346,6 +375,9 @@
         display: inline-table;
       }
     }
+    @include tablet {
+      margin-right: -84px;
+    }
   }
 
   .overview-title {
@@ -359,6 +391,13 @@
 
       @include mobile {
         margin-bottom: 0 !important;
+      }
+
+      @include tablet {
+        width: 339px;
+        font-family: $poppins;
+        font-size: $px40;
+        line-height: $px50;
       }
     }
   }
