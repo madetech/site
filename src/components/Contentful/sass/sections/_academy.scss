@@ -103,4 +103,32 @@
     .academy__how_do_i_apply .container .row > div:first-child {
         height: 100px;
     }
+
+    .academy__ready_to_make_the_leap {
+        font-family: $font-family-sans-serif--special;
+        line-height: 35px;
+        padding: 110px 0 !important;
+
+        .overlay {
+            margin-top: -162px;
+        }
+
+        p {
+            margin-bottom: 50px;
+        }
+
+        p a {
+            font-family: $font-family-sans-serif;
+            font-size: 20px;
+            color: $white;
+            text-decoration: none;
+            background-color: $black;
+            padding: 19px;
+            box-shadow: 5px 4px $white;
+        }
+
+        img {
+            margin-left: 35px;
+        }
+    }
 }
