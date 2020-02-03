@@ -4,10 +4,17 @@
     }
 
     p {
+        margin-bottom: 0;
+        
         u {
             padding-bottom: 0 !important;
             box-shadow: inset 0 -3px 0 $black !important;
         }
+    }
+
+
+    ul {
+        margin-top: 1.5rem;
     }
 
     .contentful-grid {
@@ -21,7 +28,7 @@
             margin-bottom: 0;
         }
     }
-    
+
     .made__academy__section_1 {
         margin-bottom: 50px;
         .contentful-prose {
@@ -54,20 +61,6 @@
               }
           }
     }
-
-    .academy__we_re_doing_it_differently {
-        img {
-            margin-bottom: 20px;
-            max-width: 200px;
-          }
-        
-        .prose {
-            p {
-            padding: 0 10px 0 10px;
-            margin-bottom: 10px !important;
-            }
-        }
-    }
     
     .academy__meet_our_grads {
         .contentful-prose {
@@ -93,4 +86,17 @@
         }
     }
 
+    .academy__we_re_doing_it_differently {
+        img {
+            margin-bottom: 20px;
+            max-width: 200px;
+          }
+        
+        .prose {
+            p {
+            padding: 0 10px 0 10px;
+            margin-bottom: 10px !important;
+            }
+        }
+    }
 }
