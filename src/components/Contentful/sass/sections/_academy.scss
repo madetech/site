@@ -44,6 +44,16 @@
         &.overlay {
             h1 {
                 margin-top: -120px !important;
+
+                @include sm-tablet {
+                    text-align: left !important;
+                    margin-top: 30px !important;
+                }
+        
+                @include mobile {
+                    text-align: left !important;
+                    margin-top: 30px !important;
+                }
             }
         }
     }
@@ -64,6 +74,8 @@
     
     .academy__meet_our_grads {
         .contentful-prose {
+            margin-bottom: 20px;
+
             &:not(.overlay) {    
                 img {
                     display: inline-block;
@@ -100,8 +112,37 @@
         }
     }
 
-    .academy__how_do_i_apply .container .row > div:first-child {
-        height: 100px;
+    #careers-made-academy-how-much-will-i-be-paid {
+        @include lg-tablet {
+            padding: 50px 0 30px 0 !important;
+        }
+        
+        @include sm-tablet {
+            padding: 50px 0 30px 0 !important;
+        }
+
+        @include mobile {
+            padding: 50px 0 30px 0 !important;
+        }
+    }
+
+    .academy__how_do_i_apply {
+        @include sm-tablet {
+            padding-top: 50px !important;
+        }
+
+        .container .row > div:first-child {
+            height: 100px;
+
+            @include sm-tablet {
+                height: 50px;
+            }
+
+            @include mobile {
+                height: 50px;
+            }
+        }
+
     }
 
     .academy__ready_to_make_the_leap {
@@ -109,8 +150,26 @@
         line-height: 35px;
         padding: 110px 0 !important;
 
+        @include sm-tablet {
+            padding: 80px 0 !important;
+        }
+
+        @include mobile {
+            padding: 50px 0 !important;
+        }
+
         .overlay {
-            margin-top: -162px;
+            @include lg-desktop {
+                margin-top: -162px;
+            }
+
+            @include sm-desktop {
+                margin-top: -158px;
+            }
+
+            @include lg-tablet {
+                margin-top: -150px;
+            }
         }
 
         p {
@@ -129,6 +188,15 @@
 
         img {
             margin-left: 35px;
+            @include sm-tablet {
+                margin: 40px 0 0 0;
+                width: 70%;
+            }
+
+            @include mobile {
+                margin: 40px 0 0 0;
+                width: 70%
+            }
         }
     }
 }
