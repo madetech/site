@@ -195,7 +195,7 @@
   }
 
   @include tablet {
-    padding: 0 !important;
+    padding: 0 0 80px 0 !important;
   }
 
   p {
@@ -335,6 +335,13 @@
             line-height: $px30;
             letter-spacing: 0;
           }
+
+          @include mobile {
+            font-weight: normal;
+            font-size: $px16;
+            line-height: $px26;
+            letter-spacing: 0;
+          }
         }
       }
     }
@@ -366,6 +373,12 @@
       line-height: $px30;
       letter-spacing: normal;
       @include tablet {
+        font-weight: normal;
+        font-size: $px16;
+        line-height: $px26;
+        letter-spacing: 0;
+      }
+      @include mobile {
         font-weight: normal;
         font-size: $px16;
         line-height: $px26;
