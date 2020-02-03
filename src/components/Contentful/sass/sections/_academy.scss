@@ -2,4 +2,71 @@
     b {
         color: $mt-green;
     }
+
+    p {
+        u {
+            padding-bottom: 0 !important;
+            box-shadow: inset 0 -3px 0 $black !important;
+        }
+    }
+
+    .contentful-grid {
+        &.shaded {
+            padding: 70px 0 !important;
+        }
+    }
+
+    .inline-images {
+        &.overlay {
+            margin-bottom: 0;
+        }
+    }
+    .made__academy__section_1 {
+        margin-bottom: 50px;
+        .contentful-prose {
+            h3 {
+                margin-bottom: 35px !important;
+            }
+
+
+        }
+    }
+
+    .contentful-prose {
+        &.overlay {
+            h1 {
+                margin-top: -120px !important;
+            }
+        }
+    }
+
+    #careers-made-academy-why-made-academy {
+        img {
+            margin-bottom: 20px;
+            max-width: 200px;
+          }
+        
+          .prose {
+              p {
+                padding: 0 10px 0 10px;
+                margin-bottom: 10px !important;
+              }
+          }
+    }
+
+    #careers-made-academy-we-re-doing-it-differently {
+        img {
+            margin-bottom: 20px;
+            max-width: 200px;
+          }
+        
+        .prose {
+            p {
+            padding: 0 10px 0 10px;
+            margin-bottom: 10px !important;
+            }
+        }
+    }
+
+
 }
