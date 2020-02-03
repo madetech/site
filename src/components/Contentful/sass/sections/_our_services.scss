@@ -1,5 +1,5 @@
 .contentful-grid {
-  &.black {
+  &.black, &.white {
     &.overview {
       @include mobile {
         padding-top: 0 !important;
@@ -188,6 +188,15 @@
 }
 
 .overview {
+  &.tablet__spacing__after__hero {
+    @include lg-tablet {
+      padding-top: 67px !important;
+    }
+  }
+
+  @include tablet {
+    padding: 0 !important;
+  }
 
   p {
     font-size: $px20;
@@ -203,7 +212,7 @@
           }
 
           @include tablet {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
           }
   
           @include mobile {
@@ -258,7 +267,9 @@
       }
 
       @include mobile {
-        font-size: $px14;
+        font-size: $px18;
+        line-height: $px30;
+        letter-spacing: 0;
       }
     }
 
@@ -276,8 +287,8 @@
       }
 
       @include mobile {
-        height: 50px;
-        width: 50px;
+        height: 80px;
+        width: 80px;
         margin-right: 10px;
       }
     }
@@ -387,10 +398,12 @@
       font-size: $px50;
       line-height: $px60;
       letter-spacing: 0;
-      margin-bottom: 57px !important;
 
       @include mobile {
         margin-bottom: 0 !important;
+        font-size: $px40;
+        line-height: $px50;
+        letter-spacing: 0.56px;
       }
 
       @include tablet {
@@ -399,14 +412,6 @@
         font-size: $px40;
         line-height: $px50;
       }
-    }
-  }
-}
-
-.col-xl-12 {
-  .prose {
-    h2 {
-      margin-bottom: 0 !important;
     }
   }
 }
