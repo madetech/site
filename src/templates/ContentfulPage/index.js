@@ -298,13 +298,5 @@ export const pageQuery = graphql`
   }
   fragment carousel on ContentfulCarousel {
     name
-    images {
-      fixed(height: 500) {
-        height
-        src
-        srcSet
-        width
-      }
-    }
   }
 `

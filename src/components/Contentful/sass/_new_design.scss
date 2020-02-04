@@ -1,10 +1,7 @@
 .new-design {
-  @import "~slick-carousel/slick/slick.css";
-  @import "~slick-carousel/slick/slick-theme.css";
   @import './abstracts/mixins';
   @import './abstracts/variables';
   @import './base/typography';
-  @import './components/contentful_carousel';
   @import './components/contentful_hero';
   @import './components/contentful_highlight';
   @import './components/contentful_header_images';
