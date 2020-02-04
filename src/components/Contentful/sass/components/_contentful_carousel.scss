@@ -1,30 +1,75 @@
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-
 .contentful-carousel{
     .container {
         padding: 40px;
     }
-    
-    .slick-slide img {
-        margin: auto;
-        max-width: 90%;
-        max-height: 90%;
+
+    .slick-slider {
+        margin: 0 auto;
+    }
+
+    .slick-slider,
+    .slick-slide,
+    .slick-list {
+        max-width: 980px !important;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .slick-slide {
+        img {
+            margin: auto;
+            max-width: 980px;
+            height: auto;
+
+            @include sm-desktop {
+                max-width: 800px;
+            }
+
+            @include lg-tablet {
+                max-width: 600px;
+            }
+
+            @include sm-tablet {
+                max-width: 450px;
+            }
+
+            @include mobile {
+                max-width: 75vw;
+            }
+        }
     }
 
     .slick-next {
-        right: 0;
         &:before {
             color: #40c842;
             font-size: 60px;
         }
+
+        @include mobile {
+            right: -15px;
+            &:before {
+                font-size: 30px;
+            }
+        }
     }
 
     .slick-prev {
-        left: 0;
+        z-index: 1;
+        transform: translate(-40px, -10px);
         &:before {
             color: #40c842;
             font-size: 60px;
+        }
+
+        @include mobile {
+            left: -10px;
+            transform: translate(-15px, -10px);
+            &:before {
+                font-size: 30px;
+            }
         }
     }
 
@@ -42,6 +87,7 @@
         .slick-active {
             button:before {
                 color: #40c842 !important;
+                z-index: 1;
             }
         }
     }
