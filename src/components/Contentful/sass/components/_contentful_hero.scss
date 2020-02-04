@@ -89,6 +89,13 @@
   }
 }
 
+.contentful-hero__header-links {
+  a:hover {
+    color: $mt-green-yellow;
+    //color: #8cc641;
+  }
+}
+
 .contentful-hero__links__a {
   @include desktop { 
     font-size: $px22;
@@ -101,7 +108,7 @@
   }
 
   @include tablet { 
-    font-size: $px12;
+    font-size: $px18;
     line-height: 30px;
   }
 }

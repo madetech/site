@@ -69,6 +69,13 @@
     }
 
     .case__study__moj__results_2__grid {
+        ::before {
+            content: none;
+        }
+
+        li {
+            list-style: disc;
+        }
         padding: 0 !important;
         margin-bottom: 130px;
     }
