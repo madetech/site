@@ -200,13 +200,11 @@
       margin-bottom: 20px;
 
       @include desktop {
-        max-width: 180px;
-        margin-bottom: 40px;
+        max-width: 240px;
       }
 
       @include lg-tablet {
-        width: 130px;
-        margin-bottom: 40px;
+        width: 200px;
       }
 
       max-width: 200px;
