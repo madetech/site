@@ -133,7 +133,7 @@ function ComponentRenderer(content) {
         />
       )
     case 'ContentfulCarousel':
-      return <Carousel name={content.name} />
+      return <Carousel name={content.name} images={content.images} />
     default:
       return <div>Unknown Content Type: {content.__typename}</div>
   }
