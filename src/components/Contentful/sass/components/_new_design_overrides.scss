@@ -179,6 +179,40 @@ ul li:before {
     }
   }
 
+  &.green {
+    background-color: $mt-green;
+
+    padding: 150px 0 !important;
+
+    @include mobile {
+      padding: $mobile-grid-padding !important;
+    }
+
+    p {
+      color: $white !important;
+    }
+
+    h1 {
+      color: $black;
+    }
+
+    h3 {
+      font-weight: $extra-bold;
+
+      @include tablet {
+        padding-bottom: 25px;
+      }
+
+      @include mobile {
+        padding-bottom: 0;
+      }
+    }
+
+    .prose {
+      font-weight: $medium;
+    }
+  }
+
   &.shaded {
     background-color: $white-two;
 
@@ -196,10 +230,9 @@ ul li:before {
 
     ul li:before {
       background: $black;
-      width: 20px;
-      height: 20px;
+      width: 8px;
+      height: 8px;
     }
-    
   }
 
   &.pull-quote {
