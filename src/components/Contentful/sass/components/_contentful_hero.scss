@@ -92,7 +92,11 @@
 .contentful-hero__header-links {
   a:hover {
     color: $mt-green-yellow;
-    //color: #8cc641;
+  }
+  p {
+    @include tablet {
+      font-size: $px18;
+    }
   }
 }
 
