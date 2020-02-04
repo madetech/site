@@ -62,6 +62,16 @@
   }
 }
 
+.contentful-hero__page-title {
+  &.green {
+    @include mobile {
+      font-size: $px45;
+      line-height: $px50;
+      letter-spacing: -0.56px;
+    }
+  }
+}
+
 .contentful-hero__breadcrumb {
   @include desktop {
     margin-top: 35px;
