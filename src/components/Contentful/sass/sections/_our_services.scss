@@ -297,7 +297,7 @@
   .services-overview-bulletpoints {
     &.h4__white {
       h4 {
-        margin-left: 15px;
+        margin-left: 17px;
         font-family: $poppins;
         font-size: $px24;
         font-weight: $extra-bold;
@@ -308,7 +308,7 @@
     }
     &.h4__black {
       h4 {
-        margin-left: 15px;
+        margin-left: 17px;
         font-family: $poppins;
         font-size: $px24;
         font-weight: $extra-bold;
@@ -325,9 +325,10 @@
 
     border-left-style: solid;
     border-left-width: $px04;
-    padding-left: 25px;
+    padding-left: 8px;
 
     ul {
+      padding-right: 15px;
       li {
         p {
           @include tablet {
