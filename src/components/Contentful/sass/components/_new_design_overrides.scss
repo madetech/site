@@ -1,5 +1,9 @@
 ul {
-  list-style: none;
+  list-style: disc;
+  ::before {
+    width: 8px !important;
+    height: 8px !important;
+  }
 }
 
 ul li {
@@ -12,11 +16,8 @@ ul li {
 
 ul li:before {
   /* bullets */
-  width: 8px;
-  height: 8px;
   background: $mt-green;
   border-radius: 50%;
-  content: ' ';
   position: absolute;
   
 
