@@ -112,6 +112,17 @@
                 padding: 0 10px 0 10px;
                 margin-bottom: 10px !important;
               }
+
+              p:nth-of-type(1) {
+                  font-family: $poppins;
+                  font-weight: $extra-bold;
+                  font-size: $px24;
+              }
+
+              p:nth-of-type(2) {
+                  font-family: $montserrat;
+                  font-size: $px20;
+              }
           }
     }
     
