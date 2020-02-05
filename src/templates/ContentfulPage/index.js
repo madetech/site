@@ -306,5 +306,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    dots
+    slidesToShow
   }
 `
