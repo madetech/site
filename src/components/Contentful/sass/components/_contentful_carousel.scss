@@ -17,23 +17,27 @@
     .slick-slide {
         img {
             margin: auto;
-            max-width: 980px;
             height: auto;
+            
+            @include lg-desktop {
+                padding: 0 5px;
+                max-width: calc(980px / var(--slides));
+            }
 
             @include sm-desktop {
-                max-width: 800px;
+                max-width: calc(800px / var(--slides));
             }
 
             @include lg-tablet {
-                max-width: 600px;
+                max-width: calc(600px / var(--slides));
             }
 
             @include sm-tablet {
-                max-width: 450px;
+                max-width: calc(450px / var(--slides));
             }
 
             @include mobile {
-                max-width: 75vw;
+                max-width: calc(75vw / var(--slides));
             }
         }
     }

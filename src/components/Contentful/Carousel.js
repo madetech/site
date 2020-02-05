@@ -13,7 +13,10 @@ export default class ContentfulCarousel extends Component {
     const imageComponents = this.props.images.map((image, i) => {
       return (
         <div>
-          <img src={image.fixed.src} />
+          <img
+            src={image.fixed.src}
+            style={{ '--slides': `${slidesToShow}` }}
+          />
         </div>
       )
     })
