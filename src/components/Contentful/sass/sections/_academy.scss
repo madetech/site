@@ -138,6 +138,15 @@
                     }
                 }
             }
+            @include mobile {
+                .prose {
+                    font-size: $px18 !important;
+                }
+                img.avatar {
+                    width: 76px;
+                    height: auto;
+                }
+            }
         }
     }
     
@@ -172,6 +181,12 @@
         }
         .academy__learn_from_the_pros_pro {
             margin-top: 30px;
+            font-size: $px20;
+            p:nth-of-type(1) {
+                font-family: $poppins;
+                font-weight: $extra-bold;
+                font-size: $px24;
+            }
         }
     }
 
@@ -226,6 +241,11 @@
 
         img {
             min-width: 50px;
+        }
+
+        .col-xl-5 {
+            padding-left: 0;
+            padding-bottom: 20px;
         }
 
     }
