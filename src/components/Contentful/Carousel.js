@@ -3,6 +3,13 @@ import Slider from 'react-slick'
 
 export default class ContentfulCarousel extends Component {
   render() {
+    let dots = true
+    let slidesToShow = this.props.slidesToShow || 1
+
+    if (this.props.dots && this.props.dots === 'no dots') {
+      dots = false
+    }
+
     const imageComponents = this.props.images.map((image, i) => {
       return (
         <div>
@@ -12,7 +19,8 @@ export default class ContentfulCarousel extends Component {
     })
 
     var settings = {
-      dots: true,
+      dots: dots,
+      slidesToShow: slidesToShow,
     }
 
     return (
