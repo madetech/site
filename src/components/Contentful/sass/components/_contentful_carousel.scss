@@ -7,6 +7,22 @@
     .slick-slide,
     .slick-list {
         max-width: 980px !important;
+
+        @include sm-desktop {
+            max-width: 800px;
+        }
+
+        @include lg-tablet {
+            max-width: 600px;
+        }
+
+        @include sm-tablet {
+            max-width: 450px;
+        }
+
+        @include mobile {
+            max-width: 75vw;
+        }
     }
 
     .slick-track {
