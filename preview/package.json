@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@contentful/rich-text-html-renderer": "13.4.0",
-    "@madetech/frontend": "^5.10.6",
+    "@madetech/frontend": "^5.10.8",
     "contentful": "^7.5.1",
     "dotenv": "8.1.0",
     "node-sass": "^4.12.0",
