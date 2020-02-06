@@ -29,7 +29,22 @@ export const pageQuery = graphql`
       content {
         __typename
         ...hero
-        ...carousel
+        ... on ContentfulCarousel {
+          name
+          images {
+            fixed(height: 500) {
+              src
+              srcSet
+              width
+            }
+          }
+          dots
+          slidesToShow
+          content {
+            __typename
+            ...prose
+          }
+        }
         ...headerImages
         ...highlight
         ...inlineImages
