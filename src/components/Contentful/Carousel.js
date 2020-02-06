@@ -125,8 +125,8 @@ export default class ContentfulCarousel extends Component {
 
     if (this.props.content) {
       proseComponents = this.props.content.map((proseComponent, i) => {
-        let thing = CarouselProseRenderer(proseComponent)
-        return <div>{thing}</div>
+        let carouselProseComponent = CarouselProseRenderer(proseComponent)
+        return <div>{carouselProseComponent}</div>
       })
     }
 
