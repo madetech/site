@@ -29,7 +29,22 @@ export const pageQuery = graphql`
       content {
         __typename
         ...hero
-        ...carousel
+        ... on ContentfulCarousel {
+          name
+          images {
+            fixed(height: 500) {
+              src
+              srcSet
+              width
+            }
+          }
+          dots
+          slidesToShow
+          content {
+            __typename
+            ...prose
+          }
+        }
         ...headerImages
         ...highlight
         ...inlineImages
@@ -295,18 +310,5 @@ export const pageQuery = graphql`
     mediumColumnOffset
     smallColumnWidth
     smallColumnOffset
-  }
-  fragment carousel on ContentfulCarousel {
-    name
-    images {
-      fixed(height: 500) {
-        height
-        src
-        srcSet
-        width
-      }
-    }
-    dots
-    slidesToShow
   }
 `
