@@ -311,15 +311,4 @@ export const pageQuery = graphql`
     smallColumnWidth
     smallColumnOffset
   }
-  fragment carousel on ContentfulCarousel {
-    name
-    images {
-      fixed(height: 500) {
-        height
-        src
-        srcSet
-        width
-      }
-    }
-  }
 `
