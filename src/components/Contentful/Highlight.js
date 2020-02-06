@@ -14,6 +14,7 @@ export default function ContentfulHighlight({
   smallColumnWidth,
   style,
   textAlign,
+  highlightImage,
 }) {
   let colClasses = ''
 
@@ -63,7 +64,6 @@ export default function ContentfulHighlight({
       </div>
     )
   }
-
   return (
     <div className={containerClassName}>
       <a id={entry_id} href={`#${entry_id}`}>
@@ -72,11 +72,14 @@ export default function ContentfulHighlight({
       <div
         className="contentful-highlight__bg-left"
         style={{ width: `${leftBackgroundWidth}%` }}
-      />
+      ></div>
       <div
         className="contentful-highlight__bg-right"
         style={{ width: `${rightBackgroundWidth}%` }}
       >
+        {/*<div className="highlight-image">*/}
+        {/*  <img src={require('../../assets/images/highlight/stripes@2x.png')} alt=""/>*/}
+        {/*</div>*/}
         <div className={bgTopClassName} />
         <div className={bgBottomClassName} />
       </div>
@@ -85,6 +88,12 @@ export default function ContentfulHighlight({
           <div className={contentClassName}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
             {authorSection}
+          </div>
+          <div className="highlight-image">
+            <img
+              src={require('../../assets/images/highlight/stripes@2x.png')}
+              alt=""
+            />
           </div>
         </div>
       </div>
