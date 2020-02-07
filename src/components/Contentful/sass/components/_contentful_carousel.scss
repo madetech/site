@@ -84,6 +84,8 @@
 
     .slick-next {
         transform: translate(0, -30px);
+        width: 60px;
+        height: 60px;
         &:before {
             color: #40c842;
             font-size: 60px;
@@ -91,6 +93,8 @@
 
         @include sm-tablet {
             right: -20px;
+            width: 40px;
+            height: 40px;
             &:before {
                 font-size: 40px;
             }
@@ -99,6 +103,8 @@
         @include mobile {
             transform: translate(0, -20px);
             right: -15px;
+            width: 30px;
+            height: 30px;
             &:before {
                 font-size: 30px;
             }
@@ -108,6 +114,8 @@
     .slick-prev {
         z-index: 1;
         transform: translate(-40px, -30px);
+        width: 60px;
+        height: 60px;
         &:before {
             color: #40c842;
             font-size: 60px;
@@ -115,6 +123,8 @@
 
         @include sm-tablet {
             left: 0;
+            width: 40px;
+            height: 40px;
             &:before {
                 font-size: 40px;
             }
@@ -122,6 +132,8 @@
 
         @include mobile {
             left: -10px;
+            width: 30px;
+            height: 30px;
             transform: translate(-15px, -20px);
             &:before {
                 font-size: 30px;
