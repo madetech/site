@@ -3,8 +3,6 @@ import React from 'react'
 export default function ContentfulHighlight({
   author,
   authorAvatar,
-  colourOfElementAbove,
-  colourOfElementBelow,
   extraLargeColumnWidth,
   extraSmallColumnWidth,
   entry_id,
@@ -14,7 +12,6 @@ export default function ContentfulHighlight({
   smallColumnWidth,
   style,
   textAlign,
-  highlightImage,
 }) {
   let colClasses = ''
 
@@ -38,16 +35,9 @@ export default function ContentfulHighlight({
     colClasses += ` col-${extraSmallColumnWidth}`
   }
 
-  const leftBackgroundWidth = 60
-  const rightBackgroundWidth = 100 - leftBackgroundWidth
-
   const containerClassName = `contentful-highlight ${style || ''}`
-  const bgTopClassName = `contentful-highlight__bg-right__top ${colourOfElementAbove ||
-    ''}`
-  const bgBottomClassName = `contentful-highlight__bg-right__bottom ${colourOfElementBelow ||
-    ''}`
 
-  let contentClassName = `${colClasses} offset-xl-1 offset-lg-1 offset-md-1 offset-sm-1 offset-1 contentful-highlight__content`
+  let contentClassName = `${colClasses} offset-xl-0 offset-lg-0 offset-md-0 offset-sm-0 offset-0 contentful-highlight__content`
 
   if (textAlign) contentClassName += ` text-${textAlign}`
 
@@ -71,29 +61,20 @@ export default function ContentfulHighlight({
       </a>
       <div
         className="contentful-highlight__bg-left"
-        style={{ width: `${leftBackgroundWidth}%` }}
-      ></div>
-      <div
-        className="contentful-highlight__bg-right"
-        style={{ width: `${rightBackgroundWidth}%` }}
+        style={{ width: `${contentClassName}` }}
       >
-        {/*<div className="highlight-image">*/}
-        {/*  <img src={require('../../assets/images/highlight/stripes@2x.png')} alt=""/>*/}
-        {/*</div>*/}
-        <div className={bgTopClassName} />
-        <div className={bgBottomClassName} />
+        <div className="highlight-image">
+          <img
+            src={require('../../assets/images/highlight/stripes@2x.png')}
+            alt=""
+          />
+        </div>
       </div>
       <div className="container">
         <div className="row">
           <div className={contentClassName}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
             {authorSection}
-          </div>
-          <div className="highlight-image">
-            <img
-              src={require('../../assets/images/highlight/stripes@2x.png')}
-              alt=""
-            />
           </div>
         </div>
       </div>

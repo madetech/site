@@ -1,72 +1,13 @@
 .contentful-highlight {
   position: relative;
 
-  &.green-gradient {
-    .contentful-highlight__bg-left {
-      background-color: $mt-green;
-    }
 
-    .contentful-highlight__content {
-      background-image: linear-gradient(
-        275deg,
-        $mt-green-gradient-dark 10%,
-        $mt-green 80%
-      );
-    }
+  .contentful-highlight__bg-left {
+    background-color: $black;
   }
 
-  &.black {
-    .contentful-highlight__bg-left {
-      background-color: $black;
-    }
-
-    .contentful-highlight__content {
-      background-color: $black;
-    }
-
-    .row {
-      display: flex;
-      .highlight-image {
-        flex: 2;
-        width: 100px;
-        height: 100px;
-        img {
-          width: auto;
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  .contentful-highlight__bg-right {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    right: 0;
-    height: 100%;
-
-    .contentful-highlight__bg-right__top,
-    .contentful-highlight__bg-right__bottom {
-      width: 100%;
-      height: 50%;
-
-      &.white {
-        background-color: $white;
-      }
-
-      &.white-two {
-        background-color: $white-two;
-      }
-    }
-    //.highlight-image {
-    //  width: 100%;
-    //  height: 100%;
-    //  text-align: right;
-    //  img {
-    //    width: auto;
-    //    height: 100%;
-    //  }
-    //}
+  .contentful-highlight__content {
+    background-color: $black;
   }
 
   .contentful-highlight__content {
@@ -100,9 +41,77 @@
   .contentful-highlight__bg-left {
     position: absolute;
     height: 100%;
+    width: 75%;
     margin: 0;
     padding: 0;
     display: inline-block;
+    border-left: 10px solid $mt-green;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .highlight-image {
+      width: auto;
+      height: 100%;
+      float: right;
+
+      @include sm-desktop {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+      }
+
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+      }
+
+      @include mobile {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+      }
+      img {
+        width: auto;
+        height: 100%;
+
+        @include sm-desktop {
+          height: 80%;
+        }
+
+        @include tablet {
+          height: 80%;
+        }
+
+        @include sm-tablet {
+          height: 80%;
+        }
+
+        @include mobile {
+          height: 80%;
+        }
+      }
+    }
+  }
+
+  .row {
+    .col-xl-8 {
+      background-color: transparent;
+      padding-bottom: 76px;
+      padding-top: 89px;
+
+      @include mobile {
+        padding-top: 47px;
+        padding-bottom: 43px;
+        padding-left: 21px;
+      }
+    }
   }
 
   .contentful-highlight__author {
