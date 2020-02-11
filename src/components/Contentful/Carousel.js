@@ -5,6 +5,10 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
+function isBrowser() {
+  return typeof window !== 'undefined'
+}
+
 export default class ContentfulCarousel extends Component {
   constructor(props) {
     super(props)
@@ -14,19 +18,19 @@ export default class ContentfulCarousel extends Component {
   }
 
   handleResize = () => {
-    if (window && window.innerWidth <= 991) {
+    if (isBrowser() && window.innerWidth <= 991) {
       this.setState({ changeNumOfItems: true })
-    } else if (window && window.innerWidth > 991) {
+    } else if (isBrowser() && window.innerWidth > 991) {
       this.setState({ changeNumOfItems: false })
     }
   }
 
   componentDidMount() {
-    window && window.addEventListener('resize', this.handleResize)
+    isBrowser() && window.addEventListener('resize', this.handleResize)
   }
 
   componentDidUnMount() {
-    window && window.removeEventListener('resize', this.handleResize)
+    isBrowser() && window.removeEventListener('resize', this.handleResize)
   }
 
   render() {
@@ -43,7 +47,7 @@ export default class ContentfulCarousel extends Component {
     // Below desktop sizes, carousel with prose looks better with 1 item per slide
     if (
       (this.state.changeNumOfItems && this.props.content) ||
-      (window && window.innerWidth <= 991)
+      (isBrowser() && window.innerWidth <= 991)
     ) {
       slidesToShow = 1
     }
