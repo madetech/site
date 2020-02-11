@@ -14,9 +14,9 @@ export default class ContentfulCarousel extends Component {
   }
 
   handleResize = () => {
-    if (window.innerWidth <= 991) {
+    if (window && window.innerWidth <= 991) {
       this.setState({ changeNumOfItems: true })
-    } else if (window.innerWidth > 991) {
+    } else if (window && window.innerWidth > 991) {
       this.setState({ changeNumOfItems: false })
     }
   }
