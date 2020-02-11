@@ -6,15 +6,39 @@ import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
 export default class ContentfulCarousel extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      changeNumOfItems: false,
+    }
+  }
+
+  handleResize = () => {
+    if (window.innerWidth <= 991) {
+      this.setState({ changeNumOfItems: true })
+    } else if (window.innerWidth > 991) {
+      this.setState({ changeNumOfItems: false })
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+
   render() {
     let dots = true
     let slidesToShow = this.props.slidesToShow || 1
+    let className = 'contentful-carousel'
     let imageComponents
     let proseComponents
-    let className = 'contentful-carousel'
 
     if (this.props.dots && this.props.dots === 'no dots') {
       dots = false
+    }
+
+    // Below desktop sizes, carousel with prose looks better with 1 item per slide
+    if (this.state.changeNumOfItems && this.props.content) {
+      slidesToShow = 1
     }
 
     if (this.props.style) {
