@@ -10,7 +10,6 @@ export default function ContentfulHighlight({
   largeColumnWidth,
   mediumColumnWidth,
   smallColumnWidth,
-  style,
   textAlign,
 }) {
   let colClasses = ''
@@ -35,7 +34,7 @@ export default function ContentfulHighlight({
     colClasses += ` col-${extraSmallColumnWidth}`
   }
 
-  const containerClassName = `contentful-highlight ${style || ''}`
+  const containerClassName = `contentful-highlight`
 
   let contentClassName = `${colClasses} offset-xl-0 offset-lg-0 offset-md-0 offset-sm-0 offset-0 contentful-highlight__content`
 
