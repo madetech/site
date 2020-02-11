@@ -129,11 +129,7 @@
     .academy__meet_our_grads {
         padding: 0 !important;
         .contentful-prose .prose {
-            margin-top: 107px;
-
-            @include sm-desktop {
-                margin-top: 92px;
-            }
+            margin-top: 92px;
 
             @include lg-tablet {
                 margin-top: 69px;
