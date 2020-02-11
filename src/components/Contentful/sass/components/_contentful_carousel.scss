@@ -1,8 +1,28 @@
 .contentful-carousel{
-    .container {
-        padding: 40px;
-    }
+    .contentful-prose {
+        
+        b {
+            color: $mt-green;
+        }
 
+        img {
+            display: inline-block;
+            width: 40%;
+            vertical-align: top;
+        }
+
+        .prose {
+            display: inline-block;
+            width: 60%;
+            font-size: $px20;
+            line-height: $px30;
+            padding-left: 20px;
+            margin: 0;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
     .slick-slider {
         margin: 0 auto;
     }
@@ -11,6 +31,22 @@
     .slick-slide,
     .slick-list {
         max-width: 980px !important;
+        width: 80vw;
+        @include sm-desktop {
+            max-width: 800px;
+        }
+
+        @include lg-tablet {
+            max-width: 600px;
+        }
+
+        @include sm-tablet {
+            max-width: 450px;
+        }
+
+        @include mobile {
+            max-width: 75vw;
+        }
     }
 
     .slick-track {
@@ -19,37 +55,56 @@
     }
 
     .slick-slide {
-        img {
+        img:not(.avatar) {
             margin: auto;
-            max-width: 980px;
             height: auto;
+            
+            @include lg-desktop {
+                padding: 0 5px;
+                max-width: calc(980px / var(--slides));
+            }
 
             @include sm-desktop {
-                max-width: 800px;
+                max-width: calc(800px / var(--slides));
             }
 
             @include lg-tablet {
-                max-width: 600px;
+                max-width: calc(600px / var(--slides));
             }
 
             @include sm-tablet {
-                max-width: 450px;
+                max-width: calc(450px / var(--slides));
             }
 
             @include mobile {
-                max-width: 75vw;
+                max-width: calc(75vw / var(--slides));
             }
         }
     }
 
     .slick-next {
+        transform: translate(0, -30px);
+        width: 60px;
+        height: 60px;
         &:before {
             color: #40c842;
             font-size: 60px;
         }
 
+        @include sm-tablet {
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            &:before {
+                font-size: 40px;
+            }
+        }
+
         @include mobile {
+            transform: translate(0, -20px);
             right: -15px;
+            width: 30px;
+            height: 30px;
             &:before {
                 font-size: 30px;
             }
@@ -58,15 +113,28 @@
 
     .slick-prev {
         z-index: 1;
-        transform: translate(-40px, -10px);
+        transform: translate(-40px, -30px);
+        width: 60px;
+        height: 60px;
         &:before {
             color: #40c842;
             font-size: 60px;
         }
 
+        @include sm-tablet {
+            left: 0;
+            width: 40px;
+            height: 40px;
+            &:before {
+                font-size: 40px;
+            }
+        }
+
         @include mobile {
             left: -10px;
-            transform: translate(-15px, -10px);
+            width: 30px;
+            height: 30px;
+            transform: translate(-15px, -20px);
             &:before {
                 font-size: 30px;
             }
