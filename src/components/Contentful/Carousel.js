@@ -25,6 +25,10 @@ export default class ContentfulCarousel extends Component {
     window.addEventListener('resize', this.handleResize)
   }
 
+  componentDidUnMount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
   render() {
     let dots = true
     let slidesToShow = this.props.slidesToShow || 1
