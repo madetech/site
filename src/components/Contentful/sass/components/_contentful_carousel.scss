@@ -10,6 +10,7 @@
     }
 
     .contentful-prose {
+        height: 180px;
 
         b {
             color: $mt-green;
@@ -30,6 +31,26 @@
             margin: 0;
             p {
                 margin-bottom: 0;
+            }
+        }
+
+        @include sm-desktop {
+            img {
+                width: 120px;
+            }
+
+            .prose {
+                font-size: $px18;
+            }
+        }
+        
+        @include lg-tablet {
+            img {
+                width: 120px;
+            }
+
+            .prose {
+                font-size: $px16;
             }
         }
     }
