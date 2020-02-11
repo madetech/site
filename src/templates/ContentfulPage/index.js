@@ -243,14 +243,11 @@ export const pageQuery = graphql`
       json
     }
     author
-    colourOfElementAbove
-    colourOfElementBelow
     extraLargeColumnWidth
     extraSmallColumnWidth
     largeColumnWidth
     mediumColumnWidth
     smallColumnWidth
-    style
     textAlign
     authorAvatar {
       fixed(width: 128, height: 128) {

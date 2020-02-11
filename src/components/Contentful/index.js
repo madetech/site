@@ -110,15 +110,12 @@ function ComponentRenderer(content) {
           author={content.author}
           authorAvatar={content.authorAvatar}
           entry_id={content.id}
-          colourOfElementAbove={content.colourOfElementAbove}
-          colourOfElementBelow={content.colourOfElementBelow}
           extraLargeColumnWidth={content.extraLargeColumnWidth}
           extraSmallColumnWidth={content.extraSmallColumnWidth}
           html={documentToHtmlString(content.body && content.body.json)}
           largeColumnWidth={content.largeColumnWidth}
           mediumColumnWidth={content.mediumColumnWidth}
           smallColumnWidth={content.smallColumnWidth}
-          style={content.style}
           textAlign={content.textAlign}
         />
       )
