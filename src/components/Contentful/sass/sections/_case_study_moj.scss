@@ -39,7 +39,13 @@
 
     .case__study__moj__problem__grid {
         padding: 50px 0 100px 0 !important;
-        
+
+        .prose {
+            p {
+                color: $dark-grey;
+            }
+        }
+
         @include desktop {
             padding: 80px 0 200px 0 !important;
         }
