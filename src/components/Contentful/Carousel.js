@@ -41,7 +41,10 @@ export default class ContentfulCarousel extends Component {
     }
 
     // Below desktop sizes, carousel with prose looks better with 1 item per slide
-    if (this.state.changeNumOfItems && this.props.content) {
+    if (
+      (this.state.changeNumOfItems && this.props.content) ||
+      window.innerWidth <= 991
+    ) {
       slidesToShow = 1
     }
 
