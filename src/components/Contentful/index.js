@@ -137,6 +137,7 @@ function ComponentRenderer(content) {
           dots={content.dots}
           slidesToShow={content.slidesToShow}
           content={content.content}
+          style={content.style}
         />
       )
     default:

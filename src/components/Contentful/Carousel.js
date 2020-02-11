@@ -5,15 +5,55 @@ import documentToHtmlString from '../../helpers/documentToHtmlString'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 
+function isBrowser() {
+  return typeof window !== 'undefined'
+}
+
 export default class ContentfulCarousel extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      changeNumOfItems: false,
+    }
+  }
+
+  handleResize = () => {
+    if (isBrowser() && window.innerWidth <= 991) {
+      this.setState({ changeNumOfItems: true })
+    } else if (isBrowser() && window.innerWidth > 991) {
+      this.setState({ changeNumOfItems: false })
+    }
+  }
+
+  componentDidMount() {
+    isBrowser() && window.addEventListener('resize', this.handleResize)
+  }
+
+  componentDidUnMount() {
+    isBrowser() && window.removeEventListener('resize', this.handleResize)
+  }
+
   render() {
     let dots = true
     let slidesToShow = this.props.slidesToShow || 1
+    let className = 'contentful-carousel'
     let imageComponents
     let proseComponents
 
     if (this.props.dots && this.props.dots === 'no dots') {
       dots = false
+    }
+
+    // Below desktop sizes, carousel with prose looks better with 1 item per slide
+    if (
+      (this.state.changeNumOfItems && this.props.content) ||
+      (isBrowser() && window.innerWidth <= 991)
+    ) {
+      slidesToShow = 1
+    }
+
+    if (this.props.style) {
+      className += ` ${this.props.style}`
     }
 
     if (this.props.images) {
@@ -130,19 +170,15 @@ export default class ContentfulCarousel extends Component {
       })
     }
 
-    console.log('hello', this.props.content)
     var settings = {
       dots: dots,
       slidesToShow: slidesToShow,
     }
 
     return (
-      <div className="contentful-carousel">
+      <div className={className}>
         <div className="container">
-          <Slider {...settings}>
-            {imageComponents}
-            {proseComponents}
-          </Slider>
+          <Slider {...settings}>{imageComponents || proseComponents}</Slider>
         </div>
       </div>
     )
