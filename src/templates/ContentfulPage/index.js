@@ -44,6 +44,7 @@ export const pageQuery = graphql`
             __typename
             ...prose
           }
+          style
         }
         ...headerImages
         ...highlight
