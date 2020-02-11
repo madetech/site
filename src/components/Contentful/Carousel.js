@@ -22,11 +22,11 @@ export default class ContentfulCarousel extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
+    window && window.addEventListener('resize', this.handleResize)
   }
 
   componentDidUnMount() {
-    window.removeEventListener('resize', this.handleResize)
+    window && window.removeEventListener('resize', this.handleResize)
   }
 
   render() {
@@ -43,7 +43,7 @@ export default class ContentfulCarousel extends Component {
     // Below desktop sizes, carousel with prose looks better with 1 item per slide
     if (
       (this.state.changeNumOfItems && this.props.content) ||
-      window.innerWidth <= 991
+      (window && window.innerWidth <= 991)
     ) {
       slidesToShow = 1
     }
