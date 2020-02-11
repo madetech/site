@@ -64,7 +64,7 @@ export default function ContentfulHighlight({
       >
         <div className="highlight-image">
           <img
-            src={require('../../assets/images/highlight/stripes@2x.png')}
+            src={require('../../assets/images/highlight/stripes-transparent@2x.png')}
             alt=""
           />
         </div>

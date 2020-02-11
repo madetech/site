@@ -57,29 +57,16 @@
 
     .highlight-image {
       width: auto;
+      text-align: right;
       height: 100%;
       float: right;
 
-      @include sm-desktop {
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-      }
-
-      @include tablet {
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-      }
-
-      @include mobile {
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-      }
       img {
+        position: absolute;
         width: auto;
         height: 100%;
+        right: 0;
+        bottom: 0;
 
         @include sm-desktop {
           height: 80%;
