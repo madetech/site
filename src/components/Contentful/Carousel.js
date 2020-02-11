@@ -11,9 +11,14 @@ export default class ContentfulCarousel extends Component {
     let slidesToShow = this.props.slidesToShow || 1
     let imageComponents
     let proseComponents
+    let className = 'contentful-carousel'
 
     if (this.props.dots && this.props.dots === 'no dots') {
       dots = false
+    }
+
+    if (this.props.style) {
+      className += ` ${this.props.style}`
     }
 
     if (this.props.images) {
@@ -130,14 +135,13 @@ export default class ContentfulCarousel extends Component {
       })
     }
 
-    console.log('hello', this.props.content)
     var settings = {
       dots: dots,
       slidesToShow: slidesToShow,
     }
 
     return (
-      <div className="contentful-carousel">
+      <div className={className}>
         <div className="container">
           <Slider {...settings}>
             {imageComponents}
