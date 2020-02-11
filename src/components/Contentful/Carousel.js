@@ -178,10 +178,7 @@ export default class ContentfulCarousel extends Component {
     return (
       <div className={className}>
         <div className="container">
-          <Slider {...settings}>
-            {imageComponents}
-            {proseComponents}
-          </Slider>
+          <Slider {...settings}>{imageComponents || proseComponents}</Slider>
         </div>
       </div>
     )
