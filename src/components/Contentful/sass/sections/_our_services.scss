@@ -167,6 +167,28 @@
     padding: 0 !important;
   }
 
+  .services__digital__lightweight {
+    .contentful-prose .prose {
+      p {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin-top: 20px;
+
+        li::marker {
+          color: $mt-green;
+        }
+
+        b {
+          font-size: $px20;
+          color: $black;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
   .services__right_experience {
     img {
       width: 75%;
