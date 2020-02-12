@@ -33,7 +33,7 @@
     .contentful-grid {
         &.shaded,
         &.white {
-            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads) {
+            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads):not(.academy__how_much_will_i_be_paid) {
                 padding: 70px 0 !important;
 
                 @include desktop {
@@ -216,7 +216,7 @@
         }
     }
 
-    #careers-made-academy-how-much-will-i-be-paid {
+    .academy__how_much_will_i_be_paid {
         @include lg-tablet {
             padding: 50px 0 30px 0 !important;
         }
