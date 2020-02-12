@@ -64,24 +64,24 @@
       img {
         position: absolute;
         width: auto;
-        height: 100%;
+        height: 80%;
         right: 0;
         bottom: 0;
 
         @include sm-desktop {
-          height: 80%;
+          height: 60%;
         }
 
         @include tablet {
-          height: 80%;
+          height: 60%;
         }
 
         @include sm-tablet {
-          height: 80%;
+          height: 60%;
         }
 
         @include mobile {
-          height: 80%;
+          height: 60%;
         }
       }
     }

@@ -488,9 +488,19 @@
 }
 
 .case__study__style {
-  font-family: $montserrat;
-  font-size: $px12;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #333333;
+  //font-family: $montserrat;
+  //font-size: $px12;
+  //font-weight: bold;
+  //letter-spacing: 1px;
+  //color: #333333;
+  .prose {
+    p {
+      font-family: $montserrat;
+      font-weight: $bold !important;
+      font-size: $px12 !important;
+      letter-spacing: 1px !important;
+      line-height: normal !important;
+      color: $black;
+    }
+  }
 }
