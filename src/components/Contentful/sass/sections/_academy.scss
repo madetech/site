@@ -33,7 +33,7 @@
     .contentful-grid {
         &.shaded,
         &.white {
-            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros) {
+            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads) {
                 padding: 70px 0 !important;
 
                 @include desktop {
@@ -127,35 +127,25 @@
     }
     
     .academy__meet_our_grads {
-        .contentful-prose {
-            margin-bottom: 30px;
+        padding: 0 !important;
+        .contentful-prose .prose {
+            margin-top: 92px;
 
-            &:not(.overlay) {    
-                img {
-                    display: inline-block;
-                    width: 40%;
-                    vertical-align: top;
-                }
+            @include lg-tablet {
+                margin-top: 69px;
+            }
 
-                .prose {
-                    display: inline-block;
-                    width: 60%;
-                    font-size: $px20;
-                    line-height: $px30;
-                    padding-left: 20px;
+            @include sm-tablet {
+                margin: 100px 0 0 0;
+                h1 {
                     margin: 0;
-                    p {
-                        margin-bottom: 0;
-                    }
                 }
             }
+
             @include mobile {
-                .prose {
-                    font-size: $px18 !important;
-                }
-                img.avatar {
-                    width: 76px;
-                    height: auto;
+                margin: 100px 0 0 0;
+                h1 {
+                    margin: 0;
                 }
             }
         }
