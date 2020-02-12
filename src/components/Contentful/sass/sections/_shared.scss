@@ -80,7 +80,10 @@
     position: relative;
     left: 0;
     margin: 0 !important;
-    padding-bottom: 14px;
+    
+    & + p {
+      padding-bottom: 14px;
+    }
   }
 
   p {
@@ -119,6 +122,12 @@
 
     @include mobile {
       left: -40px; /*adjust manually*/
+    }
+  }
+
+  h4 + h4 {
+    &:after {
+      content: none;
     }
   }
 
