@@ -167,6 +167,16 @@
     padding: 0 !important;
   }
 
+  .services__digital__beta {
+    p {
+      margin-bottom: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 20px;
+    }
+  } 
+
   .services__digital__lightweight {
     .contentful-prose .prose {
       p {
