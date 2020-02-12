@@ -39,8 +39,13 @@
       margin-left: -345px;
     }
 
-    @include tablet {
+    @include lg-tablet {
       margin-left: -310px;
+    }
+
+    @include sm-tablet {
+      width: 200px;
+      margin-left: -240px;
     }
 
     @include mobile {
