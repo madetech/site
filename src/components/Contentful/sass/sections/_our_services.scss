@@ -93,9 +93,8 @@
       'services_capability_timeline_1'
     );
 
-    @include mobile {
-      height: 80px;
-    }
+    height: 80px;
+    
     @include tablet {
       height: 140px;
     }
@@ -118,20 +117,25 @@
         background-position: center top !important;
       }
 
-      @include mobile {
-        &.contentful-grid {
-          padding-top: 280px !important;
-        }
-        @if $i == 3 {
-          min-height: 670px;
-        } @else {
-          height: 670px;
-        }
+      &.contentful-grid {
+        padding-top: 280px !important;
       }
+      @if $i == 3 {
+        min-height: 670px;
+      } @else {
+        height: 670px;
+      }
+      
 
       @include sm-tablet {
+        &.contentful-grid {
+          padding-top: 0;
+          margin-top: -70px;
+        }
         @if $i == 3 {
           min-height: 510px;
+          padding-top: 280px !important;
+          margin-top: 0 !important;
         } @else {
           height: 510px;
         }
@@ -167,16 +171,6 @@
     padding: 0 !important;
   }
 
-  .services__digital__beta {
-    p {
-      margin-bottom: 0;
-    }
-
-    p:last-child {
-      margin-bottom: 20px;
-    }
-  } 
-
   .services__digital__lightweight {
     .contentful-prose .prose {
       p {
@@ -193,12 +187,22 @@
         b {
           font-size: $px20;
           color: $black;
-          font-weight: 500;
+          font-weight: $medium;
         }
       }
     }
   }
 
+  .services__digital__beta {
+    p {
+      margin-bottom: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 20px;
+    }
+  } 
+  
   .services__right_experience {
     img {
       width: 75%;
