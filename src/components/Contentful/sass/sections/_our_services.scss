@@ -92,8 +92,9 @@
       '#{$svc-img-path}/capability',
       'services_capability_timeline_1'
     );
-
-    height: 80px;
+    @include mobile {
+      height: 80px;
+    }
     
     @include tablet {
       height: 140px;
@@ -117,24 +118,30 @@
         background-position: center top !important;
       }
 
-      &.contentful-grid {
+      @include mobile {  
+        &.contentful-grid {
         padding-top: 280px !important;
+        }
+        @if $i == 3 {
+          min-height: 670px;
+        } @else {
+          height: 670px;
+        }
       }
-      @if $i == 3 {
-        min-height: 670px;
-      } @else {
-        height: 670px;
-      }
-      
 
       @include sm-tablet {
         &.contentful-grid {
           padding-top: 0;
           margin-top: -70px;
+
+          @if $i != 3 {
+            .contentful-prose {
+              margin: 40px 0 0 30px;
+            }
+          }
         }
         @if $i == 3 {
           min-height: 510px;
-          padding-top: 280px !important;
           margin-top: 0 !important;
         } @else {
           height: 510px;
