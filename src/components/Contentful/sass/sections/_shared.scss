@@ -1,15 +1,15 @@
-@mixin bg-img($basepath, $size, $name, $resize:"") {
+@mixin bg-img($basepath, $size, $name) {
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-image: url('#{$basepath}/#{$size}/#{$name}_#{$size}.png');
-  background-size: #{$resize};
+  background-image: url('#{$basepath}/2280/#{$name}_2280.png');
+  background-size: #{$size}px;
 }
 
 @mixin bg-imgs($basepath, $name) {
   @include bg-img($basepath, 540, $name);
   
   @include sm-tablet {
-    @include bg-img($basepath, 720, $name, 620px);
+    @include bg-img($basepath, 720, $name);
   }
   @include lg-tablet {
     @include bg-img($basepath, 720, $name);
