@@ -9,7 +9,7 @@
   @include bg-img($basepath, 540, $name, 540);
   
   @include sm-tablet {
-    @include bg-img($basepath, 720, $name, 620);
+    @include bg-img($basepath, 720, $name, 640);
   }
   @include lg-tablet {
     @include bg-img($basepath, 720, $name, 720);

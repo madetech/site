@@ -120,7 +120,12 @@
 
       @include mobile {
         &.contentful-grid {
-          padding-top: 280px !important;
+          //padding-top: 280px !important;
+          .contentful-prose .prose {
+            //margin-top: 100px;
+            //padding-bottom: 30px !important;
+            padding-top: 300px 0;
+          }
         }
         @if $i == 3 {
           min-height: 670px;
@@ -132,7 +137,14 @@
       @include sm-tablet {
         &.contentful-grid {
           padding-top: 0;
-          margin-top: -70px;
+
+          .contentful-prose .prose {
+            margin-top: 0px;
+            h3,
+            p {
+              font-size: 22px !important;
+            }
+          }
 
           @if $i != 3 {
             .contentful-prose {
