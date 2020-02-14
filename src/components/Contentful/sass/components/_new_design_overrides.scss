@@ -231,6 +231,23 @@ ul li:before {
     + .contentful-grid.yellow {
       margin: initial;
     }
+
+    ul {
+      list-style: disc;
+      color: $mt-green;
+      ::before {
+        width: 8px !important;
+        height: 8px !important;
+      }
+      li {
+        p {
+          font-size: $px20;
+          line-height: $px30;
+          font-weight: $medium;
+          color: $black;
+        }
+      }
+    }
   }
 
   &.white {
