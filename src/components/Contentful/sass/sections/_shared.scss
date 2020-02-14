@@ -2,23 +2,23 @@
   background-repeat: no-repeat;
   background-position: center bottom;
   background-image: url('#{$basepath}/#{$size}/#{$name}_#{$size}@2x.png');
-  background-size: #{$resize};
+  background-size: #{$resize}px;
 }
 
 @mixin bg-imgs($basepath, $name) {
-  @include bg-img($basepath, 540, $name);
+  @include bg-img($basepath, 540, $name, 540);
   
   @include sm-tablet {
-    @include bg-img($basepath, 720, $name, 620px);
+    @include bg-img($basepath, 720, $name, 620);
   }
   @include lg-tablet {
-    @include bg-img($basepath, 720, $name);
+    @include bg-img($basepath, 720, $name, 720);
   }
   @include sm-desktop {
-    @include bg-img($basepath, 960, $name);
+    @include bg-img($basepath, 960, $name, 960);
   }
   @include lg-desktop {
-    @include bg-img($basepath, 1140, $name);
+    @include bg-img($basepath, 1140, $name, 1140);
   }
 }
 
