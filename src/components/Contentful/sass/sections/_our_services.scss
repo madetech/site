@@ -118,9 +118,9 @@
         background-position: center top !important;
       }
 
-      @include mobile {  
+      @include mobile {
         &.contentful-grid {
-        padding-top: 280px !important;
+          padding-top: 280px !important;
         }
         @if $i == 3 {
           min-height: 670px;

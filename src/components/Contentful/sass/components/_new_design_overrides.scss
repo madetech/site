@@ -233,7 +233,8 @@ ul li:before {
     }
   }
 
-  &.white {
+  &.white,
+  &.normal {
     background-color: $white;
 
     ul li:before {
