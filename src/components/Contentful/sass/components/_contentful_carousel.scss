@@ -6,7 +6,7 @@
     }
 
     &.yellow {
-        background-color: #fecc2b;
+        background-color: $yellow;
     }
 
     .contentful-prose {
@@ -145,7 +145,7 @@
         width: 60px;
         height: 60px;
         &:before {
-            color: #40c842;
+            color: $mt-green;
             font-size: 60px;
         }
 
@@ -175,7 +175,7 @@
         width: 60px;
         height: 60px;
         &:before {
-            color: #40c842;
+            color: $mt-green;
             font-size: 60px;
         }
 
@@ -207,7 +207,7 @@
     .slick-dots {
         button:before {
             font-size: 20px !important;
-            color: #333333 !important;
+            color: $black !important;
             opacity: 1 !important;
 
             @include mobile {
@@ -216,7 +216,7 @@
         }
         .slick-active {
             button:before {
-                color: #40c842 !important;
+                color: $mt-green !important;
                 z-index: 1;
             }
         }

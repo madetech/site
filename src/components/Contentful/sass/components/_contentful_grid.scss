@@ -18,11 +18,11 @@
   h4,
   h5,
   h6 {
-    color: #fff;
+    color: $white;
   }
 
   .prose {
-    color: #fff;
+    color: $white;
 
     p:last-child a {
       @extend .btn-outline-light;
@@ -32,7 +32,7 @@
 }
 
 .contentful-grid.yellow {
-  background-color: #fecc2b;
+  background-color: $yellow;
 
   .prose {
     color: $black;
@@ -69,7 +69,7 @@
 }
 
 .contentful-grid.shaded {
-  background-color: #fcfcfc;
+  background-color: #f1f1f1;
   border-top: 1px solid #e0e0e0;
   margin-bottom: 0;
 }
