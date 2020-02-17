@@ -20,6 +20,7 @@
         img {
             display: inline-block;
             width: 40%;
+            height: 152px;
             vertical-align: top;
         }
 
@@ -42,6 +43,7 @@
         @include sm-desktop {
             img {
                 width: 120px;
+                height: 120px;
             }
 
             .prose {
@@ -57,6 +59,7 @@
             margin-bottom: 30px;
             img {
                 width: 120px;
+                height: 120px;
             }
             .prose {
                 font-size: $px18;
@@ -71,6 +74,7 @@
             img {
                 display: flex;
                 width: 150px;
+                height: 150px;
             }
             .prose {
                 display: flex;
