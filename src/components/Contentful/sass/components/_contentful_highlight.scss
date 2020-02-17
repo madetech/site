@@ -16,7 +16,7 @@
       font-family: $poppins;
       color: $white;
       font-weight: $medium;
-      margin: 1rem 0;
+      margin-left: 10px;
 
       @include desktop {
         padding-right: 15%;
@@ -28,6 +28,14 @@
         padding-right: 10%;
         font-size: $px20;
         line-height: 1.5;
+        margin-left: 0;
+      }
+
+      @include sm-tablet {
+        padding-right: 10%;
+        font-size: $px20;
+        line-height: 1.5;
+        margin-left: 4px;
       }
 
       @include mobile {
@@ -104,6 +112,7 @@
   .contentful-highlight__author {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 
     .author {
       font-family: $montserrat;
@@ -119,6 +128,14 @@
         width: 54px;
         height: 54px;
       }
+    }
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    @include sm-tablet {
+      margin-left: 4px;
     }
   }
 }

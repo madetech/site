@@ -36,7 +36,7 @@ export default function ContentfulHighlight({
 
   const containerClassName = `contentful-highlight`
 
-  let contentClassName = `${colClasses} offset-xl-1 offset-lg-1 offset-md-1 offset-sm-1 offset-1 contentful-highlight__content`
+  let contentClassName = `${colClasses} offset-xl-1 offset-lg-1 offset-md-1 offset-sm-0 offset-1 contentful-highlight__content`
 
   if (textAlign) contentClassName += ` text-${textAlign}`
 
