@@ -143,28 +143,39 @@
         transform: translate(0, -30px);
         right: -55px;
         width: 60px;
-        height: 60px;
+        height: auto;
+        
+        &:hover {
+            opacity: 0.75;
+        }
+
+        img {
+            width: 60px;
+            height: auto;
+        }
+
         &:before {
-            color: $mt-green;
-            font-size: 60px;
+            content: '';
         }
 
         @include sm-tablet {
             right: -33px;
             width: 40px;
-            height: 40px;
-            &:before {
-                font-size: 40px;
+            height: auto;
+            img {
+                width: 40px;
+                height: auto;
             }
         }
 
         @include mobile {
             transform: translate(0, -20px);
             right: -20px;
-            width: 30px;
-            height: 30px;
-            &:before {
-                font-size: 30px;
+            width: 35px;
+            height: auto;
+            img {
+                width: 35px;
+                height: auto;
             }
         }
     }
@@ -173,29 +184,40 @@
         z-index: 1;
         transform: translate(-40px, -30px);
         width: 60px;
-        height: 60px;
+        height: auto;
+
+        &:hover {
+            opacity: 0.75;
+        }
+
+        img {
+            width: 60px;
+            height: auto;
+        }
+
         &:before {
-            color: $mt-green;
-            font-size: 60px;
+            content: '';
         }
 
         @include sm-tablet {
             left: 0;
             width: 40px;
-            height: 40px;
-            &:before {
-                font-size: 40px;
+            height: auto;
+            img {
+                width: 40px;
+                height: auto;
             }
         }
 
         @include mobile {
             left: -10px;
-            width: 30px;
-            height: 30px;
-            transform: translate(-15px, -20px);
-            &:before {
-                font-size: 30px;
+            width: 35px;
+            height: auto;
+            img {
+                width: 35px;
+                height: auto;
             }
+            transform: translate(-15px, -20px);
         }
     }
 
