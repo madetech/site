@@ -92,10 +92,10 @@
       '#{$svc-img-path}/capability',
       'services_capability_timeline_1'
     );
-
     @include mobile {
       height: 80px;
     }
+    
     @include tablet {
       height: 140px;
     }
@@ -130,8 +130,19 @@
       }
 
       @include sm-tablet {
+        &.contentful-grid {
+          padding-top: 0;
+          margin-top: -70px;
+
+          @if $i != 3 {
+            .contentful-prose {
+              margin: 40px 0 0 30px;
+            }
+          }
+        }
         @if $i == 3 {
           min-height: 510px;
+          margin-top: 0 !important;
         } @else {
           height: 510px;
         }
@@ -167,6 +178,38 @@
     padding: 0 !important;
   }
 
+  .services__digital__lightweight {
+    .contentful-prose .prose {
+      p {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin-top: 20px;
+
+        li::marker {
+          color: $mt-green;
+        }
+
+        b {
+          font-size: $px20;
+          color: $black;
+          font-weight: $medium;
+        }
+      }
+    }
+  }
+
+  .services__digital__beta {
+    p {
+      margin-bottom: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 20px;
+    }
+  } 
+  
   .services__right_experience {
     img {
       width: 75%;
