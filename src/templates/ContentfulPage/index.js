@@ -164,6 +164,9 @@ export const pageQuery = graphql`
     }
     pageTitle
     headerText
+    richHeaderText {
+      json
+    }
     headerImage {
       fixed(width: 1780) {
         height
