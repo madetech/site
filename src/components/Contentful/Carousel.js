@@ -9,6 +9,19 @@ function isBrowser() {
   return typeof window !== 'undefined'
 }
 
+function SliderArrow(props) {
+  const { className, direction, onClick } = props
+  return (
+    <button className={className} onClick={onClick}>
+      <img
+        src={require('../../assets/images/carousel/btn-' +
+          direction +
+          '-2x.png')}
+      />
+    </button>
+  )
+}
+
 export default class ContentfulCarousel extends Component {
   constructor(props) {
     super(props)
@@ -173,6 +186,8 @@ export default class ContentfulCarousel extends Component {
     var settings = {
       dots: dots,
       slidesToShow: slidesToShow,
+      nextArrow: <SliderArrow className={'slick-next'} direction={'next'} />,
+      prevArrow: <SliderArrow className={'slick-prev'} direction={'prev'} />,
     }
 
     return (
