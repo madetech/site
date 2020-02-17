@@ -32,6 +32,18 @@ div &.partner__detail {
                     color: #ff9900;
                 }
             }
+
+            img {
+                @include tablet {
+                    height: 200px;
+                    width: auto;
+                }
+
+                @include mobile {
+                    height: auto;
+                    width: 70%;
+                }
+            }
         }
 
         ul {
