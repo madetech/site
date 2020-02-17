@@ -60,3 +60,17 @@ div &.partner__detail {
         }
     }
 }
+
+.services__where_we_help {
+    @include sm-tablet {
+        .col-xl-5 {
+            margin-left: 0;
+        }
+    }
+
+    @include mobile {
+        .col-xl-5 {
+            margin-left: 0;
+        }
+    }
+}
