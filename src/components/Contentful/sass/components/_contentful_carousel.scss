@@ -159,7 +159,7 @@
         }
 
         &:before {
-            content: '';
+            content: none;
         }
 
         @include sm-tablet {
@@ -200,7 +200,7 @@
         }
 
         &:before {
-            content: '';
+            content: none;
         }
 
         @include sm-tablet {
