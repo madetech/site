@@ -163,7 +163,6 @@ export const pageQuery = graphql`
       }
     }
     pageTitle
-    headerText
     richHeaderText {
       json
     }

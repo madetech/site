@@ -7,7 +7,6 @@ export default function ContentfulHero({
   id,
   pageBreadcrumb,
   pageTitle,
-  headerText,
   richHeaderText,
   headerImage,
   headerImageLayout,
@@ -21,7 +20,6 @@ export default function ContentfulHero({
   let pageBreadcrumbComponent
   let textColourStyle
   let textSizeStyle
-  let headerTextComponent
   let richHeaderTextComponent
   let headerImageShadowColourStyle
   let links
@@ -45,12 +43,6 @@ export default function ContentfulHero({
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
-  if (headerText) {
-    headerTextComponent = (
-      <div className="contentful-hero__text">{headerText}</div>
-    )
-  }
-
   if (richHeaderText) {
     richHeaderTextComponent = (
       <div
@@ -72,7 +64,7 @@ export default function ContentfulHero({
           >
             {parsedTitle}
           </h1>
-          {richHeaderTextComponent || headerTextComponent}
+          {richHeaderTextComponent}
         </div>
       </div>
     )
