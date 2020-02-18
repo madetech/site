@@ -33,7 +33,7 @@ export default function Meta({ description, titlePrefix, url, image }) {
     siteUrl: 'https://www.madetech.com',
     keywords:
       'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
-    image: content.image,
+    image: '../../assets/images/highlight/stripes-transparent@2x.png',
   }
 
   if (description) metadata.description = description
