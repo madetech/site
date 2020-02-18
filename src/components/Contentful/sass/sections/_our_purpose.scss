@@ -94,6 +94,10 @@
       .overlay {
         margin-top: -75px;
 
+        @include lg-tablet {
+          padding: 0 5px;
+        }
+
         @include sm-tablet {
           margin-top: auto;
         }
