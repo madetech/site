@@ -4,9 +4,14 @@
   .row {
     font-size: 20px !important;
     margin: -10px 5% 0px -5%;
+
     h3 {
       margin-top: 0px;
       margin-bottom: 18px !important;
+    }
+
+    p {
+      font-family: $montserrat !important;
     }
 
     p:nth-last-of-type(2) {
