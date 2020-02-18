@@ -8,6 +8,7 @@ export default function ContentfulHero({
   pageBreadcrumb,
   pageTitle,
   headerText,
+  richHeaderText,
   headerImage,
   headerImageLayout,
   headerImageShadowColour,
@@ -21,6 +22,7 @@ export default function ContentfulHero({
   let textColourStyle
   let textSizeStyle
   let headerTextComponent
+  let richHeaderTextComponent
   let headerImageShadowColourStyle
   let links
   let backgroundColourStyle
@@ -49,6 +51,15 @@ export default function ContentfulHero({
     )
   }
 
+  if (richHeaderText) {
+    richHeaderTextComponent = (
+      <div
+        className="contentful-hero__text"
+        dangerouslySetInnerHTML={{ __html: richHeaderText }}
+      />
+    )
+  }
+
   let heroTextComponent
 
   function heroTextComponentMaker(bootstrapSizes) {
@@ -61,7 +72,7 @@ export default function ContentfulHero({
           >
             {parsedTitle}
           </h1>
-          {headerTextComponent}
+          {richHeaderTextComponent || headerTextComponent}
         </div>
       </div>
     )
