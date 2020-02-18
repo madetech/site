@@ -82,6 +82,14 @@
   .our__purpose__sectors__grid {
     &.contentful-grid {
       padding: 30px 0 30px 0 !important;
+      
+      .prose {
+        margin-top: 5px;
+        font-family: $poppins;
+        font-weight: 500;
+        line-height: 1.46;
+      }
+
       .overlay {
         margin-top: -75px;
 
