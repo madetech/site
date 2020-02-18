@@ -3,6 +3,10 @@
     color: $mt-green;
   }
 
+  .contentful-prose .prose p {
+    font-family: $poppins;
+  }
+
   .contentful-hero__row {
     .contentful-hero__text-box {
       @include desktop {
