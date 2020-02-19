@@ -12,6 +12,7 @@ export default function Layout({
   featureFlags,
   titlePrefix,
   url,
+  image,
 }) {
   let pageContentClass = ''
   if (featureFlags === 'new-design') {
@@ -23,7 +24,12 @@ export default function Layout({
 
   return (
     <div>
-      <Meta description={description} titlePrefix={titlePrefix} url={url} />
+      <Meta
+        description={description}
+        titlePrefix={titlePrefix}
+        url={url}
+        image={image}
+      />
       <Scripts />
 
       <TopBar>

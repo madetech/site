@@ -12,6 +12,7 @@ export default function ContentfulPageTemplate({ data }) {
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
+      image={page.headerImage}
     >
       <Contentful content={page.content} />
     </Layout>
@@ -156,6 +157,7 @@ export const pageQuery = graphql`
   }
   fragment hero on ContentfulHero {
     name
+    isHeader
     pageBreadcrumb {
       links {
         title
@@ -163,7 +165,9 @@ export const pageQuery = graphql`
       }
     }
     pageTitle
-    headerText
+    headerText {
+      json
+    }
     headerImage {
       fixed(width: 1780) {
         height
