@@ -48,6 +48,7 @@ function ComponentRenderer(content) {
         <Hero
           id={id}
           image={content.image}
+          isHeader={content.isHeader}
           pageBreadcrumb={content.pageBreadcrumb}
           pageTitle={content.pageTitle}
           headerText={documentToHtmlString(

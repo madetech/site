@@ -5,6 +5,7 @@ import { Hero } from '@madetech/frontend'
 
 export default function ContentfulHero({
   id,
+  isHeader,
   pageBreadcrumb,
   pageTitle,
   headerText,
@@ -26,6 +27,7 @@ export default function ContentfulHero({
   let backgroundColourStyle
   let heroClassNames = ''
   let noPageBreadcrumb = ''
+
   if (customClasses) {
     customClasses.forEach(c => (heroClassNames += ` ${c}`))
   }
@@ -147,7 +149,12 @@ export default function ContentfulHero({
       </div>
     )
   } else {
-    bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
+    if (isHeader === 'yes') {
+      bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
+    } else {
+      bootstrapSizes =
+        'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
+    }
     heroTextComponent = heroTextComponentMaker(bootstrapSizes)
     heroComponent = (
       <div className="row">

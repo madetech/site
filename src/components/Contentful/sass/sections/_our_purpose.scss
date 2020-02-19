@@ -151,6 +151,14 @@
 
   .our__purpose__our__vision__hero {
     &.contentful-hero {
+      .contentful-hero__text-box {
+        padding-bottom: 30px;
+
+        @include lg-tablet {
+          padding-bottom: 10px;
+        }
+      }
+
       margin-top: -50px;
 
       @include lg-tablet {
@@ -176,7 +184,7 @@
       }
 
       @include lg-tablet {
-        padding-top: 100px !important;
+        padding: 120px 0 !important;
       }
     }
     
