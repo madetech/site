@@ -13,7 +13,7 @@ export default function PostPageTemplate({ data, pageContext }) {
     <Layout
       description={category.description}
       titlePrefix={category.name}
-      image={category.image}
+      image={category.headerImage}
     >
       <PostListIntro
         parent={

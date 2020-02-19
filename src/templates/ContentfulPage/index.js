@@ -12,7 +12,7 @@ export default function ContentfulPageTemplate({ data }) {
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
-      image={page.image}
+      image={page.headerImage}
     >
       <Contentful content={page.content} />
     </Layout>
