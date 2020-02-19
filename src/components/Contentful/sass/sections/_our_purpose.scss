@@ -3,6 +3,29 @@
     color: $mt-green;
   }
 
+  .contentful-prose .prose p {
+    font-family: $poppins;
+    font-weight: $medium;
+    font-size: $px24;
+    line-height: 1.46;
+
+    @include sm-desktop {
+      font-size: $px20;
+    }
+
+    @include tablet {
+      font-size: $px18;
+    }
+
+    @include sm-tablet {
+      font-size: $px18;
+    }
+
+    @include mobile {
+      font-size: $px18;
+    }
+  }
+
   .contentful-hero__row {
     .contentful-hero__text-box {
       @include desktop {
@@ -78,8 +101,20 @@
   .our__purpose__sectors__grid {
     &.contentful-grid {
       padding: 30px 0 30px 0 !important;
+      
+      .prose {
+        margin-top: 5px;
+        font-family: $poppins;
+        font-weight: $medium;
+        line-height: 1.46;
+      }
+
       .overlay {
         margin-top: -75px;
+
+        @include lg-tablet {
+          padding: 0 5px;
+        }
 
         @include sm-tablet {
           margin-top: auto;
