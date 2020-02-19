@@ -149,11 +149,11 @@ export default function ContentfulHero({
       </div>
     )
   } else {
-    if (isHeader === 'yes') {
-      bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
-    } else {
+    if (isHeader === 'no') {
       bootstrapSizes =
         'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
+    } else {
+      bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
     }
     heroTextComponent = heroTextComponentMaker(bootstrapSizes)
     heroComponent = (
