@@ -14,7 +14,10 @@ function MetaHelmet({ title, description, keywords, url, siteUrl, image }) {
       {url && <meta property="og:url" content={url} />}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta
+        property="og:image"
+        content="images.ctfassets.net/42mpmljx5x5c/49WJqdBjTa7Pg27MVKTAmV/01fb800c611acc703805bf07d5531b5d/bitmap.jpg?w=1780&q=50"
+      />
 
       <link
         href={`${siteUrl}/rss.xml`}
