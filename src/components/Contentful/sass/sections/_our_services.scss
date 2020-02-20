@@ -114,23 +114,17 @@
         'services_capability_timeline_#{$i+1}'
       );
 
-      @if $i == 3 {
-        background-position: center top !important;
-      }
-
+      background-position: center top !important;
+      
       @include mobile {
         &.contentful-grid {
-          //padding-top: 280px !important;
-          .contentful-prose .prose {
-            //margin-top: 100px;
-            //padding-bottom: 30px !important;
-            padding-top: 300px 0;
+          padding: 0 !important;
+          
+          .container {
+            .contentful-prose {
+              margin-top: 400px;
+            }
           }
-        }
-        @if $i == 3 {
-          min-height: 670px;
-        } @else {
-          height: 670px;
         }
       }
 
