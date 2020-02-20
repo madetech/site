@@ -32,7 +32,7 @@ export default function Meta({ description, titlePrefix, url, image }) {
     siteUrl: 'https://www.madetech.com',
     keywords:
       'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
-    image: `${image}`, //'images.ctfassets.net/42mpmljx5x5c/49WJqdBjTa7Pg27MVKTAmV/01fb800c611acc703805bf07d5531b5d/bitmap.jpg?w=1780&q=50',
+    //image: `${image}`, //'images.ctfassets.net/42mpmljx5x5c/49WJqdBjTa7Pg27MVKTAmV/01fb800c611acc703805bf07d5531b5d/bitmap.jpg?w=1780&q=50',
   }
 
   if (description) metadata.description = description

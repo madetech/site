@@ -5,14 +5,15 @@ import Contentful from '../../components/Contentful'
 
 export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
-
   return (
     <Layout
       customClasses={page.customClasses}
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
-      image={page.headerImage}
+      image={
+        page.content[0].headerImage && page.content[0].headerImage.fixed.src
+      }
     >
       <Contentful content={page.content} />
     </Layout>
