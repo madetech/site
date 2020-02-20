@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import Contentful from '../../components/Contentful'
+import logo from '../../assets/images/favicon_logo.png'
 
 export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
@@ -12,7 +13,9 @@ export default function ContentfulPageTemplate({ data }) {
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
       image={
-        page.content[0].headerImage && page.content[0].headerImage.resize.src
+        page.content[0].headerImage
+          ? page.content[0].headerImage.resize.src
+          : logo
       }
     >
       <Contentful content={page.content} />
