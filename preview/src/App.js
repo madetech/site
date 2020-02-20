@@ -25,7 +25,6 @@ export default function App() {
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
-      image={page.image}
     >
       {page.content ? <Contentful content={page.content} /> : <Loading />}
 
