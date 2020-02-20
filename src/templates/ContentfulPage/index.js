@@ -12,7 +12,7 @@ export default function ContentfulPageTemplate({ data }) {
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
       image={
-        page.content[0].headerImage && page.content[0].headerImage.fixed.src
+        page.content[0].headerImage && page.content[0].headerImage.resize.src
       }
     >
       <Contentful content={page.content} />
