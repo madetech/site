@@ -12,7 +12,7 @@
     @include bg-img($basepath, 720, $name, 640);
   }
   @include lg-tablet {
-    @include bg-img($basepath, 720, $name, 720);
+    @include bg-img($basepath, 720, $name, 840);
   }
   @include sm-desktop {
     @include bg-img($basepath, 960, $name, 960);
