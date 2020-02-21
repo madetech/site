@@ -130,7 +130,7 @@
 
       @include sm-tablet {
         &.contentful-grid {
-          padding-top: 0;
+          padding-top: 30px !important;
 
           .contentful-prose .prose {
             margin-top: 0px;
@@ -139,26 +139,31 @@
               font-size: 22px !important;
             }
           }
-
-          @if $i != 3 {
-            .contentful-prose {
-              margin: 40px 0 0 30px;
-            }
-          }
         }
         @if $i == 3 {
           min-height: 510px;
-          margin-top: 0 !important;
         } @else {
-          height: 510px;
+          height: 450px;
+        }
+
+        .contentful-prose {
+          @if $i == 3 {
+            padding-top: 50px !important;
+          }
         }
       }
 
       @include lg-tablet {
         @if $i == 3 {
-          min-height: 510px;
+          min-height: 600px;
         } @else {
-          height: 510px;
+          height: 600px;
+        }
+
+        .contentful-prose {
+          @if $i == 2 {
+            padding-left: 50px !important;
+          }
         }
       }
 
