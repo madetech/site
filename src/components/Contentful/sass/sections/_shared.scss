@@ -1,4 +1,4 @@
-@mixin bg-img($basepath, $size, $name, $resize:"") {
+@mixin bg-img($basepath, $size, $name, $resize) {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-image: url('#{$basepath}/#{$size}/#{$name}_#{$size}@2x.png');
