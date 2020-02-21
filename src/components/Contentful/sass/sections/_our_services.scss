@@ -45,18 +45,18 @@
       }
 
       @include sm-tablet {
-        @if $i == 5 {
-          min-height: 510px;
-        } @else {
-          height: 510px;
+        padding-bottom: 50px !important;
+
+        &.contentful-grid .contentful-prose {
+          padding-top: 400px;
         }
       }
 
       @include lg-tablet {
         @if $i == 5 {
-          min-height: 510px;
+          min-height: 600px;
         } @else {
-          height: 510px;
+          height: 600px;
         }
       }
 
