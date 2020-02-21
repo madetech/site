@@ -36,19 +36,11 @@
         'services_legacy_timeline_#{$i+1}'
       );
 
-      @if $i == 5 {
-        background-position: center top !important;
-      }
+      background-position: center top !important;
 
       @include mobile {
-        &.contentful-grid {
-          padding-top: 280px !important;
-        }
-
-        @if $i == 5 {
-          min-height: 670px;
-        } @else {
-          height: 670px;
+        &.contentful-grid .contentful-prose {
+          padding-top: 350px !important;
         }
       }
 
