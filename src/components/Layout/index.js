@@ -22,6 +22,53 @@ export default function Layout({
     customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
 
+  let navLinks = {
+    Services: [
+      {
+        Digital: '/our-services/digital-service-delivery',
+        Data: '/our-services/data-infrastructure',
+        'Tech Capability': '/our-services/technology-skill-enablement',
+        'Tech Legacy': '/our-services/transform-legacy-applications',
+      },
+    ],
+    Sectors: [
+      {
+        'Central Government': '/sectors/central-government',
+        'Central Government': '/sectors/local-government',
+        Housing: '/sectors/housing',
+        Healthcare: '/sectors/healthcare',
+        Transport: '/sectors/transport',
+        Education: '/sectors/education',
+        'Police, Justice & Emergency': '/sectors/police-justice-emergency',
+        'Space, Defence & Security': '/sectors/space-defence-security',
+      },
+    ],
+    'Why Made Tech': [
+      {
+        'Purpose & Misson': '/our-purpose',
+        Frameworks: '/frameworks',
+        Partners: '/partners',
+        Blog: '/blog',
+        Books: '/resources/books',
+        Learn: 'https://learn.madetech.com',
+      },
+      'sitemap__why-made-tech',
+    ],
+    'Case Studies': [
+      {
+        'Ministry of Justice': '/case-study',
+      },
+      'sitemap__case-studies',
+    ],
+    Contact: [
+      {
+        Careers: '/careers',
+        Academy: '/made-academy',
+      },
+      'sitemap__get-in-touch',
+    ],
+  }
+
   return (
     <div>
       <Meta
