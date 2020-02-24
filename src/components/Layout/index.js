@@ -22,7 +22,7 @@ export default function Layout({
     customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
 
-  let navLinks = [
+  let newNavLinks = [
     {
       sectionTitle: 'Services',
       links: [
@@ -43,7 +43,6 @@ export default function Layout({
           link: '/our-services/transform-legacy-applications',
         },
       ],
-      class: '',
     },
     {
       sectionTitle: 'Sectors',
@@ -81,7 +80,6 @@ export default function Layout({
           link: '/sectors/space-defence-security',
         },
       ],
-      class: '',
     },
     {
       sectionTitle: 'Why Made Tech',
@@ -111,7 +109,7 @@ export default function Layout({
           link: 'https://learn.madetech.coms',
         },
       ],
-      class: ' sitemap__why-made-tech',
+      class: 'sitemap__why-made-tech',
     },
     {
       sectionTitle: 'Case Studies',
