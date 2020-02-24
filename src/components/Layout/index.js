@@ -161,7 +161,7 @@ export default function Layout({
 
       <div className={pageContentClass}>{children}</div>
 
-      <SiteMap />
+      <SiteMap navLinks={newNavLinks} />
 
       <Footer />
     </div>
