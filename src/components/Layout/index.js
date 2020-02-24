@@ -22,52 +22,122 @@ export default function Layout({
     customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
 
-  let navLinks = {
-    Services: [
-      {
-        Digital: '/our-services/digital-service-delivery',
-        Data: '/our-services/data-infrastructure',
-        'Tech Capability': '/our-services/technology-skill-enablement',
-        'Tech Legacy': '/our-services/transform-legacy-applications',
-      },
-    ],
-    Sectors: [
-      {
-        'Central Government': '/sectors/central-government',
-        'Central Government': '/sectors/local-government',
-        Housing: '/sectors/housing',
-        Healthcare: '/sectors/healthcare',
-        Transport: '/sectors/transport',
-        Education: '/sectors/education',
-        'Police, Justice & Emergency': '/sectors/police-justice-emergency',
-        'Space, Defence & Security': '/sectors/space-defence-security',
-      },
-    ],
-    'Why Made Tech': [
-      {
-        'Purpose & Misson': '/our-purpose',
-        Frameworks: '/frameworks',
-        Partners: '/partners',
-        Blog: '/blog',
-        Books: '/resources/books',
-        Learn: 'https://learn.madetech.com',
-      },
-      'sitemap__why-made-tech',
-    ],
-    'Case Studies': [
-      {
-        'Ministry of Justice': '/case-study',
-      },
-      'sitemap__case-studies',
-    ],
-    Contact: [
-      {
-        Careers: '/careers',
-        Academy: '/made-academy',
-      },
-      'sitemap__get-in-touch',
-    ],
-  }
+  let navLinks = [
+    {
+      sectionTitle: 'Services',
+      links: [
+        {
+          text: 'Digital',
+          link: '/our-services/digital-service-delivery',
+        },
+        {
+          text: 'Data',
+          link: '/our-services/data-infrastructure',
+        },
+        {
+          text: 'Tech Capability',
+          link: '/our-services/technology-skill-enablement',
+        },
+        {
+          text: 'Tech Legacy',
+          link: '/our-services/transform-legacy-applications',
+        },
+      ],
+      class: '',
+    },
+    {
+      sectionTitle: 'Sectors',
+      links: [
+        {
+          text: 'Central Government',
+          link: '/sectors/central-government',
+        },
+        {
+          text: 'Local Government',
+          link: '/sectors/local-government',
+        },
+        {
+          text: 'Housing',
+          link: '/sectors/housing',
+        },
+        {
+          text: 'Healthcare',
+          link: '/sectors/healthcare',
+        },
+        {
+          text: 'Transport',
+          link: '/sectors/transport',
+        },
+        {
+          text: 'Education',
+          link: '/sectors/education',
+        },
+        {
+          text: 'Police, Justice & Emergency',
+          link: '/sectors/police-justice-emergency',
+        },
+        {
+          text: 'Space, Defence & Security',
+          link: '/sectors/space-defence-security',
+        },
+      ],
+      class: '',
+    },
+    {
+      sectionTitle: 'Why Made Tech',
+      links: [
+        {
+          text: 'Purpose & Misson',
+          link: '/our-purpose',
+        },
+        {
+          text: 'Frameworks',
+          link: '/frameworks',
+        },
+        {
+          text: 'Partners',
+          link: '/partners',
+        },
+        {
+          text: 'Blog',
+          link: '/blog',
+        },
+        {
+          text: 'Books',
+          link: '/resources/books',
+        },
+        {
+          text: 'Learn',
+          link: 'https://learn.madetech.coms',
+        },
+      ],
+      class: ' sitemap__why-made-tech',
+    },
+    {
+      sectionTitle: 'Case Studies',
+      links: [
+        {
+          text: 'Ministry of Justice',
+          link: '/case-study',
+        },
+      ],
+      class: 'sitemap__case-studies',
+    },
+    {
+      sectionTitle: 'Contact',
+      links: [
+        {
+          text: 'Careers',
+          link: '/careers',
+        },
+        {
+          text: 'Academy',
+          link: '/made-academy',
+        },
+      ],
+      class: 'sitemap__get-in-touch',
+    },
+  ]
 
   return (
     <div>
