@@ -36,35 +36,27 @@
         'services_legacy_timeline_#{$i+1}'
       );
 
-      @if $i == 5 {
-        background-position: center top !important;
-      }
+      background-position: center top !important;
 
       @include mobile {
-        &.contentful-grid {
-          padding-top: 280px !important;
-        }
-
-        @if $i == 5 {
-          min-height: 670px;
-        } @else {
-          height: 670px;
+        &.contentful-grid .contentful-prose {
+          padding-top: 350px !important;
         }
       }
 
       @include sm-tablet {
-        @if $i == 5 {
-          min-height: 510px;
-        } @else {
-          height: 510px;
+        padding-bottom: 50px !important;
+
+        &.contentful-grid .contentful-prose {
+          padding-top: 400px;
         }
       }
 
       @include lg-tablet {
         @if $i == 5 {
-          min-height: 510px;
+          min-height: 600px;
         } @else {
-          height: 510px;
+          height: 600px;
         }
       }
 
@@ -114,45 +106,56 @@
         'services_capability_timeline_#{$i+1}'
       );
 
-      @if $i == 3 {
-        background-position: center top !important;
-      }
-
+      background-position: center top !important;
+      
       @include mobile {
         &.contentful-grid {
-          padding-top: 280px !important;
-        }
-        @if $i == 3 {
-          min-height: 670px;
-        } @else {
-          height: 670px;
+          padding: 0 !important;
+          
+          .container {
+            .contentful-prose {
+              margin-top: 400px;
+            }
+          }
         }
       }
 
       @include sm-tablet {
         &.contentful-grid {
-          padding-top: 0;
-          margin-top: -70px;
+          padding-top: 30px !important;
 
-          @if $i != 3 {
-            .contentful-prose {
-              margin: 40px 0 0 30px;
+          .contentful-prose .prose {
+            margin-top: 0px;
+            h3,
+            p {
+              font-size: 22px !important;
             }
           }
         }
         @if $i == 3 {
           min-height: 510px;
-          margin-top: 0 !important;
         } @else {
-          height: 510px;
+          height: 450px;
+        }
+
+        .contentful-prose {
+          @if $i == 3 {
+            padding-top: 50px !important;
+          }
         }
       }
 
       @include lg-tablet {
         @if $i == 3 {
-          min-height: 510px;
+          min-height: 600px;
         } @else {
-          height: 510px;
+          height: 600px;
+        }
+
+        .contentful-prose {
+          @if $i == 2 {
+            padding-left: 50px !important;
+          }
         }
       }
 
