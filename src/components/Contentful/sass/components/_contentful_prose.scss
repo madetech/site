@@ -105,5 +105,9 @@ header + div:not(.new-design) {
     @include sm-tablet {
       margin-top: -63px;
     }
+
+    @include sm-desktop {
+      margin-top: -117px;
+    }
   }
 }
