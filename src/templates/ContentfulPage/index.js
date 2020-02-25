@@ -169,7 +169,7 @@ export const pageQuery = graphql`
       }
     }
     pageTitle
-    headerText {
+    body {
       json
     }
     headerImage {
