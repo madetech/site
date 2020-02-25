@@ -122,7 +122,7 @@
             
             @include lg-desktop {
                 padding: 0 5px;
-                max-width: calc(980px / var(--slides));
+                max-width: calc(950px / var(--slides));
             }
 
             @include sm-desktop {
