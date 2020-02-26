@@ -99,15 +99,19 @@ header + div:not(.new-design) {
     margin-top: -70px;
 
     @include lg-tablet {
-      margin-top: -136px;
+      margin-top: -185px;
     }
 
     @include sm-tablet {
-      margin-top: -63px;
+      margin-top: -59px;
     }
 
     @include sm-desktop {
-      margin-top: -117px;
+      margin-top: -166px;
+    }
+
+    @include mobile {
+      margin-top: -59px;
     }
   }
 }
