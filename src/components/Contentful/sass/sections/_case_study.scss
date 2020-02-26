@@ -32,12 +32,12 @@
     }
 
     .contentful-grid  {
-        &.white:not(.case_study_2):not(.case__study__results_2__grid) {
+        &.white:not(.case_study_2):not(.case__study__section_5__grid) {
             padding: 50px 0 !important;
         }
     }
 
-    .case__study__problem__grid {
+    .case__study__section_1__grid {
         padding: 50px 0 100px 0 !important;
 
         .prose {
@@ -70,7 +70,7 @@
         }
     }
 
-    .case__study__results_2__grid {
+    .case__study__section_5__grid {
         padding: 0 !important;
         margin-bottom: 130px;
     }
