@@ -36,6 +36,13 @@
     }
 
     .contentful-prose{
+      &.text-left {
+        .prose {
+          a {
+            font-weight: 800;
+          }
+        }
+      }
       &.text-center {
         height: 600px;
         overflow: hidden;
