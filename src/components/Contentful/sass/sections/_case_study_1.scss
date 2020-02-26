@@ -85,6 +85,13 @@
             }
           }
         }
+        &.text-left {
+          .prose {
+            a {
+              font-weight: 800;
+            }
+          }
+        }
       }
 
       overflow: visible;
