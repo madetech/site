@@ -51,9 +51,7 @@ function ComponentRenderer(content) {
           isHeader={content.isHeader}
           pageBreadcrumb={content.pageBreadcrumb}
           pageTitle={content.pageTitle}
-          headerText={documentToHtmlString(
-            content.headerText && content.headerText.json
-          )}
+          body={documentToHtmlString(content.body && content.body.json)}
           headerImage={content.headerImage}
           headerImageLayout={content.headerImageLayout}
           headerImageShadowColour={content.headerImageShadowColour}

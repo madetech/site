@@ -8,7 +8,7 @@ export default function ContentfulHero({
   isHeader,
   pageBreadcrumb,
   pageTitle,
-  headerText,
+  body,
   headerImage,
   headerImageLayout,
   headerImageShadowColour,
@@ -45,11 +45,11 @@ export default function ContentfulHero({
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
-  if (headerText) {
+  if (body) {
     headerTextComponent = (
       <div
         className="contentful-hero__text"
-        dangerouslySetInnerHTML={{ __html: headerText }}
+        dangerouslySetInnerHTML={{ __html: body }}
       />
     )
   }

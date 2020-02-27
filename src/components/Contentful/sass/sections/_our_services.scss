@@ -109,39 +109,16 @@
       background-position: center top !important;
       
       @include mobile {
-        &.contentful-grid {
-          padding: 0 !important;
-          
-          .container {
-            .contentful-prose {
-              margin-top: 400px;
-            }
-          }
+        &.contentful-grid .contentful-prose {
+          padding-top: 350px;
         }
       }
 
       @include sm-tablet {
-        &.contentful-grid {
-          padding-top: 30px !important;
+        padding-bottom: 50px !important;
 
-          .contentful-prose .prose {
-            margin-top: 0px;
-            h3,
-            p {
-              font-size: 22px !important;
-            }
-          }
-        }
-        @if $i == 3 {
-          min-height: 510px;
-        } @else {
-          height: 450px;
-        }
-
-        .contentful-prose {
-          @if $i == 3 {
-            padding-top: 50px !important;
-          }
+        &.contentful-grid .contentful-prose {
+          padding-top: 400px;
         }
       }
 
@@ -189,8 +166,9 @@
 
       ul {
         margin-top: 20px;
+        padding-left: 22px;
 
-        li::marker {
+        li {
           color: $mt-green;
         }
 

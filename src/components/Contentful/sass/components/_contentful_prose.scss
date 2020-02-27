@@ -1,3 +1,4 @@
+@import '../abstracts/mixins';
 // need to disable these link-buttons for new site
 header + div:not(.new-design) {
   .contentful-grid.yellow {
@@ -95,6 +96,22 @@ header + div:not(.new-design) {
   }
 
   &.overlay {
-    margin-top: -50px;
+    margin-top: -70px;
+
+    @include lg-tablet {
+      margin-top: -185px;
+    }
+
+    @include sm-tablet {
+      margin-top: -59px;
+    }
+
+    @include sm-desktop {
+      margin-top: -166px;
+    }
+
+    @include mobile {
+      margin-top: -59px;
+    }
   }
 }

@@ -8,6 +8,7 @@
     font-weight: $medium;
     font-size: $px24;
     line-height: 1.46;
+    color: $black;
 
     @include sm-desktop {
       font-size: $px20;
@@ -107,6 +108,10 @@
         font-family: $poppins;
         font-weight: $medium;
         line-height: 1.46;
+        
+        p {
+          color: $black;
+        }
       }
 
       .overlay {
