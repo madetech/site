@@ -115,8 +115,20 @@ export default function Layout({
       sectionTitle: 'Case Studies',
       links: [
         {
+          text: 'Government Digital Service',
+          link: '/case-studies/government-digital-service-govwifi',
+        },
+        {
+          text: 'Legal Aid Agency',
+          link: '/case-studies/legal-aid-agency',
+        },
+        {
+          text: 'Hackney Council',
+          link: '/case-studies/hackney-api-platform',
+        },
+        {
           text: 'Ministry of Justice',
-          link: '/case-study',
+          link: '/case-studies/ministry-of-justice-children-fund',
         },
       ],
       class: 'sitemap__case-studies',
