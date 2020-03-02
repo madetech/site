@@ -32,13 +32,13 @@ export default function Layout({
         image={image}
       />
       <Scripts />
-
+      {/* 
       <TopBar>
         <a href="https://learn.madetech.com">Learn</a>
         <a href="/resources/books">Books</a>
-      </TopBar>
+      </TopBar> */}
 
-      <Example classes={'contentful-mobile-menu'}></Example>
+      <Example></Example>
 
       <Header constrainLinkWidth logoHref="/" scrollable>
         <a href="/our-services">Our Services</a>
