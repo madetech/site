@@ -32,9 +32,9 @@ export default class Example extends React.Component {
           <a id="sectors" className="menu-item" href="/sectors">
             Sectors
           </a>
-          <a id="whyMT" className="menu-item" href="">
+          <div id="whyMT" className="menu-item">
             Why Made Tech
-          </a>
+          </div>
           <a
             id="purpose"
             className="menu-item indented-item"
@@ -49,7 +49,7 @@ export default class Example extends React.Component {
           >
             Frameworks
           </a>
-          <a id="partners" className="menu-item" href="/partners">
+          <a id="partners" className="menu-item indented-item" href="/partners">
             Partners
           </a>
           <a id="blog" className="menu-item indented-item" href="/blog">
@@ -62,12 +62,15 @@ export default class Example extends React.Component {
           >
             Learn
           </a>
+          <div id="caseStudies" className="menu-item">
+            Case Studies
+          </div>
           <a
             id="gds"
             className="menu-item indented-item"
             href="/case-studies/government-digital-service-govwifi"
           >
-            Contact
+            Government Digital Service
           </a>
           <a
             id="laa"
