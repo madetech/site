@@ -39,8 +39,8 @@
   */
   .bm-menu-wrap {
     position: fixed;
-    height: auto !important;
-    background: $white;
+    height: 100%;
+    background-color: $white;
   }
   
   /* General sidebar styles */
@@ -63,6 +63,7 @@
   .bm-item-list {
     border-top: $white-two solid 4px;
     padding: 0;
+    overflow: scroll;
   }
   
   /* Individual item */
