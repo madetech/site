@@ -41,10 +41,10 @@ export default function Layout({
       <Example></Example>
 
       <Header constrainLinkWidth logoHref="/" scrollable>
-        <a href="/our-services">Our Services</a>
+        {/* <a href="/our-services">Our Services</a>
         <a href="/blog">Blog</a>
         <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a>
+        <a href="/contact">Contact</a> */}
       </Header>
 
       <div className={pageContentClass}>{children}</div>
