@@ -20,7 +20,7 @@
   
   /* Position and sizing of clickable cross button */
   .bm-cross-button {
-    position: fixed !important;
+    position: absolute !important;
     width: 33px !important;
     height: 36px !important;
     right: 30px !important;
@@ -38,8 +38,8 @@
   Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
   */
   .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
+    position: absolute !important;
+    height: auto !important;
     background: $white;
   }
   
@@ -81,6 +81,6 @@
   
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.3);
   }
 }
