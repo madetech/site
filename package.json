@@ -17,7 +17,7 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^13.4.0",
     "@hot-loader/react-dom": "^16.9.0",
-    "@madetech/frontend": "^5.10.10",
+    "@madetech/frontend": "^5.10.12",
     "dotenv": "^8.1.0",
     "fs": "0.0.1-security",
     "gatsby": "^2.15.9",
@@ -34,6 +34,7 @@
     "node-sass": "^4.13.0",
     "query-string": "^6.8.3",
     "react": "^16.9.0",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-slick": "^0.25.2",
