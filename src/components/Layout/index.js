@@ -26,9 +26,9 @@ export default function Layout({
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize)
+    isBrowser() && window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', handleResize)
+      isBrowser() && window.removeEventListener('resize', handleResize)
     }
   })
 
