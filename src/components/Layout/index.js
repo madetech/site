@@ -46,7 +46,12 @@ export default function Layout({
 
   function headerComponentMaker() {
     if (isMobile || (isBrowser() && window.innerWidth <= 576)) {
-      return <MobileMenu />
+      return (
+        <div>
+          <Header />
+          <MobileMenu />
+        </div>
+      )
     } else {
       return (
         <Header constrainLinkWidth logoHref="/" scrollable>
