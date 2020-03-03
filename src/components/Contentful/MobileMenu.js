@@ -50,12 +50,12 @@ export default class MobileMenu extends React.Component {
         width={'100vw'}
         customBurgerIcon={
           <img
-            src={require('../../assets/images/mobile-nav/icon-burger/icon-burger@2x.png')}
+            src={require('../../assets/images/mobile-nav/icon-burger/icon-burger.png')}
           />
         }
         customCrossIcon={
           <img
-            src={require('../../assets/images/mobile-nav/icon-close/icon-close@2x.png')}
+            src={require('../../assets/images/mobile-nav/icon-close/icon-close.png')}
           />
         }
       >
