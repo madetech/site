@@ -32,11 +32,6 @@ export default function Layout({
       />
       <Scripts />
 
-      <TopBar>
-        <a href="https://learn.madetech.com">Learn</a>
-        <a href="/resources/books">Books</a>
-      </TopBar>
-
       <Header constrainLinkWidth logoHref="/" scrollable>
         <a href="/our-services">Our Services</a>
         <a href="/blog">Blog</a>
