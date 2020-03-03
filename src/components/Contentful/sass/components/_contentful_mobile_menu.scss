@@ -7,9 +7,10 @@
     right: 30px;
     top: 31px;
 
-    .bm-icon {
-      width: 33px;
-      height: 36px;
+    .bm-icon,
+    button {
+      width: 33px !important;
+      height: 36px !important;
     }
   }
   
