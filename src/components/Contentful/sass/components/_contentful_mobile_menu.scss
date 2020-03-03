@@ -40,18 +40,20 @@
   .bm-menu-wrap {
     position: fixed;
     height: 100%;
-    background-color: $white;
+    background-color: transparent;
   }
   
   /* General sidebar styles */
   .bm-menu {
     padding-top: 86px;
     font-size: 1.15em;
-    background-image: url('assets/images/made-tech-logo-colour.png');
-    background-size: 180px;
-    background-repeat: no-repeat;
-    background-position-x: 30px;
-    background-position-y: 38px;
+    background: linear-gradient(to bottom, #fff 30%, transparent 30% 100%);
+    // background-image: url('assets/images/made-tech-logo-colour.png');
+    // background-size: 180px;
+    // background-repeat: no-repeat;
+    // background-position-x: 30px;
+    // background-position-y: 38px;
+    
   }
 
   /* Morph shape necessary with bubble or elastic */
@@ -68,6 +70,7 @@
   
   /* Individual item */
   .bm-item {
+    background-color: #fff;
     display: inline-block;
     font-size: $px18;
     font-weight: 600;
