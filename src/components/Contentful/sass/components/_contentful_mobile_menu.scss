@@ -48,12 +48,6 @@
     padding-top: 86px;
     font-size: 1.15em;
     background: linear-gradient(to bottom, #fff 30%, transparent 30% 100%);
-    // background-image: url('assets/images/made-tech-logo-colour.png');
-    // background-size: 180px;
-    // background-repeat: no-repeat;
-    // background-position-x: 30px;
-    // background-position-y: 38px;
-    
   }
 
   /* Morph shape necessary with bubble or elastic */
@@ -85,6 +79,6 @@
   
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.3);
   }
 }

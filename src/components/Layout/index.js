@@ -49,7 +49,7 @@ export default function Layout({
       return (
         <div>
           <MobileMenu />
-          <Header />
+          <Header constrainLinkWidth logoHref="/" />
         </div>
       )
     } else {
