@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
@@ -23,6 +23,44 @@ export default function Layout({
     customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
 
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
+
+  function isBrowser() {
+    return typeof window !== 'undefined'
+  }
+
+  function handleResize() {
+    if (isBrowser() && window.innerWidth <= 576) {
+      setIsMobile(true)
+    } else if (isBrowser() && window.innerWidth > 576) {
+      setIsMobile(false)
+    }
+  }
+
+  function headerComponentMaker() {
+    if (isMobile || window.innerWidth <= 576) {
+      return <MobileMenu />
+    } else {
+      return (
+        <Header constrainLinkWidth logoHref="/" scrollable>
+          <a href="/our-services">Our Services</a>
+          <a href="/blog">Blog</a>
+          <a href="/careers">Careers</a>
+          <a href="/contact">Contact</a>
+        </Header>
+      )
+    }
+  }
+
+  let headerComponent = headerComponentMaker()
+
   return (
     <div>
       <Meta
@@ -33,20 +71,7 @@ export default function Layout({
       />
       <Scripts />
 
-      {/* 
-      <TopBar>
-        <a href="https://learn.madetech.com">Learn</a>
-        <a href="/resources/books">Books</a>
-      </TopBar> */}
-
-      <MobileMenu></MobileMenu>
-
-      <Header constrainLinkWidth logoHref="/" scrollable>
-        {/* <a href="/our-services">Our Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a> */}
-      </Header>
+      {headerComponent}
 
       <div className={pageContentClass}>{children}</div>
 
