@@ -1,6 +1,6 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
-import Logo from '@madetech/frontend'
+import { Logo } from '@madetech/frontend'
 
 export default class MobileMenu extends React.Component {
   constructor(props) {
