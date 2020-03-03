@@ -32,6 +32,7 @@ export default function Layout({
         image={image}
       />
       <Scripts />
+
       {/* 
       <TopBar>
         <a href="https://learn.madetech.com">Learn</a>

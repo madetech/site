@@ -351,10 +351,14 @@
     border-left-width: $px04;
     padding-left: 8px;
 
-    ul {
+    .prose ul {
       padding-right: 15px;
       li {
         p {
+          @include desktop {
+            font-size: $px20;
+          }
+
           @include tablet {
             font-size: $px16;
             line-height: $px30;
