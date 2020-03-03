@@ -45,7 +45,7 @@ export default function Layout({
   }
 
   function headerComponentMaker() {
-    if (isMobile || window.innerWidth <= 576) {
+    if (isMobile || (isBrowser() && window.innerWidth <= 576)) {
       return <MobileMenu />
     } else {
       return (
