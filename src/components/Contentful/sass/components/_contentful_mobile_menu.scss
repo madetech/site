@@ -75,6 +75,13 @@
     &.indented-item {
       padding-left: 50px;
     }
+
+    &.home {
+      position: absolute;
+      top: 15px;
+      border: none;
+      background: none;
+    }
   }
   
   /* Styling of overlay */
