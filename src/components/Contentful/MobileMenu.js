@@ -1,5 +1,6 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
+import Logo from '@madetech/frontend/src/components/Header/Logo.js'
 
 export default class MobileMenu extends React.Component {
   constructor(props) {
@@ -16,15 +17,18 @@ export default class MobileMenu extends React.Component {
         width={'100vw'}
         customBurgerIcon={
           <img
-            src={require('../../assets/images/mobile-nav/icon-burger/icon-burger@2x.png')}
+            src={require('../../assets/images/mobile-nav/icon-burger/icon-burger.png')}
           />
         }
         customCrossIcon={
           <img
-            src={require('../../assets/images/mobile-nav/icon-close/icon-close@2x.png')}
+            src={require('../../assets/images/mobile-nav/icon-close/icon-close.png')}
           />
         }
       >
+        <a className="home" href="/">
+          <Logo />
+        </a>
         <a className="menu-item" href="/our-services">
           Our Services
         </a>
