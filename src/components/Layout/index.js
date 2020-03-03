@@ -48,8 +48,8 @@ export default function Layout({
     if (isMobile || (isBrowser() && window.innerWidth <= 576)) {
       return (
         <div>
-          <Header />
           <MobileMenu />
+          <Header />
         </div>
       )
     } else {
