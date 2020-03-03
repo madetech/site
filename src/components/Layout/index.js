@@ -3,7 +3,7 @@ import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
 import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
-import Example from '../Contentful/Menu'
+import MobileMenu from '../Contentful/MobileMenu'
 
 export default function Layout({
   children,
@@ -38,7 +38,7 @@ export default function Layout({
         <a href="/resources/books">Books</a>
       </TopBar> */}
 
-      <Example></Example>
+      <MobileMenu></MobileMenu>
 
       <Header constrainLinkWidth logoHref="/" scrollable>
         {/* <a href="/our-services">Our Services</a>

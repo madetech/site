@@ -1,7 +1,7 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
 
-export default class Example extends React.Component {
+export default class MobileMenu extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
