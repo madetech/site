@@ -135,6 +135,9 @@ export default class MobileMenu extends React.Component {
         >
           Academy
         </a>
+        <a className="home" href="/">
+          <Logo />
+        </a>
       </Menu>
     )
 
