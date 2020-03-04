@@ -31,8 +31,7 @@ export default function Meta({ description, titlePrefix, url, image }) {
       'We build software delivery capabilities, deliver digital & technology, and run live services for ambitious organisations.',
     siteUrl: 'https://www.madetech.com',
     keywords:
-      'Made Tech provide Digital, Data and Technology services to the UK public sector.\n' +
-      'We help public sector leaders to modernise legacy applications and working practices, accelerate digital service delivery, drive smarter decisions with data and enable improved technology skills within teams.',
+      'Made, Software, Agile, Rails, MadeTech, Made Tech, Spree Commerce, Spree, DevOps, Software Engineering, Continuous Delivery, Ruby on Rails',
   }
 
   if (description) metadata.description = description
