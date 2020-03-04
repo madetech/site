@@ -18,16 +18,6 @@
     }
   }
 
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: #373a47;
-  }
-
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: #a90000;
-  }
-
   /* Position and sizing of clickable cross button */
   .bm-cross-button {
     position: absolute !important;
@@ -58,12 +48,7 @@
   .bm-menu {
     padding-top: 86px;
     font-size: 1.15em;
-    background: linear-gradient(to bottom, #fff 30%, transparent 30% 100%);
-  }
-
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
+    background: linear-gradient(to bottom, $white 30%, transparent 30% 100%);
   }
 
   /* Wrapper for item list */
@@ -75,12 +60,12 @@
 
   /* Individual item */
   .bm-item {
-    background-color: #fff;
+    background-color: $white;
     display: inline-block;
     font-size: $px18;
     font-weight: 600;
     color: $black;
-    border-bottom: #f1f1f1 solid 2px;
+    border-bottom: $white-two solid 2px;
     padding: 15px;
 
     &.indented-item {
@@ -88,10 +73,13 @@
     }
 
     &.home {
-      position: absolute;
-      top: 14px;
+      padding: 0 0 0 20px;
       border: none;
       background: none;
+      img {
+        position: absolute;
+        top: 35px;
+      }
     }
   }
 
