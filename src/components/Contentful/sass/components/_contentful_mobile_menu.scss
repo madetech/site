@@ -51,6 +51,7 @@
     position: fixed;
     height: 100%;
     background-color: transparent;
+    transition: none !important;
   }
 
   /* General sidebar styles */
@@ -88,7 +89,7 @@
 
     &.home {
       position: absolute;
-      top: 15px;
+      top: 14px;
       border: none;
       background: none;
     }
