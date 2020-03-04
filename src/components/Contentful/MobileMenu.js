@@ -26,9 +26,6 @@ export default class MobileMenu extends React.Component {
           />
         }
       >
-        <a className="home" href="/">
-          <Logo />
-        </a>
         <a className="menu-item" href="/our-services">
           Our Services
         </a>
@@ -40,6 +37,9 @@ export default class MobileMenu extends React.Component {
         </a>
         <a className="menu-item" href="/contact">
           Contact
+        </a>
+        <a className="home" href="/">
+          <Logo />
         </a>
       </Menu>
     )
@@ -134,6 +134,9 @@ export default class MobileMenu extends React.Component {
           href="/careers/academy"
         >
           Academy
+        </a>
+        <a className="home" href="/">
+          <Logo />
         </a>
       </Menu>
     )
