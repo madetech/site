@@ -29,7 +29,7 @@ export default function Layout({
     return (
       <div>
         <MobileMenu />
-        <Header constrainLinkWidth logoHref="/">
+        <Header constrainLinkWidth logoHref="/" scrollable>
           <a href="/our-services">Our Services</a>
           <a href="/blog">Blog</a>
           <a href="/careers">Careers</a>

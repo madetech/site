@@ -1,5 +1,4 @@
 .contentful-mobile-menu {
-
   @media (min-width: 577px) {
     display: none;
   }
@@ -18,17 +17,17 @@
       height: 36px !important;
     }
   }
-  
+
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
     background: #373a47;
   }
-  
+
   /* Color/shape of burger icon bars on hover*/
   .bm-burger-bars-hover {
     background: #a90000;
   }
-  
+
   /* Position and sizing of clickable cross button */
   .bm-cross-button {
     position: absolute !important;
@@ -37,13 +36,13 @@
     right: 30px !important;
     top: 31px !important;
   }
-  
+
   /* Color/shape of close button cross */
   .bm-cross {
     width: 33px;
     height: 36px;
   }
-  
+
   /*
   Sidebar wrapper styles
   Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
@@ -53,7 +52,7 @@
     height: 100%;
     background-color: transparent;
   }
-  
+
   /* General sidebar styles */
   .bm-menu {
     padding-top: 86px;
@@ -65,14 +64,14 @@
   .bm-morph-shape {
     fill: #373a47;
   }
-  
+
   /* Wrapper for item list */
   .bm-item-list {
-    border-top: $white-two solid 4px;
+    border-top: #f1f1f1 solid 4px;
     padding: 0;
     overflow: scroll;
   }
-  
+
   /* Individual item */
   .bm-item {
     background-color: #fff;
@@ -80,7 +79,7 @@
     font-size: $px18;
     font-weight: 600;
     color: $black;
-    border-bottom: $white-two solid 2px;
+    border-bottom: #f1f1f1 solid 2px;
     padding: 15px;
 
     &.indented-item {
@@ -94,7 +93,7 @@
       background: none;
     }
   }
-  
+
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
