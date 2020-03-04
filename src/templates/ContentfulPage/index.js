@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import Contentful from '../../components/Contentful'
-import logo from '../../assets/images/favicon_logo.png'
+import logo from '../../assets/images/made-tech-logo-colour.jpg'
 
 export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
