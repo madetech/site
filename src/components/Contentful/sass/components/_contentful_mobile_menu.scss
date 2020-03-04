@@ -88,10 +88,13 @@
     }
 
     &.home {
-      position: absolute;
-      top: 14px;
+      padding: 0 0 0 20px;
       border: none;
       background: none;
+      img {
+        position: absolute;
+        top: 35px;
+      }
     }
   }
 
