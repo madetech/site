@@ -105,7 +105,7 @@
 }
 
 .contentful-hero__links__a {
-  display: inline-block;
+  display: block;
 
   @include desktop {
     font-size: $px22;
