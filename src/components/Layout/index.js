@@ -25,43 +25,18 @@ export default function Layout({
 
   const [isMobile, setIsMobile] = useState(false)
 
-  useEffect(() => {
-    isBrowser() && window.addEventListener('resize', handleResize)
-    return () => {
-      isBrowser() && window.removeEventListener('resize', handleResize)
-    }
-  })
-
-  function isBrowser() {
-    return typeof window !== 'undefined'
-  }
-
-  function handleResize() {
-    if (isBrowser() && window.innerWidth <= 576) {
-      setIsMobile(true)
-    } else if (isBrowser() && window.innerWidth > 576) {
-      setIsMobile(false)
-    }
-  }
-
   function headerComponentMaker() {
-    if (isMobile || (isBrowser() && window.innerWidth <= 576)) {
-      return (
-        <div>
-          <MobileMenu />
-          <Header constrainLinkWidth logoHref="/" />
-        </div>
-      )
-    } else {
-      return (
-        <Header constrainLinkWidth logoHref="/" scrollable>
+    return (
+      <div>
+        <MobileMenu />
+        <Header constrainLinkWidth logoHref="/">
           <a href="/our-services">Our Services</a>
           <a href="/blog">Blog</a>
           <a href="/careers">Careers</a>
           <a href="/contact">Contact</a>
         </Header>
-      )
-    }
+      </div>
+    )
   }
 
   let headerComponent = headerComponentMaker()

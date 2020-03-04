@@ -1,4 +1,9 @@
 .contentful-mobile-menu {
+
+  @media (min-width: 577px) {
+    display: none;
+  }
+
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: absolute;
