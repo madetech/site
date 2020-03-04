@@ -1,4 +1,4 @@
-.grey{
+.grey {
   @include lg-desktop {
     background-size: calc(60%) calc(100%);
   }
@@ -7,7 +7,7 @@
     background-size: calc(60%) calc(100%);
   }
 
-  @include sm-desktop{ 
+  @include sm-desktop {
     background-size: calc(60%) calc(100%);
   }
 
@@ -23,7 +23,7 @@
     background-size: calc(100%) calc(100%);
   }
 }
-  
+
 .contentful-hero {
   @include desktop {
     margin-bottom: $desktop-spacing;
@@ -54,9 +54,9 @@
       width: auto;
       background: no-repeat;
       background-size: contain;
-      }
+    }
   }
-  
+
   .no_breadcrumb {
     padding: 80px 0 125px 0;
   }
@@ -90,6 +90,10 @@
 }
 
 .contentful-hero__header-links {
+  a:link {
+    margin-bottom: 10px;
+  }
+
   a:hover {
     color: $white;
   }
@@ -101,36 +105,38 @@
 }
 
 .contentful-hero__links__a {
-  @include desktop { 
+  display: inline-block;
+
+  @include desktop {
     font-size: $px22;
     line-height: 50px;
   }
 
-  @include sm-desktop { 
+  @include sm-desktop {
     font-size: $px18;
     line-height: 40px;
   }
 
-  @include tablet { 
+  @include tablet {
     font-size: $px18;
     line-height: 30px;
   }
 }
 
 .contentful-hero__text {
-  @include desktop{
+  @include desktop {
     font-size: $px24;
   }
 
-  @include sm-desktop{
+  @include sm-desktop {
     font-size: $px20;
   }
 
-  @include tablet {  
+  @include tablet {
     font-size: $px18;
   }
 
-  @include sm-tablet { 
+  @include sm-tablet {
     font-size: $px18;
   }
 
@@ -138,4 +144,3 @@
     font-size: $px18;
   }
 }
-
