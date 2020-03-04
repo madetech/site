@@ -27,7 +27,7 @@ export default function Layout({
 
   function headerComponentMaker() {
     return (
-      <div>
+      <div className="new-design">
         <MobileMenu />
         <Header constrainLinkWidth logoHref="/" scrollable>
           <a href="/our-services">Our Services</a>
