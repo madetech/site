@@ -26,8 +26,8 @@ export default class MobileMenu extends React.Component {
           />
         }
       >
-        <a className="menu-item" href="/our-services">
-          Our Services
+        <a className="menu-item" href="/services">
+          Services
         </a>
         <a className="menu-item" href="/blog">
           Blog

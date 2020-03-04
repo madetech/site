@@ -30,7 +30,7 @@ export default function Layout({
       <div className="new-design">
         <MobileMenu />
         <Header constrainLinkWidth logoHref="/" scrollable>
-          <a href="/our-services">Our Services</a>
+          <a href="/services">Services</a>
           <a href="/blog">Blog</a>
           <a href="/careers">Careers</a>
           <a href="/contact">Contact</a>
