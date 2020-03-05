@@ -31,9 +31,15 @@
     }
 
     .contentful-grid {
+        .prose p {
+            @include mobile {
+                font-size: $px20;
+            }
+        }
+
         &.shaded,
         &.white {
-            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads):not(.academy__how_much_will_i_be_paid) {
+            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads):not(.academy__how_much_will_i_be_paid):not(.academy__why_made_academy) {
                 padding: 70px 0 !important;
 
                 @include desktop {
@@ -80,14 +86,8 @@
     .contentful-prose {
         &.overlay {
             h1 {
-                margin-top: -145px !important;
-
-                @include sm-desktop {
-                    margin-top: -140px !important;
-                }
-
-                @include lg-tablet {
-                    margin-top: -110px !important;
+                @include lg-desktop {
+                    margin-top: -145px !important;
                 }
 
                 @include sm-tablet {
@@ -98,15 +98,47 @@
                     margin-top: 30px !important;
                 }
             }
+
+            @include sm-desktop {
+                margin-top: -140px !important;
+             }
+
+             @include lg-tablet {
+                margin-top: -110px !important;
+            }
         }
     }
 
     .academy__why_made_academy {
+        &.contentful-grid {
+            padding: 70px 0 !important;
+            
+            @include lg-tablet {
+                padding: 50px 0 !important;
+            }
+        }
         img {
             margin-bottom: 20px;
-            max-width: 200px;
+            max-width: 320;
           }
-        
+
+        .contentful-prose {
+            &.overlay {
+                h1 {
+                    @include lg-desktop {
+                        margin-top: -123px !important;
+                    }
+                }
+
+                @include sm-desktop {
+                    margin-top: -119px !important;
+                }
+
+                @include lg-tablet {
+                    margin-top: -90px !important;
+                }
+            }
+        }
           .prose {
               p {
                 padding: 0 10px 0 10px;
@@ -160,14 +192,8 @@
         .contentful-prose {
             &.overlay {
                 h1 {
-                    margin-top: -124px !important;
-
-                    @include sm-desktop {
-                        margin-top: -119px !important;
-                    }
-    
-                    @include lg-tablet {
-                        margin-top: -100px !important;
+                    @include lg-desktop {
+                        margin-top: -124px !important;
                     }
     
                     @include sm-tablet {
@@ -177,6 +203,14 @@
                     @include mobile {
                         margin-top: 30px !important;
                     }
+                }
+
+                @include lg-tablet {
+                    margin-top: -100px !important;
+                }
+
+                @include sm-desktop {
+                    margin-top: -119px !important;
                 }
             }
         }
@@ -198,6 +232,14 @@
           }
         
         .prose {
+            @include mobile {
+                padding-bottom: 20px;
+            }
+
+            @include sm-tablet {
+                padding-bottom: 20px;
+            }
+
             p {
             padding: 0 10px 0 10px;
             margin-bottom: 10px !important;
@@ -277,15 +319,15 @@
 
         .overlay {
             @include lg-desktop {
-                margin-top: -162px;
+                margin-top: -165px !important;
             }
 
             @include sm-desktop {
-                margin-top: -158px;
+                margin-top: -158px !important;
             }
 
             @include lg-tablet {
-                margin-top: -150px;
+                margin-top: -150px !important;
             }
 
             @include sm-tablet {
