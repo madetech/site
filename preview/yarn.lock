@@ -1127,10 +1127,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@madetech/frontend@^5.10.15":
-  version "5.10.15"
-  resolved "https://registry.yarnpkg.com/@madetech/frontend/-/frontend-5.10.15.tgz#a520261147c5e09faa62a7ec33662de408d37559"
-  integrity sha512-xctTC1ylU6RoPKCZhqb0FhQQM/bVZ63W8liW3ejJelYnY/MVlGhtvKzIda62ACXBpZDrBOy9IQtJFAgajmccHg==
+"@madetech/frontend@^5.10.17":
+  version "5.10.17"
+  resolved "https://registry.yarnpkg.com/@madetech/frontend/-/frontend-5.10.17.tgz#08ad704d95c5b6f0f22892a6175602b9b9975165"
+  integrity sha512-k840Oc2TLhqs3lKp3zNfWSvuDzLnMS5VJ0fdA/YYMn8n4h3mLXwrEXHp6iZw3U/iAauMSY8nMWibnpfjpwIcTQ==
   dependencies:
     "@madetech/marketing-assets" "^1.6.0"
     bootstrap "^4.4.1"
