@@ -47,6 +47,9 @@ function transformEntry(entry) {
       fixed: {
         src: fields.image.fields.file.url,
       },
+      resize: {
+        src: fields.image.fields.file.url,
+      },
     }
   }
 
@@ -54,6 +57,9 @@ function transformEntry(entry) {
     fields.images = fields.images.map(image => {
       return {
         fixed: {
+          src: image.fields.file.url,
+        },
+        resize: {
           src: image.fields.file.url,
         },
       }

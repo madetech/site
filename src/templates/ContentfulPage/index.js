@@ -2,16 +2,21 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import Contentful from '../../components/Contentful'
+import logo from '../../assets/images/made-tech-logo-colour.jpg'
 
 export default function ContentfulPageTemplate({ data }) {
   const page = data.contentfulPage
-
   return (
     <Layout
       customClasses={page.customClasses}
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
+      image={
+        page.content[0].headerImage
+          ? page.content[0].headerImage.resize.src
+          : logo
+      }
     >
       <Contentful content={page.content} />
     </Layout>
@@ -29,7 +34,23 @@ export const pageQuery = graphql`
       content {
         __typename
         ...hero
-        ...carousel
+        ... on ContentfulCarousel {
+          name
+          images {
+            fixed(height: 500) {
+              src
+              srcSet
+              width
+            }
+          }
+          dots
+          slidesToShow
+          content {
+            __typename
+            ...prose
+          }
+          style
+        }
         ...headerImages
         ...highlight
         ...inlineImages
@@ -85,11 +106,14 @@ export const pageQuery = graphql`
     columnOffset
     constrainImageHeight
     images {
-      fixed(width: 400) {
+      fixed(height: 1000) {
         height
         src
         srcSet
         width
+      }
+      resize(height: 400) {
+        src
       }
     }
     overlay
@@ -137,6 +161,7 @@ export const pageQuery = graphql`
   }
   fragment hero on ContentfulHero {
     name
+    isHeader
     pageBreadcrumb {
       links {
         title
@@ -144,7 +169,9 @@ export const pageQuery = graphql`
       }
     }
     pageTitle
-    headerText
+    body {
+      json
+    }
     headerImage {
       fixed(width: 1780) {
         height
@@ -225,14 +252,11 @@ export const pageQuery = graphql`
       json
     }
     author
-    colourOfElementAbove
-    colourOfElementBelow
     extraLargeColumnWidth
     extraSmallColumnWidth
     largeColumnWidth
     mediumColumnWidth
     smallColumnWidth
-    style
     textAlign
     authorAvatar {
       fixed(width: 128, height: 128) {
@@ -292,8 +316,5 @@ export const pageQuery = graphql`
     mediumColumnOffset
     smallColumnWidth
     smallColumnOffset
-  }
-  fragment carousel on ContentfulCarousel {
-    name
   }
 `

@@ -48,9 +48,10 @@ function ComponentRenderer(content) {
         <Hero
           id={id}
           image={content.image}
+          isHeader={content.isHeader}
           pageBreadcrumb={content.pageBreadcrumb}
           pageTitle={content.pageTitle}
-          headerText={content.headerText}
+          body={documentToHtmlString(content.body && content.body.json)}
           headerImage={content.headerImage}
           headerImageLayout={content.headerImageLayout}
           headerImageShadowColour={content.headerImageShadowColour}
@@ -110,15 +111,12 @@ function ComponentRenderer(content) {
           author={content.author}
           authorAvatar={content.authorAvatar}
           entry_id={content.id}
-          colourOfElementAbove={content.colourOfElementAbove}
-          colourOfElementBelow={content.colourOfElementBelow}
           extraLargeColumnWidth={content.extraLargeColumnWidth}
           extraSmallColumnWidth={content.extraSmallColumnWidth}
           html={documentToHtmlString(content.body && content.body.json)}
           largeColumnWidth={content.largeColumnWidth}
           mediumColumnWidth={content.mediumColumnWidth}
           smallColumnWidth={content.smallColumnWidth}
-          style={content.style}
           textAlign={content.textAlign}
         />
       )
@@ -133,7 +131,16 @@ function ComponentRenderer(content) {
         />
       )
     case 'ContentfulCarousel':
-      return <Carousel name={content.name} />
+      return (
+        <Carousel
+          name={content.name}
+          images={content.images}
+          dots={content.dots}
+          slidesToShow={content.slidesToShow}
+          content={content.content}
+          style={content.style}
+        />
+      )
     default:
       return <div>Unknown Content Type: {content.__typename}</div>
   }

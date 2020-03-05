@@ -5,9 +5,10 @@ import { Hero } from '@madetech/frontend'
 
 export default function ContentfulHero({
   id,
+  isHeader,
   pageBreadcrumb,
   pageTitle,
-  headerText,
+  body,
   headerImage,
   headerImageLayout,
   headerImageShadowColour,
@@ -25,6 +26,7 @@ export default function ContentfulHero({
   let links
   let backgroundColourStyle
   let heroClassNames = ''
+  let noPageBreadcrumb = ''
 
   if (customClasses) {
     customClasses.forEach(c => (heroClassNames += ` ${c}`))
@@ -36,14 +38,19 @@ export default function ContentfulHero({
 
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
+  } else {
+    noPageBreadcrumb = 'no_breadcrumb'
   }
 
   let parsedTitle = threeSpaceToLineBreak(pageTitle)
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
-  if (headerText) {
+  if (body) {
     headerTextComponent = (
-      <div className="contentful-hero__text">{headerText}</div>
+      <div
+        className="contentful-hero__text"
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
     )
   }
 
@@ -52,7 +59,7 @@ export default function ContentfulHero({
   function heroTextComponentMaker(bootstrapSizes) {
     return (
       <div className={`${bootstrapSizes}`}>
-        <div className="contentful-hero__text-box">
+        <div className={`contentful-hero__text-box ${noPageBreadcrumb}`}>
           {pageBreadcrumbComponent}
           <h1
             className={`contentful-hero__page-title ${textSizeStyle} ${textColourStyle}`}
@@ -73,18 +80,16 @@ export default function ContentfulHero({
 
   let heroImageComponent
 
+  if (headerLinks) {
+    links = list()
+  }
+
   if (headerImageShadowColourStyle === 'none') {
     heroImageComponent = (
       <div
         className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
       >
-        <img
-          style={{
-            backgroundImage: 'url(' + headerImage.resize.src + ')',
-          }}
-          alt={headerImage.title}
-          src={headerImage.fixed.src}
-        />
+        <img alt={headerImage.title} src={headerImage.fixed.src} />
         {links}
       </div>
     )
@@ -106,28 +111,25 @@ export default function ContentfulHero({
     )
   }
 
-  if (headerLinks) {
-    links = list()
-  }
-
   function list() {
+    let linksHeader = 'Jump straight to:'
+
     headerLinks.forEach(link => {
       link.reference = '#'
       if (link.slug) {
         link.reference = 'https://www.madetech.com' + link.slug
+        link.linkTitle = link.name
+        linksHeader = 'Go to:'
       } else {
         link.reference = '#' + link.id
       }
     })
     return (
       <div className="contentful-hero__header-links">
-        <p className="contentful-hero__header-links__title ">
-          {' '}
-          Jump straight to:
-        </p>
+        <p className="contentful-hero__header-links__title "> {linksHeader}</p>
         {headerLinks.map((link, index) => (
           <a className="contentful-hero__links__a" href={link.reference}>
-            {link.linkTitle} <br></br>
+            {link.linkTitle}
           </a>
         ))}
       </div>
@@ -147,7 +149,12 @@ export default function ContentfulHero({
       </div>
     )
   } else {
-    bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
+    if (isHeader === 'no') {
+      bootstrapSizes =
+        'col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1'
+    } else {
+      bootstrapSizes = 'col-xl-6 col-lg-6 col-md-6'
+    }
     heroTextComponent = heroTextComponentMaker(bootstrapSizes)
     heroComponent = (
       <div className="row">

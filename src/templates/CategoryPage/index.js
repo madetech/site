@@ -10,7 +10,11 @@ export default function PostPageTemplate({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
 
   return (
-    <Layout description={category.description} titlePrefix={category.name}>
+    <Layout
+      description={category.description}
+      titlePrefix={category.name}
+      image={category.headerImage}
+    >
       <PostListIntro
         parent={
           <small>

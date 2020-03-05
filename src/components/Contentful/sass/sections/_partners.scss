@@ -32,6 +32,18 @@ div &.partner__detail {
                     color: #ff9900;
                 }
             }
+
+            img {
+                @include tablet {
+                    height: 200px;
+                    width: auto;
+                }
+
+                @include mobile {
+                    height: auto;
+                    width: 70%;
+                }
+            }
         }
 
         ul {
@@ -43,7 +55,7 @@ div &.partner__detail {
 
     .expertise {
         img {
-            max-height: 65px;
+            max-height: 160px;
             margin: 15px 35px;
 
             @include mobile {
@@ -57,6 +69,20 @@ div &.partner__detail {
             li {
                 padding-bottom: 0;
             }
+        }
+    }
+}
+
+.services__where_we_help {
+    @include sm-tablet {
+        .col-xl-5 {
+            margin-left: 0;
+        }
+    }
+
+    @include mobile {
+        .col-xl-5 {
+            margin-left: 0;
         }
     }
 }

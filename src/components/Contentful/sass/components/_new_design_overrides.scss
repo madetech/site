@@ -1,5 +1,9 @@
 ul {
-  list-style: none;
+  list-style: disc;
+  ::before {
+    width: 8px !important;
+    height: 8px !important;
+  }
 }
 
 ul li {
@@ -7,15 +11,13 @@ ul li {
   /* use padding-bottom instead of margin-bottom.*/
   margin-bottom: 0; /* This overrides previously specified margin-bottom */
   padding-bottom: $px20;
+  padding-left: 0;
 }
 
 ul li:before {
   /* bullets */
-  width: 8px;
-  height: 8px;
   background: $mt-green;
   border-radius: 50%;
-  content: ' ';
   position: absolute;
   
 
@@ -131,6 +133,10 @@ ul li:before {
       color: $mt-green;
     }
 
+    ul {
+      color: $white;
+    }
+
     ul li:before {
       background: $white;
     }
@@ -178,25 +184,90 @@ ul li:before {
     }
   }
 
+  &.green {
+    background-color: $mt-green;
+
+    padding: 150px 0 !important;
+
+    @include mobile {
+      padding: $mobile-grid-padding !important;
+    }
+
+    p {
+      color: $white !important;
+    }
+
+    h1 {
+      color: $black;
+    }
+
+    h3 {
+      font-weight: $extra-bold;
+
+      @include tablet {
+        padding-bottom: 25px;
+      }
+
+      @include mobile {
+        padding-bottom: 0;
+      }
+    }
+
+    .prose {
+      font-weight: $medium;
+    }
+  }
+
   &.shaded {
     background-color: $white-two;
 
     p {
-      color: $black;
+      font-family: $montserrat;
+      font-size: $px24;
+      line-height: $px40;
+      color: $dark-grey;
     }
 
     + .contentful-grid.yellow {
       margin: initial;
     }
+
+    ul {
+      list-style: disc;
+      color: $mt-green;
+      ::before {
+        width: 8px !important;
+        height: 8px !important;
+      }
+      li {
+        p {
+          font-size: $px20;
+          line-height: $px30;
+          font-weight: $medium;
+          color: $black;
+        }
+      }
+    }
   }
 
-  &.white {
+  &.white,
+  &.normal {
     background-color: $white;
 
     ul li:before {
       background: $black;
+      width: 8px;
+      height: 8px;
     }
-    
+
+    .prose {
+      p {
+        font-family: $montserrat;
+        font-size: $px24;
+        line-height: $px40;
+        color: $dark-grey;
+      }
+    }
   }
 
   &.pull-quote {
@@ -253,6 +324,12 @@ ul li:before {
 
         + p {
           margin: 0;
+        }
+      }
+
+      p {
+        b {
+          color: $black;
         }
       }
     }

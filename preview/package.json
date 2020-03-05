@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@contentful/rich-text-html-renderer": "13.4.0",
-    "@madetech/frontend": "^5.10.2",
+    "@madetech/frontend": "^5.10.17",
     "contentful": "^7.5.1",
     "dotenv": "8.1.0",
     "node-sass": "^4.12.0",
@@ -14,8 +14,10 @@
     "react-dom": "16.9.0",
     "react-helmet": "5.2.1",
     "react-scripts": "3.0.1",
+    "react-slick": "^0.25.2",
     "react-string-replace": "^0.4.4",
     "react-twitter-embed": "^2.0.8",
+    "slick-carousel": "^1.8.1",
     "universal-cookie": "4.0.2"
   },
   "devDependencies": {

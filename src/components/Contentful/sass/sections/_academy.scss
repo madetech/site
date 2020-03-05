@@ -1,0 +1,369 @@
+&.academy {
+    b {
+        color: $mt-green;
+    }
+
+    p {
+        margin-bottom: 0;
+        
+        u {
+            padding-bottom: 0 !important;
+            box-shadow: inset 0 -3px 0 $black !important;
+        }
+    }
+
+
+    ul {
+        margin-top: 1.5rem;
+
+        li:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    .contentful-hero__text-box {
+        padding: 0 25px 170px 0 !important;
+
+        @include mobile {
+            padding-right: 0 !important;
+            margin-bottom: 30px !important;
+        }
+    }
+
+    .contentful-grid {
+        .prose p {
+            @include mobile {
+                font-size: $px20;
+            }
+        }
+
+        &.shaded,
+        &.white {
+            &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads):not(.academy__how_much_will_i_be_paid):not(.academy__why_made_academy) {
+                padding: 70px 0 !important;
+
+                @include desktop {
+                    padding: 90px 0 !important;
+
+                }
+            }   
+        }
+    }
+
+    .inline-images {
+        &.no-overlay {
+            margin-top: 0;
+        }
+        &.overlay {
+            margin-bottom: 0;
+        }
+    }
+
+    .made__academy__section_1 {
+        padding: 100px 0 150px 0 !important;
+        margin-top: -220px !important;
+
+        @include lg-tablet {
+            padding-top: 70px !important;
+        }
+
+        @include sm-tablet {
+            padding-top: 50px !important;
+        }
+
+        @include mobile {
+            padding-top: 50px !important;
+        }
+
+        .contentful-prose {
+            h3 {
+                margin-bottom: 35px !important;
+                margin-right: 60px;
+            }
+        }
+    }
+
+    .contentful-prose {
+        &.overlay {
+            h1 {
+                @include lg-desktop {
+                    margin-top: -145px !important;
+                }
+
+                @include sm-tablet {
+                    margin-top: 30px !important;
+                }
+        
+                @include mobile {
+                    margin-top: 30px !important;
+                }
+            }
+
+            @include sm-desktop {
+                margin-top: -140px !important;
+             }
+
+             @include lg-tablet {
+                margin-top: -110px !important;
+            }
+        }
+    }
+
+    .academy__why_made_academy {
+        &.contentful-grid {
+            padding: 70px 0 !important;
+            
+            @include lg-tablet {
+                padding: 50px 0 !important;
+            }
+        }
+        img {
+            margin-bottom: 20px;
+            max-width: 320;
+          }
+
+        .contentful-prose {
+            &.overlay {
+                h1 {
+                    @include lg-desktop {
+                        margin-top: -123px !important;
+                    }
+                }
+
+                @include sm-desktop {
+                    margin-top: -119px !important;
+                }
+
+                @include lg-tablet {
+                    margin-top: -90px !important;
+                }
+            }
+        }
+          .prose {
+              p {
+                padding: 0 10px 0 10px;
+                margin-bottom: 10px !important;
+              }
+
+              p:nth-of-type(1) {
+                  font-family: $poppins;
+                  font-weight: $extra-bold;
+                  font-size: $px24;
+              }
+
+              p:nth-of-type(2) {
+                  font-family: $montserrat;
+                  font-size: $px20;
+              }
+          }
+    }
+    
+    .academy__meet_our_grads {
+        padding: 0 !important;
+        .contentful-prose .prose {
+            margin-top: 92px;
+
+            @include lg-tablet {
+                margin-top: 69px;
+            }
+
+            @include sm-tablet {
+                margin: 100px 0 0 0;
+                h1 {
+                    margin: 0;
+                }
+            }
+
+            @include mobile {
+                margin: 100px 0 0 0;
+                h1 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    
+    .academy__learn_from_the_pros {
+        padding-top: 70px !important;
+
+        @include tablet {
+            padding-top: 60px !important;
+        }
+        .contentful-prose {
+            &.overlay {
+                h1 {
+                    @include lg-desktop {
+                        margin-top: -124px !important;
+                    }
+    
+                    @include sm-tablet {
+                        margin-top: 30px !important;
+                    }
+            
+                    @include mobile {
+                        margin-top: 30px !important;
+                    }
+                }
+
+                @include lg-tablet {
+                    margin-top: -100px !important;
+                }
+
+                @include sm-desktop {
+                    margin-top: -119px !important;
+                }
+            }
+        }
+        .academy__learn_from_the_pros_pro {
+            margin-top: 30px;
+            font-size: $px20;
+            p:nth-of-type(1) {
+                font-family: $poppins;
+                font-weight: $extra-bold;
+                font-size: $px24;
+            }
+        }
+    }
+
+    .academy__we_re_doing_it_differently {
+        img {
+            margin-bottom: 20px;
+            max-width: 200px;
+          }
+        
+        .prose {
+            @include mobile {
+                padding-bottom: 20px;
+            }
+
+            @include sm-tablet {
+                padding-bottom: 20px;
+            }
+
+            p {
+            padding: 0 10px 0 10px;
+            margin-bottom: 10px !important;
+            }
+
+            p:nth-of-type(1) {
+                font-family: $poppins;
+                font-weight: $extra-bold;
+                font-size: $px24;
+            }
+
+            p:nth-of-type(2) {
+                font-family: $montserrat;
+                font-size: $px20;
+            }
+        }
+    }
+
+    .academy__how_much_will_i_be_paid {
+        @include lg-tablet {
+            padding: 50px 0 30px 0 !important;
+        }
+        
+        @include sm-tablet {
+            padding: 50px 0 30px 0 !important;
+        }
+
+        @include mobile {
+            padding: 50px 0 30px 0 !important;
+        }
+    }
+
+    .academy__how_do_i_apply {
+        @include sm-tablet {
+            padding-top: 50px !important;
+        }
+
+        @include mobile {
+            padding-top: 25px !important;
+        }
+
+        .container .row > div:first-child {
+            height: 100px;
+
+            @include sm-tablet {
+                height: 50px;
+            }
+
+            @include mobile {
+                height: 50px;
+            }
+        }
+
+        img {
+            min-width: 50px;
+        }
+
+        .col-xl-5 {
+            padding-left: 0;
+            padding-bottom: 20px;
+        }
+
+    }
+
+    .academy__ready_to_make_the_leap {
+        font-family: $font-family-sans-serif--special;
+        line-height: 35px;
+        padding: 110px 0 !important;
+
+        @include sm-tablet {
+            padding: 80px 0 !important;
+        }
+
+        @include mobile {
+            padding: 50px 0 !important;
+        }
+
+        .overlay {
+            @include lg-desktop {
+                margin-top: -165px !important;
+            }
+
+            @include sm-desktop {
+                margin-top: -158px !important;
+            }
+
+            @include lg-tablet {
+                margin-top: -150px !important;
+            }
+
+            @include sm-tablet {
+                text-align: left !important;
+            }
+
+            @include mobile {
+                text-align: left !important;
+            }
+        }
+
+        p {
+            margin-bottom: 50px;
+        }
+
+        p a {
+            font-family: $font-family-sans-serif;
+            font-size: 20px;
+            color: $white;
+            text-decoration: none;
+            background-color: $black;
+            padding: 19px;
+            box-shadow: 5px 4px $white;
+        }
+
+        img {
+            margin-left: 35px;
+            @include sm-tablet {
+                margin: 40px 0 0 0;
+                width: 70%;
+            }
+
+            @include mobile {
+                margin: 40px 0 0 0;
+                width: 70%
+            }
+        }
+    }
+}

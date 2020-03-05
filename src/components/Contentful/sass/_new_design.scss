@@ -1,11 +1,15 @@
 .new-design {
+  @import "~slick-carousel/slick/slick.css";
+  @import "~slick-carousel/slick/slick-theme.css";
   @import './abstracts/mixins';
   @import './abstracts/variables';
   @import './base/typography';
+  @import './components/contentful_carousel';
   @import './components/contentful_hero';
   @import './components/contentful_highlight';
   @import './components/contentful_header_images';
   @import './components/contentful_imagelink';
+  @import './components/contentful_mobile_menu';
   @import './components/new_design_overrides';
   @import './sections/shared';
   @import './sections/home';
@@ -18,7 +22,8 @@
   @import './sections/case_study_2';
   @import './sections/frameworks';
   @import './sections/our_purpose';
-  @import './sections/case_study_moj';
+  @import './sections/case_study';
+  @import './sections/academy';
 
   font-family: $montserrat;
   color: $black;

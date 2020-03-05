@@ -1,0 +1,250 @@
+.contentful-carousel{
+    padding-bottom: 100px;
+
+    &.shaded {
+        background-color: $white-two;
+    }
+
+    &.yellow {
+        background-color: $yellow;
+    }
+
+    .contentful-prose {
+        height: 180px;
+        text-align: center !important;
+
+        b {
+            color: $mt-green;
+        }
+
+        img {
+            display: inline-block;
+            width: 40%;
+            height: 152px;
+            vertical-align: top;
+        }
+
+        .prose {
+            text-align: left;
+            display: inline-block;
+            width: 60%;
+            font-size: $px20;
+            line-height: $px30;
+            padding-left: 20px;
+            margin: 0;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        @include desktop {
+            text-align: left;
+        }
+
+        @include sm-desktop {
+            img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .prose {
+                font-size: $px18;
+            }
+        }
+
+        @include lg-tablet {
+            margin-bottom: 30px;
+        }
+        
+        @include sm-tablet {
+            margin-bottom: 30px;
+            img {
+                width: 120px;
+                height: 120px;
+            }
+            .prose {
+                font-size: $px18;
+            }
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 120px;
+            img {
+                display: flex;
+                width: 150px;
+                min-height: 150px;
+            }
+            .prose {
+                display: flex;
+                font-size: $px16;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .slick-slider {
+        margin: 0 auto;
+    }
+
+    .slick-slider,
+    .slick-slide,
+    .slick-list {
+        max-width: 980px !important;
+        width: 80vw;
+        @include sm-desktop {
+            max-width: 800px;
+        }
+
+        @include lg-tablet {
+            max-width: 600px;
+        }
+
+        @include sm-tablet {
+            max-width: 450px;
+        }
+
+        @include mobile {
+            max-width: 75vw;
+        }
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .slick-slide {
+        img:not(.avatar) {
+            margin: auto;
+            height: auto;
+            
+            @include lg-desktop {
+                padding: 0 5px;
+                max-width: calc(950px / var(--slides));
+            }
+
+            @include sm-desktop {
+                max-width: calc(800px / var(--slides));
+            }
+
+            @include lg-tablet {
+                max-width: calc(600px / var(--slides));
+            }
+
+            @include sm-tablet {
+                max-width: calc(450px / var(--slides));
+            }
+
+            @include mobile {
+                max-width: calc(75vw / var(--slides));
+            }
+        }
+    }
+
+    .slick-next {
+        transform: translate(0, -30px);
+        right: -63px;
+        width: 60px;
+        height: auto;
+        
+        &:hover {
+            opacity: 0.75;
+        }
+
+        img {
+            width: 60px;
+            height: auto;
+        }
+
+        &:before {
+            content: none;
+        }
+
+        @include sm-tablet {
+            right: -33px;
+            width: 40px;
+            height: auto;
+            img {
+                width: 40px;
+                height: auto;
+            }
+        }
+
+        @include mobile {
+            transform: translate(0, -20px);
+            right: -20px;
+            width: 35px;
+            height: auto;
+            img {
+                width: 35px;
+                height: auto;
+            }
+        }
+    }
+
+    .slick-prev {
+        z-index: 1;
+        transform: translate(-40px, -30px);
+        width: 60px;
+        height: auto;
+
+        &:hover {
+            opacity: 0.75;
+        }
+
+        img {
+            width: 60px;
+            height: auto;
+        }
+
+        &:before {
+            content: none;
+        }
+
+        @include sm-tablet {
+            left: 0;
+            width: 40px;
+            height: auto;
+            img {
+                width: 40px;
+                height: auto;
+            }
+        }
+
+        @include mobile {
+            left: -10px;
+            width: 35px;
+            height: auto;
+            img {
+                width: 35px;
+                height: auto;
+            }
+            transform: translate(-15px, -20px);
+        }
+    }
+
+    .slick-dots {
+        li:before {
+            background: none !important;
+        }
+    }
+    .slick-dots {
+        button:before {
+            font-size: 20px !important;
+            color: $black !important;
+            opacity: 1 !important;
+
+            @include mobile {
+                font-size: 16px !important;
+            }
+        }
+        .slick-active {
+            button:before {
+                color: $mt-green !important;
+                z-index: 1;
+            }
+        }
+    }
+}

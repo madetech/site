@@ -3,6 +3,30 @@
     color: $mt-green;
   }
 
+  .contentful-prose .prose p {
+    font-family: $poppins;
+    font-weight: $medium;
+    font-size: $px24;
+    line-height: 1.46;
+    color: $black;
+
+    @include sm-desktop {
+      font-size: $px20;
+    }
+
+    @include tablet {
+      font-size: $px18;
+    }
+
+    @include sm-tablet {
+      font-size: $px18;
+    }
+
+    @include mobile {
+      font-size: $px18;
+    }
+  }
+
   .contentful-hero__row {
     .contentful-hero__text-box {
       @include desktop {
@@ -78,8 +102,24 @@
   .our__purpose__sectors__grid {
     &.contentful-grid {
       padding: 30px 0 30px 0 !important;
+      
+      .prose {
+        margin-top: 5px;
+        font-family: $poppins;
+        font-weight: $medium;
+        line-height: 1.46;
+        
+        p {
+          color: $black;
+        }
+      }
+
       .overlay {
         margin-top: -75px;
+
+        @include lg-tablet {
+          padding: 0 5px;
+        }
 
         @include sm-tablet {
           margin-top: auto;
@@ -116,6 +156,14 @@
 
   .our__purpose__our__vision__hero {
     &.contentful-hero {
+      .contentful-hero__text-box {
+        padding-bottom: 30px;
+
+        @include lg-tablet {
+          padding-bottom: 10px;
+        }
+      }
+
       margin-top: -50px;
 
       @include lg-tablet {
@@ -141,7 +189,7 @@
       }
 
       @include lg-tablet {
-        padding-top: 100px !important;
+        padding: 120px 0 !important;
       }
     }
     
@@ -155,8 +203,6 @@
       }
 
       p {
-        padding-top: 110px;
-
         @include sm-tablet {
           padding-top: 70px;
         }
@@ -200,13 +246,11 @@
       margin-bottom: 20px;
 
       @include desktop {
-        max-width: 180px;
-        margin-bottom: 40px;
+        max-width: 240px;
       }
 
       @include lg-tablet {
-        width: 130px;
-        margin-bottom: 40px;
+        width: 200px;
       }
 
       max-width: 200px;

@@ -11,7 +11,15 @@ export default function ContentfulInlineImages({
 }) {
   const imageComponents = images.map((image, i) => {
     return (
-      <div className="mx-1 mx-md-3" key={i}>
+      <div
+        className="mx-1 mx-md-3"
+        style={{
+          backgroundImage: 'url(' + image.resize.src + ')',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+        }}
+        key={i}
+      >
         <img
           alt={image.title}
           className="mw-100"

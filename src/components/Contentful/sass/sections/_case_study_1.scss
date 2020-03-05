@@ -1,100 +1,112 @@
 .case_study_1 {
   padding-bottom: 0px !important;
   padding-top: 40px !important;
-    .row {
-      &.align-items-start {
-        width: 100%;
-        font-size: 20px !important;
-        margin-right: -50px;
+  .row {
+    &.align-items-start {
+      width: 100%;
+      margin-right: -50px;
 
-        h3 {
-          margin-top: 0px;
-          margin-bottom: 18px !important;
-        }
+      h3 {
+        margin-top: 0px;
+        margin-bottom: 18px !important;
+      }
 
-        p:nth-last-of-type(2) {
-          margin-bottom: 10px;
-        }
+      p {
+        font-family: $montserrat !important;
+      }
 
-        p, p:last-of-type {
-          line-height: 1.5;
-          margin-bottom: 20px;
-        }
+      p:nth-last-of-type(2) {
+        margin-bottom: 10px;
+      }
 
-        @include mobile {
-          display: flex;
-          flex-direction: column-reverse;
-          margin-top: 3%;
-        }
+      p,
+      p:last-of-type {
+        line-height: 1.5;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
 
-        .contentful-prose {
-          &.text-center {
-            margin-top: -40%;
-            height: 700px;
+      @include mobile {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 3%;
+      }
 
-            @include sm-desktop {
-              margin-left: -10%;
-              margin-bottom: 10%;
-              img {
-                max-height: fit-content !important;
-                max-width: fit-content !important;
-                height: 100%;
-                width: auto;
-                float: none !important;
-              }
+      .contentful-prose {
+        &.text-center {
+          margin-top: -40%;
+          height: 700px;
+
+          @include sm-desktop {
+            margin-left: -10%;
+            margin-bottom: 10%;
+            img {
+              max-height: fit-content !important;
+              max-width: fit-content !important;
+              height: 100%;
+              width: auto;
+              float: none !important;
             }
+          }
 
-            @include tablet {
-              height: 600px;
-              margin-left: -10%;
-              img {
-                max-height: fit-content !important;
-                max-width: fit-content !important;
-                height: 100%;
-                width: auto;
-                float: none !important;
-              }
+          @include tablet {
+            height: 600px;
+            margin-left: -10%;
+            img {
+              max-height: fit-content !important;
+              max-width: fit-content !important;
+              height: 100%;
+              width: auto;
+              float: none !important;
             }
+          }
 
-            @include sm-tablet {
-              height: 550px;
-              margin-left: -10%;
-              img {
-                max-height: fit-content !important;
-                max-width: fit-content !important;
-                float: none !important;
-                width: auto;
-                height: 100%;
-              }
+          @include sm-tablet {
+            height: 550px;
+            margin-left: -10%;
+            img {
+              max-height: fit-content !important;
+              max-width: fit-content !important;
+              float: none !important;
+              width: auto;
+              height: 100%;
             }
+          }
 
-            @include mobile {
-              margin-bottom: 30px;
-              margin-left: -35px;
-              height: 350px;
-              img {
-                max-height: fit-content !important;
-                max-width: fit-content !important;
-                float: none !important;
-                width: auto;
-                height: 100%;
-              }
+          @include mobile {
+            margin-bottom: 30px;
+            margin-left: -35px;
+            height: 350px;
+            img {
+              max-height: fit-content !important;
+              max-width: fit-content !important;
+              float: none !important;
+              width: auto;
+              height: 100%;
             }
           }
         }
-
-        overflow: visible;
-        img {
-          max-height: fit-content !important;
-          max-width: fit-content !important;
-          width: auto;
-          height: 100%;
-          margin-top: 16%;
-        }
-
-        .col-xl-6 {
-          padding-right: 0;
+        &.text-left {
+          .prose {
+            a {
+              font-weight: 800;
+            }
+          }
         }
       }
+
+      overflow: visible;
+      img {
+        max-height: fit-content !important;
+        max-width: fit-content !important;
+        width: auto;
+        height: 100%;
+        margin-top: 16%;
+      }
+
+      .col-xl-6 {
+        padding-right: 0;
+      }
     }
+  }
 }
