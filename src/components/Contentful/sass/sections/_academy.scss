@@ -31,6 +31,12 @@
     }
 
     .contentful-grid {
+        .prose p {
+            @include mobile {
+                font-size: $px20;
+            }
+        }
+
         &.shaded,
         &.white {
             &:not(.made__academy__section_1):not(.get-in-touch__component):not(.academy__learn_from_the_pros):not(.academy__meet_our_grads):not(.academy__how_much_will_i_be_paid):not(.academy__why_made_academy) {
@@ -105,10 +111,8 @@
 
     .academy__why_made_academy {
         &.contentful-grid {
-            @include desktop {
-                padding: 70px 0 !important;
-            }
-
+            padding: 70px 0 !important;
+            
             @include lg-tablet {
                 padding: 50px 0 !important;
             }
@@ -122,12 +126,12 @@
             &.overlay {
                 h1 {
                     @include lg-desktop {
-                        margin-top: -120px !important;
+                        margin-top: -123px !important;
                     }
                 }
 
                 @include sm-desktop {
-                    margin-top: -120px !important;
+                    margin-top: -119px !important;
                 }
 
                 @include lg-tablet {
