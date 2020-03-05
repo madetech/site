@@ -4,7 +4,6 @@
   .row {
     &.align-items-start {
       width: 100%;
-      font-size: 20px !important;
       margin-right: -50px;
 
       h3 {
@@ -20,9 +19,11 @@
         margin-bottom: 10px;
       }
 
-      p, p:last-of-type {
+      p,
+      p:last-of-type {
         line-height: 1.5;
         margin-bottom: 20px;
+        font-size: 20px;
       }
 
       @include mobile {

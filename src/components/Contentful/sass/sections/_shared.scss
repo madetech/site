@@ -7,7 +7,7 @@
 
 @mixin bg-imgs($basepath, $name) {
   @include bg-img($basepath, 540, $name, 540);
-  
+
   @include sm-tablet {
     @include bg-img($basepath, 640, $name, 640);
   }
@@ -83,7 +83,7 @@
     position: relative;
     left: 0;
     margin: 0 !important;
-    
+
     & + p {
       padding-bottom: 14px;
     }
@@ -346,9 +346,9 @@
         width: 100%;
         @include mobile {
           background-image: linear-gradient(
-                          285deg,
-                          $mt-green-gradient-dark,
-                          $mt-green
+            285deg,
+            $mt-green-gradient-dark,
+            $mt-green
           );
           h3 {
             margin: 0;
@@ -361,9 +361,9 @@
           width: 100%;
           margin-left: 50px;
           background-image: linear-gradient(
-                          285deg,
-                          $mt-green-gradient-dark,
-                          $mt-green
+            285deg,
+            $mt-green-gradient-dark,
+            $mt-green
           );
           .col-xl-2 {
             height: 100%;
@@ -433,11 +433,11 @@
       margin-top: -149px !important;
     }
 
-    @include lg-tablet{
+    @include lg-tablet {
       margin-top: -141px !important;
     }
 
-    @include sm-tablet{
+    @include sm-tablet {
       margin-top: 20px !important;
     }
 
@@ -481,7 +481,7 @@
     height: 550px !important;
     margin: -100px 0 40px -450px !important;
   }
-  
+
   @include lg-tablet {
     height: 400px !important;
     margin: -130px 0 40px -300px !important;
@@ -508,7 +508,7 @@
   .prose {
     p {
       font-family: $montserrat;
-      font-weight: $bold !important;
+      font-weight: 700 !important;
       font-size: $px12 !important;
       letter-spacing: 1px !important;
       line-height: normal !important;
