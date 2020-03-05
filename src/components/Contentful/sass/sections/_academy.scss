@@ -80,14 +80,8 @@
     .contentful-prose {
         &.overlay {
             h1 {
-                margin-top: -145px !important;
-
-                @include sm-desktop {
-                    margin-top: -140px !important;
-                }
-
-                @include lg-tablet {
-                    margin-top: -110px !important;
+                @include lg-desktop {
+                    margin-top: -145px !important;
                 }
 
                 @include sm-tablet {
@@ -97,6 +91,14 @@
                 @include mobile {
                     margin-top: 30px !important;
                 }
+            }
+
+            @include sm-desktop {
+                margin-top: -140px !important;
+             }
+
+             @include lg-tablet {
+                margin-top: -110px !important;
             }
         }
     }
@@ -160,14 +162,8 @@
         .contentful-prose {
             &.overlay {
                 h1 {
-                    margin-top: -124px !important;
-
-                    @include sm-desktop {
-                        margin-top: -119px !important;
-                    }
-    
-                    @include lg-tablet {
-                        margin-top: -100px !important;
+                    @include lg-desktop {
+                        margin-top: -124px !important;
                     }
     
                     @include sm-tablet {
@@ -177,6 +173,14 @@
                     @include mobile {
                         margin-top: 30px !important;
                     }
+                }
+
+                @include lg-tablet {
+                    margin-top: -100px !important;
+                }
+
+                @include sm-desktop {
+                    margin-top: -119px !important;
                 }
             }
         }
@@ -277,15 +281,15 @@
 
         .overlay {
             @include lg-desktop {
-                margin-top: -162px;
+                margin-top: -165px !important;
             }
 
             @include sm-desktop {
-                margin-top: -158px;
+                margin-top: -158px !important;
             }
 
             @include lg-tablet {
-                margin-top: -150px;
+                margin-top: -150px !important;
             }
 
             @include sm-tablet {
