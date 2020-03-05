@@ -232,6 +232,14 @@
           }
         
         .prose {
+            @include mobile {
+                padding-bottom: 20px;
+            }
+
+            @include sm-tablet {
+                padding-bottom: 20px;
+            }
+
             p {
             padding: 0 10px 0 10px;
             margin-bottom: 10px !important;
