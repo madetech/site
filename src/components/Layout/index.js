@@ -2,7 +2,7 @@ import React from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
-import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
+import { Footer, Header, SiteMap } from '@madetech/frontend'
 import MobileMenu from '../Contentful/MobileMenu'
 
 export default function Layout({

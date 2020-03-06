@@ -12,7 +12,7 @@ export default function ContentfulInlineImages({
   const imageComponents = images.map((image, i) => {
     return (
       <div
-        className="mx-1 mx-md-3"
+        className="mx-1 mx-md-2"
         style={{
           backgroundImage: 'url(' + image.resize.src + ')',
           backgroundSize: 'contain',

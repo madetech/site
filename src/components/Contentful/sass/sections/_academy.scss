@@ -48,6 +48,25 @@
                 }
             }   
         }
+
+        &.white,
+        &.normal {
+            &:not(.academy__how_much_will_i_be_paid):not(.academy__how_do_i_apply) {
+                .contentful-prose .prose :not(li) > p:last-child {
+                    @include desktop {
+                        padding-bottom: 50px;
+                    }
+
+                    @include tablet {
+                        padding-bottom: 30px;
+                    }
+
+                    @include mobile {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
     }
 
     .inline-images {
@@ -302,6 +321,20 @@
             padding-bottom: 20px;
         }
 
+        .container .row > div:last-child {
+            @include desktop {
+                padding-bottom: 50px;
+            }
+
+            @include tablet {
+                padding-bottom: 30px;
+            }
+
+            @include mobile {
+                padding-bottom: 20px;
+            }
+        }
+
     }
 
     .academy__ready_to_make_the_leap {
@@ -356,13 +389,11 @@
         img {
             margin-left: 35px;
             @include sm-tablet {
-                margin: 40px 0 0 0;
-                width: 70%;
+                display: none;
             }
 
             @include mobile {
-                margin: 40px 0 0 0;
-                width: 70%
+                display: none;
             }
         }
     }
