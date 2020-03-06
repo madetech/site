@@ -46,19 +46,19 @@ export default function Layout({
       links: [
         {
           text: 'Digital',
-          link: '/our-services/digital-service-delivery',
+          link: '/services/digital',
         },
         {
           text: 'Data',
-          link: '/our-services/data-infrastructure',
+          link: '/services/data',
         },
         {
           text: 'Tech Capability',
-          link: '/our-services/technology-skill-enablement',
+          link: '/services/capability',
         },
         {
           text: 'Tech Legacy',
-          link: '/our-services/transform-legacy-applications',
+          link: '/services/legacy',
         },
       ],
     },
@@ -104,7 +104,7 @@ export default function Layout({
       links: [
         {
           text: 'Purpose & Misson',
-          link: '/our-purpose',
+          link: '/purpose',
         },
         {
           text: 'Frameworks',
@@ -124,7 +124,7 @@ export default function Layout({
         },
         {
           text: 'Learn',
-          link: 'https://learn.madetech.coms',
+          link: 'https://learn.madetech.com',
         },
       ],
       class: 'sitemap__why-made-tech',
@@ -160,7 +160,7 @@ export default function Layout({
         },
         {
           text: 'Academy',
-          link: '/made-academy',
+          link: '/careers/academy',
         },
       ],
       class: 'sitemap__get-in-touch',
