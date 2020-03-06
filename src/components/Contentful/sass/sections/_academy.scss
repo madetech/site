@@ -389,13 +389,11 @@
         img {
             margin-left: 35px;
             @include sm-tablet {
-                margin: 40px 0 0 0;
-                width: 70%;
+                display: none;
             }
 
             @include mobile {
-                margin: 40px 0 0 0;
-                width: 70%
+                display: none;
             }
         }
     }
