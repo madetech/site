@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
-import { Footer, Header, SiteMap, TopBar } from '@madetech/frontend'
+import { Footer, Header, SiteMap } from '@madetech/frontend'
 import MobileMenu from '../Contentful/MobileMenu'
 
 export default function Layout({
@@ -22,8 +22,6 @@ export default function Layout({
   if (customClasses) {
     customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
-
-  const [isMobile, setIsMobile] = useState(false)
 
   function headerComponentMaker() {
     return (
