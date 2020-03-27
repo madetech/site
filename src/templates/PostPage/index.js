@@ -32,7 +32,7 @@ export default function PostPageTemplate({ data }) {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 offset-lg-2">
-            <Post post={post} />
+            <Post post={post} withPrefix={withPrefix} />
           </div>
         </div>
       </div>

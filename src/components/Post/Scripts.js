@@ -1,8 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { withPrefix } from 'gatsby'
 
-export default function Scripts() {
+export default function Scripts({ withPrefix }) {
   return (
     <Helmet>
       {/* Syntax Highlighting */}

@@ -15,7 +15,7 @@ export default class Post extends React.Component {
   }
 
   render() {
-    const post = this.props.post
+    const { post, withPrefix } = this.props
 
     return (
       <article
@@ -29,7 +29,7 @@ export default class Post extends React.Component {
 
           <h1 className="post__title">{post.title}</h1>
 
-          <PostMeta post={post} />
+          <PostMeta post={post} withPrefix={withPrefix} />
 
           <div
             className="post__body"
@@ -43,7 +43,7 @@ export default class Post extends React.Component {
           {/* ConvertFlow Area */}
           <div className="cf-1407-area-4492" />
 
-          <PostScripts />
+          <PostScripts withPrefix={withPrefix} />
         </Prose>
       </article>
     )
