@@ -14,6 +14,7 @@ export default function PostPageTemplate({ data }) {
       description={post.excerpt}
       titlePrefix={post.title}
       url={withPrefix(`/blog/${post.slug}`)}
+      image={post.jetpack_featured_media_url}
     >
       <Jumbotron extraClassName="mb-3 py-3">
         <div className="container">
@@ -46,6 +47,7 @@ export const pageQuery = graphql`
       content
       excerpt
       slug
+      jetpack_featured_media_url
       date(formatString: "Do MMMM YYYY")
       author {
         avatar_urls {
