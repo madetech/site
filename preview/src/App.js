@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import qs from 'query-string'
-import { fetchEntry } from './data/contentful'
+import { fetchContentfulEntry } from './data/contentful'
+import { fetchWordPressPost } from './data/wordpress'
 import Layout from './gatsby/components/Layout'
-import Contentful from './gatsby/components/Contentful'
+import Content from './Content'
 import Loading from './Loading'
 import PreviewBanner from './PreviewBanner'
 
@@ -11,8 +12,20 @@ export default function App() {
 
   useEffect(() => {
     const fetchPage = async () => {
-      const { id } = qs.parse(window.location.search)
-      const newPage = await fetchEntry(id)
+      const { previewType, id } = qs.parse(window.location.search)
+      let newPage
+
+      switch (previewType) {
+        case 'wordpress':
+          newPage = await fetchWordPressPost(id)
+          break
+        case 'contentful':
+        default:
+          newPage = await fetchContentfulEntry(id)
+          break
+      }
+
+      newPage.__previewType = previewType
       setPage(newPage)
     }
 
@@ -26,7 +39,7 @@ export default function App() {
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
     >
-      {page.content ? <Contentful content={page.content} /> : <Loading />}
+      {page.content ? <Content page={page} /> : <Loading />}
 
       <PreviewBanner />
     </Layout>
