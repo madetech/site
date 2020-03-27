@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import striptags from 'striptags'
 import withPrefix from '../../helpers/withPrefix'
 import { Jumbotron } from '@madetech/frontend'
 import Layout from '../../components/Layout'
@@ -11,7 +12,7 @@ export default function PostPageTemplate({ data }) {
 
   return (
     <Layout
-      description={post.excerpt}
+      description={striptags(post.excerpt)}
       titlePrefix={post.title}
       url={withPrefix(`/blog/${post.slug}`)}
       image={post.jetpack_featured_media_url}
