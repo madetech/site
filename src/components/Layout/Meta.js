@@ -10,12 +10,14 @@ function MetaHelmet({ title, description, keywords, url, siteUrl, image }) {
       <meta name="keywords" content={keywords} />
       <meta name="image" content={image} />
 
+
+      <meta property="og:type" content="article" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       {url && <meta property="og:url" content={url} />}
       {image && <meta property="og:image" content={image} />}
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       {url && <meta property="twitter:url" content={url} />}
