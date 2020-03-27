@@ -12,20 +12,19 @@ export default function App() {
 
   useEffect(() => {
     const fetchPage = async () => {
-      const { previewType, id } = qs.parse(window.location.search)
+      const { p, id } = qs.parse(window.location.search)
+
       let newPage
 
-      switch (previewType) {
-        case 'wordpress':
-          newPage = await fetchWordPressPost(id)
-          break
-        case 'contentful':
-        default:
-          newPage = await fetchContentfulEntry(id)
-          break
+      if (p) {
+        const { access_token } = qs.parse(window.location.hash)
+        newPage = await fetchWordPressPost(p, access_token)
+        newPage.__previewType = 'wordpress'
+      } else {
+        newPage = await fetchContentfulEntry(id)
+        newPage.__previewType = 'contentful'
       }
 
-      newPage.__previewType = previewType
       setPage(newPage)
     }
 
