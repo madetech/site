@@ -20,9 +20,14 @@ export default function App() {
         const { access_token } = qs.parse(window.location.hash)
         newPage = await fetchWordPressPost(p, access_token)
         newPage.__previewType = 'wordpress'
-      } else {
+      } else if (id) {
         newPage = await fetchContentfulEntry(id)
         newPage.__previewType = 'contentful'
+      } else {
+        alert(
+          'You did not specify a preview identifier. Redirecting you to www.madetech.com'
+        )
+        window.location = 'https://www.madetech.com'
       }
 
       setPage(newPage)
