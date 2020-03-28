@@ -1,7 +1,6 @@
 import React from 'react'
-import { withPrefix } from 'gatsby'
 
-function PostTag({ name, slug }) {
+function PostTag({ name, slug, withPrefix }) {
   return (
     <span className="post_tags__tag">
       <a href={withPrefix(`/blog/t/${slug}`)}>{name}</a>
@@ -9,7 +8,12 @@ function PostTag({ name, slug }) {
   )
 }
 
-export default function PostTags({ extraClassName, tags, smaller }) {
+export default function PostTags({
+  extraClassName,
+  tags,
+  smaller,
+  withPrefix,
+}) {
   let className = 'post_tags'
 
   if (smaller) className += '--smaller'
@@ -18,7 +22,12 @@ export default function PostTags({ extraClassName, tags, smaller }) {
   return (
     <span className={className}>
       {tags.map((tag, i) => (
-        <PostTag key={i} name={tag.name} slug={tag.slug} />
+        <PostTag
+          key={i}
+          name={tag.name}
+          slug={tag.slug}
+          withPrefix={withPrefix}
+        />
       ))}
     </span>
   )

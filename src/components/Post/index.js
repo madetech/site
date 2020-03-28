@@ -1,10 +1,11 @@
 import React from 'react'
-import { Prose } from '@madetech/frontend'
+import { Jumbotron, Prose } from '@madetech/frontend'
 import PostAboutAuthor from './AboutAuthor'
 import PostMeta from './Meta'
 import PostScripts from './Scripts'
 import PostTags from './Tags'
 import { Hiring } from '../../components/Marketing'
+import BookPreview from '../../components/BookPreview'
 import initGists from './initGists'
 import trackTags from './trackTags'
 
@@ -15,37 +16,59 @@ export default class Post extends React.Component {
   }
 
   render() {
-    const post = this.props.post
+    const { post, withPrefix } = this.props
 
     return (
-      <article
-        className="post"
-        itemScope
-        itemType="http://schema.org/BlogPosting"
-      >
-        <Prose>
-          <meta itemProp="datePublished" content="{{ post.date }}" />
-          <meta itemProp="headline" content="{{post.title}}" />
+      <>
+        <Jumbotron extraClassName="mb-3 py-3">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 offset-lg-2">
+                <strong>
+                  <a href={withPrefix('/blog')}>Made Tech Blog</a>
+                </strong>
+              </div>
+            </div>
+          </div>
+        </Jumbotron>
 
-          <h1 className="post__title">{post.title}</h1>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 offset-lg-2">
+              <article
+                className="post"
+                itemScope
+                itemType="http://schema.org/BlogPosting"
+              >
+                <Prose>
+                  <meta itemProp="datePublished" content="{{ post.date }}" />
+                  <meta itemProp="headline" content="{{post.title}}" />
 
-          <PostMeta post={post} />
+                  <h1 className="post__title">{post.title}</h1>
 
-          <div
-            className="post__body"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+                  <PostMeta post={post} withPrefix={withPrefix} />
 
-          <PostAboutAuthor author={post.author} />
+                  <div
+                    className="post__body"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                  />
 
-          <Hiring />
+                  <PostAboutAuthor author={post.author} />
 
-          {/* ConvertFlow Area */}
-          <div className="cf-1407-area-4492" />
+                  <Hiring />
 
-          <PostScripts />
-        </Prose>
-      </article>
+                  {/* ConvertFlow Area */}
+                  <div className="cf-1407-area-4492" />
+
+                  <PostScripts withPrefix={withPrefix} />
+                </Prose>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <BookPreview />
+      </>
     )
   }
 }

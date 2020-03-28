@@ -133,7 +133,7 @@ function transformEntry(entry) {
   return fields
 }
 
-export async function fetchEntry(id) {
+export async function fetchContentfulEntry(id) {
   const entry = await createClient().getEntry(id, { include: 10 })
   return transformEntry(entry)
 }
