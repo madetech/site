@@ -103,6 +103,9 @@ export const pageQuery = graphql`
   fragment hubSpotCta on ContentfulHubSpotCta {
     name
     ctaId
+    embedCode {
+      embedCode
+    }
   }
   fragment inlineImages on ContentfulInlineImages {
     name

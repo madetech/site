@@ -215,8 +215,8 @@ function GridHubSpotForm({ formId, id }) {
   return <HubSpotForm formId={formId} id={id} />
 }
 
-function GridHubSpotCta({ ctaId, id }) {
-  return <HubSpotCta ctaId={ctaId} id={id} />
+function GridHubSpotCta({ ctaId, id, embedCode }) {
+  return <HubSpotCta ctaId={ctaId} id={id} embedCode={embedCode} />
 }
 
 function GridTweet({ tweetId }) {
@@ -262,7 +262,11 @@ function GridComponentRenderer(content) {
       )
     case 'ContentfulHubSpotCta':
       return (
-        <GridHubSpotCta ctaId={content.ctaId} id={toHtmlId(content.name)} />
+        <GridHubSpotCta
+          ctaId={content.ctaId}
+          id={toHtmlId(content.name)}
+          embedCode={content.embedCode}
+        />
       )
     case 'ContentfulJobsBoard':
       return <JobsBoard />
