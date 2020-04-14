@@ -71,6 +71,7 @@ export const pageQuery = graphql`
             ...tweet
             ...jobsBoard
             ...imageLink
+            ...hubSpotCta
           }
         }
       }
@@ -98,6 +99,10 @@ export const pageQuery = graphql`
     columnWidth
     columnOffset
     formId
+  }
+  fragment hubSpotCta on ContentfulHubSpotCta {
+    name
+    ctaId
   }
   fragment inlineImages on ContentfulInlineImages {
     name

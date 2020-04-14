@@ -1,6 +1,7 @@
 import React from 'react'
 import { Prose } from '@madetech/frontend'
 import HubSpotForm from './HubSpotForm'
+import HubSpotCta from './HubSpotCta'
 import ImageLink from './ImageLink'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import toHtmlId from '../../helpers/toHtmlId'
@@ -214,6 +215,10 @@ function GridHubSpotForm({ formId, id }) {
   return <HubSpotForm formId={formId} id={id} />
 }
 
+function GridHubSpotCta({ ctaId, id }) {
+  return <HubSpotCta ctaId={ctaId} id={id} />
+}
+
 function GridTweet({ tweetId }) {
   return <Tweet tweetId={tweetId}></Tweet>
 }
@@ -254,6 +259,10 @@ function GridComponentRenderer(content) {
     case 'ContentfulHubSpotForm':
       return (
         <GridHubSpotForm formId={content.formId} id={toHtmlId(content.name)} />
+      )
+    case 'ContentfulHubSpotCta':
+      return (
+        <GridHubSpotCta ctaId={content.ctaId} id={toHtmlId(content.name)} />
       )
     case 'ContentfulJobsBoard':
       return <JobsBoard />
