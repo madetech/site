@@ -39,6 +39,90 @@ export default function Layout({
 
   let headerComponent = headerComponentMaker()
 
+  let siteMapLinks = [
+    {
+      sectionTitle: 'Services',
+      links: [
+        {
+          text: 'Digital',
+          link: '/services/digital',
+        },
+        {
+          text: 'Data',
+          link: '/services/data',
+        },
+        {
+          text: 'Tech Capability',
+          link: '/services/capability',
+        },
+        {
+          text: 'Tech Legacy',
+          link: '/services/legacy',
+        },
+      ],
+    },
+    {
+      sectionTitle: 'Case Studies',
+      links: [
+        {
+          text: 'Government Digital Service',
+          link: '/case-studies/government-digital-service-govwifi',
+        },
+        {
+          text: 'Legal Aid Agency',
+          link: '/case-studies/legal-aid-agency',
+        },
+        {
+          text: 'Hackney Council',
+          link: '/case-studies/hackney-api-platform',
+        },
+        {
+          text: 'Ministry of Justice',
+          link: '/case-studies/ministry-of-justice-children-fund',
+        },
+      ],
+    },
+    {
+      sectionTitle: 'Resources',
+      links: [
+        {
+          text: 'Blog',
+          link: '/blog',
+        },
+        {
+          text: 'Books',
+          link: '/resources/books',
+        },
+        {
+          text: 'Learn',
+          link: 'https://learn.madetech.com',
+        },
+      ],
+    },
+    {
+      sectionTitle: 'Company',
+      links: [
+        {
+          text: 'Academy',
+          link: '/careers/academy',
+        },
+        {
+          text: 'Careers',
+          link: '/careers',
+        },
+        {
+          text: 'Contact Us',
+          link: '/contact',
+        },
+        {
+          text: 'Handbook',
+          link: 'https://github.com/madetech/handbook',
+        },
+      ],
+      class: 'sitemap__company',
+    },
+  ]
+
   return (
     <div>
       <Meta
@@ -53,7 +137,7 @@ export default function Layout({
 
       <div className={pageContentClass}>{children}</div>
 
-      <SiteMap />
+      <SiteMap navLinks={siteMapLinks} />
 
       <Footer />
     </div>
