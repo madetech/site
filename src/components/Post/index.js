@@ -44,7 +44,10 @@ export default class Post extends React.Component {
                   <meta itemProp="datePublished" content="{{ post.date }}" />
                   <meta itemProp="headline" content="{{post.title}}" />
 
-                  <h1 className="post__title">{post.title}</h1>
+                  <h1
+                    className="post__title"
+                    dangerouslySetInnerHTML={{ __html: post.title }}
+                  />
 
                   <PostMeta post={post} withPrefix={withPrefix} />
 
