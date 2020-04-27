@@ -35,7 +35,7 @@ export default class MobileMenu extends React.Component {
         <div id="whyMT" className="menu-item">
           Why Made Tech
         </div>
-        <a id="purpose" className="menu-item indented-item" href="/our-purpose">
+        <a id="purpose" className="menu-item indented-item" href="/purpose">
           Purpose &#38; Mission
         </a>
         <a
@@ -50,6 +50,13 @@ export default class MobileMenu extends React.Component {
         </a>
         <a id="blog" className="menu-item indented-item" href="/blog">
           Blog
+        </a>
+        <a
+          id="books"
+          className="menu-item indented-item"
+          href="/resources/books"
+        >
+          Books
         </a>
         <a
           id="learn"

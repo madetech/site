@@ -29,12 +29,13 @@ export default function Index({ data, pageContext }) {
         title="Made Tech Blog"
         description="Writings on building software delivery capabilities and delivering digital & technology outcomes for ambitious organisations."
         topics={highlightedTopics}
+        withPrefix={withPrefix}
       />
 
       <div className="container">
         <div className="row">
           <div className="col-lg-8 offset-lg-2">
-            <PostList posts={posts} />
+            <PostList posts={posts} withPrefix={withPrefix} />
 
             <Pagination
               currentPage={pageContext.page}

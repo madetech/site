@@ -152,7 +152,7 @@ export default function Layout({
       class: 'sitemap__case-studies',
     },
     {
-      sectionTitle: 'Contact',
+      sectionTitle: 'Company',
       links: [
         {
           text: 'Careers',
@@ -162,8 +162,16 @@ export default function Layout({
           text: 'Academy',
           link: '/careers/academy',
         },
+        {
+          text: 'Contact Us',
+          link: '/contact',
+        },
+        {
+          text: 'Handbook',
+          link: 'https://github.com/madetech/handbook',
+        },
       ],
-      class: 'sitemap__get-in-touch',
+      class: 'sitemap__company',
     },
   ]
 

@@ -1,40 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import striptags from 'striptags'
 import withPrefix from '../../helpers/withPrefix'
-import { Jumbotron } from '@madetech/frontend'
 import Layout from '../../components/Layout'
 import Post from '../../components/Post'
-import BookPreview from '../../components/BookPreview'
 
 export default function PostPageTemplate({ data }) {
   const post = data.wordpressPost
 
   return (
     <Layout
-      description={post.excerpt}
+      description={striptags(post.excerpt)}
       titlePrefix={post.title}
       url={withPrefix(`/blog/${post.slug}`)}
+      image={post.jetpack_featured_media_url}
     >
-      <Jumbotron extraClassName="mb-3 py-3">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 offset-lg-2">
-              <strong>
-                <a href={withPrefix('/blog')}>Made Tech Blog</a>
-              </strong>
-            </div>
-          </div>
-        </div>
-      </Jumbotron>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2">
-            <Post post={post} />
-          </div>
-        </div>
-      </div>
-      <BookPreview />
+      <Post post={post} withPrefix={withPrefix} />
     </Layout>
   )
 }
@@ -46,6 +27,7 @@ export const pageQuery = graphql`
       content
       excerpt
       slug
+      jetpack_featured_media_url
       date(formatString: "Do MMMM YYYY")
       author {
         avatar_urls {

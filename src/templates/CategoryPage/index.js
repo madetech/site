@@ -28,7 +28,7 @@ export default function PostPageTemplate({ data, pageContext }) {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 offset-lg-2">
-            <PostList posts={posts} />
+            <PostList posts={posts} withPrefix={withPrefix} />
 
             <Pagination
               currentPage={pageContext.page}

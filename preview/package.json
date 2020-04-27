@@ -6,11 +6,13 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "13.4.0",
     "@madetech/frontend": "^5.10.18",
+    "axios": "^0.19.2",
     "contentful": "^7.5.1",
     "dotenv": "8.1.0",
     "node-sass": "^4.12.0",
     "query-string": "6.8.3",
     "react": "16.9.0",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "16.9.0",
     "react-helmet": "5.2.1",
     "react-scripts": "3.0.1",

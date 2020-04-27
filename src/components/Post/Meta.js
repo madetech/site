@@ -1,7 +1,7 @@
 import React from 'react'
 import PostTags from './Tags'
 
-export default function PostMeta({ post, smaller }) {
+export default function PostMeta({ post, smaller, withPrefix }) {
   const className = smaller ? 'post_meta--smaller' : 'post_meta'
 
   return (
@@ -14,7 +14,11 @@ export default function PostMeta({ post, smaller }) {
         By {post.author.name} on {post.date}
         <br />
         <span className="d-block d-md-inline">
-          <PostTags tags={post.categories} smaller={smaller} />
+          <PostTags
+            tags={post.categories}
+            smaller={smaller}
+            withPrefix={withPrefix}
+          />
         </span>
       </span>
     </div>

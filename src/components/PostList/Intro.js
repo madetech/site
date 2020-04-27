@@ -2,17 +2,24 @@ import React from 'react'
 import { Jumbotron } from '@madetech/frontend'
 import { PostTags } from '../Post'
 
-function PostListTopics({ topics }) {
+function PostListTopics({ topics, withPrefix }) {
   if (!topics) return null
 
   return (
     <div className="post_list__topics">
-      <strong>Topics:</strong> <PostTags extraClassName="light" tags={topics} />
+      <strong>Topics:</strong>{' '}
+      <PostTags extraClassName="light" tags={topics} withPrefix={withPrefix} />
     </div>
   )
 }
 
-export default function PostListIntro({ parent, title, description, topics }) {
+export default function PostListIntro({
+  parent,
+  title,
+  description,
+  topics,
+  withPrefix,
+}) {
   return (
     <div className="post_list_intro">
       <Jumbotron>
@@ -26,7 +33,7 @@ export default function PostListIntro({ parent, title, description, topics }) {
 
                 <p className="post_list_intro__description">{description}</p>
 
-                <PostListTopics topics={topics} />
+                <PostListTopics topics={topics} withPrefix={withPrefix} />
               </div>
             </div>
           </div>
