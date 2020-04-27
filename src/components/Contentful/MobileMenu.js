@@ -11,40 +11,7 @@ export default class MobileMenu extends React.Component {
   }
 
   render() {
-    let oldLinks = (
-      <Menu
-        right
-        width={'100vw'}
-        customBurgerIcon={
-          <img
-            src={require('../../assets/images/mobile-nav/icon-burger/icon-burger.png')}
-          />
-        }
-        customCrossIcon={
-          <img
-            src={require('../../assets/images/mobile-nav/icon-close/icon-close.png')}
-          />
-        }
-      >
-        <a className="menu-item" href="/services">
-          Services
-        </a>
-        <a className="menu-item" href="/blog">
-          Blog
-        </a>
-        <a className="menu-item" href="/careers">
-          Careers
-        </a>
-        <a className="menu-item" href="/contact">
-          Contact
-        </a>
-        <a className="home" href="/">
-          <Logo />
-        </a>
-      </Menu>
-    )
-
-    let newLinks = (
+    let links = (
       <Menu
         right
         width={'100vw'}
@@ -68,7 +35,7 @@ export default class MobileMenu extends React.Component {
         <div id="whyMT" className="menu-item">
           Why Made Tech
         </div>
-        <a id="purpose" className="menu-item indented-item" href="/our-purpose">
+        <a id="purpose" className="menu-item indented-item" href="/purpose">
           Purpose &#38; Mission
         </a>
         <a
@@ -83,6 +50,13 @@ export default class MobileMenu extends React.Component {
         </a>
         <a id="blog" className="menu-item indented-item" href="/blog">
           Blog
+        </a>
+        <a
+          id="books"
+          className="menu-item indented-item"
+          href="/resources/books"
+        >
+          Books
         </a>
         <a
           id="learn"
@@ -141,6 +115,6 @@ export default class MobileMenu extends React.Component {
       </Menu>
     )
 
-    return <div className="contentful-mobile-menu">{oldLinks}</div>
+    return <div className="contentful-mobile-menu">{links}</div>
   }
 }

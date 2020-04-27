@@ -10,7 +10,6 @@ function MetaHelmet({ title, description, keywords, url, siteUrl, image }) {
       <meta name="keywords" content={keywords} />
       <meta name="image" content={image} />
 
-
       <meta property="og:type" content="article" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

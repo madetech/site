@@ -29,8 +29,9 @@ export default function Layout({
         <MobileMenu />
         <Header constrainLinkWidth logoHref="/" scrollable>
           <a href="/services">Services</a>
-          <a href="/blog">Blog</a>
+          <a href="/sectors">Sectors</a>
           <a href="/careers">Careers</a>
+          <a href="/blog">Blog</a>
           <a href="/contact">Contact</a>
         </Header>
       </div>
@@ -62,6 +63,73 @@ export default function Layout({
       ],
     },
     {
+      sectionTitle: 'Sectors',
+      links: [
+        {
+          text: 'Central Government',
+          link: '/sectors/central-government',
+        },
+        {
+          text: 'Local Government',
+          link: '/sectors/local-government',
+        },
+        {
+          text: 'Housing',
+          link: '/sectors/housing',
+        },
+        {
+          text: 'Healthcare',
+          link: '/sectors/healthcare',
+        },
+        {
+          text: 'Transport',
+          link: '/sectors/transport',
+        },
+        {
+          text: 'Education',
+          link: '/sectors/education',
+        },
+        {
+          text: 'Police, Justice & Emergency',
+          link: '/sectors/police-justice-emergency',
+        },
+        {
+          text: 'Space, Defence & Security',
+          link: '/sectors/space-defence-security',
+        },
+      ],
+    },
+    {
+      sectionTitle: 'Why Made Tech',
+      links: [
+        {
+          text: 'Purpose & Misson',
+          link: '/purpose',
+        },
+        {
+          text: 'Frameworks',
+          link: '/frameworks',
+        },
+        {
+          text: 'Partners',
+          link: '/partners',
+        },
+        {
+          text: 'Blog',
+          link: '/blog',
+        },
+        {
+          text: 'Books',
+          link: '/resources/books',
+        },
+        {
+          text: 'Learn',
+          link: 'https://learn.madetech.com',
+        },
+      ],
+      class: 'sitemap__why-made-tech',
+    },
+    {
       sectionTitle: 'Case Studies',
       links: [
         {
@@ -81,34 +149,18 @@ export default function Layout({
           link: '/case-studies/ministry-of-justice-children-fund',
         },
       ],
-    },
-    {
-      sectionTitle: 'Resources',
-      links: [
-        {
-          text: 'Blog',
-          link: '/blog',
-        },
-        {
-          text: 'Books',
-          link: '/resources/books',
-        },
-        {
-          text: 'Learn',
-          link: 'https://learn.madetech.com',
-        },
-      ],
+      class: 'sitemap__case-studies',
     },
     {
       sectionTitle: 'Company',
       links: [
         {
-          text: 'Academy',
-          link: '/careers/academy',
-        },
-        {
           text: 'Careers',
           link: '/careers',
+        },
+        {
+          text: 'Academy',
+          link: '/careers/academy',
         },
         {
           text: 'Contact Us',
