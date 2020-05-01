@@ -236,10 +236,12 @@
 }
 
 .book__showcase {
-  margin-top: solid 50px !important;
-  padding-top: 0 !important;
-  padding-bottom: 30px !important;
-
+  &.contentful-grid {
+    margin-top: solid 50px !important;
+    padding-top: 0 !important;
+    padding-bottom: 30px !important;
+  }
+  
   h2 {
     margin-top: 87px !important;
     margin-bottom: 40px !important;

@@ -5,7 +5,8 @@
 .contentful-grid.shaded,
 .contentful-grid.yellow,
 .contentful-grid.book-blue,
-.contentful-grid.blue {
+.contentful-grid.blue,
+.contentful-grid.red {
   padding: map-get($spacers, 3) 0;
 }
 
@@ -23,6 +24,11 @@
 
   .prose {
     color: $white;
+
+    p:nth-last-child(2) a {
+      @extend .btn-outline-light;
+      text-shadow: none;
+    }
 
     p:last-child a {
       @extend .btn-outline-light;
@@ -74,15 +80,39 @@
   margin-bottom: 0;
 }
 
+.contentful-grid.red {
+  background-color: #FF7659;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $black !important;
+  }
+
+  .prose {
+    color: $black;
+
+    p:last-child a {
+      @extend .btn-outline-light;
+      text-shadow: none;
+    }
+  }
+}
+
 .contentful-grid.yellow,
 .contentful-grid.book-blue,
 .contentful-grid.blue,
 .contentful-grid.shaded,
+.contentful-grid.red,
 .contentful-jumbotron {
   & + .contentful-grid.yellow,
   & + .contentful-grid.book-blue,
   & + .contentful-grid.blue,
-  & + .contentful-grid.shaded {
+  & + .contentful-grid.shaded,
+  & + .contentful-grid.red {
     margin-top: map-get($spacers, 3) * -1;
   }
 
