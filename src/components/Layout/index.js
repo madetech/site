@@ -103,7 +103,7 @@ export default function Layout({
       sectionTitle: 'Why Made Tech',
       links: [
         {
-          text: 'Purpose & Misson',
+          text: 'Purpose & Mission',
           link: '/purpose',
         },
         {
