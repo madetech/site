@@ -39,9 +39,7 @@ http {
 
     resolver 172.16.0.23 8.8.8.8;
 
-    location /services/ruby-on-rails-development {
-      rewrite ^ /services last;
-    }
+    rewrite /services/ruby-on-rails-development /services last;
 
     location = /static {
       expires 1y;
