@@ -39,8 +39,8 @@ http {
 
     resolver 172.16.0.23 8.8.8.8;
 
-    rewrite https://www.madetech.com/services/ruby-on-rails-development https://www.madetech.com/services redirect;
-    
+    rewrite https://staging.madetech.com/services/ruby-on-rails-development https://staging.madetech.com/services redirect;
+
     location = /static {
       expires 1y;
       add_header Cache-Control "public, immutable";
