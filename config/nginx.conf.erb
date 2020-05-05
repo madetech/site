@@ -39,8 +39,6 @@ http {
 
     resolver 172.16.0.23 8.8.8.8;
 
-    rewrite /services/ruby-on-rails-development /services last;
-
     location = /static {
       expires 1y;
       add_header Cache-Control "public, immutable";
@@ -70,5 +68,55 @@ http {
       proxy_redirect http://<%= ENV['MADETECH_HOST'] %>/ /;
       proxy_redirect https://<%= ENV['MADETECH_HOST'] %>/ /;
     }
+
+    rewrite /services/ruby-on-rails-development /services last;
+    rewrite /services/support-maintenance /services last;
+    rewrite /services/agile-transformation /services last;
+    rewrite /solutions/spree-commerce /services last;
+    rewrite /solutions/ruby-on-rails /services last;
+    rewrite /pricing /services last;
+    rewrite /pricing/support /services last;
+    rewrite /pricing/rails-team /services last;
+    rewrite /pricing/spree /services last;
+    rewrite /pricing/rails_team /services last;
+    rewrite /news/made-named-as-leading-enterprise-software-developer-in-the-uk /services last;
+    rewrite /ecommerce /sectors last;
+    rewrite /continuous-delivery-field-guide /resources/books/field-guide-to-continuous-delivery last;
+    rewrite /about /purpose last;
+    rewrite /news /blog last;
+    rewrite /news/finery-website-launches /blog last;
+    rewrite /news/made-appointed-to-redevelop-cdp-online-platforms /blog last;
+    rewrite /news/showstudio-shop-launches /blog last;
+    rewrite /news/made-named-as-uk-market-leaders-in-ruby-on-rails-development /blog last;
+    rewrite /news/made-named-as-leading-enterprise-software-developer-in-the-uk /blog last;
+    rewrite /blog/t/agile /blog last;
+    rewrite /blog/t/software-engineering /blog last;
+    rewrite /blog/t/automated-test-suite /blog last;
+    rewrite /blog/t/build-pipelines /blog last;
+    rewrite /blog/t/performance-optimisation /blog last;
+    rewrite /blog/t/web-development /blog last;
+    rewrite /blog/t/custom-software /blog last;
+    rewrite /blog/t/software-design /blog last;
+    rewrite /blog/t/software-engineering /blog last;
+    rewrite /blog/t/continuous-improvement /blog last;
+    rewrite /blog/t/deployments /blog last;
+    rewrite /blog/t/code-review /blog last;
+    rewrite /blog/t/software-testing /blog last;
+    rewrite /blog/t/software-consulting /blog last;
+    rewrite /blog/t/digital-marketing /blog last;
+    rewrite /blog/t/a-b-testing /blog last;
+    rewrite /blog/t/virtualisation /blog last;
+    rewrite /blog/t/code-quality-metrics /blog last;
+    rewrite /blog/t/application-management /blog last;
+    rewrite /blog/t/capacity-planning /blog last;
+    rewrite /blog/t/volume-testing /blog last;
+    rewrite /blog/t/support-and-maintenance /blog last;
+    rewrite /blog/t/cloudfoundry /blog last;
+    rewrite /blog/t/email-marketing /blog last;
+    rewrite /careers/full-stack-engineer /careers last;
+    rewrite /careers/support-engineer /careers last;
+    rewrite /careers/scrum-master /careers last;
+    rewrite /careers/apprentice-engineer /careers/academy last;
+    rewrite /careers/graduate-developer /careers/academy last;
   }
 }
