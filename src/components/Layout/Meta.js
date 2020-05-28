@@ -17,10 +17,10 @@ function MetaHelmet({ title, description, keywords, url, siteUrl, image }) {
       {image && <meta property="og:image" content={image} />}
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      {url && <meta property="twitter:url" content={url} />}
-      {image && <meta property="twitter:image" content={image} />}
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {url && <meta name="twitter:url" content={url} />}
+      {image && <meta name="twitter:image" content={image} />}
 
       <link
         href={`${siteUrl}/rss.xml`}
