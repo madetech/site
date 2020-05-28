@@ -20,7 +20,7 @@ function MetaHelmet({ title, description, keywords, url, siteUrl, image }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {url && <meta name="twitter:url" content={url} />}
-      {image && <meta name="twitter:image" content={image} />}
+      {image && <meta name="twitter:image" content={`https:${image}`} />}
 
       <link
         href={`${siteUrl}/rss.xml`}
