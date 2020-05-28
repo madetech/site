@@ -15,7 +15,7 @@ export default function ContentfulPageTemplate({ data }) {
       image={
         page.content[0].headerImage
           ? `https:${page.content[0].headerImage.fixed.src}`
-          : logo
+          : `https://www.madetech.com${logo}`
       }
     >
       <Contentful content={page.content} />
