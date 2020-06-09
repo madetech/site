@@ -67,8 +67,13 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+# Yarn lockfile
+yarn.lock
 
 *.mp4
+
+# npm
+package-lock.json
 
 # vscode config
 .vscode/
