@@ -98,6 +98,7 @@ export const pageQuery = graphql`
     columnWidth
     columnOffset
     formId
+    buttonColour
   }
   fragment inlineImages on ContentfulInlineImages {
     name
