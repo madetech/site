@@ -1,17 +1,18 @@
 import React from 'react'
 
 const DripForm = props => {
+  console.log(props.formDescription)
   return (
     <form
-      action={`https://www.getdrip.com/forms/${props.formId}/submissions`}
+      action={`https://www.getdrip.com/forms/${props.dripFormId}/submissions`}
       method="post"
-      data-drip-embedded-form={props.formId}
+      data-drip-embedded-form={props.dripFormId}
     >
       <h3 data-drip-attribute="headline" data-test="headline">
         {props.headline}
       </h3>
       <div data-drip-attribute="description" data-test="description">
-        {props.description}
+        {props.formDescription.formDescription}
       </div>
       <div>
         <label for="drip-email">Email Address</label>
@@ -38,7 +39,7 @@ const DripForm = props => {
           value=""
         />
       </div>
-      <div style="display: none;" aria-hidden="true">
+      <div style={{ display: 'none' }} aria-hidden="true">
         <label for="website">Website</label>
         <br />
         <input

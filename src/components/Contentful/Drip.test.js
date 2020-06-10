@@ -6,9 +6,12 @@ describe('<DripForm>', () => {
   it('Renders the component with information provided by props', () => {
     const component = shallow(
       <DripForm
-        formId={12345}
+        dripFormId={12345}
         headline="I like dogs"
-        description="Sign up to this wonderful form for more dog related content."
+        formDescription={{
+          formDescription:
+            'Sign up to this wonderful form for more dog related content.',
+        }}
       />
     )
 
