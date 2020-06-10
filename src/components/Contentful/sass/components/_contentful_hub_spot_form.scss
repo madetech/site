@@ -13,7 +13,6 @@
 
   .hs-submit {
     @extend .form-group;
-
     input {
       @extend .btn;
       @extend .btn-success;
@@ -23,5 +22,61 @@
 
   .hs-richtext {
     @extend .prose;
+  }
+
+  &.red {
+    .hs-button {
+      color: #fff;
+      background-color: #f77659;
+      border-color: #f77659;
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+
+  &.yellow {
+    .hs-button {
+      color: #000;
+      background-color: #FECC2B;
+      border-color: #FECC2B;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+
+  &.blue { //dark blue
+    .hs-button {
+      color: #fff;
+      background-color: #385FB3;
+      border-color: #385FB3;
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+
+  &.book-blue { //normal blue
+    .hs-button {
+      color: #fff;
+      background-color: #88B2EA;
+      border-color: #88B2EA;
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+
+  &.shaded {
+    .hs-button {
+      color: #fff;
+      background-color: #000;
+      border-color: #000;
+      &:hover {
+        background-color: #218838;
+      }
+    }
   }
 }
