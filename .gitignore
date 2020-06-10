@@ -63,10 +63,14 @@ typings/
 
 # Yarn
 yarn-error.log
+yarn-lock.json
 .pnp/
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# npm
+package-lock.json
 
 *.mp4
 
