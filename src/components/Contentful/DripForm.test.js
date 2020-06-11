@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import DripForm from './Drip'
+import DripForm from './DripForm'
 
 describe('<DripForm>', () => {
   it('Renders the component with information provided by props', () => {

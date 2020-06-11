@@ -8,7 +8,7 @@ import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 import Tweet from './Tweet'
-import DripForm from './Drip'
+import DripForm from './DripForm'
 
 function GridContainer({
   alignItems,

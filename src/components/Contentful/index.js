@@ -10,7 +10,7 @@ import ImageLink from './ImageLink'
 import Carousel from './Carousel'
 import toHtmlId from '../../helpers/toHtmlId'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
-import DripForm from './Drip'
+import DripForm from './DripForm'
 
 function ComponentRenderer(content) {
   if (!content.name) throw new Error('No component name provided')
