@@ -29,8 +29,10 @@
       color: #fff;
       background-color: #f77659;
       border-color: #f77659;
+
       &:hover {
-        background-color: #218838;
+        background-color: #e66d53;
+        border-color: #e66d53;
       }
     }
   }
@@ -38,11 +40,12 @@
   &.yellow {
     .hs-button {
       color: #000;
-      background-color: #FECC2B;
-      border-color: #FECC2B;
+      background-color: #fecc2b;
+      border-color: #fecc2b;
 
       &:hover {
-        background-color: #218838;
+        background-color: #feb726;
+        border-color: #feb726;
       }
     }
   }
@@ -50,10 +53,12 @@
   &.blue { //dark blue
     .hs-button {
       color: #fff;
-      background-color: #385FB3;
-      border-color: #385FB3;
+      background-color: #3861ad;
+      border-color: #3861ad;
+
       &:hover {
-        background-color: #218838;
+        background-color: #31579e;
+        border-color: #31579e;
       }
     }
   }
@@ -61,10 +66,12 @@
   &.book-blue { //normal blue
     .hs-button {
       color: #fff;
-      background-color: #88B2EA;
-      border-color: #88B2EA;
+      background-color: #88b2ea;
+      border-color: #88b2ea;
+
       &:hover {
-        background-color: #218838;
+        background-color: #78a0d6;
+        border-color: #78a0d6;
       }
     }
   }
@@ -72,10 +79,12 @@
   &.shaded {
     .hs-button {
       color: #fff;
-      background-color: #000;
-      border-color: #000;
+      background-color: #222222;
+      border-color: #222222;
+
       &:hover {
-        background-color: #218838;
+        background-color: #000000;
+        border-color: #000000;
       }
     }
   }
