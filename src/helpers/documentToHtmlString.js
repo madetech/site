@@ -18,9 +18,9 @@ export default function documentToHtmlString(doc) {
           switch (mimeGroup) {
             case 'image':
               return `<img title="${
-                title ? title.field || title[LOCALE] : null
+                title ? title.field || title[LOCALE] : ''
               }" alt="${
-                description ? description.field || description[LOCALE] : null
+                description ? description.field || description[LOCALE] : ''
               }" src="${file.url || file[LOCALE].url}" />`
             default:
               return `<span style={{ backgroundColor: 'red', color: 'white' }}>${mimeType} embedded asset</span>`
