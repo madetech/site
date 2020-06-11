@@ -105,6 +105,7 @@ export const pageQuery = graphql`
     formDescription {
       formDescription
     }
+    formFields
   }
   fragment inlineImages on ContentfulInlineImages {
     name
