@@ -17,11 +17,13 @@ export default class MobileMenu extends React.Component {
         width={'100vw'}
         customBurgerIcon={
           <img
+            alt=""
             src={require('../../assets/images/mobile-nav/icon-burger/icon-burger.png')}
           />
         }
         customCrossIcon={
           <img
+            alt=""
             src={require('../../assets/images/mobile-nav/icon-close/icon-close.png')}
           />
         }
