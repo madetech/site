@@ -71,9 +71,6 @@ yarn-lock.json
 # Yarn lockfile
 yarn.lock
 
-# npm
-package-lock.json
-
 *.mp4
 
 # npm
