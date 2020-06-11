@@ -69,9 +69,6 @@ yarn-lock.json
 # Yarn Integrity file
 .yarn-integrity
 
-# npm
-package-lock.json
-
 *.mp4
 
 # vscode config
