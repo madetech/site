@@ -2,6 +2,29 @@ import React from 'react'
 
 const DripForm = props => {
   console.log(props.formDescription)
+
+  let inputRow = fieldName => {
+    let hyphenatedFieldName = fieldName.split(' ').join('-')
+    let underscoredFieldName = fieldName.split(' ').join('_')
+    return (
+      <div>
+        <label htmlFor={`drip-${hyphenatedFieldName}`}>{fieldName}</label>
+        <br />
+        <input
+          key={hyphenatedFieldName}
+          id={`drip-${hyphenatedFieldName}`}
+          name={`fields[${underscoredFieldName}]`}
+          data-test={fieldName}
+          value=""
+        />
+      </div>
+    )
+  }
+
+  let renderInputRows = () => {
+    return props.formFields.map(formField => inputRow(formField))
+  }
+
   return (
     <form
       action={`https://www.getdrip.com/forms/${props.dripFormId}/submissions`}
@@ -14,31 +37,7 @@ const DripForm = props => {
       <div data-drip-attribute="description" data-test="description">
         {props.formDescription.formDescription}
       </div>
-      <div>
-        <label for="drip-email">Email Address</label>
-        <br />
-        <input type="email" id="drip-email" name="fields[email]" value="" />
-      </div>
-      <div>
-        <label for="drip-first-name">First Name</label>
-        <br />
-        <input
-          type="text"
-          id="drip-first-name"
-          name="fields[first_name]"
-          value=""
-        />
-      </div>
-      <div>
-        <label for="drip-last-name">Last Name </label>
-        <br />
-        <input
-          type="text"
-          id="drip-last-name"
-          name="fields[last_name]"
-          value=""
-        />
-      </div>
+      {renderInputRows()}
       <div style={{ display: 'none' }} aria-hidden="true">
         <label for="website">Website</label>
         <br />
