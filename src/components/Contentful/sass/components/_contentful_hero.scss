@@ -54,7 +54,15 @@
       width: auto;
       background: no-repeat;
       background-size: contain;
-      margin-top: 3%;
+      margin-top: 1.25rem;
+
+      @include sm-desktop {
+        padding-bottom: 2.5rem;
+      }
+
+      @include lg-tablet {
+        padding-bottom: 3.5rem;
+      }
     }
   }
 
