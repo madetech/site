@@ -84,31 +84,33 @@ export default function ContentfulHero({
     links = list()
   }
 
-  if (headerImageShadowColourStyle === 'none') {
-    heroImageComponent = (
-      <div
-        className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
-      >
-        <img alt={headerImage.title} src={headerImage.fixed.src} />
-        {links}
-      </div>
-    )
-  } else {
-    heroImageComponent = (
-      <div
-        className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
-        style={{
-          backgroundImage:
-            'url(' +
-            headerImage.fixed.src +
-            '), url(' +
-            headerImage.resize.src +
-            ')',
-        }}
-      >
-        {links}
-      </div>
-    )
+  if (headerImage) {
+    if (headerImageShadowColourStyle === 'none') {
+      heroImageComponent = (
+        <div
+          className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
+        >
+          <img alt={headerImage.title} src={headerImage.fixed.src} />
+          {links}
+        </div>
+      )
+    } else {
+      heroImageComponent = (
+        <div
+          className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
+          style={{
+            backgroundImage:
+              'url(' +
+              headerImage.fixed.src +
+              '), url(' +
+              headerImage.resize.src +
+              ')',
+          }}
+        >
+          {links}
+        </div>
+      )
+    }
   }
 
   function list() {
