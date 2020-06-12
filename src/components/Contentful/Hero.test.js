@@ -4,7 +4,7 @@ import heroContent from '../../../test/fixtures/contentful/hero'
 import Contentful from '.'
 
 describe('Hero', () => {
-  describe('when content provided', () => {
+  describe('when content provided with no image', () => {
     const contentful = mount(<Contentful content={[heroContent()]} />)
 
     it('renders title correctly', () => {
