@@ -7,6 +7,9 @@ import Post from '../../components/Post'
 
 export default function PostPageTemplate({ data }) {
   const post = data.wordpressPost
+  const content = data.contentfulPage
+  // contentfulPage in the graphql response is null.
+  console.log('DATA', data)
 
   return (
     <Layout
@@ -15,7 +18,7 @@ export default function PostPageTemplate({ data }) {
       url={withPrefix(`/blog/${post.slug}`)}
       image={post.jetpack_featured_media_url}
     >
-      <Post post={post} withPrefix={withPrefix} />
+      <Post post={post} withPrefix={withPrefix} content={content} />
     </Layout>
   )
 }
@@ -44,37 +47,36 @@ export const pageQuery = graphql`
         name
         slug
       }
-    },
-    query($id: String!) {
-      contentfulPage(id: { eq: $id }) {
-        customClasses
-        description
-        featureFlags
-        id
-        title
-        description {
-              content {
-                content {
-                  value
-                }
-              }
-            }
-        slugUri
-        ctaText
-        bookImage {
-              fluid {
-                src
-              }
-            }
-        themeStyleColour
-            content {
-              __typename
-              ...bookPreview
-            }
-          }
-        }
-    fragment bookPreview on ContentfulBookPreview {
-      title
     }
+
+    contentfulPage(id: { eq: $id }) {
+      customClasses
+      description
+      featureFlags
+      id
+      title
+      content {
+        __typename
+      }
+    }
+  }
+
+  fragment postBookPreview on ContentfulBookPreview {
+    title
+    description {
+      content {
+        content {
+          value
+        }
+      }
+    }
+    slugUri
+    ctaText
+    bookImage {
+      fluid {
+        src
+      }
+    }
+    themeStyleColour
   }
 `

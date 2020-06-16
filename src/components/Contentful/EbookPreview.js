@@ -135,7 +135,7 @@ const EbookPreview = props => {
 
   return (
     <div class="new-design" style={styles}>
-      <Grid {...props} />
+      <Grid {...parameters} />
     </div>
   )
 }
