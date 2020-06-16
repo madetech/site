@@ -8,6 +8,7 @@ import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 import Tweet from './Tweet'
+import EbookPreview from './EbookPreview'
 
 function GridContainer({
   alignItems,
@@ -226,6 +227,26 @@ function GridImageLink({ url, image, linkText }) {
   return <ImageLink url={url} image={image} linkText={linkText} />
 }
 
+function GridBookPreview({
+  title,
+  description,
+  slugUri,
+  ctaText,
+  bookImage,
+  themeStyleColour,
+}) {
+  return (
+    <EbookPreview
+      title={title}
+      description={description}
+      slugUri={slugUri}
+      ctaText={ctaText}
+      bookImage={bookImage}
+      themeStyleColour={themeStyleColour}
+    />
+  )
+}
+
 function GridComponentRenderer(content) {
   switch (content.__typename) {
     case 'ContentfulProse':
@@ -265,6 +286,17 @@ function GridComponentRenderer(content) {
           url={content.url}
           image={content.image}
           linkText={content.linkText}
+        />
+      )
+    case 'ContentfulBookPreview':
+      return (
+        <GridBookPreview
+          title={content.title}
+          ctaText={content.ctaText}
+          bookImage={content.bookImage}
+          description={content.description}
+          slugUri={content.slugUri}
+          themeStyleColour={content.themeStyleColour}
         />
       )
     default:

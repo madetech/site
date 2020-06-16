@@ -10,6 +10,7 @@ import ImageLink from './ImageLink'
 import Carousel from './Carousel'
 import toHtmlId from '../../helpers/toHtmlId'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
+import EbookPreview from './EbookPreview'
 
 function ComponentRenderer(content) {
   if (!content.name) throw new Error('No component name provided')
@@ -139,6 +140,17 @@ function ComponentRenderer(content) {
           slidesToShow={content.slidesToShow}
           content={content.content}
           style={content.style}
+        />
+      )
+    case 'ContentfulEbookPreview':
+      return (
+        <EbookPreview
+          title={content.title}
+          description={content.description}
+          slugUri={content.slugUri}
+          ctaText={content.ctaText}
+          bookImage={content.bookImage}
+          themeStyleColour={content.themeStyleColour}
         />
       )
     default:

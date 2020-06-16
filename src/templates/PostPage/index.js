@@ -44,6 +44,37 @@ export const pageQuery = graphql`
         name
         slug
       }
+    },
+    query($id: String!) {
+      contentfulPage(id: { eq: $id }) {
+        customClasses
+        description
+        featureFlags
+        id
+        title
+        description {
+              content {
+                content {
+                  value
+                }
+              }
+            }
+        slugUri
+        ctaText
+        bookImage {
+              fluid {
+                src
+              }
+            }
+        themeStyleColour
+            content {
+              __typename
+              ...bookPreview
+            }
+          }
+        }
+    fragment bookPreview on ContentfulBookPreview {
+      title
     }
   }
 `

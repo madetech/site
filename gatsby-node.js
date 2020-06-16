@@ -17,6 +17,10 @@ const categoryPageTemplate = path.resolve(
   './src/templates/CategoryPage/index.js'
 )
 
+const eBookPreviewTemplate = path.resolve(
+  './src/templates/EbookPreview/index.js'
+)
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -182,6 +186,45 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
       }).then(() => resolve())
+    })
+  })
+
+  const eBookPreview = new Promise((resolve, reject) => {
+    const query = graphql(`
+      {
+        allContentfulPage {
+          edges {
+            node {
+              id
+              slug
+            }
+          }
+        }
+      }
+    `)
+
+    query.then(result => {
+      if (result.errors) {
+        console.error(result.errors)
+        reject(result.errors)
+      }
+
+      const eBookPreviewEdges = result.data.allContentfulPage.edges
+
+      eBookPreviewEdges.forEach(edge => {
+        createPage({
+          path:
+            edge.node.slug.slice(0, 1) === '/'
+              ? edge.node.slug
+              : `/${edge.node.slug}`,
+          component: slash(contentfulPageTemplate),
+          context: {
+            id: edge.node.id,
+          },
+        })
+      })
+
+      resolve()
     })
   })
 
