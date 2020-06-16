@@ -79,3 +79,6 @@ yarn-lock.json
 
 # prview
 preview/.env
+
+# test files
+testget.js
