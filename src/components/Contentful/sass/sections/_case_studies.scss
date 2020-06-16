@@ -3,6 +3,22 @@
         padding-top: 0px !important;
     }
 
+    .contentful-hero__text {
+        margin-top: 95px;
+
+        @include tablet {
+            margin-top: 88px;
+        }
+
+        @include sm-tablet {
+            margin-top: 0;
+        }
+
+        @include mobile {
+            margin-top: 0;
+        }
+    }
+
     .contentful-prose {
         background-color: $white;
 
