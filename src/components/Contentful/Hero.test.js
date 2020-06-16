@@ -20,9 +20,9 @@ describe('Hero', () => {
     })
 
     it('render text correctly', () => {
-      expect(contentful.find('div.contentful-hero__text').html()).toContain(
-        'This is some text'
-      )
+      contentful.find('div.contentful-hero__text').forEach(n => {
+        expect(n.html()).toContain('This is some text')
+      })
     })
   })
 })
