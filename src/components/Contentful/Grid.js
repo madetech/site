@@ -32,7 +32,7 @@ function GridContainer({
   if (layout === 'fluid') containerClassName += '-fluid'
 
   return (
-    <div className={className} id={id} linktitle={linkTitle}>
+    <div className={className} id={id} linkTitle={linkTitle}>
       <a id={entry_id} href={`#${entry_id}`} style={{ opacity: 0 }}>
         {' '}
       </a>
