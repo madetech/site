@@ -1,0 +1,47 @@
+&.case__studies {
+    .contentful-grid {
+        padding-top: 0px !important;
+    }
+
+    .contentful-hero__text {
+        margin-top: 95px;
+
+        @include tablet {
+            margin-top: 88px;
+        }
+
+        @include sm-tablet {
+            margin-top: 0;
+        }
+
+        @include mobile {
+            margin-top: 0;
+        }
+    }
+
+    .contentful-prose {
+        background-color: $white;
+
+        .prose {
+            padding: 50px;
+
+            p {
+                font-size: $px12;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                letter-spacing: 1px;
+                line-height: normal;
+                color: #333333;
+            }
+
+            h3 {
+                margin-bottom: 30px;
+            }
+
+            a {
+                font-size: $px20;
+            }
+        }
+    }
+}
