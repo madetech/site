@@ -12,6 +12,7 @@ describe('<DripForm>', () => {
           'Sign up to this wonderful form for more dog related content.',
       }}
       formFields={['Email', 'First Name', 'Last Name']}
+      formTags={['email', 'first_name', 'last_name']}
     />
   )
   it('Renders the component with information provided by props', () => {
@@ -24,8 +25,8 @@ describe('<DripForm>', () => {
   })
 
   it('Builds input fields for each of the formFields', () => {
-    expect(component.find({ 'data-test': 'Email' }).length).toBe(1)
-    expect(component.find({ 'data-test': 'First Name' }).length).toBe(1)
-    expect(component.find({ 'data-test': 'Last Name' }).length).toBe(1)
+    expect(component.find({ 'data-test': 'email' }).length).toBe(1)
+    expect(component.find({ 'data-test': 'first_name' }).length).toBe(1)
+    expect(component.find({ 'data-test': 'last_name' }).length).toBe(1)
   })
 })

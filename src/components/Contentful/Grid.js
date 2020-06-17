@@ -219,12 +219,20 @@ function GridTweet({ tweetId }) {
   return <Tweet tweetId={tweetId}></Tweet>
 }
 
-function GridDripForm({ dripFormId, headline, formDescription }) {
+function GridDripForm({
+  dripFormId,
+  headline,
+  formDescription,
+  formFields,
+  formTags,
+}) {
   return (
     <DripForm
       dripFormId={dripFormId}
       headline={headline}
       formDescription={formDescription}
+      formFields={formFields}
+      formTags={formTags}
     />
   )
 }
@@ -279,12 +287,13 @@ function GridComponentRenderer(content) {
         />
       )
     case 'ContentfulDripForm':
-      console.log('Drip Form Content', content)
       return (
         <GridDripForm
           dripFormId={content.dripFormId}
           headline={content.headline}
           formDescription={content.formDescription}
+          formFields={content.formFields}
+          formTags={content.formTags}
         />
       )
     default:

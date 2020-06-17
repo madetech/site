@@ -71,6 +71,7 @@ export const pageQuery = graphql`
             ...tweet
             ...jobsBoard
             ...imageLink
+            ...dripForm
           }
         }
       }
@@ -101,11 +102,12 @@ export const pageQuery = graphql`
   }
   fragment dripForm on ContentfulDripForm {
     dripFormId
+    formFields
+    formTags
     headline
     formDescription {
       formDescription
     }
-    formFields
   }
   fragment inlineImages on ContentfulInlineImages {
     name

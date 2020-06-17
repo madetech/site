@@ -148,6 +148,8 @@ function ComponentRenderer(content) {
           dripformId={content.dripFormId}
           headline={content.headline}
           formDescription={content.formDescription}
+          formFields={content.formFields}
+          formTags={content.formTags}
         />
       )
     default:
