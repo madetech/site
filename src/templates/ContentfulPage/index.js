@@ -99,6 +99,7 @@ export const pageQuery = graphql`
     columnWidth
     columnOffset
     formId
+    buttonColour
   }
   fragment dripForm on ContentfulDripForm {
     dripFormId

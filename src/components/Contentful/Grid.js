@@ -211,8 +211,8 @@ function GridCard({ image, html, link }) {
   )
 }
 
-function GridHubSpotForm({ formId, id }) {
-  return <HubSpotForm formId={formId} id={id} />
+function GridHubSpotForm({ formId, id, buttonColour }) {
+  return <HubSpotForm formId={formId} id={id} buttonColour={buttonColour} />
 }
 
 function GridTweet({ tweetId }) {
@@ -272,7 +272,11 @@ function GridComponentRenderer(content) {
       )
     case 'ContentfulHubSpotForm':
       return (
-        <GridHubSpotForm formId={content.formId} id={toHtmlId(content.name)} />
+        <GridHubSpotForm
+          formId={content.formId}
+          id={toHtmlId(content.name)}
+          buttonColour={content.buttonColour}
+        />
       )
     case 'ContentfulJobsBoard':
       return <JobsBoard />

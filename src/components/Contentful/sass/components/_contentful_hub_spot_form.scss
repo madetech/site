@@ -13,7 +13,6 @@
 
   .hs-submit {
     @extend .form-group;
-
     input {
       @extend .btn;
       @extend .btn-success;
@@ -23,5 +22,65 @@
 
   .hs-richtext {
     @extend .prose;
+  }
+
+  @mixin colours($colour-default, $colour-dark, $colour-text) {
+    .hs-button {
+      color: $colour-text;
+      background-color: $colour-default;
+      border-color: $colour-default;
+
+      &:hover {
+        color: $colour-text;
+        background-color: $colour-dark;
+        border-color: $colour-dark;
+      }
+
+      &:focus,
+      &.focus,
+      &:not(:disabled):not(.disabled):active:focus,
+      &:not(:disabled):not(.disabled).active:focus,
+      .show > &.dropdown-toggle:focus {
+        color: $colour-text;
+        background-color: $colour-dark;
+        border-color: $colour-dark;
+        box-shadow: 0 0 0 0.2rem rgba($colour-default, 0.5);
+      }
+
+      &.disabled,
+      &:disabled {
+        color: $colour-text;
+        background-color: $colour-default;
+        border-color: $colour-default;
+      }
+
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled).active,
+      .show > &.dropdown-toggle {
+        color: $colour-text;
+        background-color: $colour-dark;
+        border-color: $colour-dark;
+      }
+    }
+  }
+
+  &.red {
+    @include colours(#f77659, #e66d53, #fff);
+  }
+
+  &.yellow {
+    @include colours(#fecc2b, #feb726, #000);
+  }
+
+  &.blue {
+    @include colours(#3861ad, #31579e, #fff);
+  }
+
+  &.book-blue {
+    @include colours(#88b2ea, #78a0d6, #fff);
+  }
+
+  &.shaded {
+    @include colours(#222, #000, #fff);
   }
 }

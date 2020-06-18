@@ -9,7 +9,7 @@ export default function BookPreview() {
     content: [
       {
         __typename: 'ContentfulProse',
-        name: 'UCT > Download Preview',
+        name: 'MLA > Download Preview',
         body: {
           json: {
             data: {},
@@ -33,7 +33,7 @@ export default function BookPreview() {
                     data: {},
                     marks: [],
                     value:
-                      'User-centred practices put user needs at the core of technology cultures. We can reduce waste in our processes by buying and building technology that meets researched and validated user needs rather than what we assume they need.',
+                      'Legacy technology is one of the biggest threats to public sector organisations. Whether you’ve started your journey already or don’t know where to begin, this book has been written to guide you to define and implement the right approach for your organisation. ',
                     nodeType: 'text',
                   },
                 ],
@@ -51,7 +51,7 @@ export default function BookPreview() {
                   {
                     data: {
                       uri:
-                        '/resources/ebook/user-centred-practices-for-sustainable-technology',
+                        '/resources/books/modernising-legacy-applications-in-the-public-sector',
                     },
                     content: [
                       {
@@ -88,9 +88,9 @@ export default function BookPreview() {
           fixed: {
             height: 1411,
             src:
-              '//images.ctfassets.net/42mpmljx5x5c/2kBIDZ1XEzYz36FL7q4M49/c63812f0d9573308705be0ecb868c285/user-centered_practices_for_sustainable_technology.png?w=1000&q=50',
+              '//images.ctfassets.net/42mpmljx5x5c/riHt3d6aTGTalWvZLW2zT/f80a201433c62b9edc8705f3dc2286d4/book_-_Modernising__Legacy_Applications__in_the_Public_Sector_2x__1_.png?w=1000&q=50',
             srcSet:
-              '//images.ctfassets.net/42mpmljx5x5c/2kBIDZ1XEzYz36FL7q4M49/c63812f0d9573308705be0ecb868c285/user-centered_practices_for_sustainable_technology.png?w=1000&h=1411&q=50 1x',
+              '//images.ctfassets.net/42mpmljx5x5c/riHt3d6aTGTalWvZLW2zT/f80a201433c62b9edc8705f3dc2286d4/book_-_Modernising__Legacy_Applications__in_the_Public_Sector_2x__1_.png?w=1000&h=1411&q=50 1x',
             width: 1000,
           },
         },
@@ -104,7 +104,7 @@ export default function BookPreview() {
       },
       {
         __typename: 'ContentfulProse',
-        name: 'UCT > Book Showcase',
+        name: 'MLA > Book Showcase',
         body: null,
         columnGroup: null,
         columnWidth: 5,
@@ -118,9 +118,9 @@ export default function BookPreview() {
           fixed: {
             height: 1411,
             src:
-              '//images.ctfassets.net/42mpmljx5x5c/2kBIDZ1XEzYz36FL7q4M49/c63812f0d9573308705be0ecb868c285/user-centered_practices_for_sustainable_technology.png?w=1000&q=50',
+              '//images.ctfassets.net/42mpmljx5x5c/riHt3d6aTGTalWvZLW2zT/f80a201433c62b9edc8705f3dc2286d4/book_-_Modernising__Legacy_Applications__in_the_Public_Sector_2x__1_.png?w=1000&q=50',
             srcSet:
-              '//images.ctfassets.net/42mpmljx5x5c/2kBIDZ1XEzYz36FL7q4M49/c63812f0d9573308705be0ecb868c285/user-centered_practices_for_sustainable_technology.png?w=1000&h=1411&q=50 1x',
+              '//images.ctfassets.net/42mpmljx5x5c/riHt3d6aTGTalWvZLW2zT/f80a201433c62b9edc8705f3dc2286d4/book_-_Modernising__Legacy_Applications__in_the_Public_Sector_2x__1_.png?w=1000&h=1411&q=50 1x',
             width: 1000,
           },
         },
@@ -134,9 +134,9 @@ export default function BookPreview() {
       },
     ],
     customClasses: ['book__showcase', 'book'],
-    id: 'misc-uct',
+    id: 'misc-mla',
     layout: 'normal',
-    style: 'book-blue',
+    style: 'red',
   }
 
   return (

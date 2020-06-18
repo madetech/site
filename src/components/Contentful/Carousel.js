@@ -14,6 +14,7 @@ function SliderArrow(props) {
   return (
     <button className={className} onClick={onClick}>
       <img
+        alt=""
         src={require('../../assets/images/carousel/btn-' +
           direction +
           '-2x.png')}
@@ -74,6 +75,7 @@ export default class ContentfulCarousel extends Component {
         return (
           <div>
             <img
+              alt=""
               src={image.fixed.src}
               style={{ '--slides': `${slidesToShow}` }}
             />
