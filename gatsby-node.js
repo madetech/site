@@ -104,10 +104,12 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(postPageTemplate),
           context: {
             id: edge.node.id,
-            blogPage: blogPostPageDaDo,
+            blogPage: createContentfulPages,
           },
         })
       })
+
+      resolve()
     })
   })
 
