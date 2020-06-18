@@ -17,10 +17,6 @@ const categoryPageTemplate = path.resolve(
   './src/templates/CategoryPage/index.js'
 )
 
-const eBookPreviewTemplate = path.resolve(
-  './src/templates/EbookPreview/index.js'
-)
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
