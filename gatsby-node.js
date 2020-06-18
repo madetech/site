@@ -112,76 +112,79 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
-      const queryContentful = graphql(`
-        {
-          allContentfulBookPreview {
-            nodes {
-              title
-              description {
-                content {
+      const createEbookComponent = new Promise((resolve, reject) => {
+        const queryContentful = graphql(`
+          {
+            allContentfulBookPreview {
+              nodes {
+                title
+                description {
                   content {
-                    value
+                    content {
+                      value
+                    }
                   }
                 }
-              }
-              slugUri
-              ctaText
-              bookImage {
-                fluid {
-                  src
+                slugUri
+                ctaText
+                bookImage {
+                  fluid {
+                    src
+                  }
                 }
+                themeStyleColour
               }
-              themeStyleColour
             }
           }
-        }
-      `)
+        `)
 
-      queryContentful.then(result => {
-        if (result.errors) {
-          console.error(result.errors)
-          reject(result.errors)
-        }
+        queryContentful.then(result => {
+          if (result.errors) {
+            console.error(result.errors)
+            reject(result.errors)
+          }
 
-        const eBookEdges = result.data.allContentfulBookPreview
-        eBookEdges.forEach(edge => {
-          createPage({
-            path: edge.node.slug,
-            component: slash(postPageTemplate),
-            context: {
-              slug: edge.node.slugUri,
-            },
-          })
+          const eBookEdges = result.data.allContentfulBookPreview
+          eBookEdges
+            .forEach(edge => {
+              createPage({
+                path: edge.node.slug,
+                component: slash(postPageTemplate),
+                context: {
+                  slug: edge.node.slugUri,
+                },
+              })
+            })
+            .then(() => resolve())
         })
-
-        resolve()
       })
     })
+  })
 
-    const createCategoryPages = new Promise((resolve, reject) => {
-      const query = graphql(`
-        {
-          allWordpressCategory {
-            edges {
-              node {
-                id
-                slug
-              }
+  const createCategoryPages = new Promise((resolve, reject) => {
+    const query = graphql(`
+      {
+        allWordpressCategory {
+          edges {
+            node {
+              id
+              slug
             }
           }
         }
-      `)
+      }
+    `)
 
-      query.then(result => {
-        if (result.errors) {
-          console.error(result.errors)
-          reject(result.errors)
-        }
+    query.then(result => {
+      if (result.errors) {
+        console.error(result.errors)
+        reject(result.errors)
+      }
 
-        const categoryEdges = result.data.allWordpressCategory.edges
+      const categoryEdges = result.data.allWordpressCategory.edges
 
-        Promise.map(categoryEdges, edge => {
-          const query = graphql(`
+      Promise.map(categoryEdges, edge => {
+        const query = graphql(`
           {
             allWordpressPost(
               filter: { categories: { elemMatch: { id: { eq: "${edge.node.id}" } } } }
@@ -196,125 +199,122 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `)
 
-          return query.then(result => {
-            if (result.errors) {
-              console.error(result.errors)
-              reject(result.errors)
-            }
+        return query.then(result => {
+          if (result.errors) {
+            console.error(result.errors)
+            reject(result.errors)
+          }
 
-            if (!result.data.allWordpressPost) return
+          if (!result.data.allWordpressPost) return
 
-            const postEdges = result.data.allWordpressPost.edges
-            const postsPerPage = 10
-            const totalPages = Math.ceil(postEdges.length / postsPerPage)
+          const postEdges = result.data.allWordpressPost.edges
+          const postsPerPage = 10
+          const totalPages = Math.ceil(postEdges.length / postsPerPage)
 
-            Array.from({ length: totalPages }).forEach((_, i) => {
-              const page = i + 1
+          Array.from({ length: totalPages }).forEach((_, i) => {
+            const page = i + 1
 
-              createPage({
-                path:
-                  i == 0
-                    ? `/blog/t/${edge.node.slug}`
-                    : `/blog/t/${edge.node.slug}/${page}`,
-                component: slash(categoryPageTemplate),
-                context: {
-                  id: edge.node.id,
-                  limit: postsPerPage,
-                  skip: i * postsPerPage,
-                  page,
-                  totalPages,
-                },
-              })
+            createPage({
+              path:
+                i == 0
+                  ? `/blog/t/${edge.node.slug}`
+                  : `/blog/t/${edge.node.slug}/${page}`,
+              component: slash(categoryPageTemplate),
+              context: {
+                id: edge.node.id,
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                page,
+                totalPages,
+              },
             })
           })
-        }).then(() => resolve())
-      })
+        })
+      }).then(() => resolve())
     })
+  })
 
-    const eBookPreview = new Promise((resolve, reject) => {
-      const query = graphql(`
-        {
-          allContentfulPage {
-            edges {
-              node {
-                id
-                slug
-              }
+  const eBookPreview = new Promise((resolve, reject) => {
+    const query = graphql(`
+      {
+        allContentfulPage {
+          edges {
+            node {
+              id
+              slug
             }
           }
         }
-      `)
+      }
+    `)
 
-      query.then(result => {
-        if (result.errors) {
-          console.error(result.errors)
-          reject(result.errors)
-        }
+    query.then(result => {
+      if (result.errors) {
+        console.error(result.errors)
+        reject(result.errors)
+      }
 
-        const eBookPreviewEdges = result.data.allContentfulPage.edges
+      const eBookPreviewEdges = result.data.allContentfulPage.edges
 
-        eBookPreviewEdges.forEach(edge => {
-          createPage({
-            path:
-              edge.node.slug.slice(0, 1) === '/'
-                ? edge.node.slug
-                : `/${edge.node.slug}`,
-            component: slash(contentfulPageTemplate),
-            context: {
-              id: edge.node.id,
-            },
-          })
+      eBookPreviewEdges.forEach(edge => {
+        createPage({
+          path:
+            edge.node.slug.slice(0, 1) === '/'
+              ? edge.node.slug
+              : `/${edge.node.slug}`,
+          component: slash(contentfulPageTemplate),
+          context: {
+            id: edge.node.id,
+          },
         })
-
-        resolve()
       })
-    })
 
-    return Promise.all([
-      createContentfulPages,
-      createPostPages,
-      createCategoryPages,
-      eBookPreview,
-    ])
+      resolve()
+    })
   })
 
-  const hash = md5(`${new Date().getTime()}`)
+  return Promise.all([
+    createContentfulPages,
+    createPostPages,
+    createCategoryPages,
+    eBookPreview,
+    createEbookComponent,
+  ])
+}
 
-  const addPageDataVersion = async file => {
-    const stats = await util.promisify(fs.stat)(file)
-    if (stats.isFile()) {
-      console.log(`Adding version to page-data.json in ${file}..`)
-      let content = await util.promisify(fs.readFile)(file, 'utf8')
-      const result = content.replace(
-        /page-data.json(\?v=[a-f0-9]{32})?/g,
-        `page-data.json?v=${hash}`
-      )
-      await util.promisify(fs.writeFile)(file, result, 'utf8')
-    }
-  }
+const hash = md5(`${new Date().getTime()}`)
 
-  exports.onPostBootstrap = async () => {
-    const loader = path.join(
-      __dirname,
-      'node_modules/gatsby/cache-dir/loader.js'
+const addPageDataVersion = async file => {
+  const stats = await util.promisify(fs.stat)(file)
+  if (stats.isFile()) {
+    console.log(`Adding version to page-data.json in ${file}..`)
+    let content = await util.promisify(fs.readFile)(file, 'utf8')
+    const result = content.replace(
+      /page-data.json(\?v=[a-f0-9]{32})?/g,
+      `page-data.json?v=${hash}`
     )
-    await addPageDataVersion(loader)
+    await util.promisify(fs.writeFile)(file, result, 'utf8')
   }
+}
 
-  exports.onPostBuild = async () => {
-    const publicPath = path.join(__dirname, 'public')
-    const htmlAndJSFiles = glob.sync(`${publicPath}/**/*.{html,js}`)
-    for (let file of htmlAndJSFiles) {
-      await addPageDataVersion(file)
-    }
-  }
+exports.onPostBootstrap = async () => {
+  const loader = path.join(__dirname, 'node_modules/gatsby/cache-dir/loader.js')
+  await addPageDataVersion(loader)
+}
 
-  exports.onCreateWebpackConfig = ({ actions }) => {
-    actions.setWebpackConfig({
-      devtool: 'eval-source-map',
-      resolve: {
-        alias: { 'react-dom': '@hot-loader/react-dom' },
-      },
-    })
+exports.onPostBuild = async () => {
+  const publicPath = path.join(__dirname, 'public')
+  const htmlAndJSFiles = glob.sync(`${publicPath}/**/*.{html,js}`)
+  for (let file of htmlAndJSFiles) {
+    await addPageDataVersion(file)
   }
+}
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    devtool: 'eval-source-map',
+    resolve: {
+      alias: { 'react-dom': '@hot-loader/react-dom' },
+    },
+  })
 }
