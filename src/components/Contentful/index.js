@@ -10,6 +10,7 @@ import ImageLink from './ImageLink'
 import Carousel from './Carousel'
 import toHtmlId from '../../helpers/toHtmlId'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
+import DripForm from './DripForm'
 
 function ComponentRenderer(content) {
   if (!content.name) throw new Error('No component name provided')
@@ -139,6 +140,16 @@ function ComponentRenderer(content) {
           slidesToShow={content.slidesToShow}
           content={content.content}
           style={content.style}
+        />
+      )
+    case 'ContentfulDripForm':
+      return (
+        <DripForm
+          dripformId={content.dripFormId}
+          headline={content.headline}
+          formDescription={content.formDescription}
+          formFields={content.formFields}
+          formTags={content.formTags}
         />
       )
     default:

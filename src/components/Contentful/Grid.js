@@ -8,6 +8,7 @@ import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 import Tweet from './Tweet'
+import DripForm from './DripForm'
 
 function GridContainer({
   alignItems,
@@ -218,6 +219,24 @@ function GridTweet({ tweetId }) {
   return <Tweet tweetId={tweetId}></Tweet>
 }
 
+function GridDripForm({
+  dripFormId,
+  headline,
+  formDescription,
+  formFields,
+  formTags,
+}) {
+  return (
+    <DripForm
+      dripFormId={dripFormId}
+      headline={headline}
+      formDescription={formDescription}
+      formFields={formFields}
+      formTags={formTags}
+    />
+  )
+}
+
 function GridUnknownComponentError({ __typename }) {
   return <div>Unknown Content Type for Grid: {__typename}</div>
 }
@@ -269,6 +288,16 @@ function GridComponentRenderer(content) {
           url={content.url}
           image={content.image}
           linkText={content.linkText}
+        />
+      )
+    case 'ContentfulDripForm':
+      return (
+        <GridDripForm
+          dripFormId={content.dripFormId}
+          headline={content.headline}
+          formDescription={content.formDescription}
+          formFields={content.formFields}
+          formTags={content.formTags}
         />
       )
     default:
