@@ -1,3 +1,23 @@
 .contentful-drip-form {
   margin: 0 auto;
 }
+
+.contentful-drip-form {
+  .submit-button {
+    @extend .form-group;
+    @extend .btn;
+    @extend .btn-success;
+    @extend .btn-lg;
+  }
+
+  .drip-input {
+    @extend .form-group;
+    input {
+      @extend .form-control;
+    }
+  }
+
+  .description {
+    padding-bottom: 1em;
+  }
+}

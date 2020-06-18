@@ -10,9 +10,8 @@ const DripForm = props => {
   let inputRow = (formField, formTag) => {
     let hyphenatedTag = formTag.split('_').join('-')
     return (
-      <div>
+      <div className="drip-input">
         <label htmlFor={`drip-${hyphenatedTag}`}>{formField}</label>
-        <br />
         <input
           key={hyphenatedTag}
           id={`drip-${hyphenatedTag}`}
@@ -39,13 +38,16 @@ const DripForm = props => {
         <h3 data-drip-attribute="headline" data-test="headline">
           {props.headline}
         </h3>
-        <div data-drip-attribute="description" data-test="description">
+        <div
+          data-drip-attribute="description"
+          data-test="description"
+          className="description"
+        >
           {props.formDescription.formDescription}
         </div>
         {renderInputRows()}
         <div style={{ display: 'none' }} aria-hidden="true">
           <label for="website">Website</label>
-          <br />
           <input
             type="text"
             id="website"
@@ -60,6 +62,7 @@ const DripForm = props => {
             type="submit"
             value="Subscribe"
             data-drip-attribute="sign-up-button"
+            className="submit-button"
           />
         </div>
       </form>
