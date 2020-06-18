@@ -8,7 +8,7 @@ import Post from '../../components/Post'
 export default function PostPageTemplate({ data }) {
   const post = data.wordpressPost
   const content = data.contentfulPage
-  // contentfulPage in the graphql response is null.
+  // contentfulPage in the graphql response is null. --- no it's not!!
   console.log('DATA', data)
 
   return (
@@ -49,34 +49,28 @@ export const pageQuery = graphql`
       }
     }
 
-    contentfulPage(id: { eq: $id }) {
-      customClasses
-      description
-      featureFlags
-      id
-      title
+    contentfulPage(slug: { eq: "/blog-post" }) {
+      name
       content {
-        __typename
-      }
-    }
-  }
-
-  fragment postBookPreview on ContentfulBookPreview {
-    title
-    description {
-      content {
-        content {
-          value
+        ... on ContentfulBookPreview {
+          bookImage {
+            fluid {
+              src
+            }
+          }
+          ctaText
+          title
+          themeStyleColour
+          slugUri
+          description {
+            content {
+              content {
+                value
+              }
+            }
+          }
         }
       }
     }
-    slugUri
-    ctaText
-    bookImage {
-      fluid {
-        src
-      }
-    }
-    themeStyleColour
   }
 `

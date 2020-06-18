@@ -108,54 +108,8 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(postPageTemplate),
           context: {
             id: edge.node.id,
+            blogPage: blogPostPageDaDo,
           },
-        })
-      })
-
-      const createEbookComponent = new Promise((resolve, reject) => {
-        const queryContentful = graphql(`
-          {
-            allContentfulBookPreview {
-              nodes {
-                title
-                description {
-                  content {
-                    content {
-                      value
-                    }
-                  }
-                }
-                slugUri
-                ctaText
-                bookImage {
-                  fluid {
-                    src
-                  }
-                }
-                themeStyleColour
-              }
-            }
-          }
-        `)
-
-        queryContentful.then(result => {
-          if (result.errors) {
-            console.error(result.errors)
-            reject(result.errors)
-          }
-
-          const eBookEdges = result.data.allContentfulBookPreview
-          eBookEdges
-            .forEach(edge => {
-              createPage({
-                path: edge.node.slug,
-                component: slash(postPageTemplate),
-                context: {
-                  slug: edge.node.slugUri,
-                },
-              })
-            })
-            .then(() => resolve())
         })
       })
     })
@@ -234,51 +188,10 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  const eBookPreview = new Promise((resolve, reject) => {
-    const query = graphql(`
-      {
-        allContentfulPage {
-          edges {
-            node {
-              id
-              slug
-            }
-          }
-        }
-      }
-    `)
-
-    query.then(result => {
-      if (result.errors) {
-        console.error(result.errors)
-        reject(result.errors)
-      }
-
-      const eBookPreviewEdges = result.data.allContentfulPage.edges
-
-      eBookPreviewEdges.forEach(edge => {
-        createPage({
-          path:
-            edge.node.slug.slice(0, 1) === '/'
-              ? edge.node.slug
-              : `/${edge.node.slug}`,
-          component: slash(contentfulPageTemplate),
-          context: {
-            id: edge.node.id,
-          },
-        })
-      })
-
-      resolve()
-    })
-  })
-
   return Promise.all([
     createContentfulPages,
     createPostPages,
     createCategoryPages,
-    eBookPreview,
-    createEbookComponent,
   ])
 }
 
