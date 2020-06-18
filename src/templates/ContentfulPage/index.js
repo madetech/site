@@ -208,6 +208,7 @@ export const pageQuery = graphql`
         ... on ContentfulPage {
           id
           name
+          title
           slug
         }
       }

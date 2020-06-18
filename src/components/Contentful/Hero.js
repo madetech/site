@@ -135,7 +135,12 @@ export default function ContentfulHero({
       link.reference = '#'
       if (link.slug) {
         link.reference = 'https://www.madetech.com' + link.slug
-        link.linkTitle = link.title
+
+        if (link.title) {
+          link.linkTitle = link.title
+        } else {
+          link.linkTitle = link.name
+        }
         linksHeader = 'Go to:'
       } else {
         link.reference = '#' + link.id
