@@ -1,11 +1,15 @@
 import React from 'react'
 
 const DripForm = props => {
-  console.log(props.formDescription.formDescription)
-  let result = props.formTags.reduce(function(result, field, index) {
+  let fieldAndTagNamesDictionary = props.formTags.reduce(function(
+    result,
+    field,
+    index
+  ) {
     result[props.formFields[index]] = field
     return result
-  }, {})
+  },
+  {})
 
   let inputRow = (formField, formTag) => {
     let hyphenatedTag = formTag.split('_').join('-')
@@ -23,7 +27,7 @@ const DripForm = props => {
   }
 
   let renderInputRows = () => {
-    return Object.entries(result).map(formField =>
+    return Object.entries(fieldAndTagNamesDictionary).map(formField =>
       inputRow(formField[0], formField[1])
     )
   }
