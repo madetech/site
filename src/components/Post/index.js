@@ -5,7 +5,6 @@ import PostMeta from './Meta'
 import PostScripts from './Scripts'
 import PostTags from './Tags'
 import { Hiring } from '../../components/Marketing'
-import BookPreview from '../../components/BookPreview'
 import initGists from './initGists'
 import trackTags from './trackTags'
 import EbookPreview from '../Contentful/EbookPreview'
@@ -18,27 +17,6 @@ export default class Post extends React.Component {
 
   render() {
     const { post, withPrefix, content } = this.props
-    // const content = {
-    //   title: 'Modernising Legacy Applications in the Public Sector',
-    //   description: {
-    //     content: {
-    //       content: {
-    //         value:
-    //           'Read this preview of our e-book to learn more about modernising legacy applications in the public sector.',
-    //       },
-    //     },
-    //   },
-    //   slugUri:
-    //     '/resources/books/modernising-legacy-applications-in-the-public-sector',
-    //   ctaText: 'Get your preview copy now',
-    //   bookImage: {
-    //     fluid: {
-    //       src:
-    //         '//images.ctfassets.net/42mpmljx5x5c/7mHNViJuZ6JXdRnDNsVGEe/620333849b6c742c5fe16baa77d2b894/book_-_Modernising__Legacy_Applications__in_the_Public_Sector_2x.png?w=800&q=50',
-    //     },
-    //   },
-    //   themeStyleColour: 'red',
-    // }
     return (
       <>
         <Jumbotron extraClassName="mb-3 py-3">
@@ -91,7 +69,6 @@ export default class Post extends React.Component {
           </div>
         </div>
 
-        {/*<BookPreview />*/}
         <EbookPreview content={content} />
       </>
     )
