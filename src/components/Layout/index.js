@@ -30,6 +30,7 @@ export default function Layout({
         <Header constrainLinkWidth logoHref="/" scrollable>
           <a href="/services">Services</a>
           <a href="/sectors">Sectors</a>
+          <a href="/case-studies">Case Studies</a>
           <a href="/careers">Careers</a>
           <a href="/blog">Blog</a>
           <a href="/contact">Contact</a>
@@ -103,6 +104,10 @@ export default function Layout({
       sectionTitle: 'Why Made Tech',
       links: [
         {
+          text: 'Case Studies',
+          link: '/case-studies',
+        },
+        {
           text: 'Purpose & Mission',
           link: '/purpose',
         },
@@ -128,28 +133,6 @@ export default function Layout({
         },
       ],
       class: 'sitemap__why-made-tech',
-    },
-    {
-      sectionTitle: 'Case Studies',
-      links: [
-        {
-          text: 'Government Digital Service',
-          link: '/case-studies/government-digital-service-govwifi',
-        },
-        {
-          text: 'Legal Aid Agency',
-          link: '/case-studies/legal-aid-agency',
-        },
-        {
-          text: 'Hackney Council',
-          link: '/case-studies/hackney-api-platform',
-        },
-        {
-          text: 'Ministry of Justice',
-          link: '/case-studies/ministry-of-justice-children-fund',
-        },
-      ],
-      class: 'sitemap__case-studies',
     },
     {
       sectionTitle: 'Company',
