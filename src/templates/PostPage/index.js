@@ -52,21 +52,46 @@ export const pageQuery = graphql`
     contentfulPage(slug: { eq: "/blog-post" }) {
       name
       content {
-        ... on ContentfulBookPreview {
-          bookImage {
-            fluid {
-              src
-            }
-          }
-          ctaText
-          title
-          themeStyleColour
-          slugUri
-          description {
-            content {
-              content {
-                value
+        ... on ContentfulGrid {
+          alignItems
+          customClasses
+          layout
+          name
+          id
+          style
+          content {
+            __typename
+            ... on ContentfulProse {
+              name
+              body {
+                json
               }
+              columnGroup
+              columnWidth
+              columnOffset
+              customClasses
+              extraLargeColumnWidth
+              extraLargeColumnOffset
+              extraSmallColumnWidth
+              extraSmallColumnOffset
+              image {
+                fixed(width: 1000) {
+                  height
+                  src
+                  srcSet
+                  width
+                }
+              }
+              imageUrl
+              imageStyle
+              mediumColumnWidth
+              mediumColumnOffset
+              screenReaderText
+              smallColumnWidth
+              smallColumnOffset
+              style
+              textAlign
+              overlay
             }
           }
         }
