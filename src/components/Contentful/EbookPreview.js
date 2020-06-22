@@ -9,6 +9,7 @@ const EbookPreview = props => {
   }
 
   let grid = props.content.content[0]
+  console.log('Look Here!!!', grid)
 
   let parameters = {
     alignItems: grid.alignItems,
@@ -20,7 +21,7 @@ const EbookPreview = props => {
   }
 
   return (
-    <div class="new-design" style={styles}>
+    <div className="new-design" style={styles} data-test="ebook">
       <Grid {...parameters} />
     </div>
   )
