@@ -1,6 +1,10 @@
 import React from 'react'
 
 const DripForm = props => {
+  if (requiredPropsAreUndefined(props)) {
+    return null
+  }
+
   let fieldAndTagNamesDictionary = props.formTags.reduce(function(
     result,
     field,
@@ -71,6 +75,14 @@ const DripForm = props => {
         </div>
       </form>
     </div>
+  )
+}
+
+const requiredPropsAreUndefined = props => {
+  return (
+    props.formDescription === undefined ||
+    props.formFields === undefined ||
+    props.formTags === undefined
   )
 }
 
