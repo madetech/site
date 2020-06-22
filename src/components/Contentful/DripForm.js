@@ -17,6 +17,7 @@ const DripForm = props => {
 
   let inputRow = (formField, formTag) => {
     let hyphenatedTag = formTag.split('_').join('-')
+
     return (
       <div className="drip-input">
         <label htmlFor={`drip-${hyphenatedTag}`}>{formField}</label>
@@ -25,6 +26,7 @@ const DripForm = props => {
           id={`drip-${hyphenatedTag}`}
           name={`fields[${formTag}]`}
           data-test={formTag}
+          type={inputType(formTag)}
           required
         />
       </div>
@@ -85,6 +87,10 @@ const requiredPropsAreUndefined = props => {
     props.formFields === undefined ||
     props.formTags === undefined
   )
+}
+
+const inputType = formTag => {
+  return formTag === 'email' ? 'email' : 'text'
 }
 
 export default DripForm
