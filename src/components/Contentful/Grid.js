@@ -8,6 +8,7 @@ import JobsBoard from '../JobsBoard'
 import threeSpaceToLineBreak from '../../helpers/threeSpaceToLineBreak'
 import threeHyphenToSoftHyphen from '../../helpers/threeHyphenToSoftHyphen'
 import Tweet from './Tweet'
+import EbookPreview from './EbookPreview'
 import DripForm from './DripForm'
 
 function GridContainer({
@@ -310,6 +311,7 @@ function GridComponentRenderer(content) {
           linkText={content.linkText}
         />
       )
+
     case 'ContentfulBookPreview':
       return (
         <GridBookPreview
@@ -318,7 +320,17 @@ function GridComponentRenderer(content) {
           bookImage={content.bookImage}
           description={content.description}
           slugUri={content.slugUri}
-          themeStyleColour={content.themeStyleColour}
+        />
+      )
+
+    case 'ContentfulDripForm':
+      return (
+        <GridDripForm
+          dripFormId={content.dripFormId}
+          headline={content.headline}
+          formDescription={content.formDescription}
+          formFields={content.formFields}
+          formTags={content.formTags}
         />
       )
     default:
