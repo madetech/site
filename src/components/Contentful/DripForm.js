@@ -1,4 +1,5 @@
 import React from 'react'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
 const DripForm = props => {
   if (requiredPropsAreUndefined(props)) {
@@ -39,6 +40,10 @@ const DripForm = props => {
     )
   }
 
+  const descriptionHtml = documentToHtmlString(
+    JSON.parse(props.formDescription.formDescription)
+  )
+
   return (
     <div className={'contentful-drip-form'} data-test={'contentful-drip-form'}>
       <form
@@ -49,13 +54,7 @@ const DripForm = props => {
         <h3 data-drip-attribute="headline" data-test="headline">
           {props.headline}
         </h3>
-        <div
-          data-drip-attribute="description"
-          data-test="description"
-          className="description"
-        >
-          {props.formDescription.formDescription}
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
         {renderInputRows()}
         <div style={{ display: 'none' }} aria-hidden="true">
           <label for="website">Website</label>
