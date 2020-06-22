@@ -4,7 +4,7 @@ import Grid from '../Contentful/Grid'
 const EbookPreview = props => {
   let styles = { paddingTop: 50 }
 
-  if (props.content === undefined) {
+  if (props.content === null) {
     return null
   }
 
