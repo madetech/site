@@ -8,8 +8,6 @@ import Post from '../../components/Post'
 export default function PostPageTemplate({ data }) {
   const post = data.wordpressPost
   const content = data.contentfulPage
-  // contentfulPage in the graphql response is null. --- no it's not!!
-  console.log('DATA', data)
 
   return (
     <Layout
