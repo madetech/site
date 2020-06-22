@@ -19,22 +19,19 @@ export default function ContentfulHero({
   customClasses,
 }) {
   let pageBreadcrumbComponent
-  let textColourStyle
-  let textSizeStyle
+  let textColourStyle = textColour || ''
+  let textSizeStyle = textSize || ''
   let headerTextComponent
   let headerImageShadowColourStyle
   let links
-  let backgroundColourStyle
+  let backgroundColourStyle = backgroundColour || ''
   let heroClassNames = ''
-  let noPageBreadcrumb = ''
+  let noPageBreadcrumb
+  let headerImageSet = headerImage !== null
 
   if (customClasses) {
     customClasses.forEach(c => (heroClassNames += ` ${c}`))
   }
-
-  textColourStyle = textColour || ''
-  textSizeStyle = textSize || ''
-  backgroundColourStyle = backgroundColour || ''
 
   if (pageBreadcrumb && pageBreadcrumb.links) {
     pageBreadcrumbComponent = renderBreadcrumb(pageBreadcrumb.links)
@@ -46,9 +43,16 @@ export default function ContentfulHero({
   parsedTitle = threeHyphenToSoftHyphen(parsedTitle)
 
   if (body) {
+    let headerTestClasses
+    if (headerImageSet) {
+      headerTestClasses = 'contentful-hero__text'
+    } else {
+      headerTestClasses = 'contentful-hero__text  d-md-none'
+    }
+
     headerTextComponent = (
       <div
-        className="contentful-hero__text"
+        className={headerTestClasses}
         dangerouslySetInnerHTML={{ __html: body }}
       />
     )
@@ -84,31 +88,44 @@ export default function ContentfulHero({
     links = list()
   }
 
-  if (headerImageShadowColourStyle === 'none') {
-    heroImageComponent = (
-      <div
-        className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
-      >
-        <img alt={headerImage.title} src={headerImage.fixed.src} />
-        {links}
-      </div>
-    )
+  if (headerImage) {
+    if (headerImageShadowColourStyle === 'none') {
+      heroImageComponent = (
+        <div
+          className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
+        >
+          <img alt={headerImage.title} src={headerImage.fixed.src} />
+          {links}
+        </div>
+      )
+    } else {
+      heroImageComponent = (
+        <div
+          className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
+          style={{
+            backgroundImage:
+              'url(' +
+              headerImage.fixed.src +
+              '), url(' +
+              headerImage.resize.src +
+              ')',
+          }}
+        >
+          {links}
+        </div>
+      )
+    }
   } else {
-    heroImageComponent = (
-      <div
-        className={`col-xl-6 col-lg-6 col-md-6 d-none d-md-block contentful-hero__image hero_${headerImageShadowColourStyle}`}
-        style={{
-          backgroundImage:
-            'url(' +
-            headerImage.fixed.src +
-            '), url(' +
-            headerImage.resize.src +
-            ')',
-        }}
-      >
-        {links}
-      </div>
-    )
+    if (body && !headerImageSet) {
+      heroImageComponent = (
+        <div className={`col-xl-6 col-lg-6 col-md-6`}>
+          <div
+            className="contentful-hero__text d-none d-md-block"
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+        </div>
+      )
+    }
   }
 
   function list() {
@@ -118,7 +135,12 @@ export default function ContentfulHero({
       link.reference = '#'
       if (link.slug) {
         link.reference = 'https://www.madetech.com' + link.slug
-        link.linkTitle = link.name
+
+        if (link.title) {
+          link.linkTitle = link.title
+        } else {
+          link.linkTitle = link.name
+        }
         linksHeader = 'Go to:'
       } else {
         link.reference = '#' + link.id

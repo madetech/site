@@ -142,15 +142,14 @@ function ComponentRenderer(content) {
           style={content.style}
         />
       )
-    case 'ContentfulEbookPreview':
+    case 'ContentfulDripForm':
       return (
-        <EbookPreview
-          title={content.title}
-          description={content.description}
-          slugUri={content.slugUri}
-          ctaText={content.ctaText}
-          bookImage={content.bookImage}
-          themeStyleColour={content.themeStyleColour}
+        <DripForm
+          dripformId={content.dripFormId}
+          headline={content.headline}
+          formDescription={content.formDescription}
+          formFields={content.formFields}
+          formTags={content.formTags}
         />
       )
     default:
