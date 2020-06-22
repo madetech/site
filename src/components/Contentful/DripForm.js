@@ -25,6 +25,7 @@ const DripForm = props => {
           id={`drip-${hyphenatedTag}`}
           name={`fields[${formTag}]`}
           data-test={formTag}
+          required
         />
       </div>
     )
