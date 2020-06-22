@@ -37,6 +37,13 @@ export default class MobileMenu extends React.Component {
         <div id="whyMT" className="menu-item">
           Why Made Tech
         </div>
+        <a
+          id="case-studies"
+          className="menu-item indented-item"
+          href="/case-studies"
+        >
+          Case Studies
+        </a>
         <a id="purpose" className="menu-item indented-item" href="/purpose">
           Purpose &#38; Mission
         </a>
@@ -66,37 +73,6 @@ export default class MobileMenu extends React.Component {
           href="https://learn.madetech.com"
         >
           Learn
-        </a>
-        <div id="caseStudies" className="menu-item">
-          Case Studies
-        </div>
-        <a
-          id="gds"
-          className="menu-item indented-item"
-          href="/case-studies/government-digital-service-govwifi"
-        >
-          Government Digital Service
-        </a>
-        <a
-          id="laa"
-          className="menu-item indented-item"
-          href="/case-studies/legal-aid-agency"
-        >
-          Legal Aid Agency
-        </a>
-        <a
-          id="hackney"
-          className="menu-item indented-item"
-          href="/case-studies/hackney-api-platform"
-        >
-          Hackney Council
-        </a>
-        <a
-          id="moj"
-          className="menu-item indented-item"
-          href="/case-studies/ministry-of-justice-children-fund"
-        >
-          Minstry of Justice
         </a>
         <a id="contact" className="menu-item" href="/contact">
           Contact
