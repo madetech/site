@@ -98,6 +98,16 @@ export const pageQuery = graphql`
     columnWidth
     columnOffset
     formId
+    buttonColour
+  }
+  fragment dripForm on ContentfulDripForm {
+    dripFormId
+    formFields
+    formTags
+    headline
+    formDescription {
+      formDescription
+    }
   }
   fragment inlineImages on ContentfulInlineImages {
     name
@@ -207,6 +217,7 @@ export const pageQuery = graphql`
         ... on ContentfulPage {
           id
           name
+          title
           slug
         }
       }
