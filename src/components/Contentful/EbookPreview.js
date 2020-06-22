@@ -9,6 +9,7 @@ const EbookPreview = props => {
   }
 
   let grid = props.content.content[0]
+  console.log('Look Here!!!', grid)
 
   let parameters = {
     alignItems: grid.alignItems,
