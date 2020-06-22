@@ -37,7 +37,7 @@ const DripForm = props => {
   }
 
   return (
-    <div className={'contentful-drip-form'}>
+    <div className={'contentful-drip-form'} data-test={'contentful-drip-form'}>
       <form
         action={`https://www.getdrip.com/forms/${props.dripFormId}/submissions`}
         method="post"
