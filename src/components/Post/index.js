@@ -5,9 +5,9 @@ import PostMeta from './Meta'
 import PostScripts from './Scripts'
 import PostTags from './Tags'
 import { Hiring } from '../../components/Marketing'
-import BookPreview from '../../components/BookPreview'
 import initGists from './initGists'
 import trackTags from './trackTags'
+import EbookPreview from '../Contentful/EbookPreview'
 
 export default class Post extends React.Component {
   componentDidMount() {
@@ -16,8 +16,7 @@ export default class Post extends React.Component {
   }
 
   render() {
-    const { post, withPrefix } = this.props
-
+    const { post, withPrefix, content } = this.props
     return (
       <>
         <Jumbotron extraClassName="mb-3 py-3">
@@ -70,7 +69,7 @@ export default class Post extends React.Component {
           </div>
         </div>
 
-        <BookPreview />
+        <EbookPreview content={content} />
       </>
     )
   }

@@ -6,6 +6,7 @@ const md5 = require('md5')
 const Promise = require('bluebird')
 const path = require('path')
 const slash = require('slash')
+
 const contentfulPageTemplate = path.resolve(
   './src/templates/ContentfulPage/index.js'
 )
@@ -13,6 +14,7 @@ const postListPageTemplate = path.resolve(
   './src/templates/PostListPage/index.js'
 )
 const postPageTemplate = path.resolve('./src/templates/PostPage/index.js')
+
 const categoryPageTemplate = path.resolve(
   './src/templates/CategoryPage/index.js'
 )
@@ -104,6 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(postPageTemplate),
           context: {
             id: edge.node.id,
+            blogPage: createContentfulPages,
           },
         })
       })
