@@ -73,16 +73,34 @@ export default function ContentfulProse({
   }
 
   return (
-    <div className={proseClassName} id={id}>
+    <div className={proseClassName} data-test={'prose'} id={id}>
       <Prose>
         <div className="container">
           <div className="row">
             <div className={`${colClasses}`}>
               <div dangerouslySetInnerHTML={{ __html: html }} />
+              {renderPreviousPageButton(customClasses)}
             </div>
           </div>
         </div>
       </Prose>
     </div>
   )
+}
+
+const renderPreviousPageButton = customClasses => {
+  if (customClasses === undefined || customClasses === null) {
+    return null
+  }
+
+  const button = (
+    <a
+      className="btn"
+      data-test="previous-page-button"
+      href="javascript:history.back()"
+    >
+      Previous Page
+    </a>
+  )
+  return customClasses.includes('previousPage') ? button : null
 }
