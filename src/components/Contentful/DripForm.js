@@ -54,7 +54,10 @@ const DripForm = props => {
         <h3 data-drip-attribute="headline" data-test="headline">
           {props.headline}
         </h3>
-        <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+        <div
+          data-test="description"
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+        />
         {renderInputRows()}
         <div style={{ display: 'none' }} aria-hidden="true">
           <label for="website">Website</label>

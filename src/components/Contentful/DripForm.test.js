@@ -4,13 +4,14 @@ import DripForm from './DripForm'
 
 describe('<DripForm>', () => {
   describe('with all correct props', () => {
+    const sampleDescription =
+      '{"data": {}, "content": [], "nodeType": "document"}'
     const component = shallow(
       <DripForm
         dripFormId={12345}
         headline="I like dogs"
         formDescription={{
-          formDescription:
-            'Sign up to this wonderful form for more dog related content.',
+          formDescription: sampleDescription,
         }}
         formFields={['Email', 'First Name', 'Last Name']}
         formTags={['email', 'first_name', 'last_name']}
@@ -19,9 +20,6 @@ describe('<DripForm>', () => {
     it('Renders the component with information provided by props', () => {
       expect(component.find({ 'data-test': 'headline' }).text()).toBe(
         'I like dogs'
-      )
-      expect(component.find({ 'data-test': 'description' }).text()).toBe(
-        'Sign up to this wonderful form for more dog related content.'
       )
     })
 
