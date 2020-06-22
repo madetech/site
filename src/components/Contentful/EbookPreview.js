@@ -5,7 +5,7 @@ const EbookPreview = props => {
   let styles = { paddingTop: 50 }
 
   if (props.content === undefined) {
-    return
+    return null
   }
 
   let grid = props.content.content[0]
