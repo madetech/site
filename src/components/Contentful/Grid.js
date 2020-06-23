@@ -246,7 +246,7 @@ function GridImageLink({ url, image, linkText }) {
   return <ImageLink url={url} image={image} linkText={linkText} />
 }
 
-function GridBookPreview({
+function GridBlogWrapper({
   alignItems,
   content,
   customClasses,
@@ -312,9 +312,9 @@ function GridComponentRenderer(content) {
         />
       )
 
-    case 'ContentfulBookPreview':
+    case 'ContentfulBlogWrapper':
       return (
-        <GridBookPreview
+        <GridBlogWrapper
           alignItems={content.alignItems}
           content={content.content}
           customClasses={content.customClasses}
