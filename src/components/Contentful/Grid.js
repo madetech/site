@@ -246,22 +246,22 @@ function GridImageLink({ url, image, linkText }) {
   return <ImageLink url={url} image={image} linkText={linkText} />
 }
 
-function GridBookPreview({
-  title,
-  description,
-  slugUri,
-  ctaText,
-  bookImage,
-  themeStyleColour,
+function GridBlogWrapper({
+  alignItems,
+  content,
+  customClasses,
+  id,
+  layout,
+  style,
 }) {
   return (
     <EbookPreview
-      title={title}
-      description={description}
-      slugUri={slugUri}
-      ctaText={ctaText}
-      bookImage={bookImage}
-      themeStyleColour={themeStyleColour}
+      alignItems={alignItems}
+      content={content}
+      customClasses={customClasses}
+      id={id}
+      layout={layout}
+      style={style}
     />
   )
 }
@@ -312,14 +312,15 @@ function GridComponentRenderer(content) {
         />
       )
 
-    case 'ContentfulBookPreview':
+    case 'ContentfulBlogWrapper':
       return (
-        <GridBookPreview
-          title={content.title}
-          ctaText={content.ctaText}
-          bookImage={content.bookImage}
-          description={content.description}
-          slugUri={content.slugUri}
+        <GridBlogWrapper
+          alignItems={content.alignItems}
+          content={content.content}
+          customClasses={content.customClasses}
+          id={content.id}
+          layout={content.layout}
+          style={content.style}
         />
       )
 

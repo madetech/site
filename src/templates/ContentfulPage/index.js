@@ -293,24 +293,6 @@ export const pageQuery = graphql`
     smallColumnOffset
     tweetId
   }
-  fragment bookPreview on ContentfulBookPreview {
-    title
-    description {
-      content {
-        content {
-          value
-        }
-      }
-    }
-    slugUri
-    ctaText
-    bookImage {
-      fluid {
-        src
-      }
-    }
-    themeStyleColour
-  }
   fragment headerImages on ContentfulHeaderImages {
     name
     extraLarge {
