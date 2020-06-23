@@ -247,21 +247,21 @@ function GridImageLink({ url, image, linkText }) {
 }
 
 function GridBookPreview({
-  title,
-  description,
-  slugUri,
-  ctaText,
-  bookImage,
-  themeStyleColour,
+  alignItems,
+  content,
+  customClasses,
+  id,
+  layout,
+  style,
 }) {
   return (
     <EbookPreview
-      title={title}
-      description={description}
-      slugUri={slugUri}
-      ctaText={ctaText}
-      bookImage={bookImage}
-      themeStyleColour={themeStyleColour}
+      alignItems={alignItems}
+      content={content}
+      customClasses={customClasses}
+      id={id}
+      layout={layout}
+      style={style}
     />
   )
 }
@@ -315,11 +315,12 @@ function GridComponentRenderer(content) {
     case 'ContentfulBookPreview':
       return (
         <GridBookPreview
-          title={content.title}
-          ctaText={content.ctaText}
-          bookImage={content.bookImage}
-          description={content.description}
-          slugUri={content.slugUri}
+          alignItems={content.alignItems}
+          content={content.content}
+          customClasses={content.customClasses}
+          id={content.id}
+          layout={content.layout}
+          style={content.style}
         />
       )
 
