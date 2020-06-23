@@ -1,7 +1,10 @@
 .contentful-highlight {
   position: relative;
 
-
+  &.overlap {
+    margin-top: -175px;
+  }
+  
   .contentful-highlight__bg-left {
     background-color: $black;
   }

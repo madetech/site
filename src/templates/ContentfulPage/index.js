@@ -277,6 +277,7 @@ export const pageQuery = graphql`
         width
       }
     }
+    customClasses
   }
   fragment tweet on ContentfulTweet {
     name

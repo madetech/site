@@ -119,6 +119,7 @@ function ComponentRenderer(content) {
           mediumColumnWidth={content.mediumColumnWidth}
           smallColumnWidth={content.smallColumnWidth}
           textAlign={content.textAlign}
+          customClasses={content.customClasses}
         />
       )
     case 'ContentfulHeaderImages':
