@@ -5,6 +5,7 @@
 
   .contentful-hero__text {
     margin-top: 95px;
+    margin-bottom: 150px;
 
     @include tablet {
       margin-top: 88px;
@@ -22,6 +23,12 @@
   .contentful-prose {
     background-color: $white;
 
+    img {
+      margin-top: -60px;
+      width: 60%;
+      margin-left: 20%;
+    }
+
     .prose {
       padding: 50px;
 
@@ -30,7 +37,7 @@
       }
 
       p {
-        font-size: $px12;
+        font-size: $px20;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
