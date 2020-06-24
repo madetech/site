@@ -1,4 +1,5 @@
 import React from 'react'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
 const DripForm = props => {
   if (requiredPropsAreUndefined(props)) {
@@ -17,6 +18,7 @@ const DripForm = props => {
 
   let inputRow = (formField, formTag) => {
     let hyphenatedTag = formTag.split('_').join('-')
+
     return (
       <div className="drip-input">
         <label htmlFor={`drip-${hyphenatedTag}`}>{formField}</label>
@@ -25,6 +27,8 @@ const DripForm = props => {
           id={`drip-${hyphenatedTag}`}
           name={`fields[${formTag}]`}
           data-test={formTag}
+          type={inputType(formTag)}
+          required
         />
       </div>
     )
@@ -35,6 +39,10 @@ const DripForm = props => {
       inputRow(formField[0], formField[1])
     )
   }
+
+  const descriptionHtml = documentToHtmlString(
+    JSON.parse(props.formDescription.formDescription)
+  )
 
   return (
     <div className={'contentful-drip-form'} data-test={'contentful-drip-form'}>
@@ -47,12 +55,9 @@ const DripForm = props => {
           {props.headline}
         </h3>
         <div
-          data-drip-attribute="description"
           data-test="description"
-          className="description"
-        >
-          {props.formDescription.formDescription}
-        </div>
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+        />
         {renderInputRows()}
         <div style={{ display: 'none' }} aria-hidden="true">
           <label for="website">Website</label>
@@ -84,6 +89,10 @@ const requiredPropsAreUndefined = props => {
     props.formFields === undefined ||
     props.formTags === undefined
   )
+}
+
+const inputType = formTag => {
+  return formTag === 'email' ? 'email' : 'text'
 }
 
 export default DripForm
