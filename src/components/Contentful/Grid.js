@@ -60,43 +60,43 @@ function GridCol({
 }) {
   let colClasses = 'my-2'
 
-  if (extraLargeColumnWidth !== null) {
+  if (extraLargeColumnWidth !== null && extraLargeColumnWidth !== undefined) {
     colClasses += ` col-xl-${extraLargeColumnWidth}`
   }
 
-  if (extraLargeColumnOffset !== null) {
+  if (extraLargeColumnOffset !== null && extraLargeColumnOffset !== undefined) {
     colClasses += ` offset-xl-${extraLargeColumnOffset}`
   }
 
-  if (largeColumnWidth !== null) {
+  if (largeColumnWidth !== null && largeColumnWidth !== undefined) {
     colClasses += ` col-lg-${largeColumnWidth}`
   }
 
-  if (largeColumnOffset !== null) {
+  if (largeColumnOffset !== null && largeColumnOffset !== undefined) {
     colClasses += ` offset-lg-${largeColumnOffset}`
   }
 
-  if (mediumColumnWidth !== null) {
+  if (mediumColumnWidth !== null && mediumColumnWidth !== undefined) {
     colClasses += ` col-md-${mediumColumnWidth}`
   }
 
-  if (mediumColumnOffset !== null) {
+  if (mediumColumnOffset !== null && mediumColumnOffset !== undefined) {
     colClasses += ` offset-md-${mediumColumnOffset}`
   }
 
-  if (smallColumnWidth !== null) {
+  if (smallColumnWidth !== null && smallColumnWidth !== undefined) {
     colClasses += ` col-sm-${smallColumnWidth}`
   }
 
-  if (smallColumnOffset !== null) {
+  if (smallColumnOffset !== null && smallColumnOffset !== undefined) {
     colClasses += ` offset-sm-${smallColumnOffset}`
   }
 
-  if (extraSmallColumnWidth !== null) {
+  if (extraSmallColumnWidth !== null && extraSmallColumnWidth !== undefined) {
     colClasses += ` col-${extraSmallColumnWidth}`
   }
 
-  if (extraSmallColumnOffset !== null) {
+  if (extraSmallColumnOffset !== null && extraSmallColumnOffset !== undefined) {
     colClasses += ` offset-${extraSmallColumnOffset}`
   }
 
