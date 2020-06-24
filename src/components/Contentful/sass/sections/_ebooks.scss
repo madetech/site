@@ -22,6 +22,7 @@
 
   .contentful-prose {
     background-color: $white;
+    width: 80%;
 
     img {
       margin-top: -60px;
@@ -44,6 +45,14 @@
         letter-spacing: 1px;
         line-height: normal;
         color: #333333;
+
+        &:nth-of-type(1) {
+          font-size: $px12;
+        }
+
+        &:nth-of-type(2) {
+          font-weight: normal;
+        }
       }
 
       h3 {
