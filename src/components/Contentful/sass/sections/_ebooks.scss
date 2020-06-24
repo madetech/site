@@ -21,12 +21,33 @@
   }
 
   .contentful-prose {
-    background-color: $red;
+    margin-top: -40px;
 
     img {
       margin-top: -60px;
+      margin-bottom: -60px;
       width: 60%;
       margin-left: 20%;
+    }
+
+    &.yellow {
+      background: #fecc2b;
+    }
+
+    &.book_blue {
+      background: #88b2ea;
+    }
+
+    &.red {
+      background: #f77659;
+    }
+
+    &.blue {
+      background: #3861ad;
+    }
+
+    &.shaded {
+      background: #222;
     }
 
     .prose {
