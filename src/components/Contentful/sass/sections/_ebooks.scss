@@ -1,5 +1,4 @@
 &.ebooks {
-
   .contentful-grid {
     padding-top: 0px !important;
   }
@@ -37,25 +36,100 @@
 
     &.yellow {
       background: #fecc2b;
+
+      @include mobile {
+        margin-top: 0px;
+      }
+
+      @include sm-tablet {
+        margin-top: 0;
+      }
+
+      @include tablet {
+        margin-top: -50px;
+        img {
+          max-height: max-content;
+        }
+      }
     }
 
     &.book_blue {
       background: #88b2ea;
+
+      @include mobile {
+        margin-top: 60px;
+      }
+
+      @include sm-tablet {
+        margin-top: 60px;
+      }
+
+      @include tablet {
+        margin-top: 60px;
+        img {
+          max-height: max-content;
+        }
+      }
     }
 
     &.red {
       background: #f77659;
       margin-top: 20px;
+
+      @include mobile {
+        margin-top: 60px;
+      }
+
+      @include sm-tablet {
+        margin-top: 60px;
+      }
+
+      @include tablet {
+        margin-top: 60px;
+        img {
+          max-height: max-content;
+        }
+      }
     }
 
     &.blue {
       background: #3861ad;
       margin-top: 20px;
+
+      @include mobile {
+        margin-top: 60px;
+      }
+
+      @include sm-tablet {
+        margin-top: 60px;
+      }
+
+      @include tablet {
+        margin-top: 60px;
+        img {
+          max-height: max-content;
+        }
+      }
     }
 
     &.shaded {
       background: #222;
       margin-top: 20px;
+
+      @include mobile {
+        margin-top: 60px;
+      }
+
+      @include sm-tablet {
+        margin-top: 60px;
+      }
+
+      @include tablet {
+        margin-top: 60px;
+        img {
+          max-height: max-content;
+        }
+      }
     }
 
     .prose {
