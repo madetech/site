@@ -1,4 +1,5 @@
 &.ebooks {
+
   .contentful-grid {
     padding-top: 0px !important;
   }
@@ -18,6 +19,10 @@
     @include mobile {
       margin-top: 0;
     }
+  }
+
+  .contentful-hero {
+    padding-bottom: 50px;
   }
 
   .contentful-prose {
@@ -40,14 +45,17 @@
 
     &.red {
       background: #f77659;
+      margin-top: 20px;
     }
 
     &.blue {
       background: #3861ad;
+      margin-top: 20px;
     }
 
     &.shaded {
       background: #222;
+      margin-top: 20px;
     }
 
     .prose {
