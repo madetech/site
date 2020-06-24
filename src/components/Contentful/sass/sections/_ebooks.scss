@@ -21,8 +21,7 @@
   }
 
   .contentful-prose {
-    background-color: $white;
-    width: 80%;
+    background-color: $red;
 
     img {
       margin-top: -60px;
@@ -31,6 +30,8 @@
     }
 
     .prose {
+      background-color: $white;
+
       padding: 50px;
 
       @include mobile {
