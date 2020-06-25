@@ -3,17 +3,18 @@ import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
 import { Footer, Header, SiteMap } from '@madetech/frontend'
-import MobileMenu from '../Contentful/MobileMenu'
+import HeaderLinks from './headerLinks'
 
 export default function Layout({
   children,
   customClasses,
-  data,
   description,
   featureFlags,
   titlePrefix,
   url,
   image,
+  headerTitles,
+  headerLinks,
 }) {
   let pageContentClass = ''
   if (featureFlags === 'new-design') {
@@ -23,23 +24,9 @@ export default function Layout({
     customClasses.forEach(c => (pageContentClass += ` ${c}`))
   }
 
-  function headerComponentMaker() {
-    return (
-      <div className="new-design">
-        <MobileMenu />
-        <Header constrainLinkWidth logoHref="/" scrollable>
-          <a href="/services">Services</a>
-          <a href="/sectors">Sectors</a>
-          <a href="/case-studies">Case Studies</a>
-          <a href="/careers">Careers</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Contact</a>
-        </Header>
-      </div>
-    )
+  function headerComponent() {
+    return <HeaderLinks headerTitles={headerTitles} headerLinks={headerLinks} />
   }
-
-  let headerComponent = headerComponentMaker()
 
   let siteMapLinks = [
     {
@@ -168,7 +155,7 @@ export default function Layout({
       />
       <Scripts />
 
-      {headerComponent}
+      {headerComponent()}
 
       <div className={pageContentClass}>{children}</div>
 

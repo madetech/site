@@ -5,6 +5,7 @@ import Contentful from '../../components/Contentful'
 import logo from '../../assets/images/made-tech-logo-colour.jpg'
 
 export default function ContentfulPageTemplate({ data }) {
+  const header = data.contentfulHeader
   const page = data.contentfulPage
   return (
     <Layout
@@ -12,6 +13,8 @@ export default function ContentfulPageTemplate({ data }) {
       description={page.description}
       featureFlags={page.featureFlags}
       titlePrefix={page.title}
+      headerTitles={header.headerTitles}
+      headerLinks={header.headerLinks}
       image={
         page.content[0].headerImage
           ? `https:${page.content[0].headerImage.fixed.src}`
@@ -75,6 +78,11 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+
+    contentfulHeader(id: { eq: "dd6f31c4-cd8c-5623-abd5-8b65bbd030e0" }) {
+      headerLinks
+      headerTitles
     }
   }
   fragment card on ContentfulCard {
