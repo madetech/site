@@ -3,15 +3,6 @@
     padding-top: 0px !important;
   }
 
-  .contentful-hero__text-box {
-    @include sm-tablet {
-      padding-bottom: 0px;
-    }
-    @include mobile {
-      padding-bottom: 0px;
-    }
-  }
-
   .contentful-hero__text {
     margin-top: 95px;
     margin-bottom: 150px;
@@ -22,10 +13,18 @@
 
     @include sm-tablet {
       margin-top: 0;
+
+      &-box {
+        padding-bottom: 0px;
+      }
     }
 
     @include mobile {
       margin-top: 0;
+
+      &-box {
+        padding-bottom: 0px;
+      }
     }
   }
 
