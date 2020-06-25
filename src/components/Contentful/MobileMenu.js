@@ -11,6 +11,103 @@ export default class MobileMenu extends React.Component {
   }
 
   render() {
+    const invalidProps = props => {
+      return (
+        props === undefined ||
+        props === null ||
+        props.links === undefined ||
+        props.links === null
+      )
+    }
+
+    const renderDefaultItems = () => {
+      return (
+        <div className="contentful-mobile-menu">
+          <Menu
+            right
+            width={'100vw'}
+            customBurgerIcon={
+              <img
+                alt=""
+                src={require('../../assets/images/mobile-nav/icon-burger/icon-burger.png')}
+              />
+            }
+            customCrossIcon={
+              <img
+                alt=""
+                src={require('../../assets/images/mobile-nav/icon-close/icon-close.png')}
+              />
+            }
+          >
+            <a
+              href="/services"
+              data-test={'default-services'}
+              className={'menu-item'}
+            >
+              Services
+            </a>
+            <a
+              href="/sectors"
+              data-test={'default-sectors'}
+              className={'menu-item'}
+            >
+              Sectors
+            </a>
+            <a
+              href="/case-studies"
+              data-test={'default-case-studies'}
+              className={'menu-item'}
+            >
+              Case Studies
+            </a>
+            <a
+              href="/careers"
+              data-test={'default-careers'}
+              className={'menu-item'}
+            >
+              Careers
+            </a>
+            <a href="/blog" data-test={'default-blog'} className={'menu-item'}>
+              Blog
+            </a>
+            <a
+              href="/contact"
+              data-test={'default-contact'}
+              className={'menu-item'}
+            >
+              Contact
+            </a>
+            <a className="home" href="/">
+              <Logo />
+            </a>
+          </Menu>
+        </div>
+      )
+    }
+
+    if (invalidProps(this.props)) {
+      return renderDefaultItems()
+    }
+
+    const headerItem = (headerTitle, headerLink) => {
+      return (
+        <a
+          href={headerLink}
+          className={'menu-item'}
+          data-test={headerTitle}
+          key={headerTitle}
+        >
+          {headerTitle}
+        </a>
+      )
+    }
+
+    const renderHeaderItems = () => {
+      return Object.entries(this.props.links).map(formField =>
+        headerItem(formField[0], formField[1])
+      )
+    }
+
     let links = (
       <Menu
         right
@@ -28,65 +125,7 @@ export default class MobileMenu extends React.Component {
           />
         }
       >
-        <a id="services" className="menu-item" href="/services">
-          Services
-        </a>
-        <a id="sectors" className="menu-item" href="/sectors">
-          Sectors
-        </a>
-        <div id="whyMT" className="menu-item">
-          Why Made Tech
-        </div>
-        <a
-          id="case-studies"
-          className="menu-item indented-item"
-          href="/case-studies"
-        >
-          Case Studies
-        </a>
-        <a id="purpose" className="menu-item indented-item" href="/purpose">
-          Purpose &#38; Mission
-        </a>
-        <a
-          id="frameworks"
-          className="menu-item indented-item"
-          href="/frameworks"
-        >
-          Frameworks
-        </a>
-        <a id="partners" className="menu-item indented-item" href="/partners">
-          Partners
-        </a>
-        <a id="blog" className="menu-item indented-item" href="/blog">
-          Blog
-        </a>
-        <a
-          id="books"
-          className="menu-item indented-item"
-          href="/resources/books"
-        >
-          Books
-        </a>
-        <a
-          id="learn"
-          className="menu-item indented-item"
-          href="https://learn.madetech.com"
-        >
-          Learn
-        </a>
-        <a id="contact" className="menu-item" href="/contact">
-          Contact
-        </a>
-        <a id="careers" className="menu-item indented-item" href="/careers">
-          Careers
-        </a>
-        <a
-          id="academy"
-          className="menu-item indented-item"
-          href="/careers/academy"
-        >
-          Academy
-        </a>
+        {renderHeaderItems()}
         <a className="home" href="/">
           <Logo />
         </a>
