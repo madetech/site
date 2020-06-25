@@ -1,5 +1,5 @@
 import React from 'react'
-import MobileMenu from '../Contentful/MobileMenu'
+import MobileMenu from './MobileMenu'
 import { Header } from '@madetech/frontend'
 
 const HeaderLinks = props => {
@@ -74,7 +74,7 @@ const HeaderLinks = props => {
   const renderContentfulHeaders = () => {
     return (
       <div className="new-design">
-        <MobileMenu />
+        <MobileMenu links={titleAndLinkNamesDictionary} />
         <Header constrainLinkWidth logoHref="/" scrollable>
           {renderHeaderItems()}
         </Header>

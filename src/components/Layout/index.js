@@ -3,7 +3,7 @@ import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
 import { Footer, SiteMap } from '@madetech/frontend'
-import HeaderLinks from './headerLinks'
+import HeaderLinks from '../Contentful/headerLinks'
 
 export default function Layout({
   children,
