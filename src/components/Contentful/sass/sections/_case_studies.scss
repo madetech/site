@@ -1,4 +1,8 @@
 &.case__studies {
+  .hero {
+    padding-bottom: 50px;
+  }
+
   .contentful-grid {
     padding-top: 0px !important;
   }
@@ -17,6 +21,13 @@
     @include mobile {
       margin-top: 0;
     }
+  }
+
+  img[src*='Cambridgeshire'] {
+    height: 380px;
+    margin-left: 100px;
+    margin-bottom: -30px;
+    object-fit: cover;
   }
 
   .contentful-prose {
