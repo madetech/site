@@ -2,7 +2,7 @@ import React from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
-import { Footer, Header, SiteMap } from '@madetech/frontend'
+import { Footer, SiteMap } from '@madetech/frontend'
 import HeaderLinks from './headerLinks'
 
 export default function Layout({

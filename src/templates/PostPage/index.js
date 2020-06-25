@@ -6,6 +6,7 @@ import Layout from '../../components/Layout'
 import Post from '../../components/Post'
 
 export default function PostPageTemplate({ data }) {
+  const header = data.contentfulHeader
   const post = data.wordpressPost
   const content = data.contentfulPage
 
@@ -15,6 +16,8 @@ export default function PostPageTemplate({ data }) {
       titlePrefix={post.title}
       url={withPrefix(`/blog/${post.slug}`)}
       image={post.jetpack_featured_media_url}
+      headerLinks={header.headerLinks}
+      headerTitles={header.headerTitles}
     >
       <Post post={post} withPrefix={withPrefix} content={content} />
     </Layout>
@@ -45,6 +48,11 @@ export const pageQuery = graphql`
         name
         slug
       }
+    }
+
+    contentfulHeader(id: { eq: "dd6f31c4-cd8c-5623-abd5-8b65bbd030e0" }) {
+      headerLinks
+      headerTitles
     }
 
     contentfulPage(slug: { eq: "/blog-post" }) {
