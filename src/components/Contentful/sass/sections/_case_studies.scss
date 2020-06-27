@@ -1,4 +1,10 @@
 &.case__studies {
+  .container {
+    @include tablet {
+      max-width: 90%;
+    }
+  }
+
   .hero {
     padding-bottom: 50px;
 
@@ -38,6 +44,14 @@
       margin-left: 100px;
       margin-bottom: -30px;
       object-fit: cover;
+
+      @include sm-desktop {
+        margin-left: 50px;
+      }
+
+      @include lg-tablet {
+        margin-left: 4%;
+      }
 
       @include tablet {
         margin-top: -2%;
