@@ -17,6 +17,7 @@ describe('<DripForm>', () => {
         formTags={['email', 'first_name', 'last_name']}
       />
     )
+
     it('Renders the component with information provided by props', () => {
       expect(component.find({ 'data-test': 'headline' }).text()).toBe(
         'I like dogs'

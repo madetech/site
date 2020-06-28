@@ -6,7 +6,7 @@ const DripForm = props => {
     return null
   }
 
-  let fieldAndTagNamesDictionary = props.formTags.reduce(function(
+  const fieldAndTagNamesDictionary = props.formTags.reduce(function(
     result,
     field,
     index
@@ -16,7 +16,7 @@ const DripForm = props => {
   },
   {})
 
-  let inputRow = (formField, formTag) => {
+  const inputRow = (formField, formTag) => {
     let hyphenatedTag = formTag.split('_').join('-')
 
     return (
@@ -34,7 +34,7 @@ const DripForm = props => {
     )
   }
 
-  let renderInputRows = () => {
+  const renderInputRows = () => {
     return Object.entries(fieldAndTagNamesDictionary).map(formField =>
       inputRow(formField[0], formField[1])
     )
