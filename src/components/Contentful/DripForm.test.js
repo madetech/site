@@ -29,6 +29,10 @@ describe('<DripForm>', () => {
       expect(component.find({ 'data-test': 'first_name' }).length).toBe(1)
       expect(component.find({ 'data-test': 'last_name' }).length).toBe(1)
     })
+
+    it('Renders the privacy policy section', () => {
+      expect(component.find({ 'data-test': 'privacy-policy' }).length).toBe(1)
+    })
   })
 
   describe('with missing props', () => {

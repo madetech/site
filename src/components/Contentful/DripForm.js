@@ -44,6 +44,18 @@ const DripForm = props => {
     JSON.parse(props.formDescription.formDescription)
   )
 
+  const renderPrivacyPolicy = () => {
+    return (
+      <p data-test={'privacy-policy'}>
+        Made Tech needs the contact information you provide to us to share news,
+        blog posts and invitations to our events and webinars. You may
+        unsubscribe from these communications at any time. Please review our{' '}
+        <a href={'https://www.madetech.com/privacy'}>Privacy Policy</a> to find
+        out more about how we take care of your personal data.
+      </p>
+    )
+  }
+
   return (
     <div className={'contentful-drip-form'} data-test={'contentful-drip-form'}>
       <form
@@ -70,6 +82,7 @@ const DripForm = props => {
             value=""
           />
         </div>
+        {renderPrivacyPolicy()}
         <div>
           <input
             type="submit"
