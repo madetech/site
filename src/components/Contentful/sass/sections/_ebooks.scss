@@ -50,20 +50,21 @@
       background: #fecc2b;
 
       @include mobile {
-        margin-top: 0px;
+        margin-top: 60px;
       }
 
       @include sm-tablet {
-        margin-top: 0;
+        margin-top: 60px;
       }
 
       @include tablet {
-        margin-top: -50px;
+        margin-top: 60px;
       }
     }
 
     &.book_blue {
       background: #88b2ea;
+      margin-top: 20px;
 
       @include mobile {
         margin-top: 60px;
@@ -80,7 +81,6 @@
 
     &.red {
       background: #f77659;
-      margin-top: 20px;
 
       @include mobile {
         margin-top: 60px;
