@@ -17,6 +17,7 @@ describe('<DripForm>', () => {
         formTags={['email', 'first_name', 'last_name']}
       />
     )
+
     it('Renders the component with information provided by props', () => {
       expect(component.find({ 'data-test': 'headline' }).text()).toBe(
         'I like dogs'
@@ -27,6 +28,10 @@ describe('<DripForm>', () => {
       expect(component.find({ 'data-test': 'email' }).length).toBe(1)
       expect(component.find({ 'data-test': 'first_name' }).length).toBe(1)
       expect(component.find({ 'data-test': 'last_name' }).length).toBe(1)
+    })
+
+    it('Renders the privacy policy section', () => {
+      expect(component.find({ 'data-test': 'privacy-policy' }).length).toBe(1)
     })
   })
 
