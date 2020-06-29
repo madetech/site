@@ -40,93 +40,51 @@
       margin-bottom: -60px;
       width: 60%;
       margin-left: 20%;
+      max-height: max-content;
     }
 
-    img {
-      max-height: max-content;
+    &.yellow,
+    &.book_blue,
+    &.red,
+    &.blue,
+    &.shaded {
+      @include mobile {
+        margin-top: 60px;
+      }
+
+      @include sm-tablet {
+        margin-top: 60px;
+      }
+
+      @include tablet {
+        margin-top: 60px;
+      }
+    }
+
+    &.book_blue,
+    &.blue,
+    &.shaded {
+      margin-top: 20px;
     }
 
     &.yellow {
       background: #fecc2b;
-
-      @include mobile {
-        margin-top: 60px;
-      }
-
-      @include sm-tablet {
-        margin-top: 60px;
-      }
-
-      @include tablet {
-        margin-top: 60px;
-      }
     }
 
     &.book_blue {
       background: #88b2ea;
-      margin-top: 20px;
-
-      @include mobile {
-        margin-top: 60px;
-      }
-
-      @include sm-tablet {
-        margin-top: 60px;
-      }
-
-      @include tablet {
-        margin-top: 60px;
-      }
     }
 
     &.red {
       background: #f77659;
-
-      @include mobile {
-        margin-top: 60px;
-      }
-
-      @include sm-tablet {
-        margin-top: 60px;
-      }
-
-      @include tablet {
-        margin-top: 60px;
-      }
     }
 
     &.blue {
       background: #3861ad;
-      margin-top: 20px;
-
-      @include mobile {
-        margin-top: 60px;
-      }
-
-      @include sm-tablet {
-        margin-top: 60px;
-      }
-
-      @include tablet {
-        margin-top: 60px;
-      }
     }
 
     &.shaded {
       background: #222;
-      margin-top: 20px;
-
-      @include mobile {
-        margin-top: 60px;
-      }
-
-      @include sm-tablet {
-        margin-top: 60px;
-      }
-
-      @include tablet {
-        margin-top: 60px;
-      }
     }
 
     .prose {
