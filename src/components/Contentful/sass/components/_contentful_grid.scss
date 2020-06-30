@@ -243,6 +243,13 @@
         text-shadow: none;
       }
     }
+
+    .contentful-gridcolumn__breadcrumb {
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
   }
 
   .book-blue {
