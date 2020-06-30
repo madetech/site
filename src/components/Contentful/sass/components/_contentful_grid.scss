@@ -85,7 +85,7 @@
 }
 
 .contentful-grid.red {
-  background-color: #FF7659;
+  background-color: #ff7659;
 
   h1,
   h2,
@@ -135,12 +135,208 @@
   margin-top: 0;
 }
 
-.contentful-grid.shaded
-  + .contentful-grid:not(.shaded):not(.yellow):not(.blue):not(.book-blue) {
+.contentful-grid.shaded + .contentful-grid:not(.shaded):not(.yellow):not(.blue):not(.book-blue) {
   border-top: 1px solid #f0f0f0;
   margin-top: 0;
 }
 
 .contentful-grid.shaded + .contentful-grid {
   padding-top: map-get($spacers, 3);
+}
+
+// -----------§
+
+.contentful-gridrow {
+  margin: map-get($spacers, 3) 0;
+}
+
+.contentful-gridrow.shaded,
+.contentful-gridrow.yellow,
+.contentful-gridrow.book-blue,
+.contentful-gridrow.blue,
+.contentful-gridrow.black,
+.contentful-gridrow.red {
+  padding: map-get($spacers, 3) 0;
+}
+
+.contentful-gridrow {
+  .yellow {
+    background-color: $yellow;
+
+    .prose {
+      color: $black;
+
+      p:last-child a {
+        @extend .btn-outline-dark;
+        border-color: black;
+        color: $black;
+        text-shadow: none;
+
+        &:focus,
+        &:hover {
+          background-color: black;
+        }
+      }
+    }
+
+    .contentful-gridcolumn__breadcrumb {
+      color: $black;
+      a {
+        color: $black;
+      }
+    }
+  }
+
+  .red {
+    background-color: #ff7659;
+
+    .prose {
+      color: $black;
+
+      p:last-child a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+
+        &:hover {
+          color: #fff;
+          background-color: #23272b;
+          border-color: #1d2124;
+        }
+      }
+    }
+
+    .contentful-gridcolumn__breadcrumb {
+      color: $black;
+      a {
+        color: $black;
+      }
+    }
+  }
+
+  .shaded {
+    background-color: #f1f1f1;
+    margin-bottom: 0;
+  }
+
+  .blue {
+    background-color: $blue;
+
+    .prose {
+      color: $white;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+
+      p:nth-last-child(2) a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+      }
+
+      p:last-child a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+      }
+    }
+
+    .contentful-gridcolumn__breadcrumb {
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .book-blue {
+    background-color: $light-blue;
+
+    .prose {
+      color: $white;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+
+      p:nth-last-child(2) a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+      }
+
+      p:last-child a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+      }
+    }
+
+    .contentful-gridcolumn__breadcrumb {
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .black {
+    background-color: $black;
+
+    .prose {
+      color: $white;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+
+      p:nth-last-child(2) a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+      }
+
+      p:last-child a {
+        @extend .btn-outline-light;
+        text-shadow: none;
+      }
+    }
+
+    .contentful-gridcolumn__breadcrumb {
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &.borderless {
+    margin: 0;
+
+    .container-fluid {
+      padding: 0;
+    }
+  }
+}
+
+.contentful-gridcolumn__breadcrumb {
+  color: grey;
+  font-weight: bold;
+  font-size: 0.63rem;
+
+  a {
+    color: grey;
+  }
 }
