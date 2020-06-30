@@ -12,6 +12,8 @@ import toHtmlId from '../../helpers/toHtmlId'
 import documentToHtmlString from '../../helpers/documentToHtmlString'
 import EbookPreview from './EbookPreview'
 import DripForm from './DripForm'
+import GridRow from './GridRow'
+
 function ComponentRenderer(content) {
   if (!content.name) throw new Error('No component name provided')
   if (!content.__typename) throw new Error('No component __typename provided')
@@ -162,6 +164,18 @@ function ComponentRenderer(content) {
           formDescription={content.formDescription}
           formFields={content.formFields}
           formTags={content.formTags}
+        />
+      )
+    case 'ContentfulGridRow':
+      return (
+        <GridRow
+          content={content.content}
+          customClasses={content.customClasses}
+          id={id}
+          entry_id={content.id}
+          name={content.name}
+          style={content.style}
+          layout={content.layout}
         />
       )
     default:

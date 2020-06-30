@@ -74,9 +74,11 @@ export const pageQuery = graphql`
             ...dripForm
           }
         }
+        ...gridRow
       }
     }
   }
+
   fragment card on ContentfulCard {
     name
     body {
@@ -94,6 +96,7 @@ export const pageQuery = graphql`
     }
     link
   }
+
   fragment hubSpotForm on ContentfulHubSpotForm {
     name
     columnWidth
@@ -101,6 +104,7 @@ export const pageQuery = graphql`
     formId
     buttonColour
   }
+
   fragment dripForm on ContentfulDripForm {
     dripFormId
     formFields
@@ -110,6 +114,7 @@ export const pageQuery = graphql`
       formDescription
     }
   }
+
   fragment inlineImages on ContentfulInlineImages {
     name
     caption
@@ -129,6 +134,7 @@ export const pageQuery = graphql`
     }
     overlay
   }
+
   fragment imageLink on ContentfulImageLink {
     url
     image {
@@ -151,6 +157,7 @@ export const pageQuery = graphql`
     extraSmallColumnWidth
     extraSmallColumnOffset
   }
+
   fragment jumbotron on ContentfulJumbotron {
     id
     name
@@ -170,6 +177,7 @@ export const pageQuery = graphql`
     textAlign
     textColor
   }
+
   fragment hero on ContentfulHero {
     name
     isHeader
@@ -226,6 +234,7 @@ export const pageQuery = graphql`
   }
 
   fragment prose on ContentfulProse {
+    id
     name
     body {
       json
@@ -257,6 +266,7 @@ export const pageQuery = graphql`
     textAlign
     overlay
   }
+
   fragment highlight on ContentfulHighlight {
     id
     name
@@ -280,6 +290,7 @@ export const pageQuery = graphql`
     }
     customClasses
   }
+
   fragment tweet on ContentfulTweet {
     name
     columnWidth
@@ -294,6 +305,7 @@ export const pageQuery = graphql`
     smallColumnOffset
     tweetId
   }
+
   fragment headerImages on ContentfulHeaderImages {
     name
     extraLarge {
@@ -317,6 +329,7 @@ export const pageQuery = graphql`
       }
     }
   }
+
   fragment jobsBoard on ContentfulJobsBoard {
     title
     columnWidth
@@ -329,5 +342,42 @@ export const pageQuery = graphql`
     mediumColumnOffset
     smallColumnWidth
     smallColumnOffset
+  }
+
+  fragment gridRow on ContentfulGridRow {
+    id
+    name
+    style
+    layout
+    customClasses
+    content {
+      ... on ContentfulGridColumn {
+        id
+        name
+        columnWidth
+        columnOffset
+        extraLargeColumnOffset
+        extraLargeColumnWidth
+        extraSmallColumnOffset
+        extraSmallColumnWidth
+        mediumColumnOffset
+        mediumColumnWidth
+        smallColumnOffset
+        smallColumnWidth
+        style
+        customClasses
+        pageBreadcrumb {
+          links {
+            title
+            url
+          }
+        }
+        content {
+          __typename
+          ...hubSpotForm
+          ...prose
+        }
+      }
+    }
   }
 `
