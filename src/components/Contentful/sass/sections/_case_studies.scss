@@ -38,46 +38,6 @@
     }
   }
 
-  img {
-    &[src*='Cambridgeshire'] {
-      height: 380px;
-      margin-left: 100px;
-      margin-bottom: -30px;
-      object-fit: cover;
-
-      @include sm-desktop {
-        margin-left: 50px;
-      }
-
-      @include lg-tablet {
-        margin-left: 4%;
-      }
-
-      @include tablet {
-        margin-top: -2%;
-        margin-bottom: -60px;
-      }
-
-      @include sm-tablet {
-        margin-left: 8%;
-      }
-
-      @include mobile {
-        margin-left: 8%;
-      }
-    }
-
-    &[src*='FamilyStory'] {
-      @include sm-tablet {
-        margin-left: 3%;
-      }
-
-      @include mobile {
-        margin-left: 2%;
-      }
-    }
-  }
-
   .contentful-prose {
     margin-top: -30px;
     margin-bottom: 30px;
@@ -88,6 +48,10 @@
 
     @include mobile {
       margin-bottom: 10%;
+    }
+
+    img {
+      max-height: unset;
     }
 
     .prose {
