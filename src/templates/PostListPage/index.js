@@ -19,11 +19,14 @@ const highlightedTopics = [
 
 export default function Index({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
+  const header = data.contentfulHeader
 
   return (
     <Layout
       description="Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations."
       titlePrefix="Blog"
+      headerLinks={header.headerLinks}
+      headerTitles={header.headerTitles}
     >
       <PostListIntro
         title="Made Tech Blog"
@@ -74,6 +77,11 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+
+    contentfulHeader(id: { eq: "dd6f31c4-cd8c-5623-abd5-8b65bbd030e0" }) {
+      headerLinks
+      headerTitles
     }
   }
 `
