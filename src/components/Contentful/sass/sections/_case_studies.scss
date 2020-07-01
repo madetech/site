@@ -78,8 +78,11 @@
     }
   }
 
-  .contentful-prose {
+  .contentful-prose:first-of-type {
     margin-top: -30px;
+  }
+
+  .contentful-prose {
     margin-bottom: 30px;
 
     @include tablet {
