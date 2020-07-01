@@ -85,6 +85,10 @@
   .contentful-prose {
     margin-bottom: 30px;
 
+    img {
+      max-height: unset;
+    }
+
     @include tablet {
       margin-bottom: 10%;
     }
