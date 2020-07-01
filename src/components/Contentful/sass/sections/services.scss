@@ -423,6 +423,16 @@
       display: inline-flex;
       box-shadow: 3px 3px 0 0;
       background-color: $mt-green;
+
+      &:hover {
+        background-color: $mt-green-dark;
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: $mt-green-dark;
+      }
+
       a {
         padding: 13px 20px;
         text-align: center;
@@ -431,6 +441,7 @@
         display: inline-table;
       }
     }
+
     @include tablet {
       margin-right: -84px;
     }
