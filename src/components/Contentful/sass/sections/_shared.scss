@@ -254,6 +254,8 @@
   }
 
   p {
+    font-size: $px20 !important;
+    color: $black !important;
     margin-bottom: 60px;
 
     @include tablet {
@@ -274,6 +276,7 @@
       font-weight: normal !important;
       color: white !important;
       text-decoration: none;
+      box-shadow: none !important;
 
       @include lg-desktop {
         width: 380px !important;
