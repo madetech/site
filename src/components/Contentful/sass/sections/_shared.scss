@@ -241,7 +241,7 @@
     padding-top: 0 !important;
     padding-bottom: 30px !important;
   }
-  
+
   h2 {
     margin-top: 87px !important;
     margin-bottom: 40px !important;
@@ -256,6 +256,8 @@
   p {
     font-size: $px20 !important;
     color: $black !important;
+    line-height: 1.5 !important;
+
     margin-bottom: 60px;
 
     @include tablet {
