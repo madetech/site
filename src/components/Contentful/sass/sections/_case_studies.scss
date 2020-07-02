@@ -59,6 +59,11 @@
       padding: 50px;
       margin: unset;
 
+      a:hover {
+        padding-bottom: 0px;
+        color: $black;
+      }
+
       @include mobile {
         padding: 20px 20px 40px 20px;
       }
