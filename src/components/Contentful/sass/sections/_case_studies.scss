@@ -97,6 +97,10 @@
       margin-bottom: 10%;
     }
 
+    img {
+      max-height: unset;
+    }
+
     .prose {
       background-color: $white;
       padding: 50px;
