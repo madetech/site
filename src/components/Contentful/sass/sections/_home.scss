@@ -29,3 +29,31 @@
     }
   }
 }
+
+.webinar {
+  img {
+    @include tablet {
+      display: block;
+      position: absolute;
+      right: 1%;
+    }
+
+    @include sm-tablet {
+      padding-left: 40px;
+    }
+
+    @include mobile {
+      &.before {
+        max-width: 300px !important;
+        max-height: 300px !important;
+        left: 250px !important;
+      }
+    }
+  }
+
+  h2 {
+    @include mobile {
+      padding-right: 250px;
+    }
+  }
+}
