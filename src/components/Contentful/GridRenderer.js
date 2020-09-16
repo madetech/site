@@ -63,7 +63,7 @@ function GridProse({
   if (html) {
     proseComponent = (
       <Prose>
-        <div dangerouslySetInnerHTML={{ __html: parsedHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: parsedHtml }} className="prose-heading" />
       </Prose>
     )
   }

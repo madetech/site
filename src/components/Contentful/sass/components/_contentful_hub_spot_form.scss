@@ -9,6 +9,11 @@
     input {
       @extend .form-control;
     }
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.88;
+    }
   }
 
   .hs-submit {
@@ -17,11 +22,21 @@
       @extend .btn;
       @extend .btn-success;
       @extend .btn-lg;
+      
+      font-weight: 800;
     }
   }
 
   .hs-richtext {
     @extend .prose;
+    h3 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
   }
 
   @mixin colours($colour-default, $colour-dark, $colour-text) {
