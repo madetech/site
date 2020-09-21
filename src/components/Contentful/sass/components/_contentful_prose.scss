@@ -53,9 +53,8 @@ header + div:not(.new-design) {
   margin: map-get($spacers, 5) 0;
 
   img {
-    height: 457px;
+    max-height: 16rem;
     max-width: 100%;
-    width: 322px;
   }
 
   img.avatar {
@@ -72,7 +71,7 @@ header + div:not(.new-design) {
     p {
       font-size: 20px;
       line-height: 1.5;
-      width: 588px;
+
     }
   }
   .prose {
@@ -98,6 +97,13 @@ header + div:not(.new-design) {
 
   .contentful-grid & {
     margin: 0;
+  }
+
+  @include media-breakpoint-up(lg) {	
+    img {	
+      max-height: none;	
+      width: 100%;	
+    }	
   }
 
   &.overlay {
