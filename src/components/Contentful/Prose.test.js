@@ -18,14 +18,4 @@ describe('<Prose />', () => {
       ).toBe(0)
     })
   })
-
-  // describe('with previousPage className', () => {
-  //   const component = shallow(<Prose customClasses={['previousPage']} />)
-
-  //   it('Renders the Previous Page button', () => {
-  //     expect(
-  //       component.find({ 'data-test': 'previous-page-button' }).length
-  //     ).toBe(1)
-  //   })
-  // })
 })
