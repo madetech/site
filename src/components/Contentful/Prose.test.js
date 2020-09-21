@@ -19,13 +19,13 @@ describe('<Prose />', () => {
     })
   })
 
-  describe('with previousPage className', () => {
-    const component = shallow(<Prose customClasses={['previousPage']} />)
+  // describe('with previousPage className', () => {
+  //   const component = shallow(<Prose customClasses={['previousPage']} />)
 
-    it('Renders the Previous Page button', () => {
-      expect(
-        component.find({ 'data-test': 'previous-page-button' }).length
-      ).toBe(1)
-    })
-  })
+  //   it('Renders the Previous Page button', () => {
+  //     expect(
+  //       component.find({ 'data-test': 'previous-page-button' }).length
+  //     ).toBe(1)
+  //   })
+  // })
 })
