@@ -14,14 +14,14 @@ const DripForm = props => {
     result[props.formFields[index]] = field
     return result
   },
-  {})
+    {})
 
   const inputRow = (formField, formTag) => {
     let hyphenatedTag = formTag.split('_').join('-')
 
     return (
       <div className="drip-input">
-        <label htmlFor={`drip-${hyphenatedTag}`}>{formField}</label>
+        <label htmlFor={`drip-${hyphenatedTag}`} className="drip-form-label">{formField}</label>
         <input
           key={hyphenatedTag}
           id={`drip-${hyphenatedTag}`}
@@ -46,7 +46,7 @@ const DripForm = props => {
 
   const renderPrivacyPolicy = () => {
     return (
-      <p data-test={'privacy-policy'}>
+      <p data-test={'privacy-policy'} className="privacy-policy-text">
         Made Tech needs the contact information you provide to us to share news,
         blog posts and invitations to our events and webinars. You may
         unsubscribe from these communications at any time. Please review our{' '}
@@ -55,7 +55,6 @@ const DripForm = props => {
       </p>
     )
   }
-
   return (
     <div className={'contentful-drip-form'} data-test={'contentful-drip-form'}>
       <form
@@ -68,6 +67,7 @@ const DripForm = props => {
         </h3>
         <div
           data-test="description"
+          className="drip-form-text"
           dangerouslySetInnerHTML={{ __html: descriptionHtml }}
         />
         {renderInputRows()}

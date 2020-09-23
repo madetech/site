@@ -220,7 +220,10 @@ ul li:before {
 
   &.shaded {
     background-color: $white-two;
-
+    .privacy-policy-text {
+      font-size: 1.05rem;
+      line-height: 1.58rem;
+    }
     p {
       font-family: $montserrat;
       font-size: $px24;
@@ -261,6 +264,18 @@ ul li:before {
     }
 
     .prose {
+      .prose-style-font-size {
+        p {
+          font-family: $montserrat;
+          font-size: $px20;
+          line-height: $px30;
+          color: $dark-grey;
+        }
+        ul {
+          font-size: $px20;
+          line-height: $px30;
+        }
+      }
       p {
         font-family: $montserrat;
         font-size: $px24;
@@ -394,6 +409,15 @@ ul li:before {
           margin-bottom: 25px;
         }
       }
+    }
+  }
+}
+
+.contentful-drip-form {
+  .drip-form-text {
+    p {
+      font-size: $px20;
+      line-height: $px30;
     }
   }
 }
