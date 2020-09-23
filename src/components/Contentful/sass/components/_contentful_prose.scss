@@ -71,7 +71,11 @@ header + div:not(.new-design) {
     p {
       font-size: 20px;
       line-height: 1.5;
-
+    }
+  }
+  .prose-style-width {
+    p {
+      padding-right: 20px
     }
   }
   .prose {
@@ -99,11 +103,11 @@ header + div:not(.new-design) {
     margin: 0;
   }
 
-  @include media-breakpoint-up(lg) {	
-    img {	
-      max-height: none;	
-      width: 100%;	
-    }	
+  @include media-breakpoint-up(lg) {
+    img {
+      max-height: none;
+      width: 100%;
+    }
   }
 
   &.overlay {

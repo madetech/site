@@ -21,6 +21,7 @@ function GridProse({
   style,
   textAlign,
   overlay,
+  proseStyle
 }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
@@ -63,7 +64,7 @@ function GridProse({
   if (html) {
     proseComponent = (
       <Prose>
-        <div dangerouslySetInnerHTML={{ __html: parsedHtml }} className="prose-heading" />
+        <div dangerouslySetInnerHTML={{ __html: parsedHtml }} className={`prose-heading ${proseStyle ? "prose-style-width" : ""}`} />
       </Prose>
     )
   }
@@ -189,6 +190,7 @@ export default function GridComponentRenderer(content) {
           style={content.style}
           textAlign={content.textAlign}
           overlay={content.overlay}
+          proseStyle={content.proseStyle}
         />
       )
     case 'ContentfulCard':
