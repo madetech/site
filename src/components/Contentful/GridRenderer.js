@@ -68,7 +68,7 @@ function GridProse({
         <div 
           dangerouslySetInnerHTML={{ __html: parsedHtml }} 
           className={`prose-heading ${proseStyle && "prose-style-width"} 
-          ${isConnectPage && "prose-style-font-size"}`} 
+          ${isConnectPage && " prose-style-font-size"}`} 
         />
       </Prose>
     )
