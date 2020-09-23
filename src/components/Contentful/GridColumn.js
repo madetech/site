@@ -59,7 +59,7 @@ export default class GridColumn extends React.Component {
     }
 
     var columnContent = this.props.content.map(content => {
-      return <GridComponentRenderer key={content.id} {...content} />
+      return <GridComponentRenderer proseStyle={true} key={content.id} {...content} />
     })
 
     return (

@@ -1,5 +1,6 @@
 .contentful-hub-spot-form {
   margin: 0 auto;
+  padding-right: 20px
 }
 
 .contentful-hub-spot-form {
@@ -22,7 +23,7 @@
       @extend .btn;
       @extend .btn-success;
       @extend .btn-lg;
-      
+
       font-weight: 800;
     }
   }
@@ -32,6 +33,7 @@
     h3 {
       font-size: 36px;
       line-height: 40px;
+      padding-top: 10px;
     }
     p {
       font-size: 20px;
