@@ -70,7 +70,7 @@ function GridProse({
           dangerouslySetInnerHTML={{ __html: parsedHtml }} 
           className={`prose-heading ${proseStyle && "prose-style-width"} 
           ${isConnectPage && " prose-style-font-size"}
-          ${isServicePage && "prose-style-link-color"}`} 
+          ${isServicePage && " prose-style-link-color"}`} 
         />
       </Prose>
     )
