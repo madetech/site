@@ -66,7 +66,7 @@ ul li:before {
 }
 
 .col,
-[class*='col-'] {
+[class*="col-"] {
   @include desktop {
     padding-left: 10px;
     padding-right: 10px;
@@ -289,6 +289,12 @@ ul li:before {
     .contentful-prose {
       img {
         max-height: 100%;
+      }
+      .case-study-image {
+        @include mobile {
+          margin-top: 60px;
+          margin-left: 15px;
+        }
       }
     }
 
