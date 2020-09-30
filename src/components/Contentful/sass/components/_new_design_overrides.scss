@@ -93,11 +93,9 @@ ul li:before {
   &.white {
     u,
     a {
-      padding-bottom: 4px;
       font-weight: $extra-bold;
       letter-spacing: 0px;
       text-decoration: none;
-      box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $mt-green;
     }
   }
 
