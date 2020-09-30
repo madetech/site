@@ -1,4 +1,4 @@
-@import '../abstracts/mixins';
+@import "../abstracts/mixins";
 // need to disable these link-buttons for new site
 header + div:not(.new-design) {
   .contentful-grid.yellow {
@@ -64,9 +64,15 @@ header + div:not(.new-design) {
   }
 
   .prose-heading {
-    h1,
+    h1 {
+      font-size: 50px;
+    }
     h2 {
       font-size: 50px;
+
+      @include mobile {
+        font-size: 30px;
+      }
     }
     p {
       font-size: 20px;
@@ -75,7 +81,7 @@ header + div:not(.new-design) {
   }
   .prose-style-width {
     p {
-      padding-right: 20px
+      padding-right: 20px;
     }
   }
   .prose {

@@ -47,13 +47,14 @@
         max-width: 300px !important;
         max-height: 300px !important;
         left: 250px !important;
+        width: 100%
       }
     }
   }
 
   h2 {
     @include mobile {
-      padding-right: 250px;
+      font-size: 30px;
     }
   }
 }

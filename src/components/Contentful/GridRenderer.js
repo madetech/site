@@ -23,7 +23,8 @@ function GridProse({
   overlay,
   proseStyle,
   isConnectPage,
-  isServicePage
+  isServicePage,
+  isHomepage
 }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
@@ -47,7 +48,10 @@ function GridProse({
     let imageSrc = image.fixed.src.split('?')[0]
 
     imageComponent = (
-      <img alt={image.title} className={imageClassName} src={imageSrc} />
+      <img alt={image.title} 
+        className={`${imageClassName} ${isHomepage && "home-page-image"}`} 
+        src={imageSrc} 
+      />
     )
   }
 
@@ -66,11 +70,11 @@ function GridProse({
   if (html) {
     proseComponent = (
       <Prose>
-        <div 
-          dangerouslySetInnerHTML={{ __html: parsedHtml }} 
+        <div
+          dangerouslySetInnerHTML={{ __html: parsedHtml }}
           className={`prose-heading ${proseStyle && "prose-style-width"} 
           ${isConnectPage && " prose-style-font-size"}
-          ${isServicePage && " prose-style-link-color"}`} 
+          ${isServicePage && " prose-style-link-color"}`}
         />
       </Prose>
     )
@@ -200,6 +204,7 @@ export default function GridComponentRenderer(content) {
           proseStyle={content.proseStyle}
           isConnectPage={content.name.includes("Resources / Made Tech Connect > Grid > Prose")}
           isServicePage={content.name.includes("Our Services > Overview > ")}
+          isHomepage={content.name.includes("Misc > MLA >")}
         />
       )
     case 'ContentfulCard':
