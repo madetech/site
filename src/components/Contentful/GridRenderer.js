@@ -51,7 +51,7 @@ function GridProse({
     imageComponent = (
       <img alt={image.title}
         className={`${imageClassName} 
-        ${isHomepage && "home-page-image"}
+        ${isHomepage && " home-page-image"}
         ${isCaseStudyPage && " case-study-image"}`}
         src={imageSrc}
       />
