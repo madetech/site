@@ -43,9 +43,7 @@
       max-height: max-content;
     }
 
-    &.yellow,
     &.book_blue,
-    &.red,
     &.blue,
     &.shaded {
       @include mobile {
@@ -57,6 +55,20 @@
       }
 
       @include tablet {
+        margin-top: 60px;
+      }
+    }
+    &.red {
+      @include sm-tablet {
+        margin-top: 60px;
+      }
+    }
+    &.yellow {
+      @include mobile {
+        margin-top: 60px;
+      }
+
+      @include sm-tablet {
         margin-top: 60px;
       }
     }
