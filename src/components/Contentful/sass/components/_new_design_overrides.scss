@@ -78,6 +78,13 @@ ul li:before {
   }
 }
 
+.books-grid-col{
+  @include tablet {
+    padding-left: 6.5px;
+    padding-right: 6.5px;
+  }
+}
+
 .contentful-grid {
   margin: 0;
   border: 0 !important;
