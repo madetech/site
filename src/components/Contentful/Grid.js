@@ -142,7 +142,7 @@ function GridComponentArrayRenderer({
             mediumColumnOffset={group[0].mediumColumnOffset}
             smallColumnWidth={group[0].smallColumnWidth}
             smallColumnOffset={group[0].smallColumnOffset}
-            isBooksGridPage={name.includes("Resources / Ebooks > Books > Grid")}
+            isBooksGridPage={name && name.includes("Resources / Ebooks > Books > Grid")}
             key={i}
           >
             {group.map((content, indexKey) => (
