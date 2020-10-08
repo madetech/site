@@ -175,12 +175,12 @@ http {
     rewrite /best-practice-checkout-experience /blog/best-practice-checkout-experience last;
     rewrite /cache-sweepers-invalidating-caches-from-outside-the-controller /blog/cache-sweepers-invalidating-caches-from-outside-the-controller last;
     rewrite /busting-agile-myths-story-points /blog/busting-agile-myths-story-points last;
-    rewrite /ext/twitter /twitter.com/madetech last;
-    rewrite /ext/handbook /github.com/madetech/handbook last;
+    rewrite /ext/twitter https://twitter.com/madetech permanent;
+    rewrite /ext/handbook https://github.com/madetech/handbook permanent;
     rewrite /resources/lp/bespoke-software /services last;
     rewrite /support-and-maintainance /services last;
     rewrite /resources/lp/large-devops.software-team /resources/books/building-high-performance-agile-teams last;
-    rewrite /social/tc/recruitment-full-stack-engineer?utm_content=buffer77eae&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer /careers last;
-    rewrite /ext/github /github.com/madetech last;
+    rewrite /social/tc/recruitment-full-stack-engineer /careers last;
+    rewrite /ext/github https://github.com/madetech permanent;
   }
 }
