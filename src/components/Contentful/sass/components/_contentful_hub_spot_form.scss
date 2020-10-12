@@ -1,9 +1,22 @@
 .contentful-hub-spot-form {
   margin: 0 auto;
-  padding-right: 20px
+  padding-right: 20px;
 }
 
 .contentful-hub-spot-form {
+  .hs-form__field__label_required:after,
+  .hs-form__field_required:after {
+    color: $black;
+    content: "*";
+  }
+
+  .hs-form__field__alert_error {
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: unset;
+    margin-left: 22px;
+  }
+  .hs-form__row,
   .hs-form-field {
     @extend .form-group;
 
@@ -15,11 +28,29 @@
       font-weight: bold;
       line-height: 1.88;
     }
+    .hs-form__group {
+      .hs-form__richtext {
+        a {
+          color: $black;
+          &:hover {
+            color: $mt-green;
+          }
+        }
+      }
+    }
   }
-
+  .hs-form__field__alert_error {
+    span {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.88;
+    }
+  }
+  .hs-form__actions,
   .hs-submit {
     @extend .form-group;
-    input {
+    input,
+    button {
       @extend .btn;
       @extend .btn-success;
       @extend .btn-lg;
@@ -33,8 +64,8 @@
     h3 {
       font-size: 36px;
       line-height: 40px;
-      padding-top: 15px;
     }
+
     p {
       font-size: 20px;
       line-height: 1.5;
@@ -42,6 +73,7 @@
   }
 
   @mixin colours($colour-default, $colour-dark, $colour-text) {
+    .hs-form__actions__submit,
     .hs-button {
       color: $colour-text;
       background-color: $colour-default;
@@ -99,5 +131,37 @@
 
   &.shaded {
     @include colours(#222, #000, #fff);
+  }
+}
+
+.e_books_right_column {
+  .contentful-hub-spot-form {
+    .hs-form__field__alert_error {
+      color: #f2545b !important;
+    }
+    .hs-form__richtext {
+      h3 {
+        padding-top: 15px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+      a {
+        color: #333;
+        font-weight: 700;
+        text-decoration: underline;
+
+        &:hover {
+          color: $mt-green;
+        }
+      }
+    }
+  }
+}
+
+.error-message-color {
+  .hs-form__field__alert_error {
+    color: #f2545b !important;
   }
 }

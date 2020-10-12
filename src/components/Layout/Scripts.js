@@ -18,6 +18,13 @@ export default function Scripts() {
         async
         defer
       />
+      <script
+        charset="utf-8"
+        type="text/javascript"
+        src="https://js.hsforms.net/forms/new-embed-script.js"
+        async
+        defer
+      />
 
       {/* Google Analytics */}
       <script>{`

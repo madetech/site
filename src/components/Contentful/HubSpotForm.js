@@ -6,9 +6,9 @@ export default class ContentfulHubSpotForm extends React.Component {
   }
 
   embedForm() {
-    if (window.hbspt) {
+    if (window.HubSpotForms) {
       try {
-        window.hbspt.forms.create({
+        window.HubSpotForms.create({
           target: `#${this.props.id}`,
           portalId: '554916',
           formId: this.props.formId,
@@ -24,9 +24,14 @@ export default class ContentfulHubSpotForm extends React.Component {
   }
 
   render() {
+    const { id, buttonColour } = this.props;
+    const isWebinarRegisterPage = id && id.includes("resources-webinars-enhancing-developer-productivity-september-sign-up-register")
     return (
       <div
-        className={'contentful-hub-spot-form ' + this.props.buttonColour}
+        className={`contentful-hub-spot-form 
+            ${buttonColour} 
+            ${isWebinarRegisterPage ? 'error-message-color' : ""}`
+        }
         id={this.props.id}
       />
     )
