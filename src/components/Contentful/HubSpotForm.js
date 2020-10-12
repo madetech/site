@@ -28,10 +28,7 @@ export default class ContentfulHubSpotForm extends React.Component {
     const isWebinarRegisterPage = id && id.includes("resources-webinars-enhancing-developer-productivity-september-sign-up-register")
     return (
       <div
-        className={`contentful-hub-spot-form 
-            ${buttonColour} 
-            ${isWebinarRegisterPage ? 'error-message-color' : ""}`
-        }
+        className={`contentful-hub-spot-form ${buttonColour}${isWebinarRegisterPage ? ' error-message-color' : ""}`}
         id={this.props.id}
       />
     )
