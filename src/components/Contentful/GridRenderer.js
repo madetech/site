@@ -25,7 +25,8 @@ function GridProse({
   isConnectPage,
   isServicePage,
   isHomepage,
-  isCaseStudyPage
+  isCaseStudyPage,
+  isBookLeftCol
 }) {
   let className = 'contentful-prose'
   if (textAlign) className += ` text-${textAlign}`
@@ -52,7 +53,8 @@ function GridProse({
       <img alt={image.title}
         className={`${imageClassName} 
         ${isHomepage && " home-page-image"}
-        ${isCaseStudyPage && " case-study-image"}`}
+        ${isCaseStudyPage && " case-study-image"}
+        ${isBookLeftCol && " book-image"}`}
         src={imageSrc}
       />
     )
@@ -209,6 +211,7 @@ export default function GridComponentRenderer(content) {
           isServicePage={content.name.includes("Our Services > Overview > ")}
           isHomepage={content.name.includes("Misc > MLA >")}
           isCaseStudyPage={content.name.includes("Case Studies > LGSS/Cambridgeshire cloud discovery audit > Laptop Image > Image")}
+          isBookLeftCol={content.name.includes("Resources / Ebooks")}
         />
       )
     case 'ContentfulCard':
