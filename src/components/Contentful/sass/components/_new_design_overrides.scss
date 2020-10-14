@@ -236,7 +236,7 @@ ul li:before {
     + .contentful-grid.yellow {
       margin: initial;
     }
-    
+
     ul {
       list-style: disc;
       color: $mt-green;
@@ -371,8 +371,12 @@ ul li:before {
     }
   }
 }
-// box-shadow(for green underline) is implemented differently in case studies b/c of the hover effect 
-#case-studies-overview-grid {
+/* box-shadow(for green underline) is implemented differently 
+in case studies b/c of the hover effect
+box-shadow is removed for Digital Leaders Week 2020(displayed at Homepage) */
+
+#case-studies-overview-grid,
+#misc-better-patient-outcomes-webinar {
   &.shaded {
     a {
       box-shadow: none;
@@ -394,6 +398,10 @@ ul li:before {
     }
 
     + img.after {
+      margin-top: 25px;
+    }
+
+    + .book-image {
       margin-top: 25px;
       max-height: 457px;
       width: 322px;
