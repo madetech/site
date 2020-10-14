@@ -78,7 +78,7 @@ ul li:before {
   }
 }
 
-.books-grid-col{
+.books-grid-col {
   @include tablet {
     padding-left: 6.5px;
     padding-right: 6.5px;
@@ -103,6 +103,7 @@ ul li:before {
       font-weight: $extra-bold;
       letter-spacing: 0px;
       text-decoration: none;
+      box-shadow: inset 0 0 0 transparent, inset 0 -3px 0 $mt-green;
     }
   }
 
@@ -235,7 +236,7 @@ ul li:before {
     + .contentful-grid.yellow {
       margin: initial;
     }
-    
+
     ul {
       list-style: disc;
       color: $mt-green;
@@ -370,7 +371,18 @@ ul li:before {
     }
   }
 }
+/* box-shadow(for green underline) is implemented differently 
+in case studies b/c of the hover effect
+box-shadow is removed for Digital Leaders Week 2020(displayed at Homepage) */
 
+#case-studies-overview-grid,
+#misc-better-patient-outcomes-webinar {
+  &.shaded {
+    a {
+      box-shadow: none;
+    }
+  }
+}
 .contentful-prose {
   b {
     font-weight: $extra-bold;
@@ -386,6 +398,10 @@ ul li:before {
     }
 
     + img.after {
+      margin-top: 25px;
+    }
+
+    + .book-image {
       margin-top: 25px;
       max-height: 457px;
       width: 322px;
