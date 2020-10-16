@@ -146,3 +146,113 @@
     }
   }
 }
+
+&.webinars_overview {
+  .webinars_overview_grid {
+    .row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      @include mobile {
+        margin: 2px;
+      }
+    }
+    .my-2 {
+      @include mobile {
+        display: contents;
+      }
+      @include tablet {
+        display: contents;
+      }
+    }
+    .group-1 {
+      p:first-of-type,
+      h3 {
+        background-color: $mt-green;
+      }
+    }
+    .group-2 {
+      p:first-of-type,
+      h3 {
+        background-color: $black;
+      }
+    }
+    .webinar_delivering {
+      @include mobile {
+        order: 1;
+        margin-bottom: 60px;
+      }
+      @include tablet {
+        order: 1;
+        margin-bottom: 95px;
+      }
+    }
+    .webinar_enhancing {
+      @include mobile {
+        order: 2;
+      }
+      @include tablet {
+        order: 2;
+      }
+    }
+    .webinar_upskill {
+      @include mobile {
+        order: 3;
+      }
+      @include tablet {
+        order: 3;
+      }
+    }
+    .webinar_avoiding {
+      @include mobile {
+        order: 4;
+      }
+      @include tablet {
+        order: 4;
+      }
+    }
+    .webinar_spin_up {
+      @include mobile {
+        order: 5;
+      }
+      @include tablet {
+        order: 5;
+      }
+    }
+    .prose {
+      padding: 0;
+    }
+    .prose-heading {
+      p:first-of-type {
+        padding: 50px 50px 0 50px;
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: 1px;
+        color: #ffffff;
+      }
+      h3 {
+        padding: 15px 50px 50px 50px;
+        margin-top: 0;
+        color: #ffffff;
+      }
+      p {
+        padding: 15px 50px 10px 50px;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #595959;
+        margin-bottom: 0;
+      }
+      p:last-of-type {
+        margin-left: 50px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
