@@ -59,6 +59,25 @@ export default function Scripts() {
         '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-P9JLJK');
       `}</script>
+
+      {/* LinkedIn Insight */}
+      <script type="text/javascript">{`
+      _linkedin_partner_id = "2397954";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    `}</script>
+      <script type="text/javascript">{`
+      (function () {
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })();
+    `}</script>
+      <noscript>{`<img height="1" width="1" style="display:none;" alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=2397954&fmt=gif" />`}
+      </noscript>
     </Helmet>
   )
 }
