@@ -133,6 +133,12 @@
 
 &.webinars_overview {
   .webinars_overview_grid {
+    .container {
+      @include mobile {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
     .row {
       display: flex;
       justify-content: space-around;
@@ -214,12 +220,18 @@
         font-weight: bold;
         line-height: normal;
         letter-spacing: 1px;
-        color: #ffffff;
+        color: $white;
+        @include mobile {
+          padding: 40px 50px 0 20px;
+        }
       }
       h3 {
         padding: 15px 50px 50px 50px;
         margin-top: -1px;
-        color: #ffffff;
+        color: $white;
+        @include mobile {
+          padding: 15px 22px 40px 20px;
+        }
       }
       p {
         padding: 15px 50px 10px 50px;
@@ -230,12 +242,18 @@
         letter-spacing: normal;
         color: #595959;
         margin-bottom: 0;
+        @include mobile {
+          padding: 15px 20px 10px 20px;
+        }
       }
       p:last-of-type {
         margin-left: 50px;
         padding-left: 0;
         padding-right: 0;
-        margin-bottom: 50px;
+        padding-bottom: 50px;
+        @include mobile {
+          margin-left: 20px;
+        }
       }
     }
   }
