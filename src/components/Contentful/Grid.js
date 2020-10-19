@@ -47,7 +47,8 @@ function GridCol({
   smallColumnOffset,
   extraSmallColumnWidth,
   extraSmallColumnOffset,
-  isBooksGridPage
+  isBooksGridPage,
+  isSectorGridPage
 }) {
   let colClasses = 'my-2'
 
@@ -90,7 +91,10 @@ function GridCol({
   if (extraSmallColumnOffset !== null && extraSmallColumnOffset !== undefined) {
     colClasses += ` offset-${extraSmallColumnOffset}`
   }
-  return <div className={`${colClasses} ${isBooksGridPage ? "books-grid-col" : ""}`}>{children}</div>
+  return <div
+    className={`${colClasses} ${isBooksGridPage ? "books-grid-col" : ""} ${isSectorGridPage ? "sector-grid-links" : ""}`}>
+    {children}
+  </div>
 }
 
 function GridComponentArrayRenderer({
@@ -143,6 +147,7 @@ function GridComponentArrayRenderer({
             smallColumnWidth={group[0].smallColumnWidth}
             smallColumnOffset={group[0].smallColumnOffset}
             isBooksGridPage={name && name.includes("Resources / Ebooks > Books > Grid")}
+            isSectorGridPage={name && name.includes("Sectors Grid")}
             key={i}
           >
             {group.map((content, indexKey) => (

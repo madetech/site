@@ -1,156 +1,157 @@
 &.contact__page {
-    .small {
-        font-size: $px12;
-        font-weight: bold;
-        margin-bottom: 17px;
-    }
+  .small {
+    font-size: $px12;
+    font-weight: bold;
+    margin-bottom: 17px;
+  }
 }
 
 .contact__grid {
-    b {
-        font-family: $poppins;
-        color: $mt-green;
-    }
+  b {
+    font-family: $poppins;
+    color: $mt-green;
+  }
 
-    .contact__blurb {
-        p {
-            font-family: $poppins;
-            font-size: $px24;
-            line-height: 40px;
-            margin-bottom: 91px;
-
-            @include mobile {
-                margin-bottom: 45px;
-            }
-        }
-    }
-
-    .contact__card {
-        a {
-            padding-bottom: 0;
-        }
-
-        p {
-            margin-bottom: 7px;
-        }
-
-        img {
-            max-width: 180px;
-            max-height: 121px;
-        }
-    }
-
-    .contact__address {
-        p {
-            margin-bottom: 0;
-            > b {
-                margin-bottom: 4px;
-            }
-        }
-
-        img {
-            max-width: 180px;
-            max-height: 160px;
-            border-left: 4px solid $mt-green;
-        }
-
-        a {
-            box-shadow: none;
-        }
-    }
-
-    .col-xl-6 {
-        .contact__address {
-            @include mobile {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .prose {
-                @include mobile {
-                    flex-basis: 170px;
-                    margin-left: 0px;
-                }
-            }
-        }
-    }
-
-    .col-xl-5 {
-        .contact__card {
-            @include mobile {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .prose {
-                @include mobile {
-                    flex-basis: 256px;
-                    margin-left: 0px;
-                }
-            }
-        }
-    }
-
-
-
-    .contact__address,
-    .contact__card {
-        display: flex;
-        align-items: center;
-        margin-bottom: 50px;
-
-        @include mobile {
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            a {
-                margin-right: 20px;
-            }
-        }
-
-        .prose {
-            margin-top: 0;
-            margin-left: 20px;
-            line-height: 1.5;
-
-            b {
-                font-size: $px24;
-            }
-
-            a {
-                font-family: $poppins;
-            }
-        }
-    }
-}
-
-.contact__careers {
+  .contact__blurb {
     p {
-        margin-bottom: 18px;
-        font-size: $px20;
+      font-family: $poppins;
+      font-size: $px24;
+      line-height: 40px;
+      margin-bottom: 91px;
+
+      @include mobile {
+        margin-bottom: 45px;
+      }
     }
-    
-    .small p {
-        font-weight: 700;
-        font-size: $px12;
-        margin-bottom: 15px;
+  }
+
+  .contact__card {
+    a {
+      padding-bottom: 0;
+      &:hover {
+        color: $mt-green !important;
+      }
     }
 
-    h3 {
-        margin-bottom: 38px !important;
+    p {
+      margin-bottom: 7px;
+    }
+
+    img {
+      max-width: 180px;
+      max-height: 121px;
+    }
+  }
+
+  .contact__address {
+    p {
+      margin-bottom: 0;
+      > b {
+        margin-bottom: 4px;
+      }
+    }
+
+    img {
+      max-width: 180px;
+      max-height: 160px;
+      border-left: 4px solid $mt-green;
     }
 
     a {
-        font-weight: $extra-bold;
-        padding-bottom: 2px !important;
+      box-shadow: none;
     }
+  }
 
-    @include sm-tablet {
-        img {
-            margin-top: 50px;
+  .col-xl-6 {
+    .contact__address {
+      @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .prose {
+        @include mobile {
+          flex-basis: 170px;
+          margin-left: 0px;
         }
+      }
     }
+  }
+
+  .col-xl-5 {
+    .contact__card {
+      @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .prose {
+        @include mobile {
+          flex-basis: 256px;
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  .contact__address,
+  .contact__card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
 
     @include mobile {
-        img {
-            margin-top: 20px;
-        }
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      a {
+        margin-right: 20px;
+      }
     }
+
+    .prose {
+      margin-top: 0;
+      margin-left: 20px;
+      line-height: 1.5;
+
+      b {
+        font-size: $px24;
+      }
+
+      a {
+        font-family: $poppins;
+      }
+    }
+  }
+}
+
+.contact__careers {
+  p {
+    margin-bottom: 18px;
+    font-size: $px20;
+  }
+
+  .small p {
+    font-weight: 700;
+    font-size: $px12;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    margin-bottom: 38px !important;
+  }
+
+  a {
+    font-weight: $extra-bold;
+    padding-bottom: 2px !important;
+  }
+
+  @include sm-tablet {
+    img {
+      margin-top: 50px;
+    }
+  }
+
+  @include mobile {
+    img {
+      margin-top: 20px;
+    }
+  }
 }
