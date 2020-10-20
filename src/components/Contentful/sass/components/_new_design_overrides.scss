@@ -130,6 +130,13 @@ ul li:before {
       color: $white !important;
       font-size: $px20;
     }
+    .sector-grid-links,
+    .get-in-touch__component__email-address,
+    .get-in-touch__component__phone-number {
+      a:hover {
+        color: $mt-green !important;
+      }
+    }
 
     a {
       font-weight: $extra-bold;
@@ -378,6 +385,17 @@ ul li:before {
   &.shaded {
     a {
       box-shadow: none;
+    }
+  }
+}
+#our-services-we-ve-done-this-before {
+  .prose {
+    p {
+      a {
+        b:hover {
+          color: $mt-green;
+        }
+      }
     }
   }
 }
