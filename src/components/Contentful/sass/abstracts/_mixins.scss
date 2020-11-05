@@ -3,6 +3,17 @@
     @content;
   }
 }
+@mixin sm-mobile {
+  @media (max-width: 321px) and (min-width: 0px) {
+    @content;
+  }
+}
+
+@mixin ex-sm-mobile {
+  @media (max-width: 281px) and (min-width: 0px) {
+    @content;
+  }
+}
 @mixin tablet {
   @media (max-width: 991px) and (min-width: 577px) {
     @content;
