@@ -104,6 +104,7 @@ ul li:before {
       letter-spacing: 0px;
       text-decoration: none;
       box-shadow: inset 0 0 0 transparent, inset 0 -3px 0 $mt-green;
+      padding-bottom: 3px;
     }
   }
 
@@ -128,6 +129,13 @@ ul li:before {
     a {
       color: $white !important;
       font-size: $px20;
+    }
+    .sector-grid-links,
+    .get-in-touch__component__email-address,
+    .get-in-touch__component__phone-number {
+      a:hover {
+        color: $mt-green !important;
+      }
     }
 
     a {
@@ -370,15 +378,23 @@ ul li:before {
     }
   }
 }
-/* box-shadow(for green underline) is implemented differently 
-in case studies b/c of the hover effect
-box-shadow is removed for Digital Leaders Week 2020(displayed at Homepage) */
 
-#case-studies-overview-grid,
+//box-shadow is not needed for Digital Leaders Week 2020(displayed at Homepage)
 #misc-better-patient-outcomes-webinar {
   &.shaded {
     a {
       box-shadow: none;
+    }
+  }
+}
+#our-services-we-ve-done-this-before {
+  .prose {
+    p {
+      a {
+        b:hover {
+          color: $mt-green;
+        }
+      }
     }
   }
 }

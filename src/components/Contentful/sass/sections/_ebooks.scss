@@ -134,7 +134,18 @@
         margin-bottom: 30px;
         font-size: $px36;
       }
-
+      .prose-style-book-heading {
+        @include sm-mobile {
+          h3 {
+            font-size: 33px;
+          }
+        }
+        @include ex-sm-mobile {
+          h3 {
+            font-size: 23px;
+          }
+        }
+      }
       a {
         font-size: $px20;
       }

@@ -99,6 +99,24 @@ header + div:not(.new-design) {
     p:last-child {
       margin-bottom: 0;
     }
+    .prose-style-book-heading {
+      @include mobile {
+        h1 {
+          font-size: 40px;
+        }
+      }
+      @include sm-mobile {
+        h1 {
+          font-size: 35px;
+          line-height: 2.3rem;
+        }
+      }
+      @include ex-sm-mobile {
+        h1 {
+          font-size: 29px;
+        }
+      }
+    }
   }
 
   img + .prose {
