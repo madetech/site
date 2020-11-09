@@ -57,7 +57,7 @@ http {
     }
 
     location / {
-      try_files $uri $uri/index.html;
+      try_files $uri $uri/index.html =404;
       expires 0;
       add_header Cache-Control "public, must-revalidate";
     }
