@@ -244,6 +244,7 @@ ul li:before {
     + .contentful-grid.yellow {
       margin: initial;
     }
+
     ul {
       list-style: disc;
       color: $mt-green;
@@ -456,39 +457,6 @@ ul li:before {
   }
 }
 
-.page_not_found_text {
-  position: relative;
-  margin-top: 1rem;
-
-  @include sm-desktop {
-    margin-top: 3rem;
-  }
-  @include tablet {
-    margin-top: 2rem;
-  }
-  .px4 {
-    div {
-      margin-left: 10px;
-
-      @include mobile {
-        margin-left: 17px;
-        margin-top: 80px;
-      }
-
-      @include tablet {
-        margin-left: 5px;
-      }
-    }
-    p {
-      font-size: 20px;
-      margin-bottom: 5px;
-      a {
-        text-decoration: none;
-        box-shadow: inset 0 0 0 transparent, inset 0 -3px 0 $mt-green;
-      }
-    }
-  }
-}
 .contentful-drip-form {
   .drip-form-text {
     p {
