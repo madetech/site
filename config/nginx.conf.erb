@@ -37,6 +37,8 @@ http {
     keepalive_timeout 5;
     root public/;
 
+    error_page /page-not-found
+
     resolver 172.16.0.23 8.8.8.8;
 
     location = /static {
@@ -55,7 +57,7 @@ http {
     }
 
     location / {
-      try_files $uri $uri/index.html @madetech;
+      try_files $uri $uri/index.html;
       expires 0;
       add_header Cache-Control "public, must-revalidate";
     }
