@@ -71,6 +71,33 @@
   }
 }
 
+.page_not_found_hero {
+  position: relative;
+
+  .contentful-hero__text {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  .no_breadcrumb {
+    padding: 80px 0 0 0;
+  }
+  @include desktop {
+    margin-bottom: 0;
+  }
+  .hero_none {
+    height: unset;
+    img {
+      margin-top: 150px;
+      max-width: 80%;
+      height: auto;
+
+      @include lg-tablet{
+        max-width: 92%;
+      }
+    }
+  }
+}
 
 .contentful-hero__page-title {
   &.green {
