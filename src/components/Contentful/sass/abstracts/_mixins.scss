@@ -3,6 +3,19 @@
     @content;
   }
 }
+
+@mixin lg-mobile {
+  @media (max-width: 576px) and (min-width: 361px) {
+    @content;
+  }
+}
+
+@mixin md-mobile {
+  @media (max-width: 360px) and (min-width: 321px) {
+    @content;
+  }
+}
+
 @mixin sm-mobile {
   @media (max-width: 321px) and (min-width: 0px) {
     @content;
@@ -14,6 +27,7 @@
     @content;
   }
 }
+
 @mixin tablet {
   @media (max-width: 991px) and (min-width: 577px) {
     @content;
