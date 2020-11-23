@@ -16,7 +16,7 @@
 	}
 	.webinars_overview_grid {
 		margin-top: 70px;
-		@include ex-md-mobile{
+		@include ex-md-mobile {
 			margin-top: 95px;
 		}
 		.container {
@@ -48,6 +48,9 @@
 			}
 		}
 		.webinar_delivering {
+			@include tablet {
+				position: relative;
+			}
 			img {
 				position: absolute;
 				max-height: 100px;
@@ -66,8 +69,8 @@
 					right: 13px;
 				}
 				@include tablet {
-					margin-top: 477px;
-					right: 38px;
+					top: 206px;
+					right: 0px;
 					max-height: 75px;
 				}
 				@include md-mobile {
@@ -121,6 +124,9 @@
 			}
 		}
 		.webinar_enhancing {
+			@include tablet {
+				position: relative;
+			}
 			img {
 				position: absolute;
 				max-height: 100px;
@@ -139,8 +145,8 @@
 					right: 12px;
 				}
 				@include tablet {
-					margin-top: 1117px;
-					right: 38px;
+					top: 180px;
+					right: 0px;
 					max-height: 75px;
 				}
 				@include sm-desktop {
@@ -202,6 +208,9 @@
 			}
 		}
 		.webinar_upskill {
+			@include tablet {
+				position: relative;
+			}
 			img {
 				position: absolute;
 				max-height: 100px;
@@ -220,8 +229,9 @@
 					max-height: 50px;
 				}
 				@include tablet {
-					margin-top: -391px;
-					right: 38px;
+					margin-top: 0px;
+					right: 0px;
+					top: 203px;
 					max-height: 75px;
 				}
 				@include sm-desktop {
@@ -294,6 +304,9 @@
 			}
 		}
 		.webinar_avoiding {
+			@include tablet {
+				position: relative;
+			}
 			img {
 				position: absolute;
 				max-height: 100px;
@@ -312,9 +325,10 @@
 					max-height: 50px;
 				}
 				@include tablet {
-					margin-top: -391px;
-					right: 38px;
+					margin-top: 0;
+					right: 0;
 					max-height: 75px;
+					top: 243px;
 				}
 				@include sm-desktop {
 					margin-top: -326px;
@@ -386,6 +400,9 @@
 			}
 		}
 		.webinar_spin_up {
+			@include tablet {
+				position: relative;
+			}
 			img {
 				position: absolute;
 				max-height: 100px;
@@ -404,9 +421,10 @@
 					max-height: 50px;
 				}
 				@include tablet {
-					margin-top: -391px;
-					right: 38px;
+					margin-top: 0px;
+					right: 0;
 					max-height: 75px;
+					top: 200px;
 				}
 				@include sm-desktop {
 					margin-top: -326px;
@@ -478,7 +496,7 @@
 				@include ex-sm-mobile {
 					padding: 50px 20px 0 20px;
 				}
-				@include ex-md-mobile{
+				@include ex-md-mobile {
 					padding: 37px 10px 0px 25px;
 				}
 			}
@@ -492,7 +510,7 @@
 				@include ex-sm-mobile {
 					padding: 15px 20px 40px 20px;
 				}
-				@include ex-md-mobile{
+				@include ex-md-mobile {
 					padding: 15px 22px 35px 29px;
 				}
 			}
@@ -512,7 +530,7 @@
 					padding: 0px 20px 10px 20px;
 					font-size: 17px;
 				}
-				@include ex-md-mobile{
+				@include ex-md-mobile {
 					padding: 5px 24px 10px 27px;
 				}
 			}
@@ -528,7 +546,7 @@
 					margin-left: 22px;
 					margin-top: 5px;
 				}
-				@include ex-md-mobile{
+				@include ex-md-mobile {
 					margin-left: 28px;
 				}
 				a {
