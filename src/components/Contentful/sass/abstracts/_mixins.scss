@@ -1,3 +1,6 @@
+$screen-xs-slider: 320px;
+$screen-xs: 375px;
+
 @mixin mobile {
   @media (max-width: 576px) and (min-width: 0px) {
     @content;
@@ -11,13 +14,25 @@
 }
 
 @mixin md-mobile {
-  @media (max-width: 360px) and (min-width: 321px) {
+  @media (max-width: 360px) and (min-width: $screen-xs-slider - 1) {
+    @content;
+  }
+}
+
+@mixin sm-md-mobile {
+  @media (max-width: $screen-xs) and (min-width: $screen-xs - 1) {
+    @content;
+  }
+}
+
+@mixin ex-md-mobile {
+  @media (max-width: $screen-xs-slider) and (min-width: $screen-xs-slider - 1) {
     @content;
   }
 }
 
 @mixin sm-mobile {
-  @media (max-width: 321px) and (min-width: 0px) {
+  @media (max-width: $screen-xs-slider + 1) and (min-width: 0px) {
     @content;
   }
 }

@@ -16,6 +16,9 @@
 	}
 	.webinars_overview_grid {
 		margin-top: 70px;
+		@include ex-md-mobile{
+			margin-top: 95px;
+		}
 		.container {
 			@include lg-mobile {
 				padding-left: 10px;
@@ -38,6 +41,9 @@
 				display: contents;
 			}
 			@include md-mobile {
+				display: contents;
+			}
+			@include ex-sm-mobile {
 				display: contents;
 			}
 		}
@@ -71,8 +77,18 @@
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: -56px;
-					right: 15px;
+					margin-top: 520px;
+					right: 5px;
+				}
+				@include sm-md-mobile {
+					max-height: 50px;
+					margin-top: 439px;
+					right: 13px;
+				}
+				@include ex-md-mobile {
+					max-height: 50px;
+					margin-top: 463px;
+					right: 5px;
 				}
 			}
 			p:first-of-type,
@@ -99,6 +115,9 @@
 			@include tablet {
 				order: 1;
 				margin-bottom: 95px;
+			}
+			@include ex-sm-mobile {
+				order: 1;
 			}
 		}
 		.webinar_enhancing {
@@ -136,8 +155,18 @@
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: 21px;
-					right: 15px;
+					margin-top: 1167px;
+					right: 5px;
+				}
+				@include sm-md-mobile {
+					max-height: 50px;
+					margin-top: 1160px;
+					right: 12px;
+				}
+				@include ex-md-mobile {
+					max-height: 50px;
+					margin-top: 1195px;
+					right: 5px;
 				}
 			}
 			p:first-of-type,
@@ -163,6 +192,13 @@
 			}
 			@include tablet {
 				order: 2;
+			}
+			@include ex-sm-mobile {
+				order: 2;
+				margin-top: -1px;
+			}
+			@include sm-md-mobile {
+				margin-top: -25px;
 			}
 		}
 		.webinar_upskill {
@@ -200,8 +236,18 @@
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: -334px;
-					right: 15px;
+					margin-top: -307px;
+					right: 5px;
+				}
+				@include sm-md-mobile {
+					max-height: 50px;
+					margin-top: -383px;
+					right: 12px;
+				}
+				@include ex-md-mobile {
+					max-height: 50px;
+					margin-top: -353px;
+					right: 5px;
 				}
 			}
 			p:first-of-type,
@@ -233,6 +279,17 @@
 				order: 3;
 			}
 			@include tablet {
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
+			}
+			@include ex-sm-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
 				order: 3;
 			}
 		}
@@ -271,8 +328,18 @@
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: -334px;
-					right: 15px;
+					margin-top: -306px;
+					right: 5px;
+				}
+				@include sm-md-mobile {
+					max-height: 50px;
+					margin-top: -385px;
+					right: 12px;
+				}
+				@include ex-md-mobile {
+					max-height: 50px;
+					margin-top: -386px;
+					right: 5px;
 				}
 			}
 			p:first-of-type,
@@ -304,6 +371,17 @@
 				order: 4;
 			}
 			@include tablet {
+				p:first-of-type,
+				h3 {
+					background-color: $black;
+				}
+				order: 4;
+			}
+			@include ex-sm-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $black;
+				}
 				order: 4;
 			}
 		}
@@ -343,7 +421,17 @@
 				@include ex-sm-mobile {
 					max-height: 50px;
 					margin-top: -330px;
-					right: 15px;
+					right: 5px;
+				}
+				@include sm-md-mobile {
+					max-height: 50px;
+					margin-top: -387px;
+					right: 12px;
+				}
+				@include ex-md-mobile {
+					max-height: 50px;
+					margin-top: -386px;
+					right: 5px;
 				}
 			}
 			p:first-of-type,
@@ -368,6 +456,9 @@
 			@include tablet {
 				order: 5;
 			}
+			@include ex-sm-mobile {
+				order: 5;
+			}
 		}
 		.prose {
 			padding: 0;
@@ -387,6 +478,9 @@
 				@include ex-sm-mobile {
 					padding: 50px 20px 0 20px;
 				}
+				@include ex-md-mobile{
+					padding: 37px 10px 0px 25px;
+				}
 			}
 			h3 {
 				padding: 15px 50px 50px 50px;
@@ -397,6 +491,9 @@
 				}
 				@include ex-sm-mobile {
 					padding: 15px 20px 40px 20px;
+				}
+				@include ex-md-mobile{
+					padding: 15px 22px 35px 29px;
 				}
 			}
 			p {
@@ -415,6 +512,9 @@
 					padding: 0px 20px 10px 20px;
 					font-size: 17px;
 				}
+				@include ex-md-mobile{
+					padding: 5px 24px 10px 27px;
+				}
 			}
 			p:last-of-type {
 				margin-left: 50px;
@@ -427,6 +527,9 @@
 				@include ex-sm-mobile {
 					margin-left: 22px;
 					margin-top: 5px;
+				}
+				@include ex-md-mobile{
+					margin-left: 28px;
 				}
 				a {
 					@include ex-sm-mobile {
