@@ -1,0 +1,439 @@
+&.webinars_overview {
+	.contentful-hero__text {
+		margin-bottom: -40px;
+		@include lg-mobile {
+			font-size: 20px;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-bottom: 20px;
+		}
+		@include md-mobile {
+			margin-bottom: -15px;
+		}
+		@include ex-sm-mobile {
+			margin-bottom: 40px;
+		}
+	}
+	.webinars_overview_grid {
+		margin-top: 70px;
+		.container {
+			@include lg-mobile {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+		.row {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			@include lg-mobile {
+				margin: 2px;
+			}
+		}
+		.my-2 {
+			@include lg-mobile {
+				display: contents;
+			}
+			@include tablet {
+				display: contents;
+			}
+			@include md-mobile {
+				display: contents;
+			}
+		}
+		.webinar_delivering {
+			img {
+				position: absolute;
+				max-height: 100px;
+				width: auto;
+				transform: translateY(-50%);
+				right: 10px;
+				top: 293px;
+				@include sm-mobile {
+					max-height: 50px;
+					margin-top: 468px;
+					right: 13px;
+				}
+				@include lg-mobile {
+					max-height: 50px;
+					margin-top: 419px;
+					right: 13px;
+				}
+				@include tablet {
+					margin-top: 477px;
+					right: 38px;
+					max-height: 75px;
+				}
+				@include md-mobile {
+					max-height: 50px;
+					margin-top: 392px;
+					right: 5px;
+				}
+				@include ex-sm-mobile {
+					max-height: 50px;
+					margin-top: -56px;
+					right: 15px;
+				}
+			}
+			p:first-of-type,
+			h3 {
+				background-color: $mt-green;
+				@include lg-mobile {
+					font-size: 30px;
+				}
+				@include sm-mobile {
+					font-size: 27px;
+				}
+				@include ex-sm-mobile {
+					font-size: 23px;
+				}
+			}
+			@include lg-mobile {
+				order: 1;
+				margin-bottom: 50px;
+			}
+			@include md-mobile {
+				order: 1;
+				margin-bottom: 60px;
+			}
+			@include tablet {
+				order: 1;
+				margin-bottom: 95px;
+			}
+		}
+		.webinar_enhancing {
+			img {
+				position: absolute;
+				max-height: 100px;
+				width: auto;
+				transform: translateY(-50%);
+				right: 9px;
+				top: 216px;
+				@include lg-mobile {
+					max-height: 50px;
+					margin-top: 1055px;
+					right: 12px;
+				}
+				@include sm-mobile {
+					max-height: 50px;
+					margin-top: 1302px;
+					right: 12px;
+				}
+				@include tablet {
+					margin-top: 1117px;
+					right: 38px;
+					max-height: 75px;
+				}
+				@include sm-desktop {
+					margin-top: 75px;
+					right: 9px;
+					max-height: 75px;
+				}
+				@include md-mobile {
+					max-height: 50px;
+					margin-top: 1135px;
+					right: 5px;
+				}
+				@include ex-sm-mobile {
+					max-height: 50px;
+					margin-top: 21px;
+					right: 15px;
+				}
+			}
+			p:first-of-type,
+			h3 {
+				background-color: $black;
+				@include lg-mobile {
+					font-size: 30px;
+				}
+				@include sm-mobile {
+					font-size: 27px;
+				}
+				@include ex-sm-mobile {
+					font-size: 23px;
+				}
+			}
+			@include lg-mobile {
+				order: 2;
+				margin-bottom: 20px;
+				margin-top: -70px;
+			}
+			@include md-mobile {
+				order: 2;
+			}
+			@include tablet {
+				order: 2;
+			}
+		}
+		.webinar_upskill {
+			img {
+				position: absolute;
+				max-height: 100px;
+				width: auto;
+				transform: translateY(-50%);
+				right: 9px;
+				margin-top: -296px;
+				@include lg-mobile {
+					max-height: 50px;
+					margin-top: -324px;
+					right: 12px;
+				}
+				@include sm-mobile {
+					margin-top: -445px;
+					right: 11px;
+					max-height: 50px;
+				}
+				@include tablet {
+					margin-top: -391px;
+					right: 38px;
+					max-height: 75px;
+				}
+				@include sm-desktop {
+					margin-top: -326px;
+					right: 9px;
+					max-height: 75px;
+				}
+				@include md-mobile {
+					max-height: 50px;
+					margin-top: -414px;
+					right: 5px;
+				}
+				@include ex-sm-mobile {
+					max-height: 50px;
+					margin-top: -334px;
+					right: 15px;
+				}
+			}
+			p:first-of-type,
+			h3 {
+				background-color: $black;
+				@include lg-mobile {
+					font-size: 30px;
+				}
+				@include sm-mobile {
+					font-size: 27px;
+				}
+				@include ex-sm-mobile {
+					font-size: 23px;
+				}
+			}
+			@include lg-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
+				margin-bottom: 20px;
+			}
+			@include md-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
+			}
+			@include tablet {
+				order: 3;
+			}
+		}
+		.webinar_avoiding {
+			img {
+				position: absolute;
+				max-height: 100px;
+				width: auto;
+				transform: translateY(-50%);
+				right: 9px;
+				margin-top: -296px;
+				@include lg-mobile {
+					max-height: 50px;
+					margin-top: -324px;
+					right: 12px;
+				}
+				@include sm-mobile {
+					margin-top: -445px;
+					right: 11px;
+					max-height: 50px;
+				}
+				@include tablet {
+					margin-top: -391px;
+					right: 38px;
+					max-height: 75px;
+				}
+				@include sm-desktop {
+					margin-top: -326px;
+					right: 9px;
+					max-height: 75px;
+				}
+				@include md-mobile {
+					max-height: 50px;
+					margin-top: -416px;
+					right: 5px;
+				}
+				@include ex-sm-mobile {
+					max-height: 50px;
+					margin-top: -334px;
+					right: 15px;
+				}
+			}
+			p:first-of-type,
+			h3 {
+				background-color: $mt-green;
+				@include lg-mobile {
+					font-size: 30px;
+				}
+				@include sm-mobile {
+					font-size: 27px;
+				}
+				@include ex-sm-mobile {
+					font-size: 23px;
+				}
+			}
+			@include lg-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $black;
+				}
+				order: 4;
+				margin-bottom: 20px;
+			}
+			@include md-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $black;
+				}
+				order: 4;
+			}
+			@include tablet {
+				order: 4;
+			}
+		}
+		.webinar_spin_up {
+			img {
+				position: absolute;
+				max-height: 100px;
+				width: auto;
+				transform: translateY(-50%);
+				right: 9px;
+				margin-top: -296px;
+				@include lg-mobile {
+					max-height: 50px;
+					margin-top: -324px;
+					right: 12px;
+				}
+				@include sm-mobile {
+					margin-top: -445px;
+					right: 11px;
+					max-height: 50px;
+				}
+				@include tablet {
+					margin-top: -391px;
+					right: 38px;
+					max-height: 75px;
+				}
+				@include sm-desktop {
+					margin-top: -326px;
+					right: 9px;
+					max-height: 75px;
+				}
+				@include md-mobile {
+					max-height: 50px;
+					margin-top: -413px;
+					right: 5px;
+				}
+				@include ex-sm-mobile {
+					max-height: 50px;
+					margin-top: -330px;
+					right: 15px;
+				}
+			}
+			p:first-of-type,
+			h3 {
+				background-color: $mt-green;
+				@include lg-mobile {
+					font-size: 30px;
+				}
+				@include sm-mobile {
+					font-size: 27px;
+				}
+				@include ex-sm-mobile {
+					font-size: 23px;
+				}
+			}
+			@include md-mobile {
+				order: 5;
+			}
+			@include lg-mobile {
+				order: 5;
+			}
+			@include tablet {
+				order: 5;
+			}
+		}
+		.prose {
+			padding: 0;
+		}
+		.prose-heading {
+			p:first-of-type {
+				padding: 50px 50px 0 50px;
+				margin-bottom: 0;
+				font-size: 12px;
+				font-weight: bold;
+				line-height: normal;
+				letter-spacing: 1px;
+				color: $white;
+				@include lg-mobile {
+					padding: 40px 50px 0 20px;
+				}
+				@include ex-sm-mobile {
+					padding: 50px 20px 0 20px;
+				}
+			}
+			h3 {
+				padding: 15px 50px 50px 50px;
+				margin-top: -1px;
+				color: $white;
+				@include lg-mobile {
+					padding: 15px 22px 40px 20px;
+				}
+				@include ex-sm-mobile {
+					padding: 15px 20px 40px 20px;
+				}
+			}
+			p {
+				padding: 15px 50px 10px 50px;
+				font-family: Montserrat;
+				font-size: 20px;
+				font-weight: normal;
+				line-height: 1.5;
+				letter-spacing: normal;
+				color: #595959;
+				margin-bottom: 0;
+				@include lg-mobile {
+					padding: 15px 20px 10px 20px;
+				}
+				@include ex-sm-mobile {
+					padding: 0px 20px 10px 20px;
+					font-size: 17px;
+				}
+			}
+			p:last-of-type {
+				margin-left: 50px;
+				padding-left: 0;
+				padding-right: 0;
+				padding-bottom: 50px;
+				@include lg-mobile {
+					margin-left: 20px;
+				}
+				@include ex-sm-mobile {
+					margin-left: 22px;
+					margin-top: 5px;
+				}
+				a {
+					@include ex-sm-mobile {
+						font-size: 17px;
+					}
+				}
+			}
+		}
+	}
+}
