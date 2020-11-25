@@ -20,13 +20,18 @@ const highlightedTopics = [
 export default function Index({ data, pageContext }) {
   const posts = data.allWordpressPost.edges.map(({ node }) => node)
   const header = data.contentfulHeader
-
+  const footer = data.contentfulFooter
+  const siteMap = data.contentfulSiteMapContainer
   return (
     <Layout
       description="Writings on building software delivery capabilities, delivering digital & technology, and running live services for ambitious organisations."
       titlePrefix="Blog"
       headerLinks={header.headerLinks}
       headerTitles={header.headerTitles}
+      footerLinks={footer.footerLinks}
+      footerTitles={footer.footerTitles}
+      footerImages={footer.footerImages}
+      siteMapContent={siteMap.siteMapContent}
     >
       <PostListIntro
         title="Made Tech Blog"
@@ -82,6 +87,27 @@ export const pageQuery = graphql`
     contentfulHeader(id: { eq: "dd6f31c4-cd8c-5623-abd5-8b65bbd030e0" }) {
       headerLinks
       headerTitles
+    }
+
+    contentfulSiteMapContainer(
+      contentful_id: { eq: "5YsWKcA54Q7BJGCVoOxFMH" }
+    ) {
+      siteMapContent {
+        siteMapLinks
+        siteMapTitles
+        sectionTitle
+      }
+    }
+
+    contentfulFooter(id: { eq: "75b633fb-9030-5a1f-8b02-409d820fbe96" }) {
+      footerLinks
+      footerTitles
+      footerImages {
+        file {
+          fileName
+          url
+        }
+      }
     }
   }
 `

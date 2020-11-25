@@ -2,8 +2,9 @@ import React from 'react'
 import '../../all.scss'
 import Meta from './Meta'
 import Scripts from './Scripts'
-import { Footer, SiteMap } from '@madetech/frontend'
 import HeaderLinks from '../Contentful/headerLinks'
+import FooterLinks from '../Contentful/footerLinks'
+import SiteMapLinks from '../Contentful/siteMapLinks'
 
 export default function Layout({
   children,
@@ -15,6 +16,10 @@ export default function Layout({
   image,
   headerTitles,
   headerLinks,
+  footerTitles,
+  footerLinks,
+  footerImages,
+  siteMapContent,
 }) {
   let pageContentClass = ''
   if (featureFlags === 'new-design') {
@@ -26,6 +31,22 @@ export default function Layout({
 
   function headerComponent() {
     return <HeaderLinks headerTitles={headerTitles} headerLinks={headerLinks} />
+  }
+
+  function siteMapComponent() {
+    return (
+      <SiteMapLinks navLinks={siteMapLinks} siteMapContent={siteMapContent} />
+    )
+  }
+
+  function footerComponent() {
+    return (
+      <FooterLinks
+        footerTitles={footerTitles}
+        footerLinks={footerLinks}
+        footerImages={footerImages}
+      />
+    )
   }
 
   let siteMapLinks = [
@@ -159,9 +180,9 @@ export default function Layout({
 
       <div className={pageContentClass}>{children}</div>
 
-      <SiteMap navLinks={siteMapLinks} />
+      {siteMapComponent()}
 
-      <Footer />
+      {footerComponent()}
     </div>
   )
 }

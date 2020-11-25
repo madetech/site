@@ -9,7 +9,8 @@ export default function PostPageTemplate({ data }) {
   const header = data.contentfulHeader
   const post = data.wordpressPost
   const content = data.contentfulPage
-
+  const footer = data.contentfulFooter
+  const siteMap = data.contentfulSiteMapContainer
   return (
     <Layout
       description={striptags(post.excerpt)}
@@ -18,6 +19,10 @@ export default function PostPageTemplate({ data }) {
       image={post.jetpack_featured_media_url}
       headerLinks={header.headerLinks}
       headerTitles={header.headerTitles}
+      footerLinks={footer.footerLinks}
+      footerTitles={footer.footerTitles}
+      footerImages={footer.footerImages}
+      siteMapContent={siteMap.siteMapContent}
     >
       <Post post={post} withPrefix={withPrefix} content={content} />
     </Layout>
@@ -53,6 +58,27 @@ export const pageQuery = graphql`
     contentfulHeader(id: { eq: "dd6f31c4-cd8c-5623-abd5-8b65bbd030e0" }) {
       headerLinks
       headerTitles
+    }
+
+    contentfulSiteMapContainer(
+      contentful_id: { eq: "177348cc-bbcd-582b-a394-7d26a58854c7" }
+    ) {
+      siteMapContent {
+        siteMapLinks
+        siteMapTitles
+        sectionTitle
+      }
+    }
+
+    contentfulFooter(id: { eq: "75b633fb-9030-5a1f-8b02-409d820fbe96" }) {
+      footerLinks
+      footerTitles
+      footerImages {
+        file {
+          fileName
+          url
+        }
+      }
     }
 
     contentfulPage(slug: { eq: "/blog-post" }) {
