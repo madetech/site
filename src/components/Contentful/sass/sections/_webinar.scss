@@ -56,7 +56,7 @@
 				max-height: 100px;
 				width: auto;
 				transform: translateY(-50%);
-				right: 10px;
+				right: 20px;
 				top: 293px;
 				@include sm-mobile {
 					max-height: 50px;
@@ -65,33 +65,33 @@
 				}
 				@include lg-mobile {
 					max-height: 50px;
-					margin-top: 419px;
-					right: 13px;
+					margin-top: 446px;
+					right: 20px;
 				}
 				@include tablet {
 					top: 206px;
-					right: 0px;
+					right: 10px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
-					margin-top: 392px;
-					right: 5px;
+					margin-top: 418px;
+					right: 15px;
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: 520px;
-					right: 5px;
+					margin-top: 544px;
+					right: 15px;
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
-					margin-top: 439px;
-					right: 13px;
+					margin-top: 470px;
+					right: 23px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
-					margin-top: 463px;
-					right: 5px;
+					margin-top: 510px;
+					right: 15px;
 				}
 			}
 			p:first-of-type,
@@ -109,15 +109,15 @@
 			}
 			@include lg-mobile {
 				order: 1;
-				margin-bottom: 50px;
+				margin-bottom: 95px;
 			}
 			@include md-mobile {
 				order: 1;
-				margin-bottom: 60px;
+				margin-bottom: 50px;
 			}
 			@include tablet {
 				order: 1;
-				margin-bottom: 95px;
+				margin-bottom: 50px;
 			}
 			@include ex-sm-mobile {
 				order: 1;
@@ -132,12 +132,12 @@
 				max-height: 100px;
 				width: auto;
 				transform: translateY(-50%);
-				right: 9px;
+				right: 20px;
 				top: 216px;
 				@include lg-mobile {
 					max-height: 50px;
-					margin-top: 1055px;
-					right: 12px;
+					margin-top: 1124px;
+					right: 20px;
 				}
 				@include sm-mobile {
 					max-height: 50px;
@@ -146,33 +146,32 @@
 				}
 				@include tablet {
 					top: 180px;
-					right: 0px;
+					right: 10px;
 					max-height: 75px;
 				}
 				@include sm-desktop {
 					margin-top: 75px;
-					right: 9px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
-					margin-top: 1135px;
-					right: 5px;
+					margin-top: 1151px;
+					right: 15px;
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: 1167px;
-					right: 5px;
+					margin-top: 1190px;
+					right: 15px;
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
-					margin-top: 1160px;
-					right: 12px;
+					margin-top: 1188px;
+					right: 22px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
-					margin-top: 1195px;
-					right: 5px;
+					margin-top: 1247px;
+					right: 15px;
 				}
 			}
 			p:first-of-type,
@@ -195,16 +194,18 @@
 			}
 			@include md-mobile {
 				order: 2;
+				margin-bottom: 20px;
 			}
 			@include tablet {
 				order: 2;
+				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
 				order: 2;
 				margin-top: -1px;
 			}
 			@include sm-md-mobile {
-				margin-top: -25px;
+				margin-top: -68px;
 			}
 		}
 		.webinar_upskill {
@@ -216,12 +217,12 @@
 				max-height: 100px;
 				width: auto;
 				transform: translateY(-50%);
-				right: 9px;
+				right: 20px;
 				margin-top: -296px;
 				@include lg-mobile {
 					max-height: 50px;
 					margin-top: -324px;
-					right: 12px;
+					right: 20px;
 				}
 				@include sm-mobile {
 					margin-top: -445px;
@@ -230,34 +231,33 @@
 				}
 				@include tablet {
 					margin-top: 0px;
-					right: 0px;
-					top: 203px;
+					right: 10px;
+					top: 166px;
 					max-height: 75px;
 				}
 				@include sm-desktop {
 					margin-top: -326px;
-					right: 9px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
 					margin-top: -414px;
-					right: 5px;
+					right: 15px;
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
 					margin-top: -307px;
-					right: 5px;
+					right: 15px;
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
 					margin-top: -383px;
-					right: 12px;
+					right: 22px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
 					margin-top: -353px;
-					right: 5px;
+					right: 15px;
 				}
 			}
 			p:first-of-type,
@@ -287,6 +287,7 @@
 					background-color: $mt-green;
 				}
 				order: 3;
+				margin-bottom: 20px;
 			}
 			@include tablet {
 				p:first-of-type,
@@ -294,6 +295,7 @@
 					background-color: $mt-green;
 				}
 				order: 3;
+				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
 				p:first-of-type,
@@ -312,12 +314,12 @@
 				max-height: 100px;
 				width: auto;
 				transform: translateY(-50%);
-				right: 9px;
+				right: 20px;
 				margin-top: -296px;
 				@include lg-mobile {
 					max-height: 50px;
 					margin-top: -324px;
-					right: 12px;
+					right: 20px;
 				}
 				@include sm-mobile {
 					margin-top: -445px;
@@ -326,34 +328,33 @@
 				}
 				@include tablet {
 					margin-top: 0;
-					right: 0;
+					right: 10px;
 					max-height: 75px;
 					top: 243px;
 				}
 				@include sm-desktop {
 					margin-top: -326px;
-					right: 9px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
 					margin-top: -416px;
-					right: 5px;
+					right: 15px;
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
 					margin-top: -306px;
-					right: 5px;
+					right: 15px;
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
 					margin-top: -385px;
-					right: 12px;
+					right: 22px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
 					margin-top: -386px;
-					right: 5px;
+					right: 15px;
 				}
 			}
 			p:first-of-type,
@@ -383,6 +384,7 @@
 					background-color: $black;
 				}
 				order: 4;
+				margin-bottom: 20px;
 			}
 			@include tablet {
 				p:first-of-type,
@@ -390,6 +392,7 @@
 					background-color: $black;
 				}
 				order: 4;
+				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
 				p:first-of-type,
@@ -408,12 +411,12 @@
 				max-height: 100px;
 				width: auto;
 				transform: translateY(-50%);
-				right: 9px;
+				right: 20px;
 				margin-top: -296px;
 				@include lg-mobile {
 					max-height: 50px;
 					margin-top: -324px;
-					right: 12px;
+					right: 20px;
 				}
 				@include sm-mobile {
 					margin-top: -445px;
@@ -422,34 +425,33 @@
 				}
 				@include tablet {
 					margin-top: 0px;
-					right: 0;
+					right: 10px;
 					max-height: 75px;
 					top: 200px;
 				}
 				@include sm-desktop {
 					margin-top: -326px;
-					right: 9px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
 					margin-top: -413px;
-					right: 5px;
+					right: 15px;
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
 					margin-top: -330px;
-					right: 5px;
+					right: 15px;
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
 					margin-top: -387px;
-					right: 12px;
+					right: 22px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
 					margin-top: -386px;
-					right: 5px;
+					right: 15px;
 				}
 			}
 			p:first-of-type,
@@ -473,6 +475,7 @@
 			}
 			@include tablet {
 				order: 5;
+				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
 				order: 5;
