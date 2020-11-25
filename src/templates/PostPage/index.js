@@ -61,7 +61,7 @@ export const pageQuery = graphql`
     }
 
     contentfulSiteMapContainer(
-      contentful_id: { eq: "177348cc-bbcd-582b-a394-7d26a58854c7" }
+      contentful_id: { eq: "5YsWKcA54Q7BJGCVoOxFMH" }
     ) {
       siteMapContent {
         siteMapLinks
