@@ -7,6 +7,8 @@ import logo from '../../assets/images/made-tech-logo-colour.jpg'
 export default function ContentfulPageTemplate({ data }) {
   const header = data.contentfulHeader
   const page = data.contentfulPage
+  const footer = data.contentfulFooter
+  const siteMap = data.contentfulSiteMapContainer
   return (
     <Layout
       customClasses={page.customClasses}
@@ -15,6 +17,10 @@ export default function ContentfulPageTemplate({ data }) {
       titlePrefix={page.title}
       headerTitles={header.headerTitles}
       headerLinks={header.headerLinks}
+      footerLinks={footer.footerLinks}
+      footerTitles={footer.footerTitles}
+      footerImages={footer.footerImages}
+      siteMapContent={siteMap.siteMapContent}
       image={
         page.content[0].headerImage
           ? `https:${page.content[0].headerImage.fixed.src}`
@@ -84,6 +90,27 @@ export const pageQuery = graphql`
     contentfulHeader(id: { eq: "dd6f31c4-cd8c-5623-abd5-8b65bbd030e0" }) {
       headerLinks
       headerTitles
+    }
+
+    contentfulSiteMapContainer(
+      contentful_id: { eq: "5YsWKcA54Q7BJGCVoOxFMH" }
+    ) {
+      siteMapContent {
+        siteMapLinks
+        siteMapTitles
+        sectionTitle
+      }
+    }
+
+    contentfulFooter(id: { eq: "75b633fb-9030-5a1f-8b02-409d820fbe96" }) {
+      footerLinks
+      footerTitles
+      footerImages {
+        file {
+          fileName
+          url
+        }
+      }
     }
   }
 
