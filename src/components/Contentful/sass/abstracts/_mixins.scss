@@ -7,6 +7,12 @@ $screen-xs: 375px;
   }
 }
 
+@mixin lg-md-mobile{
+  @media (max-width: 541px) and (min-width: 539px) {
+    @content;
+  }
+}
+
 @mixin lg-mobile {
   @media (max-width: 576px) and (min-width: 361px) {
     @content;
