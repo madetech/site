@@ -1,4 +1,7 @@
 &.webinars_overview {
+	width:100%;
+	overflow-x:hidden;
+	overflow-y:hidden;
 	.contentful-hero__text {
 		margin-bottom: -40px;
 		@include lg-mobile {
