@@ -81,6 +81,9 @@
 				@include lg-md-mobile {
 					margin-top: 355px !important;
 				}
+				@include lg-pixel-mobile{
+					margin-top: 475px !important;
+				}
 				@include lg-mobile {
 					max-height: 50px;
 					margin-top: 446px;
@@ -157,6 +160,9 @@
 				top: 216px;
 				@include lg-md-mobile {
 					margin-top: 974px !important;
+				}
+				@include lg-pixel-mobile {
+					margin-top: 1157px !important;
 				}
 				@include lg-mobile {
 					max-height: 50px;
