@@ -8,7 +8,7 @@ $screen-xs: 375px;
 }
 
 @mixin lg-pixel-mobile {
-  @media (max-width: 411px) and (min-width: 410px) {
+  @media (max-width: 412px) and (min-width: 410px) {
     @content;
   }
 }
