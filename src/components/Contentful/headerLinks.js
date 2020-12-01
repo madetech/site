@@ -73,7 +73,7 @@ const HeaderLinks = props => {
 
   const renderContentfulHeaders = () => {
     return (
-      <div className="new-design">
+      <div className="new-design tablet-header-design">
         <MobileMenu links={titleAndLinkNamesDictionary} />
         <Header constrainLinkWidth logoHref="/" scrollable>
           {renderHeaderItems()}

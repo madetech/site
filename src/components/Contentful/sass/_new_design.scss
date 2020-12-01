@@ -54,3 +54,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.tablet-header-design{
+  .header{
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (min-width: 768px){
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
