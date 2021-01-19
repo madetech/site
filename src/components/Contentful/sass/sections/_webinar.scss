@@ -1,7 +1,7 @@
 &.webinars_overview {
-	width:100%;
-	overflow-x:hidden;
-	overflow-y:hidden;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	.contentful-hero__text {
 		margin-bottom: -40px;
 		@include lg-mobile {
@@ -62,7 +62,7 @@
 				display: contents;
 			}
 		}
-		.webinar_delivering {
+		.webinar_learning {
 			@include tablet {
 				position: relative;
 			}
@@ -72,7 +72,7 @@
 				width: auto;
 				transform: translateY(-50%);
 				right: 20px;
-				top: 293px;
+				top: 218px;
 				@include sm-mobile {
 					max-height: 50px;
 					margin-top: 468px;
@@ -81,22 +81,22 @@
 				@include lg-md-mobile {
 					margin-top: 355px !important;
 				}
-				@include lg-pixel-mobile{
-					margin-top: 475px !important;
+				@include lg-pixel-mobile {
+					margin-top: 552px !important;
 				}
 				@include lg-mobile {
 					max-height: 50px;
-					margin-top: 446px;
+					margin-top: 525px;
 					right: 20px;
 				}
 				@include tablet {
-					top: 206px;
+					top: 176px;
 					right: 10px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
-					margin-top: 418px;
+					margin-top: 496px;
 					right: 15px;
 				}
 				@include ex-sm-mobile {
@@ -106,16 +106,17 @@
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
-					margin-top: 470px;
+					margin-top: 545px;
 					right: 23px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
-					margin-top: 510px;
+					margin-top: 550px;
 					right: 15px;
 				}
 				@include sm-desktop {
 					max-height: 75px;
+					top: 266px;
 				}
 			}
 			p:first-of-type,
@@ -147,7 +148,7 @@
 				order: 1;
 			}
 		}
-		.webinar_enhancing {
+		.webinar_delivering {
 			@include tablet {
 				position: relative;
 			}
@@ -157,51 +158,50 @@
 				width: auto;
 				transform: translateY(-50%);
 				right: 20px;
-				top: 216px;
+				top: 293px;
+				@include sm-mobile {
+					max-height: 50px;
+					margin-top: 468px;
+					right: 13px;
+				}
 				@include lg-md-mobile {
-					margin-top: 974px !important;
+					margin-top: 355px !important;
 				}
 				@include lg-pixel-mobile {
-					margin-top: 1157px !important;
+					margin-top: 1129px !important;
 				}
 				@include lg-mobile {
 					max-height: 50px;
-					margin-top: 1124px;
+					margin-top: 1101px;
 					right: 20px;
 				}
-				@include sm-mobile {
-					max-height: 50px;
-					margin-top: 1302px;
-					right: 12px;
-				}
 				@include tablet {
-					top: 180px;
+					top: 206px;
 					right: 10px;
-					max-height: 75px;
-				}
-				@include sm-desktop {
-					margin-top: 75px;
 					max-height: 75px;
 				}
 				@include md-mobile {
 					max-height: 50px;
-					margin-top: 1151px;
+					margin-top: 1108px;
 					right: 15px;
 				}
 				@include ex-sm-mobile {
 					max-height: 50px;
-					margin-top: 1190px;
+					margin-top: 544px;
 					right: 15px;
 				}
 				@include sm-md-mobile {
 					max-height: 50px;
-					margin-top: 1188px;
-					right: 22px;
+					margin-top: 1183px;
+					right: 23px;
 				}
 				@include ex-md-mobile {
 					max-height: 50px;
-					margin-top: 1247px;
+					margin-top: 1125px;
 					right: 15px;
+				}
+				@include sm-desktop {
+					max-height: 75px;
 				}
 			}
 			p:first-of-type,
@@ -219,22 +219,128 @@
 			}
 			@include lg-mobile {
 				order: 2;
+				margin-bottom: 95px;
+			}
+			@include md-mobile {
+				order: 2;
+				margin-bottom: 50px;
+			}
+			@include tablet {
+				order: 2;
+				margin-bottom: 50px;
+			}
+			@include ex-sm-mobile {
+				order: 2;
+			}
+		}
+		.webinar_enhancing {
+			@include tablet {
+				position: relative;
+			}
+			img {
+				position: absolute;
+				max-height: 100px;
+				width: auto;
+				transform: translateY(-50%);
+				right: 20px;
+				top: 807px;
+				@include lg-md-mobile {
+					margin-top: 974px !important;
+				}
+				@include lg-pixel-mobile {
+					margin-top: 1219px !important;
+				}
+				@include lg-mobile {
+					max-height: 50px;
+					margin-top: 1194px;
+					right: 20px;
+				}
+				@include sm-mobile {
+					max-height: 50px;
+					margin-top: 1302px;
+					right: 12px;
+				}
+				@include tablet {
+					top: 180px;
+					right: 10px;
+					max-height: 75px;
+				}
+				@include sm-desktop {
+					margin-top: 160px;
+					max-height: 75px;
+				}
+				@include md-mobile {
+					max-height: 50px;
+					margin-top: 1278px;
+					right: 15px;
+				}
+				@include ex-sm-mobile {
+					max-height: 50px;
+					margin-top: 1190px;
+					right: 15px;
+				}
+				@include sm-md-mobile {
+					max-height: 50px;
+					margin-top: 1313px;
+					right: 22px;
+				}
+				@include ex-md-mobile {
+					max-height: 50px;
+					margin-top: 1291px;
+					right: 15px;
+				}
+			}
+			p:first-of-type,
+			h3 {
+				background-color: $black;
+				@include lg-mobile {
+					font-size: 30px;
+				}
+				@include sm-mobile {
+					font-size: 27px;
+				}
+				@include ex-sm-mobile {
+					font-size: 23px;
+				}
+			}
+			@include lg-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
 				margin-bottom: 20px;
 				margin-top: -70px;
 			}
 			@include md-mobile {
-				order: 2;
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
 				margin-bottom: 20px;
 			}
 			@include tablet {
-				order: 2;
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
 				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
-				order: 2;
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
+				order: 3;
 				margin-top: -1px;
 			}
 			@include sm-md-mobile {
+				p:first-of-type,
+				h3 {
+					background-color: $mt-green;
+				}
 				margin-top: -68px;
 			}
 		}
@@ -295,7 +401,7 @@
 			}
 			p:first-of-type,
 			h3 {
-				background-color: $black;
+				background-color: $mt-green;
 				@include lg-mobile {
 					font-size: 30px;
 				}
@@ -309,33 +415,33 @@
 			@include lg-mobile {
 				p:first-of-type,
 				h3 {
-					background-color: $mt-green;
+					background-color: $black;
 				}
-				order: 3;
+				order: 4;
 				margin-bottom: 20px;
 			}
 			@include md-mobile {
 				p:first-of-type,
 				h3 {
-					background-color: $mt-green;
+					background-color: $black;
 				}
-				order: 3;
+				order: 4;
 				margin-bottom: 20px;
 			}
 			@include tablet {
 				p:first-of-type,
 				h3 {
-					background-color: $mt-green;
+					background-color: $black;
 				}
-				order: 3;
+				order: 4;
 				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
 				p:first-of-type,
 				h3 {
-					background-color: $mt-green;
+					background-color: $black;
 				}
-				order: 3;
+				order: 4;
 			}
 		}
 		.webinar_avoiding {
@@ -407,35 +513,19 @@
 				}
 			}
 			@include lg-mobile {
-				p:first-of-type,
-				h3 {
-					background-color: $black;
-				}
-				order: 4;
+				order: 5;
 				margin-bottom: 20px;
 			}
 			@include md-mobile {
-				p:first-of-type,
-				h3 {
-					background-color: $black;
-				}
-				order: 4;
+				order: 5;
 				margin-bottom: 20px;
 			}
 			@include tablet {
-				p:first-of-type,
-				h3 {
-					background-color: $black;
-				}
-				order: 4;
+				order: 5;
 				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
-				p:first-of-type,
-				h3 {
-					background-color: $black;
-				}
-				order: 4;
+				order: 5;
 			}
 		}
 		.webinar_spin_up {
@@ -495,7 +585,7 @@
 			}
 			p:first-of-type,
 			h3 {
-				background-color: $mt-green;
+				background-color: $black;
 				@include lg-mobile {
 					font-size: 30px;
 				}
@@ -507,17 +597,17 @@
 				}
 			}
 			@include md-mobile {
-				order: 5;
+				order: 6;
 			}
 			@include lg-mobile {
-				order: 5;
+				order: 6;
 			}
 			@include tablet {
-				order: 5;
+				order: 6;
 				margin-bottom: 20px;
 			}
 			@include ex-sm-mobile {
-				order: 5;
+				order: 6;
 			}
 		}
 		.prose {
