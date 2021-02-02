@@ -90,3 +90,13 @@ $screen-xs: 375px;
     @content;
   }
 }
+@mixin sm-plus-mobile {
+  @media (max-width: 414px) and (min-width: 413px) {
+    @content;
+  }
+}
+@mixin lg-plus-mobile {
+  @media (max-width: 425px) and (min-width: 415px) {
+    @content;
+  }
+}
