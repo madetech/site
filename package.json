@@ -29,7 +29,7 @@
     "gatsby-plugin-sass": "^2.1.13",
     "gatsby-plugin-sitemap": "^2.4.1",
     "gatsby-source-contentful": "^2.1.82",
-    "gatsby-source-wordpress": "^3.1.30",
+    "gatsby-source-wordpress": "^4.0.8",
     "glob": "^7.1.4",
     "md5": "^2.2.1",
     "node-sass": "^4.13.0",
